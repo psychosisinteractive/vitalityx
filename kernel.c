@@ -7,7 +7,6 @@
 #include "libc/sound.h"
 #include "libc/keyboard.h"
 #include "libc/system.h"
-#include "drivers/ata.h"
 #include "drivers/ide.h"
 
 int kernel()
@@ -24,7 +23,7 @@ int kernel()
     if(are_interrupts_enabled()) {
         tty_putstr("INTERRUPTS ARE ENABLED\r\n",LightGray,Black);
     }
-    tty_putstr("Setting up ATA",LightGray,Black);
+    tty_putstr("Setting up ATA\r\n",LightGray,Black);
     ide_initialize(0x1F0, 0x3F6, 0x170, 0x376, 0x000);
     
 

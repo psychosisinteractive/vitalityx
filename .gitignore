@@ -1,3 +1,6 @@
 /ofiles
 /vitality.bin
 /libc/*.o
+*.o
+*.bin
+*.elf

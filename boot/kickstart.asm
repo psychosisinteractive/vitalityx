@@ -11,10 +11,6 @@ KERNEL_OFFSET equ 0x1000 ; The same one we used when linking the kernel
 
     call load_kernel ; read the kernel from disk
 
-    mov ah,00h
-    mov al,03h 
-    int 0x10
-
     call switch_to_pm ; disable interrupts, load GDT,  etc. Finally jumps to 'BEGIN_PM'
     jmp $ ; Never executed
 
@@ -34,7 +30,7 @@ load_kernel:
     call print_nl
 
     mov bx, KERNEL_OFFSET ; Read from disk and store in 0x1000
-    mov dh, 18
+    mov dh, 32
     mov dl, [BOOT_DRIVE]
     call disk_load
     ret
@@ -48,9 +44,9 @@ BEGIN_PM:
 
 
 BOOT_DRIVE db 0 ; It is a good idea to store it in memory because 'dl' may get overwritten
-MSG_REAL_MODE db "Started in 16-bit Real Mode", 0
-MSG_PROT_MODE db "Landed in 32-bit Protected Mode", 0
-MSG_LOAD_KERNEL db "Loading kernel into memory", 0
+MSG_REAL_MODE db "[VITALITYX] Started in 16-bit Real Mode", 0
+MSG_PROT_MODE db "[VITALITYX] Landed in 32-bit Protected Mode, launching kernel", 0
+MSG_LOAD_KERNEL db "[VITALITYX] Loading kernel into memory", 0
 
 ; padding
 times 510 - ($-$$) db 0

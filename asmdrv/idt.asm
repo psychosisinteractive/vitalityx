@@ -1,3 +1,5 @@
+section .data
+
 [extern isr_generic]
 [extern isr_dividebyzero]
 [extern isr_gpfault]
@@ -96,6 +98,8 @@ irqF:
 	db 10101110b
 	dw 0x0000
 idt_end:
+
+section .text
 
 dividebyzero:
     pushad
