@@ -2,6 +2,7 @@
 #define TTY_H
 #include "string.h"
 #include "asm.h"
+#include "video.h"
 
 #define TTY_TC_REVERSE "\x05\xa2\x06"
 #define TTY_TC_RESET "\x05\xa1\x06"
@@ -53,16 +54,16 @@ void tty_putstr(string_t string, textcolor_t forecolour, textcolor_t backcolour)
         if(controlmode) {
             switch(character) {
                 case '\xa1': // reset color
-                    forecolour = forecolouro;
-                    backcolour = backcolouro;
+                    forecolour =(textcolor_t)  forecolouro;
+                    backcolour =(textcolor_t)  backcolouro;
                     break;
                 case '\xa0': // COLOR OK
-                    forecolour = 0x0a;
+                    forecolour =(textcolor_t)  0x0a;
                     break;
                 case '\xa2': // highlight (reverse)
                     ofc = forecolour;
                     forecolour = backcolour;
-                    backcolour = ofc;
+                    backcolour =(textcolor_t) ofc;
                     break;
                 case '\x06': // ACK, will be used as proto-ANSI stop
                     controlmode = false;

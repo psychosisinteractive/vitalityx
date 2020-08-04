@@ -7,6 +7,8 @@
 #include "libc/sound.h"
 #include "libc/keyboard.h"
 #include "libc/system.h"
+#include "drivers/ata.h"
+#include "drivers/ide.h"
 
 int kernel()
 {
@@ -17,8 +19,14 @@ int kernel()
     tty_cleartty();
     tty_update_cursor(0,0);
     play_sound(1000);
-    tty_putstr("VITALITY\x05\xa2\x06X\r\n",Black,Red);
+    tty_putstr("VITALITY\x05\xa2\x06X\r\n",Black,White);
     nosound();
+    if(are_interrupts_enabled()) {
+        tty_putstr("INTERRUPTS ARE ENABLED\r\n",LightGray,Black);
+    }
+    tty_putstr("Setting up ATA",LightGray,Black);
+    ide_initialize(0x1F0, 0x3F6, 0x170, 0x376, 0x000);
+    
 
     bool operating = true;
     while(operating) {
