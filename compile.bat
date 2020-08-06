@@ -5,5 +5,4 @@ i686-elf-ld -o ofiles/kernel.bin -Ttext 0x1000 ofiles/k.o ofiles/kernel.o --ofor
 i686-elf-ld -o ofiles/kernel.elf -Ttext 0x1000 ofiles/k.o ofiles/kernel.o 
 nasm -f bin boot/kickstart.asm -o ofiles/kickstart.bin
 wsl cat ofiles/kickstart.bin ofiles/kernel.bin > vitality.bin
-qemu-system-i386 -serial stdio -s -fda vitality.bin -d int -no-shutdown -no-reboot
-exit
+qemu-system-i386 -boot menu=on -drive format=raw,file=sys.img -serial stdio -s -fda vitality.bin -d int -no-shutdown -no-reboot

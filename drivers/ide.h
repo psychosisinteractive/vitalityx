@@ -3,6 +3,7 @@
 #include "../libc/types.h"
 #include "../libc/asm.h"
 #include "../libc/tty.h"
+#include "../libc/string.h"
 #include "../libc/system.h"
 
 #define ATA_SR_BSY     0x80    // Busy
@@ -192,6 +193,11 @@ unsigned int BAR4) {
    for (i = 0; i < 4; i++)
       if (ide_devices[i].Reserved == 1) {
           tty_putstr("Found Drive\r\n",(textcolor_t)0xf,(textcolor_t)0x0);
+          tty_putstr(ide_devices[1].Model,(textcolor_t)0xf,(textcolor_t)0x0);
+          char* sz;
+          itoa(ide_devices[1].Drive,sz,10);
+          tty_putstr(sz,(textcolor_t)0xf,(textcolor_t)0x0);
+          tty_putstr("\r\n",(textcolor_t)0xf,(textcolor_t)0x0);
       }
 }
 
@@ -307,7 +313,24 @@ unsigned char ide_print_error(unsigned int drive, unsigned char err) {
  
    return err;
 }
-
+/* ATA/ATAPI Read/Write Modes:
+* ++++++++++++++++++++++++++++++++
+*  Addressing Modes:
+*  ================
+*   - LBA28 Mode.     (+)
+*   - LBA48 Mode.     (+)
+*   - CHS.            (+)
+*  Reading Modes:
+*  ================
+*   - PIO Modes (0 : 6)       (+) // Slower than DMA, but not a problem.
+*   - Single Word DMA Modes (0, 1, 2).
+*   - Double Word DMA Modes (0, 1, 2).
+*   - Ultra DMA Modes (0 : 6).
+*  Polling Modes:
+*  ================
+*   - IRQs
+*   - Polling Status   (+) // Suitable for Singletasking   
+*/
 unsigned char ide_ata_access(unsigned char direction, unsigned char drive, unsigned int lba, 
                              unsigned char numsects, unsigned short selector, unsigned int edi) {
     unsigned char lba_mode /* 0: CHS, 1:LBA28, 2: LBA48 */, dma /* 0: No DMA, 1: DMA */, cmd;

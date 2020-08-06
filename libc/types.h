@@ -18,6 +18,10 @@ typedef unsigned char  uint8_t;
 // 8 BIT SIGNED INTERGER
 typedef          char  sint8_t;
 
+// MAXIMUM INTERGER  9223372036854775807
+const int intmax_t = 9223372036854775807;
+// MINIMUM INTERGER  -9223372036854775807
+const int intmin_t = -9223372036854775807;
 // boolean
 typedef enum {false, true} bool;
 

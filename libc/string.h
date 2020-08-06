@@ -1,5 +1,6 @@
 #ifndef STRING_H
 #define STRING_H
+#include "system.h"
 
 typedef const unsigned char* string_t;
 
@@ -25,6 +26,28 @@ char* itoa(int value, char* result, int base) {
         *ptr1++ = tmp_char;
     }
     return result;
+}
+
+void strcon(char p[], char q[]) {
+   int c, d;
+   c = 0;
+   while (p[c] != '\0') {
+      c++;      
+   }
+   d = 0;
+   while (q[d] != '\0') {
+      p[c] = q[d];
+      d++;
+      c++;    
+   }
+   p[c] = '\0';
+}
+
+void strlen(string_t str) {
+    int i = 0;
+    for(i=0; str[i]!='\0'; ++i);
+        return i;
+    return intmax_t;
 }
 
 #endif

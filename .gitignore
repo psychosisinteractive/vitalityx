@@ -4,3 +4,5 @@
 *.o
 *.bin
 *.elf
+*.img
+/.vscode/c_cpp_properties.json
