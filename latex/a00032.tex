@@ -1,0 +1,82 @@
+\hypertarget{a00032}{}\section{libc/system.h File Reference}
+\label{a00032}\index{libc/system.\+h@{libc/system.\+h}}
+{\ttfamily \#include \char`\"{}asm.\+h\char`\"{}}\newline
+Include dependency graph for system.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{a00032_a4971467ce19d8fc5727191e1b7fe16b4_a4971467ce19d8fc5727191e1b7fe16b4}{setup\+\_\+isr} ()
+\item 
+void \hyperlink{a00032_a8deca218d19174936135d90f3c817c04_a8deca218d19174936135d90f3c817c04}{setup\+\_\+descriptors} ()
+\begin{DoxyCompactList}\small\item\em Setup all descriptors. \end{DoxyCompactList}\item 
+void \hyperlink{a00032_a118c1a380204d08f9bf9ab79d650b173_a118c1a380204d08f9bf9ab79d650b173}{memset} (void $\ast$destination, int c, unsigned int target\+\_\+size)
+\item 
+void \hyperlink{a00032_afcc76b3d055f3137e37a9c1ce82d0b95_afcc76b3d055f3137e37a9c1ce82d0b95}{sleep} (int duration)
+\begin{DoxyCompactList}\small\item\em Halt the system for a duration. \end{DoxyCompactList}\item 
+void \hyperlink{a00032_a931786b5b11e1d64f4e03da6ce0c2b49_a931786b5b11e1d64f4e03da6ce0c2b49}{insl} (unsigned reg, unsigned int $\ast$buffer, int quads)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{a00032_a931786b5b11e1d64f4e03da6ce0c2b49_a931786b5b11e1d64f4e03da6ce0c2b49}\label{a00032_a931786b5b11e1d64f4e03da6ce0c2b49_a931786b5b11e1d64f4e03da6ce0c2b49}} 
+\index{system.\+h@{system.\+h}!insl@{insl}}
+\index{insl@{insl}!system.\+h@{system.\+h}}
+\subsubsection{\texorpdfstring{insl()}{insl()}}
+{\footnotesize\ttfamily void insl (\begin{DoxyParamCaption}\item[{unsigned}]{reg,  }\item[{unsigned int $\ast$}]{buffer,  }\item[{int}]{quads }\end{DoxyParamCaption})}
+
+
+
+Definition at line 33 of file system.\+h.
+
+\mbox{\Hypertarget{a00032_a118c1a380204d08f9bf9ab79d650b173_a118c1a380204d08f9bf9ab79d650b173}\label{a00032_a118c1a380204d08f9bf9ab79d650b173_a118c1a380204d08f9bf9ab79d650b173}} 
+\index{system.\+h@{system.\+h}!memset@{memset}}
+\index{memset@{memset}!system.\+h@{system.\+h}}
+\subsubsection{\texorpdfstring{memset()}{memset()}}
+{\footnotesize\ttfamily void memset (\begin{DoxyParamCaption}\item[{void $\ast$}]{destination,  }\item[{int}]{c,  }\item[{unsigned int}]{target\+\_\+size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 13 of file system.\+h.
+
+\mbox{\Hypertarget{a00032_a8deca218d19174936135d90f3c817c04_a8deca218d19174936135d90f3c817c04}\label{a00032_a8deca218d19174936135d90f3c817c04_a8deca218d19174936135d90f3c817c04}} 
+\index{system.\+h@{system.\+h}!setup\+\_\+descriptors@{setup\+\_\+descriptors}}
+\index{setup\+\_\+descriptors@{setup\+\_\+descriptors}!system.\+h@{system.\+h}}
+\subsubsection{\texorpdfstring{setup\+\_\+descriptors()}{setup\_descriptors()}}
+{\footnotesize\ttfamily void setup\+\_\+descriptors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Setup all descriptors. 
+
+
+
+Definition at line 9 of file system.\+h.
+
+\mbox{\Hypertarget{a00032_a4971467ce19d8fc5727191e1b7fe16b4_a4971467ce19d8fc5727191e1b7fe16b4}\label{a00032_a4971467ce19d8fc5727191e1b7fe16b4_a4971467ce19d8fc5727191e1b7fe16b4}} 
+\index{system.\+h@{system.\+h}!setup\+\_\+isr@{setup\+\_\+isr}}
+\index{setup\+\_\+isr@{setup\+\_\+isr}!system.\+h@{system.\+h}}
+\subsubsection{\texorpdfstring{setup\+\_\+isr()}{setup\_isr()}}
+{\footnotesize\ttfamily void setup\+\_\+isr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00032_afcc76b3d055f3137e37a9c1ce82d0b95_afcc76b3d055f3137e37a9c1ce82d0b95}\label{a00032_afcc76b3d055f3137e37a9c1ce82d0b95_afcc76b3d055f3137e37a9c1ce82d0b95}} 
+\index{system.\+h@{system.\+h}!sleep@{sleep}}
+\index{sleep@{sleep}!system.\+h@{system.\+h}}
+\subsubsection{\texorpdfstring{sleep()}{sleep()}}
+{\footnotesize\ttfamily void sleep (\begin{DoxyParamCaption}\item[{int}]{duration }\end{DoxyParamCaption})}
+
+
+
+Halt the system for a duration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em duration} & The time to wait. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 27 of file system.\+h.
+

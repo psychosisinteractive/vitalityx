@@ -1,0 +1,135 @@
+\hypertarget{a00044}{}\section{libc/video.h File Reference}
+\label{a00044}\index{libc/video.\+h@{libc/video.\+h}}
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}asm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}system.\+h\char`\"{}}\newline
+Include dependency graph for video.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9e}{textcolor\+\_\+t} \{ \newline
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eac1e9bce8242f443c54c7405223d616cd}{Black}, 
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eaf5e09dd1da4088464f264b7a3118bff8}{Blue}, 
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ead0784a3f969fe736e8b271a5a161d106}{Green}, 
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eab0d4738f9c7f12049e52aa4e868bdc8b}{Cyan}, 
+\newline
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ead3163c1fcda01965b692ec2c3122b743}{Red}, 
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eab5059a620e2c7dc57556b1e275c2f9bc}{Magenta}, 
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ea99c15c8b7e6b048d571778c871622d38}{Brown}, 
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eaab5a67106ffa41f1195b52a8109c745a}{Light\+Gray}, 
+\newline
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ea4de15b8ee603dbccac7062665c37853f}{Dark\+Gray}, 
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ea1a4360030daf53036ce1cd1668dc6243}{Light\+Blue}, 
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ea6f3bae902f4a1a3b69152ad13382ab18}{Light\+Green}, 
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ea60295ab538eb50ae469a14539c220ab6}{Light\+Cyan}, 
+\newline
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eaf1f766b65249fac0dbddf379c1dcb7f7}{Light\+Red}, 
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eacc5278cccbe10813f713a337f4652568}{Light\+Magenta}, 
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eabf28513245738599d13e3ce36bd16c82}{Yellow}, 
+\hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eab548046646b36c12aa6ba841de500094}{White}
+ \}\begin{DoxyCompactList}\small\item\em Text\+Colors enum All colors that Mode 3 can support. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{a00044_aff86a3b09d2ef03cc5bf1af73bd19e0f_aff86a3b09d2ef03cc5bf1af73bd19e0f}{putpixel} (unsigned char $\ast$screen, int x, int y, char color)
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9e}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9e}} 
+\index{video.\+h@{video.\+h}!textcolor\+\_\+t@{textcolor\+\_\+t}}
+\index{textcolor\+\_\+t@{textcolor\+\_\+t}!video.\+h@{video.\+h}}
+\subsubsection{\texorpdfstring{textcolor\+\_\+t}{textcolor\_t}}
+{\footnotesize\ttfamily enum \hyperlink{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9e}{textcolor\+\_\+t}}
+
+
+
+Text\+Colors enum All colors that Mode 3 can support. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Black@{Black}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!Black@{Black}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eac1e9bce8242f443c54c7405223d616cd}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eac1e9bce8242f443c54c7405223d616cd}} 
+Black&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Blue@{Blue}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!Blue@{Blue}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eaf5e09dd1da4088464f264b7a3118bff8}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eaf5e09dd1da4088464f264b7a3118bff8}} 
+Blue&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Green@{Green}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!Green@{Green}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ead0784a3f969fe736e8b271a5a161d106}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ead0784a3f969fe736e8b271a5a161d106}} 
+Green&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Cyan@{Cyan}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!Cyan@{Cyan}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eab0d4738f9c7f12049e52aa4e868bdc8b}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eab0d4738f9c7f12049e52aa4e868bdc8b}} 
+Cyan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Red@{Red}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!Red@{Red}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ead3163c1fcda01965b692ec2c3122b743}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ead3163c1fcda01965b692ec2c3122b743}} 
+Red&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Magenta@{Magenta}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!Magenta@{Magenta}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eab5059a620e2c7dc57556b1e275c2f9bc}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eab5059a620e2c7dc57556b1e275c2f9bc}} 
+Magenta&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Brown@{Brown}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!Brown@{Brown}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ea99c15c8b7e6b048d571778c871622d38}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ea99c15c8b7e6b048d571778c871622d38}} 
+Brown&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Light\+Gray@{Light\+Gray}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!Light\+Gray@{Light\+Gray}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eaab5a67106ffa41f1195b52a8109c745a}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eaab5a67106ffa41f1195b52a8109c745a}} 
+Light\+Gray&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Dark\+Gray@{Dark\+Gray}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!Dark\+Gray@{Dark\+Gray}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ea4de15b8ee603dbccac7062665c37853f}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ea4de15b8ee603dbccac7062665c37853f}} 
+Dark\+Gray&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Light\+Blue@{Light\+Blue}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!Light\+Blue@{Light\+Blue}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ea1a4360030daf53036ce1cd1668dc6243}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ea1a4360030daf53036ce1cd1668dc6243}} 
+Light\+Blue&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Light\+Green@{Light\+Green}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!Light\+Green@{Light\+Green}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ea6f3bae902f4a1a3b69152ad13382ab18}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ea6f3bae902f4a1a3b69152ad13382ab18}} 
+Light\+Green&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Light\+Cyan@{Light\+Cyan}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!Light\+Cyan@{Light\+Cyan}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ea60295ab538eb50ae469a14539c220ab6}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9ea60295ab538eb50ae469a14539c220ab6}} 
+Light\+Cyan&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Light\+Red@{Light\+Red}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!Light\+Red@{Light\+Red}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eaf1f766b65249fac0dbddf379c1dcb7f7}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eaf1f766b65249fac0dbddf379c1dcb7f7}} 
+Light\+Red&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Light\+Magenta@{Light\+Magenta}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!Light\+Magenta@{Light\+Magenta}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eacc5278cccbe10813f713a337f4652568}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eacc5278cccbe10813f713a337f4652568}} 
+Light\+Magenta&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Yellow@{Yellow}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!Yellow@{Yellow}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eabf28513245738599d13e3ce36bd16c82}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eabf28513245738599d13e3ce36bd16c82}} 
+Yellow&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{White@{White}!video.\+h@{video.\+h}}\index{video.\+h@{video.\+h}!White@{White}}}\mbox{\Hypertarget{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eab548046646b36c12aa6ba841de500094}\label{a00044_a69d534d923d28a9c06b33b5a2a83bf9e_a69d534d923d28a9c06b33b5a2a83bf9eab548046646b36c12aa6ba841de500094}} 
+White&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 16 of file video.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{a00044_aff86a3b09d2ef03cc5bf1af73bd19e0f_aff86a3b09d2ef03cc5bf1af73bd19e0f}\label{a00044_aff86a3b09d2ef03cc5bf1af73bd19e0f_aff86a3b09d2ef03cc5bf1af73bd19e0f}} 
+\index{video.\+h@{video.\+h}!putpixel@{putpixel}}
+\index{putpixel@{putpixel}!video.\+h@{video.\+h}}
+\subsubsection{\texorpdfstring{putpixel()}{putpixel()}}
+{\footnotesize\ttfamily static void putpixel (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{screen,  }\item[{int}]{x,  }\item[{int}]{y,  }\item[{char}]{color }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 8 of file video.\+h.
+
