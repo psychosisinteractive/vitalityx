@@ -137,6 +137,7 @@ struct fat_drvinfo fat_getinfo(struct fat_bpb bpb) {
     info.data_sectors = bpb.sectorslogical - (bpb.reservedsectors + (bpb.fats * bpb.sectorsperfat));
     info.total_clusters = info.data_sectors / bpb.sectorspercluster;
     info.bpb = &bpb;
+    *bpb.OEM = "VITALITY";
     info.ebr = fat_getebr16(bpb);
     return info;
 }
