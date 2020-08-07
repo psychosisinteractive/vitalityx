@@ -5,7 +5,7 @@
 #include "system.h"
 
 /* putpixel (EGA,VGA) */
-static void putpixel(unsigned char* screen, int x,int y, char color) {
+static void putpixel(unsigned char* screen, int x, int y, char color) {
     unsigned where = x*3 + y*32001;
     screen[where] = color;
 }

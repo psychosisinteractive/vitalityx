@@ -78,6 +78,8 @@
 #define      ATA_READ      0x00
 #define      ATA_WRITE     0x01
 
+char package[1];
+
 struct IDEChannelRegisters {
    unsigned short base;  // I/O Base.
    unsigned short ctrl;  // Control Base
@@ -296,7 +298,7 @@ unsigned char ide_print_error(unsigned int drive, unsigned char err) {
    if (err == 0)
       return err;
  
-   tty_putstr("IDE: ",(textcolor_t)0xf,(textcolor_t)0x0);
+   tty_putstr("IDE ",(textcolor_t)0xf,(textcolor_t)0x0);
    if (err == 1) {tty_putstr("- Device Fault\r\n     ",(textcolor_t)0xf,(textcolor_t)0x0); err = 19;}
    else if (err == 2) {
       unsigned char st = ide_read(ide_devices[drive].Channel, ATA_REG_ERROR);
@@ -544,7 +546,6 @@ unsigned char ide_atapi_read(unsigned char drive, unsigned int lba, unsigned cha
 
 void ide_read_sectors(unsigned char drive, unsigned char numsects, unsigned int lba,
                       unsigned short es, unsigned int edi) {
-    char package[1];
     // 1: Check if the drive presents:
     // ==================================
     if (drive > 3 || ide_devices[drive].Reserved == 0) package[0] = 0x1;      // Drive Not Found!
@@ -570,7 +571,6 @@ void ide_read_sectors(unsigned char drive, unsigned char numsects, unsigned int 
 // package[0] is an entry of an array. It contains the Error Code.
 void ide_write_sectors(unsigned char drive, unsigned char numsects, unsigned int lba,
                        unsigned short es, unsigned int edi) {
-    char package[1];
     // 1: Check if the drive presents:
     // ==================================
     if (drive > 3 || ide_devices[drive].Reserved == 0)
@@ -597,7 +597,6 @@ void ide_atapi_eject(unsigned char drive) {
     unsigned int   words      = 2048 / 2;               // Sector Size in Words.
     unsigned char  err = 0;
     ide_irq_invoked = 0;
-    char package[1];
 
     // 1: Check if the drive presents:
     // ==================================

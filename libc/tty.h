@@ -44,6 +44,8 @@ void tty_putstr(string_t string, textcolor_t forecolour, textcolor_t backcolour)
     int ox = ttylastx;
     unsigned char forecolouro = forecolour;
     unsigned char backcolouro = backcolour;
+    unsigned char xpos;
+    unsigned char ypos;
     unsigned char ofc = 0;
     bool controlmode = false;
     while(*string != 0) {        
@@ -68,13 +70,19 @@ void tty_putstr(string_t string, textcolor_t forecolour, textcolor_t backcolour)
                 case '\x06': // ACK, will be used as proto-ANSI stop
                     controlmode = false;
                     break;
+                case '\xb0': // Move
+                    xpos = *string++;
+                    ypos = *string++;
+                    ttylastx = xpos;
+                    ttylasty = ypos;
+                    break;
             }
         } else {
             switch(character) {
-                case '\n':
+                case '\n': // newline
                     ttylasty++;
                     break;
-                case '\r':
+                case '\r': // carrige return
                     ttylastx = 0;
                     break;
                 case '\x05': // ENQ, will be used as proto-ANSI initiator
