@@ -21,17 +21,12 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2  
-      
-    - name: List
-      run: ls -la
 
-    - name: Doxygen Create Documentation
-      uses: mattnotmitt/doxygen-action@v1.1.0
-      with:
-        # Path to Doxyfile
-        doxyfile-path: ./Doxyfile # default is ./Doxyfile
-        # Working directory
-        working-directory: ./docs/ # default is .
+    - name: Prepare Doxygen
+      run: sudo apt-get install doxygen
+
+    - name: Prepare Docs
+      run: doxygen
 
     - name: Deploy Documentation
       uses: peaceiris/actions-gh-pages@v3
