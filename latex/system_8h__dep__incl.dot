@@ -1,0 +1,31 @@
+digraph "libc/system.h"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node3 [label="libc/system.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="libc/string.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$string_8h.html"];
+  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="libc/tty.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$tty_8h.html"];
+  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="drivers/ide.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$ide_8h.html"];
+  Node6 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="kernel.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$kernel_8c.html"];
+  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="libc/interrupt.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$interrupt_8h.html"];
+  Node8 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="libc/keyboard.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$keyboard_8h.html"];
+  Node9 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="libc/video.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$video_8h.html"];
+  Node10 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+}

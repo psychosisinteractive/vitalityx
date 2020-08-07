@@ -1,224 +1,238 @@
-\hypertarget{floppy_8h}{}\doxysection{libc/floppy.h File Reference}
-\label{floppy_8h}\index{libc/floppy.h@{libc/floppy.h}}
+\hypertarget{floppy_8h}{}\section{libc/floppy.h File Reference}
+\label{floppy_8h}\index{libc/floppy.\+h@{libc/floppy.\+h}}
 {\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
 Include dependency graph for floppy.\+h\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=147pt]{floppy_8h__incl}
-\end{center}
-\end{figure}
-\doxysubsection*{Macros}
+% FIG 0
+\subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \mbox{\hyperlink{floppy_8h_a04d40064bde801f12fb73134cf328150}{F\+L\+O\+P\+P\+Y\+\_\+144\+\_\+\+S\+E\+C\+T\+O\+R\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+CK}}~512
+\#define \hyperlink{floppy_8h_a04d40064bde801f12fb73134cf328150_a04d40064bde801f12fb73134cf328150}{F\+L\+O\+P\+P\+Y\+\_\+144\+\_\+\+S\+E\+C\+T\+O\+R\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+CK}~512
 \end{DoxyCompactItemize}
-\doxysubsection*{Enumerations}
+\subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \mbox{\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144}{Floppy\+Registers}} \{ \newline
-\mbox{\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a40c83bb204c81df2f0175bf12033734d}{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+A}} = 0x3\+F0, 
-\mbox{\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a67594810c15eef9eb996987d025270b5}{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+B}} = 0x3\+F1, 
-\mbox{\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a9767b7f5f447d5346411d03077fea82a}{D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER}} = 0x3\+F2, 
-\mbox{\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a5326f39a6b9baad5841b4fa5c8bd2670}{T\+A\+P\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+G\+I\+S\+T\+ER}} = 0x3\+F3, 
+enum \hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144}{Floppy\+Registers} \{ \newline
+\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a40c83bb204c81df2f0175bf12033734d}{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+A} = 0x3\+F0, 
+\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a67594810c15eef9eb996987d025270b5}{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+B} = 0x3\+F1, 
+\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a9767b7f5f447d5346411d03077fea82a}{D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER} = 0x3\+F2, 
+\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a5326f39a6b9baad5841b4fa5c8bd2670}{T\+A\+P\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+G\+I\+S\+T\+ER} = 0x3\+F3, 
 \newline
-\mbox{\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144af852e6a0637776bcce17a714073abb83}{M\+A\+I\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+ER}} = 0x3\+F4, 
-\mbox{\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a0c74cc445d28678eca05e6326bc10079}{D\+A\+T\+A\+R\+A\+T\+E\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER}} = 0x3\+F4, 
-\mbox{\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a92a76f68a037ce115a979519e4f5d7f7}{D\+A\+T\+A\+\_\+\+F\+I\+FO}} = 0x3\+F5, 
-\mbox{\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144af0590c51d0ee8e377caca59900bc9643}{D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER}} = 0x3\+F7, 
+\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144af852e6a0637776bcce17a714073abb83}{M\+A\+I\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+ER} = 0x3\+F4, 
+\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a0c74cc445d28678eca05e6326bc10079}{D\+A\+T\+A\+R\+A\+T\+E\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER} = 0x3\+F4, 
+\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a92a76f68a037ce115a979519e4f5d7f7}{D\+A\+T\+A\+\_\+\+F\+I\+FO} = 0x3\+F5, 
+\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144af0590c51d0ee8e377caca59900bc9643}{D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER} = 0x3\+F7, 
 \newline
-\mbox{\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a109e7c2d2104dc338c02288846bd0d73}{C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+E\+G\+I\+S\+T\+ER}} = 0x3\+F7
+\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a109e7c2d2104dc338c02288846bd0d73}{C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+E\+G\+I\+S\+T\+ER} = 0x3\+F7
  \}
 \item 
-enum \mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148}{Floppy\+Commands}} \{ \newline
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148af1446436b6d22bb0491cf73bba04052b}{R\+E\+A\+D\+\_\+\+T\+R\+A\+CK}} = 2, 
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a9d287912c258310f1ecf4cda777e9629}{S\+P\+E\+C\+I\+FY}} = 3, 
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a05a2817805f188a7dc04147e64e4823e}{S\+E\+N\+S\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+A\+T\+US}} = 4, 
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148ac6c55a4e76bf555712854329895490de}{W\+R\+I\+T\+E\+\_\+\+D\+A\+TA}} = 5, 
+enum \hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148}{Floppy\+Commands} \{ \newline
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148af1446436b6d22bb0491cf73bba04052b}{R\+E\+A\+D\+\_\+\+T\+R\+A\+CK} = 2, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a9d287912c258310f1ecf4cda777e9629}{S\+P\+E\+C\+I\+FY} = 3, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a05a2817805f188a7dc04147e64e4823e}{S\+E\+N\+S\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+A\+T\+US} = 4, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ac6c55a4e76bf555712854329895490de}{W\+R\+I\+T\+E\+\_\+\+D\+A\+TA} = 5, 
 \newline
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a6c9aea235a9b44681dfcc088658ccdd6}{R\+E\+A\+D\+\_\+\+D\+A\+TA}} = 6, 
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a3b7e7e1f8fad7122fd3cbc4fde8fc5db}{R\+E\+C\+A\+L\+I\+B\+R\+A\+TE}} = 7, 
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a08f4155cad2e5f96be49ce68770b2e77}{S\+E\+N\+S\+E\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}} = 8, 
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148ac6f0dd87b678d6e0b5cb0b172c217477}{W\+R\+I\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA}} = 9, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a6c9aea235a9b44681dfcc088658ccdd6}{R\+E\+A\+D\+\_\+\+D\+A\+TA} = 6, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a3b7e7e1f8fad7122fd3cbc4fde8fc5db}{R\+E\+C\+A\+L\+I\+B\+R\+A\+TE} = 7, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a08f4155cad2e5f96be49ce68770b2e77}{S\+E\+N\+S\+E\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT} = 8, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ac6f0dd87b678d6e0b5cb0b172c217477}{W\+R\+I\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA} = 9, 
 \newline
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a08d1641fdf7c1a20c4f1563f57d958e8}{R\+E\+A\+D\+\_\+\+ID}} = 10, 
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a474d4ccd11ea053ce51c83017b0fec9e}{R\+E\+A\+D\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA}} = 12, 
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a04833e5e5e7a164181ecb2ab5260ca77}{F\+O\+R\+M\+A\+T\+\_\+\+T\+R\+A\+CK}} = 13, 
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148af7d16413dc0530b68b826711b2c5214b}{D\+U\+M\+P\+R\+EG}} = 14, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a08d1641fdf7c1a20c4f1563f57d958e8}{R\+E\+A\+D\+\_\+\+ID} = 10, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a474d4ccd11ea053ce51c83017b0fec9e}{R\+E\+A\+D\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA} = 12, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a04833e5e5e7a164181ecb2ab5260ca77}{F\+O\+R\+M\+A\+T\+\_\+\+T\+R\+A\+CK} = 13, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148af7d16413dc0530b68b826711b2c5214b}{D\+U\+M\+P\+R\+EG} = 14, 
 \newline
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148ae11978ab3861bc9e4d9fece6ba277062}{S\+E\+EK}} = 15, 
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a52f49aba124a600ad9581caabe6a099a}{V\+E\+R\+S\+I\+ON}} = 16, 
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148ae5e9c00995b16a0f18228582167f0383}{S\+C\+A\+N\+\_\+\+E\+Q\+U\+AL}} = 17, 
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a32100c0c9ceab58096369a7aa65d9d38}{P\+E\+R\+P\+E\+N\+D\+I\+C\+U\+L\+A\+R\+\_\+\+M\+O\+DE}} = 18, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ae11978ab3861bc9e4d9fece6ba277062}{S\+E\+EK} = 15, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a52f49aba124a600ad9581caabe6a099a}{V\+E\+R\+S\+I\+ON} = 16, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ae5e9c00995b16a0f18228582167f0383}{S\+C\+A\+N\+\_\+\+E\+Q\+U\+AL} = 17, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a32100c0c9ceab58096369a7aa65d9d38}{P\+E\+R\+P\+E\+N\+D\+I\+C\+U\+L\+A\+R\+\_\+\+M\+O\+DE} = 18, 
 \newline
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a5183723f609e1521f38450e9792af61d}{C\+O\+N\+F\+I\+G\+U\+RE}} = 19, 
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a438b68412f24003b09e0993b62dc7b48}{L\+O\+CK}} = 20, 
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a570b000ad5bd233482644aaaac095680}{V\+E\+R\+I\+FY}} = 22, 
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a7eefaec5fabe1db94fd12a84af66b6cd}{S\+C\+A\+N\+\_\+\+L\+O\+W\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL}} = 25, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a5183723f609e1521f38450e9792af61d}{C\+O\+N\+F\+I\+G\+U\+RE} = 19, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a438b68412f24003b09e0993b62dc7b48}{L\+O\+CK} = 20, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a570b000ad5bd233482644aaaac095680}{V\+E\+R\+I\+FY} = 22, 
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a7eefaec5fabe1db94fd12a84af66b6cd}{S\+C\+A\+N\+\_\+\+L\+O\+W\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL} = 25, 
 \newline
-\mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a1ee024a89ac2dbd7845f63306f175546}{S\+C\+A\+N\+\_\+\+H\+I\+G\+H\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL}} = 29
+\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a1ee024a89ac2dbd7845f63306f175546}{S\+C\+A\+N\+\_\+\+H\+I\+G\+H\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL} = 29
  \}
 \end{DoxyCompactItemize}
-\doxysubsection*{Functions}
+\subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{floppy_8h_a782ff57a4ec7786197ec3a12d4f52332}{lba\+\_\+2\+\_\+chs}} (\mbox{\hyperlink{types_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}} lba, \mbox{\hyperlink{types_8h_adf4d876453337156dde61095e1f20223}{uint16\+\_\+t}} $\ast$cyl, \mbox{\hyperlink{types_8h_adf4d876453337156dde61095e1f20223}{uint16\+\_\+t}} $\ast$head, \mbox{\hyperlink{types_8h_adf4d876453337156dde61095e1f20223}{uint16\+\_\+t}} $\ast$sector)
-\end{DoxyCompactItemize}
+void \hyperlink{floppy_8h_a782ff57a4ec7786197ec3a12d4f52332_a782ff57a4ec7786197ec3a12d4f52332}{lba\+\_\+2\+\_\+chs} (\hyperlink{types_8h_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} lba, \hyperlink{types_8h_adf4d876453337156dde61095e1f20223_adf4d876453337156dde61095e1f20223}{uint16\+\_\+t} $\ast$cyl, \hyperlink{types_8h_adf4d876453337156dde61095e1f20223_adf4d876453337156dde61095e1f20223}{uint16\+\_\+t} $\ast$head, \hyperlink{types_8h_adf4d876453337156dde61095e1f20223_adf4d876453337156dde61095e1f20223}{uint16\+\_\+t} $\ast$sector)
+\begin{DoxyCompactList}\small\item\em L\+BA address to C\+HS. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\doxysubsection{Macro Definition Documentation}
-\mbox{\Hypertarget{floppy_8h_a04d40064bde801f12fb73134cf328150}\label{floppy_8h_a04d40064bde801f12fb73134cf328150}} 
-\index{floppy.h@{floppy.h}!FLOPPY\_144\_SECTORS\_PER\_TRACK@{FLOPPY\_144\_SECTORS\_PER\_TRACK}}
-\index{FLOPPY\_144\_SECTORS\_PER\_TRACK@{FLOPPY\_144\_SECTORS\_PER\_TRACK}!floppy.h@{floppy.h}}
-\doxysubsubsection{\texorpdfstring{FLOPPY\_144\_SECTORS\_PER\_TRACK}{FLOPPY\_144\_SECTORS\_PER\_TRACK}}
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{floppy_8h_a04d40064bde801f12fb73134cf328150_a04d40064bde801f12fb73134cf328150}\label{floppy_8h_a04d40064bde801f12fb73134cf328150_a04d40064bde801f12fb73134cf328150}} 
+\index{floppy.\+h@{floppy.\+h}!F\+L\+O\+P\+P\+Y\+\_\+144\+\_\+\+S\+E\+C\+T\+O\+R\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+CK@{F\+L\+O\+P\+P\+Y\+\_\+144\+\_\+\+S\+E\+C\+T\+O\+R\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+CK}}
+\index{F\+L\+O\+P\+P\+Y\+\_\+144\+\_\+\+S\+E\+C\+T\+O\+R\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+CK@{F\+L\+O\+P\+P\+Y\+\_\+144\+\_\+\+S\+E\+C\+T\+O\+R\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+CK}!floppy.\+h@{floppy.\+h}}
+\subsubsection{\texorpdfstring{F\+L\+O\+P\+P\+Y\+\_\+144\+\_\+\+S\+E\+C\+T\+O\+R\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+CK}{FLOPPY\_144\_SECTORS\_PER\_TRACK}}
 {\footnotesize\ttfamily \#define F\+L\+O\+P\+P\+Y\+\_\+144\+\_\+\+S\+E\+C\+T\+O\+R\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+CK~512}
 
 
 
-\doxysubsection{Enumeration Type Documentation}
-\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148}} 
-\index{floppy.h@{floppy.h}!FloppyCommands@{FloppyCommands}}
-\index{FloppyCommands@{FloppyCommands}!floppy.h@{floppy.h}}
-\doxysubsubsection{\texorpdfstring{FloppyCommands}{FloppyCommands}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148}{Floppy\+Commands}}}
+Definition at line 4 of file floppy.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148}} 
+\index{floppy.\+h@{floppy.\+h}!Floppy\+Commands@{Floppy\+Commands}}
+\index{Floppy\+Commands@{Floppy\+Commands}!floppy.\+h@{floppy.\+h}}
+\subsubsection{\texorpdfstring{Floppy\+Commands}{FloppyCommands}}
+{\footnotesize\ttfamily enum \hyperlink{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148}{Floppy\+Commands}}
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{READ\_TRACK@{READ\_TRACK}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!READ\_TRACK@{READ\_TRACK}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148af1446436b6d22bb0491cf73bba04052b}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148af1446436b6d22bb0491cf73bba04052b}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+A\+D\+\_\+\+T\+R\+A\+CK@{R\+E\+A\+D\+\_\+\+T\+R\+A\+CK}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!R\+E\+A\+D\+\_\+\+T\+R\+A\+CK@{R\+E\+A\+D\+\_\+\+T\+R\+A\+CK}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148af1446436b6d22bb0491cf73bba04052b}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148af1446436b6d22bb0491cf73bba04052b}} 
 R\+E\+A\+D\+\_\+\+T\+R\+A\+CK&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{SPECIFY@{SPECIFY}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!SPECIFY@{SPECIFY}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a9d287912c258310f1ecf4cda777e9629}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a9d287912c258310f1ecf4cda777e9629}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+P\+E\+C\+I\+FY@{S\+P\+E\+C\+I\+FY}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!S\+P\+E\+C\+I\+FY@{S\+P\+E\+C\+I\+FY}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a9d287912c258310f1ecf4cda777e9629}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a9d287912c258310f1ecf4cda777e9629}} 
 S\+P\+E\+C\+I\+FY&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{SENSE\_DRIVE\_STATUS@{SENSE\_DRIVE\_STATUS}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!SENSE\_DRIVE\_STATUS@{SENSE\_DRIVE\_STATUS}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a05a2817805f188a7dc04147e64e4823e}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a05a2817805f188a7dc04147e64e4823e}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+E\+N\+S\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+A\+T\+US@{S\+E\+N\+S\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+A\+T\+US}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!S\+E\+N\+S\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+A\+T\+US@{S\+E\+N\+S\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+A\+T\+US}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a05a2817805f188a7dc04147e64e4823e}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a05a2817805f188a7dc04147e64e4823e}} 
 S\+E\+N\+S\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+A\+T\+US&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{WRITE\_DATA@{WRITE\_DATA}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!WRITE\_DATA@{WRITE\_DATA}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148ac6c55a4e76bf555712854329895490de}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148ac6c55a4e76bf555712854329895490de}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+R\+I\+T\+E\+\_\+\+D\+A\+TA@{W\+R\+I\+T\+E\+\_\+\+D\+A\+TA}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!W\+R\+I\+T\+E\+\_\+\+D\+A\+TA@{W\+R\+I\+T\+E\+\_\+\+D\+A\+TA}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ac6c55a4e76bf555712854329895490de}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ac6c55a4e76bf555712854329895490de}} 
 W\+R\+I\+T\+E\+\_\+\+D\+A\+TA&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{READ\_DATA@{READ\_DATA}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!READ\_DATA@{READ\_DATA}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a6c9aea235a9b44681dfcc088658ccdd6}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a6c9aea235a9b44681dfcc088658ccdd6}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+A\+D\+\_\+\+D\+A\+TA@{R\+E\+A\+D\+\_\+\+D\+A\+TA}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!R\+E\+A\+D\+\_\+\+D\+A\+TA@{R\+E\+A\+D\+\_\+\+D\+A\+TA}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a6c9aea235a9b44681dfcc088658ccdd6}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a6c9aea235a9b44681dfcc088658ccdd6}} 
 R\+E\+A\+D\+\_\+\+D\+A\+TA&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{RECALIBRATE@{RECALIBRATE}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!RECALIBRATE@{RECALIBRATE}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a3b7e7e1f8fad7122fd3cbc4fde8fc5db}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a3b7e7e1f8fad7122fd3cbc4fde8fc5db}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+C\+A\+L\+I\+B\+R\+A\+TE@{R\+E\+C\+A\+L\+I\+B\+R\+A\+TE}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!R\+E\+C\+A\+L\+I\+B\+R\+A\+TE@{R\+E\+C\+A\+L\+I\+B\+R\+A\+TE}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a3b7e7e1f8fad7122fd3cbc4fde8fc5db}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a3b7e7e1f8fad7122fd3cbc4fde8fc5db}} 
 R\+E\+C\+A\+L\+I\+B\+R\+A\+TE&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{SENSE\_INTERRUPT@{SENSE\_INTERRUPT}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!SENSE\_INTERRUPT@{SENSE\_INTERRUPT}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a08f4155cad2e5f96be49ce68770b2e77}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a08f4155cad2e5f96be49ce68770b2e77}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+E\+N\+S\+E\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT@{S\+E\+N\+S\+E\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!S\+E\+N\+S\+E\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT@{S\+E\+N\+S\+E\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a08f4155cad2e5f96be49ce68770b2e77}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a08f4155cad2e5f96be49ce68770b2e77}} 
 S\+E\+N\+S\+E\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{WRITE\_DELETED\_DATA@{WRITE\_DELETED\_DATA}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!WRITE\_DELETED\_DATA@{WRITE\_DELETED\_DATA}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148ac6f0dd87b678d6e0b5cb0b172c217477}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148ac6f0dd87b678d6e0b5cb0b172c217477}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+R\+I\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA@{W\+R\+I\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!W\+R\+I\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA@{W\+R\+I\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ac6f0dd87b678d6e0b5cb0b172c217477}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ac6f0dd87b678d6e0b5cb0b172c217477}} 
 W\+R\+I\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{READ\_ID@{READ\_ID}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!READ\_ID@{READ\_ID}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a08d1641fdf7c1a20c4f1563f57d958e8}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a08d1641fdf7c1a20c4f1563f57d958e8}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+A\+D\+\_\+\+ID@{R\+E\+A\+D\+\_\+\+ID}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!R\+E\+A\+D\+\_\+\+ID@{R\+E\+A\+D\+\_\+\+ID}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a08d1641fdf7c1a20c4f1563f57d958e8}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a08d1641fdf7c1a20c4f1563f57d958e8}} 
 R\+E\+A\+D\+\_\+\+ID&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{READ\_DELETED\_DATA@{READ\_DELETED\_DATA}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!READ\_DELETED\_DATA@{READ\_DELETED\_DATA}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a474d4ccd11ea053ce51c83017b0fec9e}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a474d4ccd11ea053ce51c83017b0fec9e}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+A\+D\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA@{R\+E\+A\+D\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!R\+E\+A\+D\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA@{R\+E\+A\+D\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a474d4ccd11ea053ce51c83017b0fec9e}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a474d4ccd11ea053ce51c83017b0fec9e}} 
 R\+E\+A\+D\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{FORMAT\_TRACK@{FORMAT\_TRACK}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!FORMAT\_TRACK@{FORMAT\_TRACK}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a04833e5e5e7a164181ecb2ab5260ca77}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a04833e5e5e7a164181ecb2ab5260ca77}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+O\+R\+M\+A\+T\+\_\+\+T\+R\+A\+CK@{F\+O\+R\+M\+A\+T\+\_\+\+T\+R\+A\+CK}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!F\+O\+R\+M\+A\+T\+\_\+\+T\+R\+A\+CK@{F\+O\+R\+M\+A\+T\+\_\+\+T\+R\+A\+CK}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a04833e5e5e7a164181ecb2ab5260ca77}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a04833e5e5e7a164181ecb2ab5260ca77}} 
 F\+O\+R\+M\+A\+T\+\_\+\+T\+R\+A\+CK&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DUMPREG@{DUMPREG}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!DUMPREG@{DUMPREG}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148af7d16413dc0530b68b826711b2c5214b}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148af7d16413dc0530b68b826711b2c5214b}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+U\+M\+P\+R\+EG@{D\+U\+M\+P\+R\+EG}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!D\+U\+M\+P\+R\+EG@{D\+U\+M\+P\+R\+EG}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148af7d16413dc0530b68b826711b2c5214b}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148af7d16413dc0530b68b826711b2c5214b}} 
 D\+U\+M\+P\+R\+EG&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{SEEK@{SEEK}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!SEEK@{SEEK}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148ae11978ab3861bc9e4d9fece6ba277062}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148ae11978ab3861bc9e4d9fece6ba277062}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+E\+EK@{S\+E\+EK}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!S\+E\+EK@{S\+E\+EK}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ae11978ab3861bc9e4d9fece6ba277062}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ae11978ab3861bc9e4d9fece6ba277062}} 
 S\+E\+EK&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{VERSION@{VERSION}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!VERSION@{VERSION}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a52f49aba124a600ad9581caabe6a099a}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a52f49aba124a600ad9581caabe6a099a}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{V\+E\+R\+S\+I\+ON@{V\+E\+R\+S\+I\+ON}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!V\+E\+R\+S\+I\+ON@{V\+E\+R\+S\+I\+ON}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a52f49aba124a600ad9581caabe6a099a}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a52f49aba124a600ad9581caabe6a099a}} 
 V\+E\+R\+S\+I\+ON&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{SCAN\_EQUAL@{SCAN\_EQUAL}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!SCAN\_EQUAL@{SCAN\_EQUAL}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148ae5e9c00995b16a0f18228582167f0383}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148ae5e9c00995b16a0f18228582167f0383}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+C\+A\+N\+\_\+\+E\+Q\+U\+AL@{S\+C\+A\+N\+\_\+\+E\+Q\+U\+AL}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!S\+C\+A\+N\+\_\+\+E\+Q\+U\+AL@{S\+C\+A\+N\+\_\+\+E\+Q\+U\+AL}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ae5e9c00995b16a0f18228582167f0383}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ae5e9c00995b16a0f18228582167f0383}} 
 S\+C\+A\+N\+\_\+\+E\+Q\+U\+AL&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{PERPENDICULAR\_MODE@{PERPENDICULAR\_MODE}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!PERPENDICULAR\_MODE@{PERPENDICULAR\_MODE}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a32100c0c9ceab58096369a7aa65d9d38}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a32100c0c9ceab58096369a7aa65d9d38}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+E\+R\+P\+E\+N\+D\+I\+C\+U\+L\+A\+R\+\_\+\+M\+O\+DE@{P\+E\+R\+P\+E\+N\+D\+I\+C\+U\+L\+A\+R\+\_\+\+M\+O\+DE}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!P\+E\+R\+P\+E\+N\+D\+I\+C\+U\+L\+A\+R\+\_\+\+M\+O\+DE@{P\+E\+R\+P\+E\+N\+D\+I\+C\+U\+L\+A\+R\+\_\+\+M\+O\+DE}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a32100c0c9ceab58096369a7aa65d9d38}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a32100c0c9ceab58096369a7aa65d9d38}} 
 P\+E\+R\+P\+E\+N\+D\+I\+C\+U\+L\+A\+R\+\_\+\+M\+O\+DE&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{CONFIGURE@{CONFIGURE}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!CONFIGURE@{CONFIGURE}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a5183723f609e1521f38450e9792af61d}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a5183723f609e1521f38450e9792af61d}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+F\+I\+G\+U\+RE@{C\+O\+N\+F\+I\+G\+U\+RE}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!C\+O\+N\+F\+I\+G\+U\+RE@{C\+O\+N\+F\+I\+G\+U\+RE}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a5183723f609e1521f38450e9792af61d}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a5183723f609e1521f38450e9792af61d}} 
 C\+O\+N\+F\+I\+G\+U\+RE&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{LOCK@{LOCK}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!LOCK@{LOCK}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a438b68412f24003b09e0993b62dc7b48}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a438b68412f24003b09e0993b62dc7b48}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+CK@{L\+O\+CK}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!L\+O\+CK@{L\+O\+CK}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a438b68412f24003b09e0993b62dc7b48}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a438b68412f24003b09e0993b62dc7b48}} 
 L\+O\+CK&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{VERIFY@{VERIFY}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!VERIFY@{VERIFY}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a570b000ad5bd233482644aaaac095680}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a570b000ad5bd233482644aaaac095680}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{V\+E\+R\+I\+FY@{V\+E\+R\+I\+FY}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!V\+E\+R\+I\+FY@{V\+E\+R\+I\+FY}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a570b000ad5bd233482644aaaac095680}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a570b000ad5bd233482644aaaac095680}} 
 V\+E\+R\+I\+FY&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{SCAN\_LOW\_OR\_EQUAL@{SCAN\_LOW\_OR\_EQUAL}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!SCAN\_LOW\_OR\_EQUAL@{SCAN\_LOW\_OR\_EQUAL}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a7eefaec5fabe1db94fd12a84af66b6cd}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a7eefaec5fabe1db94fd12a84af66b6cd}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+C\+A\+N\+\_\+\+L\+O\+W\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL@{S\+C\+A\+N\+\_\+\+L\+O\+W\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!S\+C\+A\+N\+\_\+\+L\+O\+W\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL@{S\+C\+A\+N\+\_\+\+L\+O\+W\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a7eefaec5fabe1db94fd12a84af66b6cd}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a7eefaec5fabe1db94fd12a84af66b6cd}} 
 S\+C\+A\+N\+\_\+\+L\+O\+W\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{SCAN\_HIGH\_OR\_EQUAL@{SCAN\_HIGH\_OR\_EQUAL}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!SCAN\_HIGH\_OR\_EQUAL@{SCAN\_HIGH\_OR\_EQUAL}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a1ee024a89ac2dbd7845f63306f175546}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148a1ee024a89ac2dbd7845f63306f175546}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+C\+A\+N\+\_\+\+H\+I\+G\+H\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL@{S\+C\+A\+N\+\_\+\+H\+I\+G\+H\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!S\+C\+A\+N\+\_\+\+H\+I\+G\+H\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL@{S\+C\+A\+N\+\_\+\+H\+I\+G\+H\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL}}}\mbox{\Hypertarget{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a1ee024a89ac2dbd7845f63306f175546}\label{floppy_8h_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a1ee024a89ac2dbd7845f63306f175546}} 
 S\+C\+A\+N\+\_\+\+H\+I\+G\+H\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL&\\
 \hline
 
 \end{DoxyEnumFields}
-\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144}} 
-\index{floppy.h@{floppy.h}!FloppyRegisters@{FloppyRegisters}}
-\index{FloppyRegisters@{FloppyRegisters}!floppy.h@{floppy.h}}
-\doxysubsubsection{\texorpdfstring{FloppyRegisters}{FloppyRegisters}}
-{\footnotesize\ttfamily enum \mbox{\hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144}{Floppy\+Registers}}}
+
+
+Definition at line 28 of file floppy.\+h.
+
+\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144}} 
+\index{floppy.\+h@{floppy.\+h}!Floppy\+Registers@{Floppy\+Registers}}
+\index{Floppy\+Registers@{Floppy\+Registers}!floppy.\+h@{floppy.\+h}}
+\subsubsection{\texorpdfstring{Floppy\+Registers}{FloppyRegisters}}
+{\footnotesize\ttfamily enum \hyperlink{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144}{Floppy\+Registers}}
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{STATUS\_REGISTER\_A@{STATUS\_REGISTER\_A}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!STATUS\_REGISTER\_A@{STATUS\_REGISTER\_A}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a40c83bb204c81df2f0175bf12033734d}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a40c83bb204c81df2f0175bf12033734d}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+A@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+A}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+A@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+A}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a40c83bb204c81df2f0175bf12033734d}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a40c83bb204c81df2f0175bf12033734d}} 
 S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+A&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{STATUS\_REGISTER\_B@{STATUS\_REGISTER\_B}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!STATUS\_REGISTER\_B@{STATUS\_REGISTER\_B}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a67594810c15eef9eb996987d025270b5}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a67594810c15eef9eb996987d025270b5}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+B@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+B}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+B@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+B}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a67594810c15eef9eb996987d025270b5}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a67594810c15eef9eb996987d025270b5}} 
 S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+B&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DIGITAL\_OUTPUT\_REGISTER@{DIGITAL\_OUTPUT\_REGISTER}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!DIGITAL\_OUTPUT\_REGISTER@{DIGITAL\_OUTPUT\_REGISTER}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a9767b7f5f447d5346411d03077fea82a}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a9767b7f5f447d5346411d03077fea82a}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a9767b7f5f447d5346411d03077fea82a}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a9767b7f5f447d5346411d03077fea82a}} 
 D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{TAPE\_DRIVE\_REGISTER@{TAPE\_DRIVE\_REGISTER}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!TAPE\_DRIVE\_REGISTER@{TAPE\_DRIVE\_REGISTER}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a5326f39a6b9baad5841b4fa5c8bd2670}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a5326f39a6b9baad5841b4fa5c8bd2670}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+P\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{T\+A\+P\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+G\+I\+S\+T\+ER}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!T\+A\+P\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{T\+A\+P\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+G\+I\+S\+T\+ER}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a5326f39a6b9baad5841b4fa5c8bd2670}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a5326f39a6b9baad5841b4fa5c8bd2670}} 
 T\+A\+P\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+G\+I\+S\+T\+ER&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{MAIN\_STATUS\_REGISTER@{MAIN\_STATUS\_REGISTER}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!MAIN\_STATUS\_REGISTER@{MAIN\_STATUS\_REGISTER}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144af852e6a0637776bcce17a714073abb83}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144af852e6a0637776bcce17a714073abb83}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+A\+I\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{M\+A\+I\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+ER}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!M\+A\+I\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{M\+A\+I\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+ER}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144af852e6a0637776bcce17a714073abb83}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144af852e6a0637776bcce17a714073abb83}} 
 M\+A\+I\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+ER&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DATARATE\_SELECT\_REGISTER@{DATARATE\_SELECT\_REGISTER}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!DATARATE\_SELECT\_REGISTER@{DATARATE\_SELECT\_REGISTER}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a0c74cc445d28678eca05e6326bc10079}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a0c74cc445d28678eca05e6326bc10079}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+A\+T\+A\+R\+A\+T\+E\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{D\+A\+T\+A\+R\+A\+T\+E\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!D\+A\+T\+A\+R\+A\+T\+E\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{D\+A\+T\+A\+R\+A\+T\+E\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a0c74cc445d28678eca05e6326bc10079}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a0c74cc445d28678eca05e6326bc10079}} 
 D\+A\+T\+A\+R\+A\+T\+E\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DATA\_FIFO@{DATA\_FIFO}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!DATA\_FIFO@{DATA\_FIFO}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a92a76f68a037ce115a979519e4f5d7f7}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a92a76f68a037ce115a979519e4f5d7f7}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+A\+T\+A\+\_\+\+F\+I\+FO@{D\+A\+T\+A\+\_\+\+F\+I\+FO}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!D\+A\+T\+A\+\_\+\+F\+I\+FO@{D\+A\+T\+A\+\_\+\+F\+I\+FO}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a92a76f68a037ce115a979519e4f5d7f7}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a92a76f68a037ce115a979519e4f5d7f7}} 
 D\+A\+T\+A\+\_\+\+F\+I\+FO&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{DIGITAL\_INPUT\_REGISTER@{DIGITAL\_INPUT\_REGISTER}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!DIGITAL\_INPUT\_REGISTER@{DIGITAL\_INPUT\_REGISTER}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144af0590c51d0ee8e377caca59900bc9643}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144af0590c51d0ee8e377caca59900bc9643}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144af0590c51d0ee8e377caca59900bc9643}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144af0590c51d0ee8e377caca59900bc9643}} 
 D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER&\\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{CONFIGURATION\_CONTROL\_REGISTER@{CONFIGURATION\_CONTROL\_REGISTER}!floppy.h@{floppy.h}}\index{floppy.h@{floppy.h}!CONFIGURATION\_CONTROL\_REGISTER@{CONFIGURATION\_CONTROL\_REGISTER}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a109e7c2d2104dc338c02288846bd0d73}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144a109e7c2d2104dc338c02288846bd0d73}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+E\+G\+I\+S\+T\+ER}!floppy.\+h@{floppy.\+h}}\index{floppy.\+h@{floppy.\+h}!C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+E\+G\+I\+S\+T\+ER}}}\mbox{\Hypertarget{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a109e7c2d2104dc338c02288846bd0d73}\label{floppy_8h_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a109e7c2d2104dc338c02288846bd0d73}} 
 C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+E\+G\+I\+S\+T\+ER&\\
 \hline
 
 \end{DoxyEnumFields}
 
 
-\doxysubsection{Function Documentation}
-\mbox{\Hypertarget{floppy_8h_a782ff57a4ec7786197ec3a12d4f52332}\label{floppy_8h_a782ff57a4ec7786197ec3a12d4f52332}} 
-\index{floppy.h@{floppy.h}!lba\_2\_chs@{lba\_2\_chs}}
-\index{lba\_2\_chs@{lba\_2\_chs}!floppy.h@{floppy.h}}
-\doxysubsubsection{\texorpdfstring{lba\_2\_chs()}{lba\_2\_chs()}}
-{\footnotesize\ttfamily void lba\+\_\+2\+\_\+chs (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}}]{lba,  }\item[{\mbox{\hyperlink{types_8h_adf4d876453337156dde61095e1f20223}{uint16\+\_\+t}} $\ast$}]{cyl,  }\item[{\mbox{\hyperlink{types_8h_adf4d876453337156dde61095e1f20223}{uint16\+\_\+t}} $\ast$}]{head,  }\item[{\mbox{\hyperlink{types_8h_adf4d876453337156dde61095e1f20223}{uint16\+\_\+t}} $\ast$}]{sector }\end{DoxyParamCaption})}
+Definition at line 15 of file floppy.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{floppy_8h_a782ff57a4ec7786197ec3a12d4f52332_a782ff57a4ec7786197ec3a12d4f52332}\label{floppy_8h_a782ff57a4ec7786197ec3a12d4f52332_a782ff57a4ec7786197ec3a12d4f52332}} 
+\index{floppy.\+h@{floppy.\+h}!lba\+\_\+2\+\_\+chs@{lba\+\_\+2\+\_\+chs}}
+\index{lba\+\_\+2\+\_\+chs@{lba\+\_\+2\+\_\+chs}!floppy.\+h@{floppy.\+h}}
+\subsubsection{\texorpdfstring{lba\+\_\+2\+\_\+chs()}{lba\_2\_chs()}}
+{\footnotesize\ttfamily void lba\+\_\+2\+\_\+chs (\begin{DoxyParamCaption}\item[{\hyperlink{types_8h_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{lba,  }\item[{\hyperlink{types_8h_adf4d876453337156dde61095e1f20223_adf4d876453337156dde61095e1f20223}{uint16\+\_\+t} $\ast$}]{cyl,  }\item[{\hyperlink{types_8h_adf4d876453337156dde61095e1f20223_adf4d876453337156dde61095e1f20223}{uint16\+\_\+t} $\ast$}]{head,  }\item[{\hyperlink{types_8h_adf4d876453337156dde61095e1f20223_adf4d876453337156dde61095e1f20223}{uint16\+\_\+t} $\ast$}]{sector }\end{DoxyParamCaption})}
+
+
+
+L\+BA address to C\+HS. 
+
+
+
+Definition at line 8 of file floppy.\+h.
 

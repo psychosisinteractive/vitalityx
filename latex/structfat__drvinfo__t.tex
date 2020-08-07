@@ -1,5 +1,10 @@
-\hypertarget{structfat__drvinfo__t}{}\doxysection{fat\+\_\+drvinfo\+\_\+t Struct Reference}
-\label{structfat__drvinfo__t}\index{fat\_drvinfo\_t@{fat\_drvinfo\_t}}
+\hypertarget{structfat__drvinfo__t}{}\section{fat\+\_\+drvinfo\+\_\+t Struct Reference}
+\label{structfat__drvinfo__t}\index{fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}}
+
+
+Info of the F\+AT, supplied by driver.  
+
+
 
 
 {\ttfamily \#include $<$fat.\+h$>$}
@@ -7,104 +12,142 @@
 
 
 Collaboration diagram for fat\+\_\+drvinfo\+\_\+t\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=204pt]{structfat__drvinfo__t__coll__graph}
-\end{center}
-\end{figure}
-\doxysubsection*{Data Fields}
+% FIG 0
+\subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-unsigned int \mbox{\hyperlink{structfat__drvinfo__t_a1117076f96b9abe596cc88d060d54bb5}{fat\+\_\+size}}
+unsigned int \hyperlink{structfat__drvinfo__t_a1117076f96b9abe596cc88d060d54bb5_a1117076f96b9abe596cc88d060d54bb5}{fat\+\_\+size}
 \item 
-unsigned int \mbox{\hyperlink{structfat__drvinfo__t_a47d5e31a3e5c6c314f49705a3961f7ea}{total\+\_\+sectors}}
+unsigned int \hyperlink{structfat__drvinfo__t_a47d5e31a3e5c6c314f49705a3961f7ea_a47d5e31a3e5c6c314f49705a3961f7ea}{total\+\_\+sectors}
 \item 
-unsigned int \mbox{\hyperlink{structfat__drvinfo__t_a5914068d456ec39d658f9a6abfda2e53}{fat\+\_\+size\+\_\+sectors}}
+unsigned int \hyperlink{structfat__drvinfo__t_a5914068d456ec39d658f9a6abfda2e53_a5914068d456ec39d658f9a6abfda2e53}{fat\+\_\+size\+\_\+sectors}
 \item 
-unsigned int \mbox{\hyperlink{structfat__drvinfo__t_a6d1012bf1bf24392f0a6ce9135061769}{root\+\_\+dir\+\_\+sectors}}
+unsigned int \hyperlink{structfat__drvinfo__t_a6d1012bf1bf24392f0a6ce9135061769_a6d1012bf1bf24392f0a6ce9135061769}{root\+\_\+dir\+\_\+sectors}
 \item 
-unsigned int \mbox{\hyperlink{structfat__drvinfo__t_aa699654d6c24b989c4e883d39adf2c30}{first\+\_\+data\+\_\+sector}}
+unsigned int \hyperlink{structfat__drvinfo__t_aa699654d6c24b989c4e883d39adf2c30_aa699654d6c24b989c4e883d39adf2c30}{first\+\_\+data\+\_\+sector}
 \item 
-unsigned int \mbox{\hyperlink{structfat__drvinfo__t_a69cc724ff65e1ebbf8321e29ea7a9da9}{first\+\_\+fat\+\_\+setor}}
+unsigned int \hyperlink{structfat__drvinfo__t_a69cc724ff65e1ebbf8321e29ea7a9da9_a69cc724ff65e1ebbf8321e29ea7a9da9}{first\+\_\+fat\+\_\+setor}
 \item 
-unsigned int \mbox{\hyperlink{structfat__drvinfo__t_a25e043cab40af89e54687fa100b1abf1}{data\+\_\+sectors}}
+unsigned int \hyperlink{structfat__drvinfo__t_a25e043cab40af89e54687fa100b1abf1_a25e043cab40af89e54687fa100b1abf1}{data\+\_\+sectors}
 \item 
-unsigned int \mbox{\hyperlink{structfat__drvinfo__t_af935fed26cf392e9e8149d5feb511e8d}{total\+\_\+clusters}}
+unsigned int \hyperlink{structfat__drvinfo__t_af935fed26cf392e9e8149d5feb511e8d_af935fed26cf392e9e8149d5feb511e8d}{total\+\_\+clusters}
 \item 
-struct \mbox{\hyperlink{structfat__ebr16}{fat\+\_\+ebr16}} $\ast$ \mbox{\hyperlink{structfat__drvinfo__t_a825f02713bdb8c993368eaf7857eff16}{ebr}}
+struct \hyperlink{structfat__ebr16}{fat\+\_\+ebr16} $\ast$ \hyperlink{structfat__drvinfo__t_a825f02713bdb8c993368eaf7857eff16_a825f02713bdb8c993368eaf7857eff16}{ebr}
 \item 
-struct \mbox{\hyperlink{structfat__bpb}{fat\+\_\+bpb}} $\ast$ \mbox{\hyperlink{structfat__drvinfo__t_a5596cc2d01bcd3405718bee044412332}{bpb}}
+struct \hyperlink{structfat__bpb}{fat\+\_\+bpb} $\ast$ \hyperlink{structfat__drvinfo__t_a5596cc2d01bcd3405718bee044412332_a5596cc2d01bcd3405718bee044412332}{bpb}
 \end{DoxyCompactItemize}
 
 
-\doxysubsection{Detailed Description}
-Info of the F\+AT, supplied by driver 
+\subsection{Detailed Description}
+Info of the F\+AT, supplied by driver. 
 
-\doxysubsection{Field Documentation}
-\mbox{\Hypertarget{structfat__drvinfo__t_a5596cc2d01bcd3405718bee044412332}\label{structfat__drvinfo__t_a5596cc2d01bcd3405718bee044412332}} 
-\index{fat\_drvinfo\_t@{fat\_drvinfo\_t}!bpb@{bpb}}
-\index{bpb@{bpb}!fat\_drvinfo\_t@{fat\_drvinfo\_t}}
-\doxysubsubsection{\texorpdfstring{bpb}{bpb}}
-{\footnotesize\ttfamily struct \mbox{\hyperlink{structfat__bpb}{fat\+\_\+bpb}}$\ast$ fat\+\_\+drvinfo\+\_\+t\+::bpb}
+Definition at line 70 of file fat.\+h.
 
-\mbox{\Hypertarget{structfat__drvinfo__t_a25e043cab40af89e54687fa100b1abf1}\label{structfat__drvinfo__t_a25e043cab40af89e54687fa100b1abf1}} 
-\index{fat\_drvinfo\_t@{fat\_drvinfo\_t}!data\_sectors@{data\_sectors}}
-\index{data\_sectors@{data\_sectors}!fat\_drvinfo\_t@{fat\_drvinfo\_t}}
-\doxysubsubsection{\texorpdfstring{data\_sectors}{data\_sectors}}
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{structfat__drvinfo__t_a5596cc2d01bcd3405718bee044412332_a5596cc2d01bcd3405718bee044412332}\label{structfat__drvinfo__t_a5596cc2d01bcd3405718bee044412332_a5596cc2d01bcd3405718bee044412332}} 
+\index{fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}!bpb@{bpb}}
+\index{bpb@{bpb}!fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}}
+\subsubsection{\texorpdfstring{bpb}{bpb}}
+{\footnotesize\ttfamily struct \hyperlink{structfat__bpb}{fat\+\_\+bpb}$\ast$ fat\+\_\+drvinfo\+\_\+t\+::bpb}
+
+
+
+Definition at line 81 of file fat.\+h.
+
+\mbox{\Hypertarget{structfat__drvinfo__t_a25e043cab40af89e54687fa100b1abf1_a25e043cab40af89e54687fa100b1abf1}\label{structfat__drvinfo__t_a25e043cab40af89e54687fa100b1abf1_a25e043cab40af89e54687fa100b1abf1}} 
+\index{fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}!data\+\_\+sectors@{data\+\_\+sectors}}
+\index{data\+\_\+sectors@{data\+\_\+sectors}!fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}}
+\subsubsection{\texorpdfstring{data\+\_\+sectors}{data\_sectors}}
 {\footnotesize\ttfamily unsigned int fat\+\_\+drvinfo\+\_\+t\+::data\+\_\+sectors}
 
-\mbox{\Hypertarget{structfat__drvinfo__t_a825f02713bdb8c993368eaf7857eff16}\label{structfat__drvinfo__t_a825f02713bdb8c993368eaf7857eff16}} 
-\index{fat\_drvinfo\_t@{fat\_drvinfo\_t}!ebr@{ebr}}
-\index{ebr@{ebr}!fat\_drvinfo\_t@{fat\_drvinfo\_t}}
-\doxysubsubsection{\texorpdfstring{ebr}{ebr}}
-{\footnotesize\ttfamily struct \mbox{\hyperlink{structfat__ebr16}{fat\+\_\+ebr16}}$\ast$ fat\+\_\+drvinfo\+\_\+t\+::ebr}
 
-\mbox{\Hypertarget{structfat__drvinfo__t_a1117076f96b9abe596cc88d060d54bb5}\label{structfat__drvinfo__t_a1117076f96b9abe596cc88d060d54bb5}} 
-\index{fat\_drvinfo\_t@{fat\_drvinfo\_t}!fat\_size@{fat\_size}}
-\index{fat\_size@{fat\_size}!fat\_drvinfo\_t@{fat\_drvinfo\_t}}
-\doxysubsubsection{\texorpdfstring{fat\_size}{fat\_size}}
+
+Definition at line 78 of file fat.\+h.
+
+\mbox{\Hypertarget{structfat__drvinfo__t_a825f02713bdb8c993368eaf7857eff16_a825f02713bdb8c993368eaf7857eff16}\label{structfat__drvinfo__t_a825f02713bdb8c993368eaf7857eff16_a825f02713bdb8c993368eaf7857eff16}} 
+\index{fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}!ebr@{ebr}}
+\index{ebr@{ebr}!fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}}
+\subsubsection{\texorpdfstring{ebr}{ebr}}
+{\footnotesize\ttfamily struct \hyperlink{structfat__ebr16}{fat\+\_\+ebr16}$\ast$ fat\+\_\+drvinfo\+\_\+t\+::ebr}
+
+
+
+Definition at line 80 of file fat.\+h.
+
+\mbox{\Hypertarget{structfat__drvinfo__t_a1117076f96b9abe596cc88d060d54bb5_a1117076f96b9abe596cc88d060d54bb5}\label{structfat__drvinfo__t_a1117076f96b9abe596cc88d060d54bb5_a1117076f96b9abe596cc88d060d54bb5}} 
+\index{fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}!fat\+\_\+size@{fat\+\_\+size}}
+\index{fat\+\_\+size@{fat\+\_\+size}!fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}}
+\subsubsection{\texorpdfstring{fat\+\_\+size}{fat\_size}}
 {\footnotesize\ttfamily unsigned int fat\+\_\+drvinfo\+\_\+t\+::fat\+\_\+size}
 
-\mbox{\Hypertarget{structfat__drvinfo__t_a5914068d456ec39d658f9a6abfda2e53}\label{structfat__drvinfo__t_a5914068d456ec39d658f9a6abfda2e53}} 
-\index{fat\_drvinfo\_t@{fat\_drvinfo\_t}!fat\_size\_sectors@{fat\_size\_sectors}}
-\index{fat\_size\_sectors@{fat\_size\_sectors}!fat\_drvinfo\_t@{fat\_drvinfo\_t}}
-\doxysubsubsection{\texorpdfstring{fat\_size\_sectors}{fat\_size\_sectors}}
+
+
+Definition at line 72 of file fat.\+h.
+
+\mbox{\Hypertarget{structfat__drvinfo__t_a5914068d456ec39d658f9a6abfda2e53_a5914068d456ec39d658f9a6abfda2e53}\label{structfat__drvinfo__t_a5914068d456ec39d658f9a6abfda2e53_a5914068d456ec39d658f9a6abfda2e53}} 
+\index{fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}!fat\+\_\+size\+\_\+sectors@{fat\+\_\+size\+\_\+sectors}}
+\index{fat\+\_\+size\+\_\+sectors@{fat\+\_\+size\+\_\+sectors}!fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}}
+\subsubsection{\texorpdfstring{fat\+\_\+size\+\_\+sectors}{fat\_size\_sectors}}
 {\footnotesize\ttfamily unsigned int fat\+\_\+drvinfo\+\_\+t\+::fat\+\_\+size\+\_\+sectors}
 
-\mbox{\Hypertarget{structfat__drvinfo__t_aa699654d6c24b989c4e883d39adf2c30}\label{structfat__drvinfo__t_aa699654d6c24b989c4e883d39adf2c30}} 
-\index{fat\_drvinfo\_t@{fat\_drvinfo\_t}!first\_data\_sector@{first\_data\_sector}}
-\index{first\_data\_sector@{first\_data\_sector}!fat\_drvinfo\_t@{fat\_drvinfo\_t}}
-\doxysubsubsection{\texorpdfstring{first\_data\_sector}{first\_data\_sector}}
+
+
+Definition at line 74 of file fat.\+h.
+
+\mbox{\Hypertarget{structfat__drvinfo__t_aa699654d6c24b989c4e883d39adf2c30_aa699654d6c24b989c4e883d39adf2c30}\label{structfat__drvinfo__t_aa699654d6c24b989c4e883d39adf2c30_aa699654d6c24b989c4e883d39adf2c30}} 
+\index{fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}!first\+\_\+data\+\_\+sector@{first\+\_\+data\+\_\+sector}}
+\index{first\+\_\+data\+\_\+sector@{first\+\_\+data\+\_\+sector}!fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}}
+\subsubsection{\texorpdfstring{first\+\_\+data\+\_\+sector}{first\_data\_sector}}
 {\footnotesize\ttfamily unsigned int fat\+\_\+drvinfo\+\_\+t\+::first\+\_\+data\+\_\+sector}
 
-\mbox{\Hypertarget{structfat__drvinfo__t_a69cc724ff65e1ebbf8321e29ea7a9da9}\label{structfat__drvinfo__t_a69cc724ff65e1ebbf8321e29ea7a9da9}} 
-\index{fat\_drvinfo\_t@{fat\_drvinfo\_t}!first\_fat\_setor@{first\_fat\_setor}}
-\index{first\_fat\_setor@{first\_fat\_setor}!fat\_drvinfo\_t@{fat\_drvinfo\_t}}
-\doxysubsubsection{\texorpdfstring{first\_fat\_setor}{first\_fat\_setor}}
+
+
+Definition at line 76 of file fat.\+h.
+
+\mbox{\Hypertarget{structfat__drvinfo__t_a69cc724ff65e1ebbf8321e29ea7a9da9_a69cc724ff65e1ebbf8321e29ea7a9da9}\label{structfat__drvinfo__t_a69cc724ff65e1ebbf8321e29ea7a9da9_a69cc724ff65e1ebbf8321e29ea7a9da9}} 
+\index{fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}!first\+\_\+fat\+\_\+setor@{first\+\_\+fat\+\_\+setor}}
+\index{first\+\_\+fat\+\_\+setor@{first\+\_\+fat\+\_\+setor}!fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}}
+\subsubsection{\texorpdfstring{first\+\_\+fat\+\_\+setor}{first\_fat\_setor}}
 {\footnotesize\ttfamily unsigned int fat\+\_\+drvinfo\+\_\+t\+::first\+\_\+fat\+\_\+setor}
 
-\mbox{\Hypertarget{structfat__drvinfo__t_a6d1012bf1bf24392f0a6ce9135061769}\label{structfat__drvinfo__t_a6d1012bf1bf24392f0a6ce9135061769}} 
-\index{fat\_drvinfo\_t@{fat\_drvinfo\_t}!root\_dir\_sectors@{root\_dir\_sectors}}
-\index{root\_dir\_sectors@{root\_dir\_sectors}!fat\_drvinfo\_t@{fat\_drvinfo\_t}}
-\doxysubsubsection{\texorpdfstring{root\_dir\_sectors}{root\_dir\_sectors}}
+
+
+Definition at line 77 of file fat.\+h.
+
+\mbox{\Hypertarget{structfat__drvinfo__t_a6d1012bf1bf24392f0a6ce9135061769_a6d1012bf1bf24392f0a6ce9135061769}\label{structfat__drvinfo__t_a6d1012bf1bf24392f0a6ce9135061769_a6d1012bf1bf24392f0a6ce9135061769}} 
+\index{fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}!root\+\_\+dir\+\_\+sectors@{root\+\_\+dir\+\_\+sectors}}
+\index{root\+\_\+dir\+\_\+sectors@{root\+\_\+dir\+\_\+sectors}!fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}}
+\subsubsection{\texorpdfstring{root\+\_\+dir\+\_\+sectors}{root\_dir\_sectors}}
 {\footnotesize\ttfamily unsigned int fat\+\_\+drvinfo\+\_\+t\+::root\+\_\+dir\+\_\+sectors}
 
-\mbox{\Hypertarget{structfat__drvinfo__t_af935fed26cf392e9e8149d5feb511e8d}\label{structfat__drvinfo__t_af935fed26cf392e9e8149d5feb511e8d}} 
-\index{fat\_drvinfo\_t@{fat\_drvinfo\_t}!total\_clusters@{total\_clusters}}
-\index{total\_clusters@{total\_clusters}!fat\_drvinfo\_t@{fat\_drvinfo\_t}}
-\doxysubsubsection{\texorpdfstring{total\_clusters}{total\_clusters}}
+
+
+Definition at line 75 of file fat.\+h.
+
+\mbox{\Hypertarget{structfat__drvinfo__t_af935fed26cf392e9e8149d5feb511e8d_af935fed26cf392e9e8149d5feb511e8d}\label{structfat__drvinfo__t_af935fed26cf392e9e8149d5feb511e8d_af935fed26cf392e9e8149d5feb511e8d}} 
+\index{fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}!total\+\_\+clusters@{total\+\_\+clusters}}
+\index{total\+\_\+clusters@{total\+\_\+clusters}!fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}}
+\subsubsection{\texorpdfstring{total\+\_\+clusters}{total\_clusters}}
 {\footnotesize\ttfamily unsigned int fat\+\_\+drvinfo\+\_\+t\+::total\+\_\+clusters}
 
-\mbox{\Hypertarget{structfat__drvinfo__t_a47d5e31a3e5c6c314f49705a3961f7ea}\label{structfat__drvinfo__t_a47d5e31a3e5c6c314f49705a3961f7ea}} 
-\index{fat\_drvinfo\_t@{fat\_drvinfo\_t}!total\_sectors@{total\_sectors}}
-\index{total\_sectors@{total\_sectors}!fat\_drvinfo\_t@{fat\_drvinfo\_t}}
-\doxysubsubsection{\texorpdfstring{total\_sectors}{total\_sectors}}
+
+
+Definition at line 79 of file fat.\+h.
+
+\mbox{\Hypertarget{structfat__drvinfo__t_a47d5e31a3e5c6c314f49705a3961f7ea_a47d5e31a3e5c6c314f49705a3961f7ea}\label{structfat__drvinfo__t_a47d5e31a3e5c6c314f49705a3961f7ea_a47d5e31a3e5c6c314f49705a3961f7ea}} 
+\index{fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}!total\+\_\+sectors@{total\+\_\+sectors}}
+\index{total\+\_\+sectors@{total\+\_\+sectors}!fat\+\_\+drvinfo\+\_\+t@{fat\+\_\+drvinfo\+\_\+t}}
+\subsubsection{\texorpdfstring{total\+\_\+sectors}{total\_sectors}}
 {\footnotesize\ttfamily unsigned int fat\+\_\+drvinfo\+\_\+t\+::total\+\_\+sectors}
+
+
+
+Definition at line 73 of file fat.\+h.
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-drivers/\mbox{\hyperlink{fat_8h}{fat.\+h}}\end{DoxyCompactItemize}
+drivers/\hyperlink{fat_8h}{fat.\+h}\end{DoxyCompactItemize}
