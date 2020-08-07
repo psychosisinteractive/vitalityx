@@ -85,10 +85,14 @@ struct fat_drvinfo
  */
 enum fattype
 {
-    FAT12, /** FAT12 */
-    FAT16, /** FAT16 */
-    FAT32, /** FAT32 */
-    UNKNOWN, /** Unknown FAT type, ex ExFAT or a non-FAT filesystem */
+    /** FAT12 */
+    FAT12, 
+    /**< FAT16 */
+    FAT16, 
+    /**< FAT32 */
+    FAT32, 
+    /**< Unknown FAT type, ex ExFAT or a non-FAT filesystem */
+    UNKNOWN, 
 } typedef fattype_t;
 
 /* Gets the type of a FAT in enum fattype_t

@@ -4,6 +4,8 @@
 
 extern void setup_isr();
 
+/**Setup all descriptors.
+ */
 void setup_descriptors() {
     setup_isr();
 }
@@ -19,6 +21,9 @@ void memset(void *destination, int c, unsigned int target_size)
     }
 }
 
+/**Halt the system for a duration.
+ *@param duration The time to wait.
+ */
 void sleep(int duration) {
     do{
         duration--;

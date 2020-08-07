@@ -29,10 +29,14 @@ void isr_gpfault(int errorcode) {
     }
 }
 
+/**Enables NMI's.
+ */
 void NMI_enable() {
     outb(0x70, inb(0x70) & 0x7F);
 }
 
+/**Disables NMI's.
+ */
 void NMI_disable() {
     outb(0x70, inb(0x70) | 0x80);
 }

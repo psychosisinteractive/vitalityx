@@ -88,11 +88,18 @@ uint32_t getScancode()
     return inb(0x60);
 }
 
+/**char getchar()
+ * Gets a character from the keyboard.
+ */
 char getchar()
 {
     return scancode[getScancode()];
 }
 
+/**char* getstr()
+ * Gets a string from the keyboard.
+ * ERRORS: Text is mangled and bad.
+ */
 char* getstr() {
     tty_putstr(">",DarkGray,Black);
     char *strm;

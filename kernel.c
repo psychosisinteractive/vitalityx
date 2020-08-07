@@ -11,8 +11,7 @@
 #include "drivers/fat.h"
 #include "drivers/vga.h"
 
-/*
- * void kernel()
+/** void kernel()
  * 
  * Entry point for VitalityX
  */

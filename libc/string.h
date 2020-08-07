@@ -2,8 +2,12 @@
 #define STRING_H
 #include "system.h"
 
+/**String type.
+ */
 typedef const unsigned char* string_t;
 
+/**Converts an number into a string.
+ */
 char* itoa(int value, char* result, int base) {
     // check that the base if valid
     if (base < 2 || base > 36) { *result = '\0'; return result; }
@@ -43,6 +47,8 @@ void strcon(char p[], char q[]) {
    p[c] = '\0';
 }
 
+/**Gets the length of a string.
+ */
 void strlen(string_t str) {
     int i = 0;
     for(i=0; str[i]!='\0'; ++i);

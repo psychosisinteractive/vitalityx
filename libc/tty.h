@@ -8,9 +8,15 @@
 #define TTY_TC_RESET "\x05\xa1\x06"
 #define TTY_TC_CL_OK "\x05\xa0\x06"
 
+/**Last X position of the Character Cursor.
+ */
 unsigned int ttylastx;
+/**Last Y position of the Character Cursor.
+ */
 unsigned int ttylasty;
 unsigned int screenheight = 25;
+/**Serial port in/to use.
+ */
 unsigned int port;
 
 bool ttyserialenabled = false;

@@ -4,6 +4,7 @@
 #include "../libc/types.h"
 #include "../libc/v86.h"
 
+/**REGS 90x60 characater trick.*/
 #define REGS_90x60 0b0001
 
 // the plan for vga.h
@@ -14,20 +15,31 @@
 bool vga_indexmode = false;
 unsigned int vga_mode;
 
+/**All VGA ports.
+ */
 enum VGA_PORTS {
-    vga_3c0 = 0x3c0,
+    /**Port 3c0*/
+    vga_3c0 = 0x3c0, 
+    /**Port 3c2 (Do not supply index.)*/
     vga_3c2 = 0x3c2,
+    /**Port 3c4*/
     vga_3c4 = 0x3c4,
+    /**Port 3ce*/
     vga_3ce = 0x3ce,
+    /**Port 3d4*/
     vga_3d4 = 0x3d4
 } typedef vga_port_t;
 
+/**Prepares the VGA interface.
+ */
 void vga_init() {
     vga_mode = 0x3; // we should be in text mode
     inb((uint16_t)0x3DA);
     vga_indexmode = true;
 }
 
+/**Checks VGA if its on index mode
+ */
 void vga_chkmode() {
     if(vga_indexmode == false) {
         inb((uint16_t)0x3DA);
@@ -35,6 +47,11 @@ void vga_chkmode() {
     }
 }
 
+/**Sets a VGA register.
+ *@param index The index of the register. This is not needed if vgaport is 3c2.
+ *@param value The value to set the register.
+ *@param vgaport The VGA port.
+ */
 void vga_setvar(uint8_t index, uint8_t value, vga_port_t vgaport) {
     vga_chkmode();
     if(vgaport == vga_3c0) {
@@ -48,6 +65,11 @@ void vga_setvar(uint8_t index, uint8_t value, vga_port_t vgaport) {
     }
 }
 
+/**Gets a VGA register.
+ *@param index The index of the register.
+ *@param value The value of the register.
+ *@param vgaport The VGA port.
+ */
 uint8_t vga_getvar(uint8_t index, vga_port_t vgaport) {
     uint8_t mode;
     vga_chkmode();
@@ -62,6 +84,11 @@ uint8_t vga_getvar(uint8_t index, vga_port_t vgaport) {
     return mode;
 }
 
+/**Sets and checks a VGA register.
+ *@param index The index of the register.
+ *@param value The value of the register.
+ *@param vgaport The VGA port.
+ */
 int vga_chksetvar(uint8_t index, uint8_t value, vga_port_t vgaport) {
     vga_setvar(index,value,vgaport);
     uint8_t chk = vga_getvar(index,vgaport);
@@ -71,6 +98,10 @@ int vga_chksetvar(uint8_t index, uint8_t value, vga_port_t vgaport) {
     return 1;
 }
 
+/**Set VGA mode.
+ *@param mode The VGA mode (0x13, 0x3)
+ *@param Use v86 to set VGA mode (Will call BIOS in Virtual 8086 mode)
+ */
 int vga_setmode(uint8_t mode, bool v86) {
     if(v86) {
         switch(mode) {
@@ -98,6 +129,8 @@ int vga_setmode(uint8_t mode, bool v86) {
 }
 
 extern void tricks_001();
+/**Experimental features not totally ready are tricks.
+ */
 int vga_asmtricks(uint8_t trick) {
     switch(trick) {
         case REGS_90x60: // causes garbage text

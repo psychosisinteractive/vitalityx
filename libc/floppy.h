@@ -3,6 +3,8 @@
 #include "types.h"
 #define FLOPPY_144_SECTORS_PER_TRACK 512
 
+/**LBA address to CHS
+ */
 void lba_2_chs(uint32_t lba, uint16_t* cyl, uint16_t* head, uint16_t* sector)
 {
     *cyl    = lba / (2 * FLOPPY_144_SECTORS_PER_TRACK);
