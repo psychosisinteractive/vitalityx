@@ -1,0 +1,26 @@
+var searchData=
+[
+  ['ide_5fata_5faccess_376',['ide_ata_access',['../ide_8h.html#a4da0883393a98b937fdc3015a0a3f265',1,'ide.h']]],
+  ['ide_5fatapi_5feject_377',['ide_atapi_eject',['../ide_8h.html#a92d054539c112a72e080e35a3341b0b9',1,'ide.h']]],
+  ['ide_5fatapi_5fread_378',['ide_atapi_read',['../ide_8h.html#a1652da42785708fa6ea21ce4aef8c628',1,'ide.h']]],
+  ['ide_5finitialize_379',['ide_initialize',['../ide_8h.html#ab5397c8432be802172da8f04c8840ca3',1,'ide.h']]],
+  ['ide_5firq_380',['ide_irq',['../ide_8h.html#ad7ea572af581cc0623a2fb74a579ca83',1,'ide.h']]],
+  ['ide_5fpolling_381',['ide_polling',['../ide_8h.html#a03e85b94d6fbfb957e1b88c3dd064eca',1,'ide.h']]],
+  ['ide_5fprint_5ferror_382',['ide_print_error',['../ide_8h.html#af7757307613c29c9bcbf0f8f5b2feee5',1,'ide.h']]],
+  ['ide_5fread_383',['ide_read',['../ide_8h.html#aef734da4bdc0c1d014528fd2f66e0686',1,'ide.h']]],
+  ['ide_5fread_5fbuffer_384',['ide_read_buffer',['../ide_8h.html#a905d9e8d026f3b6f298cbf41c0bde7e2',1,'ide.h']]],
+  ['ide_5fread_5fsectors_385',['ide_read_sectors',['../ide_8h.html#a9dd84843412753d236e17a15277c5b98',1,'ide.h']]],
+  ['ide_5fwait_5firq_386',['ide_wait_irq',['../ide_8h.html#a31655fcec0cc8f9f8792b98cd4441fdf',1,'ide.h']]],
+  ['ide_5fwrite_387',['ide_write',['../ide_8h.html#afdb22c37a32d86fcb64e55b3edab4790',1,'ide.h']]],
+  ['ide_5fwrite_5fsectors_388',['ide_write_sectors',['../ide_8h.html#a8632fb3a8cd41b7d60ee56942afbde03',1,'ide.h']]],
+  ['inb_389',['inb',['../asm_8h.html#a0223c8898dfec29069879dc51076e28a',1,'asm.h']]],
+  ['inl_390',['inl',['../asm_8h.html#a4a68dda29ab57d4961c91746b06af63f',1,'asm.h']]],
+  ['insl_391',['insl',['../system_8h.html#a931786b5b11e1d64f4e03da6ce0c2b49',1,'system.h']]],
+  ['invlpg_392',['invlpg',['../asm_8h.html#a20faed26baa341152aa32288418f1457',1,'asm.h']]],
+  ['io_5fwait_393',['io_wait',['../asm_8h.html#a488d1b3600792ee3aac5be4b7e0be16b',1,'asm.h']]],
+  ['irqrestore_394',['irqrestore',['../asm_8h.html#a7dd6b2cd918b8cbca3c8b0381628ca83',1,'asm.h']]],
+  ['isr_5fdividebyzero_395',['isr_dividebyzero',['../interrupt_8h.html#a1fd242da8c9498b98d978e150a36c23f',1,'interrupt.h']]],
+  ['isr_5fgeneric_396',['isr_generic',['../interrupt_8h.html#a13f7b685594468a92abb85e03148fb54',1,'interrupt.h']]],
+  ['isr_5fgpfault_397',['isr_gpfault',['../interrupt_8h.html#af6ac5b24d3c1b69d4272012baa895291',1,'interrupt.h']]],
+  ['itoa_398',['itoa',['../string_8h.html#a22e98a8cf2e2c79d738830b387cace28',1,'string.h']]]
+];

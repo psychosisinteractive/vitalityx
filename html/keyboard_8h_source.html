@@ -69,17 +69,17 @@ $(function() {
 <div class="title">keyboard.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef KEYBOARD_H</span></div>
+<a href="keyboard_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef KEYBOARD_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define KEYBOARD_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;types.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;string.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;system.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">types.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="string_8h.html">string.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="system_8h.html">system.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;uint32_t getScancode();</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordtype">char</span> getchar();</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<a class="code" href="types_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code" href="keyboard_8h.html#ab584031dc93be7f7bda67c862a770fca">getScancode</a>();</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordtype">char</span> <a class="code" href="keyboard_8h.html#a0979671914792955a7a68461634ff82d">getchar</a>();</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment">/* ScanCodeSet */</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> scancode[] = {</div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="keyboard_8h.html#a995065aa3ec952b9a46d5be5898260d4">   11</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">char</span> <a class="code" href="keyboard_8h.html#a995065aa3ec952b9a46d5be5898260d4">scancode</a>[] = {</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                         0x00, 0x01, <span class="charliteral">&#39;1&#39;</span>,  <span class="charliteral">&#39;2&#39;</span>,  <span class="charliteral">&#39;3&#39;</span>,  <span class="charliteral">&#39;4&#39;</span>,  <span class="charliteral">&#39;5&#39;</span>,  <span class="charliteral">&#39;6&#39;</span>,  <span class="charliteral">&#39;7&#39;</span>,  <span class="charliteral">&#39;8&#39;</span>,  <span class="charliteral">&#39;9&#39;</span>,  <span class="charliteral">&#39;0&#39;</span>,  <span class="charliteral">&#39;-&#39;</span>,  <span class="charliteral">&#39;=&#39;</span>,  0x0E,</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                         <span class="charliteral">&#39;\t&#39;</span>, <span class="charliteral">&#39;q&#39;</span>,  <span class="charliteral">&#39;w&#39;</span>,  <span class="charliteral">&#39;e&#39;</span>,  <span class="charliteral">&#39;r&#39;</span>,  <span class="charliteral">&#39;t&#39;</span>,  <span class="charliteral">&#39;y&#39;</span>,  <span class="charliteral">&#39;u&#39;</span>,  <span class="charliteral">&#39;i&#39;</span>,  <span class="charliteral">&#39;o&#39;</span>,  <span class="charliteral">&#39;p&#39;</span>,  <span class="charliteral">&#39;[&#39;</span>,  <span class="charliteral">&#39;]&#39;</span>,  <span class="charliteral">&#39;\n&#39;</span>,</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                         0x1D, <span class="charliteral">&#39;a&#39;</span>,  <span class="charliteral">&#39;s&#39;</span>,  <span class="charliteral">&#39;d&#39;</span>,  <span class="charliteral">&#39;f&#39;</span>,  <span class="charliteral">&#39;g&#39;</span>,  <span class="charliteral">&#39;h&#39;</span>,  <span class="charliteral">&#39;j&#39;</span>,  <span class="charliteral">&#39;k&#39;</span>,  <span class="charliteral">&#39;l&#39;</span>,  <span class="charliteral">&#39;;&#39;</span>,  <span class="charliteral">&#39;\&#39;&#39;</span>, <span class="charliteral">&#39;`&#39;</span>,</div>
@@ -151,33 +151,46 @@ $(function() {
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                         0x00, 0x00, 0x00 <span class="comment">//63</span></div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        };</div>
 <div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;uint32_t getScancode()</div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="keyboard_8h.html#ab584031dc93be7f7bda67c862a770fca">   83</a></span>&#160;<a class="code" href="types_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="code" href="keyboard_8h.html#ab584031dc93be7f7bda67c862a770fca">getScancode</a>()</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;{</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    uint32_t flag = inb(0x64);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <a class="code" href="types_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> flag = <a class="code" href="asm_8h.html#a0223c8898dfec29069879dc51076e28a">inb</a>(0x64);</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordflow">while</span>(!(flag &amp; 1))</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        flag = inb(0x64);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> inb(0x60);</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        flag = <a class="code" href="asm_8h.html#a0223c8898dfec29069879dc51076e28a">inb</a>(0x64);</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="asm_8h.html#a0223c8898dfec29069879dc51076e28a">inb</a>(0x60);</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="keywordtype">char</span> getchar()</div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="keyboard_8h.html#a0979671914792955a7a68461634ff82d">   91</a></span>&#160;<span class="keywordtype">char</span> <a class="code" href="keyboard_8h.html#a0979671914792955a7a68461634ff82d">getchar</a>()</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;{</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> scancode[getScancode()];</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="keyboard_8h.html#a995065aa3ec952b9a46d5be5898260d4">scancode</a>[<a class="code" href="keyboard_8h.html#ab584031dc93be7f7bda67c862a770fca">getScancode</a>()];</div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}</div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keywordtype">char</span>* getstr() {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    tty_putstr(<span class="stringliteral">&quot;&gt;&quot;</span>,DarkGray,Black);</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="keyboard_8h.html#af63ede2ad39481e059d92df0513f279a">   96</a></span>&#160;<span class="keywordtype">char</span>* <a class="code" href="keyboard_8h.html#af63ede2ad39481e059d92df0513f279a">getstr</a>() {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    <a class="code" href="tty_8h.html#a6da4674dd5a33a04c76d83243c8e4b8e">tty_putstr</a>(<span class="stringliteral">&quot;&gt;&quot;</span>,<a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea4de15b8ee603dbccac7062665c37853f">DarkGray</a>,<a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eac1e9bce8242f443c54c7405223d616cd">Black</a>);</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;    <span class="keywordtype">char</span> *strm;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">char</span> gc = getchar();</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keywordtype">char</span> gc = <a class="code" href="keyboard_8h.html#a0979671914792955a7a68461634ff82d">getchar</a>();</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keywordflow">while</span>(gc != <span class="charliteral">&#39;\n&#39;</span>) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        tty_putstr(gc,White,Black);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="tty_8h.html#a6da4674dd5a33a04c76d83243c8e4b8e">tty_putstr</a>(gc,<a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eab548046646b36c12aa6ba841de500094">White</a>,<a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eac1e9bce8242f443c54c7405223d616cd">Black</a>);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        *strm++ = gc;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        gc = getchar();</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        gc = <a class="code" href="keyboard_8h.html#a0979671914792955a7a68461634ff82d">getchar</a>();</div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    }</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    <span class="keywordflow">return</span> strm;</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;}</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div></div>
+<div class="ttc" id="astring_8h_html"><div class="ttname"><a href="string_8h.html">string.h</a></div></div>
+<div class="ttc" id="aasm_8h_html_a0223c8898dfec29069879dc51076e28a"><div class="ttname"><a href="asm_8h.html#a0223c8898dfec29069879dc51076e28a">inb</a></div><div class="ttdeci">static uint8_t inb(uint16_t port)</div><div class="ttdef"><b>Definition:</b> asm.h:21</div></div>
+<div class="ttc" id="akeyboard_8h_html_a995065aa3ec952b9a46d5be5898260d4"><div class="ttname"><a href="keyboard_8h.html#a995065aa3ec952b9a46d5be5898260d4">scancode</a></div><div class="ttdeci">const char scancode[]</div><div class="ttdef"><b>Definition:</b> keyboard.h:11</div></div>
+<div class="ttc" id="atty_8h_html_a6da4674dd5a33a04c76d83243c8e4b8e"><div class="ttname"><a href="tty_8h.html#a6da4674dd5a33a04c76d83243c8e4b8e">tty_putstr</a></div><div class="ttdeci">void tty_putstr(string_t string, textcolor_t forecolour, textcolor_t backcolour)</div><div class="ttdef"><b>Definition:</b> tty.h:55</div></div>
+<div class="ttc" id="asystem_8h_html"><div class="ttname"><a href="system_8h.html">system.h</a></div></div>
+<div class="ttc" id="atypes_8h_html_a435d1572bf3f880d55459d9805097f62"><div class="ttname"><a href="types_8h.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></div><div class="ttdeci">unsigned int uint32_t</div><div class="ttdef"><b>Definition:</b> types.h:22</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9eac1e9bce8242f443c54c7405223d616cd"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eac1e9bce8242f443c54c7405223d616cd">Black</a></div><div class="ttdeci">@ Black</div><div class="ttdef"><b>Definition:</b> video.h:15</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9ea4de15b8ee603dbccac7062665c37853f"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea4de15b8ee603dbccac7062665c37853f">DarkGray</a></div><div class="ttdeci">@ DarkGray</div><div class="ttdef"><b>Definition:</b> video.h:23</div></div>
+<div class="ttc" id="akeyboard_8h_html_ab584031dc93be7f7bda67c862a770fca"><div class="ttname"><a href="keyboard_8h.html#ab584031dc93be7f7bda67c862a770fca">getScancode</a></div><div class="ttdeci">uint32_t getScancode()</div><div class="ttdef"><b>Definition:</b> keyboard.h:83</div></div>
+<div class="ttc" id="akeyboard_8h_html_af63ede2ad39481e059d92df0513f279a"><div class="ttname"><a href="keyboard_8h.html#af63ede2ad39481e059d92df0513f279a">getstr</a></div><div class="ttdeci">char * getstr()</div><div class="ttdef"><b>Definition:</b> keyboard.h:96</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9eab548046646b36c12aa6ba841de500094"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eab548046646b36c12aa6ba841de500094">White</a></div><div class="ttdeci">@ White</div><div class="ttdef"><b>Definition:</b> video.h:30</div></div>
+<div class="ttc" id="akeyboard_8h_html_a0979671914792955a7a68461634ff82d"><div class="ttname"><a href="keyboard_8h.html#a0979671914792955a7a68461634ff82d">getchar</a></div><div class="ttdeci">char getchar()</div><div class="ttdef"><b>Definition:</b> keyboard.h:91</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

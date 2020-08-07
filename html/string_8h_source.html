@@ -69,13 +69,13 @@ $(function() {
 <div class="title">string.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef STRING_H</span></div>
+<a href="string_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef STRING_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define STRING_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;system.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="system_8h.html">system.h</a>&quot;</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160; </div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="keyword">typedef</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* string_t;</div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="string_8h.html#ada436671bc57dfd805a9f3974c81e618">    5</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* <a class="code" href="string_8h.html#ada436671bc57dfd805a9f3974c81e618">string_t</a>;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keywordtype">char</span>* itoa(<span class="keywordtype">int</span> value, <span class="keywordtype">char</span>* result, <span class="keywordtype">int</span> base) {</div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="string_8h.html#a22e98a8cf2e2c79d738830b387cace28">    7</a></span>&#160;<span class="keywordtype">char</span>* <a class="code" href="string_8h.html#a22e98a8cf2e2c79d738830b387cace28">itoa</a>(<span class="keywordtype">int</span> value, <span class="keywordtype">char</span>* result, <span class="keywordtype">int</span> base) {</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    <span class="comment">// check that the base if valid</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordflow">if</span> (base &lt; 2 || base &gt; 36) { *result = <span class="charliteral">&#39;\0&#39;</span>; <span class="keywordflow">return</span> result; }</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
@@ -99,7 +99,7 @@ $(function() {
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keywordflow">return</span> result;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">void</span> strcon(<span class="keywordtype">char</span> p[], <span class="keywordtype">char</span> q[]) {</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="string_8h.html#a013b85760fd6ecea52a8c8fdd8cf87c9">   31</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="string_8h.html#a013b85760fd6ecea52a8c8fdd8cf87c9">strcon</a>(<span class="keywordtype">char</span> p[], <span class="keywordtype">char</span> q[]) {</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;   <span class="keywordtype">int</span> c, d;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;   c = 0;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;   <span class="keywordflow">while</span> (p[c] != <span class="charliteral">&#39;\0&#39;</span>) {</div>
@@ -114,15 +114,21 @@ $(function() {
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;   p[c] = <span class="charliteral">&#39;\0&#39;</span>;</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">void</span> strlen(string_t str) {</div>
+<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="string_8h.html#aaab1d72644d487f9c176d357a9e85bb1">   46</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="string_8h.html#aaab1d72644d487f9c176d357a9e85bb1">strlen</a>(<a class="code" href="string_8h.html#ada436671bc57dfd805a9f3974c81e618">string_t</a> str) {</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">int</span> i = 0;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">for</span>(i=0; str[i]!=<span class="charliteral">&#39;\0&#39;</span>; ++i);</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keywordflow">return</span> i;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> intmax_t;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="types_8h.html#a22a331617ae96c4a5ccf0b9c551f4a38">intmax_t</a>;</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astring_8h_html_ada436671bc57dfd805a9f3974c81e618"><div class="ttname"><a href="string_8h.html#ada436671bc57dfd805a9f3974c81e618">string_t</a></div><div class="ttdeci">const unsigned char * string_t</div><div class="ttdef"><b>Definition:</b> string.h:5</div></div>
+<div class="ttc" id="atypes_8h_html_a22a331617ae96c4a5ccf0b9c551f4a38"><div class="ttname"><a href="types_8h.html#a22a331617ae96c4a5ccf0b9c551f4a38">intmax_t</a></div><div class="ttdeci">const int intmax_t</div><div class="ttdef"><b>Definition:</b> types.h:44</div></div>
+<div class="ttc" id="astring_8h_html_aaab1d72644d487f9c176d357a9e85bb1"><div class="ttname"><a href="string_8h.html#aaab1d72644d487f9c176d357a9e85bb1">strlen</a></div><div class="ttdeci">void strlen(string_t str)</div><div class="ttdef"><b>Definition:</b> string.h:46</div></div>
+<div class="ttc" id="astring_8h_html_a22e98a8cf2e2c79d738830b387cace28"><div class="ttname"><a href="string_8h.html#a22e98a8cf2e2c79d738830b387cace28">itoa</a></div><div class="ttdeci">char * itoa(int value, char *result, int base)</div><div class="ttdef"><b>Definition:</b> string.h:7</div></div>
+<div class="ttc" id="astring_8h_html_a013b85760fd6ecea52a8c8fdd8cf87c9"><div class="ttname"><a href="string_8h.html#a013b85760fd6ecea52a8c8fdd8cf87c9">strcon</a></div><div class="ttdeci">void strcon(char p[], char q[])</div><div class="ttdef"><b>Definition:</b> string.h:31</div></div>
+<div class="ttc" id="asystem_8h_html"><div class="ttname"><a href="system_8h.html">system.h</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -1,0 +1,736 @@
+\hypertarget{ide_8h}{}\doxysection{drivers/ide.h File Reference}
+\label{ide_8h}\index{drivers/ide.h@{drivers/ide.h}}
+{\ttfamily \#include \char`\"{}../libc/types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/asm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/tty.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/system.\+h\char`\"{}}\newline
+Include dependency graph for ide.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=308pt]{ide_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=149pt]{ide_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structIDEChannelRegisters}{I\+D\+E\+Channel\+Registers}}
+\item 
+struct \mbox{\hyperlink{structide__device}{ide\+\_\+device}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{ide_8h_aed1929007f388cab23229c908be5bbaf}{A\+T\+A\+\_\+\+S\+R\+\_\+\+B\+SY}}~0x80
+\item 
+\#define \mbox{\hyperlink{ide_8h_a51b4023132fbdc98d4498bd8e21d064d}{A\+T\+A\+\_\+\+S\+R\+\_\+\+D\+R\+DY}}~0x40
+\item 
+\#define \mbox{\hyperlink{ide_8h_aca73201ed93e5c9d9d9fbf51270fde0b}{A\+T\+A\+\_\+\+S\+R\+\_\+\+DF}}~0x20
+\item 
+\#define \mbox{\hyperlink{ide_8h_a2317ad830d33431eb1222a4079d6dab2}{A\+T\+A\+\_\+\+S\+R\+\_\+\+D\+SC}}~0x10
+\item 
+\#define \mbox{\hyperlink{ide_8h_a27e6aaa78aaaa205a7dadf56b48d0bf6}{A\+T\+A\+\_\+\+S\+R\+\_\+\+D\+RQ}}~0x08
+\item 
+\#define \mbox{\hyperlink{ide_8h_a7cb0243beb875711e6b46cda0be7c53a}{A\+T\+A\+\_\+\+S\+R\+\_\+\+C\+O\+RR}}~0x04
+\item 
+\#define \mbox{\hyperlink{ide_8h_ad74934afc699945311360be6e3700ef5}{A\+T\+A\+\_\+\+S\+R\+\_\+\+I\+DX}}~0x02
+\item 
+\#define \mbox{\hyperlink{ide_8h_a8a2cf843df1ae63d4d16748dfe72a592}{A\+T\+A\+\_\+\+S\+R\+\_\+\+E\+RR}}~0x01
+\item 
+\#define \mbox{\hyperlink{ide_8h_a97e6940186e5f1cfe5c501e56312de45}{A\+T\+A\+\_\+\+E\+R\+\_\+\+B\+BK}}~0x80
+\item 
+\#define \mbox{\hyperlink{ide_8h_ab1e1938e0fc8f511102b778956aa3bd4}{A\+T\+A\+\_\+\+E\+R\+\_\+\+U\+NC}}~0x40
+\item 
+\#define \mbox{\hyperlink{ide_8h_aaed40c458ad34dae2d82381e71e372ac}{A\+T\+A\+\_\+\+E\+R\+\_\+\+MC}}~0x20
+\item 
+\#define \mbox{\hyperlink{ide_8h_a6bed47f17f64ab98da1dd946ca123198}{A\+T\+A\+\_\+\+E\+R\+\_\+\+I\+D\+NF}}~0x10
+\item 
+\#define \mbox{\hyperlink{ide_8h_af5f476aa2920211197aa8ff81f0dfdbd}{A\+T\+A\+\_\+\+E\+R\+\_\+\+M\+CR}}~0x08
+\item 
+\#define \mbox{\hyperlink{ide_8h_a415987608bff240636a785bb48970e94}{A\+T\+A\+\_\+\+E\+R\+\_\+\+A\+B\+RT}}~0x04
+\item 
+\#define \mbox{\hyperlink{ide_8h_aaffca74832da09d4cf0ea68624546c91}{A\+T\+A\+\_\+\+E\+R\+\_\+\+T\+K0\+NF}}~0x02
+\item 
+\#define \mbox{\hyperlink{ide_8h_ac4f0c06f285d99068cbad7b6d4641d1f}{A\+T\+A\+\_\+\+E\+R\+\_\+\+A\+M\+NF}}~0x01
+\item 
+\#define \mbox{\hyperlink{ide_8h_a91a96db8427a8caa254a218f05dcb3f4}{A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+A\+D\+\_\+\+P\+IO}}~0x20
+\item 
+\#define \mbox{\hyperlink{ide_8h_a3165497b4d8eb30297a4d62e39846b01}{A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+A\+D\+\_\+\+P\+I\+O\+\_\+\+E\+XT}}~0x24
+\item 
+\#define \mbox{\hyperlink{ide_8h_aefab351e75e10b6dbfa0b7828031cda4}{A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+A\+D\+\_\+\+D\+MA}}~0x\+C8
+\item 
+\#define \mbox{\hyperlink{ide_8h_a42247550c708b2b7852927180c7dde78}{A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+A\+D\+\_\+\+D\+M\+A\+\_\+\+E\+XT}}~0x25
+\item 
+\#define \mbox{\hyperlink{ide_8h_a64f2c50b916f1f67018c36f75f811cc7}{A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+IO}}~0x30
+\item 
+\#define \mbox{\hyperlink{ide_8h_ac8e433782c7125e6929673907eca6f17}{A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+I\+O\+\_\+\+E\+XT}}~0x34
+\item 
+\#define \mbox{\hyperlink{ide_8h_a41dc931ac3c2c6733a2a67d03eaf1674}{A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+D\+MA}}~0x\+CA
+\item 
+\#define \mbox{\hyperlink{ide_8h_a3a75d9e39518e704f3a4b39e6a3d998c}{A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+D\+M\+A\+\_\+\+E\+XT}}~0x35
+\item 
+\#define \mbox{\hyperlink{ide_8h_a23e8deb17b95336898b52cc76d5206af}{A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+C\+A\+C\+H\+E\+\_\+\+F\+L\+U\+SH}}~0x\+E7
+\item 
+\#define \mbox{\hyperlink{ide_8h_a3c624c2041a51a473bd6e77b7753d475}{A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+C\+A\+C\+H\+E\+\_\+\+F\+L\+U\+S\+H\+\_\+\+E\+XT}}~0x\+EA
+\item 
+\#define \mbox{\hyperlink{ide_8h_afaaead63f9b69425b9f6514b03f0bbb2}{A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+P\+A\+C\+K\+ET}}~0x\+A0
+\item 
+\#define \mbox{\hyperlink{ide_8h_acba68da9027d95b9bae53901a8ea009b}{A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+P\+A\+C\+K\+ET}}~0x\+A1
+\item 
+\#define \mbox{\hyperlink{ide_8h_a572958103bba5d355c7fe135ae7526bd}{A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+I\+D\+E\+N\+T\+I\+FY}}~0x\+EC
+\item 
+\#define \mbox{\hyperlink{ide_8h_a46c7100054351e7afa8762a5dd165ff5}{A\+T\+A\+P\+I\+\_\+\+C\+M\+D\+\_\+\+R\+E\+AD}}~0x\+A8
+\item 
+\#define \mbox{\hyperlink{ide_8h_a94bf36a7e0a52f4dd421eca62e80631e}{A\+T\+A\+P\+I\+\_\+\+C\+M\+D\+\_\+\+E\+J\+E\+CT}}~0x1B
+\item 
+\#define \mbox{\hyperlink{ide_8h_a4224d2160f2f2718d8a67a09bfb8f4a5}{A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+D\+E\+V\+I\+C\+E\+T\+Y\+PE}}~0
+\item 
+\#define \mbox{\hyperlink{ide_8h_a692fbddd7825db7edba694d647a69aa7}{A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+C\+Y\+L\+I\+N\+D\+E\+RS}}~2
+\item 
+\#define \mbox{\hyperlink{ide_8h_a1dcc2ec4b54df2f3cb011bbf6dc3795c}{A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+H\+E\+A\+DS}}~6
+\item 
+\#define \mbox{\hyperlink{ide_8h_ae9be2cb739432bf835c6e5492cf92ba7}{A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+S\+E\+C\+T\+O\+RS}}~12
+\item 
+\#define \mbox{\hyperlink{ide_8h_a60e929ababaf71de94d96c079f9028d0}{A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+S\+E\+R\+I\+AL}}~20
+\item 
+\#define \mbox{\hyperlink{ide_8h_a9fd52e892928c016a4a66f59a46241e4}{A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+M\+O\+D\+EL}}~54
+\item 
+\#define \mbox{\hyperlink{ide_8h_a4efaa1ae14eb268a085d1824eb2a1f08}{A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+C\+A\+P\+A\+B\+I\+L\+I\+T\+I\+ES}}~98
+\item 
+\#define \mbox{\hyperlink{ide_8h_a4515f6ed07cf67add34766e02bd8d133}{A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+F\+I\+E\+L\+D\+V\+A\+L\+ID}}~106
+\item 
+\#define \mbox{\hyperlink{ide_8h_ae0d046a29ce70e07d868961cf17b54c7}{A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+M\+A\+X\+\_\+\+L\+BA}}~120
+\item 
+\#define \mbox{\hyperlink{ide_8h_a8536e132f24aa36e826f753b6061e8ea}{A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+C\+O\+M\+M\+A\+N\+D\+S\+E\+TS}}~164
+\item 
+\#define \mbox{\hyperlink{ide_8h_aa1926c13a31f512c9ec07ed3bdba8893}{A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+M\+A\+X\+\_\+\+L\+B\+A\+\_\+\+E\+XT}}~200
+\item 
+\#define \mbox{\hyperlink{ide_8h_a3046279f2a25227c121b69f4cf855bf8}{I\+D\+E\+\_\+\+A\+TA}}~0x00
+\item 
+\#define \mbox{\hyperlink{ide_8h_a6513ee2a4da2c6aaa691b9d4c639a53e}{I\+D\+E\+\_\+\+A\+T\+A\+PI}}~0x01
+\item 
+\#define \mbox{\hyperlink{ide_8h_acb5691a26e836afc6972577bd71b0d97}{A\+T\+A\+\_\+\+M\+A\+S\+T\+ER}}~0x00
+\item 
+\#define \mbox{\hyperlink{ide_8h_abe2ab9064f7100c5915bc694386a3e40}{A\+T\+A\+\_\+\+S\+L\+A\+VE}}~0x01
+\item 
+\#define \mbox{\hyperlink{ide_8h_a359c566cefff5e671eb3bae72e0d0948}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+D\+A\+TA}}~0x00
+\item 
+\#define \mbox{\hyperlink{ide_8h_ad2f2744a08145beb17b7ed6ca0465d85}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+E\+R\+R\+OR}}~0x01
+\item 
+\#define \mbox{\hyperlink{ide_8h_aa2dc5ed9bf4786f687e4000243f6a21d}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+F\+E\+A\+T\+U\+R\+ES}}~0x01
+\item 
+\#define \mbox{\hyperlink{ide_8h_ad995693d31857a8e514b5f96c5fc4cdb}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+S\+E\+C\+C\+O\+U\+N\+T0}}~0x02
+\item 
+\#define \mbox{\hyperlink{ide_8h_a9818e533e211e2ddadf650dab77f55fd}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+L\+B\+A0}}~0x03
+\item 
+\#define \mbox{\hyperlink{ide_8h_a4ca55ad2c56ea915f9dcde1aba57433d}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+L\+B\+A1}}~0x04
+\item 
+\#define \mbox{\hyperlink{ide_8h_afaf134917cbfc81c86b4e1d67930757a}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+L\+B\+A2}}~0x05
+\item 
+\#define \mbox{\hyperlink{ide_8h_af80b9f0d852148eda227b433f72ca8bb}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+H\+D\+D\+E\+V\+S\+EL}}~0x06
+\item 
+\#define \mbox{\hyperlink{ide_8h_a1a54069e05845badff84e1490ca4681e}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+C\+O\+M\+M\+A\+ND}}~0x07
+\item 
+\#define \mbox{\hyperlink{ide_8h_a3b532ef33b38be16a240f8f2e21bc5db}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+S\+T\+A\+T\+US}}~0x07
+\item 
+\#define \mbox{\hyperlink{ide_8h_a8a9a19e403cdc08cdb52ac4a77d44b1d}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+S\+E\+C\+C\+O\+U\+N\+T1}}~0x08
+\item 
+\#define \mbox{\hyperlink{ide_8h_af95cf3177ed01e63c3e2783f71e3bfb8}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+L\+B\+A3}}~0x09
+\item 
+\#define \mbox{\hyperlink{ide_8h_a39c9e21fd98a8933142af12c472ffb80}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+L\+B\+A4}}~0x0A
+\item 
+\#define \mbox{\hyperlink{ide_8h_a24546e89863608bb2850a6ab39a24693}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+L\+B\+A5}}~0x0B
+\item 
+\#define \mbox{\hyperlink{ide_8h_acd25672516342decdb4acb14b13dfa03}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+C\+O\+N\+T\+R\+OL}}~0x0C
+\item 
+\#define \mbox{\hyperlink{ide_8h_a051769d4520d201d24bbb06758a5c1de}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+A\+L\+T\+S\+T\+A\+T\+US}}~0x0C
+\item 
+\#define \mbox{\hyperlink{ide_8h_adf8b096ca00ce8ce58af3dd79240b2e5}{A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+D\+E\+V\+A\+D\+D\+R\+E\+SS}}~0x0D
+\item 
+\#define \mbox{\hyperlink{ide_8h_aa18f254fa4afcfdb5fcf897eeaf38564}{A\+T\+A\+\_\+\+P\+R\+I\+M\+A\+RY}}~0x00
+\item 
+\#define \mbox{\hyperlink{ide_8h_ad514d776b09e8b873aa7087ef0091fe6}{A\+T\+A\+\_\+\+S\+E\+C\+O\+N\+D\+A\+RY}}~0x01
+\item 
+\#define \mbox{\hyperlink{ide_8h_a061cf4fd71859d6355aea5be3bae767a}{A\+T\+A\+\_\+\+R\+E\+AD}}~0x00
+\item 
+\#define \mbox{\hyperlink{ide_8h_a9a19b84aa7a02ac7e07528795816ffb2}{A\+T\+A\+\_\+\+W\+R\+I\+TE}}~0x01
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+unsigned char \mbox{\hyperlink{ide_8h_aef734da4bdc0c1d014528fd2f66e0686}{ide\+\_\+read}} (unsigned char channel, unsigned char reg)
+\item 
+void \mbox{\hyperlink{ide_8h_ab5397c8432be802172da8f04c8840ca3}{ide\+\_\+initialize}} (unsigned int B\+A\+R0, unsigned int B\+A\+R1, unsigned int B\+A\+R2, unsigned int B\+A\+R3, unsigned int B\+A\+R4)
+\item 
+void \mbox{\hyperlink{ide_8h_afdb22c37a32d86fcb64e55b3edab4790}{ide\+\_\+write}} (unsigned char channel, unsigned char reg, unsigned char data)
+\item 
+void \mbox{\hyperlink{ide_8h_a905d9e8d026f3b6f298cbf41c0bde7e2}{ide\+\_\+read\+\_\+buffer}} (unsigned char channel, unsigned char reg, unsigned int $\ast$buffer, unsigned int quads)
+\item 
+unsigned char \mbox{\hyperlink{ide_8h_a03e85b94d6fbfb957e1b88c3dd064eca}{ide\+\_\+polling}} (unsigned char channel, unsigned int advanced\+\_\+check)
+\item 
+unsigned char \mbox{\hyperlink{ide_8h_af7757307613c29c9bcbf0f8f5b2feee5}{ide\+\_\+print\+\_\+error}} (unsigned int drive, unsigned char err)
+\item 
+unsigned char \mbox{\hyperlink{ide_8h_a4da0883393a98b937fdc3015a0a3f265}{ide\+\_\+ata\+\_\+access}} (unsigned char direction, unsigned char drive, unsigned int lba, unsigned char numsects, unsigned short selector, unsigned int edi)
+\item 
+void \mbox{\hyperlink{ide_8h_a31655fcec0cc8f9f8792b98cd4441fdf}{ide\+\_\+wait\+\_\+irq}} ()
+\item 
+void \mbox{\hyperlink{ide_8h_ad7ea572af581cc0623a2fb74a579ca83}{ide\+\_\+irq}} ()
+\item 
+unsigned char \mbox{\hyperlink{ide_8h_a1652da42785708fa6ea21ce4aef8c628}{ide\+\_\+atapi\+\_\+read}} (unsigned char drive, unsigned int lba, unsigned char numsects, unsigned short selector, unsigned int edi)
+\item 
+void \mbox{\hyperlink{ide_8h_a9dd84843412753d236e17a15277c5b98}{ide\+\_\+read\+\_\+sectors}} (unsigned char drive, unsigned char numsects, unsigned int lba, unsigned short es, unsigned int edi)
+\item 
+void \mbox{\hyperlink{ide_8h_a8632fb3a8cd41b7d60ee56942afbde03}{ide\+\_\+write\+\_\+sectors}} (unsigned char drive, unsigned char numsects, unsigned int lba, unsigned short es, unsigned int edi)
+\item 
+void \mbox{\hyperlink{ide_8h_a92d054539c112a72e080e35a3341b0b9}{ide\+\_\+atapi\+\_\+eject}} (unsigned char drive)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char \mbox{\hyperlink{ide_8h_ae11222fc133cc5f2cb1b16155fee8b43}{package}} \mbox{[}1\mbox{]}
+\item 
+struct \mbox{\hyperlink{structIDEChannelRegisters}{I\+D\+E\+Channel\+Registers}} \mbox{\hyperlink{ide_8h_a9476016cf5efb9ab7d3fb382b89346eb}{channels}} \mbox{[}2\mbox{]}
+\item 
+unsigned char \mbox{\hyperlink{ide_8h_a94f78e77f368421e4fe8faea979d523f}{ide\+\_\+buf}} \mbox{[}2048\mbox{]} = \{0\}
+\item 
+static unsigned char \mbox{\hyperlink{ide_8h_a12985ec2f925d0cdbd7d24728b9849f9}{ide\+\_\+irq\+\_\+invoked}} = 0
+\item 
+static unsigned char \mbox{\hyperlink{ide_8h_a02351861ecf3191d5dbbcc1910b7c109}{atapi\+\_\+packet}} \mbox{[}12\mbox{]} = \{0x\+A8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\}
+\item 
+struct \mbox{\hyperlink{structide__device}{ide\+\_\+device}} \mbox{\hyperlink{ide_8h_ab97a828ed4839b575dc382e2bf826e87}{ide\+\_\+devices}} \mbox{[}4\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{ide_8h_a23e8deb17b95336898b52cc76d5206af}\label{ide_8h_a23e8deb17b95336898b52cc76d5206af}} 
+\index{ide.h@{ide.h}!ATA\_CMD\_CACHE\_FLUSH@{ATA\_CMD\_CACHE\_FLUSH}}
+\index{ATA\_CMD\_CACHE\_FLUSH@{ATA\_CMD\_CACHE\_FLUSH}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_CMD\_CACHE\_FLUSH}{ATA\_CMD\_CACHE\_FLUSH}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+C\+A\+C\+H\+E\+\_\+\+F\+L\+U\+SH~0x\+E7}
+
+\mbox{\Hypertarget{ide_8h_a3c624c2041a51a473bd6e77b7753d475}\label{ide_8h_a3c624c2041a51a473bd6e77b7753d475}} 
+\index{ide.h@{ide.h}!ATA\_CMD\_CACHE\_FLUSH\_EXT@{ATA\_CMD\_CACHE\_FLUSH\_EXT}}
+\index{ATA\_CMD\_CACHE\_FLUSH\_EXT@{ATA\_CMD\_CACHE\_FLUSH\_EXT}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_CMD\_CACHE\_FLUSH\_EXT}{ATA\_CMD\_CACHE\_FLUSH\_EXT}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+C\+A\+C\+H\+E\+\_\+\+F\+L\+U\+S\+H\+\_\+\+E\+XT~0x\+EA}
+
+\mbox{\Hypertarget{ide_8h_a572958103bba5d355c7fe135ae7526bd}\label{ide_8h_a572958103bba5d355c7fe135ae7526bd}} 
+\index{ide.h@{ide.h}!ATA\_CMD\_IDENTIFY@{ATA\_CMD\_IDENTIFY}}
+\index{ATA\_CMD\_IDENTIFY@{ATA\_CMD\_IDENTIFY}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_CMD\_IDENTIFY}{ATA\_CMD\_IDENTIFY}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+I\+D\+E\+N\+T\+I\+FY~0x\+EC}
+
+\mbox{\Hypertarget{ide_8h_acba68da9027d95b9bae53901a8ea009b}\label{ide_8h_acba68da9027d95b9bae53901a8ea009b}} 
+\index{ide.h@{ide.h}!ATA\_CMD\_IDENTIFY\_PACKET@{ATA\_CMD\_IDENTIFY\_PACKET}}
+\index{ATA\_CMD\_IDENTIFY\_PACKET@{ATA\_CMD\_IDENTIFY\_PACKET}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_CMD\_IDENTIFY\_PACKET}{ATA\_CMD\_IDENTIFY\_PACKET}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+I\+D\+E\+N\+T\+I\+F\+Y\+\_\+\+P\+A\+C\+K\+ET~0x\+A1}
+
+\mbox{\Hypertarget{ide_8h_afaaead63f9b69425b9f6514b03f0bbb2}\label{ide_8h_afaaead63f9b69425b9f6514b03f0bbb2}} 
+\index{ide.h@{ide.h}!ATA\_CMD\_PACKET@{ATA\_CMD\_PACKET}}
+\index{ATA\_CMD\_PACKET@{ATA\_CMD\_PACKET}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_CMD\_PACKET}{ATA\_CMD\_PACKET}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+P\+A\+C\+K\+ET~0x\+A0}
+
+\mbox{\Hypertarget{ide_8h_aefab351e75e10b6dbfa0b7828031cda4}\label{ide_8h_aefab351e75e10b6dbfa0b7828031cda4}} 
+\index{ide.h@{ide.h}!ATA\_CMD\_READ\_DMA@{ATA\_CMD\_READ\_DMA}}
+\index{ATA\_CMD\_READ\_DMA@{ATA\_CMD\_READ\_DMA}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_CMD\_READ\_DMA}{ATA\_CMD\_READ\_DMA}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+A\+D\+\_\+\+D\+MA~0x\+C8}
+
+\mbox{\Hypertarget{ide_8h_a42247550c708b2b7852927180c7dde78}\label{ide_8h_a42247550c708b2b7852927180c7dde78}} 
+\index{ide.h@{ide.h}!ATA\_CMD\_READ\_DMA\_EXT@{ATA\_CMD\_READ\_DMA\_EXT}}
+\index{ATA\_CMD\_READ\_DMA\_EXT@{ATA\_CMD\_READ\_DMA\_EXT}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_CMD\_READ\_DMA\_EXT}{ATA\_CMD\_READ\_DMA\_EXT}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+A\+D\+\_\+\+D\+M\+A\+\_\+\+E\+XT~0x25}
+
+\mbox{\Hypertarget{ide_8h_a91a96db8427a8caa254a218f05dcb3f4}\label{ide_8h_a91a96db8427a8caa254a218f05dcb3f4}} 
+\index{ide.h@{ide.h}!ATA\_CMD\_READ\_PIO@{ATA\_CMD\_READ\_PIO}}
+\index{ATA\_CMD\_READ\_PIO@{ATA\_CMD\_READ\_PIO}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_CMD\_READ\_PIO}{ATA\_CMD\_READ\_PIO}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+A\+D\+\_\+\+P\+IO~0x20}
+
+\mbox{\Hypertarget{ide_8h_a3165497b4d8eb30297a4d62e39846b01}\label{ide_8h_a3165497b4d8eb30297a4d62e39846b01}} 
+\index{ide.h@{ide.h}!ATA\_CMD\_READ\_PIO\_EXT@{ATA\_CMD\_READ\_PIO\_EXT}}
+\index{ATA\_CMD\_READ\_PIO\_EXT@{ATA\_CMD\_READ\_PIO\_EXT}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_CMD\_READ\_PIO\_EXT}{ATA\_CMD\_READ\_PIO\_EXT}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+R\+E\+A\+D\+\_\+\+P\+I\+O\+\_\+\+E\+XT~0x24}
+
+\mbox{\Hypertarget{ide_8h_a41dc931ac3c2c6733a2a67d03eaf1674}\label{ide_8h_a41dc931ac3c2c6733a2a67d03eaf1674}} 
+\index{ide.h@{ide.h}!ATA\_CMD\_WRITE\_DMA@{ATA\_CMD\_WRITE\_DMA}}
+\index{ATA\_CMD\_WRITE\_DMA@{ATA\_CMD\_WRITE\_DMA}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_CMD\_WRITE\_DMA}{ATA\_CMD\_WRITE\_DMA}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+D\+MA~0x\+CA}
+
+\mbox{\Hypertarget{ide_8h_a3a75d9e39518e704f3a4b39e6a3d998c}\label{ide_8h_a3a75d9e39518e704f3a4b39e6a3d998c}} 
+\index{ide.h@{ide.h}!ATA\_CMD\_WRITE\_DMA\_EXT@{ATA\_CMD\_WRITE\_DMA\_EXT}}
+\index{ATA\_CMD\_WRITE\_DMA\_EXT@{ATA\_CMD\_WRITE\_DMA\_EXT}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_CMD\_WRITE\_DMA\_EXT}{ATA\_CMD\_WRITE\_DMA\_EXT}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+D\+M\+A\+\_\+\+E\+XT~0x35}
+
+\mbox{\Hypertarget{ide_8h_a64f2c50b916f1f67018c36f75f811cc7}\label{ide_8h_a64f2c50b916f1f67018c36f75f811cc7}} 
+\index{ide.h@{ide.h}!ATA\_CMD\_WRITE\_PIO@{ATA\_CMD\_WRITE\_PIO}}
+\index{ATA\_CMD\_WRITE\_PIO@{ATA\_CMD\_WRITE\_PIO}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_CMD\_WRITE\_PIO}{ATA\_CMD\_WRITE\_PIO}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+IO~0x30}
+
+\mbox{\Hypertarget{ide_8h_ac8e433782c7125e6929673907eca6f17}\label{ide_8h_ac8e433782c7125e6929673907eca6f17}} 
+\index{ide.h@{ide.h}!ATA\_CMD\_WRITE\_PIO\_EXT@{ATA\_CMD\_WRITE\_PIO\_EXT}}
+\index{ATA\_CMD\_WRITE\_PIO\_EXT@{ATA\_CMD\_WRITE\_PIO\_EXT}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_CMD\_WRITE\_PIO\_EXT}{ATA\_CMD\_WRITE\_PIO\_EXT}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+C\+M\+D\+\_\+\+W\+R\+I\+T\+E\+\_\+\+P\+I\+O\+\_\+\+E\+XT~0x34}
+
+\mbox{\Hypertarget{ide_8h_a415987608bff240636a785bb48970e94}\label{ide_8h_a415987608bff240636a785bb48970e94}} 
+\index{ide.h@{ide.h}!ATA\_ER\_ABRT@{ATA\_ER\_ABRT}}
+\index{ATA\_ER\_ABRT@{ATA\_ER\_ABRT}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_ER\_ABRT}{ATA\_ER\_ABRT}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+E\+R\+\_\+\+A\+B\+RT~0x04}
+
+\mbox{\Hypertarget{ide_8h_ac4f0c06f285d99068cbad7b6d4641d1f}\label{ide_8h_ac4f0c06f285d99068cbad7b6d4641d1f}} 
+\index{ide.h@{ide.h}!ATA\_ER\_AMNF@{ATA\_ER\_AMNF}}
+\index{ATA\_ER\_AMNF@{ATA\_ER\_AMNF}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_ER\_AMNF}{ATA\_ER\_AMNF}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+E\+R\+\_\+\+A\+M\+NF~0x01}
+
+\mbox{\Hypertarget{ide_8h_a97e6940186e5f1cfe5c501e56312de45}\label{ide_8h_a97e6940186e5f1cfe5c501e56312de45}} 
+\index{ide.h@{ide.h}!ATA\_ER\_BBK@{ATA\_ER\_BBK}}
+\index{ATA\_ER\_BBK@{ATA\_ER\_BBK}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_ER\_BBK}{ATA\_ER\_BBK}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+E\+R\+\_\+\+B\+BK~0x80}
+
+\mbox{\Hypertarget{ide_8h_a6bed47f17f64ab98da1dd946ca123198}\label{ide_8h_a6bed47f17f64ab98da1dd946ca123198}} 
+\index{ide.h@{ide.h}!ATA\_ER\_IDNF@{ATA\_ER\_IDNF}}
+\index{ATA\_ER\_IDNF@{ATA\_ER\_IDNF}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_ER\_IDNF}{ATA\_ER\_IDNF}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+E\+R\+\_\+\+I\+D\+NF~0x10}
+
+\mbox{\Hypertarget{ide_8h_aaed40c458ad34dae2d82381e71e372ac}\label{ide_8h_aaed40c458ad34dae2d82381e71e372ac}} 
+\index{ide.h@{ide.h}!ATA\_ER\_MC@{ATA\_ER\_MC}}
+\index{ATA\_ER\_MC@{ATA\_ER\_MC}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_ER\_MC}{ATA\_ER\_MC}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+E\+R\+\_\+\+MC~0x20}
+
+\mbox{\Hypertarget{ide_8h_af5f476aa2920211197aa8ff81f0dfdbd}\label{ide_8h_af5f476aa2920211197aa8ff81f0dfdbd}} 
+\index{ide.h@{ide.h}!ATA\_ER\_MCR@{ATA\_ER\_MCR}}
+\index{ATA\_ER\_MCR@{ATA\_ER\_MCR}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_ER\_MCR}{ATA\_ER\_MCR}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+E\+R\+\_\+\+M\+CR~0x08}
+
+\mbox{\Hypertarget{ide_8h_aaffca74832da09d4cf0ea68624546c91}\label{ide_8h_aaffca74832da09d4cf0ea68624546c91}} 
+\index{ide.h@{ide.h}!ATA\_ER\_TK0NF@{ATA\_ER\_TK0NF}}
+\index{ATA\_ER\_TK0NF@{ATA\_ER\_TK0NF}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_ER\_TK0NF}{ATA\_ER\_TK0NF}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+E\+R\+\_\+\+T\+K0\+NF~0x02}
+
+\mbox{\Hypertarget{ide_8h_ab1e1938e0fc8f511102b778956aa3bd4}\label{ide_8h_ab1e1938e0fc8f511102b778956aa3bd4}} 
+\index{ide.h@{ide.h}!ATA\_ER\_UNC@{ATA\_ER\_UNC}}
+\index{ATA\_ER\_UNC@{ATA\_ER\_UNC}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_ER\_UNC}{ATA\_ER\_UNC}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+E\+R\+\_\+\+U\+NC~0x40}
+
+\mbox{\Hypertarget{ide_8h_a4efaa1ae14eb268a085d1824eb2a1f08}\label{ide_8h_a4efaa1ae14eb268a085d1824eb2a1f08}} 
+\index{ide.h@{ide.h}!ATA\_IDENT\_CAPABILITIES@{ATA\_IDENT\_CAPABILITIES}}
+\index{ATA\_IDENT\_CAPABILITIES@{ATA\_IDENT\_CAPABILITIES}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_IDENT\_CAPABILITIES}{ATA\_IDENT\_CAPABILITIES}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+C\+A\+P\+A\+B\+I\+L\+I\+T\+I\+ES~98}
+
+\mbox{\Hypertarget{ide_8h_a8536e132f24aa36e826f753b6061e8ea}\label{ide_8h_a8536e132f24aa36e826f753b6061e8ea}} 
+\index{ide.h@{ide.h}!ATA\_IDENT\_COMMANDSETS@{ATA\_IDENT\_COMMANDSETS}}
+\index{ATA\_IDENT\_COMMANDSETS@{ATA\_IDENT\_COMMANDSETS}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_IDENT\_COMMANDSETS}{ATA\_IDENT\_COMMANDSETS}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+C\+O\+M\+M\+A\+N\+D\+S\+E\+TS~164}
+
+\mbox{\Hypertarget{ide_8h_a692fbddd7825db7edba694d647a69aa7}\label{ide_8h_a692fbddd7825db7edba694d647a69aa7}} 
+\index{ide.h@{ide.h}!ATA\_IDENT\_CYLINDERS@{ATA\_IDENT\_CYLINDERS}}
+\index{ATA\_IDENT\_CYLINDERS@{ATA\_IDENT\_CYLINDERS}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_IDENT\_CYLINDERS}{ATA\_IDENT\_CYLINDERS}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+C\+Y\+L\+I\+N\+D\+E\+RS~2}
+
+\mbox{\Hypertarget{ide_8h_a4224d2160f2f2718d8a67a09bfb8f4a5}\label{ide_8h_a4224d2160f2f2718d8a67a09bfb8f4a5}} 
+\index{ide.h@{ide.h}!ATA\_IDENT\_DEVICETYPE@{ATA\_IDENT\_DEVICETYPE}}
+\index{ATA\_IDENT\_DEVICETYPE@{ATA\_IDENT\_DEVICETYPE}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_IDENT\_DEVICETYPE}{ATA\_IDENT\_DEVICETYPE}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+D\+E\+V\+I\+C\+E\+T\+Y\+PE~0}
+
+\mbox{\Hypertarget{ide_8h_a4515f6ed07cf67add34766e02bd8d133}\label{ide_8h_a4515f6ed07cf67add34766e02bd8d133}} 
+\index{ide.h@{ide.h}!ATA\_IDENT\_FIELDVALID@{ATA\_IDENT\_FIELDVALID}}
+\index{ATA\_IDENT\_FIELDVALID@{ATA\_IDENT\_FIELDVALID}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_IDENT\_FIELDVALID}{ATA\_IDENT\_FIELDVALID}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+F\+I\+E\+L\+D\+V\+A\+L\+ID~106}
+
+\mbox{\Hypertarget{ide_8h_a1dcc2ec4b54df2f3cb011bbf6dc3795c}\label{ide_8h_a1dcc2ec4b54df2f3cb011bbf6dc3795c}} 
+\index{ide.h@{ide.h}!ATA\_IDENT\_HEADS@{ATA\_IDENT\_HEADS}}
+\index{ATA\_IDENT\_HEADS@{ATA\_IDENT\_HEADS}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_IDENT\_HEADS}{ATA\_IDENT\_HEADS}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+H\+E\+A\+DS~6}
+
+\mbox{\Hypertarget{ide_8h_ae0d046a29ce70e07d868961cf17b54c7}\label{ide_8h_ae0d046a29ce70e07d868961cf17b54c7}} 
+\index{ide.h@{ide.h}!ATA\_IDENT\_MAX\_LBA@{ATA\_IDENT\_MAX\_LBA}}
+\index{ATA\_IDENT\_MAX\_LBA@{ATA\_IDENT\_MAX\_LBA}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_IDENT\_MAX\_LBA}{ATA\_IDENT\_MAX\_LBA}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+M\+A\+X\+\_\+\+L\+BA~120}
+
+\mbox{\Hypertarget{ide_8h_aa1926c13a31f512c9ec07ed3bdba8893}\label{ide_8h_aa1926c13a31f512c9ec07ed3bdba8893}} 
+\index{ide.h@{ide.h}!ATA\_IDENT\_MAX\_LBA\_EXT@{ATA\_IDENT\_MAX\_LBA\_EXT}}
+\index{ATA\_IDENT\_MAX\_LBA\_EXT@{ATA\_IDENT\_MAX\_LBA\_EXT}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_IDENT\_MAX\_LBA\_EXT}{ATA\_IDENT\_MAX\_LBA\_EXT}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+M\+A\+X\+\_\+\+L\+B\+A\+\_\+\+E\+XT~200}
+
+\mbox{\Hypertarget{ide_8h_a9fd52e892928c016a4a66f59a46241e4}\label{ide_8h_a9fd52e892928c016a4a66f59a46241e4}} 
+\index{ide.h@{ide.h}!ATA\_IDENT\_MODEL@{ATA\_IDENT\_MODEL}}
+\index{ATA\_IDENT\_MODEL@{ATA\_IDENT\_MODEL}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_IDENT\_MODEL}{ATA\_IDENT\_MODEL}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+M\+O\+D\+EL~54}
+
+\mbox{\Hypertarget{ide_8h_ae9be2cb739432bf835c6e5492cf92ba7}\label{ide_8h_ae9be2cb739432bf835c6e5492cf92ba7}} 
+\index{ide.h@{ide.h}!ATA\_IDENT\_SECTORS@{ATA\_IDENT\_SECTORS}}
+\index{ATA\_IDENT\_SECTORS@{ATA\_IDENT\_SECTORS}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_IDENT\_SECTORS}{ATA\_IDENT\_SECTORS}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+S\+E\+C\+T\+O\+RS~12}
+
+\mbox{\Hypertarget{ide_8h_a60e929ababaf71de94d96c079f9028d0}\label{ide_8h_a60e929ababaf71de94d96c079f9028d0}} 
+\index{ide.h@{ide.h}!ATA\_IDENT\_SERIAL@{ATA\_IDENT\_SERIAL}}
+\index{ATA\_IDENT\_SERIAL@{ATA\_IDENT\_SERIAL}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_IDENT\_SERIAL}{ATA\_IDENT\_SERIAL}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+I\+D\+E\+N\+T\+\_\+\+S\+E\+R\+I\+AL~20}
+
+\mbox{\Hypertarget{ide_8h_acb5691a26e836afc6972577bd71b0d97}\label{ide_8h_acb5691a26e836afc6972577bd71b0d97}} 
+\index{ide.h@{ide.h}!ATA\_MASTER@{ATA\_MASTER}}
+\index{ATA\_MASTER@{ATA\_MASTER}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_MASTER}{ATA\_MASTER}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+M\+A\+S\+T\+ER~0x00}
+
+\mbox{\Hypertarget{ide_8h_aa18f254fa4afcfdb5fcf897eeaf38564}\label{ide_8h_aa18f254fa4afcfdb5fcf897eeaf38564}} 
+\index{ide.h@{ide.h}!ATA\_PRIMARY@{ATA\_PRIMARY}}
+\index{ATA\_PRIMARY@{ATA\_PRIMARY}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_PRIMARY}{ATA\_PRIMARY}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+P\+R\+I\+M\+A\+RY~0x00}
+
+\mbox{\Hypertarget{ide_8h_a061cf4fd71859d6355aea5be3bae767a}\label{ide_8h_a061cf4fd71859d6355aea5be3bae767a}} 
+\index{ide.h@{ide.h}!ATA\_READ@{ATA\_READ}}
+\index{ATA\_READ@{ATA\_READ}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_READ}{ATA\_READ}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+AD~0x00}
+
+\mbox{\Hypertarget{ide_8h_a051769d4520d201d24bbb06758a5c1de}\label{ide_8h_a051769d4520d201d24bbb06758a5c1de}} 
+\index{ide.h@{ide.h}!ATA\_REG\_ALTSTATUS@{ATA\_REG\_ALTSTATUS}}
+\index{ATA\_REG\_ALTSTATUS@{ATA\_REG\_ALTSTATUS}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_ALTSTATUS}{ATA\_REG\_ALTSTATUS}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+A\+L\+T\+S\+T\+A\+T\+US~0x0C}
+
+\mbox{\Hypertarget{ide_8h_a1a54069e05845badff84e1490ca4681e}\label{ide_8h_a1a54069e05845badff84e1490ca4681e}} 
+\index{ide.h@{ide.h}!ATA\_REG\_COMMAND@{ATA\_REG\_COMMAND}}
+\index{ATA\_REG\_COMMAND@{ATA\_REG\_COMMAND}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_COMMAND}{ATA\_REG\_COMMAND}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+C\+O\+M\+M\+A\+ND~0x07}
+
+\mbox{\Hypertarget{ide_8h_acd25672516342decdb4acb14b13dfa03}\label{ide_8h_acd25672516342decdb4acb14b13dfa03}} 
+\index{ide.h@{ide.h}!ATA\_REG\_CONTROL@{ATA\_REG\_CONTROL}}
+\index{ATA\_REG\_CONTROL@{ATA\_REG\_CONTROL}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_CONTROL}{ATA\_REG\_CONTROL}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+C\+O\+N\+T\+R\+OL~0x0C}
+
+\mbox{\Hypertarget{ide_8h_a359c566cefff5e671eb3bae72e0d0948}\label{ide_8h_a359c566cefff5e671eb3bae72e0d0948}} 
+\index{ide.h@{ide.h}!ATA\_REG\_DATA@{ATA\_REG\_DATA}}
+\index{ATA\_REG\_DATA@{ATA\_REG\_DATA}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_DATA}{ATA\_REG\_DATA}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+D\+A\+TA~0x00}
+
+\mbox{\Hypertarget{ide_8h_adf8b096ca00ce8ce58af3dd79240b2e5}\label{ide_8h_adf8b096ca00ce8ce58af3dd79240b2e5}} 
+\index{ide.h@{ide.h}!ATA\_REG\_DEVADDRESS@{ATA\_REG\_DEVADDRESS}}
+\index{ATA\_REG\_DEVADDRESS@{ATA\_REG\_DEVADDRESS}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_DEVADDRESS}{ATA\_REG\_DEVADDRESS}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+D\+E\+V\+A\+D\+D\+R\+E\+SS~0x0D}
+
+\mbox{\Hypertarget{ide_8h_ad2f2744a08145beb17b7ed6ca0465d85}\label{ide_8h_ad2f2744a08145beb17b7ed6ca0465d85}} 
+\index{ide.h@{ide.h}!ATA\_REG\_ERROR@{ATA\_REG\_ERROR}}
+\index{ATA\_REG\_ERROR@{ATA\_REG\_ERROR}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_ERROR}{ATA\_REG\_ERROR}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+E\+R\+R\+OR~0x01}
+
+\mbox{\Hypertarget{ide_8h_aa2dc5ed9bf4786f687e4000243f6a21d}\label{ide_8h_aa2dc5ed9bf4786f687e4000243f6a21d}} 
+\index{ide.h@{ide.h}!ATA\_REG\_FEATURES@{ATA\_REG\_FEATURES}}
+\index{ATA\_REG\_FEATURES@{ATA\_REG\_FEATURES}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_FEATURES}{ATA\_REG\_FEATURES}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+F\+E\+A\+T\+U\+R\+ES~0x01}
+
+\mbox{\Hypertarget{ide_8h_af80b9f0d852148eda227b433f72ca8bb}\label{ide_8h_af80b9f0d852148eda227b433f72ca8bb}} 
+\index{ide.h@{ide.h}!ATA\_REG\_HDDEVSEL@{ATA\_REG\_HDDEVSEL}}
+\index{ATA\_REG\_HDDEVSEL@{ATA\_REG\_HDDEVSEL}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_HDDEVSEL}{ATA\_REG\_HDDEVSEL}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+H\+D\+D\+E\+V\+S\+EL~0x06}
+
+\mbox{\Hypertarget{ide_8h_a9818e533e211e2ddadf650dab77f55fd}\label{ide_8h_a9818e533e211e2ddadf650dab77f55fd}} 
+\index{ide.h@{ide.h}!ATA\_REG\_LBA0@{ATA\_REG\_LBA0}}
+\index{ATA\_REG\_LBA0@{ATA\_REG\_LBA0}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_LBA0}{ATA\_REG\_LBA0}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+L\+B\+A0~0x03}
+
+\mbox{\Hypertarget{ide_8h_a4ca55ad2c56ea915f9dcde1aba57433d}\label{ide_8h_a4ca55ad2c56ea915f9dcde1aba57433d}} 
+\index{ide.h@{ide.h}!ATA\_REG\_LBA1@{ATA\_REG\_LBA1}}
+\index{ATA\_REG\_LBA1@{ATA\_REG\_LBA1}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_LBA1}{ATA\_REG\_LBA1}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+L\+B\+A1~0x04}
+
+\mbox{\Hypertarget{ide_8h_afaf134917cbfc81c86b4e1d67930757a}\label{ide_8h_afaf134917cbfc81c86b4e1d67930757a}} 
+\index{ide.h@{ide.h}!ATA\_REG\_LBA2@{ATA\_REG\_LBA2}}
+\index{ATA\_REG\_LBA2@{ATA\_REG\_LBA2}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_LBA2}{ATA\_REG\_LBA2}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+L\+B\+A2~0x05}
+
+\mbox{\Hypertarget{ide_8h_af95cf3177ed01e63c3e2783f71e3bfb8}\label{ide_8h_af95cf3177ed01e63c3e2783f71e3bfb8}} 
+\index{ide.h@{ide.h}!ATA\_REG\_LBA3@{ATA\_REG\_LBA3}}
+\index{ATA\_REG\_LBA3@{ATA\_REG\_LBA3}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_LBA3}{ATA\_REG\_LBA3}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+L\+B\+A3~0x09}
+
+\mbox{\Hypertarget{ide_8h_a39c9e21fd98a8933142af12c472ffb80}\label{ide_8h_a39c9e21fd98a8933142af12c472ffb80}} 
+\index{ide.h@{ide.h}!ATA\_REG\_LBA4@{ATA\_REG\_LBA4}}
+\index{ATA\_REG\_LBA4@{ATA\_REG\_LBA4}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_LBA4}{ATA\_REG\_LBA4}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+L\+B\+A4~0x0A}
+
+\mbox{\Hypertarget{ide_8h_a24546e89863608bb2850a6ab39a24693}\label{ide_8h_a24546e89863608bb2850a6ab39a24693}} 
+\index{ide.h@{ide.h}!ATA\_REG\_LBA5@{ATA\_REG\_LBA5}}
+\index{ATA\_REG\_LBA5@{ATA\_REG\_LBA5}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_LBA5}{ATA\_REG\_LBA5}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+L\+B\+A5~0x0B}
+
+\mbox{\Hypertarget{ide_8h_ad995693d31857a8e514b5f96c5fc4cdb}\label{ide_8h_ad995693d31857a8e514b5f96c5fc4cdb}} 
+\index{ide.h@{ide.h}!ATA\_REG\_SECCOUNT0@{ATA\_REG\_SECCOUNT0}}
+\index{ATA\_REG\_SECCOUNT0@{ATA\_REG\_SECCOUNT0}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_SECCOUNT0}{ATA\_REG\_SECCOUNT0}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+S\+E\+C\+C\+O\+U\+N\+T0~0x02}
+
+\mbox{\Hypertarget{ide_8h_a8a9a19e403cdc08cdb52ac4a77d44b1d}\label{ide_8h_a8a9a19e403cdc08cdb52ac4a77d44b1d}} 
+\index{ide.h@{ide.h}!ATA\_REG\_SECCOUNT1@{ATA\_REG\_SECCOUNT1}}
+\index{ATA\_REG\_SECCOUNT1@{ATA\_REG\_SECCOUNT1}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_SECCOUNT1}{ATA\_REG\_SECCOUNT1}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+S\+E\+C\+C\+O\+U\+N\+T1~0x08}
+
+\mbox{\Hypertarget{ide_8h_a3b532ef33b38be16a240f8f2e21bc5db}\label{ide_8h_a3b532ef33b38be16a240f8f2e21bc5db}} 
+\index{ide.h@{ide.h}!ATA\_REG\_STATUS@{ATA\_REG\_STATUS}}
+\index{ATA\_REG\_STATUS@{ATA\_REG\_STATUS}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_REG\_STATUS}{ATA\_REG\_STATUS}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+R\+E\+G\+\_\+\+S\+T\+A\+T\+US~0x07}
+
+\mbox{\Hypertarget{ide_8h_ad514d776b09e8b873aa7087ef0091fe6}\label{ide_8h_ad514d776b09e8b873aa7087ef0091fe6}} 
+\index{ide.h@{ide.h}!ATA\_SECONDARY@{ATA\_SECONDARY}}
+\index{ATA\_SECONDARY@{ATA\_SECONDARY}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_SECONDARY}{ATA\_SECONDARY}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+S\+E\+C\+O\+N\+D\+A\+RY~0x01}
+
+\mbox{\Hypertarget{ide_8h_abe2ab9064f7100c5915bc694386a3e40}\label{ide_8h_abe2ab9064f7100c5915bc694386a3e40}} 
+\index{ide.h@{ide.h}!ATA\_SLAVE@{ATA\_SLAVE}}
+\index{ATA\_SLAVE@{ATA\_SLAVE}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_SLAVE}{ATA\_SLAVE}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+S\+L\+A\+VE~0x01}
+
+\mbox{\Hypertarget{ide_8h_aed1929007f388cab23229c908be5bbaf}\label{ide_8h_aed1929007f388cab23229c908be5bbaf}} 
+\index{ide.h@{ide.h}!ATA\_SR\_BSY@{ATA\_SR\_BSY}}
+\index{ATA\_SR\_BSY@{ATA\_SR\_BSY}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_SR\_BSY}{ATA\_SR\_BSY}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+S\+R\+\_\+\+B\+SY~0x80}
+
+\mbox{\Hypertarget{ide_8h_a7cb0243beb875711e6b46cda0be7c53a}\label{ide_8h_a7cb0243beb875711e6b46cda0be7c53a}} 
+\index{ide.h@{ide.h}!ATA\_SR\_CORR@{ATA\_SR\_CORR}}
+\index{ATA\_SR\_CORR@{ATA\_SR\_CORR}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_SR\_CORR}{ATA\_SR\_CORR}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+S\+R\+\_\+\+C\+O\+RR~0x04}
+
+\mbox{\Hypertarget{ide_8h_aca73201ed93e5c9d9d9fbf51270fde0b}\label{ide_8h_aca73201ed93e5c9d9d9fbf51270fde0b}} 
+\index{ide.h@{ide.h}!ATA\_SR\_DF@{ATA\_SR\_DF}}
+\index{ATA\_SR\_DF@{ATA\_SR\_DF}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_SR\_DF}{ATA\_SR\_DF}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+S\+R\+\_\+\+DF~0x20}
+
+\mbox{\Hypertarget{ide_8h_a51b4023132fbdc98d4498bd8e21d064d}\label{ide_8h_a51b4023132fbdc98d4498bd8e21d064d}} 
+\index{ide.h@{ide.h}!ATA\_SR\_DRDY@{ATA\_SR\_DRDY}}
+\index{ATA\_SR\_DRDY@{ATA\_SR\_DRDY}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_SR\_DRDY}{ATA\_SR\_DRDY}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+S\+R\+\_\+\+D\+R\+DY~0x40}
+
+\mbox{\Hypertarget{ide_8h_a27e6aaa78aaaa205a7dadf56b48d0bf6}\label{ide_8h_a27e6aaa78aaaa205a7dadf56b48d0bf6}} 
+\index{ide.h@{ide.h}!ATA\_SR\_DRQ@{ATA\_SR\_DRQ}}
+\index{ATA\_SR\_DRQ@{ATA\_SR\_DRQ}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_SR\_DRQ}{ATA\_SR\_DRQ}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+S\+R\+\_\+\+D\+RQ~0x08}
+
+\mbox{\Hypertarget{ide_8h_a2317ad830d33431eb1222a4079d6dab2}\label{ide_8h_a2317ad830d33431eb1222a4079d6dab2}} 
+\index{ide.h@{ide.h}!ATA\_SR\_DSC@{ATA\_SR\_DSC}}
+\index{ATA\_SR\_DSC@{ATA\_SR\_DSC}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_SR\_DSC}{ATA\_SR\_DSC}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+S\+R\+\_\+\+D\+SC~0x10}
+
+\mbox{\Hypertarget{ide_8h_a8a2cf843df1ae63d4d16748dfe72a592}\label{ide_8h_a8a2cf843df1ae63d4d16748dfe72a592}} 
+\index{ide.h@{ide.h}!ATA\_SR\_ERR@{ATA\_SR\_ERR}}
+\index{ATA\_SR\_ERR@{ATA\_SR\_ERR}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_SR\_ERR}{ATA\_SR\_ERR}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+S\+R\+\_\+\+E\+RR~0x01}
+
+\mbox{\Hypertarget{ide_8h_ad74934afc699945311360be6e3700ef5}\label{ide_8h_ad74934afc699945311360be6e3700ef5}} 
+\index{ide.h@{ide.h}!ATA\_SR\_IDX@{ATA\_SR\_IDX}}
+\index{ATA\_SR\_IDX@{ATA\_SR\_IDX}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_SR\_IDX}{ATA\_SR\_IDX}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+S\+R\+\_\+\+I\+DX~0x02}
+
+\mbox{\Hypertarget{ide_8h_a9a19b84aa7a02ac7e07528795816ffb2}\label{ide_8h_a9a19b84aa7a02ac7e07528795816ffb2}} 
+\index{ide.h@{ide.h}!ATA\_WRITE@{ATA\_WRITE}}
+\index{ATA\_WRITE@{ATA\_WRITE}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATA\_WRITE}{ATA\_WRITE}}
+{\footnotesize\ttfamily \#define A\+T\+A\+\_\+\+W\+R\+I\+TE~0x01}
+
+\mbox{\Hypertarget{ide_8h_a94bf36a7e0a52f4dd421eca62e80631e}\label{ide_8h_a94bf36a7e0a52f4dd421eca62e80631e}} 
+\index{ide.h@{ide.h}!ATAPI\_CMD\_EJECT@{ATAPI\_CMD\_EJECT}}
+\index{ATAPI\_CMD\_EJECT@{ATAPI\_CMD\_EJECT}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATAPI\_CMD\_EJECT}{ATAPI\_CMD\_EJECT}}
+{\footnotesize\ttfamily \#define A\+T\+A\+P\+I\+\_\+\+C\+M\+D\+\_\+\+E\+J\+E\+CT~0x1B}
+
+\mbox{\Hypertarget{ide_8h_a46c7100054351e7afa8762a5dd165ff5}\label{ide_8h_a46c7100054351e7afa8762a5dd165ff5}} 
+\index{ide.h@{ide.h}!ATAPI\_CMD\_READ@{ATAPI\_CMD\_READ}}
+\index{ATAPI\_CMD\_READ@{ATAPI\_CMD\_READ}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ATAPI\_CMD\_READ}{ATAPI\_CMD\_READ}}
+{\footnotesize\ttfamily \#define A\+T\+A\+P\+I\+\_\+\+C\+M\+D\+\_\+\+R\+E\+AD~0x\+A8}
+
+\mbox{\Hypertarget{ide_8h_a3046279f2a25227c121b69f4cf855bf8}\label{ide_8h_a3046279f2a25227c121b69f4cf855bf8}} 
+\index{ide.h@{ide.h}!IDE\_ATA@{IDE\_ATA}}
+\index{IDE\_ATA@{IDE\_ATA}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{IDE\_ATA}{IDE\_ATA}}
+{\footnotesize\ttfamily \#define I\+D\+E\+\_\+\+A\+TA~0x00}
+
+\mbox{\Hypertarget{ide_8h_a6513ee2a4da2c6aaa691b9d4c639a53e}\label{ide_8h_a6513ee2a4da2c6aaa691b9d4c639a53e}} 
+\index{ide.h@{ide.h}!IDE\_ATAPI@{IDE\_ATAPI}}
+\index{IDE\_ATAPI@{IDE\_ATAPI}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{IDE\_ATAPI}{IDE\_ATAPI}}
+{\footnotesize\ttfamily \#define I\+D\+E\+\_\+\+A\+T\+A\+PI~0x01}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{ide_8h_a4da0883393a98b937fdc3015a0a3f265}\label{ide_8h_a4da0883393a98b937fdc3015a0a3f265}} 
+\index{ide.h@{ide.h}!ide\_ata\_access@{ide\_ata\_access}}
+\index{ide\_ata\_access@{ide\_ata\_access}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_ata\_access()}{ide\_ata\_access()}}
+{\footnotesize\ttfamily unsigned char ide\+\_\+ata\+\_\+access (\begin{DoxyParamCaption}\item[{unsigned char}]{direction,  }\item[{unsigned char}]{drive,  }\item[{unsigned int}]{lba,  }\item[{unsigned char}]{numsects,  }\item[{unsigned short}]{selector,  }\item[{unsigned int}]{edi }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ide_8h_a92d054539c112a72e080e35a3341b0b9}\label{ide_8h_a92d054539c112a72e080e35a3341b0b9}} 
+\index{ide.h@{ide.h}!ide\_atapi\_eject@{ide\_atapi\_eject}}
+\index{ide\_atapi\_eject@{ide\_atapi\_eject}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_atapi\_eject()}{ide\_atapi\_eject()}}
+{\footnotesize\ttfamily void ide\+\_\+atapi\+\_\+eject (\begin{DoxyParamCaption}\item[{unsigned char}]{drive }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ide_8h_a1652da42785708fa6ea21ce4aef8c628}\label{ide_8h_a1652da42785708fa6ea21ce4aef8c628}} 
+\index{ide.h@{ide.h}!ide\_atapi\_read@{ide\_atapi\_read}}
+\index{ide\_atapi\_read@{ide\_atapi\_read}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_atapi\_read()}{ide\_atapi\_read()}}
+{\footnotesize\ttfamily unsigned char ide\+\_\+atapi\+\_\+read (\begin{DoxyParamCaption}\item[{unsigned char}]{drive,  }\item[{unsigned int}]{lba,  }\item[{unsigned char}]{numsects,  }\item[{unsigned short}]{selector,  }\item[{unsigned int}]{edi }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ide_8h_ab5397c8432be802172da8f04c8840ca3}\label{ide_8h_ab5397c8432be802172da8f04c8840ca3}} 
+\index{ide.h@{ide.h}!ide\_initialize@{ide\_initialize}}
+\index{ide\_initialize@{ide\_initialize}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_initialize()}{ide\_initialize()}}
+{\footnotesize\ttfamily void ide\+\_\+initialize (\begin{DoxyParamCaption}\item[{unsigned int}]{B\+A\+R0,  }\item[{unsigned int}]{B\+A\+R1,  }\item[{unsigned int}]{B\+A\+R2,  }\item[{unsigned int}]{B\+A\+R3,  }\item[{unsigned int}]{B\+A\+R4 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ide_8h_ad7ea572af581cc0623a2fb74a579ca83}\label{ide_8h_ad7ea572af581cc0623a2fb74a579ca83}} 
+\index{ide.h@{ide.h}!ide\_irq@{ide\_irq}}
+\index{ide\_irq@{ide\_irq}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_irq()}{ide\_irq()}}
+{\footnotesize\ttfamily void ide\+\_\+irq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ide_8h_a03e85b94d6fbfb957e1b88c3dd064eca}\label{ide_8h_a03e85b94d6fbfb957e1b88c3dd064eca}} 
+\index{ide.h@{ide.h}!ide\_polling@{ide\_polling}}
+\index{ide\_polling@{ide\_polling}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_polling()}{ide\_polling()}}
+{\footnotesize\ttfamily unsigned char ide\+\_\+polling (\begin{DoxyParamCaption}\item[{unsigned char}]{channel,  }\item[{unsigned int}]{advanced\+\_\+check }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ide_8h_af7757307613c29c9bcbf0f8f5b2feee5}\label{ide_8h_af7757307613c29c9bcbf0f8f5b2feee5}} 
+\index{ide.h@{ide.h}!ide\_print\_error@{ide\_print\_error}}
+\index{ide\_print\_error@{ide\_print\_error}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_print\_error()}{ide\_print\_error()}}
+{\footnotesize\ttfamily unsigned char ide\+\_\+print\+\_\+error (\begin{DoxyParamCaption}\item[{unsigned int}]{drive,  }\item[{unsigned char}]{err }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ide_8h_aef734da4bdc0c1d014528fd2f66e0686}\label{ide_8h_aef734da4bdc0c1d014528fd2f66e0686}} 
+\index{ide.h@{ide.h}!ide\_read@{ide\_read}}
+\index{ide\_read@{ide\_read}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_read()}{ide\_read()}}
+{\footnotesize\ttfamily unsigned char ide\+\_\+read (\begin{DoxyParamCaption}\item[{unsigned char}]{channel,  }\item[{unsigned char}]{reg }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ide_8h_a905d9e8d026f3b6f298cbf41c0bde7e2}\label{ide_8h_a905d9e8d026f3b6f298cbf41c0bde7e2}} 
+\index{ide.h@{ide.h}!ide\_read\_buffer@{ide\_read\_buffer}}
+\index{ide\_read\_buffer@{ide\_read\_buffer}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_read\_buffer()}{ide\_read\_buffer()}}
+{\footnotesize\ttfamily void ide\+\_\+read\+\_\+buffer (\begin{DoxyParamCaption}\item[{unsigned char}]{channel,  }\item[{unsigned char}]{reg,  }\item[{unsigned int $\ast$}]{buffer,  }\item[{unsigned int}]{quads }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ide_8h_a9dd84843412753d236e17a15277c5b98}\label{ide_8h_a9dd84843412753d236e17a15277c5b98}} 
+\index{ide.h@{ide.h}!ide\_read\_sectors@{ide\_read\_sectors}}
+\index{ide\_read\_sectors@{ide\_read\_sectors}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_read\_sectors()}{ide\_read\_sectors()}}
+{\footnotesize\ttfamily void ide\+\_\+read\+\_\+sectors (\begin{DoxyParamCaption}\item[{unsigned char}]{drive,  }\item[{unsigned char}]{numsects,  }\item[{unsigned int}]{lba,  }\item[{unsigned short}]{es,  }\item[{unsigned int}]{edi }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ide_8h_a31655fcec0cc8f9f8792b98cd4441fdf}\label{ide_8h_a31655fcec0cc8f9f8792b98cd4441fdf}} 
+\index{ide.h@{ide.h}!ide\_wait\_irq@{ide\_wait\_irq}}
+\index{ide\_wait\_irq@{ide\_wait\_irq}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_wait\_irq()}{ide\_wait\_irq()}}
+{\footnotesize\ttfamily void ide\+\_\+wait\+\_\+irq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ide_8h_afdb22c37a32d86fcb64e55b3edab4790}\label{ide_8h_afdb22c37a32d86fcb64e55b3edab4790}} 
+\index{ide.h@{ide.h}!ide\_write@{ide\_write}}
+\index{ide\_write@{ide\_write}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_write()}{ide\_write()}}
+{\footnotesize\ttfamily void ide\+\_\+write (\begin{DoxyParamCaption}\item[{unsigned char}]{channel,  }\item[{unsigned char}]{reg,  }\item[{unsigned char}]{data }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{ide_8h_a8632fb3a8cd41b7d60ee56942afbde03}\label{ide_8h_a8632fb3a8cd41b7d60ee56942afbde03}} 
+\index{ide.h@{ide.h}!ide\_write\_sectors@{ide\_write\_sectors}}
+\index{ide\_write\_sectors@{ide\_write\_sectors}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_write\_sectors()}{ide\_write\_sectors()}}
+{\footnotesize\ttfamily void ide\+\_\+write\+\_\+sectors (\begin{DoxyParamCaption}\item[{unsigned char}]{drive,  }\item[{unsigned char}]{numsects,  }\item[{unsigned int}]{lba,  }\item[{unsigned short}]{es,  }\item[{unsigned int}]{edi }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{ide_8h_a02351861ecf3191d5dbbcc1910b7c109}\label{ide_8h_a02351861ecf3191d5dbbcc1910b7c109}} 
+\index{ide.h@{ide.h}!atapi\_packet@{atapi\_packet}}
+\index{atapi\_packet@{atapi\_packet}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{atapi\_packet}{atapi\_packet}}
+{\footnotesize\ttfamily unsigned char atapi\+\_\+packet\mbox{[}12\mbox{]} = \{0x\+A8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{ide_8h_a9476016cf5efb9ab7d3fb382b89346eb}\label{ide_8h_a9476016cf5efb9ab7d3fb382b89346eb}} 
+\index{ide.h@{ide.h}!channels@{channels}}
+\index{channels@{channels}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{channels}{channels}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structIDEChannelRegisters}{I\+D\+E\+Channel\+Registers}} channels\mbox{[}2\mbox{]}}
+
+\mbox{\Hypertarget{ide_8h_a94f78e77f368421e4fe8faea979d523f}\label{ide_8h_a94f78e77f368421e4fe8faea979d523f}} 
+\index{ide.h@{ide.h}!ide\_buf@{ide\_buf}}
+\index{ide\_buf@{ide\_buf}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_buf}{ide\_buf}}
+{\footnotesize\ttfamily unsigned char ide\+\_\+buf\mbox{[}2048\mbox{]} = \{0\}}
+
+\mbox{\Hypertarget{ide_8h_ab97a828ed4839b575dc382e2bf826e87}\label{ide_8h_ab97a828ed4839b575dc382e2bf826e87}} 
+\index{ide.h@{ide.h}!ide\_devices@{ide\_devices}}
+\index{ide\_devices@{ide\_devices}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_devices}{ide\_devices}}
+{\footnotesize\ttfamily struct \mbox{\hyperlink{structide__device}{ide\+\_\+device}} ide\+\_\+devices\mbox{[}4\mbox{]}}
+
+\mbox{\Hypertarget{ide_8h_a12985ec2f925d0cdbd7d24728b9849f9}\label{ide_8h_a12985ec2f925d0cdbd7d24728b9849f9}} 
+\index{ide.h@{ide.h}!ide\_irq\_invoked@{ide\_irq\_invoked}}
+\index{ide\_irq\_invoked@{ide\_irq\_invoked}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{ide\_irq\_invoked}{ide\_irq\_invoked}}
+{\footnotesize\ttfamily unsigned char ide\+\_\+irq\+\_\+invoked = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{ide_8h_ae11222fc133cc5f2cb1b16155fee8b43}\label{ide_8h_ae11222fc133cc5f2cb1b16155fee8b43}} 
+\index{ide.h@{ide.h}!package@{package}}
+\index{package@{package}!ide.h@{ide.h}}
+\doxysubsubsection{\texorpdfstring{package}{package}}
+{\footnotesize\ttfamily char package\mbox{[}1\mbox{]}}
+

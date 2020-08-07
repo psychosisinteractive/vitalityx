@@ -1,0 +1,65 @@
+\hypertarget{system_8h}{}\doxysection{libc/system.h File Reference}
+\label{system_8h}\index{libc/system.h@{libc/system.h}}
+{\ttfamily \#include \char`\"{}asm.\+h\char`\"{}}\newline
+Include dependency graph for system.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=154pt]{system_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{system_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{system_8h_a4971467ce19d8fc5727191e1b7fe16b4}{setup\+\_\+isr}} ()
+\item 
+void \mbox{\hyperlink{system_8h_a8deca218d19174936135d90f3c817c04}{setup\+\_\+descriptors}} ()
+\item 
+void \mbox{\hyperlink{system_8h_a118c1a380204d08f9bf9ab79d650b173}{memset}} (void $\ast$destination, int c, unsigned int target\+\_\+size)
+\item 
+void \mbox{\hyperlink{system_8h_afcc76b3d055f3137e37a9c1ce82d0b95}{sleep}} (int duration)
+\item 
+void \mbox{\hyperlink{system_8h_a931786b5b11e1d64f4e03da6ce0c2b49}{insl}} (unsigned reg, unsigned int $\ast$buffer, int quads)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{system_8h_a931786b5b11e1d64f4e03da6ce0c2b49}\label{system_8h_a931786b5b11e1d64f4e03da6ce0c2b49}} 
+\index{system.h@{system.h}!insl@{insl}}
+\index{insl@{insl}!system.h@{system.h}}
+\doxysubsubsection{\texorpdfstring{insl()}{insl()}}
+{\footnotesize\ttfamily void insl (\begin{DoxyParamCaption}\item[{unsigned}]{reg,  }\item[{unsigned int $\ast$}]{buffer,  }\item[{int}]{quads }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{system_8h_a118c1a380204d08f9bf9ab79d650b173}\label{system_8h_a118c1a380204d08f9bf9ab79d650b173}} 
+\index{system.h@{system.h}!memset@{memset}}
+\index{memset@{memset}!system.h@{system.h}}
+\doxysubsubsection{\texorpdfstring{memset()}{memset()}}
+{\footnotesize\ttfamily void memset (\begin{DoxyParamCaption}\item[{void $\ast$}]{destination,  }\item[{int}]{c,  }\item[{unsigned int}]{target\+\_\+size }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{system_8h_a8deca218d19174936135d90f3c817c04}\label{system_8h_a8deca218d19174936135d90f3c817c04}} 
+\index{system.h@{system.h}!setup\_descriptors@{setup\_descriptors}}
+\index{setup\_descriptors@{setup\_descriptors}!system.h@{system.h}}
+\doxysubsubsection{\texorpdfstring{setup\_descriptors()}{setup\_descriptors()}}
+{\footnotesize\ttfamily void setup\+\_\+descriptors (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{system_8h_a4971467ce19d8fc5727191e1b7fe16b4}\label{system_8h_a4971467ce19d8fc5727191e1b7fe16b4}} 
+\index{system.h@{system.h}!setup\_isr@{setup\_isr}}
+\index{setup\_isr@{setup\_isr}!system.h@{system.h}}
+\doxysubsubsection{\texorpdfstring{setup\_isr()}{setup\_isr()}}
+{\footnotesize\ttfamily void setup\+\_\+isr (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{system_8h_afcc76b3d055f3137e37a9c1ce82d0b95}\label{system_8h_afcc76b3d055f3137e37a9c1ce82d0b95}} 
+\index{system.h@{system.h}!sleep@{sleep}}
+\index{sleep@{sleep}!system.h@{system.h}}
+\doxysubsubsection{\texorpdfstring{sleep()}{sleep()}}
+{\footnotesize\ttfamily void sleep (\begin{DoxyParamCaption}\item[{int}]{duration }\end{DoxyParamCaption})}
+

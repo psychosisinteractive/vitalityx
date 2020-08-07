@@ -1,0 +1,16 @@
+<map id="kernel.c" name="kernel.c">
+<area shape="rect" id="node1" title=" " alt="" coords="365,5,432,32"/>
+<area shape="rect" id="node2" href="$types_8h.html" title=" " alt="" coords="539,453,626,480"/>
+<area shape="rect" id="node3" href="$video_8h.html" title=" " alt="" coords="150,229,237,256"/>
+<area shape="rect" id="node4" href="$asm_8h.html" title=" " alt="" coords="521,379,578,405"/>
+<area shape="rect" id="node5" href="$system_8h.html" title=" " alt="" coords="320,304,395,331"/>
+<area shape="rect" id="node6" href="$tty_8h.html" title=" " alt="" coords="355,155,426,181"/>
+<area shape="rect" id="node8" href="$interrupt_8h.html" title=" " alt="" coords="258,80,361,107"/>
+<area shape="rect" id="node9" href="$keyboard_8h.html" title=" " alt="" coords="145,155,229,181"/>
+<area shape="rect" id="node10" href="$sound_8h.html" title=" " alt="" coords="653,304,744,331"/>
+<area shape="rect" id="node11" href="$ide_8h.html" title=" " alt="" coords="449,80,541,107"/>
+<area shape="rect" id="node12" href="$fat_8h.html" title=" " alt="" coords="981,379,1072,405"/>
+<area shape="rect" id="node13" href="$vga_8h.html" title=" " alt="" coords="784,229,880,256"/>
+<area shape="rect" id="node7" href="$string_8h.html" title=" " alt="" coords="363,229,427,256"/>
+<area shape="rect" id="node14" href="$v86_8h.html" title=" " alt="" coords="819,304,906,331"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="libc/system.h" name="libc/system.h">
+<area shape="rect" id="node1" title=" " alt="" coords="158,5,257,32"/>
+<area shape="rect" id="node2" href="$string_8h.html" title=" " alt="" coords="163,80,251,107"/>
+<area shape="rect" id="node4" href="$ide_8h.html" title=" " alt="" coords="289,229,381,256"/>
+<area shape="rect" id="node5" href="$kernel_8c.html" title=" " alt="" coords="173,304,239,331"/>
+<area shape="rect" id="node7" href="$keyboard_8h.html" title=" " alt="" coords="25,155,133,181"/>
+<area shape="rect" id="node8" href="$video_8h.html" title=" " alt="" coords="399,80,485,107"/>
+<area shape="rect" id="node3" href="$tty_8h.html" title=" " alt="" coords="209,155,280,181"/>
+<area shape="rect" id="node6" href="$interrupt_8h.html" title=" " alt="" coords="111,229,213,256"/>
+</map>

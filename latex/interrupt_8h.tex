@@ -1,0 +1,68 @@
+\hypertarget{interrupt_8h}{}\doxysection{libc/interrupt.h File Reference}
+\label{interrupt_8h}\index{libc/interrupt.h@{libc/interrupt.h}}
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}keyboard.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tty.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+Include dependency graph for interrupt.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{interrupt_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=157pt]{interrupt_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{interrupt_8h_a1fd242da8c9498b98d978e150a36c23f}{isr\+\_\+dividebyzero}} ()
+\item 
+void \mbox{\hyperlink{interrupt_8h_a13f7b685594468a92abb85e03148fb54}{isr\+\_\+generic}} ()
+\item 
+void \mbox{\hyperlink{interrupt_8h_af6ac5b24d3c1b69d4272012baa895291}{isr\+\_\+gpfault}} (int errorcode)
+\item 
+void \mbox{\hyperlink{interrupt_8h_adecc6bfc28b1d14005a070b0159c8225}{N\+M\+I\+\_\+enable}} ()
+\item 
+void \mbox{\hyperlink{interrupt_8h_a03a1497db52d629138dba59ddafcbc32}{N\+M\+I\+\_\+disable}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{interrupt_8h_a1fd242da8c9498b98d978e150a36c23f}\label{interrupt_8h_a1fd242da8c9498b98d978e150a36c23f}} 
+\index{interrupt.h@{interrupt.h}!isr\_dividebyzero@{isr\_dividebyzero}}
+\index{isr\_dividebyzero@{isr\_dividebyzero}!interrupt.h@{interrupt.h}}
+\doxysubsubsection{\texorpdfstring{isr\_dividebyzero()}{isr\_dividebyzero()}}
+{\footnotesize\ttfamily void isr\+\_\+dividebyzero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interrupt_8h_a13f7b685594468a92abb85e03148fb54}\label{interrupt_8h_a13f7b685594468a92abb85e03148fb54}} 
+\index{interrupt.h@{interrupt.h}!isr\_generic@{isr\_generic}}
+\index{isr\_generic@{isr\_generic}!interrupt.h@{interrupt.h}}
+\doxysubsubsection{\texorpdfstring{isr\_generic()}{isr\_generic()}}
+{\footnotesize\ttfamily void isr\+\_\+generic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interrupt_8h_af6ac5b24d3c1b69d4272012baa895291}\label{interrupt_8h_af6ac5b24d3c1b69d4272012baa895291}} 
+\index{interrupt.h@{interrupt.h}!isr\_gpfault@{isr\_gpfault}}
+\index{isr\_gpfault@{isr\_gpfault}!interrupt.h@{interrupt.h}}
+\doxysubsubsection{\texorpdfstring{isr\_gpfault()}{isr\_gpfault()}}
+{\footnotesize\ttfamily void isr\+\_\+gpfault (\begin{DoxyParamCaption}\item[{int}]{errorcode }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interrupt_8h_a03a1497db52d629138dba59ddafcbc32}\label{interrupt_8h_a03a1497db52d629138dba59ddafcbc32}} 
+\index{interrupt.h@{interrupt.h}!NMI\_disable@{NMI\_disable}}
+\index{NMI\_disable@{NMI\_disable}!interrupt.h@{interrupt.h}}
+\doxysubsubsection{\texorpdfstring{NMI\_disable()}{NMI\_disable()}}
+{\footnotesize\ttfamily void N\+M\+I\+\_\+disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{interrupt_8h_adecc6bfc28b1d14005a070b0159c8225}\label{interrupt_8h_adecc6bfc28b1d14005a070b0159c8225}} 
+\index{interrupt.h@{interrupt.h}!NMI\_enable@{NMI\_enable}}
+\index{NMI\_enable@{NMI\_enable}!interrupt.h@{interrupt.h}}
+\doxysubsubsection{\texorpdfstring{NMI\_enable()}{NMI\_enable()}}
+{\footnotesize\ttfamily void N\+M\+I\+\_\+enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

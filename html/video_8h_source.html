@@ -69,42 +69,63 @@ $(function() {
 <div class="title">video.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VIDEO_H</span></div>
+<a href="video_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef VIDEO_H</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define VIDEO_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;types.h&quot;</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;asm.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;system.h&quot;</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="types_8h.html">types.h</a>&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="asm_8h.html">asm.h</a>&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="system_8h.html">system.h</a>&quot;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">/* putpixel (EGA,VGA) */</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> putpixel(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* screen, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">char</span> color) {</div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="video_8h.html#aff86a3b09d2ef03cc5bf1af73bd19e0f">    8</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="video_8h.html#aff86a3b09d2ef03cc5bf1af73bd19e0f">putpixel</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">char</span>* screen, <span class="keywordtype">int</span> x, <span class="keywordtype">int</span> y, <span class="keywordtype">char</span> color) {</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    <span class="keywordtype">unsigned</span> where = x*3 + y*32001;</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    screen[where] = color;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keyword">enum</span> TextColors</div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9e">   13</a></span>&#160;<span class="keyword">enum</span> TextColors</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;{</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    Black,</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    Blue,</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    Green,</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    Cyan,</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    Red,</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    Magenta,</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    Brown,</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    LightGray,</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    DarkGray,</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    LightBlue,</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    LightGreen,</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    LightCyan,</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    LightRed,</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    LightMagenta,</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    Yellow,</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    White,</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;} <span class="keyword">typedef</span> textcolor_t;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eac1e9bce8242f443c54c7405223d616cd">   15</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eac1e9bce8242f443c54c7405223d616cd">Black</a>,</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eaf5e09dd1da4088464f264b7a3118bff8">   16</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eaf5e09dd1da4088464f264b7a3118bff8">Blue</a>,</div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ead0784a3f969fe736e8b271a5a161d106">   17</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ead0784a3f969fe736e8b271a5a161d106">Green</a>,</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eab0d4738f9c7f12049e52aa4e868bdc8b">   18</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eab0d4738f9c7f12049e52aa4e868bdc8b">Cyan</a>,</div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ead3163c1fcda01965b692ec2c3122b743">   19</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ead3163c1fcda01965b692ec2c3122b743">Red</a>,</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eab5059a620e2c7dc57556b1e275c2f9bc">   20</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eab5059a620e2c7dc57556b1e275c2f9bc">Magenta</a>,</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea99c15c8b7e6b048d571778c871622d38">   21</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea99c15c8b7e6b048d571778c871622d38">Brown</a>,</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eaab5a67106ffa41f1195b52a8109c745a">   22</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eaab5a67106ffa41f1195b52a8109c745a">LightGray</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea4de15b8ee603dbccac7062665c37853f">   23</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea4de15b8ee603dbccac7062665c37853f">DarkGray</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea1a4360030daf53036ce1cd1668dc6243">   24</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea1a4360030daf53036ce1cd1668dc6243">LightBlue</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea6f3bae902f4a1a3b69152ad13382ab18">   25</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea6f3bae902f4a1a3b69152ad13382ab18">LightGreen</a>,</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea60295ab538eb50ae469a14539c220ab6">   26</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea60295ab538eb50ae469a14539c220ab6">LightCyan</a>,</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eaf1f766b65249fac0dbddf379c1dcb7f7">   27</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eaf1f766b65249fac0dbddf379c1dcb7f7">LightRed</a>,</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eacc5278cccbe10813f713a337f4652568">   28</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eacc5278cccbe10813f713a337f4652568">LightMagenta</a>,</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eabf28513245738599d13e3ce36bd16c82">   29</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eabf28513245738599d13e3ce36bd16c82">Yellow</a>,</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eab548046646b36c12aa6ba841de500094">   30</a></span>&#160;    <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eab548046646b36c12aa6ba841de500094">White</a>,</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;} <span class="keyword">typedef</span> <a class="code" href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9e">textcolor_t</a>;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="atypes_8h_html"><div class="ttname"><a href="types_8h.html">types.h</a></div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9ead3163c1fcda01965b692ec2c3122b743"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ead3163c1fcda01965b692ec2c3122b743">Red</a></div><div class="ttdeci">@ Red</div><div class="ttdef"><b>Definition:</b> video.h:19</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9ea99c15c8b7e6b048d571778c871622d38"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea99c15c8b7e6b048d571778c871622d38">Brown</a></div><div class="ttdeci">@ Brown</div><div class="ttdef"><b>Definition:</b> video.h:21</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9eab0d4738f9c7f12049e52aa4e868bdc8b"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eab0d4738f9c7f12049e52aa4e868bdc8b">Cyan</a></div><div class="ttdeci">@ Cyan</div><div class="ttdef"><b>Definition:</b> video.h:18</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9ea6f3bae902f4a1a3b69152ad13382ab18"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea6f3bae902f4a1a3b69152ad13382ab18">LightGreen</a></div><div class="ttdeci">@ LightGreen</div><div class="ttdef"><b>Definition:</b> video.h:25</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9e"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9e">textcolor_t</a></div><div class="ttdeci">textcolor_t</div><div class="ttdef"><b>Definition:</b> video.h:14</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9eab5059a620e2c7dc57556b1e275c2f9bc"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eab5059a620e2c7dc57556b1e275c2f9bc">Magenta</a></div><div class="ttdeci">@ Magenta</div><div class="ttdef"><b>Definition:</b> video.h:20</div></div>
+<div class="ttc" id="aasm_8h_html"><div class="ttname"><a href="asm_8h.html">asm.h</a></div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9eacc5278cccbe10813f713a337f4652568"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eacc5278cccbe10813f713a337f4652568">LightMagenta</a></div><div class="ttdeci">@ LightMagenta</div><div class="ttdef"><b>Definition:</b> video.h:28</div></div>
+<div class="ttc" id="avideo_8h_html_aff86a3b09d2ef03cc5bf1af73bd19e0f"><div class="ttname"><a href="video_8h.html#aff86a3b09d2ef03cc5bf1af73bd19e0f">putpixel</a></div><div class="ttdeci">static void putpixel(unsigned char *screen, int x, int y, char color)</div><div class="ttdef"><b>Definition:</b> video.h:8</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9ead0784a3f969fe736e8b271a5a161d106"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ead0784a3f969fe736e8b271a5a161d106">Green</a></div><div class="ttdeci">@ Green</div><div class="ttdef"><b>Definition:</b> video.h:17</div></div>
+<div class="ttc" id="asystem_8h_html"><div class="ttname"><a href="system_8h.html">system.h</a></div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9eaf1f766b65249fac0dbddf379c1dcb7f7"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eaf1f766b65249fac0dbddf379c1dcb7f7">LightRed</a></div><div class="ttdeci">@ LightRed</div><div class="ttdef"><b>Definition:</b> video.h:27</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9eabf28513245738599d13e3ce36bd16c82"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eabf28513245738599d13e3ce36bd16c82">Yellow</a></div><div class="ttdeci">@ Yellow</div><div class="ttdef"><b>Definition:</b> video.h:29</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9eaf5e09dd1da4088464f264b7a3118bff8"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eaf5e09dd1da4088464f264b7a3118bff8">Blue</a></div><div class="ttdeci">@ Blue</div><div class="ttdef"><b>Definition:</b> video.h:16</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9eac1e9bce8242f443c54c7405223d616cd"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eac1e9bce8242f443c54c7405223d616cd">Black</a></div><div class="ttdeci">@ Black</div><div class="ttdef"><b>Definition:</b> video.h:15</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9ea4de15b8ee603dbccac7062665c37853f"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea4de15b8ee603dbccac7062665c37853f">DarkGray</a></div><div class="ttdeci">@ DarkGray</div><div class="ttdef"><b>Definition:</b> video.h:23</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9eaab5a67106ffa41f1195b52a8109c745a"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eaab5a67106ffa41f1195b52a8109c745a">LightGray</a></div><div class="ttdeci">@ LightGray</div><div class="ttdef"><b>Definition:</b> video.h:22</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9ea60295ab538eb50ae469a14539c220ab6"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea60295ab538eb50ae469a14539c220ab6">LightCyan</a></div><div class="ttdeci">@ LightCyan</div><div class="ttdef"><b>Definition:</b> video.h:26</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9ea1a4360030daf53036ce1cd1668dc6243"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9ea1a4360030daf53036ce1cd1668dc6243">LightBlue</a></div><div class="ttdeci">@ LightBlue</div><div class="ttdef"><b>Definition:</b> video.h:24</div></div>
+<div class="ttc" id="avideo_8h_html_a69d534d923d28a9c06b33b5a2a83bf9eab548046646b36c12aa6ba841de500094"><div class="ttname"><a href="video_8h.html#a69d534d923d28a9c06b33b5a2a83bf9eab548046646b36c12aa6ba841de500094">White</a></div><div class="ttdeci">@ White</div><div class="ttdef"><b>Definition:</b> video.h:30</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -1,0 +1,229 @@
+\hypertarget{tty_8h}{}\doxysection{libc/tty.h File Reference}
+\label{tty_8h}\index{libc/tty.h@{libc/tty.h}}
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}asm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}video.\+h\char`\"{}}\newline
+Include dependency graph for tty.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{tty_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=283pt]{tty_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{tty_8h_a3444f7a6be040f896a3e9fd54492ea30}{T\+T\+Y\+\_\+\+T\+C\+\_\+\+R\+E\+V\+E\+R\+SE}}~\char`\"{}\textbackslash{}x05\textbackslash{}xa2\textbackslash{}x06\char`\"{}
+\item 
+\#define \mbox{\hyperlink{tty_8h_ab24b4c1e8b7584524496f5f12ba74038}{T\+T\+Y\+\_\+\+T\+C\+\_\+\+R\+E\+S\+ET}}~\char`\"{}\textbackslash{}x05\textbackslash{}xa1\textbackslash{}x06\char`\"{}
+\item 
+\#define \mbox{\hyperlink{tty_8h_adb3a26d3e17785ad896a61607f77a7dd}{T\+T\+Y\+\_\+\+T\+C\+\_\+\+C\+L\+\_\+\+OK}}~\char`\"{}\textbackslash{}x05\textbackslash{}xa0\textbackslash{}x06\char`\"{}
+\item 
+\#define \mbox{\hyperlink{tty_8h_a614217d263be1fb1a5f76e2ff7be19a2}{P\+O\+RT}}~0x3f8   /$\ast$ C\+O\+M1 $\ast$/
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{tty_8h_a6b2eb1229867539fdce8bfbd8fa47759}{tty\+\_\+putchar}} (unsigned char c, \mbox{\hyperlink{video_8h_a69d534d923d28a9c06b33b5a2a83bf9e}{textcolor\+\_\+t}} forecolour, \mbox{\hyperlink{video_8h_a69d534d923d28a9c06b33b5a2a83bf9e}{textcolor\+\_\+t}} backcolour, int x, int y)
+\item 
+void \mbox{\hyperlink{tty_8h_a6da4674dd5a33a04c76d83243c8e4b8e}{tty\+\_\+putstr}} (\mbox{\hyperlink{string_8h_ada436671bc57dfd805a9f3974c81e618}{string\+\_\+t}} string, \mbox{\hyperlink{video_8h_a69d534d923d28a9c06b33b5a2a83bf9e}{textcolor\+\_\+t}} forecolour, \mbox{\hyperlink{video_8h_a69d534d923d28a9c06b33b5a2a83bf9e}{textcolor\+\_\+t}} backcolour)
+\item 
+void \mbox{\hyperlink{tty_8h_a29a519c68d5fda10f6ca3aeaead74347}{tty\+\_\+enable\+\_\+cursor}} (\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} cursor\+\_\+start, \mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} cursor\+\_\+end)
+\item 
+void \mbox{\hyperlink{tty_8h_a78c20225f9289b7e20cce21257ce8dca}{tty\+\_\+disable\+\_\+cursor}} ()
+\item 
+void \mbox{\hyperlink{tty_8h_a9ae91144ad89af8b8af856b611218d0c}{tty\+\_\+update\+\_\+cursor}} (int x, int y)
+\item 
+void \mbox{\hyperlink{tty_8h_a5d3d15fdf823500b88f9a02c8e8c7682}{tty\+\_\+cleartty}} ()
+\item 
+void \mbox{\hyperlink{tty_8h_a7f3b5b4ace4add94f4bdaf99b13a88ee}{tty\+\_\+init\+\_\+serial}} (int sport)
+\item 
+int \mbox{\hyperlink{tty_8h_ac3a6be4b1f86c89b946f286f6bb35444}{tty\+\_\+serial\+\_\+received}} ()
+\item 
+char \mbox{\hyperlink{tty_8h_aa0d34a7d4cac7aa11db8b45becd9e95c}{tty\+\_\+read\+\_\+serial}} ()
+\item 
+int \mbox{\hyperlink{tty_8h_acecd7700d007e249e31d744a98eb3c7f}{tty\+\_\+is\+\_\+transmit\+\_\+empty}} ()
+\item 
+void \mbox{\hyperlink{tty_8h_a6439cc460585c2ec3c50b390a4b4b250}{tty\+\_\+write\+\_\+serial}} (char a)
+\item 
+void \mbox{\hyperlink{tty_8h_ab44a629b283c00c6d055049ac1e00275}{tty\+\_\+serial\+\_\+putstr}} (\mbox{\hyperlink{string_8h_ada436671bc57dfd805a9f3974c81e618}{string\+\_\+t}} string)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \mbox{\hyperlink{tty_8h_afeb00c6ff15d0bf9455519131f45c651}{ttylastx}}
+\item 
+unsigned int \mbox{\hyperlink{tty_8h_adb472c81e607c23c4e70bdaed8153279}{ttylasty}}
+\item 
+unsigned int \mbox{\hyperlink{tty_8h_ab8b80ea0ba671319c70e7a9207589648}{screenheight}} = 25
+\item 
+unsigned int \mbox{\hyperlink{tty_8h_a938bdc6ae46c346147b6d4f67ad1e704}{port}}
+\item 
+\mbox{\hyperlink{types_8h_af6a258d8f3ee5206d682d799316314b1}{bool}} \mbox{\hyperlink{tty_8h_a828c82c174edbb885ba73ccbabf98333}{ttyserialenabled}} = \mbox{\hyperlink{types_8h_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}{false}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{tty_8h_a614217d263be1fb1a5f76e2ff7be19a2}\label{tty_8h_a614217d263be1fb1a5f76e2ff7be19a2}} 
+\index{tty.h@{tty.h}!PORT@{PORT}}
+\index{PORT@{PORT}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{PORT}{PORT}}
+{\footnotesize\ttfamily \#define P\+O\+RT~0x3f8   /$\ast$ C\+O\+M1 $\ast$/}
+
+\mbox{\Hypertarget{tty_8h_adb3a26d3e17785ad896a61607f77a7dd}\label{tty_8h_adb3a26d3e17785ad896a61607f77a7dd}} 
+\index{tty.h@{tty.h}!TTY\_TC\_CL\_OK@{TTY\_TC\_CL\_OK}}
+\index{TTY\_TC\_CL\_OK@{TTY\_TC\_CL\_OK}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{TTY\_TC\_CL\_OK}{TTY\_TC\_CL\_OK}}
+{\footnotesize\ttfamily \#define T\+T\+Y\+\_\+\+T\+C\+\_\+\+C\+L\+\_\+\+OK~\char`\"{}\textbackslash{}x05\textbackslash{}xa0\textbackslash{}x06\char`\"{}}
+
+\mbox{\Hypertarget{tty_8h_ab24b4c1e8b7584524496f5f12ba74038}\label{tty_8h_ab24b4c1e8b7584524496f5f12ba74038}} 
+\index{tty.h@{tty.h}!TTY\_TC\_RESET@{TTY\_TC\_RESET}}
+\index{TTY\_TC\_RESET@{TTY\_TC\_RESET}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{TTY\_TC\_RESET}{TTY\_TC\_RESET}}
+{\footnotesize\ttfamily \#define T\+T\+Y\+\_\+\+T\+C\+\_\+\+R\+E\+S\+ET~\char`\"{}\textbackslash{}x05\textbackslash{}xa1\textbackslash{}x06\char`\"{}}
+
+\mbox{\Hypertarget{tty_8h_a3444f7a6be040f896a3e9fd54492ea30}\label{tty_8h_a3444f7a6be040f896a3e9fd54492ea30}} 
+\index{tty.h@{tty.h}!TTY\_TC\_REVERSE@{TTY\_TC\_REVERSE}}
+\index{TTY\_TC\_REVERSE@{TTY\_TC\_REVERSE}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{TTY\_TC\_REVERSE}{TTY\_TC\_REVERSE}}
+{\footnotesize\ttfamily \#define T\+T\+Y\+\_\+\+T\+C\+\_\+\+R\+E\+V\+E\+R\+SE~\char`\"{}\textbackslash{}x05\textbackslash{}xa2\textbackslash{}x06\char`\"{}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{tty_8h_a5d3d15fdf823500b88f9a02c8e8c7682}\label{tty_8h_a5d3d15fdf823500b88f9a02c8e8c7682}} 
+\index{tty.h@{tty.h}!tty\_cleartty@{tty\_cleartty}}
+\index{tty\_cleartty@{tty\_cleartty}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{tty\_cleartty()}{tty\_cleartty()}}
+{\footnotesize\ttfamily void tty\+\_\+cleartty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tty_8h_a78c20225f9289b7e20cce21257ce8dca}\label{tty_8h_a78c20225f9289b7e20cce21257ce8dca}} 
+\index{tty.h@{tty.h}!tty\_disable\_cursor@{tty\_disable\_cursor}}
+\index{tty\_disable\_cursor@{tty\_disable\_cursor}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{tty\_disable\_cursor()}{tty\_disable\_cursor()}}
+{\footnotesize\ttfamily void tty\+\_\+disable\+\_\+cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tty_8h_a29a519c68d5fda10f6ca3aeaead74347}\label{tty_8h_a29a519c68d5fda10f6ca3aeaead74347}} 
+\index{tty.h@{tty.h}!tty\_enable\_cursor@{tty\_enable\_cursor}}
+\index{tty\_enable\_cursor@{tty\_enable\_cursor}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{tty\_enable\_cursor()}{tty\_enable\_cursor()}}
+{\footnotesize\ttfamily void tty\+\_\+enable\+\_\+cursor (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{cursor\+\_\+start,  }\item[{\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{cursor\+\_\+end }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tty_8h_a7f3b5b4ace4add94f4bdaf99b13a88ee}\label{tty_8h_a7f3b5b4ace4add94f4bdaf99b13a88ee}} 
+\index{tty.h@{tty.h}!tty\_init\_serial@{tty\_init\_serial}}
+\index{tty\_init\_serial@{tty\_init\_serial}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{tty\_init\_serial()}{tty\_init\_serial()}}
+{\footnotesize\ttfamily void tty\+\_\+init\+\_\+serial (\begin{DoxyParamCaption}\item[{int}]{sport }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tty_8h_acecd7700d007e249e31d744a98eb3c7f}\label{tty_8h_acecd7700d007e249e31d744a98eb3c7f}} 
+\index{tty.h@{tty.h}!tty\_is\_transmit\_empty@{tty\_is\_transmit\_empty}}
+\index{tty\_is\_transmit\_empty@{tty\_is\_transmit\_empty}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{tty\_is\_transmit\_empty()}{tty\_is\_transmit\_empty()}}
+{\footnotesize\ttfamily int tty\+\_\+is\+\_\+transmit\+\_\+empty (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tty_8h_a6b2eb1229867539fdce8bfbd8fa47759}\label{tty_8h_a6b2eb1229867539fdce8bfbd8fa47759}} 
+\index{tty.h@{tty.h}!tty\_putchar@{tty\_putchar}}
+\index{tty\_putchar@{tty\_putchar}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{tty\_putchar()}{tty\_putchar()}}
+{\footnotesize\ttfamily void tty\+\_\+putchar (\begin{DoxyParamCaption}\item[{unsigned char}]{c,  }\item[{\mbox{\hyperlink{video_8h_a69d534d923d28a9c06b33b5a2a83bf9e}{textcolor\+\_\+t}}}]{forecolour,  }\item[{\mbox{\hyperlink{video_8h_a69d534d923d28a9c06b33b5a2a83bf9e}{textcolor\+\_\+t}}}]{backcolour,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+tty\+\_\+putchar puts a character in video memory. 
+\begin{DoxyParams}{Parameters}
+{\em c} & The character \\
+\hline
+{\em forecolour} & The foreground color \\
+\hline
+{\em backcolour} & The background color \\
+\hline
+{\em x} & The X of the character \\
+\hline
+{\em y} & The Y of the character \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tty_8h_a6da4674dd5a33a04c76d83243c8e4b8e}\label{tty_8h_a6da4674dd5a33a04c76d83243c8e4b8e}} 
+\index{tty.h@{tty.h}!tty\_putstr@{tty\_putstr}}
+\index{tty\_putstr@{tty\_putstr}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{tty\_putstr()}{tty\_putstr()}}
+{\footnotesize\ttfamily void tty\+\_\+putstr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{string_8h_ada436671bc57dfd805a9f3974c81e618}{string\+\_\+t}}}]{string,  }\item[{\mbox{\hyperlink{video_8h_a69d534d923d28a9c06b33b5a2a83bf9e}{textcolor\+\_\+t}}}]{forecolour,  }\item[{\mbox{\hyperlink{video_8h_a69d534d923d28a9c06b33b5a2a83bf9e}{textcolor\+\_\+t}}}]{backcolour }\end{DoxyParamCaption})}
+
+tty\+\_\+putstr puts a string in video memory. 
+\begin{DoxyParams}{Parameters}
+{\em string} & The string \\
+\hline
+{\em forecolour} & The foreground color \\
+\hline
+{\em backcolour} & The background color \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{tty_8h_aa0d34a7d4cac7aa11db8b45becd9e95c}\label{tty_8h_aa0d34a7d4cac7aa11db8b45becd9e95c}} 
+\index{tty.h@{tty.h}!tty\_read\_serial@{tty\_read\_serial}}
+\index{tty\_read\_serial@{tty\_read\_serial}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{tty\_read\_serial()}{tty\_read\_serial()}}
+{\footnotesize\ttfamily char tty\+\_\+read\+\_\+serial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tty_8h_ab44a629b283c00c6d055049ac1e00275}\label{tty_8h_ab44a629b283c00c6d055049ac1e00275}} 
+\index{tty.h@{tty.h}!tty\_serial\_putstr@{tty\_serial\_putstr}}
+\index{tty\_serial\_putstr@{tty\_serial\_putstr}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{tty\_serial\_putstr()}{tty\_serial\_putstr()}}
+{\footnotesize\ttfamily void tty\+\_\+serial\+\_\+putstr (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{string_8h_ada436671bc57dfd805a9f3974c81e618}{string\+\_\+t}}}]{string }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tty_8h_ac3a6be4b1f86c89b946f286f6bb35444}\label{tty_8h_ac3a6be4b1f86c89b946f286f6bb35444}} 
+\index{tty.h@{tty.h}!tty\_serial\_received@{tty\_serial\_received}}
+\index{tty\_serial\_received@{tty\_serial\_received}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{tty\_serial\_received()}{tty\_serial\_received()}}
+{\footnotesize\ttfamily int tty\+\_\+serial\+\_\+received (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tty_8h_a9ae91144ad89af8b8af856b611218d0c}\label{tty_8h_a9ae91144ad89af8b8af856b611218d0c}} 
+\index{tty.h@{tty.h}!tty\_update\_cursor@{tty\_update\_cursor}}
+\index{tty\_update\_cursor@{tty\_update\_cursor}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{tty\_update\_cursor()}{tty\_update\_cursor()}}
+{\footnotesize\ttfamily void tty\+\_\+update\+\_\+cursor (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{tty_8h_a6439cc460585c2ec3c50b390a4b4b250}\label{tty_8h_a6439cc460585c2ec3c50b390a4b4b250}} 
+\index{tty.h@{tty.h}!tty\_write\_serial@{tty\_write\_serial}}
+\index{tty\_write\_serial@{tty\_write\_serial}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{tty\_write\_serial()}{tty\_write\_serial()}}
+{\footnotesize\ttfamily void tty\+\_\+write\+\_\+serial (\begin{DoxyParamCaption}\item[{char}]{a }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{tty_8h_a938bdc6ae46c346147b6d4f67ad1e704}\label{tty_8h_a938bdc6ae46c346147b6d4f67ad1e704}} 
+\index{tty.h@{tty.h}!port@{port}}
+\index{port@{port}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{port}{port}}
+{\footnotesize\ttfamily unsigned int port}
+
+\mbox{\Hypertarget{tty_8h_ab8b80ea0ba671319c70e7a9207589648}\label{tty_8h_ab8b80ea0ba671319c70e7a9207589648}} 
+\index{tty.h@{tty.h}!screenheight@{screenheight}}
+\index{screenheight@{screenheight}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{screenheight}{screenheight}}
+{\footnotesize\ttfamily unsigned int screenheight = 25}
+
+\mbox{\Hypertarget{tty_8h_afeb00c6ff15d0bf9455519131f45c651}\label{tty_8h_afeb00c6ff15d0bf9455519131f45c651}} 
+\index{tty.h@{tty.h}!ttylastx@{ttylastx}}
+\index{ttylastx@{ttylastx}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{ttylastx}{ttylastx}}
+{\footnotesize\ttfamily unsigned int ttylastx}
+
+\mbox{\Hypertarget{tty_8h_adb472c81e607c23c4e70bdaed8153279}\label{tty_8h_adb472c81e607c23c4e70bdaed8153279}} 
+\index{tty.h@{tty.h}!ttylasty@{ttylasty}}
+\index{ttylasty@{ttylasty}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{ttylasty}{ttylasty}}
+{\footnotesize\ttfamily unsigned int ttylasty}
+
+\mbox{\Hypertarget{tty_8h_a828c82c174edbb885ba73ccbabf98333}\label{tty_8h_a828c82c174edbb885ba73ccbabf98333}} 
+\index{tty.h@{tty.h}!ttyserialenabled@{ttyserialenabled}}
+\index{ttyserialenabled@{ttyserialenabled}!tty.h@{tty.h}}
+\doxysubsubsection{\texorpdfstring{ttyserialenabled}{ttyserialenabled}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_af6a258d8f3ee5206d682d799316314b1}{bool}} ttyserialenabled = \mbox{\hyperlink{types_8h_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}{false}}}
+

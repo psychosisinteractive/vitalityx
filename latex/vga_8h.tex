@@ -1,0 +1,170 @@
+\hypertarget{vga_8h}{}\doxysection{drivers/vga.h File Reference}
+\label{vga_8h}\index{drivers/vga.h@{drivers/vga.h}}
+{\ttfamily \#include \char`\"{}../libc/asm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/v86.\+h\char`\"{}}\newline
+Include dependency graph for vga.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=210pt]{vga_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{vga_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{vga_8h_a34fb560ebb3467ef63fc70ae48a3cfbc}{R\+E\+G\+S\+\_\+90x60}}~0b0001
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{vga_8h_a63bf0a876af36076ffb713ff00618ce4}{vga\+\_\+port\+\_\+t}} \{ \newline
+\mbox{\hyperlink{vga_8h_a63bf0a876af36076ffb713ff00618ce4a03f85695a2893f604d3eabc0afff0c75}{vga\+\_\+3c0}} = 0x3c0, 
+\mbox{\hyperlink{vga_8h_a63bf0a876af36076ffb713ff00618ce4a0ebf5e2c74cf875bb40458e6c625d334}{vga\+\_\+3c2}} = 0x3c2, 
+\mbox{\hyperlink{vga_8h_a63bf0a876af36076ffb713ff00618ce4ab5776e9276da3ab0cc4f5626315cc7f5}{vga\+\_\+3c4}} = 0x3c4, 
+\mbox{\hyperlink{vga_8h_a63bf0a876af36076ffb713ff00618ce4a575d57b78ca24405f26d1a13eb9e163d}{vga\+\_\+3ce}} = 0x3ce, 
+\newline
+\mbox{\hyperlink{vga_8h_a63bf0a876af36076ffb713ff00618ce4a4e0b7249521c5b0085d99124dd91fc9c}{vga\+\_\+3d4}} = 0x3d4
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{vga_8h_a0efe6c57778fcfbff5f79a9aa83df38a}{vga\+\_\+init}} ()
+\item 
+void \mbox{\hyperlink{vga_8h_aa156f6e955d649347fb0cf26bef28c1d}{vga\+\_\+chkmode}} ()
+\item 
+void \mbox{\hyperlink{vga_8h_ae3f16d4cffd57acbdfa6c399a72ae721}{vga\+\_\+setvar}} (\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} index, \mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} value, \mbox{\hyperlink{vga_8h_a63bf0a876af36076ffb713ff00618ce4}{vga\+\_\+port\+\_\+t}} vgaport)
+\item 
+\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} \mbox{\hyperlink{vga_8h_a42ac16bdd0eeb4298fca66ca858da2c4}{vga\+\_\+getvar}} (\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} index, \mbox{\hyperlink{vga_8h_a63bf0a876af36076ffb713ff00618ce4}{vga\+\_\+port\+\_\+t}} vgaport)
+\item 
+int \mbox{\hyperlink{vga_8h_a2e6e7034bcddc0b07e062ed478c90a8f}{vga\+\_\+chksetvar}} (\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} index, \mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} value, \mbox{\hyperlink{vga_8h_a63bf0a876af36076ffb713ff00618ce4}{vga\+\_\+port\+\_\+t}} vgaport)
+\item 
+int \mbox{\hyperlink{vga_8h_a8eec470a23e284551ba78ac240777939}{vga\+\_\+setmode}} (\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} mode, \mbox{\hyperlink{types_8h_af6a258d8f3ee5206d682d799316314b1}{bool}} v86)
+\item 
+void \mbox{\hyperlink{vga_8h_ada7cac23e36d1c5dbac6cbce14819f13}{tricks\+\_\+001}} ()
+\item 
+int \mbox{\hyperlink{vga_8h_ab02c5c9bbc1e5c29dbb8898aee387eb2}{vga\+\_\+asmtricks}} (\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} trick)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{types_8h_af6a258d8f3ee5206d682d799316314b1}{bool}} \mbox{\hyperlink{vga_8h_ac3b46aeb1d097fe149a3e8f98653c872}{vga\+\_\+indexmode}} = \mbox{\hyperlink{types_8h_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}{false}}
+\item 
+unsigned int \mbox{\hyperlink{vga_8h_ab1902955c9a6467e453b0e28f3c2d247}{vga\+\_\+mode}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{vga_8h_a34fb560ebb3467ef63fc70ae48a3cfbc}\label{vga_8h_a34fb560ebb3467ef63fc70ae48a3cfbc}} 
+\index{vga.h@{vga.h}!REGS\_90x60@{REGS\_90x60}}
+\index{REGS\_90x60@{REGS\_90x60}!vga.h@{vga.h}}
+\doxysubsubsection{\texorpdfstring{REGS\_90x60}{REGS\_90x60}}
+{\footnotesize\ttfamily \#define R\+E\+G\+S\+\_\+90x60~0b0001}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{vga_8h_a63bf0a876af36076ffb713ff00618ce4}\label{vga_8h_a63bf0a876af36076ffb713ff00618ce4}} 
+\index{vga.h@{vga.h}!vga\_port\_t@{vga\_port\_t}}
+\index{vga\_port\_t@{vga\_port\_t}!vga.h@{vga.h}}
+\doxysubsubsection{\texorpdfstring{vga\_port\_t}{vga\_port\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{vga_8h_a63bf0a876af36076ffb713ff00618ce4}{vga\+\_\+port\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{vga\_3c0@{vga\_3c0}!vga.h@{vga.h}}\index{vga.h@{vga.h}!vga\_3c0@{vga\_3c0}}}\mbox{\Hypertarget{vga_8h_a63bf0a876af36076ffb713ff00618ce4a03f85695a2893f604d3eabc0afff0c75}\label{vga_8h_a63bf0a876af36076ffb713ff00618ce4a03f85695a2893f604d3eabc0afff0c75}} 
+vga\+\_\+3c0&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{vga\_3c2@{vga\_3c2}!vga.h@{vga.h}}\index{vga.h@{vga.h}!vga\_3c2@{vga\_3c2}}}\mbox{\Hypertarget{vga_8h_a63bf0a876af36076ffb713ff00618ce4a0ebf5e2c74cf875bb40458e6c625d334}\label{vga_8h_a63bf0a876af36076ffb713ff00618ce4a0ebf5e2c74cf875bb40458e6c625d334}} 
+vga\+\_\+3c2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{vga\_3c4@{vga\_3c4}!vga.h@{vga.h}}\index{vga.h@{vga.h}!vga\_3c4@{vga\_3c4}}}\mbox{\Hypertarget{vga_8h_a63bf0a876af36076ffb713ff00618ce4ab5776e9276da3ab0cc4f5626315cc7f5}\label{vga_8h_a63bf0a876af36076ffb713ff00618ce4ab5776e9276da3ab0cc4f5626315cc7f5}} 
+vga\+\_\+3c4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{vga\_3ce@{vga\_3ce}!vga.h@{vga.h}}\index{vga.h@{vga.h}!vga\_3ce@{vga\_3ce}}}\mbox{\Hypertarget{vga_8h_a63bf0a876af36076ffb713ff00618ce4a575d57b78ca24405f26d1a13eb9e163d}\label{vga_8h_a63bf0a876af36076ffb713ff00618ce4a575d57b78ca24405f26d1a13eb9e163d}} 
+vga\+\_\+3ce&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{vga\_3d4@{vga\_3d4}!vga.h@{vga.h}}\index{vga.h@{vga.h}!vga\_3d4@{vga\_3d4}}}\mbox{\Hypertarget{vga_8h_a63bf0a876af36076ffb713ff00618ce4a4e0b7249521c5b0085d99124dd91fc9c}\label{vga_8h_a63bf0a876af36076ffb713ff00618ce4a4e0b7249521c5b0085d99124dd91fc9c}} 
+vga\+\_\+3d4&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{vga_8h_ada7cac23e36d1c5dbac6cbce14819f13}\label{vga_8h_ada7cac23e36d1c5dbac6cbce14819f13}} 
+\index{vga.h@{vga.h}!tricks\_001@{tricks\_001}}
+\index{tricks\_001@{tricks\_001}!vga.h@{vga.h}}
+\doxysubsubsection{\texorpdfstring{tricks\_001()}{tricks\_001()}}
+{\footnotesize\ttfamily void tricks\+\_\+001 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{vga_8h_ab02c5c9bbc1e5c29dbb8898aee387eb2}\label{vga_8h_ab02c5c9bbc1e5c29dbb8898aee387eb2}} 
+\index{vga.h@{vga.h}!vga\_asmtricks@{vga\_asmtricks}}
+\index{vga\_asmtricks@{vga\_asmtricks}!vga.h@{vga.h}}
+\doxysubsubsection{\texorpdfstring{vga\_asmtricks()}{vga\_asmtricks()}}
+{\footnotesize\ttfamily int vga\+\_\+asmtricks (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{trick }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{vga_8h_aa156f6e955d649347fb0cf26bef28c1d}\label{vga_8h_aa156f6e955d649347fb0cf26bef28c1d}} 
+\index{vga.h@{vga.h}!vga\_chkmode@{vga\_chkmode}}
+\index{vga\_chkmode@{vga\_chkmode}!vga.h@{vga.h}}
+\doxysubsubsection{\texorpdfstring{vga\_chkmode()}{vga\_chkmode()}}
+{\footnotesize\ttfamily void vga\+\_\+chkmode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{vga_8h_a2e6e7034bcddc0b07e062ed478c90a8f}\label{vga_8h_a2e6e7034bcddc0b07e062ed478c90a8f}} 
+\index{vga.h@{vga.h}!vga\_chksetvar@{vga\_chksetvar}}
+\index{vga\_chksetvar@{vga\_chksetvar}!vga.h@{vga.h}}
+\doxysubsubsection{\texorpdfstring{vga\_chksetvar()}{vga\_chksetvar()}}
+{\footnotesize\ttfamily int vga\+\_\+chksetvar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{index,  }\item[{\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{value,  }\item[{\mbox{\hyperlink{vga_8h_a63bf0a876af36076ffb713ff00618ce4}{vga\+\_\+port\+\_\+t}}}]{vgaport }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{vga_8h_a42ac16bdd0eeb4298fca66ca858da2c4}\label{vga_8h_a42ac16bdd0eeb4298fca66ca858da2c4}} 
+\index{vga.h@{vga.h}!vga\_getvar@{vga\_getvar}}
+\index{vga\_getvar@{vga\_getvar}!vga.h@{vga.h}}
+\doxysubsubsection{\texorpdfstring{vga\_getvar()}{vga\_getvar()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}} vga\+\_\+getvar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{index,  }\item[{\mbox{\hyperlink{vga_8h_a63bf0a876af36076ffb713ff00618ce4}{vga\+\_\+port\+\_\+t}}}]{vgaport }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{vga_8h_a0efe6c57778fcfbff5f79a9aa83df38a}\label{vga_8h_a0efe6c57778fcfbff5f79a9aa83df38a}} 
+\index{vga.h@{vga.h}!vga\_init@{vga\_init}}
+\index{vga\_init@{vga\_init}!vga.h@{vga.h}}
+\doxysubsubsection{\texorpdfstring{vga\_init()}{vga\_init()}}
+{\footnotesize\ttfamily void vga\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{vga_8h_a8eec470a23e284551ba78ac240777939}\label{vga_8h_a8eec470a23e284551ba78ac240777939}} 
+\index{vga.h@{vga.h}!vga\_setmode@{vga\_setmode}}
+\index{vga\_setmode@{vga\_setmode}!vga.h@{vga.h}}
+\doxysubsubsection{\texorpdfstring{vga\_setmode()}{vga\_setmode()}}
+{\footnotesize\ttfamily int vga\+\_\+setmode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{mode,  }\item[{\mbox{\hyperlink{types_8h_af6a258d8f3ee5206d682d799316314b1}{bool}}}]{v86 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{vga_8h_ae3f16d4cffd57acbdfa6c399a72ae721}\label{vga_8h_ae3f16d4cffd57acbdfa6c399a72ae721}} 
+\index{vga.h@{vga.h}!vga\_setvar@{vga\_setvar}}
+\index{vga\_setvar@{vga\_setvar}!vga.h@{vga.h}}
+\doxysubsubsection{\texorpdfstring{vga\_setvar()}{vga\_setvar()}}
+{\footnotesize\ttfamily void vga\+\_\+setvar (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{index,  }\item[{\mbox{\hyperlink{types_8h_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}}]{value,  }\item[{\mbox{\hyperlink{vga_8h_a63bf0a876af36076ffb713ff00618ce4}{vga\+\_\+port\+\_\+t}}}]{vgaport }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{vga_8h_ac3b46aeb1d097fe149a3e8f98653c872}\label{vga_8h_ac3b46aeb1d097fe149a3e8f98653c872}} 
+\index{vga.h@{vga.h}!vga\_indexmode@{vga\_indexmode}}
+\index{vga\_indexmode@{vga\_indexmode}!vga.h@{vga.h}}
+\doxysubsubsection{\texorpdfstring{vga\_indexmode}{vga\_indexmode}}
+{\footnotesize\ttfamily \mbox{\hyperlink{types_8h_af6a258d8f3ee5206d682d799316314b1}{bool}} vga\+\_\+indexmode = \mbox{\hyperlink{types_8h_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}{false}}}
+
+\mbox{\Hypertarget{vga_8h_ab1902955c9a6467e453b0e28f3c2d247}\label{vga_8h_ab1902955c9a6467e453b0e28f3c2d247}} 
+\index{vga.h@{vga.h}!vga\_mode@{vga\_mode}}
+\index{vga\_mode@{vga\_mode}!vga.h@{vga.h}}
+\doxysubsubsection{\texorpdfstring{vga\_mode}{vga\_mode}}
+{\footnotesize\ttfamily unsigned int vga\+\_\+mode}
+
