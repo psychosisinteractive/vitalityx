@@ -10,6 +10,9 @@
 #define FAT_ARCHIVE 0x20
 #define FAT_LFN FAT_READ_ONLY|FAT_HIDDEN|FAT_SYSTEM|FAT_VOL_ID
 
+/**
+ * Fat BIOS Parameter Block
+ */
 typedef struct fat_bpb
 {
     unsigned char BPBCode[3]; // BPB code
@@ -28,6 +31,9 @@ typedef struct fat_bpb
     unsigned short largesectorcount; // large sectors count
 }__attribute__((packed)) fat_bpb_t;
 
+/**
+ * Fat Extended Boot Record 16 bit
+ */
 struct fat_ebr16
 {
     unsigned char drivenum; // drive number
@@ -40,6 +46,9 @@ struct fat_ebr16
     unsigned short bpartsign; // bpart
 }__attribute__((packed)) fat_ebr16_t;
 
+/**
+ * FAT directory
+ */
 struct fat_directory 
 {
     unsigned char filename[11]; // 8.3 filename (last 3 chars are the file extension)
@@ -56,6 +65,8 @@ struct fat_directory
     unsigned int size; // size
 }__attribute__((packed)) fat_directory_t;
 
+/** Info of the FAT, supplied by driver
+ */
 struct fat_drvinfo 
 {
     unsigned int fat_size; // size of fat
@@ -70,14 +81,19 @@ struct fat_drvinfo
     struct fat_bpb* bpb; // the bpb
 } typedef fat_drvinfo_t;
 
+/** FAT type enum, all types of FAT
+ */
 enum fattype
 {
-    FAT12,
-    FAT16,
-    FAT32,
-    UNKNOWN,
+    FAT12, /** FAT12 */
+    FAT16, /** FAT16 */
+    FAT32, /** FAT32 */
+    UNKNOWN, /** Unknown FAT type, ex ExFAT or a non-FAT filesystem */
 } typedef fattype_t;
 
+/* Gets the type of a FAT in enum fattype_t
+ * @param fat The FAT driver info.
+ */
 fattype_t fat_gettype(struct fat_drvinfo fat) {
     int total_clusters = fat.total_clusters;
     if(total_clusters < 4085) {
@@ -91,15 +107,23 @@ fattype_t fat_gettype(struct fat_drvinfo fat) {
     }
 }
 
+/** fat_getebr16 returns a FAT Extended Boot Record.
+ *@param bpb The FAT Bios Partition Block
+ */
 struct fat_ebr16* fat_getebr16(struct fat_bpb bpb) {
     return (struct fat_ebr16*)((char*)&bpb + sizeof(bpb));
 }
 
+/** fat_getfdir is under construction.
+ */
 void fat_getfdir(struct fat_drvinfo fat) {
     int first_root_dir_sector = fat.first_data_sector - fat.root_dir_sectors;
 
 }
 
+/** fat_getinfo returns a fat_drvinfo.
+ *@param bpb The BIOS Partition Table.
+ */
 struct fat_drvinfo fat_getinfo(struct fat_bpb bpb) {
     struct fat_drvinfo info;
     info.total_sectors = bpb.sectorslogical;

@@ -32,6 +32,13 @@ void drawchar(unsigned char c, int x, int y, int fgcolor, int bgcolor)
 	}
 }*/
 
+/** tty_putchar puts a character in video memory.
+ *@param c The character
+ *@param forecolour The foreground color
+ *@param backcolour The background color
+ *@param x The X of the character
+ *@param y The Y of the character
+ */
 void tty_putchar(unsigned char c, textcolor_t forecolour, textcolor_t backcolour, int x, int y)
 {
     uint16_t attrib = (backcolour << 4) | (forecolour & 0x0F);
@@ -40,6 +47,11 @@ void tty_putchar(unsigned char c, textcolor_t forecolour, textcolor_t backcolour
     *where = c | (attrib << 8);
 }
 
+/** tty_putstr puts a string in video memory.
+ *@param string The string
+ *@param forecolour The foreground color
+ *@param backcolour The background color
+ */
 void tty_putstr(string_t string, textcolor_t forecolour, textcolor_t backcolour) {
     int ox = ttylastx;
     unsigned char forecolouro = forecolour;

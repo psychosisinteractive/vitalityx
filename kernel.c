@@ -11,8 +11,12 @@
 #include "drivers/fat.h"
 #include "drivers/vga.h"
 
-
-int kernel()
+/*
+ * void kernel()
+ * 
+ * Entry point for VitalityX
+ */
+void kernel()
 {
     //tty_cleartty();
     tty_init_serial(0x3f8);
