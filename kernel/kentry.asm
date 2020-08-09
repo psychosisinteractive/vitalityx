@@ -11,4 +11,4 @@ _start:
     mov esp, PM_STACK
     extern kernel
     call kernel
-    jmp $
+    ret
