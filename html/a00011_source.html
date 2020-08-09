@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/string.c Source File</title>
+<title>VitalityX: kernel/kernel.c Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,15 +39,16 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">string.c</div>  </div>
+<div class="title">kernel.c</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00011.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00014.html">string.h</a>&quot;</span></div><div class="ttc" id="a00014_html"><div class="ttname"><a href="a00014.html">string.h</a></div></div>
+<a href="a00011.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;../libc/vitality/tty.h&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="a00011_a4ee3d1f05046b7afc6b4d516bf10667a.html#a4ee3d1f05046b7afc6b4d516bf10667a">    5</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="a00011_a4ee3d1f05046b7afc6b4d516bf10667a.html#a4ee3d1f05046b7afc6b4d516bf10667a">kernel</a>() {</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <a class="code" href="a00032_a13ff2c06d56753c5666ca56cb2d81100.html#a13ff2c06d56753c5666ca56cb2d81100">tty_vgaputstring</a>(<span class="stringliteral">&quot;Hello World&quot;</span>);</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keywordflow">for</span>(;;) {</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    }</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;    <span class="keywordflow">return</span> 0;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;}</div><div class="ttc" id="a00032_a13ff2c06d56753c5666ca56cb2d81100_html_a13ff2c06d56753c5666ca56cb2d81100"><div class="ttname"><a href="a00032_a13ff2c06d56753c5666ca56cb2d81100.html#a13ff2c06d56753c5666ca56cb2d81100">tty_vgaputstring</a></div><div class="ttdeci">void tty_vgaputstring(char *string)</div><div class="ttdoc">Puts a string into VRAM, Mode 13 only. </div><div class="ttdef"><b>Definition:</b> <a href="a00032_source.html#l00018">tty.c:18</a></div></div>
+<div class="ttc" id="a00011_a4ee3d1f05046b7afc6b4d516bf10667a_html_a4ee3d1f05046b7afc6b4d516bf10667a"><div class="ttname"><a href="a00011_a4ee3d1f05046b7afc6b4d516bf10667a.html#a4ee3d1f05046b7afc6b4d516bf10667a">kernel</a></div><div class="ttdeci">int kernel()</div><div class="ttdoc">The kernels C entry point. </div><div class="ttdef"><b>Definition:</b> <a href="a00011_source.html#l00005">kernel.c:5</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,172 +1,61 @@
-\hypertarget{a00023}{}\section{libc/types.h File Reference}
-\label{a00023}\index{libc/types.\+h@{libc/types.\+h}}
-This graph shows which files directly or indirectly include this file\+:
+\hypertarget{a00023}{}\section{libc/system.h File Reference}
+\label{a00023}\index{libc/system.\+h@{libc/system.\+h}}
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+Include dependency graph for system.\+h\+:
 % FIG 0
-\subsection*{Typedefs}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-typedef unsigned char \hyperlink{a00023_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}
-\begin{DoxyCompactList}\small\item\em Unsigned 8-\/bit Integer. \end{DoxyCompactList}\item 
-typedef char \hyperlink{a00023_afa23178c4119f09bd4562a86b501f444_afa23178c4119f09bd4562a86b501f444}{sint8\+\_\+t}
-\begin{DoxyCompactList}\small\item\em Signed 8-\/bit Integer. \end{DoxyCompactList}\item 
-typedef unsigned short \hyperlink{a00023_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}
-\begin{DoxyCompactList}\small\item\em Unsigned 32-\/bit Integer. \end{DoxyCompactList}\item 
-typedef short \hyperlink{a00023_a5881659ed80e940350d12831204375cd_a5881659ed80e940350d12831204375cd}{sint16\+\_\+t}
-\begin{DoxyCompactList}\small\item\em Signed 16-\/bit Integer. \end{DoxyCompactList}\item 
-typedef unsigned int \hyperlink{a00023_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}
-\begin{DoxyCompactList}\small\item\em Unsigned 32-\/bit Integer. \end{DoxyCompactList}\item 
-typedef int \hyperlink{a00023_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\+\_\+t}
-\begin{DoxyCompactList}\small\item\em Signed 32-\/bit Integer. \end{DoxyCompactList}\item 
-typedef unsigned long \hyperlink{a00023_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t}
-\begin{DoxyCompactList}\small\item\em Unsigned 64-\/bit Integer. \end{DoxyCompactList}\item 
-typedef long \hyperlink{a00023_a04761b9e7480e1e48b0d392da17fd5d4_a04761b9e7480e1e48b0d392da17fd5d4}{sint64\+\_\+t}
-\begin{DoxyCompactList}\small\item\em Signed 64-\/bit Integer. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Enumerations}
-\begin{DoxyCompactItemize}
-\item 
-enum \hyperlink{a00023_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \{ \hyperlink{a00023_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}{false}, 
-\hyperlink{a00023_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b}{true}
- \}\begin{DoxyCompactList}\small\item\em Boolean Value, true or false. \end{DoxyCompactList}
-\end{DoxyCompactItemize}
+void \hyperlink{a00023_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}{pokeb} (\hyperlink{a00026_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$addr, \hyperlink{a00026_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} offset, \hyperlink{a00026_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} val)
+\begin{DoxyCompactList}\small\item\em Poke Byte. \end{DoxyCompactList}\item 
+\hyperlink{a00026_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00023_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}{peekb} (\hyperlink{a00026_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} $\ast$addr, \hyperlink{a00026_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} offset)
+\begin{DoxyCompactList}\small\item\em Peek Byte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Typedef Documentation}
-\mbox{\Hypertarget{a00023_a5881659ed80e940350d12831204375cd_a5881659ed80e940350d12831204375cd}\label{a00023_a5881659ed80e940350d12831204375cd_a5881659ed80e940350d12831204375cd}} 
-\index{types.\+h@{types.\+h}!sint16\+\_\+t@{sint16\+\_\+t}}
-\index{sint16\+\_\+t@{sint16\+\_\+t}!types.\+h@{types.\+h}}
-\subsubsection{\texorpdfstring{sint16\+\_\+t}{sint16\_t}}
-{\footnotesize\ttfamily typedef short \hyperlink{a00023_a5881659ed80e940350d12831204375cd_a5881659ed80e940350d12831204375cd}{sint16\+\_\+t}}
+\subsection{Function Documentation}
+\mbox{\Hypertarget{a00023_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}\label{a00023_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}} 
+\index{system.\+h@{system.\+h}!peekb@{peekb}}
+\index{peekb@{peekb}!system.\+h@{system.\+h}}
+\subsubsection{\texorpdfstring{peekb()}{peekb()}}
+{\footnotesize\ttfamily \hyperlink{a00026_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} peekb (\begin{DoxyParamCaption}\item[{\hyperlink{a00026_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} $\ast$}]{addr,  }\item[{\hyperlink{a00026_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{offset }\end{DoxyParamCaption})}
 
 
 
-Signed 16-\/bit Integer. 
+Peek Byte. 
 
 
-
-Definition at line 19 of file types.\+h.
-
-\mbox{\Hypertarget{a00023_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}\label{a00023_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}} 
-\index{types.\+h@{types.\+h}!sint32\+\_\+t@{sint32\+\_\+t}}
-\index{sint32\+\_\+t@{sint32\+\_\+t}!types.\+h@{types.\+h}}
-\subsubsection{\texorpdfstring{sint32\+\_\+t}{sint32\_t}}
-{\footnotesize\ttfamily typedef int \hyperlink{a00023_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\+\_\+t}}
-
-
-
-Signed 32-\/bit Integer. 
-
-
-
-Definition at line 27 of file types.\+h.
-
-\mbox{\Hypertarget{a00023_a04761b9e7480e1e48b0d392da17fd5d4_a04761b9e7480e1e48b0d392da17fd5d4}\label{a00023_a04761b9e7480e1e48b0d392da17fd5d4_a04761b9e7480e1e48b0d392da17fd5d4}} 
-\index{types.\+h@{types.\+h}!sint64\+\_\+t@{sint64\+\_\+t}}
-\index{sint64\+\_\+t@{sint64\+\_\+t}!types.\+h@{types.\+h}}
-\subsubsection{\texorpdfstring{sint64\+\_\+t}{sint64\_t}}
-{\footnotesize\ttfamily typedef long \hyperlink{a00023_a04761b9e7480e1e48b0d392da17fd5d4_a04761b9e7480e1e48b0d392da17fd5d4}{sint64\+\_\+t}}
-
-
-
-Signed 64-\/bit Integer. 
-
-
-
-Definition at line 35 of file types.\+h.
-
-\mbox{\Hypertarget{a00023_afa23178c4119f09bd4562a86b501f444_afa23178c4119f09bd4562a86b501f444}\label{a00023_afa23178c4119f09bd4562a86b501f444_afa23178c4119f09bd4562a86b501f444}} 
-\index{types.\+h@{types.\+h}!sint8\+\_\+t@{sint8\+\_\+t}}
-\index{sint8\+\_\+t@{sint8\+\_\+t}!types.\+h@{types.\+h}}
-\subsubsection{\texorpdfstring{sint8\+\_\+t}{sint8\_t}}
-{\footnotesize\ttfamily typedef char \hyperlink{a00023_afa23178c4119f09bd4562a86b501f444_afa23178c4119f09bd4562a86b501f444}{sint8\+\_\+t}}
-
-
-
-Signed 8-\/bit Integer. 
-
-
-
-Definition at line 11 of file types.\+h.
-
-\mbox{\Hypertarget{a00023_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}\label{a00023_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}} 
-\index{types.\+h@{types.\+h}!uint16\+\_\+t@{uint16\+\_\+t}}
-\index{uint16\+\_\+t@{uint16\+\_\+t}!types.\+h@{types.\+h}}
-\subsubsection{\texorpdfstring{uint16\+\_\+t}{uint16\_t}}
-{\footnotesize\ttfamily typedef unsigned short \hyperlink{a00023_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}
-
-
-
-Unsigned 32-\/bit Integer. 
-
-
-
-Definition at line 15 of file types.\+h.
-
-\mbox{\Hypertarget{a00023_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}\label{a00023_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}} 
-\index{types.\+h@{types.\+h}!uint32\+\_\+t@{uint32\+\_\+t}}
-\index{uint32\+\_\+t@{uint32\+\_\+t}!types.\+h@{types.\+h}}
-\subsubsection{\texorpdfstring{uint32\+\_\+t}{uint32\_t}}
-{\footnotesize\ttfamily typedef unsigned int \hyperlink{a00023_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}
-
-
-
-Unsigned 32-\/bit Integer. 
-
-
-
-Definition at line 23 of file types.\+h.
-
-\mbox{\Hypertarget{a00023_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}\label{a00023_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}} 
-\index{types.\+h@{types.\+h}!uint64\+\_\+t@{uint64\+\_\+t}}
-\index{uint64\+\_\+t@{uint64\+\_\+t}!types.\+h@{types.\+h}}
-\subsubsection{\texorpdfstring{uint64\+\_\+t}{uint64\_t}}
-{\footnotesize\ttfamily typedef unsigned long \hyperlink{a00023_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t}}
-
-
-
-Unsigned 64-\/bit Integer. 
-
-
-
-Definition at line 31 of file types.\+h.
-
-\mbox{\Hypertarget{a00023_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}\label{a00023_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}} 
-\index{types.\+h@{types.\+h}!uint8\+\_\+t@{uint8\+\_\+t}}
-\index{uint8\+\_\+t@{uint8\+\_\+t}!types.\+h@{types.\+h}}
-\subsubsection{\texorpdfstring{uint8\+\_\+t}{uint8\_t}}
-{\footnotesize\ttfamily typedef unsigned char \hyperlink{a00023_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}
-
-
-
-Unsigned 8-\/bit Integer. 
-
-
-
-Definition at line 7 of file types.\+h.
-
-
-
-\subsection{Enumeration Type Documentation}
-\mbox{\Hypertarget{a00023_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}\label{a00023_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}} 
-\index{types.\+h@{types.\+h}!bool@{bool}}
-\index{bool@{bool}!types.\+h@{types.\+h}}
-\subsubsection{\texorpdfstring{bool}{bool}}
-{\footnotesize\ttfamily enum \hyperlink{a00023_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool}}
-
-
-
-Boolean Value, true or false. 
-
-\begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{false@{false}!types.\+h@{types.\+h}}\index{types.\+h@{types.\+h}!false@{false}}}\mbox{\Hypertarget{a00023_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}\label{a00023_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}} 
-false&\\
+\begin{DoxyParams}{Parameters}
+{\em addr} & The address of the byte \\
 \hline
-
-\raisebox{\heightof{T}}[0pt][0pt]{\index{true@{true}!types.\+h@{types.\+h}}\index{types.\+h@{types.\+h}!true@{true}}}\mbox{\Hypertarget{a00023_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b}\label{a00023_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b}} 
-true&\\
+{\em offset} & The offset from the address \\
 \hline
+\end{DoxyParams}
 
-\end{DoxyEnumFields}
+
+Definition at line 8 of file system.\+c.
+
+\mbox{\Hypertarget{a00023_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}\label{a00023_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}} 
+\index{system.\+h@{system.\+h}!pokeb@{pokeb}}
+\index{pokeb@{pokeb}!system.\+h@{system.\+h}}
+\subsubsection{\texorpdfstring{pokeb()}{pokeb()}}
+{\footnotesize\ttfamily void pokeb (\begin{DoxyParamCaption}\item[{\hyperlink{a00026_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$}]{addr,  }\item[{\hyperlink{a00026_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{offset,  }\item[{\hyperlink{a00026_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{val }\end{DoxyParamCaption})}
 
 
-Definition at line 39 of file types.\+h.
+
+Poke Byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The address of the byte \\
+\hline
+{\em offset} & The offset from the address \\
+\hline
+{\em val} & The value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 4 of file system.\+c.
 
