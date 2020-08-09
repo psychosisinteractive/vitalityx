@@ -1,42 +1,61 @@
-\hypertarget{a00020}{}\section{libc/vitality/tty.c File Reference}
-\label{a00020}\index{libc/vitality/tty.\+c@{libc/vitality/tty.\+c}}
-{\ttfamily \#include \char`\"{}tty.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
-Include dependency graph for tty.\+c\+:
+\hypertarget{a00020}{}\section{libc/system.h File Reference}
+\label{a00020}\index{libc/system.\+h@{libc/system.\+h}}
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+Include dependency graph for system.\+h\+:
 % FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00020_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}{tty\+\_\+putstring} (char $\ast$string)
-\end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-int $\ast$ \hyperlink{a00020_a3f896e9c00b9302e2287aad054199134_a3f896e9c00b9302e2287aad054199134}{video\+Memory\+Ptr} = (int$\ast$)0xa000
-\end{DoxyCompactItemize}
+void \hyperlink{a00020_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}{pokeb} (\hyperlink{a00023_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$addr, \hyperlink{a00023_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} offset, \hyperlink{a00023_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} val)
+\begin{DoxyCompactList}\small\item\em Poke Byte. \end{DoxyCompactList}\item 
+\hyperlink{a00023_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00020_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}{peekb} (\hyperlink{a00023_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} $\ast$addr, \hyperlink{a00023_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} offset)
+\begin{DoxyCompactList}\small\item\em Peek Byte. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00020_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}\label{a00020_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}} 
-\index{tty.\+c@{tty.\+c}!tty\+\_\+putstring@{tty\+\_\+putstring}}
-\index{tty\+\_\+putstring@{tty\+\_\+putstring}!tty.\+c@{tty.\+c}}
-\subsubsection{\texorpdfstring{tty\+\_\+putstring()}{tty\_putstring()}}
-{\footnotesize\ttfamily void tty\+\_\+putstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00020_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}\label{a00020_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}} 
+\index{system.\+h@{system.\+h}!peekb@{peekb}}
+\index{peekb@{peekb}!system.\+h@{system.\+h}}
+\subsubsection{\texorpdfstring{peekb()}{peekb()}}
+{\footnotesize\ttfamily \hyperlink{a00023_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} peekb (\begin{DoxyParamCaption}\item[{\hyperlink{a00023_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} $\ast$}]{addr,  }\item[{\hyperlink{a00023_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{offset }\end{DoxyParamCaption})}
 
 
 
-Definition at line 5 of file tty.\+c.
+Peek Byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The address of the byte \\
+\hline
+{\em offset} & The offset from the address \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 8 of file system.\+c.
+
+\mbox{\Hypertarget{a00020_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}\label{a00020_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}} 
+\index{system.\+h@{system.\+h}!pokeb@{pokeb}}
+\index{pokeb@{pokeb}!system.\+h@{system.\+h}}
+\subsubsection{\texorpdfstring{pokeb()}{pokeb()}}
+{\footnotesize\ttfamily void pokeb (\begin{DoxyParamCaption}\item[{\hyperlink{a00023_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$}]{addr,  }\item[{\hyperlink{a00023_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{offset,  }\item[{\hyperlink{a00023_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{val }\end{DoxyParamCaption})}
 
 
 
-\subsection{Variable Documentation}
-\mbox{\Hypertarget{a00020_a3f896e9c00b9302e2287aad054199134_a3f896e9c00b9302e2287aad054199134}\label{a00020_a3f896e9c00b9302e2287aad054199134_a3f896e9c00b9302e2287aad054199134}} 
-\index{tty.\+c@{tty.\+c}!video\+Memory\+Ptr@{video\+Memory\+Ptr}}
-\index{video\+Memory\+Ptr@{video\+Memory\+Ptr}!tty.\+c@{tty.\+c}}
-\subsubsection{\texorpdfstring{video\+Memory\+Ptr}{videoMemoryPtr}}
-{\footnotesize\ttfamily int$\ast$ video\+Memory\+Ptr = (int$\ast$)0xa000}
+Poke Byte. 
 
 
+\begin{DoxyParams}{Parameters}
+{\em addr} & The address of the byte \\
+\hline
+{\em offset} & The offset from the address \\
+\hline
+{\em val} & The value \\
+\hline
+\end{DoxyParams}
 
-Definition at line 4 of file tty.\+c.
+
+Definition at line 4 of file system.\+c.
 
