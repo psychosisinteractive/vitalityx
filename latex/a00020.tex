@@ -1,84 +1,42 @@
-\hypertarget{a00020}{}\section{libc/interrupt.h File Reference}
-\label{a00020}\index{libc/interrupt.\+h@{libc/interrupt.\+h}}
-{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}keyboard.\+h\char`\"{}}\newline
+\hypertarget{a00020}{}\section{libc/vitality/tty.c File Reference}
+\label{a00020}\index{libc/vitality/tty.\+c@{libc/vitality/tty.\+c}}
 {\ttfamily \#include \char`\"{}tty.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
-Include dependency graph for interrupt.\+h\+:
+{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
+Include dependency graph for tty.\+c\+:
 % FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00020_a1fd242da8c9498b98d978e150a36c23f_a1fd242da8c9498b98d978e150a36c23f}{isr\+\_\+dividebyzero} ()
+void \hyperlink{a00020_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}{tty\+\_\+putstring} (char $\ast$string)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00020_a13f7b685594468a92abb85e03148fb54_a13f7b685594468a92abb85e03148fb54}{isr\+\_\+generic} ()
-\item 
-void \hyperlink{a00020_af6ac5b24d3c1b69d4272012baa895291_af6ac5b24d3c1b69d4272012baa895291}{isr\+\_\+gpfault} (int errorcode)
-\item 
-void \hyperlink{a00020_adecc6bfc28b1d14005a070b0159c8225_adecc6bfc28b1d14005a070b0159c8225}{N\+M\+I\+\_\+enable} ()
-\begin{DoxyCompactList}\small\item\em Enables N\+MI\textquotesingle{}s. \end{DoxyCompactList}\item 
-void \hyperlink{a00020_a03a1497db52d629138dba59ddafcbc32_a03a1497db52d629138dba59ddafcbc32}{N\+M\+I\+\_\+disable} ()
-\begin{DoxyCompactList}\small\item\em Disables N\+MI\textquotesingle{}s. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int $\ast$ \hyperlink{a00020_a3f896e9c00b9302e2287aad054199134_a3f896e9c00b9302e2287aad054199134}{video\+Memory\+Ptr} = (int$\ast$)0xa000
+\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00020_a1fd242da8c9498b98d978e150a36c23f_a1fd242da8c9498b98d978e150a36c23f}\label{a00020_a1fd242da8c9498b98d978e150a36c23f_a1fd242da8c9498b98d978e150a36c23f}} 
-\index{interrupt.\+h@{interrupt.\+h}!isr\+\_\+dividebyzero@{isr\+\_\+dividebyzero}}
-\index{isr\+\_\+dividebyzero@{isr\+\_\+dividebyzero}!interrupt.\+h@{interrupt.\+h}}
-\subsubsection{\texorpdfstring{isr\+\_\+dividebyzero()}{isr\_dividebyzero()}}
-{\footnotesize\ttfamily void isr\+\_\+dividebyzero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00020_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}\label{a00020_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}} 
+\index{tty.\+c@{tty.\+c}!tty\+\_\+putstring@{tty\+\_\+putstring}}
+\index{tty\+\_\+putstring@{tty\+\_\+putstring}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{tty\+\_\+putstring()}{tty\_putstring()}}
+{\footnotesize\ttfamily void tty\+\_\+putstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
 
 
 
-Definition at line 8 of file interrupt.\+h.
-
-\mbox{\Hypertarget{a00020_a13f7b685594468a92abb85e03148fb54_a13f7b685594468a92abb85e03148fb54}\label{a00020_a13f7b685594468a92abb85e03148fb54_a13f7b685594468a92abb85e03148fb54}} 
-\index{interrupt.\+h@{interrupt.\+h}!isr\+\_\+generic@{isr\+\_\+generic}}
-\index{isr\+\_\+generic@{isr\+\_\+generic}!interrupt.\+h@{interrupt.\+h}}
-\subsubsection{\texorpdfstring{isr\+\_\+generic()}{isr\_generic()}}
-{\footnotesize\ttfamily void isr\+\_\+generic (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+Definition at line 5 of file tty.\+c.
 
 
 
-Definition at line 13 of file interrupt.\+h.
-
-\mbox{\Hypertarget{a00020_af6ac5b24d3c1b69d4272012baa895291_af6ac5b24d3c1b69d4272012baa895291}\label{a00020_af6ac5b24d3c1b69d4272012baa895291_af6ac5b24d3c1b69d4272012baa895291}} 
-\index{interrupt.\+h@{interrupt.\+h}!isr\+\_\+gpfault@{isr\+\_\+gpfault}}
-\index{isr\+\_\+gpfault@{isr\+\_\+gpfault}!interrupt.\+h@{interrupt.\+h}}
-\subsubsection{\texorpdfstring{isr\+\_\+gpfault()}{isr\_gpfault()}}
-{\footnotesize\ttfamily void isr\+\_\+gpfault (\begin{DoxyParamCaption}\item[{int}]{errorcode }\end{DoxyParamCaption})}
-
-
-
-Definition at line 21 of file interrupt.\+h.
-
-\mbox{\Hypertarget{a00020_a03a1497db52d629138dba59ddafcbc32_a03a1497db52d629138dba59ddafcbc32}\label{a00020_a03a1497db52d629138dba59ddafcbc32_a03a1497db52d629138dba59ddafcbc32}} 
-\index{interrupt.\+h@{interrupt.\+h}!N\+M\+I\+\_\+disable@{N\+M\+I\+\_\+disable}}
-\index{N\+M\+I\+\_\+disable@{N\+M\+I\+\_\+disable}!interrupt.\+h@{interrupt.\+h}}
-\subsubsection{\texorpdfstring{N\+M\+I\+\_\+disable()}{NMI\_disable()}}
-{\footnotesize\ttfamily void N\+M\+I\+\_\+disable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{a00020_a3f896e9c00b9302e2287aad054199134_a3f896e9c00b9302e2287aad054199134}\label{a00020_a3f896e9c00b9302e2287aad054199134_a3f896e9c00b9302e2287aad054199134}} 
+\index{tty.\+c@{tty.\+c}!video\+Memory\+Ptr@{video\+Memory\+Ptr}}
+\index{video\+Memory\+Ptr@{video\+Memory\+Ptr}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{video\+Memory\+Ptr}{videoMemoryPtr}}
+{\footnotesize\ttfamily int$\ast$ video\+Memory\+Ptr = (int$\ast$)0xa000}
 
 
 
-Disables N\+MI\textquotesingle{}s. 
-
-
-
-Definition at line 40 of file interrupt.\+h.
-
-\mbox{\Hypertarget{a00020_adecc6bfc28b1d14005a070b0159c8225_adecc6bfc28b1d14005a070b0159c8225}\label{a00020_adecc6bfc28b1d14005a070b0159c8225_adecc6bfc28b1d14005a070b0159c8225}} 
-\index{interrupt.\+h@{interrupt.\+h}!N\+M\+I\+\_\+enable@{N\+M\+I\+\_\+enable}}
-\index{N\+M\+I\+\_\+enable@{N\+M\+I\+\_\+enable}!interrupt.\+h@{interrupt.\+h}}
-\subsubsection{\texorpdfstring{N\+M\+I\+\_\+enable()}{NMI\_enable()}}
-{\footnotesize\ttfamily void N\+M\+I\+\_\+enable (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Enables N\+MI\textquotesingle{}s. 
-
-
-
-Definition at line 34 of file interrupt.\+h.
+Definition at line 4 of file tty.\+c.
 

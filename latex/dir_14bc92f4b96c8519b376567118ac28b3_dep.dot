@@ -1,8 +1,0 @@
-digraph "drivers" {
-  compound=true
-  node [ fontsize="10", fontname="Helvetica"];
-  edge [ labelfontsize="10", labelfontname="Helvetica"];
-  dir_14bc92f4b96c8519b376567118ac28b3 [shape=box, label="drivers", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_14bc92f4b96c8519b376567118ac28b3.html"];
-  dir_fc1eb218ab426e5adb60367f98438da0 [shape=box label="libc" URL="dir_fc1eb218ab426e5adb60367f98438da0.html"];
-  dir_14bc92f4b96c8519b376567118ac28b3->dir_fc1eb218ab426e5adb60367f98438da0 [headlabel="9", labeldistance=1.5 headhref="dir_000000_000001.html"];
-}
