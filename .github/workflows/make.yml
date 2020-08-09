@@ -32,4 +32,4 @@ jobs:
     - name: Compile
       run: |
         cd ..
-        make
+        make kernel.bin
