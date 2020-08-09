@@ -59,7 +59,6 @@
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00029_a6fa28502e33e305c4335fe3032dc7799.html#a6fa28502e33e305c4335fe3032dc7799"><param name="Name" value="rdmsr"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00029_a47b9d70be3022fd0b5687d9794ca47bc.html#a47b9d70be3022fd0b5687d9794ca47bc"><param name="Name" value="rdtsc"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00029_ac85e095222f364961e091702bb6bc2ff.html#ac85e095222f364961e091702bb6bc2ff"><param name="Name" value="read_cr0"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="a00038.html"><param name="Name" value="README"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00029_ab1dca2d7fd57d56f7548a81ef081ba74.html#ab1dca2d7fd57d56f7548a81ef081ba74"><param name="Name" value="save_irqdisable"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00008_a2cd109632a6dcccaa80b43561b1ab700.html#a2cd109632a6dcccaa80b43561b1ab700"><param name="Name" value="SCREEN_WIDTH"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00026_a5881659ed80e940350d12831204375cd.html#a5881659ed80e940350d12831204375cd"><param name="Name" value="sint16_t"></OBJECT>
@@ -139,7 +138,6 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00008_a818608c80027ef8ff56d31ebaedf58f3.html#a818608c80027ef8ff56d31ebaedf58f3"><param name="Name" value="VIDEO_SEGMENT"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00032_a3f896e9c00b9302e2287aad054199134.html#a3f896e9c00b9302e2287aad054199134"><param name="Name" value="videoMemoryPtr"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="a00043.html"><param name="Name" value="VitalityX"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00029_a368f08346121290f513a26011e0f68f8.html#a368f08346121290f513a26011e0f68f8"><param name="Name" value="wrmsr"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00032_abaa0d20f0e52ce0d3a7d706f6ac16266.html#abaa0d20f0e52ce0d3a7d706f6ac16266"><param name="Name" value="xoff"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00032_a1a7539764d0ae8cd06ce45c62cf92bca.html#a1a7539764d0ae8cd06ce45c62cf92bca"><param name="Name" value="yoff"></OBJECT>

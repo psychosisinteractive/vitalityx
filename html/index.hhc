@@ -4,12 +4,7 @@
 <param name="FrameName" value="right">
 </OBJECT>
 <UL>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="README"><param name="Local" value="a00038.html"><param name="ImageNumber" value="11"></OBJECT>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="README"><param name="Local" value="a00039.html"><param name="ImageNumber" value="11"></OBJECT>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="README"><param name="Local" value="a00040.html"><param name="ImageNumber" value="11"></OBJECT>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="README"><param name="Local" value="a00041.html"><param name="ImageNumber" value="11"></OBJECT>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="README"><param name="Local" value="a00042.html"><param name="ImageNumber" value="11"></OBJECT>
-<LI><OBJECT type="text/sitemap"><param name="Name" value="VitalityX"><param name="Local" value="a00043.html"><param name="ImageNumber" value="11"></OBJECT>
+<LI><OBJECT type="text/sitemap"><param name="Name" value="/bootloader/"><param name="Local" value="index.html"><param name="ImageNumber" value="11"></OBJECT>
 <LI><OBJECT type="text/sitemap"><param name="Name" value="Files"><param name="ImageNumber" value="1"></OBJECT>
   <UL>
   <LI><OBJECT type="text/sitemap"><param name="Name" value="File List"><param name="Local" value="files.html"><param name="ImageNumber" value="1"></OBJECT>

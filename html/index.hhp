@@ -1,5 +1,5 @@
 [OPTIONS]
-Compiled file=docs/DOCS.CHM
+Compiled file=DOCS.CHM
 Compatibility=1.1
 Full-text search=Yes
 Contents file=index.hhc
@@ -13,11 +13,11 @@ Title=VitalityX
 main="VitalityX","index.hhc","index.hhk","index.html","index.html",,,,,0x23520,,0x10387e,,,,,,,,0
 
 [FILES]
-a00044_source.html
-a00047_source.html
-a00050_source.html
-a00053_source.html
-a00056_source.html
+a00039_source.html
+a00042_source.html
+a00045_source.html
+a00048_source.html
+a00051_source.html
 a00002_source.html
 a00005_source.html
 a00008_source.html
@@ -30,11 +30,11 @@ a00026_source.html
 a00029_source.html
 a00032_source.html
 a00035_source.html
-a00044.html
-a00047.html
-a00050.html
-a00053.html
-a00056.html
+a00039.html
+a00042.html
+a00045.html
+a00048.html
+a00051.html
 a00002.html
 a00005.html
 a00005_a0dfbd31619ee5482193d3f5280cc802f.html
@@ -92,12 +92,6 @@ a00032_a13ff2c06d56753c5666ca56cb2d81100.html
 a00035.html
 a00035_a2ebb962f457a2677d70285d1c0f9be12.html
 a00035_a13ff2c06d56753c5666ca56cb2d81100.html
-a00038.html
-a00039.html
-a00040.html
-a00041.html
-a00042.html
-a00043.html
 graph_legend.html
 dir_14bc92f4b96c8519b376567118ac28b3.html
 dir_dc43877d82dd332f9fb2071fcca799d6.html
@@ -108,7 +102,6 @@ dir_000001_000002.html
 dir_000000_000003.html
 dir_000003_000000.html
 index.html
-pages.html
 files.html
 globals.html
 globals_func.html
