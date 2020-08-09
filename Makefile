@@ -1,66 +1,54 @@
-C_SOURCES = $(wildcard *.c)
-HEADERS = $(wildcard libc/*.h)
-DRIVERS = $(wildcard drivers/*.h)
-ASSEMBLIES = $(wildcard *.asm)
-# This is designed to compile under WINDOWS and WSL. CC and GDB are using Windows Compiled toolkits in the %PATH%
+C_SOURCES = $(wildcard libc/vitality/*.c libc/*.c drivers/*.c kernel/*.c)
+HEADERS = $(wildcard libc/vitality/*.h libc/*.h drivers/*.h kernel/*.h)
 # Nice syntax for file extension replacement
-OBJ = ${C_SOURCES:.c=.o} k.o
-AOB = ${ASSEMBLIES:.asm=.o} 
+OBJ = ${C_SOURCES:.c=.o}
 
 # Change this if your cross-compiler is somewhere else
 CC = i686-elf-gcc
+WSL = C:\Windows\sysnative\wsl
+SYS = C:\Windows\sysnative\command
 GDB = i686-elf-gdb
-ASM = nasm
 # -g: Use debugging symbols in gcc
 CFLAGS = -g
 
-all: run
-
-%.o: %.c ${HEADERS}
-	${CC} ${CFLAGS} -ffreestanding -c $< -o $@
-
-%.o: %.c ${DRIVERS}
-	${CC} ${CFLAGS} -ffreestanding -c $< -o $@
-
-%.o: %.c ${C_SOURCES}
-	${CC} ${CFLAGS} -ffreestanding -c $< -o $@
-
-kickstart.bin: boot/kickstart.asm
-	nasm $< -f bin -o $@
-
-k.o: k.asm
-	nasm $< -f elf -o $@
-
-%.o: %.asm ${ASSEMBLIES}
-	nasm $< -f elf -o $@
-
-ckern.bin: ${OBJ} k.o ${AOB}
-	i686-elf-ld -o $@ -Ttext 0x1000 $^ --oformat binary
-
-vitalityx.bin: kickstart.bin ckern.bin
-	C:\Windows\Sysnative\wsl cat $^ > vitalityx.bin
-# Used for debugging purposes
-kernel.elf: ${OBJ} k.o ${AOB}
-	i686-elf-ld -o $@ -Ttext 0x1000 $^ 
-
-run: vitalityx.bin
-	qemu-system-i386 -d int -serial stdio -fda vitalityx.bin
-
-debug: vitalityx.bin kernel.elf
-	qemu-system-i386 -serial stdio -s -fda vitalityx.bin  -d int -no-shutdown -no-reboot &
-	${GDB} -ex "target remote localhost:1234" -ex "symbol-file kernel.elf"
+# First rule is run by default
+operating.bin: bootloader/boot.bin kernel.bin
+	@${WSL} cat $^ > operating.bin ||:
 
 # '--oformat binary' deletes all symbols as a collateral, so we don't need
 # to 'strip' them manually on this case
+kernel.bin: kernel/kentry.o ${OBJ}
+	@echo linking kentry and ${OBJ}
+	@i686-elf-ld -o $@ -Ttext 0x1000 $^ --oformat binary ||:
 
+# Used for debugging purposes
+kernel.elf: kernel/kentry.o ${OBJ}
+	@echo linking kentry and ${OBJ} (DEBUG)
+	@i686-elf-ld -o $@ -Ttext 0x1000 $^ ||:
 
+run: operating.bin
+	@echo starting
+	@qemu-system-i386 -no-reboot -no-shutdown -fda operating.bin ||:
 
 # Open the connection to qemu and load our kernel-object file with symbols
-
+debug: operating.bin
+	@echo starting (DEBUG)
+	@qemu-system-i386 -d int -no-reboot -no-shutdown -s -fda operating.bin ||:
 
 # Generic rules for wildcards
 # To make an object, always compile from its .c
+%.o: %.c ${HEADERS}
+	@echo compiling C $< to $@
+	@${CC} ${CFLAGS} -ffreestanding -c $< -o $@ ||:
+
+%.o: %.asm
+	@echo compiling ASM $< to $@
+	@nasm $< -f elf -o $@ ||:
+
+%.bin: %.asm
+	@echo compiling ASM $< to $@
+	@nasm $< -f bin -o $@ ||:
 
 clean:
-	C:\Windows\Sysnative\wsl rm -rf *.bin *.dis *.o *.elf
-	C:\Windows\Sysnative\wsl rm -rf libc/*.o *.o drivers/*.o
+	@${WSL} rm -rf *.bin *.dis *.o operating.bin *.elf ||:
+	@${WSL} rm -rf kernel/*.o bootloader/*.bin bootloader/*.o libc/*.o libc/vitality/*.o ||:
