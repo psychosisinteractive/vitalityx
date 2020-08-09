@@ -1,4 +1,4 @@
-#/bootloader/
+# /bootloader/
 The bootloader folder contains bootloader code for the system. These libraries are licensed under the licensing agreement below UNLESS specified in the respective source file.
 
 MIT License

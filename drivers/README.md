@@ -1,4 +1,4 @@
-#/drivers/
+# /drivers/
 The drivers folder contains generic system drivers available for the kernel. These libraries are licensed under the licensing agreement below UNLESS specified in the respective source file.
 
 Modified MIT License

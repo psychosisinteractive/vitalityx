@@ -1,4 +1,4 @@
-#/libc/vitality/
+# /libc/vitality/
 The vitality folder contains specialized libraries available for the user or the kernel. These libraries are licensed under the licensing agreement below UNLESS specified in the respective source file.
 
 BSD 2-Clause License
