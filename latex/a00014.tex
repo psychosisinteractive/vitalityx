@@ -1,5 +1,43 @@
-\hypertarget{a00014}{}\section{libc/string.c File Reference}
-\label{a00014}\index{libc/string.\+c@{libc/string.\+c}}
-{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
-Include dependency graph for string.\+c\+:
+\hypertarget{a00014}{}\section{libc/interrupt.c File Reference}
+\label{a00014}\index{libc/interrupt.\+c@{libc/interrupt.\+c}}
+{\ttfamily \#include \char`\"{}interrupt.\+h\char`\"{}}\newline
+Include dependency graph for interrupt.\+c\+:
 % FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{a00014_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\+\_\+set\+\_\+gate} (\hyperlink{a00032_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} num, \hyperlink{a00032_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00017_a2e013c2c6e8010c8116c6f56813df57b_a2e013c2c6e8010c8116c6f56813df57b}{base}, \hyperlink{a00032_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00017_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel}, \hyperlink{a00032_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00017_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags})
+\begin{DoxyCompactList}\small\item\em Sets an I\+DT gate. \end{DoxyCompactList}\item 
+void \hyperlink{a00014_a9817da253735954f4767c5ba6155aa0d_a9817da253735954f4767c5ba6155aa0d}{idt\+\_\+install} ()
+\begin{DoxyCompactList}\small\item\em Installs the I\+DT (Interrupt Descriptor Table) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{a00014_a9817da253735954f4767c5ba6155aa0d_a9817da253735954f4767c5ba6155aa0d}\label{a00014_a9817da253735954f4767c5ba6155aa0d_a9817da253735954f4767c5ba6155aa0d}} 
+\index{interrupt.\+c@{interrupt.\+c}!idt\+\_\+install@{idt\+\_\+install}}
+\index{idt\+\_\+install@{idt\+\_\+install}!interrupt.\+c@{interrupt.\+c}}
+\subsubsection{\texorpdfstring{idt\+\_\+install()}{idt\_install()}}
+{\footnotesize\ttfamily void idt\+\_\+install (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Installs the I\+DT (Interrupt Descriptor Table) 
+
+
+
+Definition at line 10 of file interrupt.\+c.
+
+\mbox{\Hypertarget{a00014_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}\label{a00014_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}} 
+\index{interrupt.\+c@{interrupt.\+c}!idt\+\_\+set\+\_\+gate@{idt\+\_\+set\+\_\+gate}}
+\index{idt\+\_\+set\+\_\+gate@{idt\+\_\+set\+\_\+gate}!interrupt.\+c@{interrupt.\+c}}
+\subsubsection{\texorpdfstring{idt\+\_\+set\+\_\+gate()}{idt\_set\_gate()}}
+{\footnotesize\ttfamily void idt\+\_\+set\+\_\+gate (\begin{DoxyParamCaption}\item[{\hyperlink{a00032_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{num,  }\item[{\hyperlink{a00032_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{base,  }\item[{\hyperlink{a00032_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{sel,  }\item[{\hyperlink{a00032_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{flags }\end{DoxyParamCaption})}
+
+
+
+Sets an I\+DT gate. 
+
+
+
+Definition at line 3 of file interrupt.\+c.
+

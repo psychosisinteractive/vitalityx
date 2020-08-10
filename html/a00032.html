@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/tty.c File Reference</title>
+<title>VitalityX: libc/types.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,46 +39,82 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">tty.c File Reference</div>  </div>
+<div class="title">types.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00035_source.html">tty.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00026_source.html">../types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00008_source.html">../../drivers/vga.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for tty.c:</div>
+<div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00033.png" border="0" usemap="#libc_2vitality_2tty_8c" alt=""/></div>
+<div class="center"><img src="a00034.png" border="0" usemap="#libc_2types_8hdep" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
 <p><a href="a00032_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a2ebb962f457a2677d70285d1c0f9be12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_a2ebb962f457a2677d70285d1c0f9be12.html#a2ebb962f457a2677d70285d1c0f9be12">tty_putstring</a> (char *string)</td></tr>
-<tr class="memdesc:a2ebb962f457a2677d70285d1c0f9be12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string in VRAM, Text mode only.  <a href="a00032_a2ebb962f457a2677d70285d1c0f9be12.html#a2ebb962f457a2677d70285d1c0f9be12">More...</a><br /></td></tr>
-<tr class="separator:a2ebb962f457a2677d70285d1c0f9be12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13ff2c06d56753c5666ca56cb2d81100"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_a13ff2c06d56753c5666ca56cb2d81100.html#a13ff2c06d56753c5666ca56cb2d81100">tty_vgaputstring</a> (char *string)</td></tr>
-<tr class="memdesc:a13ff2c06d56753c5666ca56cb2d81100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string into VRAM, Mode 13 only.  <a href="a00032_a13ff2c06d56753c5666ca56cb2d81100.html#a13ff2c06d56753c5666ca56cb2d81100">More...</a><br /></td></tr>
-<tr class="separator:a13ff2c06d56753c5666ca56cb2d81100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aded7ad58a4bedfffea10d5ae9c0c817e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_aded7ad58a4bedfffea10d5ae9c0c817e.html#aded7ad58a4bedfffea10d5ae9c0c817e">low_16</a>(address)&#160;&#160;&#160;(<a class="el" href="a00032_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)((address) &amp; 0xFFFF)</td></tr>
+<tr class="memdesc:aded7ad58a4bedfffea10d5ae9c0c817e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the High 16 bits of a number.  <a href="a00032_aded7ad58a4bedfffea10d5ae9c0c817e.html#aded7ad58a4bedfffea10d5ae9c0c817e">More...</a><br /></td></tr>
+<tr class="separator:aded7ad58a4bedfffea10d5ae9c0c817e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a63db19c3e2153ed419aeccf4e33c92"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_a0a63db19c3e2153ed419aeccf4e33c92.html#a0a63db19c3e2153ed419aeccf4e33c92">high_16</a>(address)&#160;&#160;&#160;(<a class="el" href="a00032_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>)(((address) &gt;&gt; 16) &amp; 0xFFFF)</td></tr>
+<tr class="memdesc:a0a63db19c3e2153ed419aeccf4e33c92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the Low 16 bits of a number.  <a href="a00032_a0a63db19c3e2153ed419aeccf4e33c92.html#a0a63db19c3e2153ed419aeccf4e33c92">More...</a><br /></td></tr>
+<tr class="separator:a0a63db19c3e2153ed419aeccf4e33c92"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:aba7bc1797add20fe3efdf37ced1182c5"><td class="memItemLeft" align="right" valign="top">typedef unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a></td></tr>
+<tr class="memdesc:aba7bc1797add20fe3efdf37ced1182c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsigned 8-bit Integer.  <a href="a00032_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">More...</a><br /></td></tr>
+<tr class="separator:aba7bc1797add20fe3efdf37ced1182c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa23178c4119f09bd4562a86b501f444"><td class="memItemLeft" align="right" valign="top">typedef char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_afa23178c4119f09bd4562a86b501f444.html#afa23178c4119f09bd4562a86b501f444">sint8_t</a></td></tr>
+<tr class="memdesc:afa23178c4119f09bd4562a86b501f444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signed 8-bit Integer.  <a href="a00032_afa23178c4119f09bd4562a86b501f444.html#afa23178c4119f09bd4562a86b501f444">More...</a><br /></td></tr>
+<tr class="separator:afa23178c4119f09bd4562a86b501f444"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a273cf69d639a59973b6019625df33e30"><td class="memItemLeft" align="right" valign="top">typedef unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a></td></tr>
+<tr class="memdesc:a273cf69d639a59973b6019625df33e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsigned 32-bit Integer.  <a href="a00032_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">More...</a><br /></td></tr>
+<tr class="separator:a273cf69d639a59973b6019625df33e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5881659ed80e940350d12831204375cd"><td class="memItemLeft" align="right" valign="top">typedef short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_a5881659ed80e940350d12831204375cd.html#a5881659ed80e940350d12831204375cd">sint16_t</a></td></tr>
+<tr class="memdesc:a5881659ed80e940350d12831204375cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signed 16-bit Integer.  <a href="a00032_a5881659ed80e940350d12831204375cd.html#a5881659ed80e940350d12831204375cd">More...</a><br /></td></tr>
+<tr class="separator:a5881659ed80e940350d12831204375cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a435d1572bf3f880d55459d9805097f62"><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a></td></tr>
+<tr class="memdesc:a435d1572bf3f880d55459d9805097f62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsigned 32-bit Integer.  <a href="a00032_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">More...</a><br /></td></tr>
+<tr class="separator:a435d1572bf3f880d55459d9805097f62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad838970452fe561cb8e0550cac5336be"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_ad838970452fe561cb8e0550cac5336be.html#ad838970452fe561cb8e0550cac5336be">sint32_t</a></td></tr>
+<tr class="memdesc:ad838970452fe561cb8e0550cac5336be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signed 32-bit Integer.  <a href="a00032_ad838970452fe561cb8e0550cac5336be.html#ad838970452fe561cb8e0550cac5336be">More...</a><br /></td></tr>
+<tr class="separator:ad838970452fe561cb8e0550cac5336be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa232ecf786a74ce5363c36c10798d2b1"><td class="memItemLeft" align="right" valign="top">typedef unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_aa232ecf786a74ce5363c36c10798d2b1.html#aa232ecf786a74ce5363c36c10798d2b1">uint64_t</a></td></tr>
+<tr class="memdesc:aa232ecf786a74ce5363c36c10798d2b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsigned 64-bit Integer.  <a href="a00032_aa232ecf786a74ce5363c36c10798d2b1.html#aa232ecf786a74ce5363c36c10798d2b1">More...</a><br /></td></tr>
+<tr class="separator:aa232ecf786a74ce5363c36c10798d2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04761b9e7480e1e48b0d392da17fd5d4"><td class="memItemLeft" align="right" valign="top">typedef long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_a04761b9e7480e1e48b0d392da17fd5d4.html#a04761b9e7480e1e48b0d392da17fd5d4">sint64_t</a></td></tr>
+<tr class="memdesc:a04761b9e7480e1e48b0d392da17fd5d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Signed 64-bit Integer.  <a href="a00032_a04761b9e7480e1e48b0d392da17fd5d4.html#a04761b9e7480e1e48b0d392da17fd5d4">More...</a><br /></td></tr>
+<tr class="separator:a04761b9e7480e1e48b0d392da17fd5d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0015d6dd7c46f7b7a2ff7b5bf407f5c"><td class="memItemLeft" align="right" valign="top">typedef void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_aa0015d6dd7c46f7b7a2ff7b5bf407f5c.html#aa0015d6dd7c46f7b7a2ff7b5bf407f5c">addr_t</a></td></tr>
+<tr class="memdesc:aa0015d6dd7c46f7b7a2ff7b5bf407f5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Address Pointer.  <a href="a00032_aa0015d6dd7c46f7b7a2ff7b5bf407f5c.html#aa0015d6dd7c46f7b7a2ff7b5bf407f5c">More...</a><br /></td></tr>
+<tr class="separator:aa0015d6dd7c46f7b7a2ff7b5bf407f5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29d85914ddff32967d85ada69854206d"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="a00032_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a></td></tr>
+<tr class="memdesc:a29d85914ddff32967d85ada69854206d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Size Container.  <a href="a00032_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">More...</a><br /></td></tr>
+<tr class="separator:a29d85914ddff32967d85ada69854206d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:af6a258d8f3ee5206d682d799316314b1"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_af6a258d8f3ee5206d682d799316314b1.html#af6a258d8f3ee5206d682d799316314b1">bool</a> { <a class="el" href="a00032_af6a258d8f3ee5206d682d799316314b1.html#af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c">false</a>, 
+<a class="el" href="a00032_af6a258d8f3ee5206d682d799316314b1.html#af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b">true</a>
+ }<tr class="memdesc:af6a258d8f3ee5206d682d799316314b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Boolean Value, true or false.  <a href="a00032_af6a258d8f3ee5206d682d799316314b1.html#af6a258d8f3ee5206d682d799316314b1">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:af6a258d8f3ee5206d682d799316314b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a3f896e9c00b9302e2287aad054199134"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_a3f896e9c00b9302e2287aad054199134.html#a3f896e9c00b9302e2287aad054199134">videoMemoryPtr</a> = (int*)0xa000</td></tr>
-<tr class="separator:a3f896e9c00b9302e2287aad054199134"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaa0d20f0e52ce0d3a7d706f6ac16266"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00026_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_abaa0d20f0e52ce0d3a7d706f6ac16266.html#abaa0d20f0e52ce0d3a7d706f6ac16266">xoff</a> = 0</td></tr>
-<tr class="separator:abaa0d20f0e52ce0d3a7d706f6ac16266"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a7539764d0ae8cd06ce45c62cf92bca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00026_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_a1a7539764d0ae8cd06ce45c62cf92bca.html#a1a7539764d0ae8cd06ce45c62cf92bca">yoff</a> = 0</td></tr>
-<tr class="separator:a1a7539764d0ae8cd06ce45c62cf92bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf8c839d8a7a12772ebd4b8a4c087034"><td class="memItemLeft" align="right" valign="top">typedef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00032_acf8c839d8a7a12772ebd4b8a4c087034.html#acf8c839d8a7a12772ebd4b8a4c087034">__attribute__</a></td></tr>
+<tr class="separator:acf8c839d8a7a12772ebd4b8a4c087034"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
