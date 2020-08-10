@@ -15,5 +15,11 @@ void pokeb(uint32_t *addr, uint32_t offset, uint8_t val);
 ///@param offset The offset from the address
 ///
 uint8_t peekb(uint8_t *addr, uint32_t offset);
-
+///
+/// Memset
+///@param dest The destination
+///@param val The value to set
+///@param len The length of bytes to set
+///
+void *memset(addr_t dest, int val, size_t len);
 #endif

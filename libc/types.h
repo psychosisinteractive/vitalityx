@@ -37,5 +37,22 @@ typedef long sint64_t;
 /// Boolean Value, true or false
 ///
 typedef enum { false, true } bool;
+///
+/// Address Pointer
+///
+typedef void *addr_t;
+///
+/// Size Container
+///
+typedef uint32_t size_t;
+
+///
+/// Gets the High 16 bits of a number
+///
+#define low_16(address) (uint16_t)((address) & 0xFFFF)
+///
+/// Gets the Low 16 bits of a number
+///
+#define high_16(address) (uint16_t)(((address) >> 16) & 0xFFFF)
 
 #endif

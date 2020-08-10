@@ -2,9 +2,14 @@
 #include "../libc/system.h"
 #include "../libc/vitality/inline.h"
 
-void putpixel(uint8_t c, uint16_t x, uint16_t y) {
+void inline putpixel(uint8_t c, uint16_t x, uint16_t y) {
     uint16_t offset = (y * SCREEN_WIDTH) + x;
     pokeb(VIDEO_SEGMENT,offset,c);
+}
+
+void inline getpixel(uint16_t x, uint16_t y) {
+    uint16_t offset = (y * SCREEN_WIDTH) + x;
+	peekb(VIDEO_SEGMENT,offset);
 }
 
 unsigned char *font;

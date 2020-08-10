@@ -11,9 +11,11 @@ GDB = i686-elf-gdb
 # -g: Use debugging symbols in gcc
 CFLAGS = -g
 
+.DEFAULT_GOAL := run
+
 # First rule is run by default
 operating.bin: bootloader/boot.bin kernel.bin
-	${WSL} cat $^ > operating.bin ||:
+	${WSL} cat $^ > operating.bin
 
 # '--oformat binary' deletes all symbols as a collateral, so we don't need
 # to 'strip' them manually on this case
