@@ -1,48 +1,45 @@
 C_SOURCES = $(wildcard libc/vitality/*.c libc/*.c drivers/*.c kernel/*.c)
 HEADERS = $(wildcard libc/vitality/*.h libc/*.h drivers/*.h kernel/*.h)
-# Nice syntax for file extension replacement
+A_SOURCES = ${wildcard kernel/libasm/*.s}
 OBJ = ${C_SOURCES:.c=.o}
+AOBJ = ${A_SOURCES:.s=.o}
 
-# Change this if your cross-compiler is somewhere else
 CC = i686-elf-gcc
 WSL = C:\Windows\sysnative\wsl
 SYS = C:\Windows\sysnative\command
-GDB = i686-elf-gdb
-# -g: Use debugging symbols in gcc
+NASM = nasm
+GDB = i686-elf-GDB
+# flags for the compiler
 CFLAGS = -g
 
 .DEFAULT_GOAL := run
 
-# First rule is run by default
 operating.bin: bootloader/boot.bin kernel.bin
 	${WSL} cat $^ > operating.bin
 
-# '--oformat binary' deletes all symbols as a collateral, so we don't need
-# to 'strip' them manually on this case
-kernel.bin: kernel/kentry.o ${OBJ}
+kernel.bin: kernel/kentry.o ${OBJ} ${A_SOURCES}
 	i686-elf-ld -o $@ -Ttext 0x1000 $^ --oformat binary
 
-# Used for debugging purposes
-kernel.elf: kernel/kentry.o ${OBJ}
+kernel.elf: kernel/kentry.o ${OBJ} ${A_SOURCES}
 	i686-elf-ld -o $@ -Ttext 0x1000 $^
 
 run: operating.bin
 	qemu-system-i386 -no-reboot -no-shutdown -fda operating.bin
 
-# Open the connection to qemu and load our kernel-object file with symbols
 debug: operating.bin
 	qemu-system-i386 -d int -no-reboot -no-shutdown -s -fda operating.bin
 
-# Generic rules for wildcards
-# To make an object, always compile from its .c
 %.o: %.c ${HEADERS}
 	${CC} ${CFLAGS} -ffreestanding -c $< -o $@
 
+%.o: ${A_SOURCES}
+	${NASM} $< -f elf -o $@
+
 %.o: %.asm
-	nasm $< -f elf -o $@
+	${NASM} $< -f elf -o $@
 
 %.bin: %.asm
-	nasm $< -f bin -o $@
+	${NASM} $< -f bin -o $@
 
 clean:
 	${WSL} rm -rf *.bin *.dis *.o operating.bin *.elf

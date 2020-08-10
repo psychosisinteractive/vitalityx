@@ -18,7 +18,7 @@ uint16_t yoff = 0;
 void tty_vgaputstring(char* string) {
     char chara = *string++;
     while(chara != '\x0') {
-        drawchar(chara,xoff,yoff,0xf,0x0);
+        drawchar(chara,xoff,yoff+1,0xf,0x0);
         chara = *string++;
     }
 }

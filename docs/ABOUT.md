@@ -1,5 +1,9 @@
-# /libc/
-The libc folder contains generic libraries available for the user or the kernel. These libraries are licensed under the licensing agreement below UNLESS specified in the respective source file.
+# VitalityX
+These is the documentation for VitalityX, a OS/Bootloader/Kernel.
+
+Here you can find methods for the C part of VitalityX, the Kernel and Libc.
+
+This software has licenses for its respective portions, but the general license is the Modified MIT License unless specified in their parts of code.
 
 ```
 Modified MIT License

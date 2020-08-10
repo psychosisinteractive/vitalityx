@@ -3,6 +3,7 @@
     jmp 0:start
 
 %include "bootloader/gdt.asm"
+[BITS 16]
 
 start:
     ; setup video mode
@@ -22,12 +23,12 @@ start:
     int 13h
     call print_dbg_x
     ; next setup the gdt
+    call print_dbg_x
     cli
-    lgdt[gdt_descriptor]
-    mov eax,cr0
-    or eax,0x1
-    mov cr0,eax
-    jmp CODE_SEG:ready
+    mov ax, 0x2401
+    int 0x15 ; enable A20 bit
+
+    call switch_to_pm
 
 load_kern_err:
     mov ah,0Ch
@@ -52,6 +53,11 @@ db '32 BIT PART START HERE'
 [BITS 32]
 db 'ready'
 ready:
+    mov eax,0xff
+    mov [0xa000],eax
+
+    mov esp, 090000h
+
     mov ax, DATA_SEG 
     mov ds, ax
     mov ss, ax
@@ -62,7 +68,7 @@ ready:
     mov ebp, 0x90000
     mov esp, ebp
 
-    call CODE_SEG:PROGRAM
+    call PROGRAM
     jmp $
 db 'end'
 

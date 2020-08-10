@@ -1,5 +1,5 @@
-# /kernel/
-The kernel folder contains the kernel. These libraries are licensed under the licensing agreement below UNLESS specified in the respective source file.
+# /kernel/libasm/
+The kernel folder contains the Assembly Libraries for the kernel. These libraries are licensed under the licensing agreement below UNLESS specified in the respective source file.
 
 ```
 BSD 2-Clause License

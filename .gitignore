@@ -1,8 +1,10 @@
-/ofiles
 /vitality.bin
 /libc/*.o
-*.o
-*.bin
-*.elf
-*.img
-/.vscode/c_cpp_properties.json
+/libc/vitality/*.o
+/kernel/*.o
+/kernel/libasm/*.o
+/bootloader/*.bin
+/drivers/*.o
+/*.o
+/*.bin
+/*.elf
