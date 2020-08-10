@@ -1,193 +1,260 @@
-\hypertarget{a00035}{}\section{libc/vitality/inline.h File Reference}
-\label{a00035}\index{libc/vitality/inline.\+h@{libc/vitality/inline.\+h}}
-{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
-Include dependency graph for inline.\+h\+:
-% FIG 0
+\hypertarget{a00035}{}\section{libc/types.h File Reference}
+\label{a00035}\index{libc/types.\+h@{libc/types.\+h}}
 This graph shows which files directly or indirectly include this file\+:
-% FIG 1
-\subsection*{Functions}
+% FIG 0
+\subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-static \hyperlink{a00032_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00035_aee0779a0581136320f91a72c4d6b5b90_aee0779a0581136320f91a72c4d6b5b90}{farpeekl} (\hyperlink{a00032_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00017_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel}, void $\ast$off)
+\#define \hyperlink{a00035_aded7ad58a4bedfffea10d5ae9c0c817e_aded7ad58a4bedfffea10d5ae9c0c817e}{low\+\_\+16}(address)~(\hyperlink{a00035_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t})((address) \& 0x\+F\+F\+F\+F)
+\begin{DoxyCompactList}\small\item\em Gets the High 16 bits of a number. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00035_a0a63db19c3e2153ed419aeccf4e33c92_a0a63db19c3e2153ed419aeccf4e33c92}{high\+\_\+16}(address)~(\hyperlink{a00035_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t})(((address) $>$$>$ 16) \& 0x\+F\+F\+F\+F)
+\begin{DoxyCompactList}\small\item\em Gets the Low 16 bits of a number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
 \item 
-static void \hyperlink{a00035_a4e7b04b927c6dca2d20f54a5c14a01d6_a4e7b04b927c6dca2d20f54a5c14a01d6}{farpokeb} (\hyperlink{a00032_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00017_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel}, void $\ast$off, \hyperlink{a00032_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} v)
+typedef unsigned char \hyperlink{a00035_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Unsigned 8-\/bit Integer. \end{DoxyCompactList}\item 
+typedef char \hyperlink{a00035_afa23178c4119f09bd4562a86b501f444_afa23178c4119f09bd4562a86b501f444}{sint8\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Signed 8-\/bit Integer. \end{DoxyCompactList}\item 
+typedef unsigned short \hyperlink{a00035_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Unsigned 32-\/bit Integer. \end{DoxyCompactList}\item 
+typedef short \hyperlink{a00035_a5881659ed80e940350d12831204375cd_a5881659ed80e940350d12831204375cd}{sint16\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Signed 16-\/bit Integer. \end{DoxyCompactList}\item 
+typedef unsigned int \hyperlink{a00035_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Unsigned 32-\/bit Integer. \end{DoxyCompactList}\item 
+typedef int \hyperlink{a00035_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Signed 32-\/bit Integer. \end{DoxyCompactList}\item 
+typedef unsigned long \hyperlink{a00035_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Unsigned 64-\/bit Integer. \end{DoxyCompactList}\item 
+typedef long \hyperlink{a00035_a04761b9e7480e1e48b0d392da17fd5d4_a04761b9e7480e1e48b0d392da17fd5d4}{sint64\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Signed 64-\/bit Integer. \end{DoxyCompactList}\item 
+typedef void $\ast$ \hyperlink{a00035_aa0015d6dd7c46f7b7a2ff7b5bf407f5c_aa0015d6dd7c46f7b7a2ff7b5bf407f5c}{addr\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Address Pointer. \end{DoxyCompactList}\item 
+typedef \hyperlink{a00035_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00035_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Size Container. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
 \item 
-static void \hyperlink{a00035_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb} (\hyperlink{a00032_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} port, \hyperlink{a00032_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} val)
+enum \hyperlink{a00035_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \{ \hyperlink{a00035_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}{false}, 
+\hyperlink{a00035_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b}{true}
+ \}\begin{DoxyCompactList}\small\item\em Boolean Value, true or false. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
 \item 
-static \hyperlink{a00032_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00035_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb} (\hyperlink{a00032_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} port)
-\item 
-static void \hyperlink{a00035_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\+\_\+wait} (void)
-\item 
-static \hyperlink{a00032_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00035_ae7df27a6150c6a020eead928af349b21_ae7df27a6150c6a020eead928af349b21}{are\+\_\+interrupts\+\_\+enabled} ()
-\item 
-static unsigned long \hyperlink{a00035_ab1dca2d7fd57d56f7548a81ef081ba74_ab1dca2d7fd57d56f7548a81ef081ba74}{save\+\_\+irqdisable} (void)
-\item 
-static void \hyperlink{a00035_a7dd6b2cd918b8cbca3c8b0381628ca83_a7dd6b2cd918b8cbca3c8b0381628ca83}{irqrestore} (unsigned long \hyperlink{a00017_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags})
-\item 
-static void \hyperlink{a00035_a31967dec32575d3d398e6d289e888d1f_a31967dec32575d3d398e6d289e888d1f}{lidt} (void $\ast$\hyperlink{a00017_a2e013c2c6e8010c8116c6f56813df57b_a2e013c2c6e8010c8116c6f56813df57b}{base}, \hyperlink{a00032_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} size)
-\item 
-static void \hyperlink{a00035_adacb2a50c30267ac5314bfcb92ac1d85_adacb2a50c30267ac5314bfcb92ac1d85}{cpuid} (int code, \hyperlink{a00032_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$a, \hyperlink{a00032_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$d)
-\item 
-static \hyperlink{a00032_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t} \hyperlink{a00035_a47b9d70be3022fd0b5687d9794ca47bc_a47b9d70be3022fd0b5687d9794ca47bc}{rdtsc} ()
-\item 
-static unsigned long \hyperlink{a00035_ac85e095222f364961e091702bb6bc2ff_ac85e095222f364961e091702bb6bc2ff}{read\+\_\+cr0} (void)
-\item 
-static void \hyperlink{a00035_a20faed26baa341152aa32288418f1457_a20faed26baa341152aa32288418f1457}{invlpg} (void $\ast$m)
-\item 
-static void \hyperlink{a00035_a368f08346121290f513a26011e0f68f8_a368f08346121290f513a26011e0f68f8}{wrmsr} (\hyperlink{a00032_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} msr\+\_\+id, \hyperlink{a00032_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t} msr\+\_\+value)
-\item 
-static \hyperlink{a00032_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t} \hyperlink{a00035_a6fa28502e33e305c4335fe3032dc7799_a6fa28502e33e305c4335fe3032dc7799}{rdmsr} (\hyperlink{a00032_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} msr\+\_\+id)
+typedef \hyperlink{a00035_acf8c839d8a7a12772ebd4b8a4c087034_acf8c839d8a7a12772ebd4b8a4c087034}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}
 \end{DoxyCompactItemize}
 
 
-\subsection{Function Documentation}
-\mbox{\Hypertarget{a00035_ae7df27a6150c6a020eead928af349b21_ae7df27a6150c6a020eead928af349b21}\label{a00035_ae7df27a6150c6a020eead928af349b21_ae7df27a6150c6a020eead928af349b21}} 
-\index{inline.\+h@{inline.\+h}!are\+\_\+interrupts\+\_\+enabled@{are\+\_\+interrupts\+\_\+enabled}}
-\index{are\+\_\+interrupts\+\_\+enabled@{are\+\_\+interrupts\+\_\+enabled}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{are\+\_\+interrupts\+\_\+enabled()}{are\_interrupts\_enabled()}}
-{\footnotesize\ttfamily static \hyperlink{a00032_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} are\+\_\+interrupts\+\_\+enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{a00035_a0a63db19c3e2153ed419aeccf4e33c92_a0a63db19c3e2153ed419aeccf4e33c92}\label{a00035_a0a63db19c3e2153ed419aeccf4e33c92_a0a63db19c3e2153ed419aeccf4e33c92}} 
+\index{types.\+h@{types.\+h}!high\+\_\+16@{high\+\_\+16}}
+\index{high\+\_\+16@{high\+\_\+16}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{high\+\_\+16}{high\_16}}
+{\footnotesize\ttfamily \#define high\+\_\+16(\begin{DoxyParamCaption}\item[{}]{address }\end{DoxyParamCaption})~(\hyperlink{a00035_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t})(((address) $>$$>$ 16) \& 0x\+F\+F\+F\+F)}
 
 
 
-Definition at line 46 of file inline.\+h.
-
-\mbox{\Hypertarget{a00035_adacb2a50c30267ac5314bfcb92ac1d85_adacb2a50c30267ac5314bfcb92ac1d85}\label{a00035_adacb2a50c30267ac5314bfcb92ac1d85_adacb2a50c30267ac5314bfcb92ac1d85}} 
-\index{inline.\+h@{inline.\+h}!cpuid@{cpuid}}
-\index{cpuid@{cpuid}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{cpuid()}{cpuid()}}
-{\footnotesize\ttfamily static void cpuid (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\hyperlink{a00032_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$}]{a,  }\item[{\hyperlink{a00032_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+Gets the Low 16 bits of a number. 
 
 
 
-Definition at line 74 of file inline.\+h.
+Definition at line 56 of file types.\+h.
 
-\mbox{\Hypertarget{a00035_aee0779a0581136320f91a72c4d6b5b90_aee0779a0581136320f91a72c4d6b5b90}\label{a00035_aee0779a0581136320f91a72c4d6b5b90_aee0779a0581136320f91a72c4d6b5b90}} 
-\index{inline.\+h@{inline.\+h}!farpeekl@{farpeekl}}
-\index{farpeekl@{farpeekl}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{farpeekl()}{farpeekl()}}
-{\footnotesize\ttfamily static \hyperlink{a00032_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} farpeekl (\begin{DoxyParamCaption}\item[{\hyperlink{a00032_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{sel,  }\item[{void $\ast$}]{off }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 4 of file inline.\+h.
-
-\mbox{\Hypertarget{a00035_a4e7b04b927c6dca2d20f54a5c14a01d6_a4e7b04b927c6dca2d20f54a5c14a01d6}\label{a00035_a4e7b04b927c6dca2d20f54a5c14a01d6_a4e7b04b927c6dca2d20f54a5c14a01d6}} 
-\index{inline.\+h@{inline.\+h}!farpokeb@{farpokeb}}
-\index{farpokeb@{farpokeb}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{farpokeb()}{farpokeb()}}
-{\footnotesize\ttfamily static void farpokeb (\begin{DoxyParamCaption}\item[{\hyperlink{a00032_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{sel,  }\item[{void $\ast$}]{off,  }\item[{\hyperlink{a00032_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\mbox{\Hypertarget{a00035_aded7ad58a4bedfffea10d5ae9c0c817e_aded7ad58a4bedfffea10d5ae9c0c817e}\label{a00035_aded7ad58a4bedfffea10d5ae9c0c817e_aded7ad58a4bedfffea10d5ae9c0c817e}} 
+\index{types.\+h@{types.\+h}!low\+\_\+16@{low\+\_\+16}}
+\index{low\+\_\+16@{low\+\_\+16}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{low\+\_\+16}{low\_16}}
+{\footnotesize\ttfamily \#define low\+\_\+16(\begin{DoxyParamCaption}\item[{}]{address }\end{DoxyParamCaption})~(\hyperlink{a00035_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t})((address) \& 0x\+F\+F\+F\+F)}
 
 
 
-Definition at line 14 of file inline.\+h.
-
-\mbox{\Hypertarget{a00035_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}\label{a00035_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}} 
-\index{inline.\+h@{inline.\+h}!inb@{inb}}
-\index{inb@{inb}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{inb()}{inb()}}
-{\footnotesize\ttfamily static \hyperlink{a00032_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} inb (\begin{DoxyParamCaption}\item[{\hyperlink{a00032_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+Gets the High 16 bits of a number. 
 
 
 
-Definition at line 31 of file inline.\+h.
-
-\mbox{\Hypertarget{a00035_a20faed26baa341152aa32288418f1457_a20faed26baa341152aa32288418f1457}\label{a00035_a20faed26baa341152aa32288418f1457_a20faed26baa341152aa32288418f1457}} 
-\index{inline.\+h@{inline.\+h}!invlpg@{invlpg}}
-\index{invlpg@{invlpg}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{invlpg()}{invlpg()}}
-{\footnotesize\ttfamily static void invlpg (\begin{DoxyParamCaption}\item[{void $\ast$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+Definition at line 52 of file types.\+h.
 
 
 
-Definition at line 90 of file inline.\+h.
-
-\mbox{\Hypertarget{a00035_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}\label{a00035_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}} 
-\index{inline.\+h@{inline.\+h}!io\+\_\+wait@{io\+\_\+wait}}
-\index{io\+\_\+wait@{io\+\_\+wait}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{io\+\_\+wait()}{io\_wait()}}
-{\footnotesize\ttfamily static void io\+\_\+wait (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 39 of file inline.\+h.
-
-\mbox{\Hypertarget{a00035_a7dd6b2cd918b8cbca3c8b0381628ca83_a7dd6b2cd918b8cbca3c8b0381628ca83}\label{a00035_a7dd6b2cd918b8cbca3c8b0381628ca83_a7dd6b2cd918b8cbca3c8b0381628ca83}} 
-\index{inline.\+h@{inline.\+h}!irqrestore@{irqrestore}}
-\index{irqrestore@{irqrestore}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{irqrestore()}{irqrestore()}}
-{\footnotesize\ttfamily static void irqrestore (\begin{DoxyParamCaption}\item[{unsigned long}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{a00035_aa0015d6dd7c46f7b7a2ff7b5bf407f5c_aa0015d6dd7c46f7b7a2ff7b5bf407f5c}\label{a00035_aa0015d6dd7c46f7b7a2ff7b5bf407f5c_aa0015d6dd7c46f7b7a2ff7b5bf407f5c}} 
+\index{types.\+h@{types.\+h}!addr\+\_\+t@{addr\+\_\+t}}
+\index{addr\+\_\+t@{addr\+\_\+t}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{addr\+\_\+t}{addr\_t}}
+{\footnotesize\ttfamily typedef void$\ast$ \hyperlink{a00035_aa0015d6dd7c46f7b7a2ff7b5bf407f5c_aa0015d6dd7c46f7b7a2ff7b5bf407f5c}{addr\+\_\+t}}
 
 
 
-Definition at line 60 of file inline.\+h.
-
-\mbox{\Hypertarget{a00035_a31967dec32575d3d398e6d289e888d1f_a31967dec32575d3d398e6d289e888d1f}\label{a00035_a31967dec32575d3d398e6d289e888d1f_a31967dec32575d3d398e6d289e888d1f}} 
-\index{inline.\+h@{inline.\+h}!lidt@{lidt}}
-\index{lidt@{lidt}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{lidt()}{lidt()}}
-{\footnotesize\ttfamily static void lidt (\begin{DoxyParamCaption}\item[{void $\ast$}]{base,  }\item[{\hyperlink{a00032_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+Address Pointer. 
 
 
 
-Definition at line 64 of file inline.\+h.
+Definition at line 43 of file types.\+h.
 
-\mbox{\Hypertarget{a00035_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}\label{a00035_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}} 
-\index{inline.\+h@{inline.\+h}!outb@{outb}}
-\index{outb@{outb}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{outb()}{outb()}}
-{\footnotesize\ttfamily static void outb (\begin{DoxyParamCaption}\item[{\hyperlink{a00032_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{port,  }\item[{\hyperlink{a00032_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 23 of file inline.\+h.
-
-\mbox{\Hypertarget{a00035_a6fa28502e33e305c4335fe3032dc7799_a6fa28502e33e305c4335fe3032dc7799}\label{a00035_a6fa28502e33e305c4335fe3032dc7799_a6fa28502e33e305c4335fe3032dc7799}} 
-\index{inline.\+h@{inline.\+h}!rdmsr@{rdmsr}}
-\index{rdmsr@{rdmsr}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{rdmsr()}{rdmsr()}}
-{\footnotesize\ttfamily static \hyperlink{a00032_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t} rdmsr (\begin{DoxyParamCaption}\item[{\hyperlink{a00032_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{msr\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\mbox{\Hypertarget{a00035_a5881659ed80e940350d12831204375cd_a5881659ed80e940350d12831204375cd}\label{a00035_a5881659ed80e940350d12831204375cd_a5881659ed80e940350d12831204375cd}} 
+\index{types.\+h@{types.\+h}!sint16\+\_\+t@{sint16\+\_\+t}}
+\index{sint16\+\_\+t@{sint16\+\_\+t}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{sint16\+\_\+t}{sint16\_t}}
+{\footnotesize\ttfamily typedef short \hyperlink{a00035_a5881659ed80e940350d12831204375cd_a5881659ed80e940350d12831204375cd}{sint16\+\_\+t}}
 
 
 
-Definition at line 99 of file inline.\+h.
-
-\mbox{\Hypertarget{a00035_a47b9d70be3022fd0b5687d9794ca47bc_a47b9d70be3022fd0b5687d9794ca47bc}\label{a00035_a47b9d70be3022fd0b5687d9794ca47bc_a47b9d70be3022fd0b5687d9794ca47bc}} 
-\index{inline.\+h@{inline.\+h}!rdtsc@{rdtsc}}
-\index{rdtsc@{rdtsc}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{rdtsc()}{rdtsc()}}
-{\footnotesize\ttfamily static \hyperlink{a00032_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t} rdtsc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+Signed 16-\/bit Integer. 
 
 
 
-Definition at line 78 of file inline.\+h.
+Definition at line 19 of file types.\+h.
 
-\mbox{\Hypertarget{a00035_ac85e095222f364961e091702bb6bc2ff_ac85e095222f364961e091702bb6bc2ff}\label{a00035_ac85e095222f364961e091702bb6bc2ff_ac85e095222f364961e091702bb6bc2ff}} 
-\index{inline.\+h@{inline.\+h}!read\+\_\+cr0@{read\+\_\+cr0}}
-\index{read\+\_\+cr0@{read\+\_\+cr0}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{read\+\_\+cr0()}{read\_cr0()}}
-{\footnotesize\ttfamily static unsigned long read\+\_\+cr0 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 84 of file inline.\+h.
-
-\mbox{\Hypertarget{a00035_ab1dca2d7fd57d56f7548a81ef081ba74_ab1dca2d7fd57d56f7548a81ef081ba74}\label{a00035_ab1dca2d7fd57d56f7548a81ef081ba74_ab1dca2d7fd57d56f7548a81ef081ba74}} 
-\index{inline.\+h@{inline.\+h}!save\+\_\+irqdisable@{save\+\_\+irqdisable}}
-\index{save\+\_\+irqdisable@{save\+\_\+irqdisable}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{save\+\_\+irqdisable()}{save\_irqdisable()}}
-{\footnotesize\ttfamily static unsigned long save\+\_\+irqdisable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\mbox{\Hypertarget{a00035_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}\label{a00035_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}} 
+\index{types.\+h@{types.\+h}!sint32\+\_\+t@{sint32\+\_\+t}}
+\index{sint32\+\_\+t@{sint32\+\_\+t}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{sint32\+\_\+t}{sint32\_t}}
+{\footnotesize\ttfamily typedef int \hyperlink{a00035_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\+\_\+t}}
 
 
 
-Definition at line 54 of file inline.\+h.
-
-\mbox{\Hypertarget{a00035_a368f08346121290f513a26011e0f68f8_a368f08346121290f513a26011e0f68f8}\label{a00035_a368f08346121290f513a26011e0f68f8_a368f08346121290f513a26011e0f68f8}} 
-\index{inline.\+h@{inline.\+h}!wrmsr@{wrmsr}}
-\index{wrmsr@{wrmsr}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{wrmsr()}{wrmsr()}}
-{\footnotesize\ttfamily static void wrmsr (\begin{DoxyParamCaption}\item[{\hyperlink{a00032_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{msr\+\_\+id,  }\item[{\hyperlink{a00032_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t}}]{msr\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+Signed 32-\/bit Integer. 
 
 
 
-Definition at line 95 of file inline.\+h.
+Definition at line 27 of file types.\+h.
+
+\mbox{\Hypertarget{a00035_a04761b9e7480e1e48b0d392da17fd5d4_a04761b9e7480e1e48b0d392da17fd5d4}\label{a00035_a04761b9e7480e1e48b0d392da17fd5d4_a04761b9e7480e1e48b0d392da17fd5d4}} 
+\index{types.\+h@{types.\+h}!sint64\+\_\+t@{sint64\+\_\+t}}
+\index{sint64\+\_\+t@{sint64\+\_\+t}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{sint64\+\_\+t}{sint64\_t}}
+{\footnotesize\ttfamily typedef long \hyperlink{a00035_a04761b9e7480e1e48b0d392da17fd5d4_a04761b9e7480e1e48b0d392da17fd5d4}{sint64\+\_\+t}}
+
+
+
+Signed 64-\/bit Integer. 
+
+
+
+Definition at line 35 of file types.\+h.
+
+\mbox{\Hypertarget{a00035_afa23178c4119f09bd4562a86b501f444_afa23178c4119f09bd4562a86b501f444}\label{a00035_afa23178c4119f09bd4562a86b501f444_afa23178c4119f09bd4562a86b501f444}} 
+\index{types.\+h@{types.\+h}!sint8\+\_\+t@{sint8\+\_\+t}}
+\index{sint8\+\_\+t@{sint8\+\_\+t}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{sint8\+\_\+t}{sint8\_t}}
+{\footnotesize\ttfamily typedef char \hyperlink{a00035_afa23178c4119f09bd4562a86b501f444_afa23178c4119f09bd4562a86b501f444}{sint8\+\_\+t}}
+
+
+
+Signed 8-\/bit Integer. 
+
+
+
+Definition at line 11 of file types.\+h.
+
+\mbox{\Hypertarget{a00035_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}\label{a00035_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}} 
+\index{types.\+h@{types.\+h}!size\+\_\+t@{size\+\_\+t}}
+\index{size\+\_\+t@{size\+\_\+t}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{size\+\_\+t}{size\_t}}
+{\footnotesize\ttfamily typedef \hyperlink{a00035_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00035_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}
+
+
+
+Size Container. 
+
+
+
+Definition at line 47 of file types.\+h.
+
+\mbox{\Hypertarget{a00035_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}\label{a00035_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}} 
+\index{types.\+h@{types.\+h}!uint16\+\_\+t@{uint16\+\_\+t}}
+\index{uint16\+\_\+t@{uint16\+\_\+t}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{uint16\+\_\+t}{uint16\_t}}
+{\footnotesize\ttfamily typedef unsigned short \hyperlink{a00035_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}
+
+
+
+Unsigned 32-\/bit Integer. 
+
+
+
+Definition at line 15 of file types.\+h.
+
+\mbox{\Hypertarget{a00035_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}\label{a00035_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}} 
+\index{types.\+h@{types.\+h}!uint32\+\_\+t@{uint32\+\_\+t}}
+\index{uint32\+\_\+t@{uint32\+\_\+t}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{uint32\+\_\+t}{uint32\_t}}
+{\footnotesize\ttfamily typedef unsigned int \hyperlink{a00035_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}
+
+
+
+Unsigned 32-\/bit Integer. 
+
+
+
+Definition at line 23 of file types.\+h.
+
+\mbox{\Hypertarget{a00035_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}\label{a00035_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}} 
+\index{types.\+h@{types.\+h}!uint64\+\_\+t@{uint64\+\_\+t}}
+\index{uint64\+\_\+t@{uint64\+\_\+t}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{uint64\+\_\+t}{uint64\_t}}
+{\footnotesize\ttfamily typedef unsigned long \hyperlink{a00035_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t}}
+
+
+
+Unsigned 64-\/bit Integer. 
+
+
+
+Definition at line 31 of file types.\+h.
+
+\mbox{\Hypertarget{a00035_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}\label{a00035_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}} 
+\index{types.\+h@{types.\+h}!uint8\+\_\+t@{uint8\+\_\+t}}
+\index{uint8\+\_\+t@{uint8\+\_\+t}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{uint8\+\_\+t}{uint8\_t}}
+{\footnotesize\ttfamily typedef unsigned char \hyperlink{a00035_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}
+
+
+
+Unsigned 8-\/bit Integer. 
+
+
+
+Definition at line 7 of file types.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{a00035_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}\label{a00035_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}} 
+\index{types.\+h@{types.\+h}!bool@{bool}}
+\index{bool@{bool}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{bool}{bool}}
+{\footnotesize\ttfamily enum \hyperlink{a00035_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool}}
+
+
+
+Boolean Value, true or false. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{false@{false}!types.\+h@{types.\+h}}\index{types.\+h@{types.\+h}!false@{false}}}\mbox{\Hypertarget{a00035_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}\label{a00035_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}} 
+false&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{true@{true}!types.\+h@{types.\+h}}\index{types.\+h@{types.\+h}!true@{true}}}\mbox{\Hypertarget{a00035_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b}\label{a00035_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1a08f175a5505a10b9ed657defeb050e4b}} 
+true&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 39 of file types.\+h.
+
+
+\begin{DoxyCode}
+39 \{ \textcolor{keyword}{false}, \textcolor{keyword}{true} \} \hyperlink{a00035_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool};
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{a00035_acf8c839d8a7a12772ebd4b8a4c087034_acf8c839d8a7a12772ebd4b8a4c087034}\label{a00035_acf8c839d8a7a12772ebd4b8a4c087034_acf8c839d8a7a12772ebd4b8a4c087034}} 
+\index{types.\+h@{types.\+h}!\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}!types.\+h@{types.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+attribute\+\_\+\+\_\+}{\_\_attribute\_\_}}
+{\footnotesize\ttfamily struct \hyperlink{a00054}{idt\+\_\+ptr} \+\_\+\+\_\+attribute\+\_\+\+\_\+}
 

@@ -39,7 +39,7 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li><li class="navelem"><a class="el" href="a00041.html">tty.h</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li><li class="navelem"><a class="el" href="a00041.html">tty.c</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="contents">
@@ -50,6 +50,9 @@ $(function() {
         <table>
           <tr><td class="navtab"><a class="qindex" href="a00041_a2ebb962f457a2677d70285d1c0f9be12.html#a2ebb962f457a2677d70285d1c0f9be12">tty_putstring</a></td></tr>
           <tr><td class="navtab"><a class="qindexHL" href="a00041_a13ff2c06d56753c5666ca56cb2d81100.html#a13ff2c06d56753c5666ca56cb2d81100">tty_vgaputstring</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="a00041_a3f896e9c00b9302e2287aad054199134.html#a3f896e9c00b9302e2287aad054199134">videoMemoryPtr</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="a00041_abaa0d20f0e52ce0d3a7d706f6ac16266.html#abaa0d20f0e52ce0d3a7d706f6ac16266">xoff</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="a00041_a1a7539764d0ae8cd06ce45c62cf92bca.html#a1a7539764d0ae8cd06ce45c62cf92bca">yoff</a></td></tr>
         </table>
       </div>
    </td>
@@ -78,8 +81,11 @@ $(function() {
   </dd>
 </dl>
 
-<p class="definition">Definition at line <a class="el" href="a00038_source.html#l00018">18</a> of file <a class="el" href="a00038_source.html">tty.c</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="a00041_source.html#l00018">18</a> of file <a class="el" href="a00041_source.html">tty.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;                                    {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keywordtype">char</span> chara = *<span class="keywordtype">string</span>++;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keywordflow">while</span>(chara != <span class="stringliteral">&#39;\x0&#39;</span>) {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <a class="code" href="a00008_a2c8df7a20b47341b70d97a7ff21d86ea.html#a2c8df7a20b47341b70d97a7ff21d86ea">drawchar</a>(chara,<a class="code" href="a00041_abaa0d20f0e52ce0d3a7d706f6ac16266.html#abaa0d20f0e52ce0d3a7d706f6ac16266">xoff</a>,<a class="code" href="a00041_a1a7539764d0ae8cd06ce45c62cf92bca.html#a1a7539764d0ae8cd06ce45c62cf92bca">yoff</a>+1,0xf,0x0);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        chara = *<span class="keywordtype">string</span>++;</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    }</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;}</div><div class="ttc" id="a00041_a1a7539764d0ae8cd06ce45c62cf92bca_html_a1a7539764d0ae8cd06ce45c62cf92bca"><div class="ttname"><a href="a00041_a1a7539764d0ae8cd06ce45c62cf92bca.html#a1a7539764d0ae8cd06ce45c62cf92bca">yoff</a></div><div class="ttdeci">uint16_t yoff</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00016">tty.c:16</a></div></div>
+<div class="ttc" id="a00041_abaa0d20f0e52ce0d3a7d706f6ac16266_html_abaa0d20f0e52ce0d3a7d706f6ac16266"><div class="ttname"><a href="a00041_abaa0d20f0e52ce0d3a7d706f6ac16266.html#abaa0d20f0e52ce0d3a7d706f6ac16266">xoff</a></div><div class="ttdeci">uint16_t xoff</div><div class="ttdef"><b>Definition:</b> <a href="a00041_source.html#l00015">tty.c:15</a></div></div>
+<div class="ttc" id="a00008_a2c8df7a20b47341b70d97a7ff21d86ea_html_a2c8df7a20b47341b70d97a7ff21d86ea"><div class="ttname"><a href="a00008_a2c8df7a20b47341b70d97a7ff21d86ea.html#a2c8df7a20b47341b70d97a7ff21d86ea">drawchar</a></div><div class="ttdeci">void drawchar(unsigned char c, uint16_t x, uint16_t y, uint8_t fgcolor, uint8_t bgcolor)</div><div class="ttdoc">Puts a ASCII character on the screen. </div><div class="ttdef"><b>Definition:</b> <a href="a00008_source.html#l00017">vga.c:17</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
     </td>
