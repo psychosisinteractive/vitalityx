@@ -22,6 +22,10 @@
 ///
 typedef struct vepheader {
     ///
+    /// VEP signature, should be 'VP'
+    ///
+    char signature[2];
+    ///
     /// VEP flags
     /// 
     char flags;
@@ -42,5 +46,5 @@ typedef struct vepheader {
 ///
 /// Loads a VEP with a VEPHeader
 ///
-void loadvep(vepheader_t vep, char* data);
+int loadvep(vepheader_t vep, char* data);
 #endif

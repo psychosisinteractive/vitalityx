@@ -2,7 +2,6 @@
 
 global _start
 _start:
-    jmp $
     mov ebp, 0x90000
     mov esp, ebp
     extern kernel

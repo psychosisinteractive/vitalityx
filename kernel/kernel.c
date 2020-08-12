@@ -4,8 +4,8 @@
 /// The kernels C entry point
 ///
 int kernel() {
+    tty_pputstring("Hello World");
     idt_install();
-    tty_vgaputstring("Hello World");
     for(;;) {
 
     }
