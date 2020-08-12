@@ -42,5 +42,5 @@ typedef struct vepheader {
 ///
 /// Loads a VEP with a VEPHeader
 ///
-int loadvep(vepheader_t vep, char* data);
+void loadvep(vepheader_t vep, char* data);
 #endif
