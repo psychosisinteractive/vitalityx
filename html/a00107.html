@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: tdt Struct Reference</title>
+<title>VitalityX: libc/vitality/tty.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -37,42 +37,53 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">tdt Struct Reference</div>  </div>
+<div class="title">tty.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>Thread Descriptor Table.  
- <a href="a00107.html#details">More...</a></p>
-
-<p><code>#include &lt;<a class="el" href="a00065_source.html">threads.h</a>&gt;</code></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="a00110_source.html">tty.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00092_source.html">../types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00017_source.html">../../drivers/vga.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00032_source.html">../ext/debug.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for tty.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00108.png" border="0" usemap="#libc_2vitality_2tty_8c" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div>
+<p><a href="a00107_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:ad81f2cd346c1134e82393226d2f1852b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00068_a295f71165288684c38c6bb836fbb3c59.html#a295f71165288684c38c6bb836fbb3c59">addr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_ad81f2cd346c1134e82393226d2f1852b.html#ad81f2cd346c1134e82393226d2f1852b">task_address</a></td></tr>
-<tr class="memdesc:ad81f2cd346c1134e82393226d2f1852b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Address of the Task.  <a href="a00107_ad81f2cd346c1134e82393226d2f1852b.html#ad81f2cd346c1134e82393226d2f1852b">More...</a><br /></td></tr>
-<tr class="separator:ad81f2cd346c1134e82393226d2f1852b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46234f76421730447633c8b3d988ec23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00053_ab0dcbec9b4b3c60b939b1095f93cb1b9.html#ab0dcbec9b4b3c60b939b1095f93cb1b9">string_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a46234f76421730447633c8b3d988ec23.html#a46234f76421730447633c8b3d988ec23">task_name</a></td></tr>
-<tr class="memdesc:a46234f76421730447633c8b3d988ec23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Name of the Task.  <a href="a00107_a46234f76421730447633c8b3d988ec23.html#a46234f76421730447633c8b3d988ec23">More...</a><br /></td></tr>
-<tr class="separator:a46234f76421730447633c8b3d988ec23"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f6b2208cd30a76a918127077652ef40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00065_a5ee504524d7b79ed81a1ed7b325dc9c6.html#a5ee504524d7b79ed81a1ed7b325dc9c6">tps_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a1f6b2208cd30a76a918127077652ef40.html#a1f6b2208cd30a76a918127077652ef40">priority</a></td></tr>
-<tr class="memdesc:a1f6b2208cd30a76a918127077652ef40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task Priority.  <a href="a00107_a1f6b2208cd30a76a918127077652ef40.html#a1f6b2208cd30a76a918127077652ef40">More...</a><br /></td></tr>
-<tr class="separator:a1f6b2208cd30a76a918127077652ef40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2427b4d11139de3da5e735a9c1c5299"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00065_a3895f03bb811310833570ff0b8a403d9.html#a3895f03bb811310833570ff0b8a403d9">tst_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_ac2427b4d11139de3da5e735a9c1c5299.html#ac2427b4d11139de3da5e735a9c1c5299">state</a></td></tr>
-<tr class="memdesc:ac2427b4d11139de3da5e735a9c1c5299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task State.  <a href="a00107_ac2427b4d11139de3da5e735a9c1c5299.html#ac2427b4d11139de3da5e735a9c1c5299">More...</a><br /></td></tr>
-<tr class="separator:ac2427b4d11139de3da5e735a9c1c5299"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a2ebb962f457a2677d70285d1c0f9be12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a2ebb962f457a2677d70285d1c0f9be12.html#a2ebb962f457a2677d70285d1c0f9be12">tty_putstring</a> (char *string)</td></tr>
+<tr class="memdesc:a2ebb962f457a2677d70285d1c0f9be12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string in VRAM, Text mode only.  <a href="a00107_a2ebb962f457a2677d70285d1c0f9be12.html#a2ebb962f457a2677d70285d1c0f9be12">More...</a><br /></td></tr>
+<tr class="separator:a2ebb962f457a2677d70285d1c0f9be12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13ff2c06d56753c5666ca56cb2d81100"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a13ff2c06d56753c5666ca56cb2d81100.html#a13ff2c06d56753c5666ca56cb2d81100">tty_vgaputstring</a> (char *string)</td></tr>
+<tr class="memdesc:a13ff2c06d56753c5666ca56cb2d81100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string into VRAM, Mode 13 only.  <a href="a00107_a13ff2c06d56753c5666ca56cb2d81100.html#a13ff2c06d56753c5666ca56cb2d81100">More...</a><br /></td></tr>
+<tr class="separator:a13ff2c06d56753c5666ca56cb2d81100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade960b1320324706aac6c00cc6b1b2fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_ade960b1320324706aac6c00cc6b1b2fe.html#ade960b1320324706aac6c00cc6b1b2fe">tty_pputstring</a> (char *string)</td></tr>
+<tr class="memdesc:ade960b1320324706aac6c00cc6b1b2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string into VRAM, detects preferred mode.  <a href="a00107_ade960b1320324706aac6c00cc6b1b2fe.html#ade960b1320324706aac6c00cc6b1b2fe">More...</a><br /></td></tr>
+<tr class="separator:ade960b1320324706aac6c00cc6b1b2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a3f896e9c00b9302e2287aad054199134"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a3f896e9c00b9302e2287aad054199134.html#a3f896e9c00b9302e2287aad054199134">videoMemoryPtr</a> = (int*)0x000A0000</td></tr>
+<tr class="separator:a3f896e9c00b9302e2287aad054199134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaa0d20f0e52ce0d3a7d706f6ac16266"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00092_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_abaa0d20f0e52ce0d3a7d706f6ac16266.html#abaa0d20f0e52ce0d3a7d706f6ac16266">xoff</a> = 0</td></tr>
+<tr class="separator:abaa0d20f0e52ce0d3a7d706f6ac16266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a7539764d0ae8cd06ce45c62cf92bca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00092_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a1a7539764d0ae8cd06ce45c62cf92bca.html#a1a7539764d0ae8cd06ce45c62cf92bca">yoff</a> = 0</td></tr>
+<tr class="separator:a1a7539764d0ae8cd06ce45c62cf92bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Thread Descriptor Table. </p>
-
-<p class="definition">Definition at line <a class="el" href="a00065_source.html#l00059">59</a> of file <a class="el" href="a00065_source.html">threads.h</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>libc/<a class="el" href="a00065_source.html">threads.h</a></li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

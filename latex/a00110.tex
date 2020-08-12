@@ -1,0 +1,114 @@
+\hypertarget{a00110}{}\section{libc/vitality/tty.h File Reference}
+\label{a00110}\index{libc/vitality/tty.\+h@{libc/vitality/tty.\+h}}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{a00110_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}{tty\+\_\+putstring} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Puts a string in V\+R\+AM, Text mode only. \end{DoxyCompactList}\item 
+void \hyperlink{a00110_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}{tty\+\_\+vgaputstring} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, Mode 13 only. \end{DoxyCompactList}\item 
+void \hyperlink{a00110_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\+\_\+pputstring} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, detects preferred mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{a00110_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}\label{a00110_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}} 
+\index{tty.\+h@{tty.\+h}!tty\+\_\+pputstring@{tty\+\_\+pputstring}}
+\index{tty\+\_\+pputstring@{tty\+\_\+pputstring}!tty.\+h@{tty.\+h}}
+\subsubsection{\texorpdfstring{tty\+\_\+pputstring()}{tty\_pputstring()}}
+{\footnotesize\ttfamily void tty\+\_\+pputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+Puts a string into V\+R\+AM, detects preferred mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to put \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 30 of file tty.\+c.
+
+
+\begin{DoxyCode}
+30                                   \{
+31     \textcolor{keywordflow}{switch} (\hyperlink{a00014_af6d170c9401ea8f94d4c5cf09347cca7_af6d170c9401ea8f94d4c5cf09347cca7}{vgamode}())
+32     \{
+33     \textcolor{keywordflow}{case} 0x3:
+34         \hyperlink{a00107_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}{tty\_putstring}(\textcolor{keywordtype}{string});
+35         \textcolor{keywordflow}{break};
+36     \textcolor{keywordflow}{case} 0x13:
+37         \hyperlink{a00107_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}{tty\_vgaputstring}(\textcolor{keywordtype}{string});
+38         \textcolor{keywordflow}{break};
+39     \textcolor{keywordflow}{default}:
+40         \hyperlink{a00107_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}{tty\_vgaputstring}(\textcolor{keywordtype}{string});
+41         \textcolor{keywordflow}{break};
+42     \}
+43 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00110_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}\label{a00110_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}} 
+\index{tty.\+h@{tty.\+h}!tty\+\_\+putstring@{tty\+\_\+putstring}}
+\index{tty\+\_\+putstring@{tty\+\_\+putstring}!tty.\+h@{tty.\+h}}
+\subsubsection{\texorpdfstring{tty\+\_\+putstring()}{tty\_putstring()}}
+{\footnotesize\ttfamily void tty\+\_\+putstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+Puts a string in V\+R\+AM, Text mode only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to put \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 7 of file tty.\+c.
+
+
+\begin{DoxyCode}
+7                                  \{
+8     \hyperlink{a00029_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{keywordtype}{string});
+9     \hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} attrib = (0x0 << 4) | (0xf & 0x0F);
+10     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
+11     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'}) \{
+12         *\hyperlink{a00107_a3f896e9c00b9302e2287aad054199134_a3f896e9c00b9302e2287aad054199134}{videoMemoryPtr}++ = chara;
+13         chara = *\textcolor{keywordtype}{string}++;
+14     \}
+15 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00110_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}\label{a00110_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}} 
+\index{tty.\+h@{tty.\+h}!tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}}
+\index{tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}!tty.\+h@{tty.\+h}}
+\subsubsection{\texorpdfstring{tty\+\_\+vgaputstring()}{tty\_vgaputstring()}}
+{\footnotesize\ttfamily void tty\+\_\+vgaputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+Puts a string into V\+R\+AM, Mode 13 only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to put \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 20 of file tty.\+c.
+
+
+\begin{DoxyCode}
+20                                     \{
+21     \hyperlink{a00029_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{keywordtype}{string});
+22     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
+23     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'}) \{
+24         \hyperlink{a00014_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}{drawchar}(chara,\hyperlink{a00107_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff},\hyperlink{a00107_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff}+17,0xf,0x0);
+25         \hyperlink{a00107_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff} += 8;
+26         chara = *\textcolor{keywordtype}{string}++;
+27     \}
+28 \}
+\end{DoxyCode}

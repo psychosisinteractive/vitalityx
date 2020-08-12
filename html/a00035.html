@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/g++/cpp_classdef.h File Reference</title>
+<title>VitalityX: libc/ext/liballoc.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,33 +39,88 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_740231a46c27238b7c2b9234f80cf181.html">g++</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_c8aa6d4abc9a0662ff2d67630dd4c4d1.html">ext</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">cpp_classdef.h File Reference</div>  </div>
+<div class="title">liballoc.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
+<div class="textblock"><code>#include &quot;<a class="el" href="a00038_source.html">liballoc.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for liballoc.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00037.png" border="0" usemap="#libc_2g_09_09_2cpp__classdef_8hdep" alt=""/></div>
+<div class="center"><img src="a00036.png" border="0" usemap="#libc_2ext_2liballoc_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
 <p><a href="a00035_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:af6b1d459ffa3c81e2456acf8d4268330"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_af6b1d459ffa3c81e2456acf8d4268330.html#af6b1d459ffa3c81e2456acf8d4268330">LIBALLOC_MAGIC</a>&#160;&#160;&#160;0xc001c0de</td></tr>
+<tr class="memdesc:af6b1d459ffa3c81e2456acf8d4268330"><td class="mdescLeft">&#160;</td><td class="mdescRight">This code is released into the public domain.  <a href="a00035_af6b1d459ffa3c81e2456acf8d4268330.html#af6b1d459ffa3c81e2456acf8d4268330">More...</a><br /></td></tr>
+<tr class="separator:af6b1d459ffa3c81e2456acf8d4268330"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a08b7f1e029a0c835f3639557d8ad7a36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a08b7f1e029a0c835f3639557d8ad7a36.html#a08b7f1e029a0c835f3639557d8ad7a36">MAXCOMPLETE</a>&#160;&#160;&#160;5</td></tr>
+<tr class="separator:a08b7f1e029a0c835f3639557d8ad7a36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af823bb7d083fafbd662be7ea09582013"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_af823bb7d083fafbd662be7ea09582013.html#af823bb7d083fafbd662be7ea09582013">MAXEXP</a>&#160;&#160;&#160;32</td></tr>
+<tr class="separator:af823bb7d083fafbd662be7ea09582013"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7249b0af4d1bfe02a4c7bdbf810bd8c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_ae7249b0af4d1bfe02a4c7bdbf810bd8c.html#ae7249b0af4d1bfe02a4c7bdbf810bd8c">MINEXP</a>&#160;&#160;&#160;8</td></tr>
+<tr class="separator:ae7249b0af4d1bfe02a4c7bdbf810bd8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a881288ad0450ab9858bf01b030e755b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a881288ad0450ab9858bf01b030e755b0.html#a881288ad0450ab9858bf01b030e755b0">MODE_BEST</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a881288ad0450ab9858bf01b030e755b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedc513524290b468e893e1bc4f5cba2f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_aedc513524290b468e893e1bc4f5cba2f.html#aedc513524290b468e893e1bc4f5cba2f">MODE_INSTANT</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:aedc513524290b468e893e1bc4f5cba2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8c52c1b4c021ed3e6b6b677bd2ac019"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_ab8c52c1b4c021ed3e6b6b677bd2ac019.html#ab8c52c1b4c021ed3e6b6b677bd2ac019">MODE</a>&#160;&#160;&#160;<a class="el" href="a00035_a881288ad0450ab9858bf01b030e755b0.html#a881288ad0450ab9858bf01b030e755b0">MODE_BEST</a></td></tr>
+<tr class="separator:ab8c52c1b4c021ed3e6b6b677bd2ac019"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6be7d9ce80c86f5178635fa86c2dd5e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a6be7d9ce80c86f5178635fa86c2dd5e7.html#a6be7d9ce80c86f5178635fa86c2dd5e7">__cxa_pure_virtual</a> ()</td></tr>
-<tr class="memdesc:a6be7d9ce80c86f5178635fa86c2dd5e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++ Pure Virtual Function, called when a virtual function is required YET there is nothing to handle its call.  <a href="a00035_a6be7d9ce80c86f5178635fa86c2dd5e7.html#a6be7d9ce80c86f5178635fa86c2dd5e7">More...</a><br /></td></tr>
-<tr class="separator:a6be7d9ce80c86f5178635fa86c2dd5e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88ab127aec9ce8ef76f95c9dc7edfe9a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a88ab127aec9ce8ef76f95c9dc7edfe9a.html#a88ab127aec9ce8ef76f95c9dc7edfe9a">c_stc</a> (const char string[])</td></tr>
-<tr class="memdesc:a88ab127aec9ce8ef76f95c9dc7edfe9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a const char array into a char*.  <a href="a00035_a88ab127aec9ce8ef76f95c9dc7edfe9a.html#a88ab127aec9ce8ef76f95c9dc7edfe9a">More...</a><br /></td></tr>
-<tr class="separator:a88ab127aec9ce8ef76f95c9dc7edfe9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5fc0b977bf14bdb99c8b87cae451d42"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_ab5fc0b977bf14bdb99c8b87cae451d42.html#ab5fc0b977bf14bdb99c8b87cae451d42">getexp</a> (unsigned int size)</td></tr>
+<tr class="memdesc:ab5fc0b977bf14bdb99c8b87cae451d42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the exponent required to manage 'size' amount of memory.  <a href="a00035_ab5fc0b977bf14bdb99c8b87cae451d42.html#ab5fc0b977bf14bdb99c8b87cae451d42">More...</a><br /></td></tr>
+<tr class="separator:ab5fc0b977bf14bdb99c8b87cae451d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad824e94da51543e1febb05f96f0083ba"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_ad824e94da51543e1febb05f96f0083ba.html#ad824e94da51543e1febb05f96f0083ba">liballoc_memset</a> (void *s, int c, <a class="el" href="a00038_a7c94ea6f8948649f8d181ae55911eeaf.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> n)</td></tr>
+<tr class="separator:ad824e94da51543e1febb05f96f0083ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58b3101a659b6a2f7e2ca290bef6bfb4"><td class="memItemLeft" align="right" valign="top">static void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a58b3101a659b6a2f7e2ca290bef6bfb4.html#a58b3101a659b6a2f7e2ca290bef6bfb4">liballoc_memcpy</a> (void *s1, const void *s2, <a class="el" href="a00038_a7c94ea6f8948649f8d181ae55911eeaf.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> n)</td></tr>
+<tr class="separator:a58b3101a659b6a2f7e2ca290bef6bfb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a569f88ed08d8435e256dd225afcd26df"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a569f88ed08d8435e256dd225afcd26df.html#a569f88ed08d8435e256dd225afcd26df">insert_tag</a> (struct <a class="el" href="a00126.html">boundary_tag</a> *tag, int index)</td></tr>
+<tr class="separator:a569f88ed08d8435e256dd225afcd26df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeea23ead928f2a5d40fdf7687b3c99c9"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_aeea23ead928f2a5d40fdf7687b3c99c9.html#aeea23ead928f2a5d40fdf7687b3c99c9">remove_tag</a> (struct <a class="el" href="a00126.html">boundary_tag</a> *tag)</td></tr>
+<tr class="separator:aeea23ead928f2a5d40fdf7687b3c99c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ea762780416b837601691f20e085cc2"><td class="memItemLeft" align="right" valign="top">static struct <a class="el" href="a00126.html">boundary_tag</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a7ea762780416b837601691f20e085cc2.html#a7ea762780416b837601691f20e085cc2">melt_left</a> (struct <a class="el" href="a00126.html">boundary_tag</a> *tag)</td></tr>
+<tr class="separator:a7ea762780416b837601691f20e085cc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d9646746f3401f7c03ff66cba7315c8"><td class="memItemLeft" align="right" valign="top">static struct <a class="el" href="a00126.html">boundary_tag</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a9d9646746f3401f7c03ff66cba7315c8.html#a9d9646746f3401f7c03ff66cba7315c8">absorb_right</a> (struct <a class="el" href="a00126.html">boundary_tag</a> *tag)</td></tr>
+<tr class="separator:a9d9646746f3401f7c03ff66cba7315c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fd489a9d383dd6830e38fa63a0aec60"><td class="memItemLeft" align="right" valign="top">static struct <a class="el" href="a00126.html">boundary_tag</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a8fd489a9d383dd6830e38fa63a0aec60.html#a8fd489a9d383dd6830e38fa63a0aec60">split_tag</a> (struct <a class="el" href="a00126.html">boundary_tag</a> *tag)</td></tr>
+<tr class="separator:a8fd489a9d383dd6830e38fa63a0aec60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e465ea231c950756bcd4e41244c61a1"><td class="memItemLeft" align="right" valign="top">static struct <a class="el" href="a00126.html">boundary_tag</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a8e465ea231c950756bcd4e41244c61a1.html#a8e465ea231c950756bcd4e41244c61a1">allocate_new_tag</a> (unsigned int size)</td></tr>
+<tr class="separator:a8e465ea231c950756bcd4e41244c61a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ac38fce3243a7dcf448301ee9ffd392"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a7ac38fce3243a7dcf448301ee9ffd392.html#a7ac38fce3243a7dcf448301ee9ffd392">malloc</a> (<a class="el" href="a00038_a7c94ea6f8948649f8d181ae55911eeaf.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> size)</td></tr>
+<tr class="separator:a7ac38fce3243a7dcf448301ee9ffd392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbedc913aa4651b3c3b4b3aecd9b4711"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_afbedc913aa4651b3c3b4b3aecd9b4711.html#afbedc913aa4651b3c3b4b3aecd9b4711">free</a> (void *ptr)</td></tr>
+<tr class="separator:afbedc913aa4651b3c3b4b3aecd9b4711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0831129f5172700d42788e7201bdb25e"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a0831129f5172700d42788e7201bdb25e.html#a0831129f5172700d42788e7201bdb25e">calloc</a> (<a class="el" href="a00038_a7c94ea6f8948649f8d181ae55911eeaf.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> nobj, <a class="el" href="a00038_a7c94ea6f8948649f8d181ae55911eeaf.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> size)</td></tr>
+<tr class="separator:a0831129f5172700d42788e7201bdb25e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5f241a082afc3c26df1eb7dfdd8d8e0"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_ac5f241a082afc3c26df1eb7dfdd8d8e0.html#ac5f241a082afc3c26df1eb7dfdd8d8e0">realloc</a> (void *p, <a class="el" href="a00038_a7c94ea6f8948649f8d181ae55911eeaf.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a> size)</td></tr>
+<tr class="separator:ac5f241a082afc3c26df1eb7dfdd8d8e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a78b8b6e448179d3cd64915f99fee60e0"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="a00126.html">boundary_tag</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a78b8b6e448179d3cd64915f99fee60e0.html#a78b8b6e448179d3cd64915f99fee60e0">l_freePages</a> [<a class="el" href="a00035_af823bb7d083fafbd662be7ea09582013.html#af823bb7d083fafbd662be7ea09582013">MAXEXP</a>]</td></tr>
+<tr class="separator:a78b8b6e448179d3cd64915f99fee60e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a213db3baf1d4b13d604015489247980d"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a213db3baf1d4b13d604015489247980d.html#a213db3baf1d4b13d604015489247980d">l_completePages</a> [<a class="el" href="a00035_af823bb7d083fafbd662be7ea09582013.html#af823bb7d083fafbd662be7ea09582013">MAXEXP</a>]</td></tr>
+<tr class="separator:a213db3baf1d4b13d604015489247980d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4aac6ed0ba0144598c5abe18222c3493"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a4aac6ed0ba0144598c5abe18222c3493.html#a4aac6ed0ba0144598c5abe18222c3493">l_initialized</a> = 0</td></tr>
+<tr class="separator:a4aac6ed0ba0144598c5abe18222c3493"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5008d6a07ef0a4f9e325993716cc228e"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a5008d6a07ef0a4f9e325993716cc228e.html#a5008d6a07ef0a4f9e325993716cc228e">l_pageSize</a> = 4096</td></tr>
+<tr class="separator:a5008d6a07ef0a4f9e325993716cc228e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f81c0408f42ca5d936221d15f918275"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a8f81c0408f42ca5d936221d15f918275.html#a8f81c0408f42ca5d936221d15f918275">l_pageCount</a> = 16</td></tr>
+<tr class="separator:a8f81c0408f42ca5d936221d15f918275"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

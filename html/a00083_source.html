@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/tty.h Source File</title>
+<title>VitalityX: libc/string.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,17 +39,15 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">tty.h</div>  </div>
+<div class="title">string.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00083.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef TTY_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define TTY_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00083_a2ebb962f457a2677d70285d1c0f9be12.html#a2ebb962f457a2677d70285d1c0f9be12">tty_putstring</a>(<span class="keywordtype">char</span>* <span class="keywordtype">string</span>);</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00083_a13ff2c06d56753c5666ca56cb2d81100.html#a13ff2c06d56753c5666ca56cb2d81100">tty_vgaputstring</a>(<span class="keywordtype">char</span>* <span class="keywordtype">string</span>);</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00083_ade960b1320324706aac6c00cc6b1b2fe.html#ade960b1320324706aac6c00cc6b1b2fe">tty_pputstring</a>(<span class="keywordtype">char</span>* <span class="keywordtype">string</span>);</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="a00083_a13ff2c06d56753c5666ca56cb2d81100_html_a13ff2c06d56753c5666ca56cb2d81100"><div class="ttname"><a href="a00083_a13ff2c06d56753c5666ca56cb2d81100.html#a13ff2c06d56753c5666ca56cb2d81100">tty_vgaputstring</a></div><div class="ttdeci">void tty_vgaputstring(char *string)</div><div class="ttdoc">Puts a string into VRAM, Mode 13 only. </div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00020">tty.c:20</a></div></div>
-<div class="ttc" id="a00083_a2ebb962f457a2677d70285d1c0f9be12_html_a2ebb962f457a2677d70285d1c0f9be12"><div class="ttname"><a href="a00083_a2ebb962f457a2677d70285d1c0f9be12.html#a2ebb962f457a2677d70285d1c0f9be12">tty_putstring</a></div><div class="ttdeci">void tty_putstring(char *string)</div><div class="ttdoc">Puts a string in VRAM, Text mode only. </div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00007">tty.c:7</a></div></div>
-<div class="ttc" id="a00083_ade960b1320324706aac6c00cc6b1b2fe_html_ade960b1320324706aac6c00cc6b1b2fe"><div class="ttname"><a href="a00083_ade960b1320324706aac6c00cc6b1b2fe.html#ade960b1320324706aac6c00cc6b1b2fe">tty_pputstring</a></div><div class="ttdeci">void tty_pputstring(char *string)</div><div class="ttdoc">Puts a string into VRAM, detects preferred mode. </div><div class="ttdef"><b>Definition:</b> <a href="a00080_source.html#l00029">tty.c:29</a></div></div>
+<a href="a00083.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef STRING_H</span></div><div class="line"><a name="l00002"></a><span class="lineno"><a class="line" href="a00083_a5338bd16a174527274acc5062483b702.html#a5338bd16a174527274acc5062483b702">    2</a></span>&#160;<span class="preprocessor">#define STIRNG_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div><div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="a00083_ab0dcbec9b4b3c60b939b1095f93cb1b9.html#ab0dcbec9b4b3c60b939b1095f93cb1b9">    7</a></span>&#160;<span class="keyword">typedef</span> <span class="keywordtype">char</span>* <a class="code" href="a00083_ab0dcbec9b4b3c60b939b1095f93cb1b9.html#ab0dcbec9b4b3c60b939b1095f93cb1b9">string_t</a>;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="a00083_ab0dcbec9b4b3c60b939b1095f93cb1b9_html_ab0dcbec9b4b3c60b939b1095f93cb1b9"><div class="ttname"><a href="a00083_ab0dcbec9b4b3c60b939b1095f93cb1b9.html#ab0dcbec9b4b3c60b939b1095f93cb1b9">string_t</a></div><div class="ttdeci">char * string_t</div><div class="ttdoc">String typedef. </div><div class="ttdef"><b>Definition:</b> <a href="a00083_source.html#l00007">string.h:7</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

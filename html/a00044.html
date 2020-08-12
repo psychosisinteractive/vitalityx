@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/page.c File Reference</title>
+<title>VitalityX: libc/ext/task.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,23 +39,25 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_c8aa6d4abc9a0662ff2d67630dd4c4d1.html">ext</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">page.c File Reference</div>  </div>
+<div class="title">task.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00047_source.html">page.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00068_source.html">types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00020_source.html">ext/debug.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00047_source.html">task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00092_source.html">../types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00032_source.html">debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00077_source.html">../page.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for page.c:</div>
+Include dependency graph for task.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00045.png" border="0" usemap="#libc_2page_8c" alt=""/></div>
+<div class="center"><img src="a00045.png" border="0" usemap="#libc_2ext_2task_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
@@ -63,12 +65,25 @@ Include dependency graph for page.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a37f8e955bf961194d85eb31c4083e0ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00068_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> page_directory [1024]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a37f8e955bf961194d85eb31c4083e0ba.html#a37f8e955bf961194d85eb31c4083e0ba">__attribute__</a> ((aligned(4096)))</td></tr>
-<tr class="separator:a37f8e955bf961194d85eb31c4083e0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51f6a37816540dea572d38f2713e9f5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a51f6a37816540dea572d38f2713e9f5a.html#a51f6a37816540dea572d38f2713e9f5a">setup_page</a> ()</td></tr>
-<tr class="separator:a51f6a37816540dea572d38f2713e9f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bb2c9b4c69002e17903710ce4de395c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a7bb2c9b4c69002e17903710ce4de395c.html#a7bb2c9b4c69002e17903710ce4de395c">create_page_table</a> (unsigned int i, unsigned int id)</td></tr>
-<tr class="separator:a7bb2c9b4c69002e17903710ce4de395c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4337f8ca98d2a8f8e09bf6e26b4e8bb0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a4337f8ca98d2a8f8e09bf6e26b4e8bb0.html#a4337f8ca98d2a8f8e09bf6e26b4e8bb0">otherMain</a> ()</td></tr>
+<tr class="separator:a4337f8ca98d2a8f8e09bf6e26b4e8bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea945e91746a54801f4763ad264746b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_aea945e91746a54801f4763ad264746b9.html#aea945e91746a54801f4763ad264746b9">initTasking</a> ()</td></tr>
+<tr class="separator:aea945e91746a54801f4763ad264746b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2814ff5e4f081736448dc705b05edcd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a2814ff5e4f081736448dc705b05edcd1.html#a2814ff5e4f081736448dc705b05edcd1">addTask</a> (<a class="el" href="a00134.html">Task</a> *task)</td></tr>
+<tr class="separator:a2814ff5e4f081736448dc705b05edcd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad60a944f16bf46088320833cf2464e1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_ad60a944f16bf46088320833cf2464e1e.html#ad60a944f16bf46088320833cf2464e1e">createTask</a> (<a class="el" href="a00134.html">Task</a> *task, void(*main)(), <a class="el" href="a00092_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="el" href="a00065_aa2585d779da0ab21273a8d92de9a0ebe.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a>, <a class="el" href="a00092_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> *pagedir, char name[16])</td></tr>
+<tr class="separator:ad60a944f16bf46088320833cf2464e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a58c8b2ad0ea491a6642e5e1cbd358c89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a58c8b2ad0ea491a6642e5e1cbd358c89.html#a58c8b2ad0ea491a6642e5e1cbd358c89">yield</a> ()</td></tr>
+<tr class="separator:a58c8b2ad0ea491a6642e5e1cbd358c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a2c195d425b4a6791b3a89f7b219f93d9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00134.html">Task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a2c195d425b4a6791b3a89f7b219f93d9.html#a2c195d425b4a6791b3a89f7b219f93d9">runningTask</a></td></tr>
+<tr class="separator:a2c195d425b4a6791b3a89f7b219f93d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a228ac88416ebaa8713846e3e5e3e9b6d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00134.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a228ac88416ebaa8713846e3e5e3e9b6d.html#a228ac88416ebaa8713846e3e5e3e9b6d">mainTask</a></td></tr>
+<tr class="separator:a228ac88416ebaa8713846e3e5e3e9b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0e87ab98b8b029839a398838d16e1f0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00134.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_ab0e87ab98b8b029839a398838d16e1f0.html#ab0e87ab98b8b029839a398838d16e1f0">otherTask</a></td></tr>
+<tr class="separator:ab0e87ab98b8b029839a398838d16e1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

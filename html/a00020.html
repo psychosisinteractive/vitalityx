@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/ext/debug.h File Reference</title>
+<title>VitalityX: kernel/kernel.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,44 +39,36 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_c8aa6d4abc9a0662ff2d67630dd4c4d1.html">ext</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">debug.h File Reference</div>  </div>
+<div class="title">kernel.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00077_source.html">../vitality/inline.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00110_source.html">../libc/vitality/tty.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00026_source.html">../libc/descriptortables.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00077_source.html">../libc/page.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00032_source.html">../libc/ext/debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00017_source.html">../drivers/vga.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00047_source.html">../libc/ext/task.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for debug.h:</div>
+Include dependency graph for kernel.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00021.png" border="0" usemap="#libc_2ext_2debug_8h" alt=""/></div>
+<div class="center"><img src="a00021.png" border="0" usemap="#kernel_2kernel_8c" alt=""/></div>
 <!-- MAP 0 -->
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00022.png" border="0" usemap="#libc_2ext_2debug_8hdep" alt=""/></div>
-<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00020_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:aa2123d399356fa4ded8a39fdc167f31a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020_aa2123d399356fa4ded8a39fdc167f31a.html#aa2123d399356fa4ded8a39fdc167f31a">BochsConsolePrintChar</a>(c)&#160;&#160;&#160;<a class="el" href="a00077_aa37f5841c54156a4b14fc0d6f626b44f.html#aa37f5841c54156a4b14fc0d6f626b44f">outb</a>(0xe9, c)</td></tr>
-<tr class="memdesc:aa2123d399356fa4ded8a39fdc167f31a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs a character to the Bochs console.  <a href="a00020_aa2123d399356fa4ded8a39fdc167f31a.html#aa2123d399356fa4ded8a39fdc167f31a">More...</a><br /></td></tr>
-<tr class="separator:aa2123d399356fa4ded8a39fdc167f31a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a19e1f554d03c977f8b947f21489daa41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020_a19e1f554d03c977f8b947f21489daa41.html#a19e1f554d03c977f8b947f21489daa41">BochsConsolePrintString</a> (char *string)</td></tr>
-<tr class="memdesc:a19e1f554d03c977f8b947f21489daa41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs a string to the Bochs console.  <a href="a00020_a19e1f554d03c977f8b947f21489daa41.html#a19e1f554d03c977f8b947f21489daa41">More...</a><br /></td></tr>
-<tr class="separator:a19e1f554d03c977f8b947f21489daa41"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ee3d1f05046b7afc6b4d516bf10667a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020_a4ee3d1f05046b7afc6b4d516bf10667a.html#a4ee3d1f05046b7afc6b4d516bf10667a">kernel</a> ()</td></tr>
+<tr class="memdesc:a4ee3d1f05046b7afc6b4d516bf10667a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kernels C entry point.  <a href="a00020_a4ee3d1f05046b7afc6b4d516bf10667a.html#a4ee3d1f05046b7afc6b4d516bf10667a">More...</a><br /></td></tr>
+<tr class="separator:a4ee3d1f05046b7afc6b4d516bf10667a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,61 +1,810 @@
-\hypertarget{a00035}{}\section{libc/g++/cpp\+\_\+classdef.h File Reference}
-\label{a00035}\index{libc/g++/cpp\+\_\+classdef.\+h@{libc/g++/cpp\+\_\+classdef.\+h}}
-This graph shows which files directly or indirectly include this file\+:
+\hypertarget{a00035}{}\section{libc/ext/liballoc.c File Reference}
+\label{a00035}\index{libc/ext/liballoc.\+c@{libc/ext/liballoc.\+c}}
+{\ttfamily \#include \char`\"{}liballoc.\+h\char`\"{}}\newline
+Include dependency graph for liballoc.\+c\+:
 % FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00035_af6b1d459ffa3c81e2456acf8d4268330_af6b1d459ffa3c81e2456acf8d4268330}{L\+I\+B\+A\+L\+L\+O\+C\+\_\+\+M\+A\+G\+IC}~0xc001c0de
+\begin{DoxyCompactList}\small\item\em This code is released into the public domain. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00035_a08b7f1e029a0c835f3639557d8ad7a36_a08b7f1e029a0c835f3639557d8ad7a36}{M\+A\+X\+C\+O\+M\+P\+L\+E\+TE}~5
+\item 
+\#define \hyperlink{a00035_af823bb7d083fafbd662be7ea09582013_af823bb7d083fafbd662be7ea09582013}{M\+A\+X\+E\+XP}~32
+\item 
+\#define \hyperlink{a00035_ae7249b0af4d1bfe02a4c7bdbf810bd8c_ae7249b0af4d1bfe02a4c7bdbf810bd8c}{M\+I\+N\+E\+XP}~8
+\item 
+\#define \hyperlink{a00035_a881288ad0450ab9858bf01b030e755b0_a881288ad0450ab9858bf01b030e755b0}{M\+O\+D\+E\+\_\+\+B\+E\+ST}~0
+\item 
+\#define \hyperlink{a00035_aedc513524290b468e893e1bc4f5cba2f_aedc513524290b468e893e1bc4f5cba2f}{M\+O\+D\+E\+\_\+\+I\+N\+S\+T\+A\+NT}~1
+\item 
+\#define \hyperlink{a00035_ab8c52c1b4c021ed3e6b6b677bd2ac019_ab8c52c1b4c021ed3e6b6b677bd2ac019}{M\+O\+DE}~\hyperlink{a00035_a881288ad0450ab9858bf01b030e755b0_a881288ad0450ab9858bf01b030e755b0}{M\+O\+D\+E\+\_\+\+B\+E\+ST}
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00035_a6be7d9ce80c86f5178635fa86c2dd5e7_a6be7d9ce80c86f5178635fa86c2dd5e7}{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual} ()
-\begin{DoxyCompactList}\small\item\em C++ Pure Virtual Function, called when a virtual function is required Y\+ET there is nothing to handle its call. \end{DoxyCompactList}\item 
-char $\ast$ \hyperlink{a00035_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}{c\+\_\+stc} (const char string\mbox{[}$\,$\mbox{]})
-\begin{DoxyCompactList}\small\item\em Converts a const char array into a char$\ast$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+static int \hyperlink{a00035_ab5fc0b977bf14bdb99c8b87cae451d42_ab5fc0b977bf14bdb99c8b87cae451d42}{getexp} (unsigned int size)
+\begin{DoxyCompactList}\small\item\em Returns the exponent required to manage \textquotesingle{}size\textquotesingle{} amount of memory. \end{DoxyCompactList}\item 
+static void $\ast$ \hyperlink{a00035_ad824e94da51543e1febb05f96f0083ba_ad824e94da51543e1febb05f96f0083ba}{liballoc\+\_\+memset} (void $\ast$s, int c, \hyperlink{a00038_a7c94ea6f8948649f8d181ae55911eeaf_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} n)
+\item 
+static void $\ast$ \hyperlink{a00035_a58b3101a659b6a2f7e2ca290bef6bfb4_a58b3101a659b6a2f7e2ca290bef6bfb4}{liballoc\+\_\+memcpy} (void $\ast$s1, const void $\ast$s2, \hyperlink{a00038_a7c94ea6f8948649f8d181ae55911eeaf_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} n)
+\item 
+static void \hyperlink{a00035_a569f88ed08d8435e256dd225afcd26df_a569f88ed08d8435e256dd225afcd26df}{insert\+\_\+tag} (struct \hyperlink{a00126}{boundary\+\_\+tag} $\ast$tag, int index)
+\item 
+static void \hyperlink{a00035_aeea23ead928f2a5d40fdf7687b3c99c9_aeea23ead928f2a5d40fdf7687b3c99c9}{remove\+\_\+tag} (struct \hyperlink{a00126}{boundary\+\_\+tag} $\ast$tag)
+\item 
+static struct \hyperlink{a00126}{boundary\+\_\+tag} $\ast$ \hyperlink{a00035_a7ea762780416b837601691f20e085cc2_a7ea762780416b837601691f20e085cc2}{melt\+\_\+left} (struct \hyperlink{a00126}{boundary\+\_\+tag} $\ast$tag)
+\item 
+static struct \hyperlink{a00126}{boundary\+\_\+tag} $\ast$ \hyperlink{a00035_a9d9646746f3401f7c03ff66cba7315c8_a9d9646746f3401f7c03ff66cba7315c8}{absorb\+\_\+right} (struct \hyperlink{a00126}{boundary\+\_\+tag} $\ast$tag)
+\item 
+static struct \hyperlink{a00126}{boundary\+\_\+tag} $\ast$ \hyperlink{a00035_a8fd489a9d383dd6830e38fa63a0aec60_a8fd489a9d383dd6830e38fa63a0aec60}{split\+\_\+tag} (struct \hyperlink{a00126}{boundary\+\_\+tag} $\ast$tag)
+\item 
+static struct \hyperlink{a00126}{boundary\+\_\+tag} $\ast$ \hyperlink{a00035_a8e465ea231c950756bcd4e41244c61a1_a8e465ea231c950756bcd4e41244c61a1}{allocate\+\_\+new\+\_\+tag} (unsigned int size)
+\item 
+void $\ast$ \hyperlink{a00035_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}{malloc} (\hyperlink{a00038_a7c94ea6f8948649f8d181ae55911eeaf_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} size)
+\item 
+void \hyperlink{a00035_afbedc913aa4651b3c3b4b3aecd9b4711_afbedc913aa4651b3c3b4b3aecd9b4711}{free} (void $\ast$ptr)
+\item 
+void $\ast$ \hyperlink{a00035_a0831129f5172700d42788e7201bdb25e_a0831129f5172700d42788e7201bdb25e}{calloc} (\hyperlink{a00038_a7c94ea6f8948649f8d181ae55911eeaf_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} nobj, \hyperlink{a00038_a7c94ea6f8948649f8d181ae55911eeaf_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} size)
+\item 
+void $\ast$ \hyperlink{a00035_ac5f241a082afc3c26df1eb7dfdd8d8e0_ac5f241a082afc3c26df1eb7dfdd8d8e0}{realloc} (void $\ast$p, \hyperlink{a00038_a7c94ea6f8948649f8d181ae55911eeaf_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t} size)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{a00126}{boundary\+\_\+tag} $\ast$ \hyperlink{a00035_a78b8b6e448179d3cd64915f99fee60e0_a78b8b6e448179d3cd64915f99fee60e0}{l\+\_\+free\+Pages} \mbox{[}\hyperlink{a00035_af823bb7d083fafbd662be7ea09582013_af823bb7d083fafbd662be7ea09582013}{M\+A\+X\+E\+XP}\mbox{]}
+\item 
+int \hyperlink{a00035_a213db3baf1d4b13d604015489247980d_a213db3baf1d4b13d604015489247980d}{l\+\_\+complete\+Pages} \mbox{[}\hyperlink{a00035_af823bb7d083fafbd662be7ea09582013_af823bb7d083fafbd662be7ea09582013}{M\+A\+X\+E\+XP}\mbox{]}
+\item 
+static int \hyperlink{a00035_a4aac6ed0ba0144598c5abe18222c3493_a4aac6ed0ba0144598c5abe18222c3493}{l\+\_\+initialized} = 0
+\item 
+static int \hyperlink{a00035_a5008d6a07ef0a4f9e325993716cc228e_a5008d6a07ef0a4f9e325993716cc228e}{l\+\_\+page\+Size} = 4096
+\item 
+static int \hyperlink{a00035_a8f81c0408f42ca5d936221d15f918275_a8f81c0408f42ca5d936221d15f918275}{l\+\_\+page\+Count} = 16
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{a00035_af6b1d459ffa3c81e2456acf8d4268330_af6b1d459ffa3c81e2456acf8d4268330}\label{a00035_af6b1d459ffa3c81e2456acf8d4268330_af6b1d459ffa3c81e2456acf8d4268330}} 
+\index{liballoc.\+c@{liballoc.\+c}!L\+I\+B\+A\+L\+L\+O\+C\+\_\+\+M\+A\+G\+IC@{L\+I\+B\+A\+L\+L\+O\+C\+\_\+\+M\+A\+G\+IC}}
+\index{L\+I\+B\+A\+L\+L\+O\+C\+\_\+\+M\+A\+G\+IC@{L\+I\+B\+A\+L\+L\+O\+C\+\_\+\+M\+A\+G\+IC}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{L\+I\+B\+A\+L\+L\+O\+C\+\_\+\+M\+A\+G\+IC}{LIBALLOC\_MAGIC}}
+{\footnotesize\ttfamily \#define L\+I\+B\+A\+L\+L\+O\+C\+\_\+\+M\+A\+G\+IC~0xc001c0de}
+
+
+
+This code is released into the public domain. 
+
+Use this code at your own risk. Feel free to use it for whatever purpose you want. I take no responsibilty or whatever if anything goes wrong. Use it at your own risk.
+
+If you have any fixes or patches, please email me.
+
+Durand Miller \href{mailto:clutter@djm.co.za}{\tt clutter@djm.\+co.\+za}Durand\textquotesingle{}s Ridiculously Amazing Super Duper Memory functions. 
+
+Definition at line 17 of file liballoc.\+c.
+
+\mbox{\Hypertarget{a00035_a08b7f1e029a0c835f3639557d8ad7a36_a08b7f1e029a0c835f3639557d8ad7a36}\label{a00035_a08b7f1e029a0c835f3639557d8ad7a36_a08b7f1e029a0c835f3639557d8ad7a36}} 
+\index{liballoc.\+c@{liballoc.\+c}!M\+A\+X\+C\+O\+M\+P\+L\+E\+TE@{M\+A\+X\+C\+O\+M\+P\+L\+E\+TE}}
+\index{M\+A\+X\+C\+O\+M\+P\+L\+E\+TE@{M\+A\+X\+C\+O\+M\+P\+L\+E\+TE}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{M\+A\+X\+C\+O\+M\+P\+L\+E\+TE}{MAXCOMPLETE}}
+{\footnotesize\ttfamily \#define M\+A\+X\+C\+O\+M\+P\+L\+E\+TE~5}
+
+
+
+Definition at line 18 of file liballoc.\+c.
+
+\mbox{\Hypertarget{a00035_af823bb7d083fafbd662be7ea09582013_af823bb7d083fafbd662be7ea09582013}\label{a00035_af823bb7d083fafbd662be7ea09582013_af823bb7d083fafbd662be7ea09582013}} 
+\index{liballoc.\+c@{liballoc.\+c}!M\+A\+X\+E\+XP@{M\+A\+X\+E\+XP}}
+\index{M\+A\+X\+E\+XP@{M\+A\+X\+E\+XP}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{M\+A\+X\+E\+XP}{MAXEXP}}
+{\footnotesize\ttfamily \#define M\+A\+X\+E\+XP~32}
+
+
+
+Definition at line 19 of file liballoc.\+c.
+
+\mbox{\Hypertarget{a00035_ae7249b0af4d1bfe02a4c7bdbf810bd8c_ae7249b0af4d1bfe02a4c7bdbf810bd8c}\label{a00035_ae7249b0af4d1bfe02a4c7bdbf810bd8c_ae7249b0af4d1bfe02a4c7bdbf810bd8c}} 
+\index{liballoc.\+c@{liballoc.\+c}!M\+I\+N\+E\+XP@{M\+I\+N\+E\+XP}}
+\index{M\+I\+N\+E\+XP@{M\+I\+N\+E\+XP}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{M\+I\+N\+E\+XP}{MINEXP}}
+{\footnotesize\ttfamily \#define M\+I\+N\+E\+XP~8}
+
+
+
+Definition at line 20 of file liballoc.\+c.
+
+\mbox{\Hypertarget{a00035_ab8c52c1b4c021ed3e6b6b677bd2ac019_ab8c52c1b4c021ed3e6b6b677bd2ac019}\label{a00035_ab8c52c1b4c021ed3e6b6b677bd2ac019_ab8c52c1b4c021ed3e6b6b677bd2ac019}} 
+\index{liballoc.\+c@{liballoc.\+c}!M\+O\+DE@{M\+O\+DE}}
+\index{M\+O\+DE@{M\+O\+DE}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{M\+O\+DE}{MODE}}
+{\footnotesize\ttfamily \#define M\+O\+DE~\hyperlink{a00035_a881288ad0450ab9858bf01b030e755b0_a881288ad0450ab9858bf01b030e755b0}{M\+O\+D\+E\+\_\+\+B\+E\+ST}}
+
+
+
+Definition at line 25 of file liballoc.\+c.
+
+\mbox{\Hypertarget{a00035_a881288ad0450ab9858bf01b030e755b0_a881288ad0450ab9858bf01b030e755b0}\label{a00035_a881288ad0450ab9858bf01b030e755b0_a881288ad0450ab9858bf01b030e755b0}} 
+\index{liballoc.\+c@{liballoc.\+c}!M\+O\+D\+E\+\_\+\+B\+E\+ST@{M\+O\+D\+E\+\_\+\+B\+E\+ST}}
+\index{M\+O\+D\+E\+\_\+\+B\+E\+ST@{M\+O\+D\+E\+\_\+\+B\+E\+ST}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{M\+O\+D\+E\+\_\+\+B\+E\+ST}{MODE\_BEST}}
+{\footnotesize\ttfamily \#define M\+O\+D\+E\+\_\+\+B\+E\+ST~0}
+
+
+
+Definition at line 22 of file liballoc.\+c.
+
+\mbox{\Hypertarget{a00035_aedc513524290b468e893e1bc4f5cba2f_aedc513524290b468e893e1bc4f5cba2f}\label{a00035_aedc513524290b468e893e1bc4f5cba2f_aedc513524290b468e893e1bc4f5cba2f}} 
+\index{liballoc.\+c@{liballoc.\+c}!M\+O\+D\+E\+\_\+\+I\+N\+S\+T\+A\+NT@{M\+O\+D\+E\+\_\+\+I\+N\+S\+T\+A\+NT}}
+\index{M\+O\+D\+E\+\_\+\+I\+N\+S\+T\+A\+NT@{M\+O\+D\+E\+\_\+\+I\+N\+S\+T\+A\+NT}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{M\+O\+D\+E\+\_\+\+I\+N\+S\+T\+A\+NT}{MODE\_INSTANT}}
+{\footnotesize\ttfamily \#define M\+O\+D\+E\+\_\+\+I\+N\+S\+T\+A\+NT~1}
+
+
+
+Definition at line 23 of file liballoc.\+c.
+
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00035_a6be7d9ce80c86f5178635fa86c2dd5e7_a6be7d9ce80c86f5178635fa86c2dd5e7}\label{a00035_a6be7d9ce80c86f5178635fa86c2dd5e7_a6be7d9ce80c86f5178635fa86c2dd5e7}} 
-\index{cpp\+\_\+classdef.\+h@{cpp\+\_\+classdef.\+h}!\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual@{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual}}
-\index{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual@{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual}!cpp\+\_\+classdef.\+h@{cpp\+\_\+classdef.\+h}}
-\subsubsection{\texorpdfstring{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual()}{\_\_cxa\_pure\_virtual()}}
-{\footnotesize\ttfamily void \+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00035_a9d9646746f3401f7c03ff66cba7315c8_a9d9646746f3401f7c03ff66cba7315c8}\label{a00035_a9d9646746f3401f7c03ff66cba7315c8_a9d9646746f3401f7c03ff66cba7315c8}} 
+\index{liballoc.\+c@{liballoc.\+c}!absorb\+\_\+right@{absorb\+\_\+right}}
+\index{absorb\+\_\+right@{absorb\+\_\+right}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{absorb\+\_\+right()}{absorb\_right()}}
+{\footnotesize\ttfamily static struct \hyperlink{a00126}{boundary\+\_\+tag}$\ast$ absorb\+\_\+right (\begin{DoxyParamCaption}\item[{struct \hyperlink{a00126}{boundary\+\_\+tag} $\ast$}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-C++ Pure Virtual Function, called when a virtual function is required Y\+ET there is nothing to handle its call. 
-
-
-
-Definition at line 13 of file cpp\+\_\+classdef.\+cpp.
+Definition at line 199 of file liballoc.\+c.
 
 
 \begin{DoxyCode}
-14 \{
-15     \hyperlink{a00080_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\hyperlink{a00032_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}{c\_stc}(\textcolor{stringliteral}{"[KERNEL ERROR]\_\_cxa\_pure\_virtual called, No class spec,
-       halting"}));
-16     
-17 \}
+200 \{
+201     \textcolor{keyword}{struct }\hyperlink{a00126}{boundary\_tag} *right = tag->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right};
+202 
+203         \hyperlink{a00035_aeea23ead928f2a5d40fdf7687b3c99c9_aeea23ead928f2a5d40fdf7687b3c99c9}{remove\_tag}( right );      \textcolor{comment}{// Remove right from free pages.}
+204 
+205         tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size}   += right->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size};
+206 
+207         tag->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right}  = right->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right};
+208         \textcolor{keywordflow}{if} ( right->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right} != \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL} )
+209                     right->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right}->\hyperlink{a00126_a4daa8c3768359ea8d0f46ef907616cc2_a4daa8c3768359ea8d0f46ef907616cc2}{split\_left} = tag;
+210 
+211     \textcolor{keywordflow}{return} tag;
+212 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00035_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}\label{a00035_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}} 
-\index{cpp\+\_\+classdef.\+h@{cpp\+\_\+classdef.\+h}!c\+\_\+stc@{c\+\_\+stc}}
-\index{c\+\_\+stc@{c\+\_\+stc}!cpp\+\_\+classdef.\+h@{cpp\+\_\+classdef.\+h}}
-\subsubsection{\texorpdfstring{c\+\_\+stc()}{c\_stc()}}
-{\footnotesize\ttfamily char$\ast$ c\+\_\+stc (\begin{DoxyParamCaption}\item[{const char}]{string\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00035_a8e465ea231c950756bcd4e41244c61a1_a8e465ea231c950756bcd4e41244c61a1}\label{a00035_a8e465ea231c950756bcd4e41244c61a1_a8e465ea231c950756bcd4e41244c61a1}} 
+\index{liballoc.\+c@{liballoc.\+c}!allocate\+\_\+new\+\_\+tag@{allocate\+\_\+new\+\_\+tag}}
+\index{allocate\+\_\+new\+\_\+tag@{allocate\+\_\+new\+\_\+tag}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{allocate\+\_\+new\+\_\+tag()}{allocate\_new\_tag()}}
+{\footnotesize\ttfamily static struct \hyperlink{a00126}{boundary\+\_\+tag}$\ast$ allocate\+\_\+new\+\_\+tag (\begin{DoxyParamCaption}\item[{unsigned int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
-Converts a const char array into a char$\ast$. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The array \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 23 of file cpp\+\_\+classdef.\+cpp.
+Definition at line 246 of file liballoc.\+c.
 
 
 \begin{DoxyCode}
-23                                  \{
-24     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)&\textcolor{keywordtype}{string}[0];
-25 \}
+247 \{
+248     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pages;
+249     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} usage;
+250     \textcolor{keyword}{struct }\hyperlink{a00126}{boundary\_tag} *tag;
+251 
+252         \textcolor{comment}{// This is how much space is required.}
+253         usage  = \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} + \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }\hyperlink{a00126}{boundary\_tag});
+254 
+255                 \textcolor{comment}{// Perfect amount of space}
+256         pages = usage / \hyperlink{a00035_a5008d6a07ef0a4f9e325993716cc228e_a5008d6a07ef0a4f9e325993716cc228e}{l\_pageSize};
+257         \textcolor{keywordflow}{if} ( (usage % \hyperlink{a00035_a5008d6a07ef0a4f9e325993716cc228e_a5008d6a07ef0a4f9e325993716cc228e}{l\_pageSize}) != 0 ) pages += 1;
+258 
+259         \textcolor{comment}{// Make sure it's >= the minimum size.}
+260         \textcolor{keywordflow}{if} ( pages < \hyperlink{a00035_a8f81c0408f42ca5d936221d15f918275_a8f81c0408f42ca5d936221d15f918275}{l\_pageCount} ) pages = \hyperlink{a00035_a8f81c0408f42ca5d936221d15f918275_a8f81c0408f42ca5d936221d15f918275}{l\_pageCount};
+261 
+262         tag = (\textcolor{keyword}{struct }\hyperlink{a00126}{boundary\_tag}*)\hyperlink{a00038_ae002bb742dfc63fe18a305bd14bdf692_ae002bb742dfc63fe18a305bd14bdf692}{liballoc\_alloc}( pages );
+263 
+264         \textcolor{keywordflow}{if} ( tag == \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL} ) \textcolor{keywordflow}{return} \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}; \textcolor{comment}{// uh oh, we ran out of memory.}
+265         
+266                 tag->\hyperlink{a00126_a96a8bec3c60c81b8c41239169ec70b6c_a96a8bec3c60c81b8c41239169ec70b6c}{magic}         = \hyperlink{a00035_af6b1d459ffa3c81e2456acf8d4268330_af6b1d459ffa3c81e2456acf8d4268330}{LIBALLOC\_MAGIC};
+267                 tag->\hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size}       = \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size};
+268                 tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size}     = pages * \hyperlink{a00035_a5008d6a07ef0a4f9e325993716cc228e_a5008d6a07ef0a4f9e325993716cc228e}{l\_pageSize};
+269                 tag->\hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index}         = -1;
+270 
+271                 tag->\hyperlink{a00126_a123f0bd815d7fda9f535b031640662fc_a123f0bd815d7fda9f535b031640662fc}{next}       = \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+272                 tag->\hyperlink{a00126_af5e6f310850e847ad873773f9ab8b902_af5e6f310850e847ad873773f9ab8b902}{prev}       = \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+273                 tag->\hyperlink{a00126_a4daa8c3768359ea8d0f46ef907616cc2_a4daa8c3768359ea8d0f46ef907616cc2}{split\_left}   = \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+274                 tag->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right}     = \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+275 
+276 
+277 \textcolor{preprocessor}{        #ifdef DEBUG}
+278         printf(\textcolor{stringliteral}{"Resource allocated %x of %i pages (%i bytes) for %i size.\(\backslash\)n"}, tag, pages, pages * 
+      l\_pageSize, \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} );
+279 
+280         l\_allocated += pages * \hyperlink{a00035_a5008d6a07ef0a4f9e325993716cc228e_a5008d6a07ef0a4f9e325993716cc228e}{l\_pageSize};
+281 
+282         printf(\textcolor{stringliteral}{"Total memory usage = %i KB\(\backslash\)n"},  (\textcolor{keywordtype}{int})((l\_allocated / (1024))) );
+283 \textcolor{preprocessor}{        #endif}
+284         
+285       \textcolor{keywordflow}{return} tag;
+286 \}
 \end{DoxyCode}
+\mbox{\Hypertarget{a00035_a0831129f5172700d42788e7201bdb25e_a0831129f5172700d42788e7201bdb25e}\label{a00035_a0831129f5172700d42788e7201bdb25e_a0831129f5172700d42788e7201bdb25e}} 
+\index{liballoc.\+c@{liballoc.\+c}!calloc@{calloc}}
+\index{calloc@{calloc}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{calloc()}{calloc()}}
+{\footnotesize\ttfamily void$\ast$ calloc (\begin{DoxyParamCaption}\item[{\hyperlink{a00038_a7c94ea6f8948649f8d181ae55911eeaf_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{nobj,  }\item[{\hyperlink{a00038_a7c94ea6f8948649f8d181ae55911eeaf_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 500 of file liballoc.\+c.
+
+
+\begin{DoxyCode}
+501 \{
+502        \textcolor{keywordtype}{int} \hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size};
+503        \textcolor{keywordtype}{void} *p;
+504 
+505        real\_size = nobj * \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size};
+506        
+507        p = \hyperlink{a00035_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}{malloc}( real\_size );
+508 
+509        \hyperlink{a00035_ad824e94da51543e1febb05f96f0083ba_ad824e94da51543e1febb05f96f0083ba}{liballoc\_memset}( p, 0, real\_size );
+510 
+511        \textcolor{keywordflow}{return} p;
+512 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00035_afbedc913aa4651b3c3b4b3aecd9b4711_afbedc913aa4651b3c3b4b3aecd9b4711}\label{a00035_afbedc913aa4651b3c3b4b3aecd9b4711_afbedc913aa4651b3c3b4b3aecd9b4711}} 
+\index{liballoc.\+c@{liballoc.\+c}!free@{free}}
+\index{free@{free}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{free()}{free()}}
+{\footnotesize\ttfamily void free (\begin{DoxyParamCaption}\item[{void $\ast$}]{ptr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 405 of file liballoc.\+c.
+
+
+\begin{DoxyCode}
+406 \{
+407     \textcolor{keywordtype}{int} \hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index};
+408     \textcolor{keyword}{struct }\hyperlink{a00126}{boundary\_tag} *tag;
+409 
+410     \textcolor{keywordflow}{if} ( ptr == \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL} ) \textcolor{keywordflow}{return};
+411 
+412     \hyperlink{a00038_a8b5670e4594b0b6f8be78fe17f0c3b53_a8b5670e4594b0b6f8be78fe17f0c3b53}{liballoc\_lock}();
+413     
+414 
+415         tag = (\textcolor{keyword}{struct }\hyperlink{a00126}{boundary\_tag}*)((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int})ptr - \textcolor{keyword}{sizeof}( \textcolor{keyword}{struct }
+      \hyperlink{a00126}{boundary\_tag} ));
+416     
+417         \textcolor{keywordflow}{if} ( tag->\hyperlink{a00126_a96a8bec3c60c81b8c41239169ec70b6c_a96a8bec3c60c81b8c41239169ec70b6c}{magic} != \hyperlink{a00035_af6b1d459ffa3c81e2456acf8d4268330_af6b1d459ffa3c81e2456acf8d4268330}{LIBALLOC\_MAGIC} ) 
+418         \{
+419             \hyperlink{a00038_aedc23f198b2882d41d0caa316453967b_aedc23f198b2882d41d0caa316453967b}{liballoc\_unlock}();       \textcolor{comment}{// release the lock}
+420             \textcolor{keywordflow}{return};
+421         \}
+422 
+423 
+424 
+425 \textcolor{preprocessor}{        #ifdef DEBUG}
+426         l\_inuse -= tag->\hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size};
+427         printf(\textcolor{stringliteral}{"free: %x, %i, %i\(\backslash\)n"}, ptr, (\textcolor{keywordtype}{int})l\_inuse / 1024, (\textcolor{keywordtype}{int})l\_allocated / 1024 );
+428 \textcolor{preprocessor}{        #endif}
+429         
+430 
+431         \textcolor{comment}{// MELT LEFT...}
+432         \textcolor{keywordflow}{while} ( (tag->\hyperlink{a00126_a4daa8c3768359ea8d0f46ef907616cc2_a4daa8c3768359ea8d0f46ef907616cc2}{split\_left} != \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}) && (tag->\hyperlink{a00126_a4daa8c3768359ea8d0f46ef907616cc2_a4daa8c3768359ea8d0f46ef907616cc2}{split\_left}->
+      \hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index} >= 0) )
+433         \{
+434 \textcolor{preprocessor}{            #ifdef DEBUG}
+435             printf(\textcolor{stringliteral}{"Melting tag left into available memory. Left was %i, becomes %i (%i)\(\backslash\)n"}, tag->
+      \hyperlink{a00126_a4daa8c3768359ea8d0f46ef907616cc2_a4daa8c3768359ea8d0f46ef907616cc2}{split\_left}->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size}, tag->\hyperlink{a00126_a4daa8c3768359ea8d0f46ef907616cc2_a4daa8c3768359ea8d0f46ef907616cc2}{split\_left}->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} + tag->
+      \hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size}, tag->\hyperlink{a00126_a4daa8c3768359ea8d0f46ef907616cc2_a4daa8c3768359ea8d0f46ef907616cc2}{split\_left}->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} );
+436 \textcolor{preprocessor}{            #endif}
+437             tag = \hyperlink{a00035_a7ea762780416b837601691f20e085cc2_a7ea762780416b837601691f20e085cc2}{melt\_left}( tag );
+438             \hyperlink{a00035_aeea23ead928f2a5d40fdf7687b3c99c9_aeea23ead928f2a5d40fdf7687b3c99c9}{remove\_tag}( tag );
+439         \}
+440 
+441         \textcolor{comment}{// MELT RIGHT...}
+442         \textcolor{keywordflow}{while} ( (tag->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right} != \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}) && (tag->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right}->
+      \hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index} >= 0) )
+443         \{
+444 \textcolor{preprocessor}{            #ifdef DEBUG}
+445             printf(\textcolor{stringliteral}{"Melting tag right into available memory. This was was %i, becomes %i (%i)\(\backslash\)n"}, tag->
+      \hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size}, tag->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right}->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} + tag->
+      \hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size}, tag->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right}->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} );
+446 \textcolor{preprocessor}{            #endif}
+447             tag = \hyperlink{a00035_a9d9646746f3401f7c03ff66cba7315c8_a9d9646746f3401f7c03ff66cba7315c8}{absorb\_right}( tag );
+448         \}
+449 
+450         
+451         \textcolor{comment}{// Where is it going back to?}
+452         index = \hyperlink{a00035_ab5fc0b977bf14bdb99c8b87cae451d42_ab5fc0b977bf14bdb99c8b87cae451d42}{getexp}( tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} - \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} 
+      \hyperlink{a00126}{boundary\_tag}) );
+453         \textcolor{keywordflow}{if} ( index < \hyperlink{a00035_ae7249b0af4d1bfe02a4c7bdbf810bd8c_ae7249b0af4d1bfe02a4c7bdbf810bd8c}{MINEXP} ) index = \hyperlink{a00035_ae7249b0af4d1bfe02a4c7bdbf810bd8c_ae7249b0af4d1bfe02a4c7bdbf810bd8c}{MINEXP};
+454         
+455         \textcolor{comment}{// A whole, empty block?}
+456         \textcolor{keywordflow}{if} ( (tag->\hyperlink{a00126_a4daa8c3768359ea8d0f46ef907616cc2_a4daa8c3768359ea8d0f46ef907616cc2}{split\_left} == \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}) && (tag->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right} == 
+      \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}) )
+457         \{   
+458 
+459             \textcolor{keywordflow}{if} ( \hyperlink{a00035_a213db3baf1d4b13d604015489247980d_a213db3baf1d4b13d604015489247980d}{l\_completePages}[ index ] == \hyperlink{a00035_a08b7f1e029a0c835f3639557d8ad7a36_a08b7f1e029a0c835f3639557d8ad7a36}{MAXCOMPLETE} )
+460             \{
+461                 \textcolor{comment}{// Too many standing by to keep. Free this one.}
+462                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} pages = tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} / \hyperlink{a00035_a5008d6a07ef0a4f9e325993716cc228e_a5008d6a07ef0a4f9e325993716cc228e}{l\_pageSize};
+463 
+464                 \textcolor{keywordflow}{if} ( (tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} % \hyperlink{a00035_a5008d6a07ef0a4f9e325993716cc228e_a5008d6a07ef0a4f9e325993716cc228e}{l\_pageSize}) != 0 ) pages += 1;
+465                 \textcolor{keywordflow}{if} ( pages < \hyperlink{a00035_a8f81c0408f42ca5d936221d15f918275_a8f81c0408f42ca5d936221d15f918275}{l\_pageCount} ) pages = \hyperlink{a00035_a8f81c0408f42ca5d936221d15f918275_a8f81c0408f42ca5d936221d15f918275}{l\_pageCount};
+466 
+467                 \hyperlink{a00038_a1653870893230580e5d605148aa3c37a_a1653870893230580e5d605148aa3c37a}{liballoc\_free}( tag, pages );
+468 
+469 \textcolor{preprocessor}{                #ifdef DEBUG}
+470                 l\_allocated -= pages * \hyperlink{a00035_a5008d6a07ef0a4f9e325993716cc228e_a5008d6a07ef0a4f9e325993716cc228e}{l\_pageSize};
+471                 printf(\textcolor{stringliteral}{"Resource freeing %x of %i pages\(\backslash\)n"}, tag, pages );
+472                 dump\_array();
+473 \textcolor{preprocessor}{                #endif}
+474 
+475                 \hyperlink{a00038_aedc23f198b2882d41d0caa316453967b_aedc23f198b2882d41d0caa316453967b}{liballoc\_unlock}();
+476                 \textcolor{keywordflow}{return};
+477             \}
+478 
+479 
+480             \hyperlink{a00035_a213db3baf1d4b13d604015489247980d_a213db3baf1d4b13d604015489247980d}{l\_completePages}[ \hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index} ] += 1;  \textcolor{comment}{// Increase the count of complete pages.}
+481         \}
+482 
+483 
+484         \textcolor{comment}{// ..........}
+485 
+486 
+487         \hyperlink{a00035_a569f88ed08d8435e256dd225afcd26df_a569f88ed08d8435e256dd225afcd26df}{insert\_tag}( tag, index );
+488 
+489 \textcolor{preprocessor}{    #ifdef DEBUG}
+490     printf(\textcolor{stringliteral}{"Returning tag with %i bytes (requested %i bytes), which has exponent: %i\(\backslash\)n"}, tag->
+      \hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size}, tag->\hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size}, index ); 
+491     dump\_array();
+492 \textcolor{preprocessor}{    #endif}
+493 
+494     \hyperlink{a00038_aedc23f198b2882d41d0caa316453967b_aedc23f198b2882d41d0caa316453967b}{liballoc\_unlock}();
+495 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00035_ab5fc0b977bf14bdb99c8b87cae451d42_ab5fc0b977bf14bdb99c8b87cae451d42}\label{a00035_ab5fc0b977bf14bdb99c8b87cae451d42_ab5fc0b977bf14bdb99c8b87cae451d42}} 
+\index{liballoc.\+c@{liballoc.\+c}!getexp@{getexp}}
+\index{getexp@{getexp}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{getexp()}{getexp()}}
+{\footnotesize\ttfamily static int getexp (\begin{DoxyParamCaption}\item[{unsigned int}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Returns the exponent required to manage \textquotesingle{}size\textquotesingle{} amount of memory. 
+
+Returns n where 2$^\wedge$n $<$= size $<$ 2$^\wedge$(n+1) 
+
+Definition at line 53 of file liballoc.\+c.
+
+
+\begin{DoxyCode}
+54 \{
+55     \textcolor{keywordflow}{if} ( \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} < (1<<\hyperlink{a00035_ae7249b0af4d1bfe02a4c7bdbf810bd8c_ae7249b0af4d1bfe02a4c7bdbf810bd8c}{MINEXP}) ) 
+56     \{
+57 \textcolor{preprocessor}{        #ifdef DEBUG}
+58         printf(\textcolor{stringliteral}{"getexp returns -1 for %i less than MINEXP\(\backslash\)n"}, \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} );
+59 \textcolor{preprocessor}{        #endif}
+60         \textcolor{keywordflow}{return} -1;  \textcolor{comment}{// Smaller than the quantum.}
+61     \}
+62         
+63         
+64     \textcolor{keywordtype}{int} shift = \hyperlink{a00035_ae7249b0af4d1bfe02a4c7bdbf810bd8c_ae7249b0af4d1bfe02a4c7bdbf810bd8c}{MINEXP};
+65 
+66     \textcolor{keywordflow}{while} ( shift < \hyperlink{a00035_af823bb7d083fafbd662be7ea09582013_af823bb7d083fafbd662be7ea09582013}{MAXEXP} )
+67     \{
+68         \textcolor{keywordflow}{if} ( (1<<shift) > \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} ) \textcolor{keywordflow}{break};
+69         shift += 1;
+70     \}
+71 
+72 \textcolor{preprocessor}{    #ifdef DEBUG}
+73     printf(\textcolor{stringliteral}{"getexp returns %i (%i bytes) for %i size\(\backslash\)n"}, shift - 1, (1<<(shift -1)), 
+      \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} );
+74 \textcolor{preprocessor}{    #endif}
+75 
+76     \textcolor{keywordflow}{return} shift - 1;   
+77 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00035_a569f88ed08d8435e256dd225afcd26df_a569f88ed08d8435e256dd225afcd26df}\label{a00035_a569f88ed08d8435e256dd225afcd26df_a569f88ed08d8435e256dd225afcd26df}} 
+\index{liballoc.\+c@{liballoc.\+c}!insert\+\_\+tag@{insert\+\_\+tag}}
+\index{insert\+\_\+tag@{insert\+\_\+tag}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{insert\+\_\+tag()}{insert\_tag()}}
+{\footnotesize\ttfamily static void insert\+\_\+tag (\begin{DoxyParamCaption}\item[{struct \hyperlink{a00126}{boundary\+\_\+tag} $\ast$}]{tag,  }\item[{int}]{index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 150 of file liballoc.\+c.
+
+
+\begin{DoxyCode}
+151 \{
+152     \textcolor{keywordtype}{int} realIndex;
+153     
+154     \textcolor{keywordflow}{if} ( \hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index} < 0 ) 
+155     \{
+156         realIndex = \hyperlink{a00035_ab5fc0b977bf14bdb99c8b87cae451d42_ab5fc0b977bf14bdb99c8b87cae451d42}{getexp}( tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} - \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} 
+      \hyperlink{a00126}{boundary\_tag}) );
+157         \textcolor{keywordflow}{if} ( realIndex < \hyperlink{a00035_ae7249b0af4d1bfe02a4c7bdbf810bd8c_ae7249b0af4d1bfe02a4c7bdbf810bd8c}{MINEXP} ) realIndex = \hyperlink{a00035_ae7249b0af4d1bfe02a4c7bdbf810bd8c_ae7249b0af4d1bfe02a4c7bdbf810bd8c}{MINEXP};
+158     \}
+159     \textcolor{keywordflow}{else}
+160         realIndex = \hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index};
+161     
+162     tag->\hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index} = realIndex;
+163     
+164     \textcolor{keywordflow}{if} ( \hyperlink{a00035_a78b8b6e448179d3cd64915f99fee60e0_a78b8b6e448179d3cd64915f99fee60e0}{l\_freePages}[ realIndex ] != \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL} ) 
+165     \{
+166         \hyperlink{a00035_a78b8b6e448179d3cd64915f99fee60e0_a78b8b6e448179d3cd64915f99fee60e0}{l\_freePages}[ realIndex ]->\hyperlink{a00126_af5e6f310850e847ad873773f9ab8b902_af5e6f310850e847ad873773f9ab8b902}{prev} = tag;
+167         tag->\hyperlink{a00126_a123f0bd815d7fda9f535b031640662fc_a123f0bd815d7fda9f535b031640662fc}{next} = \hyperlink{a00035_a78b8b6e448179d3cd64915f99fee60e0_a78b8b6e448179d3cd64915f99fee60e0}{l\_freePages}[ realIndex ];
+168     \}
+169 
+170     \hyperlink{a00035_a78b8b6e448179d3cd64915f99fee60e0_a78b8b6e448179d3cd64915f99fee60e0}{l\_freePages}[ realIndex ] = tag;
+171 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00035_a58b3101a659b6a2f7e2ca290bef6bfb4_a58b3101a659b6a2f7e2ca290bef6bfb4}\label{a00035_a58b3101a659b6a2f7e2ca290bef6bfb4_a58b3101a659b6a2f7e2ca290bef6bfb4}} 
+\index{liballoc.\+c@{liballoc.\+c}!liballoc\+\_\+memcpy@{liballoc\+\_\+memcpy}}
+\index{liballoc\+\_\+memcpy@{liballoc\+\_\+memcpy}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{liballoc\+\_\+memcpy()}{liballoc\_memcpy()}}
+{\footnotesize\ttfamily static void$\ast$ liballoc\+\_\+memcpy (\begin{DoxyParamCaption}\item[{void $\ast$}]{s1,  }\item[{const void $\ast$}]{s2,  }\item[{\hyperlink{a00038_a7c94ea6f8948649f8d181ae55911eeaf_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 89 of file liballoc.\+c.
+
+
+\begin{DoxyCode}
+90 \{
+91   \textcolor{keywordtype}{char} *cdest;
+92   \textcolor{keywordtype}{char} *csrc;
+93   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *ldest = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}*)s1;
+94   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *lsrc  = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}*)s2;
+95 
+96   \textcolor{keywordflow}{while} ( n >= \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}) )
+97   \{
+98       *ldest++ = *lsrc++;
+99       n -= \textcolor{keyword}{sizeof}(\textcolor{keywordtype}{unsigned} int);
+100   \}
+101 
+102   cdest = (\textcolor{keywordtype}{char}*)ldest;
+103   csrc  = (\textcolor{keywordtype}{char}*)lsrc;
+104   
+105   \textcolor{keywordflow}{while} ( n > 0 )
+106   \{
+107       *cdest++ = *csrc++;
+108       n -= 1;
+109   \}
+110   
+111   \textcolor{keywordflow}{return} s1;
+112 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00035_ad824e94da51543e1febb05f96f0083ba_ad824e94da51543e1febb05f96f0083ba}\label{a00035_ad824e94da51543e1febb05f96f0083ba_ad824e94da51543e1febb05f96f0083ba}} 
+\index{liballoc.\+c@{liballoc.\+c}!liballoc\+\_\+memset@{liballoc\+\_\+memset}}
+\index{liballoc\+\_\+memset@{liballoc\+\_\+memset}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{liballoc\+\_\+memset()}{liballoc\_memset()}}
+{\footnotesize\ttfamily static void$\ast$ liballoc\+\_\+memset (\begin{DoxyParamCaption}\item[{void $\ast$}]{s,  }\item[{int}]{c,  }\item[{\hyperlink{a00038_a7c94ea6f8948649f8d181ae55911eeaf_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 80 of file liballoc.\+c.
+
+
+\begin{DoxyCode}
+81 \{
+82     \textcolor{keywordtype}{int} i;
+83     \textcolor{keywordflow}{for} ( i = 0; i < n ; i++)
+84         ((\textcolor{keywordtype}{char}*)s)[i] = c;
+85     
+86     \textcolor{keywordflow}{return} s;
+87 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00035_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}\label{a00035_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}} 
+\index{liballoc.\+c@{liballoc.\+c}!malloc@{malloc}}
+\index{malloc@{malloc}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{malloc()}{malloc()}}
+{\footnotesize\ttfamily void$\ast$ malloc (\begin{DoxyParamCaption}\item[{\hyperlink{a00038_a7c94ea6f8948649f8d181ae55911eeaf_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 290 of file liballoc.\+c.
+
+
+\begin{DoxyCode}
+291 \{
+292     \textcolor{keywordtype}{int} \hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index};
+293     \textcolor{keywordtype}{void} *ptr;
+294     \textcolor{keyword}{struct }\hyperlink{a00126}{boundary\_tag} *tag = \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+295 
+296     \hyperlink{a00038_a8b5670e4594b0b6f8be78fe17f0c3b53_a8b5670e4594b0b6f8be78fe17f0c3b53}{liballoc\_lock}();
+297 
+298         \textcolor{keywordflow}{if} ( \hyperlink{a00035_a4aac6ed0ba0144598c5abe18222c3493_a4aac6ed0ba0144598c5abe18222c3493}{l\_initialized} == 0 )
+299         \{
+300 \textcolor{preprocessor}{            #ifdef DEBUG}
+301             printf(\textcolor{stringliteral}{"%s\(\backslash\)n"},\textcolor{stringliteral}{"liballoc initializing."});
+302 \textcolor{preprocessor}{            #endif}
+303             \textcolor{keywordflow}{for} ( index = 0; index < \hyperlink{a00035_af823bb7d083fafbd662be7ea09582013_af823bb7d083fafbd662be7ea09582013}{MAXEXP}; index++ )
+304             \{
+305                 \hyperlink{a00035_a78b8b6e448179d3cd64915f99fee60e0_a78b8b6e448179d3cd64915f99fee60e0}{l\_freePages}[\hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index}] = \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+306                 \hyperlink{a00035_a213db3baf1d4b13d604015489247980d_a213db3baf1d4b13d604015489247980d}{l\_completePages}[\hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index}] = 0;
+307             \}
+308             \hyperlink{a00035_a4aac6ed0ba0144598c5abe18222c3493_a4aac6ed0ba0144598c5abe18222c3493}{l\_initialized} = 1;
+309         \}
+310 
+311         index = \hyperlink{a00035_ab5fc0b977bf14bdb99c8b87cae451d42_ab5fc0b977bf14bdb99c8b87cae451d42}{getexp}( \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} ) + \hyperlink{a00035_ab8c52c1b4c021ed3e6b6b677bd2ac019_ab8c52c1b4c021ed3e6b6b677bd2ac019}{MODE};
+312         \textcolor{keywordflow}{if} ( index < \hyperlink{a00035_ae7249b0af4d1bfe02a4c7bdbf810bd8c_ae7249b0af4d1bfe02a4c7bdbf810bd8c}{MINEXP} ) index = \hyperlink{a00035_ae7249b0af4d1bfe02a4c7bdbf810bd8c_ae7249b0af4d1bfe02a4c7bdbf810bd8c}{MINEXP};
+313         
+314 
+315         \textcolor{comment}{// Find one big enough.}
+316             tag = \hyperlink{a00035_a78b8b6e448179d3cd64915f99fee60e0_a78b8b6e448179d3cd64915f99fee60e0}{l\_freePages}[ \hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index} ];             \textcolor{comment}{// Start at the front of the list.}
+317             \textcolor{keywordflow}{while} ( tag != \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL} )
+318             \{
+319                     \textcolor{comment}{// If there's enough space in this tag.}
+320                 \textcolor{keywordflow}{if} ( (tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} - \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{a00126}{boundary\_tag}))
+321                                 >= (\hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} + \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{a00126}{boundary\_tag}) ) )
+322                 \{
+323 \textcolor{preprocessor}{                    #ifdef DEBUG}
+324                     printf(\textcolor{stringliteral}{"Tag search found %i >= %i\(\backslash\)n"},(tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} - \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} 
+      \hyperlink{a00126}{boundary\_tag})), (\hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} + \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{a00126}{boundary\_tag}) ) );
+325 \textcolor{preprocessor}{                    #endif}
+326                     \textcolor{keywordflow}{break};
+327                 \}
+328 
+329                 tag = tag->\hyperlink{a00126_a123f0bd815d7fda9f535b031640662fc_a123f0bd815d7fda9f535b031640662fc}{next};
+330             \}
+331 
+332         
+333             \textcolor{comment}{// No page found. Make one.}
+334             \textcolor{keywordflow}{if} ( tag == \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL} )
+335             \{   
+336                 \textcolor{keywordflow}{if} ( (tag = \hyperlink{a00035_a8e465ea231c950756bcd4e41244c61a1_a8e465ea231c950756bcd4e41244c61a1}{allocate\_new\_tag}( \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} )) == 
+      \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL} )
+337                 \{
+338                     \hyperlink{a00038_aedc23f198b2882d41d0caa316453967b_aedc23f198b2882d41d0caa316453967b}{liballoc\_unlock}();
+339                     \textcolor{keywordflow}{return} \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+340                 \}
+341                 
+342                 index = \hyperlink{a00035_ab5fc0b977bf14bdb99c8b87cae451d42_ab5fc0b977bf14bdb99c8b87cae451d42}{getexp}( tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} - \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} 
+      \hyperlink{a00126}{boundary\_tag}) );
+343             \}
+344             \textcolor{keywordflow}{else}
+345             \{
+346                 \hyperlink{a00035_aeea23ead928f2a5d40fdf7687b3c99c9_aeea23ead928f2a5d40fdf7687b3c99c9}{remove\_tag}( tag );
+347 
+348                 \textcolor{keywordflow}{if} ( (tag->\hyperlink{a00126_a4daa8c3768359ea8d0f46ef907616cc2_a4daa8c3768359ea8d0f46ef907616cc2}{split\_left} == \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}) && (tag->
+      \hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right} == \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}) )
+349                     \hyperlink{a00035_a213db3baf1d4b13d604015489247980d_a213db3baf1d4b13d604015489247980d}{l\_completePages}[ \hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index} ] -= 1;
+350             \}
+351         
+352         \textcolor{comment}{// We have a free page.  Remove it from the free pages list.}
+353     
+354         tag->\hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} = \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size};
+355 
+356         \textcolor{comment}{// Removed... see if we can re-use the excess space.}
+357 
+358 \textcolor{preprocessor}{        #ifdef DEBUG}
+359         printf(\textcolor{stringliteral}{"Found tag with %i bytes available (requested %i bytes, leaving %i), which has exponent: %i
+       (%i bytes)\(\backslash\)n"}, tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} - \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{a00126}{boundary\_tag}), 
+      \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size}, tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} - \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} - \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{a00126}{boundary\_tag}), index, 1<<index );
+360 \textcolor{preprocessor}{        #endif}
+361         
+362         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} remainder = tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} - \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} - \textcolor{keyword}{sizeof}( \textcolor{keyword}{struct }
+      \hyperlink{a00126}{boundary\_tag} ) * 2; \textcolor{comment}{// Support a new tag + remainder}
+363 
+364         \textcolor{keywordflow}{if} ( ((\textcolor{keywordtype}{int})(remainder) > 0) \textcolor{comment}{/*&& ( (tag->real\_size - remainder) >= (1<<MINEXP))*/} )
+365         \{
+366             \textcolor{keywordtype}{int} childIndex = \hyperlink{a00035_ab5fc0b977bf14bdb99c8b87cae451d42_ab5fc0b977bf14bdb99c8b87cae451d42}{getexp}( remainder );
+367     
+368             \textcolor{keywordflow}{if} ( childIndex >= 0 )
+369             \{
+370 \textcolor{preprocessor}{                #ifdef DEBUG}
+371                 printf(\textcolor{stringliteral}{"Seems to be splittable: %i >= 2^%i .. %i\(\backslash\)n"}, remainder, childIndex, (1<<childIndex)
+       );
+372 \textcolor{preprocessor}{                #endif}
+373 
+374                 \textcolor{keyword}{struct }\hyperlink{a00126}{boundary\_tag} *new\_tag = \hyperlink{a00035_a8fd489a9d383dd6830e38fa63a0aec60_a8fd489a9d383dd6830e38fa63a0aec60}{split\_tag}( tag ); 
+375 
+376                 new\_tag = new\_tag;  \textcolor{comment}{// Get around the compiler warning about unused variables.}
+377     
+378 \textcolor{preprocessor}{                #ifdef DEBUG}
+379                 printf(\textcolor{stringliteral}{"Old tag has become %i bytes, new tag is now %i bytes (%i exp)\(\backslash\)n"}, tag->
+      \hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size}, new\_tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size}, new\_tag->\hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index} );
+380 \textcolor{preprocessor}{                #endif}
+381             \}   
+382         \}
+383         
+384         
+385 
+386     ptr = (\textcolor{keywordtype}{void}*)((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int})tag + \textcolor{keyword}{sizeof}( \textcolor{keyword}{struct }\hyperlink{a00126}{boundary\_tag} ) );
+387 
+388 
+389     
+390 \textcolor{preprocessor}{    #ifdef DEBUG}
+391     l\_inuse += \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size};
+392     printf(\textcolor{stringliteral}{"malloc: %x,  %i, %i\(\backslash\)n"}, ptr, (\textcolor{keywordtype}{int})l\_inuse / 1024, (\textcolor{keywordtype}{int})l\_allocated / 1024 );
+393     dump\_array();
+394 \textcolor{preprocessor}{    #endif}
+395 
+396 
+397     \hyperlink{a00038_aedc23f198b2882d41d0caa316453967b_aedc23f198b2882d41d0caa316453967b}{liballoc\_unlock}();
+398     \textcolor{keywordflow}{return} ptr;
+399 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00035_a7ea762780416b837601691f20e085cc2_a7ea762780416b837601691f20e085cc2}\label{a00035_a7ea762780416b837601691f20e085cc2_a7ea762780416b837601691f20e085cc2}} 
+\index{liballoc.\+c@{liballoc.\+c}!melt\+\_\+left@{melt\+\_\+left}}
+\index{melt\+\_\+left@{melt\+\_\+left}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{melt\+\_\+left()}{melt\_left()}}
+{\footnotesize\ttfamily static struct \hyperlink{a00126}{boundary\+\_\+tag}$\ast$ melt\+\_\+left (\begin{DoxyParamCaption}\item[{struct \hyperlink{a00126}{boundary\+\_\+tag} $\ast$}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 186 of file liballoc.\+c.
+
+
+\begin{DoxyCode}
+187 \{
+188     \textcolor{keyword}{struct }\hyperlink{a00126}{boundary\_tag} *left = tag->\hyperlink{a00126_a4daa8c3768359ea8d0f46ef907616cc2_a4daa8c3768359ea8d0f46ef907616cc2}{split\_left};
+189                             
+190     left->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size}   += tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size};
+191     left->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right}  = tag->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right};
+192     
+193     \textcolor{keywordflow}{if} ( tag->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right} != \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL} ) tag->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right}->
+      \hyperlink{a00126_a4daa8c3768359ea8d0f46ef907616cc2_a4daa8c3768359ea8d0f46ef907616cc2}{split\_left} = left;
+194 
+195     \textcolor{keywordflow}{return} left;
+196 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00035_ac5f241a082afc3c26df1eb7dfdd8d8e0_ac5f241a082afc3c26df1eb7dfdd8d8e0}\label{a00035_ac5f241a082afc3c26df1eb7dfdd8d8e0_ac5f241a082afc3c26df1eb7dfdd8d8e0}} 
+\index{liballoc.\+c@{liballoc.\+c}!realloc@{realloc}}
+\index{realloc@{realloc}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{realloc()}{realloc()}}
+{\footnotesize\ttfamily void$\ast$ realloc (\begin{DoxyParamCaption}\item[{void $\ast$}]{p,  }\item[{\hyperlink{a00038_a7c94ea6f8948649f8d181ae55911eeaf_a7c94ea6f8948649f8d181ae55911eeaf}{size\+\_\+t}}]{size }\end{DoxyParamCaption})}
+
+
+
+Definition at line 516 of file liballoc.\+c.
+
+
+\begin{DoxyCode}
+517 \{
+518     \textcolor{keywordtype}{void} *ptr;
+519     \textcolor{keyword}{struct }\hyperlink{a00126}{boundary\_tag} *tag;
+520     \textcolor{keywordtype}{int} \hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size};
+521     
+522     \textcolor{keywordflow}{if} ( \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} == 0 )
+523     \{
+524         \hyperlink{a00035_afbedc913aa4651b3c3b4b3aecd9b4711_afbedc913aa4651b3c3b4b3aecd9b4711}{free}( p );
+525         \textcolor{keywordflow}{return} \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+526     \}
+527     \textcolor{keywordflow}{if} ( p == \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL} ) \textcolor{keywordflow}{return} \hyperlink{a00035_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}{malloc}( \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} );
+528 
+529     \textcolor{keywordflow}{if} ( \hyperlink{a00038_a8b5670e4594b0b6f8be78fe17f0c3b53_a8b5670e4594b0b6f8be78fe17f0c3b53}{liballoc\_lock} != \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL} ) \hyperlink{a00038_a8b5670e4594b0b6f8be78fe17f0c3b53_a8b5670e4594b0b6f8be78fe17f0c3b53}{liballoc\_lock}();     \textcolor{comment}{// lockit}
+530         tag = (\textcolor{keyword}{struct }\hyperlink{a00126}{boundary\_tag}*)((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int})p - \textcolor{keyword}{sizeof}( \textcolor{keyword}{struct }
+      \hyperlink{a00126}{boundary\_tag} ));
+531         real\_size = tag->\hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size};
+532     \textcolor{keywordflow}{if} ( \hyperlink{a00038_aedc23f198b2882d41d0caa316453967b_aedc23f198b2882d41d0caa316453967b}{liballoc\_unlock} != \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL} ) \hyperlink{a00038_aedc23f198b2882d41d0caa316453967b_aedc23f198b2882d41d0caa316453967b}{liballoc\_unlock}();
+533 
+534     \textcolor{keywordflow}{if} ( real\_size > \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} ) real\_size = \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size};
+535 
+536     ptr = \hyperlink{a00035_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}{malloc}( \hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size} );
+537     \hyperlink{a00035_a58b3101a659b6a2f7e2ca290bef6bfb4_a58b3101a659b6a2f7e2ca290bef6bfb4}{liballoc\_memcpy}( ptr, p, real\_size );
+538     \hyperlink{a00035_afbedc913aa4651b3c3b4b3aecd9b4711_afbedc913aa4651b3c3b4b3aecd9b4711}{free}( p );
+539 
+540     \textcolor{keywordflow}{return} ptr;
+541 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00035_aeea23ead928f2a5d40fdf7687b3c99c9_aeea23ead928f2a5d40fdf7687b3c99c9}\label{a00035_aeea23ead928f2a5d40fdf7687b3c99c9_aeea23ead928f2a5d40fdf7687b3c99c9}} 
+\index{liballoc.\+c@{liballoc.\+c}!remove\+\_\+tag@{remove\+\_\+tag}}
+\index{remove\+\_\+tag@{remove\+\_\+tag}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{remove\+\_\+tag()}{remove\_tag()}}
+{\footnotesize\ttfamily static void remove\+\_\+tag (\begin{DoxyParamCaption}\item[{struct \hyperlink{a00126}{boundary\+\_\+tag} $\ast$}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Definition at line 173 of file liballoc.\+c.
+
+
+\begin{DoxyCode}
+174 \{
+175     \textcolor{keywordflow}{if} ( \hyperlink{a00035_a78b8b6e448179d3cd64915f99fee60e0_a78b8b6e448179d3cd64915f99fee60e0}{l\_freePages}[ tag->\hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index} ] == tag ) \hyperlink{a00035_a78b8b6e448179d3cd64915f99fee60e0_a78b8b6e448179d3cd64915f99fee60e0}{l\_freePages}[ tag->
+      \hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index} ] = tag->\hyperlink{a00126_a123f0bd815d7fda9f535b031640662fc_a123f0bd815d7fda9f535b031640662fc}{next};
+176 
+177     \textcolor{keywordflow}{if} ( tag->\hyperlink{a00126_af5e6f310850e847ad873773f9ab8b902_af5e6f310850e847ad873773f9ab8b902}{prev} != \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL} ) tag->\hyperlink{a00126_af5e6f310850e847ad873773f9ab8b902_af5e6f310850e847ad873773f9ab8b902}{prev}->\hyperlink{a00126_a123f0bd815d7fda9f535b031640662fc_a123f0bd815d7fda9f535b031640662fc}{next} = tag->\hyperlink{a00126_a123f0bd815d7fda9f535b031640662fc_a123f0bd815d7fda9f535b031640662fc}{next};
+178     \textcolor{keywordflow}{if} ( tag->\hyperlink{a00126_a123f0bd815d7fda9f535b031640662fc_a123f0bd815d7fda9f535b031640662fc}{next} != \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL} ) tag->\hyperlink{a00126_a123f0bd815d7fda9f535b031640662fc_a123f0bd815d7fda9f535b031640662fc}{next}->\hyperlink{a00126_af5e6f310850e847ad873773f9ab8b902_af5e6f310850e847ad873773f9ab8b902}{prev} = tag->\hyperlink{a00126_af5e6f310850e847ad873773f9ab8b902_af5e6f310850e847ad873773f9ab8b902}{prev};
+179 
+180     tag->\hyperlink{a00126_a123f0bd815d7fda9f535b031640662fc_a123f0bd815d7fda9f535b031640662fc}{next} = \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+181     tag->\hyperlink{a00126_af5e6f310850e847ad873773f9ab8b902_af5e6f310850e847ad873773f9ab8b902}{prev} = \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+182     tag->\hyperlink{a00126_adfc426eed5361508d62c6e8f484bd270_adfc426eed5361508d62c6e8f484bd270}{index} = -1;
+183 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00035_a8fd489a9d383dd6830e38fa63a0aec60_a8fd489a9d383dd6830e38fa63a0aec60}\label{a00035_a8fd489a9d383dd6830e38fa63a0aec60_a8fd489a9d383dd6830e38fa63a0aec60}} 
+\index{liballoc.\+c@{liballoc.\+c}!split\+\_\+tag@{split\+\_\+tag}}
+\index{split\+\_\+tag@{split\+\_\+tag}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{split\+\_\+tag()}{split\_tag()}}
+{\footnotesize\ttfamily static struct \hyperlink{a00126}{boundary\+\_\+tag}$\ast$ split\+\_\+tag (\begin{DoxyParamCaption}\item[{struct \hyperlink{a00126}{boundary\+\_\+tag} $\ast$}]{tag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 214 of file liballoc.\+c.
+
+
+\begin{DoxyCode}
+215 \{
+216     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} remainder = tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} - \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }
+      \hyperlink{a00126}{boundary\_tag}) - tag->\hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size};
+217         
+218     \textcolor{keyword}{struct }\hyperlink{a00126}{boundary\_tag} *new\_tag = 
+219                    (\textcolor{keyword}{struct }\hyperlink{a00126}{boundary\_tag}*)((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int})tag + \textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }
+      \hyperlink{a00126}{boundary\_tag}) + tag->\hyperlink{a00126_a29b056a39f6022d32468e7913e6df936_a29b056a39f6022d32468e7913e6df936}{size}); 
+220     
+221                         new\_tag->\hyperlink{a00126_a96a8bec3c60c81b8c41239169ec70b6c_a96a8bec3c60c81b8c41239169ec70b6c}{magic} = \hyperlink{a00035_af6b1d459ffa3c81e2456acf8d4268330_af6b1d459ffa3c81e2456acf8d4268330}{LIBALLOC\_MAGIC};
+222                         new\_tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} = remainder;    
+223 
+224                         new\_tag->\hyperlink{a00126_a123f0bd815d7fda9f535b031640662fc_a123f0bd815d7fda9f535b031640662fc}{next} = \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+225                         new\_tag->\hyperlink{a00126_af5e6f310850e847ad873773f9ab8b902_af5e6f310850e847ad873773f9ab8b902}{prev} = \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+226     
+227                         new\_tag->\hyperlink{a00126_a4daa8c3768359ea8d0f46ef907616cc2_a4daa8c3768359ea8d0f46ef907616cc2}{split\_left} = tag;
+228                         new\_tag->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right} = tag->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right};
+229     
+230                         \textcolor{keywordflow}{if} (new\_tag->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right} != \hyperlink{a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL}) new\_tag->
+      \hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right}->\hyperlink{a00126_a4daa8c3768359ea8d0f46ef907616cc2_a4daa8c3768359ea8d0f46ef907616cc2}{split\_left} = new\_tag;
+231                         tag->\hyperlink{a00126_a9d43c9c4ff5ae35908dcfed0aec1907a_a9d43c9c4ff5ae35908dcfed0aec1907a}{split\_right} = new\_tag;
+232     
+233                         tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size} -= new\_tag->\hyperlink{a00126_ad22b1c69bdce419783ac165f7f354245_ad22b1c69bdce419783ac165f7f354245}{real\_size};
+234     
+235                         \hyperlink{a00035_a569f88ed08d8435e256dd225afcd26df_a569f88ed08d8435e256dd225afcd26df}{insert\_tag}( new\_tag, -1 );
+236     
+237     \textcolor{keywordflow}{return} new\_tag;
+238 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{a00035_a213db3baf1d4b13d604015489247980d_a213db3baf1d4b13d604015489247980d}\label{a00035_a213db3baf1d4b13d604015489247980d_a213db3baf1d4b13d604015489247980d}} 
+\index{liballoc.\+c@{liballoc.\+c}!l\+\_\+complete\+Pages@{l\+\_\+complete\+Pages}}
+\index{l\+\_\+complete\+Pages@{l\+\_\+complete\+Pages}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{l\+\_\+complete\+Pages}{l\_completePages}}
+{\footnotesize\ttfamily int l\+\_\+complete\+Pages\mbox{[}\hyperlink{a00035_af823bb7d083fafbd662be7ea09582013_af823bb7d083fafbd662be7ea09582013}{M\+A\+X\+E\+XP}\mbox{]}}
+
+
+
+Definition at line 33 of file liballoc.\+c.
+
+\mbox{\Hypertarget{a00035_a78b8b6e448179d3cd64915f99fee60e0_a78b8b6e448179d3cd64915f99fee60e0}\label{a00035_a78b8b6e448179d3cd64915f99fee60e0_a78b8b6e448179d3cd64915f99fee60e0}} 
+\index{liballoc.\+c@{liballoc.\+c}!l\+\_\+free\+Pages@{l\+\_\+free\+Pages}}
+\index{l\+\_\+free\+Pages@{l\+\_\+free\+Pages}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{l\+\_\+free\+Pages}{l\_freePages}}
+{\footnotesize\ttfamily struct \hyperlink{a00126}{boundary\+\_\+tag}$\ast$ l\+\_\+free\+Pages\mbox{[}\hyperlink{a00035_af823bb7d083fafbd662be7ea09582013_af823bb7d083fafbd662be7ea09582013}{M\+A\+X\+E\+XP}\mbox{]}}
+
+
+
+Definition at line 32 of file liballoc.\+c.
+
+\mbox{\Hypertarget{a00035_a4aac6ed0ba0144598c5abe18222c3493_a4aac6ed0ba0144598c5abe18222c3493}\label{a00035_a4aac6ed0ba0144598c5abe18222c3493_a4aac6ed0ba0144598c5abe18222c3493}} 
+\index{liballoc.\+c@{liballoc.\+c}!l\+\_\+initialized@{l\+\_\+initialized}}
+\index{l\+\_\+initialized@{l\+\_\+initialized}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{l\+\_\+initialized}{l\_initialized}}
+{\footnotesize\ttfamily int l\+\_\+initialized = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 42 of file liballoc.\+c.
+
+\mbox{\Hypertarget{a00035_a8f81c0408f42ca5d936221d15f918275_a8f81c0408f42ca5d936221d15f918275}\label{a00035_a8f81c0408f42ca5d936221d15f918275_a8f81c0408f42ca5d936221d15f918275}} 
+\index{liballoc.\+c@{liballoc.\+c}!l\+\_\+page\+Count@{l\+\_\+page\+Count}}
+\index{l\+\_\+page\+Count@{l\+\_\+page\+Count}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{l\+\_\+page\+Count}{l\_pageCount}}
+{\footnotesize\ttfamily int l\+\_\+page\+Count = 16\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 44 of file liballoc.\+c.
+
+\mbox{\Hypertarget{a00035_a5008d6a07ef0a4f9e325993716cc228e_a5008d6a07ef0a4f9e325993716cc228e}\label{a00035_a5008d6a07ef0a4f9e325993716cc228e_a5008d6a07ef0a4f9e325993716cc228e}} 
+\index{liballoc.\+c@{liballoc.\+c}!l\+\_\+page\+Size@{l\+\_\+page\+Size}}
+\index{l\+\_\+page\+Size@{l\+\_\+page\+Size}!liballoc.\+c@{liballoc.\+c}}
+\subsubsection{\texorpdfstring{l\+\_\+page\+Size}{l\_pageSize}}
+{\footnotesize\ttfamily int l\+\_\+page\+Size = 4096\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 43 of file liballoc.\+c.
+

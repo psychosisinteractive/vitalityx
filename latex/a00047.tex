@@ -1,90 +1,145 @@
-\hypertarget{a00047}{}\section{libc/page.h File Reference}
-\label{a00047}\index{libc/page.\+h@{libc/page.\+h}}
-This graph shows which files directly or indirectly include this file\+:
+\hypertarget{a00047}{}\section{libc/ext/task.h File Reference}
+\label{a00047}\index{libc/ext/task.\+h@{libc/ext/task.\+h}}
+{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
+Include dependency graph for task.\+h\+:
 % FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{a00130}{Registers}
+\item 
+struct \hyperlink{a00134}{Task}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{a00134}{Task} \hyperlink{a00047_a7a90fbdcc84682f027affec67944111b_a7a90fbdcc84682f027affec67944111b}{Task}
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00047_a51f6a37816540dea572d38f2713e9f5a_a51f6a37816540dea572d38f2713e9f5a}{setup\+\_\+page} ()
+void \hyperlink{a00047_aea945e91746a54801f4763ad264746b9_aea945e91746a54801f4763ad264746b9}{init\+Tasking} ()
 \item 
-void \hyperlink{a00047_a7bb2c9b4c69002e17903710ce4de395c_a7bb2c9b4c69002e17903710ce4de395c}{create\+\_\+page\+\_\+table} (unsigned int i, unsigned int id)
+void \hyperlink{a00047_a3abb1d0cc6fd9ea5a5b860f36bc81d6a_a3abb1d0cc6fd9ea5a5b860f36bc81d6a}{create\+Task} (\hyperlink{a00134}{Task} $\ast$, void($\ast$)(), \hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}, \hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$, char \mbox{[}16\mbox{]})
 \item 
-void \hyperlink{a00047_abfdf37b9c42cafa83b39f1a41264989c_abfdf37b9c42cafa83b39f1a41264989c}{load\+Page\+Directory} (unsigned int $\ast$)
+void \hyperlink{a00047_a077ea59d35297d9fb3fa4675beefbd79_a077ea59d35297d9fb3fa4675beefbd79}{add\+Task} (\hyperlink{a00134}{Task} $\ast$)
 \item 
-void \hyperlink{a00047_a8fe3a9cca4b2ccd7a2743e9943880a32_a8fe3a9cca4b2ccd7a2743e9943880a32}{enable\+Paging} ()
+void \hyperlink{a00047_a58c8b2ad0ea491a6642e5e1cbd358c89_a58c8b2ad0ea491a6642e5e1cbd358c89}{yield} ()
+\item 
+void \hyperlink{a00047_a2425ca34147fccde2d1503332d21c5bd_a2425ca34147fccde2d1503332d21c5bd}{switch\+Task} (\hyperlink{a00130}{Registers} $\ast$, \hyperlink{a00130}{Registers} $\ast$)
 \end{DoxyCompactItemize}
 
 
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{a00047_a7a90fbdcc84682f027affec67944111b_a7a90fbdcc84682f027affec67944111b}\label{a00047_a7a90fbdcc84682f027affec67944111b_a7a90fbdcc84682f027affec67944111b}} 
+\index{task.\+h@{task.\+h}!Task@{Task}}
+\index{Task@{Task}!task.\+h@{task.\+h}}
+\subsubsection{\texorpdfstring{Task}{Task}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00134}{Task}  \hyperlink{a00134}{Task}}
+
+
+
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00047_a7bb2c9b4c69002e17903710ce4de395c_a7bb2c9b4c69002e17903710ce4de395c}\label{a00047_a7bb2c9b4c69002e17903710ce4de395c_a7bb2c9b4c69002e17903710ce4de395c}} 
-\index{page.\+h@{page.\+h}!create\+\_\+page\+\_\+table@{create\+\_\+page\+\_\+table}}
-\index{create\+\_\+page\+\_\+table@{create\+\_\+page\+\_\+table}!page.\+h@{page.\+h}}
-\subsubsection{\texorpdfstring{create\+\_\+page\+\_\+table()}{create\_page\_table()}}
-{\footnotesize\ttfamily void create\+\_\+page\+\_\+table (\begin{DoxyParamCaption}\item[{unsigned int}]{i,  }\item[{unsigned int}]{id }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00047_a077ea59d35297d9fb3fa4675beefbd79_a077ea59d35297d9fb3fa4675beefbd79}\label{a00047_a077ea59d35297d9fb3fa4675beefbd79_a077ea59d35297d9fb3fa4675beefbd79}} 
+\index{task.\+h@{task.\+h}!add\+Task@{add\+Task}}
+\index{add\+Task@{add\+Task}!task.\+h@{task.\+h}}
+\subsubsection{\texorpdfstring{add\+Task()}{addTask()}}
+{\footnotesize\ttfamily void add\+Task (\begin{DoxyParamCaption}\item[{\hyperlink{a00134}{Task} $\ast$}]{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 28 of file page.\+c.
+Definition at line 28 of file task.\+c.
 
 
 \begin{DoxyCode}
-28                                                         \{
-29     \hyperlink{a00017_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"setting up page table\(\backslash\)n"});
-30     \hyperlink{a00068_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t} page\_table[1024]
-31 \textcolor{preprocessor}{    #ifndef \_\_INTELLISENSE\_\_ }
-32         \hyperlink{a00044_a37f8e955bf961194d85eb31c4083e0ba_a37f8e955bf961194d85eb31c4083e0ba}{\_\_attribute\_\_}((aligned(4096)));
-33 \textcolor{preprocessor}{    #else}
-34         ;
-35 \textcolor{preprocessor}{    #endif}
-36     \textcolor{comment}{//we will fill all 1024 entries in the table, mapping 4 megabytes}
-37     \textcolor{keywordflow}{for}(i = 0; i < 1024; i++)
-38     \{
-39         \textcolor{comment}{// As the address is page aligned, it will always leave 12 bits zeroed.}
-40         \textcolor{comment}{// Those bits are used by the attributes ;)}
-41         page\_table[i] = (i * 0x1000) | 3; \textcolor{comment}{// attributes: supervisor level, read/write, present.}
-42     \}
-43     page\_directory[id] = ((\textcolor{keywordtype}{unsigned} int)page\_table) | 3;
-44     \hyperlink{a00017_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"page table setup\(\backslash\)n"});
-45 \}
+28                          \{
+29     \hyperlink{a00134}{Task} *nT = \hyperlink{a00044_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.\hyperlink{a00134_a8b6b50960a19f7bae344ef0cc8ec4e7d_a8b6b50960a19f7bae344ef0cc8ec4e7d}{next};
+30     \hyperlink{a00134}{Task} *oT = 0;
+31     \textcolor{keywordflow}{while}(nT != 0) \{
+32         oT = nT;
+33         nT = nT->\hyperlink{a00134_a8b6b50960a19f7bae344ef0cc8ec4e7d_a8b6b50960a19f7bae344ef0cc8ec4e7d}{next};
+34     \}
+35     oT->\hyperlink{a00134_a8b6b50960a19f7bae344ef0cc8ec4e7d_a8b6b50960a19f7bae344ef0cc8ec4e7d}{next} = task;
+36 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00047_a8fe3a9cca4b2ccd7a2743e9943880a32_a8fe3a9cca4b2ccd7a2743e9943880a32}\label{a00047_a8fe3a9cca4b2ccd7a2743e9943880a32_a8fe3a9cca4b2ccd7a2743e9943880a32}} 
-\index{page.\+h@{page.\+h}!enable\+Paging@{enable\+Paging}}
-\index{enable\+Paging@{enable\+Paging}!page.\+h@{page.\+h}}
-\subsubsection{\texorpdfstring{enable\+Paging()}{enablePaging()}}
-{\footnotesize\ttfamily void enable\+Paging (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{a00047_abfdf37b9c42cafa83b39f1a41264989c_abfdf37b9c42cafa83b39f1a41264989c}\label{a00047_abfdf37b9c42cafa83b39f1a41264989c_abfdf37b9c42cafa83b39f1a41264989c}} 
-\index{page.\+h@{page.\+h}!load\+Page\+Directory@{load\+Page\+Directory}}
-\index{load\+Page\+Directory@{load\+Page\+Directory}!page.\+h@{page.\+h}}
-\subsubsection{\texorpdfstring{load\+Page\+Directory()}{loadPageDirectory()}}
-{\footnotesize\ttfamily void load\+Page\+Directory (\begin{DoxyParamCaption}\item[{unsigned int $\ast$}]{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{a00047_a51f6a37816540dea572d38f2713e9f5a_a51f6a37816540dea572d38f2713e9f5a}\label{a00047_a51f6a37816540dea572d38f2713e9f5a_a51f6a37816540dea572d38f2713e9f5a}} 
-\index{page.\+h@{page.\+h}!setup\+\_\+page@{setup\+\_\+page}}
-\index{setup\+\_\+page@{setup\+\_\+page}!page.\+h@{page.\+h}}
-\subsubsection{\texorpdfstring{setup\+\_\+page()}{setup\_page()}}
-{\footnotesize\ttfamily void setup\+\_\+page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00047_a3abb1d0cc6fd9ea5a5b860f36bc81d6a_a3abb1d0cc6fd9ea5a5b860f36bc81d6a}\label{a00047_a3abb1d0cc6fd9ea5a5b860f36bc81d6a_a3abb1d0cc6fd9ea5a5b860f36bc81d6a}} 
+\index{task.\+h@{task.\+h}!create\+Task@{create\+Task}}
+\index{create\+Task@{create\+Task}!task.\+h@{task.\+h}}
+\subsubsection{\texorpdfstring{create\+Task()}{createTask()}}
+{\footnotesize\ttfamily void create\+Task (\begin{DoxyParamCaption}\item[{\hyperlink{a00134}{Task} $\ast$}]{,  }\item[{void($\ast$)()}]{,  }\item[{\hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{,  }\item[{\hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$}]{,  }\item[{char}]{\mbox{[}16\mbox{]} }\end{DoxyParamCaption})}
 
 
 
-Definition at line 11 of file page.\+c.
+Definition at line 38 of file task.\+c.
 
 
 \begin{DoxyCode}
-11                   \{
-12     \hyperlink{a00017_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"page being setup\(\backslash\)n"});
-13     \textcolor{comment}{//set each entry to not present}
-14     \textcolor{keywordtype}{int} i;
-15     \textcolor{keywordflow}{for}(i = 0; i < 1024; i++)
-16     \{
-17         \textcolor{comment}{// This sets the following flags to the pages:}
-18         \textcolor{comment}{//   Supervisor: Only kernel-mode can access them}
-19         \textcolor{comment}{//   Write Enabled: It can be both read from and written to}
-20         \textcolor{comment}{//   Not Present: The page table is not present}
-21         page\_directory[i] = 0x00000002;
-22     \}
-23     \hyperlink{a00047_abfdf37b9c42cafa83b39f1a41264989c_abfdf37b9c42cafa83b39f1a41264989c}{loadPageDirectory}(page\_directory);
-24     \hyperlink{a00047_a8fe3a9cca4b2ccd7a2743e9943880a32_a8fe3a9cca4b2ccd7a2743e9943880a32}{enablePaging}();
-25     \hyperlink{a00017_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"pages setup\(\backslash\)n"});
+38                                                                                               \{
+39     task->regs.eax = 0;
+40     task->regs.ebx = 0;
+41     task->regs.ecx = 0;
+42     task->regs.edx = 0;
+43     task->regs.esi = 0;
+44     task->regs.edi = 0;
+45     task->regs.eflags = \hyperlink{a00065_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags};
+46     task->regs.eip = (\hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t}) main;
+47     task->regs.cr3 = (\hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t}) pagedir;
+48     task->regs.esp = \hyperlink{a00044_a2c195d425b4a6791b3a89f7b219f93d9_a2c195d425b4a6791b3a89f7b219f93d9}{runningTask}->\hyperlink{a00134_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00130_aca352215ac1e37f833da4f6289392261_aca352215ac1e37f833da4f6289392261}{esp}; \textcolor{comment}{// Not implemented here}
+49     task->next = 0;
+50     *task->name = name;
+51 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00047_aea945e91746a54801f4763ad264746b9_aea945e91746a54801f4763ad264746b9}\label{a00047_aea945e91746a54801f4763ad264746b9_aea945e91746a54801f4763ad264746b9}} 
+\index{task.\+h@{task.\+h}!init\+Tasking@{init\+Tasking}}
+\index{init\+Tasking@{init\+Tasking}!task.\+h@{task.\+h}}
+\subsubsection{\texorpdfstring{init\+Tasking()}{initTasking()}}
+{\footnotesize\ttfamily void init\+Tasking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 15 of file task.\+c.
+
+
+\begin{DoxyCode}
+15                    \{
+16     \textcolor{comment}{// Get EFLAGS and CR3}
+17     \textcolor{keyword}{asm} \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"movl %%cr3, %%eax; movl %%eax, %0;"}:\textcolor{stringliteral}{"=m"}(\hyperlink{a00044_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.\hyperlink{a00134_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.
+      \hyperlink{a00130_ab818d6f237e6d73d321339e6fcd66abf_ab818d6f237e6d73d321339e6fcd66abf}{cr3})::\textcolor{stringliteral}{"%eax"});
+18     \textcolor{keyword}{asm} \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"pushfl; movl (%%esp), %%eax; movl %%eax, %0; popfl;"}:\textcolor{stringliteral}{"=m"}(
+      \hyperlink{a00044_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.\hyperlink{a00134_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00130_a5216970c0d34ab4b53881f583839c8f9_a5216970c0d34ab4b53881f583839c8f9}{eflags})::\textcolor{stringliteral}{"%eax"});
+19  
+20     *\hyperlink{a00044_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.\hyperlink{a00134_a7718ab6bb7a99b2b818b5b5cf9176456_a7718ab6bb7a99b2b818b5b5cf9176456}{name} = \textcolor{stringliteral}{"vitality-system"};
+21     \hyperlink{a00044_ad60a944f16bf46088320833cf2464e1e_ad60a944f16bf46088320833cf2464e1e}{createTask}(&\hyperlink{a00044_ab0e87ab98b8b029839a398838d16e1f0_ab0e87ab98b8b029839a398838d16e1f0}{otherTask}, \hyperlink{a00044_a4337f8ca98d2a8f8e09bf6e26b4e8bb0_a4337f8ca98d2a8f8e09bf6e26b4e8bb0}{otherMain}, \hyperlink{a00044_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.
+      \hyperlink{a00134_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00130_a5216970c0d34ab4b53881f583839c8f9_a5216970c0d34ab4b53881f583839c8f9}{eflags}, (\hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t}*)\hyperlink{a00044_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.\hyperlink{a00134_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00130_ab818d6f237e6d73d321339e6fcd66abf_ab818d6f237e6d73d321339e6fcd66abf}{cr3}, \textcolor{stringliteral}{"kernel-dispatch"});
+22     \hyperlink{a00044_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.\hyperlink{a00134_a8b6b50960a19f7bae344ef0cc8ec4e7d_a8b6b50960a19f7bae344ef0cc8ec4e7d}{next} = &\hyperlink{a00044_ab0e87ab98b8b029839a398838d16e1f0_ab0e87ab98b8b029839a398838d16e1f0}{otherTask};
+23     \hyperlink{a00044_ab0e87ab98b8b029839a398838d16e1f0_ab0e87ab98b8b029839a398838d16e1f0}{otherTask}.\hyperlink{a00134_a8b6b50960a19f7bae344ef0cc8ec4e7d_a8b6b50960a19f7bae344ef0cc8ec4e7d}{next} = &\hyperlink{a00044_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask};
+24  
+25     \hyperlink{a00044_a2c195d425b4a6791b3a89f7b219f93d9_a2c195d425b4a6791b3a89f7b219f93d9}{runningTask} = &\hyperlink{a00044_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask};
 26 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00047_a2425ca34147fccde2d1503332d21c5bd_a2425ca34147fccde2d1503332d21c5bd}\label{a00047_a2425ca34147fccde2d1503332d21c5bd_a2425ca34147fccde2d1503332d21c5bd}} 
+\index{task.\+h@{task.\+h}!switch\+Task@{switch\+Task}}
+\index{switch\+Task@{switch\+Task}!task.\+h@{task.\+h}}
+\subsubsection{\texorpdfstring{switch\+Task()}{switchTask()}}
+{\footnotesize\ttfamily void switch\+Task (\begin{DoxyParamCaption}\item[{\hyperlink{a00130}{Registers} $\ast$}]{,  }\item[{\hyperlink{a00130}{Registers} $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00047_a58c8b2ad0ea491a6642e5e1cbd358c89_a58c8b2ad0ea491a6642e5e1cbd358c89}\label{a00047_a58c8b2ad0ea491a6642e5e1cbd358c89_a58c8b2ad0ea491a6642e5e1cbd358c89}} 
+\index{task.\+h@{task.\+h}!yield@{yield}}
+\index{yield@{yield}!task.\+h@{task.\+h}}
+\subsubsection{\texorpdfstring{yield()}{yield()}}
+{\footnotesize\ttfamily void yield (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 53 of file task.\+c.
+
+
+\begin{DoxyCode}
+53              \{
+54     \hyperlink{a00134}{Task} *last = \hyperlink{a00044_a2c195d425b4a6791b3a89f7b219f93d9_a2c195d425b4a6791b3a89f7b219f93d9}{runningTask};
+55     \hyperlink{a00044_a2c195d425b4a6791b3a89f7b219f93d9_a2c195d425b4a6791b3a89f7b219f93d9}{runningTask} = \hyperlink{a00044_a2c195d425b4a6791b3a89f7b219f93d9_a2c195d425b4a6791b3a89f7b219f93d9}{runningTask}->\hyperlink{a00134_a8b6b50960a19f7bae344ef0cc8ec4e7d_a8b6b50960a19f7bae344ef0cc8ec4e7d}{next};
+56     \hyperlink{a00047_a2425ca34147fccde2d1503332d21c5bd_a2425ca34147fccde2d1503332d21c5bd}{switchTask}(&last->\hyperlink{a00134_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}, &\hyperlink{a00044_a2c195d425b4a6791b3a89f7b219f93d9_a2c195d425b4a6791b3a89f7b219f93d9}{runningTask}->\hyperlink{a00134_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs});
+57 \}
 \end{DoxyCode}
