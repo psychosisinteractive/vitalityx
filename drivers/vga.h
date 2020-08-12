@@ -1,7 +1,7 @@
 #ifndef VGA_H
 #define VGA_H
 #include "../libc/types.h"
-#define VIDEO_SEGMENT 0xA000
+#define VIDEO_SEGMENT 0x000A0000
 #define SCREEN_WIDTH 320 // we should be in mode 13h
 
 ///
@@ -24,5 +24,9 @@ void drawchar(unsigned char c, uint16_t x, uint16_t y, uint8_t fgcolor, uint8_t 
 /// Gets the current VGA mode
 ///
 uint16_t vgamode();
+///
+/// Sets the font
+///
+void setfont(unsigned char *font);
 
 #endif

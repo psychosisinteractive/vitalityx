@@ -9,10 +9,10 @@ uint8_t peekb(uint8_t *addr, uint32_t offset) {
     addr+=offset;
     return *addr;
 }
-void *memset (addr_t dest, int val, size_t len)
+void *memset (void *dest, int val, size_t len)
 {
-    unsigned char *ptr = dest;
-    while (len-- > 0)
-        *ptr++ = val;
-    return dest;
+  unsigned char *ptr = dest;
+  while (len-- > 0)
+    *ptr++ = val;
+  return dest;
 }

@@ -24,6 +24,24 @@ start:
     jc load_kern_err
     ; next setup the gdt
     call print_dbg_x
+    mov di,0x7e00
+    ;in: es:di=4k buffer
+	;out: buffer filled with font
+    push			ds
+    push			es
+    ;ask BIOS to return VGA bitmap fonts
+    mov			ax, 1130h
+    mov			bh, 6
+    int			10h
+    ;copy charmap
+    push			es
+    pop			ds
+    pop			es
+    mov			si, bp
+    mov			cx, 256*16/4
+    rep			movsd
+    pop			ds
+
     cli
     mov ax, 0x2401
     int 0x15 ; enable A20 bit

@@ -3,7 +3,7 @@
 #include "../../drivers/vga.h"
 #include "../ext/debug.h"
 
-int* videoMemoryPtr = (int*)0xa0000;
+int* videoMemoryPtr = (int*)0x000A0000;
 void tty_putstring(char* string) {
     BochsConsolePrintString(string);
     uint16_t attrib = (0x0 << 4) | (0xf & 0x0F);
@@ -21,7 +21,8 @@ void tty_vgaputstring(char* string) {
     BochsConsolePrintString(string);
     char chara = *string++;
     while(chara != '\x0') {
-        drawchar(chara,xoff,yoff+1,0xf,0x0);
+        drawchar(chara,xoff,yoff+17,0xf,0x0);
+        xoff += 8;
         chara = *string++;
     }
 }

@@ -62,6 +62,11 @@ static inline unsigned long save_irqdisable(void)
     unsigned long flags;
     asm volatile ("pushf\n\tcli\n\tpop %0" : "=r"(flags) : : "memory");
 }
+
+static inline void jump(uint32_t address) {
+    void (*jmp)(void) = (void (*)())address;
+    jmp();
+}
  
 static inline void irqrestore(unsigned long flags)
 {

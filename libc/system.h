@@ -21,5 +21,6 @@ uint8_t peekb(uint8_t *addr, uint32_t offset);
 ///@param val The value to set
 ///@param len The length of bytes to set
 ///
-void *memset(addr_t dest, int val, size_t len);
+void *memset (void *dest, int val, size_t len);
+
 #endif

@@ -10,6 +10,7 @@ AOBJ = ${A_SOURCES:.s=.o}
 CC = i686-elf-gcc
 PP = i686-elf-g++
 WSL = C:\Windows\sysnative\wsl
+AS = i686-elf-as
 SYS = C:\Windows\sysnative\command
 BOCHS = C:\Program Files\Bochs-2.6.11\bochsdbg
 NASM = nasm
@@ -22,10 +23,10 @@ CFLAGS = -g
 operating.bin: bootloader/boot.bin kernel.bin
 	${WSL} cat $^ > operating.bin
 
-kernel.bin: kernel/kentry.o ${OBJ} ${A_SOURCES}
+kernel.bin: kernel/kentry.o ${OBJ} ${AOBJ}
 	i686-elf-ld -o $@ -Ttext 0x1000 $^ --oformat binary
 
-kernel.elf: kernel/kentry.o ${OBJ} ${A_SOURCES}
+kernel.elf: kernel/kentry.o ${OBJ} ${AOBJ}
 	i686-elf-ld -o $@ -Ttext 0x1000 $^
 
 run: operating.bin
@@ -42,6 +43,9 @@ debug: operating.bin
 
 %.o: %.cpp ${CPP_HEADERS}
 	${PP} ${CFLAGS} -ffreestanding -c $< -o $@
+
+%.o: %.s
+	${AS} ${CFLAGS} -c $< -o $@
 
 %.o: %.asm
 	${NASM} $< -f elf -o $@
