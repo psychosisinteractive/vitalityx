@@ -20,5 +20,9 @@ void putpixel(uint8_t c, uint16_t x, uint16_t y);
 ///@param bgcolor The background color
 ///
 void drawchar(unsigned char c, uint16_t x, uint16_t y, uint8_t fgcolor, uint8_t bgcolor);
+///
+/// Gets the current VGA mode
+///
+uint16_t vgamode();
 
 #endif

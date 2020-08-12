@@ -1,12 +1,17 @@
 C_SOURCES = $(wildcard libc/vitality/*.c libc/*.c drivers/*.c kernel/*.c)
+CPP_SOURCES = $(wildcard libc/g++/*.cpp)
 HEADERS = $(wildcard libc/vitality/*.h libc/*.h drivers/*.h kernel/*.h)
+CPP_HEADERS = $(wildcard libc/g++/*.h)
 A_SOURCES = ${wildcard kernel/libasm/*.s}
 OBJ = ${C_SOURCES:.c=.o}
+POBJ = ${CPP_SOURCES:.cpp=.o}
 AOBJ = ${A_SOURCES:.s=.o}
 
 CC = i686-elf-gcc
+PP = i686-elf-g++
 WSL = C:\Windows\sysnative\wsl
 SYS = C:\Windows\sysnative\command
+BOCHS = C:\Program Files\Bochs-2.6.11\bochsdbg
 NASM = nasm
 GDB = i686-elf-GDB
 # flags for the compiler
@@ -26,19 +31,22 @@ kernel.elf: kernel/kentry.o ${OBJ} ${A_SOURCES}
 run: operating.bin
 	qemu-system-i386 -no-reboot -no-shutdown -fda operating.bin
 
+bochsdbg: operating.bin
+	${BOCHS}
+
 debug: operating.bin
 	qemu-system-i386 -d int -no-reboot -no-shutdown -s -fda operating.bin
 
 %.o: %.c ${HEADERS}
 	${CC} ${CFLAGS} -ffreestanding -c $< -o $@
 
-%.o: ${A_SOURCES}
-	${NASM} $< -f elf -o $@
+%.o: %.cpp ${CPP_HEADERS}
+	${PP} ${CFLAGS} -ffreestanding -c $< -o $@
 
 %.o: %.asm
 	${NASM} $< -f elf -o $@
 
-%.bin: %.asm
+%.bin: %.asm bootloader/gdt.asm
 	${NASM} $< -f bin -o $@
 
 clean:

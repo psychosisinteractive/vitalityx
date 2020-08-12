@@ -26,3 +26,7 @@ void drawchar(unsigned char c, uint16_t x, uint16_t y, uint8_t fgcolor, uint8_t 
 		}
 	}
 }
+
+uint16_t vgamode() {
+	return 0x13; // we sure are using mode 13 so
+}

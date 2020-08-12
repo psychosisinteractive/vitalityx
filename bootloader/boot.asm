@@ -1,9 +1,6 @@
 [BITS 16]
 [ORG 0x7c00]
-    xchg bx, bx
     jmp 0:start
-
-db 'VITALITYX BOOTSECTOR',0
 
 %include "bootloader/gdt.asm"
 [BITS 16]
@@ -15,23 +12,14 @@ start:
     int 10h
     mov dx,0
     call print_dbg_x
-    xchg bx, bx
     ; LOAD the system
     mov ah,02h
     mov al,20
     mov ch,0
     mov cl,02h
     mov dh,0
-    mov dl,0
-    mov ax,0    
-    mov ds, ax
-    mov ss, ax
-    mov es, ax
-    mov fs, ax
-    mov gs, ax
-    mov bx,PROGRAM
+    mov bx, PROGRAM
     int 13h
-    xchg bx, bx
     call print_dbg_x
     jc load_kern_err
     ; next setup the gdt
@@ -39,9 +27,7 @@ start:
     cli
     mov ax, 0x2401
     int 0x15 ; enable A20 bit
-    inc cx
-    call print_dbg_x
-    xchg bx, bx
+
     call switch_to_pm
 
 load_kern_err:
@@ -50,7 +36,6 @@ load_kern_err:
     xor bh,bh
     inc cx
     int 10h
-    int 7h
     hlt
 print_dbg_x:
     mov ah,0Ch
@@ -62,6 +47,9 @@ print_dbg_x:
 
 [BITS 32]
 ready:
+    mov eax,0xff
+    mov [0xa000],eax
+
     mov esp, 090000h
 
     mov ax, DATA_SEG 
@@ -74,7 +62,7 @@ ready:
     mov ebp, 0x90000
     mov esp, ebp
 
-    call PROGRAM
+    jmp 0:PROGRAM
     jmp $
 
 PROGRAM equ 0x1000

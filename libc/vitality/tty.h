@@ -11,5 +11,10 @@ void tty_putstring(char* string);
 ///@param string The string to put
 ///
 void tty_vgaputstring(char* string);
+///
+/// Puts a string into VRAM, detects preferred mode
+///@param string The string to put
+///
+void tty_pputstring(char* string);
 
 #endif

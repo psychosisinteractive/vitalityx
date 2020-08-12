@@ -22,3 +22,18 @@ void tty_vgaputstring(char* string) {
         chara = *string++;
     }
 }
+
+void tty_pputstring(char* string) {
+    switch (vgamode())
+    {
+    case 0x3:
+        tty_putstring(string);
+        break;
+    case 0x13:
+        tty_vgaputstring(string);
+        break;
+    default:
+        tty_vgaputstring(string);
+        break;
+    }
+}

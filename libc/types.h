@@ -33,14 +33,16 @@ typedef unsigned long uint64_t;
 /// Signed 64-bit Integer
 ///
 typedef long sint64_t;
+#ifndef CPP
 ///
 /// Boolean Value, true or false
 ///
 typedef enum { false, true } bool;
+#endif
 ///
 /// Address Pointer
 ///
-typedef void *addr_t;
+typedef uint32_t *addr_t;
 ///
 /// Size Container
 ///
