@@ -26,9 +26,11 @@ gdt_data:
 gdt_end:
 
 ; GDT descriptor
+db "GDT DESCRIPTOR"
 gdt_descriptor:
     dw gdt_end - gdt_start - 1 ; size (16 bit), always one less of its true size
     dd gdt_start ; address (32 bit)
+db "END DESCRIPTOR"
 
 ; define some constants for later use
 CODE_SEG equ gdt_code - gdt_start
@@ -36,17 +38,28 @@ DATA_SEG equ gdt_data - gdt_start
 
 [bits 16]
 switch_to_pm:
-    cli ; 1. disable interrupts
-    lgdt [gdt_descriptor] ; 2. load the GDT descriptor
-    mov eax,0xff
-    mov [0xa006],eax
+    cli     
+    mov ax,0xa00f
+    mov ds,ax
+    mov byte[0x000],0xf
+
+    mov ax, DATA_SEG ; 5. update the segment registers
+    mov ds, ax
+    mov ss, ax
+    mov es, ax
+    mov fs, ax
+    mov gs, ax
+    xchg bx, bx
+    lgdt [gdt_descriptor]  ; THIS is where the general protection fault occours 
     mov eax, cr0
     or eax, 0x1 ; 3. set 32-bit mode bit in cr0
-    mov cr0, eax
-    jmp CODE_SEG:init_pm ; 4. far jump by using a different segment6
+    mov cr0, eax    
+    xchg bx, bx
+    jmp init_pm ; 4. far jump by using a different segment6
 
 [bits 32]
 init_pm: ; we are now using 32-bit instructions
+    xchg bx, bx
     mov ax, DATA_SEG ; 5. update the segment registers
     mov ds, ax
     mov ss, ax
@@ -54,7 +67,9 @@ init_pm: ; we are now using 32-bit instructions
     mov fs, ax
     mov gs, ax
 
+    mov byte [0xa0000], 0xf
+
     mov ebp, 0x90000 ; 6. update the stack right at the top of the free space
     mov esp, ebp
-
+    xchg bx, bx
     call ready ; 7. Call a well-known label with useful code
