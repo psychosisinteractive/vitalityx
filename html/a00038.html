@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/system.h File Reference</title>
+<title>VitalityX: libc/interrupt.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,36 +46,27 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">system.h File Reference</div>  </div>
+<div class="title">interrupt.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00047_source.html">types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00041_source.html">interrupt.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for system.h:</div>
+Include dependency graph for interrupt.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00039.png" border="0" usemap="#libc_2system_8h" alt=""/></div>
+<div class="center"><img src="a00039.png" border="0" usemap="#libc_2interrupt_8c" alt=""/></div>
 <!-- MAP 0 -->
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00040.png" border="0" usemap="#libc_2system_8hdep" alt=""/></div>
-<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00038_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aa291c9926b84df379482632e80ec7c47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_aa291c9926b84df379482632e80ec7c47.html#aa291c9926b84df379482632e80ec7c47">pokeb</a> (<a class="el" href="a00047_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> *addr, <a class="el" href="a00047_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> offset, <a class="el" href="a00047_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> val)</td></tr>
-<tr class="memdesc:aa291c9926b84df379482632e80ec7c47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Poke Byte.  <a href="a00038_aa291c9926b84df379482632e80ec7c47.html#aa291c9926b84df379482632e80ec7c47">More...</a><br /></td></tr>
-<tr class="separator:aa291c9926b84df379482632e80ec7c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a353956c1fd65c7ed787836534fc9354e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00047_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_a353956c1fd65c7ed787836534fc9354e.html#a353956c1fd65c7ed787836534fc9354e">peekb</a> (<a class="el" href="a00047_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *addr, <a class="el" href="a00047_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> offset)</td></tr>
-<tr class="memdesc:a353956c1fd65c7ed787836534fc9354e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peek Byte.  <a href="a00038_a353956c1fd65c7ed787836534fc9354e.html#a353956c1fd65c7ed787836534fc9354e">More...</a><br /></td></tr>
-<tr class="separator:a353956c1fd65c7ed787836534fc9354e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1df1047f254598ae1c402f654bfc787f"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_a1df1047f254598ae1c402f654bfc787f.html#a1df1047f254598ae1c402f654bfc787f">memset</a> (<a class="el" href="a00047_a295f71165288684c38c6bb836fbb3c59.html#a295f71165288684c38c6bb836fbb3c59">addr_t</a> dest, int val, <a class="el" href="a00047_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a> len)</td></tr>
-<tr class="memdesc:a1df1047f254598ae1c402f654bfc787f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memset.  <a href="a00038_a1df1047f254598ae1c402f654bfc787f.html#a1df1047f254598ae1c402f654bfc787f">More...</a><br /></td></tr>
-<tr class="separator:a1df1047f254598ae1c402f654bfc787f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a498f153edfbc59b873e0ae610c3b0335"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_a498f153edfbc59b873e0ae610c3b0335.html#a498f153edfbc59b873e0ae610c3b0335">idt_set_gate</a> (<a class="el" href="a00068_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> num, <a class="el" href="a00068_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="el" href="a00041_a2e013c2c6e8010c8116c6f56813df57b.html#a2e013c2c6e8010c8116c6f56813df57b">base</a>, <a class="el" href="a00068_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="el" href="a00041_af0b0a7e10694e3b600c7561311cc8271.html#af0b0a7e10694e3b600c7561311cc8271">sel</a>, <a class="el" href="a00068_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="a00041_aa2585d779da0ab21273a8d92de9a0ebe.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a>)</td></tr>
+<tr class="memdesc:a498f153edfbc59b873e0ae610c3b0335"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets an IDT gate.  <a href="a00038_a498f153edfbc59b873e0ae610c3b0335.html#a498f153edfbc59b873e0ae610c3b0335">More...</a><br /></td></tr>
+<tr class="separator:a498f153edfbc59b873e0ae610c3b0335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9817da253735954f4767c5ba6155aa0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_a9817da253735954f4767c5ba6155aa0d.html#a9817da253735954f4767c5ba6155aa0d">idt_install</a> ()</td></tr>
+<tr class="memdesc:a9817da253735954f4767c5ba6155aa0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Installs the IDT (Interrupt Descriptor Table)  <a href="a00038_a9817da253735954f4767c5ba6155aa0d.html#a9817da253735954f4767c5ba6155aa0d">More...</a><br /></td></tr>
+<tr class="separator:a9817da253735954f4767c5ba6155aa0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

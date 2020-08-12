@@ -2,6 +2,8 @@
 \label{a00014}\index{kernel/kernel.\+c@{kernel/kernel.\+c}}
 {\ttfamily \#include \char`\"{}../libc/vitality/tty.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../libc/interrupt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/page.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/ext/debug.\+h\char`\"{}}\newline
 Include dependency graph for kernel.\+c\+:
 % FIG 0
 \subsection*{Functions}
@@ -24,16 +26,18 @@ The kernels C entry point.
 
 
 
-Definition at line 6 of file kernel.\+c.
+Definition at line 8 of file kernel.\+c.
 
 
 \begin{DoxyCode}
-6              \{
-7     \hyperlink{a00053_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Hello World"});
-8     \hyperlink{a00023_a9817da253735954f4767c5ba6155aa0d_a9817da253735954f4767c5ba6155aa0d}{idt\_install}();
-9     \textcolor{keywordflow}{for}(;;) \{
-10 
-11     \}
-12     \textcolor{keywordflow}{return} 0;
-13 \}
+8              \{
+9     \hyperlink{a00017_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"VitalityX started\(\backslash\)n"});
+10     \hyperlink{a00044_a51f6a37816540dea572d38f2713e9f5a_a51f6a37816540dea572d38f2713e9f5a}{setup\_page}(); \textcolor{comment}{// enable paging}
+11     \hyperlink{a00080_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"VitalityX"});
+12     \hyperlink{a00038_a9817da253735954f4767c5ba6155aa0d_a9817da253735954f4767c5ba6155aa0d}{idt\_install}();
+13     \textcolor{keywordflow}{for}(;;) \{
+14 
+15     \}
+16     \textcolor{keywordflow}{return} 0;
+17 \}
 \end{DoxyCode}

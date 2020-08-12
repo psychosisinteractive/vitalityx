@@ -7,5 +7,5 @@ digraph "libc/g++" {
   dir_740231a46c27238b7c2b9234f80cf181 [shape=box, label="g++", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_740231a46c27238b7c2b9234f80cf181.html"];
   }
   dir_23423b050fd890776a6e094b978d172e [shape=box label="vitality" URL="dir_23423b050fd890776a6e094b978d172e.html"];
-  dir_740231a46c27238b7c2b9234f80cf181->dir_23423b050fd890776a6e094b978d172e [headlabel="1", labeldistance=1.5 headhref="dir_000003_000004.html"];
+  dir_740231a46c27238b7c2b9234f80cf181->dir_23423b050fd890776a6e094b978d172e [headlabel="1", labeldistance=1.5 headhref="dir_000004_000005.html"];
 }

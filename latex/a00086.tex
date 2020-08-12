@@ -1,24 +1,64 @@
-The libc folder contains generic libraries available for the user or the kernel. These libraries are licensed under the licensing agreement below U\+N\+L\+E\+SS specified in the respective source file.
+\hypertarget{a00086}{}\section{libc/vitality/vep.c File Reference}
+\label{a00086}\index{libc/vitality/vep.\+c@{libc/vitality/vep.\+c}}
+{\ttfamily \#include \char`\"{}vep.\+h\char`\"{}}\newline
+Include dependency graph for vep.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{a00086_ad5530515939c1e3332746affa700c759_ad5530515939c1e3332746affa700c759}{loadvep} (\hyperlink{a00089_a78392c340e1fe1be344df81d1438b74f_a78392c340e1fe1be344df81d1438b74f}{vepheader\+\_\+t} vep, char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Loads a V\+EP with a V\+E\+P\+Header. \end{DoxyCompactList}\item 
+int \hyperlink{a00086_a7d608b906676086d77937044205aad33_a7d608b906676086d77937044205aad33}{loadvepf} (\hyperlink{a00089_af285fc2949acac5b7aa6f065c8811960_af285fc2949acac5b7aa6f065c8811960}{vepfile\+\_\+t} vep)
+\begin{DoxyCompactList}\small\item\em Loads a V\+EP with a V\+E\+P\+File. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{a00086_ad5530515939c1e3332746affa700c759_ad5530515939c1e3332746affa700c759}\label{a00086_ad5530515939c1e3332746affa700c759_ad5530515939c1e3332746affa700c759}} 
+\index{vep.\+c@{vep.\+c}!loadvep@{loadvep}}
+\index{loadvep@{loadvep}!vep.\+c@{vep.\+c}}
+\subsubsection{\texorpdfstring{loadvep()}{loadvep()}}
+{\footnotesize\ttfamily int loadvep (\begin{DoxyParamCaption}\item[{\hyperlink{a00089_a78392c340e1fe1be344df81d1438b74f_a78392c340e1fe1be344df81d1438b74f}{vepheader\+\_\+t}}]{vep,  }\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Loads a V\+EP with a V\+E\+P\+Header. 
+
+
+
+Definition at line 3 of file vep.\+c.
 
 
 \begin{DoxyCode}
-Modified MIT License
-
-Copyright (c) 2020-2021, Psychosis Interactive All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
-       associated documentation files (the "Software"), to deal in the Software without restriction, including without
-       limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
-       Software, and to permit persons to whom the Software is furnished to do so, subject to the following
-       conditions:
-
-The above copyright notice and this permission notice must be included in all copies or substantial
-       portions of the Software unless if said Software is closed source.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-       LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
-       SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-       ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-       OTHER DEALINGS IN THE SOFTWARE.
+3                                           \{
+4     \textcolor{keywordflow}{if}(vep.\hyperlink{a00115_a06d6ef138b4f63ef72ad6aadda58ab47_a06d6ef138b4f63ef72ad6aadda58ab47}{signature} != \textcolor{stringliteral}{"VP"}) \{
+5         \textcolor{keywordflow}{return} 1;
+6     \}
+7     \textcolor{keywordtype}{int} size = vep.\hyperlink{a00115_a6121693fa5ac3673d831b440aea8963e_a6121693fa5ac3673d831b440aea8963e}{vepsize};
+8     \textcolor{keywordtype}{char}* ptr = (\textcolor{keywordtype}{char}*)(vep.\hyperlink{a00115_aa81b6806dd33022ce60c314c908ba028_aa81b6806dd33022ce60c314c908ba028}{origin});
+9     \textcolor{keywordflow}{while}(size != 0) \{
+10         *ptr++ = *data++;
+11         size--;
+12     \}
+13     \textcolor{keywordflow}{return} 0;
+14 \}
 \end{DoxyCode}
- 
+\mbox{\Hypertarget{a00086_a7d608b906676086d77937044205aad33_a7d608b906676086d77937044205aad33}\label{a00086_a7d608b906676086d77937044205aad33_a7d608b906676086d77937044205aad33}} 
+\index{vep.\+c@{vep.\+c}!loadvepf@{loadvepf}}
+\index{loadvepf@{loadvepf}!vep.\+c@{vep.\+c}}
+\subsubsection{\texorpdfstring{loadvepf()}{loadvepf()}}
+{\footnotesize\ttfamily int loadvepf (\begin{DoxyParamCaption}\item[{\hyperlink{a00089_af285fc2949acac5b7aa6f065c8811960_af285fc2949acac5b7aa6f065c8811960}{vepfile\+\_\+t}}]{vep }\end{DoxyParamCaption})}
+
+
+
+Loads a V\+EP with a V\+E\+P\+File. 
+
+
+
+Definition at line 16 of file vep.\+c.
+
+
+\begin{DoxyCode}
+16                             \{
+17     \textcolor{keywordflow}{return} \hyperlink{a00086_ad5530515939c1e3332746affa700c759_ad5530515939c1e3332746affa700c759}{loadvep}(vep.\hyperlink{a00119_a0fa3b39f1e4974d4ed258db1d4b22402_a0fa3b39f1e4974d4ed258db1d4b22402}{vepheader},(\textcolor{keywordtype}{char}*)vep.\hyperlink{a00119_a6a40903035403710bf43295c34e883e7_a6a40903035403710bf43295c34e883e7}{vepdata});
+18 \}
+\end{DoxyCode}

@@ -1,0 +1,135 @@
+\hypertarget{a00065}{}\section{libc/threads.h File Reference}
+\label{a00065}\index{libc/threads.\+h@{libc/threads.\+h}}
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+Include dependency graph for threads.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{a00107}{tdt}
+\begin{DoxyCompactList}\small\item\em Thread Descriptor Table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6}{tps\+\_\+t} \{ \hyperlink{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6a9d68d2bd5bb4b7a813b53a3c6efb26a3}{T\+P\+S\+Low}, 
+\hyperlink{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6ab65c1c2b03accd655caa87db240a87db}{T\+P\+S\+Medium}, 
+\hyperlink{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6a99b1e5d2af2ea961d67a5d0f982fb0c2}{T\+P\+S\+High}, 
+\hyperlink{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6a557f7fd60ef979a8df84e7eea7de9f9b}{T\+P\+S\+System}
+ \}\begin{DoxyCompactList}\small\item\em Thread Priority States. \end{DoxyCompactList}
+\item 
+enum \hyperlink{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9}{tst\+\_\+t} \{ \newline
+\hyperlink{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a4e9798f9291920da4dba13ed8d1bf2b4}{T\+S\+T\+Waiting}, 
+\hyperlink{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9ac0336457632847436b12bd36b2642808}{T\+S\+T\+Running}, 
+\hyperlink{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a29a580a1a7b4350246c83d171567f7fc}{T\+S\+T\+Stopped}, 
+\hyperlink{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a8117b53a7299ca12df9b2a7bd320689f}{T\+S\+T\+Errored}, 
+\newline
+\hyperlink{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a1b2cdb1c39a3cb21ddb3efc42d1cc5b9}{T\+S\+T\+System}
+ \}\begin{DoxyCompactList}\small\item\em Task States. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{a00065_acf8c839d8a7a12772ebd4b8a4c087034_acf8c839d8a7a12772ebd4b8a4c087034}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6}\label{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6}} 
+\index{threads.\+h@{threads.\+h}!tps\+\_\+t@{tps\+\_\+t}}
+\index{tps\+\_\+t@{tps\+\_\+t}!threads.\+h@{threads.\+h}}
+\subsubsection{\texorpdfstring{tps\+\_\+t}{tps\_t}}
+{\footnotesize\ttfamily enum \hyperlink{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6}{tps\+\_\+t}}
+
+
+
+Thread Priority States. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+P\+S\+Low@{T\+P\+S\+Low}!threads.\+h@{threads.\+h}}\index{threads.\+h@{threads.\+h}!T\+P\+S\+Low@{T\+P\+S\+Low}}}\mbox{\Hypertarget{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6a9d68d2bd5bb4b7a813b53a3c6efb26a3}\label{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6a9d68d2bd5bb4b7a813b53a3c6efb26a3}} 
+T\+P\+S\+Low&Lowest state,. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+P\+S\+Medium@{T\+P\+S\+Medium}!threads.\+h@{threads.\+h}}\index{threads.\+h@{threads.\+h}!T\+P\+S\+Medium@{T\+P\+S\+Medium}}}\mbox{\Hypertarget{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6ab65c1c2b03accd655caa87db240a87db}\label{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6ab65c1c2b03accd655caa87db240a87db}} 
+T\+P\+S\+Medium&Medium, takes prioity over below tasks. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+P\+S\+High@{T\+P\+S\+High}!threads.\+h@{threads.\+h}}\index{threads.\+h@{threads.\+h}!T\+P\+S\+High@{T\+P\+S\+High}}}\mbox{\Hypertarget{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6a99b1e5d2af2ea961d67a5d0f982fb0c2}\label{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6a99b1e5d2af2ea961d67a5d0f982fb0c2}} 
+T\+P\+S\+High&High, takes priority over below tasks. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+P\+S\+System@{T\+P\+S\+System}!threads.\+h@{threads.\+h}}\index{threads.\+h@{threads.\+h}!T\+P\+S\+System@{T\+P\+S\+System}}}\mbox{\Hypertarget{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6a557f7fd60ef979a8df84e7eea7de9f9b}\label{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6a557f7fd60ef979a8df84e7eea7de9f9b}} 
+T\+P\+S\+System&System level, takes priority over A\+LL tasks. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 9 of file threads.\+h.
+
+
+\begin{DoxyCode}
+10  \{
+14     \hyperlink{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6a9d68d2bd5bb4b7a813b53a3c6efb26a3}{TPSLow},
+18     \hyperlink{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6ab65c1c2b03accd655caa87db240a87db}{TPSMedium},
+22     \hyperlink{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6a99b1e5d2af2ea961d67a5d0f982fb0c2}{TPSHigh},
+26     \hyperlink{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6a557f7fd60ef979a8df84e7eea7de9f9b}{TPSSystem},
+27 \} \textcolor{keyword}{typedef} \hyperlink{a00065_a5ee504524d7b79ed81a1ed7b325dc9c6_a5ee504524d7b79ed81a1ed7b325dc9c6}{tps\_t};
+\end{DoxyCode}
+\mbox{\Hypertarget{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9}\label{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9}} 
+\index{threads.\+h@{threads.\+h}!tst\+\_\+t@{tst\+\_\+t}}
+\index{tst\+\_\+t@{tst\+\_\+t}!threads.\+h@{threads.\+h}}
+\subsubsection{\texorpdfstring{tst\+\_\+t}{tst\_t}}
+{\footnotesize\ttfamily enum \hyperlink{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9}{tst\+\_\+t}}
+
+
+
+Task States. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+T\+Waiting@{T\+S\+T\+Waiting}!threads.\+h@{threads.\+h}}\index{threads.\+h@{threads.\+h}!T\+S\+T\+Waiting@{T\+S\+T\+Waiting}}}\mbox{\Hypertarget{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a4e9798f9291920da4dba13ed8d1bf2b4}\label{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a4e9798f9291920da4dba13ed8d1bf2b4}} 
+T\+S\+T\+Waiting&Waiting for the task to start. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+T\+Running@{T\+S\+T\+Running}!threads.\+h@{threads.\+h}}\index{threads.\+h@{threads.\+h}!T\+S\+T\+Running@{T\+S\+T\+Running}}}\mbox{\Hypertarget{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9ac0336457632847436b12bd36b2642808}\label{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9ac0336457632847436b12bd36b2642808}} 
+T\+S\+T\+Running&Task is running. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+T\+Stopped@{T\+S\+T\+Stopped}!threads.\+h@{threads.\+h}}\index{threads.\+h@{threads.\+h}!T\+S\+T\+Stopped@{T\+S\+T\+Stopped}}}\mbox{\Hypertarget{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a29a580a1a7b4350246c83d171567f7fc}\label{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a29a580a1a7b4350246c83d171567f7fc}} 
+T\+S\+T\+Stopped&Task has finished and has gracefully exited. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+T\+Errored@{T\+S\+T\+Errored}!threads.\+h@{threads.\+h}}\index{threads.\+h@{threads.\+h}!T\+S\+T\+Errored@{T\+S\+T\+Errored}}}\mbox{\Hypertarget{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a8117b53a7299ca12df9b2a7bd320689f}\label{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a8117b53a7299ca12df9b2a7bd320689f}} 
+T\+S\+T\+Errored&The Task has encountered an fatal error and stopped. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+S\+T\+System@{T\+S\+T\+System}!threads.\+h@{threads.\+h}}\index{threads.\+h@{threads.\+h}!T\+S\+T\+System@{T\+S\+T\+System}}}\mbox{\Hypertarget{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a1b2cdb1c39a3cb21ddb3efc42d1cc5b9}\label{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a1b2cdb1c39a3cb21ddb3efc42d1cc5b9}} 
+T\+S\+T\+System&System task, shouldnt be run in userspace. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 32 of file threads.\+h.
+
+
+\begin{DoxyCode}
+33 \{
+37     \hyperlink{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a4e9798f9291920da4dba13ed8d1bf2b4}{TSTWaiting},
+41     \hyperlink{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9ac0336457632847436b12bd36b2642808}{TSTRunning},
+45     \hyperlink{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a29a580a1a7b4350246c83d171567f7fc}{TSTStopped},
+49     \hyperlink{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a8117b53a7299ca12df9b2a7bd320689f}{TSTErrored},
+53     \hyperlink{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9a1b2cdb1c39a3cb21ddb3efc42d1cc5b9}{TSTSystem},
+54 \} \textcolor{keyword}{typedef} \hyperlink{a00065_a3895f03bb811310833570ff0b8a403d9_a3895f03bb811310833570ff0b8a403d9}{tst\_t};
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{a00065_acf8c839d8a7a12772ebd4b8a4c087034_acf8c839d8a7a12772ebd4b8a4c087034}\label{a00065_acf8c839d8a7a12772ebd4b8a4c087034_acf8c839d8a7a12772ebd4b8a4c087034}} 
+\index{threads.\+h@{threads.\+h}!\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}!threads.\+h@{threads.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+attribute\+\_\+\+\_\+}{\_\_attribute\_\_}}
+{\footnotesize\ttfamily struct \hyperlink{a00103}{idt\+\_\+ptr} \+\_\+\+\_\+attribute\+\_\+\+\_\+}
+

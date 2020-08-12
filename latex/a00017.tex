@@ -1,86 +1,37 @@
-\hypertarget{a00017}{}\section{libc/g++/cpp\+\_\+classdef.cpp File Reference}
-\label{a00017}\index{libc/g++/cpp\+\_\+classdef.\+cpp@{libc/g++/cpp\+\_\+classdef.\+cpp}}
-{\ttfamily \#include \char`\"{}../vitality/tty.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}cpp\+\_\+classdef.\+h\char`\"{}}\newline
-Include dependency graph for cpp\+\_\+classdef.\+cpp\+:
+\hypertarget{a00017}{}\section{libc/ext/debug.c File Reference}
+\label{a00017}\index{libc/ext/debug.\+c@{libc/ext/debug.\+c}}
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
+Include dependency graph for debug.\+c\+:
 % FIG 0
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{a00017_abbdfa8f54b7fc7761d12ecc473f87bc4_abbdfa8f54b7fc7761d12ecc473f87bc4}{C\+PP}
-\begin{DoxyCompactList}\small\item\em This flag means the source file is being compiled under C++ mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00017_a6be7d9ce80c86f5178635fa86c2dd5e7_a6be7d9ce80c86f5178635fa86c2dd5e7}{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual} ()
-\begin{DoxyCompactList}\small\item\em C++ Pure Virtual Function, called when a virtual function is required Y\+ET there is nothing to handle its call. \end{DoxyCompactList}\item 
-char $\ast$ \hyperlink{a00017_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}{c\+\_\+stc} (const char string\mbox{[}$\,$\mbox{]})
-\begin{DoxyCompactList}\small\item\em Converts a const char array into a char$\ast$. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{a00017_abbdfa8f54b7fc7761d12ecc473f87bc4_abbdfa8f54b7fc7761d12ecc473f87bc4}\label{a00017_abbdfa8f54b7fc7761d12ecc473f87bc4_abbdfa8f54b7fc7761d12ecc473f87bc4}} 
-\index{cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}!C\+PP@{C\+PP}}
-\index{C\+PP@{C\+PP}!cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}}
-\subsubsection{\texorpdfstring{C\+PP}{CPP}}
-{\footnotesize\ttfamily \#define C\+PP}
-
-
-
-This flag means the source file is being compiled under C++ mode. 
-
-
-
-Definition at line 4 of file cpp\+\_\+classdef.\+cpp.
-
+void \hyperlink{a00017_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{Bochs\+Console\+Print\+String} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Outputs a string to the Bochs console. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00017_a6be7d9ce80c86f5178635fa86c2dd5e7_a6be7d9ce80c86f5178635fa86c2dd5e7}\label{a00017_a6be7d9ce80c86f5178635fa86c2dd5e7_a6be7d9ce80c86f5178635fa86c2dd5e7}} 
-\index{cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}!\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual@{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual}}
-\index{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual@{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual}!cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}}
-\subsubsection{\texorpdfstring{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual()}{\_\_cxa\_pure\_virtual()}}
-{\footnotesize\ttfamily void \+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00017_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}\label{a00017_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}} 
+\index{debug.\+c@{debug.\+c}!Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}}
+\index{Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}!debug.\+c@{debug.\+c}}
+\subsubsection{\texorpdfstring{Bochs\+Console\+Print\+String()}{BochsConsolePrintString()}}
+{\footnotesize\ttfamily void Bochs\+Console\+Print\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
 
 
 
-C++ Pure Virtual Function, called when a virtual function is required Y\+ET there is nothing to handle its call. 
+Outputs a string to the Bochs console. 
 
 
 
-Definition at line 13 of file cpp\+\_\+classdef.\+cpp.
-
-
-\begin{DoxyCode}
-14 \{
-15     \hyperlink{a00053_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\hyperlink{a00017_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}{c\_stc}(\textcolor{stringliteral}{"[KERNEL ERROR]\_\_cxa\_pure\_virtual called, No class spec,
-       halting"}));
-16     
-17 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00017_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}\label{a00017_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}} 
-\index{cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}!c\+\_\+stc@{c\+\_\+stc}}
-\index{c\+\_\+stc@{c\+\_\+stc}!cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}}
-\subsubsection{\texorpdfstring{c\+\_\+stc()}{c\_stc()}}
-{\footnotesize\ttfamily char$\ast$ c\+\_\+stc (\begin{DoxyParamCaption}\item[{const char}]{string\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
-
-
-
-Converts a const char array into a char$\ast$. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The array \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 23 of file cpp\+\_\+classdef.\+cpp.
+Definition at line 3 of file debug.\+c.
 
 
 \begin{DoxyCode}
-23                                  \{
-24     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)&\textcolor{keywordtype}{string}[0];
-25 \}
+4 \{
+5     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
+6     \textcolor{keywordflow}{while}(chara != 0x0) \{
+7         \hyperlink{a00020_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}{BochsConsolePrintChar}(chara);
+8         chara = *\textcolor{keywordtype}{string}++;
+9     \}
+10 \}
 \end{DoxyCode}

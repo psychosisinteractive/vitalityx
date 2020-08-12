@@ -1,156 +1,44 @@
-\hypertarget{a00053}{}\section{libc/vitality/tty.c File Reference}
-\label{a00053}\index{libc/vitality/tty.\+c@{libc/vitality/tty.\+c}}
-{\ttfamily \#include \char`\"{}tty.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../../drivers/vga.\+h\char`\"{}}\newline
-Include dependency graph for tty.\+c\+:
+\hypertarget{a00053}{}\section{libc/string.h File Reference}
+\label{a00053}\index{libc/string.\+h@{libc/string.\+h}}
+This graph shows which files directly or indirectly include this file\+:
 % FIG 0
-\subsection*{Functions}
+\subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00053_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}{tty\+\_\+putstring} (char $\ast$string)
-\begin{DoxyCompactList}\small\item\em Puts a string in V\+R\+AM, Text mode only. \end{DoxyCompactList}\item 
-void \hyperlink{a00053_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}{tty\+\_\+vgaputstring} (char $\ast$string)
-\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, Mode 13 only. \end{DoxyCompactList}\item 
-void \hyperlink{a00053_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\+\_\+pputstring} (char $\ast$string)
-\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, detects preferred mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-int $\ast$ \hyperlink{a00053_a3f896e9c00b9302e2287aad054199134_a3f896e9c00b9302e2287aad054199134}{video\+Memory\+Ptr} = (int$\ast$)0xa000
-\item 
-\hyperlink{a00047_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00053_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff} = 0
-\item 
-\hyperlink{a00047_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00053_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff} = 0
+\#define \hyperlink{a00053_a5338bd16a174527274acc5062483b702_a5338bd16a174527274acc5062483b702}{S\+T\+I\+R\+N\+G\+\_\+H}
 \end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef char $\ast$ \hyperlink{a00053_ab0dcbec9b4b3c60b939b1095f93cb1b9_ab0dcbec9b4b3c60b939b1095f93cb1b9}{string\+\_\+t}
+\begin{DoxyCompactList}\small\item\em String typedef. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Function Documentation}
-\mbox{\Hypertarget{a00053_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}\label{a00053_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}} 
-\index{tty.\+c@{tty.\+c}!tty\+\_\+pputstring@{tty\+\_\+pputstring}}
-\index{tty\+\_\+pputstring@{tty\+\_\+pputstring}!tty.\+c@{tty.\+c}}
-\subsubsection{\texorpdfstring{tty\+\_\+pputstring()}{tty\_pputstring()}}
-{\footnotesize\ttfamily void tty\+\_\+pputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
-
-
-
-Puts a string into V\+R\+AM, detects preferred mode. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 26 of file tty.\+c.
-
-
-\begin{DoxyCode}
-26                                   \{
-27     \textcolor{keywordflow}{switch} (\hyperlink{a00008_af6d170c9401ea8f94d4c5cf09347cca7_af6d170c9401ea8f94d4c5cf09347cca7}{vgamode}())
-28     \{
-29     \textcolor{keywordflow}{case} 0x3:
-30         \hyperlink{a00053_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}{tty\_putstring}(\textcolor{keywordtype}{string});
-31         \textcolor{keywordflow}{break};
-32     \textcolor{keywordflow}{case} 0x13:
-33         \hyperlink{a00053_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}{tty\_vgaputstring}(\textcolor{keywordtype}{string});
-34         \textcolor{keywordflow}{break};
-35     \textcolor{keywordflow}{default}:
-36         \hyperlink{a00053_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}{tty\_vgaputstring}(\textcolor{keywordtype}{string});
-37         \textcolor{keywordflow}{break};
-38     \}
-39 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00053_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}\label{a00053_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}} 
-\index{tty.\+c@{tty.\+c}!tty\+\_\+putstring@{tty\+\_\+putstring}}
-\index{tty\+\_\+putstring@{tty\+\_\+putstring}!tty.\+c@{tty.\+c}}
-\subsubsection{\texorpdfstring{tty\+\_\+putstring()}{tty\_putstring()}}
-{\footnotesize\ttfamily void tty\+\_\+putstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{a00053_a5338bd16a174527274acc5062483b702_a5338bd16a174527274acc5062483b702}\label{a00053_a5338bd16a174527274acc5062483b702_a5338bd16a174527274acc5062483b702}} 
+\index{string.\+h@{string.\+h}!S\+T\+I\+R\+N\+G\+\_\+H@{S\+T\+I\+R\+N\+G\+\_\+H}}
+\index{S\+T\+I\+R\+N\+G\+\_\+H@{S\+T\+I\+R\+N\+G\+\_\+H}!string.\+h@{string.\+h}}
+\subsubsection{\texorpdfstring{S\+T\+I\+R\+N\+G\+\_\+H}{STIRNG\_H}}
+{\footnotesize\ttfamily \#define S\+T\+I\+R\+N\+G\+\_\+H}
 
 
 
-Puts a string in V\+R\+AM, Text mode only. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 6 of file tty.\+c.
-
-
-\begin{DoxyCode}
-6                                  \{
-7     \hyperlink{a00047_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} attrib = (0x0 << 4) | (0xf & 0x0F);
-8     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
-9     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'}) \{
-10         *\hyperlink{a00053_a3f896e9c00b9302e2287aad054199134_a3f896e9c00b9302e2287aad054199134}{videoMemoryPtr}++ = chara;
-11         chara = *\textcolor{keywordtype}{string}++;
-12     \}
-13 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00053_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}\label{a00053_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}} 
-\index{tty.\+c@{tty.\+c}!tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}}
-\index{tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}!tty.\+c@{tty.\+c}}
-\subsubsection{\texorpdfstring{tty\+\_\+vgaputstring()}{tty\_vgaputstring()}}
-{\footnotesize\ttfamily void tty\+\_\+vgaputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+Definition at line 2 of file string.\+h.
 
 
 
-Puts a string into V\+R\+AM, Mode 13 only. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 18 of file tty.\+c.
-
-
-\begin{DoxyCode}
-18                                     \{
-19     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
-20     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'}) \{
-21         \hyperlink{a00008_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}{drawchar}(chara,\hyperlink{a00053_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff},\hyperlink{a00053_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff}+1,0xf,0x0);
-22         chara = *\textcolor{keywordtype}{string}++;
-23     \}
-24 \}
-\end{DoxyCode}
-
-
-\subsection{Variable Documentation}
-\mbox{\Hypertarget{a00053_a3f896e9c00b9302e2287aad054199134_a3f896e9c00b9302e2287aad054199134}\label{a00053_a3f896e9c00b9302e2287aad054199134_a3f896e9c00b9302e2287aad054199134}} 
-\index{tty.\+c@{tty.\+c}!video\+Memory\+Ptr@{video\+Memory\+Ptr}}
-\index{video\+Memory\+Ptr@{video\+Memory\+Ptr}!tty.\+c@{tty.\+c}}
-\subsubsection{\texorpdfstring{video\+Memory\+Ptr}{videoMemoryPtr}}
-{\footnotesize\ttfamily int$\ast$ video\+Memory\+Ptr = (int$\ast$)0xa000}
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{a00053_ab0dcbec9b4b3c60b939b1095f93cb1b9_ab0dcbec9b4b3c60b939b1095f93cb1b9}\label{a00053_ab0dcbec9b4b3c60b939b1095f93cb1b9_ab0dcbec9b4b3c60b939b1095f93cb1b9}} 
+\index{string.\+h@{string.\+h}!string\+\_\+t@{string\+\_\+t}}
+\index{string\+\_\+t@{string\+\_\+t}!string.\+h@{string.\+h}}
+\subsubsection{\texorpdfstring{string\+\_\+t}{string\_t}}
+{\footnotesize\ttfamily typedef char$\ast$ \hyperlink{a00053_ab0dcbec9b4b3c60b939b1095f93cb1b9_ab0dcbec9b4b3c60b939b1095f93cb1b9}{string\+\_\+t}}
 
 
 
-Definition at line 5 of file tty.\+c.
-
-\mbox{\Hypertarget{a00053_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}\label{a00053_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}} 
-\index{tty.\+c@{tty.\+c}!xoff@{xoff}}
-\index{xoff@{xoff}!tty.\+c@{tty.\+c}}
-\subsubsection{\texorpdfstring{xoff}{xoff}}
-{\footnotesize\ttfamily \hyperlink{a00047_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} xoff = 0}
+String typedef. 
 
 
 
-Definition at line 15 of file tty.\+c.
-
-\mbox{\Hypertarget{a00053_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}\label{a00053_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}} 
-\index{tty.\+c@{tty.\+c}!yoff@{yoff}}
-\index{yoff@{yoff}!tty.\+c@{tty.\+c}}
-\subsubsection{\texorpdfstring{yoff}{yoff}}
-{\footnotesize\ttfamily \hyperlink{a00047_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} yoff = 0}
-
-
-
-Definition at line 16 of file tty.\+c.
+Definition at line 7 of file string.\+h.
 

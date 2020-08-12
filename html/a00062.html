@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/vep.h File Reference</title>
+<title>VitalityX: libc/threads.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,66 +39,23 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">vep.h File Reference</div>  </div>
+<div class="title">threads.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00047_source.html">../types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00032_source.html">../string.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00065_source.html">threads.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for vep.h:</div>
+Include dependency graph for threads.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00063.png" border="0" usemap="#libc_2vitality_2vep_8h" alt=""/></div>
+<div class="center"><img src="a00063.png" border="0" usemap="#libc_2threads_8c" alt=""/></div>
 <!-- MAP 0 -->
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00064.png" border="0" usemap="#libc_2vitality_2vep_8hdep" alt=""/></div>
-<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00062_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080.html">vepheader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header for a VEP file VEP stands for Vitality Executable Program.  <a href="a00080.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a07092a70a7d784c7a3c3d605cea807af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00062_a07092a70a7d784c7a3c3d605cea807af.html#a07092a70a7d784c7a3c3d605cea807af">VEP_MAKESGDT</a>&#160;&#160;&#160;0b00000001</td></tr>
-<tr class="memdesc:a07092a70a7d784c7a3c3d605cea807af"><td class="mdescLeft">&#160;</td><td class="mdescRight">This VEP will define a GDT.  <a href="a00062_a07092a70a7d784c7a3c3d605cea807af.html#a07092a70a7d784c7a3c3d605cea807af">More...</a><br /></td></tr>
-<tr class="separator:a07092a70a7d784c7a3c3d605cea807af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9167064be23f5789ed435d3a9edbb475"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00062_a9167064be23f5789ed435d3a9edbb475.html#a9167064be23f5789ed435d3a9edbb475">VEP_MAKESIDT</a>&#160;&#160;&#160;0b00000010</td></tr>
-<tr class="memdesc:a9167064be23f5789ed435d3a9edbb475"><td class="mdescLeft">&#160;</td><td class="mdescRight">This VEP will define an IDT.  <a href="a00062_a9167064be23f5789ed435d3a9edbb475.html#a9167064be23f5789ed435d3a9edbb475">More...</a><br /></td></tr>
-<tr class="separator:a9167064be23f5789ed435d3a9edbb475"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a269ec657dd35349b74056083e6ba09c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00062_a269ec657dd35349b74056083e6ba09c0.html#a269ec657dd35349b74056083e6ba09c0">VEP_LIBRARYV</a>&#160;&#160;&#160;0b00000100</td></tr>
-<tr class="memdesc:a269ec657dd35349b74056083e6ba09c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This VEP will be a libraryVEP.  <a href="a00062_a269ec657dd35349b74056083e6ba09c0.html#a269ec657dd35349b74056083e6ba09c0">More...</a><br /></td></tr>
-<tr class="separator:a269ec657dd35349b74056083e6ba09c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a78392c340e1fe1be344df81d1438b74f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00080.html">vepheader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00062_a78392c340e1fe1be344df81d1438b74f.html#a78392c340e1fe1be344df81d1438b74f">vepheader_t</a></td></tr>
-<tr class="memdesc:a78392c340e1fe1be344df81d1438b74f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header for a VEP file VEP stands for Vitality Executable Program.  <a href="a00062_a78392c340e1fe1be344df81d1438b74f.html#a78392c340e1fe1be344df81d1438b74f">More...</a><br /></td></tr>
-<tr class="separator:a78392c340e1fe1be344df81d1438b74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:ad5530515939c1e3332746affa700c759"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00062_ad5530515939c1e3332746affa700c759.html#ad5530515939c1e3332746affa700c759">loadvep</a> (<a class="el" href="a00062_a78392c340e1fe1be344df81d1438b74f.html#a78392c340e1fe1be344df81d1438b74f">vepheader_t</a> vep, char *data)</td></tr>
-<tr class="memdesc:ad5530515939c1e3332746affa700c759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a VEP with a VEPHeader.  <a href="a00062_ad5530515939c1e3332746affa700c759.html#ad5530515939c1e3332746affa700c759">More...</a><br /></td></tr>
-<tr class="separator:ad5530515939c1e3332746affa700c759"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
