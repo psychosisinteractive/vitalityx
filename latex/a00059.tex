@@ -1,24 +1,38 @@
-The libc folder contains generic libraries available for the user or the kernel. These libraries are licensed under the licensing agreement below U\+N\+L\+E\+SS specified in the respective source file.
+\hypertarget{a00059}{}\section{libc/vitality/vep.c File Reference}
+\label{a00059}\index{libc/vitality/vep.\+c@{libc/vitality/vep.\+c}}
+{\ttfamily \#include \char`\"{}vep.\+h\char`\"{}}\newline
+Include dependency graph for vep.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{a00059_afa2deaad59ce4809eed53e7aeb3ac31b_afa2deaad59ce4809eed53e7aeb3ac31b}{loadvep} (\hyperlink{a00062_a78392c340e1fe1be344df81d1438b74f_a78392c340e1fe1be344df81d1438b74f}{vepheader\+\_\+t} vep, char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Loads a V\+EP with a V\+E\+P\+Header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{a00059_afa2deaad59ce4809eed53e7aeb3ac31b_afa2deaad59ce4809eed53e7aeb3ac31b}\label{a00059_afa2deaad59ce4809eed53e7aeb3ac31b_afa2deaad59ce4809eed53e7aeb3ac31b}} 
+\index{vep.\+c@{vep.\+c}!loadvep@{loadvep}}
+\index{loadvep@{loadvep}!vep.\+c@{vep.\+c}}
+\subsubsection{\texorpdfstring{loadvep()}{loadvep()}}
+{\footnotesize\ttfamily void loadvep (\begin{DoxyParamCaption}\item[{\hyperlink{a00062_a78392c340e1fe1be344df81d1438b74f_a78392c340e1fe1be344df81d1438b74f}{vepheader\+\_\+t}}]{vep,  }\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
+
+
+
+Loads a V\+EP with a V\+E\+P\+Header. 
+
+
+
+Definition at line 3 of file vep.\+c.
 
 
 \begin{DoxyCode}
-Modified MIT License
-
-Copyright (c) 2020-2021, Psychosis Interactive All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
-       associated documentation files (the "Software"), to deal in the Software without restriction, including without
-       limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
-       Software, and to permit persons to whom the Software is furnished to do so, subject to the following
-       conditions:
-
-The above copyright notice and this permission notice must be included in all copies or substantial
-       portions of the Software unless if said Software is closed source.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-       LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
-       SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-       ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-       OTHER DEALINGS IN THE SOFTWARE.
+3                                            \{
+4     \textcolor{keywordtype}{int} size = vep.\hyperlink{a00080_a6121693fa5ac3673d831b440aea8963e_a6121693fa5ac3673d831b440aea8963e}{vepsize};
+5     \textcolor{keywordtype}{char}* ptr = (\textcolor{keywordtype}{char}*)(vep.\hyperlink{a00080_aa81b6806dd33022ce60c314c908ba028_aa81b6806dd33022ce60c314c908ba028}{origin});
+6     \textcolor{keywordflow}{while}(size != 0) \{
+7         *ptr++ = *data++;
+8         size--;
+9     \}
+10 \}
 \end{DoxyCode}
- 

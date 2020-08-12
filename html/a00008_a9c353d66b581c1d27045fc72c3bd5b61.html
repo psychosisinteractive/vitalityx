@@ -52,6 +52,7 @@ $(function() {
           <tr><td class="navtab"><a class="qindex" href="a00008_a0dfbd31619ee5482193d3f5280cc802f.html#a0dfbd31619ee5482193d3f5280cc802f">font</a></td></tr>
           <tr><td class="navtab"><a class="qindexHL" href="a00008_a9c353d66b581c1d27045fc72c3bd5b61.html#a9c353d66b581c1d27045fc72c3bd5b61">getpixel</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="a00008_ab17a69b465efb1ebe54a6a2e5d7b7ce8.html#ab17a69b465efb1ebe54a6a2e5d7b7ce8">putpixel</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="a00008_af6d170c9401ea8f94d4c5cf09347cca7.html#af6d170c9401ea8f94d4c5cf09347cca7">vgamode</a></td></tr>
         </table>
       </div>
    </td>
@@ -68,13 +69,13 @@ $(function() {
         <tr>
           <td class="memname">void getpixel </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00035_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="a00047_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td>
           <td class="paramname"><em>x</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00035_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="a00047_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td>
           <td class="paramname"><em>y</em>&#160;</td>
         </tr>
         <tr>
@@ -91,10 +92,10 @@ $(function() {
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="a00008_source.html#l00010">10</a> of file <a class="el" href="a00008_source.html">vga.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                             {</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="a00035_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> offset = (y * <a class="code" href="a00011_a2cd109632a6dcccaa80b43561b1ab700.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a>) + x;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="a00029_a353956c1fd65c7ed787836534fc9354e.html#a353956c1fd65c7ed787836534fc9354e">peekb</a>(<a class="code" href="a00011_a818608c80027ef8ff56d31ebaedf58f3.html#a818608c80027ef8ff56d31ebaedf58f3">VIDEO_SEGMENT</a>,offset);</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div><div class="ttc" id="a00035_a273cf69d639a59973b6019625df33e30_html_a273cf69d639a59973b6019625df33e30"><div class="ttname"><a href="a00035_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a></div><div class="ttdeci">unsigned short uint16_t</div><div class="ttdoc">Unsigned 32-bit Integer. </div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00015">types.h:15</a></div></div>
+<div class="fragment"><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;                                             {</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;    <a class="code" href="a00047_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> offset = (y * <a class="code" href="a00011_a2cd109632a6dcccaa80b43561b1ab700.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a>) + x;</div><div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;    <a class="code" href="a00035_a353956c1fd65c7ed787836534fc9354e.html#a353956c1fd65c7ed787836534fc9354e">peekb</a>(<a class="code" href="a00011_a818608c80027ef8ff56d31ebaedf58f3.html#a818608c80027ef8ff56d31ebaedf58f3">VIDEO_SEGMENT</a>,offset);</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;}</div><div class="ttc" id="a00047_a273cf69d639a59973b6019625df33e30_html_a273cf69d639a59973b6019625df33e30"><div class="ttname"><a href="a00047_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a></div><div class="ttdeci">unsigned short uint16_t</div><div class="ttdoc">Unsigned 32-bit Integer. </div><div class="ttdef"><b>Definition:</b> <a href="a00047_source.html#l00015">types.h:15</a></div></div>
 <div class="ttc" id="a00011_a818608c80027ef8ff56d31ebaedf58f3_html_a818608c80027ef8ff56d31ebaedf58f3"><div class="ttname"><a href="a00011_a818608c80027ef8ff56d31ebaedf58f3.html#a818608c80027ef8ff56d31ebaedf58f3">VIDEO_SEGMENT</a></div><div class="ttdeci">#define VIDEO_SEGMENT</div><div class="ttdef"><b>Definition:</b> <a href="a00011_source.html#l00004">vga.h:4</a></div></div>
+<div class="ttc" id="a00035_a353956c1fd65c7ed787836534fc9354e_html_a353956c1fd65c7ed787836534fc9354e"><div class="ttname"><a href="a00035_a353956c1fd65c7ed787836534fc9354e.html#a353956c1fd65c7ed787836534fc9354e">peekb</a></div><div class="ttdeci">uint8_t peekb(uint8_t *addr, uint32_t offset)</div><div class="ttdoc">Peek Byte. </div><div class="ttdef"><b>Definition:</b> <a href="a00035_source.html#l00008">system.c:8</a></div></div>
 <div class="ttc" id="a00011_a2cd109632a6dcccaa80b43561b1ab700_html_a2cd109632a6dcccaa80b43561b1ab700"><div class="ttname"><a href="a00011_a2cd109632a6dcccaa80b43561b1ab700.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a></div><div class="ttdeci">#define SCREEN_WIDTH</div><div class="ttdef"><b>Definition:</b> <a href="a00011_source.html#l00005">vga.h:5</a></div></div>
-<div class="ttc" id="a00029_a353956c1fd65c7ed787836534fc9354e_html_a353956c1fd65c7ed787836534fc9354e"><div class="ttname"><a href="a00029_a353956c1fd65c7ed787836534fc9354e.html#a353956c1fd65c7ed787836534fc9354e">peekb</a></div><div class="ttdeci">uint8_t peekb(uint8_t *addr, uint32_t offset)</div><div class="ttdoc">Peek Byte. </div><div class="ttdef"><b>Definition:</b> <a href="a00029_source.html#l00008">system.c:8</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

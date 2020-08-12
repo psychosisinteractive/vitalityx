@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/tty.h File Reference</title>
+<title>VitalityX: libc/threads.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,33 +39,66 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">tty.h File Reference</div>  </div>
+<div class="title">threads.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &quot;<a class="el" href="a00047_source.html">types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00032_source.html">string.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for threads.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00045.png" border="0" usemap="#libc_2threads_8h" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00046.png" border="0" usemap="#libc_2vitality_2tty_8hdep" alt=""/></div>
-<!-- MAP 0 -->
+<div class="center"><img src="a00046.png" border="0" usemap="#libc_2threads_8hdep" alt=""/></div>
+<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00044_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a2ebb962f457a2677d70285d1c0f9be12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a2ebb962f457a2677d70285d1c0f9be12.html#a2ebb962f457a2677d70285d1c0f9be12">tty_putstring</a> (char *string)</td></tr>
-<tr class="memdesc:a2ebb962f457a2677d70285d1c0f9be12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string in VRAM, Text mode only.  <a href="a00044_a2ebb962f457a2677d70285d1c0f9be12.html#a2ebb962f457a2677d70285d1c0f9be12">More...</a><br /></td></tr>
-<tr class="separator:a2ebb962f457a2677d70285d1c0f9be12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13ff2c06d56753c5666ca56cb2d81100"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a13ff2c06d56753c5666ca56cb2d81100.html#a13ff2c06d56753c5666ca56cb2d81100">tty_vgaputstring</a> (char *string)</td></tr>
-<tr class="memdesc:a13ff2c06d56753c5666ca56cb2d81100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string into VRAM, Mode 13 only.  <a href="a00044_a13ff2c06d56753c5666ca56cb2d81100.html#a13ff2c06d56753c5666ca56cb2d81100">More...</a><br /></td></tr>
-<tr class="separator:a13ff2c06d56753c5666ca56cb2d81100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00076.html">tdt</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread Descriptor Table.  <a href="a00076.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a5ee504524d7b79ed81a1ed7b325dc9c6"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a5ee504524d7b79ed81a1ed7b325dc9c6.html#a5ee504524d7b79ed81a1ed7b325dc9c6">tps_t</a> { <a class="el" href="a00044_a5ee504524d7b79ed81a1ed7b325dc9c6.html#a5ee504524d7b79ed81a1ed7b325dc9c6a9d68d2bd5bb4b7a813b53a3c6efb26a3">TPSLow</a>, 
+<a class="el" href="a00044_a5ee504524d7b79ed81a1ed7b325dc9c6.html#a5ee504524d7b79ed81a1ed7b325dc9c6ab65c1c2b03accd655caa87db240a87db">TPSMedium</a>, 
+<a class="el" href="a00044_a5ee504524d7b79ed81a1ed7b325dc9c6.html#a5ee504524d7b79ed81a1ed7b325dc9c6a99b1e5d2af2ea961d67a5d0f982fb0c2">TPSHigh</a>, 
+<a class="el" href="a00044_a5ee504524d7b79ed81a1ed7b325dc9c6.html#a5ee504524d7b79ed81a1ed7b325dc9c6a557f7fd60ef979a8df84e7eea7de9f9b">TPSSystem</a>
+ }<tr class="memdesc:a5ee504524d7b79ed81a1ed7b325dc9c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Thread Priority States.  <a href="a00044_a5ee504524d7b79ed81a1ed7b325dc9c6.html#a5ee504524d7b79ed81a1ed7b325dc9c6">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:a5ee504524d7b79ed81a1ed7b325dc9c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3895f03bb811310833570ff0b8a403d9"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a3895f03bb811310833570ff0b8a403d9.html#a3895f03bb811310833570ff0b8a403d9">tst_t</a> { <br />
+&#160;&#160;<a class="el" href="a00044_a3895f03bb811310833570ff0b8a403d9.html#a3895f03bb811310833570ff0b8a403d9a4e9798f9291920da4dba13ed8d1bf2b4">TSTWaiting</a>, 
+<a class="el" href="a00044_a3895f03bb811310833570ff0b8a403d9.html#a3895f03bb811310833570ff0b8a403d9ac0336457632847436b12bd36b2642808">TSTRunning</a>, 
+<a class="el" href="a00044_a3895f03bb811310833570ff0b8a403d9.html#a3895f03bb811310833570ff0b8a403d9a29a580a1a7b4350246c83d171567f7fc">TSTStopped</a>, 
+<a class="el" href="a00044_a3895f03bb811310833570ff0b8a403d9.html#a3895f03bb811310833570ff0b8a403d9a8117b53a7299ca12df9b2a7bd320689f">TSTErrored</a>, 
+<br />
+&#160;&#160;<a class="el" href="a00044_a3895f03bb811310833570ff0b8a403d9.html#a3895f03bb811310833570ff0b8a403d9a1b2cdb1c39a3cb21ddb3efc42d1cc5b9">TSTSystem</a>
+<br />
+ }<tr class="memdesc:a3895f03bb811310833570ff0b8a403d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task States.  <a href="a00044_a3895f03bb811310833570ff0b8a403d9.html#a3895f03bb811310833570ff0b8a403d9">More...</a><br /></td></tr>
+</td></tr>
+<tr class="separator:a3895f03bb811310833570ff0b8a403d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:acf8c839d8a7a12772ebd4b8a4c087034"><td class="memItemLeft" align="right" valign="top">typedef&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_acf8c839d8a7a12772ebd4b8a4c087034.html#acf8c839d8a7a12772ebd4b8a4c087034">__attribute__</a></td></tr>
+<tr class="separator:acf8c839d8a7a12772ebd4b8a4c087034"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

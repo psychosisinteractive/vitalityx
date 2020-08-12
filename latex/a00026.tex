@@ -1,44 +1,204 @@
-\hypertarget{a00026}{}\section{libc/string.h File Reference}
-\label{a00026}\index{libc/string.\+h@{libc/string.\+h}}
-This graph shows which files directly or indirectly include this file\+:
+\hypertarget{a00026}{}\section{libc/interrupt.h File Reference}
+\label{a00026}\index{libc/interrupt.\+h@{libc/interrupt.\+h}}
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+Include dependency graph for interrupt.\+h\+:
 % FIG 0
-\subsection*{Macros}
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{a00026_a5338bd16a174527274acc5062483b702_a5338bd16a174527274acc5062483b702}{S\+T\+I\+R\+N\+G\+\_\+H}
+struct \hyperlink{a00068}{idt\+\_\+entry}
+\item 
+struct \hyperlink{a00072}{idt\+\_\+ptr}
 \end{DoxyCompactItemize}
-\subsection*{Typedefs}
+\subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-typedef char $\ast$ \hyperlink{a00026_ab0dcbec9b4b3c60b939b1095f93cb1b9_ab0dcbec9b4b3c60b939b1095f93cb1b9}{string\+\_\+t}
-\begin{DoxyCompactList}\small\item\em String typedef. \end{DoxyCompactList}\end{DoxyCompactItemize}
+struct \hyperlink{a00068}{idt\+\_\+entry} \hyperlink{a00026_a68040d6370cccf56445a2b5de1d49425_a68040d6370cccf56445a2b5de1d49425}{\+\_\+\+\_\+attribute\+\_\+\+\_\+} ((packed))
+\item 
+void \hyperlink{a00026_ac32911224d6d0fd8e287f2e021ee3ba4_ac32911224d6d0fd8e287f2e021ee3ba4}{idt\+\_\+load} ()
+\begin{DoxyCompactList}\small\item\em (E\+X\+T\+E\+R\+N\+AL A\+SM F\+U\+N\+C\+T\+I\+ON) Loads the I\+DT \end{DoxyCompactList}\item 
+void \hyperlink{a00026_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\+\_\+set\+\_\+gate} (\hyperlink{a00047_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} num, \hyperlink{a00047_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00026_a2e013c2c6e8010c8116c6f56813df57b_a2e013c2c6e8010c8116c6f56813df57b}{base}, \hyperlink{a00047_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00026_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel}, \hyperlink{a00047_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00026_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags})
+\begin{DoxyCompactList}\small\item\em Sets an I\+DT gate. \end{DoxyCompactList}\item 
+void \hyperlink{a00026_a9817da253735954f4767c5ba6155aa0d_a9817da253735954f4767c5ba6155aa0d}{idt\+\_\+install} ()
+\begin{DoxyCompactList}\small\item\em Installs the I\+DT (Interrupt Descriptor Table) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00047_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00026_a1a4688f97e405d4c0700427f4b74a355_a1a4688f97e405d4c0700427f4b74a355}{base\+\_\+lo}
+\item 
+\hyperlink{a00047_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00026_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel}
+\item 
+\hyperlink{a00047_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00026_a09777e6a5ad91ffd82a9975efe33de2e_a09777e6a5ad91ffd82a9975efe33de2e}{zero}
+\item 
+\hyperlink{a00047_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00026_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags}
+\item 
+\hyperlink{a00047_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00026_af85e6d5e4292b0c25c18f701e61d51fa_af85e6d5e4292b0c25c18f701e61d51fa}{base\+\_\+hi}
+\item 
+unsigned short \hyperlink{a00026_ab50c2dcb9d4a34ea1a5ac52272502379_ab50c2dcb9d4a34ea1a5ac52272502379}{limit}
+\item 
+unsigned int \hyperlink{a00026_a2e013c2c6e8010c8116c6f56813df57b_a2e013c2c6e8010c8116c6f56813df57b}{base}
+\item 
+struct \hyperlink{a00068}{idt\+\_\+entry} \hyperlink{a00026_af69381381a1a2d28954b19bf08ae3b1a_af69381381a1a2d28954b19bf08ae3b1a}{idt} \mbox{[}256\mbox{]}
+\item 
+struct \hyperlink{a00072}{idt\+\_\+ptr} \hyperlink{a00026_a4bd16833092d3d6fb954727f65314ef0_a4bd16833092d3d6fb954727f65314ef0}{idtp}
+\end{DoxyCompactItemize}
 
 
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{a00026_a5338bd16a174527274acc5062483b702_a5338bd16a174527274acc5062483b702}\label{a00026_a5338bd16a174527274acc5062483b702_a5338bd16a174527274acc5062483b702}} 
-\index{string.\+h@{string.\+h}!S\+T\+I\+R\+N\+G\+\_\+H@{S\+T\+I\+R\+N\+G\+\_\+H}}
-\index{S\+T\+I\+R\+N\+G\+\_\+H@{S\+T\+I\+R\+N\+G\+\_\+H}!string.\+h@{string.\+h}}
-\subsubsection{\texorpdfstring{S\+T\+I\+R\+N\+G\+\_\+H}{STIRNG\_H}}
-{\footnotesize\ttfamily \#define S\+T\+I\+R\+N\+G\+\_\+H}
+\subsection{Function Documentation}
+\mbox{\Hypertarget{a00026_a68040d6370cccf56445a2b5de1d49425_a68040d6370cccf56445a2b5de1d49425}\label{a00026_a68040d6370cccf56445a2b5de1d49425_a68040d6370cccf56445a2b5de1d49425}} 
+\index{interrupt.\+h@{interrupt.\+h}!\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}!interrupt.\+h@{interrupt.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+attribute\+\_\+\+\_\+()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily struct \hyperlink{a00068}{idt\+\_\+entry} \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(packed)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00026_a9817da253735954f4767c5ba6155aa0d_a9817da253735954f4767c5ba6155aa0d}\label{a00026_a9817da253735954f4767c5ba6155aa0d_a9817da253735954f4767c5ba6155aa0d}} 
+\index{interrupt.\+h@{interrupt.\+h}!idt\+\_\+install@{idt\+\_\+install}}
+\index{idt\+\_\+install@{idt\+\_\+install}!interrupt.\+h@{interrupt.\+h}}
+\subsubsection{\texorpdfstring{idt\+\_\+install()}{idt\_install()}}
+{\footnotesize\ttfamily void idt\+\_\+install (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 2 of file string.\+h.
+Installs the I\+DT (Interrupt Descriptor Table) 
 
 
 
-\subsection{Typedef Documentation}
-\mbox{\Hypertarget{a00026_ab0dcbec9b4b3c60b939b1095f93cb1b9_ab0dcbec9b4b3c60b939b1095f93cb1b9}\label{a00026_ab0dcbec9b4b3c60b939b1095f93cb1b9_ab0dcbec9b4b3c60b939b1095f93cb1b9}} 
-\index{string.\+h@{string.\+h}!string\+\_\+t@{string\+\_\+t}}
-\index{string\+\_\+t@{string\+\_\+t}!string.\+h@{string.\+h}}
-\subsubsection{\texorpdfstring{string\+\_\+t}{string\_t}}
-{\footnotesize\ttfamily typedef char$\ast$ \hyperlink{a00026_ab0dcbec9b4b3c60b939b1095f93cb1b9_ab0dcbec9b4b3c60b939b1095f93cb1b9}{string\+\_\+t}}
+Definition at line 10 of file interrupt.\+c.
+
+
+\begin{DoxyCode}
+10                    \{
+11     \hyperlink{a00026_a4bd16833092d3d6fb954727f65314ef0_a4bd16833092d3d6fb954727f65314ef0}{idtp}.\hyperlink{a00072_a2e0c6a55cca7c419da170c4142b8dd98_a2e0c6a55cca7c419da170c4142b8dd98}{limit} = (\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct }\hyperlink{a00068}{idt\_entry})*256) - 1;
+12     \hyperlink{a00026_a4bd16833092d3d6fb954727f65314ef0_a4bd16833092d3d6fb954727f65314ef0}{idtp}.\hyperlink{a00072_a685e5838a1a81d9a288d8c422e70a9e4_a685e5838a1a81d9a288d8c422e70a9e4}{base} = &\hyperlink{a00026_af69381381a1a2d28954b19bf08ae3b1a_af69381381a1a2d28954b19bf08ae3b1a}{idt};
+13     \hyperlink{a00035_a1df1047f254598ae1c402f654bfc787f_a1df1047f254598ae1c402f654bfc787f}{memset}(&\hyperlink{a00026_af69381381a1a2d28954b19bf08ae3b1a_af69381381a1a2d28954b19bf08ae3b1a}{idt},0,\textcolor{keyword}{sizeof}(\textcolor{keyword}{struct} \hyperlink{a00068}{idt\_entry})*256);
+14     \hyperlink{a00026_ac32911224d6d0fd8e287f2e021ee3ba4_ac32911224d6d0fd8e287f2e021ee3ba4}{idt\_load}();
+15 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00026_ac32911224d6d0fd8e287f2e021ee3ba4_ac32911224d6d0fd8e287f2e021ee3ba4}\label{a00026_ac32911224d6d0fd8e287f2e021ee3ba4_ac32911224d6d0fd8e287f2e021ee3ba4}} 
+\index{interrupt.\+h@{interrupt.\+h}!idt\+\_\+load@{idt\+\_\+load}}
+\index{idt\+\_\+load@{idt\+\_\+load}!interrupt.\+h@{interrupt.\+h}}
+\subsubsection{\texorpdfstring{idt\+\_\+load()}{idt\_load()}}
+{\footnotesize\ttfamily void idt\+\_\+load (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-String typedef. 
+(E\+X\+T\+E\+R\+N\+AL A\+SM F\+U\+N\+C\+T\+I\+ON) Loads the I\+DT 
+
+\mbox{\Hypertarget{a00026_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}\label{a00026_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}} 
+\index{interrupt.\+h@{interrupt.\+h}!idt\+\_\+set\+\_\+gate@{idt\+\_\+set\+\_\+gate}}
+\index{idt\+\_\+set\+\_\+gate@{idt\+\_\+set\+\_\+gate}!interrupt.\+h@{interrupt.\+h}}
+\subsubsection{\texorpdfstring{idt\+\_\+set\+\_\+gate()}{idt\_set\_gate()}}
+{\footnotesize\ttfamily void idt\+\_\+set\+\_\+gate (\begin{DoxyParamCaption}\item[{\hyperlink{a00047_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{num,  }\item[{\hyperlink{a00047_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{base,  }\item[{\hyperlink{a00047_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{sel,  }\item[{\hyperlink{a00047_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{flags }\end{DoxyParamCaption})}
 
 
 
-Definition at line 7 of file string.\+h.
+Sets an I\+DT gate. 
+
+
+
+Definition at line 3 of file interrupt.\+c.
+
+
+\begin{DoxyCode}
+3                                                                            \{
+4     \hyperlink{a00026_af69381381a1a2d28954b19bf08ae3b1a_af69381381a1a2d28954b19bf08ae3b1a}{idt}[num].\hyperlink{a00068_ad06d9b1aaaea37014fe90207f5f95974_ad06d9b1aaaea37014fe90207f5f95974}{sel} = \hyperlink{a00026_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel};
+5     \hyperlink{a00026_af69381381a1a2d28954b19bf08ae3b1a_af69381381a1a2d28954b19bf08ae3b1a}{idt}[num].\hyperlink{a00068_a6815d884869cb156401614bcfa344bea_a6815d884869cb156401614bcfa344bea}{flags} = \hyperlink{a00026_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags};
+6     \hyperlink{a00026_af69381381a1a2d28954b19bf08ae3b1a_af69381381a1a2d28954b19bf08ae3b1a}{idt}[num].\hyperlink{a00068_a687c85d94244e831572804181b747a05_a687c85d94244e831572804181b747a05}{base\_hi} = \hyperlink{a00047_a0a63db19c3e2153ed419aeccf4e33c92_a0a63db19c3e2153ed419aeccf4e33c92}{high\_16}(\hyperlink{a00026_a2e013c2c6e8010c8116c6f56813df57b_a2e013c2c6e8010c8116c6f56813df57b}{base});
+7     \hyperlink{a00026_af69381381a1a2d28954b19bf08ae3b1a_af69381381a1a2d28954b19bf08ae3b1a}{idt}[num].\hyperlink{a00068_ad4db1928a98c11dcb596bcef0e8094e6_ad4db1928a98c11dcb596bcef0e8094e6}{base\_lo} = \hyperlink{a00047_aded7ad58a4bedfffea10d5ae9c0c817e_aded7ad58a4bedfffea10d5ae9c0c817e}{low\_16}(\hyperlink{a00026_a2e013c2c6e8010c8116c6f56813df57b_a2e013c2c6e8010c8116c6f56813df57b}{base});
+8 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{a00026_a2e013c2c6e8010c8116c6f56813df57b_a2e013c2c6e8010c8116c6f56813df57b}\label{a00026_a2e013c2c6e8010c8116c6f56813df57b_a2e013c2c6e8010c8116c6f56813df57b}} 
+\index{interrupt.\+h@{interrupt.\+h}!base@{base}}
+\index{base@{base}!interrupt.\+h@{interrupt.\+h}}
+\subsubsection{\texorpdfstring{base}{base}}
+{\footnotesize\ttfamily unsigned int base}
+
+
+
+Definition at line 12 of file interrupt.\+h.
+
+\mbox{\Hypertarget{a00026_af85e6d5e4292b0c25c18f701e61d51fa_af85e6d5e4292b0c25c18f701e61d51fa}\label{a00026_af85e6d5e4292b0c25c18f701e61d51fa_af85e6d5e4292b0c25c18f701e61d51fa}} 
+\index{interrupt.\+h@{interrupt.\+h}!base\+\_\+hi@{base\+\_\+hi}}
+\index{base\+\_\+hi@{base\+\_\+hi}!interrupt.\+h@{interrupt.\+h}}
+\subsubsection{\texorpdfstring{base\+\_\+hi}{base\_hi}}
+{\footnotesize\ttfamily \hyperlink{a00047_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} base\+\_\+hi}
+
+
+
+Definition at line 15 of file interrupt.\+h.
+
+\mbox{\Hypertarget{a00026_a1a4688f97e405d4c0700427f4b74a355_a1a4688f97e405d4c0700427f4b74a355}\label{a00026_a1a4688f97e405d4c0700427f4b74a355_a1a4688f97e405d4c0700427f4b74a355}} 
+\index{interrupt.\+h@{interrupt.\+h}!base\+\_\+lo@{base\+\_\+lo}}
+\index{base\+\_\+lo@{base\+\_\+lo}!interrupt.\+h@{interrupt.\+h}}
+\subsubsection{\texorpdfstring{base\+\_\+lo}{base\_lo}}
+{\footnotesize\ttfamily \hyperlink{a00047_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} base\+\_\+lo}
+
+
+
+Definition at line 11 of file interrupt.\+h.
+
+\mbox{\Hypertarget{a00026_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}\label{a00026_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}} 
+\index{interrupt.\+h@{interrupt.\+h}!flags@{flags}}
+\index{flags@{flags}!interrupt.\+h@{interrupt.\+h}}
+\subsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily \hyperlink{a00047_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} flags}
+
+
+
+Definition at line 14 of file interrupt.\+h.
+
+\mbox{\Hypertarget{a00026_af69381381a1a2d28954b19bf08ae3b1a_af69381381a1a2d28954b19bf08ae3b1a}\label{a00026_af69381381a1a2d28954b19bf08ae3b1a_af69381381a1a2d28954b19bf08ae3b1a}} 
+\index{interrupt.\+h@{interrupt.\+h}!idt@{idt}}
+\index{idt@{idt}!interrupt.\+h@{interrupt.\+h}}
+\subsubsection{\texorpdfstring{idt}{idt}}
+{\footnotesize\ttfamily struct \hyperlink{a00068}{idt\+\_\+entry} idt\mbox{[}256\mbox{]}}
+
+
+
+Definition at line 20 of file interrupt.\+h.
+
+\mbox{\Hypertarget{a00026_a4bd16833092d3d6fb954727f65314ef0_a4bd16833092d3d6fb954727f65314ef0}\label{a00026_a4bd16833092d3d6fb954727f65314ef0_a4bd16833092d3d6fb954727f65314ef0}} 
+\index{interrupt.\+h@{interrupt.\+h}!idtp@{idtp}}
+\index{idtp@{idtp}!interrupt.\+h@{interrupt.\+h}}
+\subsubsection{\texorpdfstring{idtp}{idtp}}
+{\footnotesize\ttfamily struct \hyperlink{a00072}{idt\+\_\+ptr} idtp}
+
+
+
+Definition at line 21 of file interrupt.\+h.
+
+\mbox{\Hypertarget{a00026_ab50c2dcb9d4a34ea1a5ac52272502379_ab50c2dcb9d4a34ea1a5ac52272502379}\label{a00026_ab50c2dcb9d4a34ea1a5ac52272502379_ab50c2dcb9d4a34ea1a5ac52272502379}} 
+\index{interrupt.\+h@{interrupt.\+h}!limit@{limit}}
+\index{limit@{limit}!interrupt.\+h@{interrupt.\+h}}
+\subsubsection{\texorpdfstring{limit}{limit}}
+{\footnotesize\ttfamily unsigned short limit}
+
+
+
+Definition at line 11 of file interrupt.\+h.
+
+\mbox{\Hypertarget{a00026_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}\label{a00026_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}} 
+\index{interrupt.\+h@{interrupt.\+h}!sel@{sel}}
+\index{sel@{sel}!interrupt.\+h@{interrupt.\+h}}
+\subsubsection{\texorpdfstring{sel}{sel}}
+{\footnotesize\ttfamily \hyperlink{a00047_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} sel}
+
+
+
+Definition at line 12 of file interrupt.\+h.
+
+\mbox{\Hypertarget{a00026_a09777e6a5ad91ffd82a9975efe33de2e_a09777e6a5ad91ffd82a9975efe33de2e}\label{a00026_a09777e6a5ad91ffd82a9975efe33de2e_a09777e6a5ad91ffd82a9975efe33de2e}} 
+\index{interrupt.\+h@{interrupt.\+h}!zero@{zero}}
+\index{zero@{zero}!interrupt.\+h@{interrupt.\+h}}
+\subsubsection{\texorpdfstring{zero}{zero}}
+{\footnotesize\ttfamily \hyperlink{a00047_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} zero}
+
+
+
+Definition at line 13 of file interrupt.\+h.
 
