@@ -6,16 +6,16 @@ Include dependency graph for vep.\+c\+:
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00059_afa2deaad59ce4809eed53e7aeb3ac31b_afa2deaad59ce4809eed53e7aeb3ac31b}{loadvep} (\hyperlink{a00062_a78392c340e1fe1be344df81d1438b74f_a78392c340e1fe1be344df81d1438b74f}{vepheader\+\_\+t} vep, char $\ast$data)
+int \hyperlink{a00059_ad5530515939c1e3332746affa700c759_ad5530515939c1e3332746affa700c759}{loadvep} (\hyperlink{a00062_a78392c340e1fe1be344df81d1438b74f_a78392c340e1fe1be344df81d1438b74f}{vepheader\+\_\+t} vep, char $\ast$data)
 \begin{DoxyCompactList}\small\item\em Loads a V\+EP with a V\+E\+P\+Header. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00059_afa2deaad59ce4809eed53e7aeb3ac31b_afa2deaad59ce4809eed53e7aeb3ac31b}\label{a00059_afa2deaad59ce4809eed53e7aeb3ac31b_afa2deaad59ce4809eed53e7aeb3ac31b}} 
+\mbox{\Hypertarget{a00059_ad5530515939c1e3332746affa700c759_ad5530515939c1e3332746affa700c759}\label{a00059_ad5530515939c1e3332746affa700c759_ad5530515939c1e3332746affa700c759}} 
 \index{vep.\+c@{vep.\+c}!loadvep@{loadvep}}
 \index{loadvep@{loadvep}!vep.\+c@{vep.\+c}}
 \subsubsection{\texorpdfstring{loadvep()}{loadvep()}}
-{\footnotesize\ttfamily void loadvep (\begin{DoxyParamCaption}\item[{\hyperlink{a00062_a78392c340e1fe1be344df81d1438b74f_a78392c340e1fe1be344df81d1438b74f}{vepheader\+\_\+t}}]{vep,  }\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int loadvep (\begin{DoxyParamCaption}\item[{\hyperlink{a00062_a78392c340e1fe1be344df81d1438b74f_a78392c340e1fe1be344df81d1438b74f}{vepheader\+\_\+t}}]{vep,  }\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
 
 
 
@@ -27,12 +27,16 @@ Definition at line 3 of file vep.\+c.
 
 
 \begin{DoxyCode}
-3                                            \{
-4     \textcolor{keywordtype}{int} size = vep.\hyperlink{a00080_a6121693fa5ac3673d831b440aea8963e_a6121693fa5ac3673d831b440aea8963e}{vepsize};
-5     \textcolor{keywordtype}{char}* ptr = (\textcolor{keywordtype}{char}*)(vep.\hyperlink{a00080_aa81b6806dd33022ce60c314c908ba028_aa81b6806dd33022ce60c314c908ba028}{origin});
-6     \textcolor{keywordflow}{while}(size != 0) \{
-7         *ptr++ = *data++;
-8         size--;
-9     \}
-10 \}
+3                                           \{
+4     \textcolor{keywordflow}{if}(vep.\hyperlink{a00080_a06d6ef138b4f63ef72ad6aadda58ab47_a06d6ef138b4f63ef72ad6aadda58ab47}{signature} != \textcolor{stringliteral}{"VP"}) \{
+5         \textcolor{keywordflow}{return} 1;
+6     \}
+7     \textcolor{keywordtype}{int} size = vep.\hyperlink{a00080_a6121693fa5ac3673d831b440aea8963e_a6121693fa5ac3673d831b440aea8963e}{vepsize};
+8     \textcolor{keywordtype}{char}* ptr = (\textcolor{keywordtype}{char}*)(vep.\hyperlink{a00080_aa81b6806dd33022ce60c314c908ba028_aa81b6806dd33022ce60c314c908ba028}{origin});
+9     \textcolor{keywordflow}{while}(size != 0) \{
+10         *ptr++ = *data++;
+11         size--;
+12     \}
+13     \textcolor{keywordflow}{return} 0;
+14 \}
 \end{DoxyCode}

@@ -12,6 +12,8 @@ Header for a V\+EP file V\+EP stands for Vitality Executable Program.
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
+char \hyperlink{a00080_a06d6ef138b4f63ef72ad6aadda58ab47_a06d6ef138b4f63ef72ad6aadda58ab47}{signature} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em V\+EP signature, should be \textquotesingle{}VP\textquotesingle{}. \end{DoxyCompactList}\item 
 char \hyperlink{a00080_ad19a09798439f6a12c5794c2ce224e9b_ad19a09798439f6a12c5794c2ce224e9b}{flags}
 \begin{DoxyCompactList}\small\item\em V\+EP flags. \end{DoxyCompactList}\item 
 char \hyperlink{a00080_ab1972b24045dbe7a528c6d79ffd2a5ad_ab1972b24045dbe7a528c6d79ffd2a5ad}{name} \mbox{[}255\mbox{]}
@@ -42,7 +44,7 @@ V\+EP flags.
 
 
 
-Definition at line 27 of file vep.\+h.
+Definition at line 31 of file vep.\+h.
 
 \mbox{\Hypertarget{a00080_ab1972b24045dbe7a528c6d79ffd2a5ad_ab1972b24045dbe7a528c6d79ffd2a5ad}\label{a00080_ab1972b24045dbe7a528c6d79ffd2a5ad_ab1972b24045dbe7a528c6d79ffd2a5ad}} 
 \index{vepheader@{vepheader}!name@{name}}
@@ -56,7 +58,7 @@ Definition at line 27 of file vep.\+h.
 
 
 
-Definition at line 31 of file vep.\+h.
+Definition at line 35 of file vep.\+h.
 
 \mbox{\Hypertarget{a00080_aa81b6806dd33022ce60c314c908ba028_aa81b6806dd33022ce60c314c908ba028}\label{a00080_aa81b6806dd33022ce60c314c908ba028_aa81b6806dd33022ce60c314c908ba028}} 
 \index{vepheader@{vepheader}!origin@{origin}}
@@ -70,7 +72,21 @@ Where the V\+EP should be loaded.
 
 
 
-Definition at line 35 of file vep.\+h.
+Definition at line 39 of file vep.\+h.
+
+\mbox{\Hypertarget{a00080_a06d6ef138b4f63ef72ad6aadda58ab47_a06d6ef138b4f63ef72ad6aadda58ab47}\label{a00080_a06d6ef138b4f63ef72ad6aadda58ab47_a06d6ef138b4f63ef72ad6aadda58ab47}} 
+\index{vepheader@{vepheader}!signature@{signature}}
+\index{signature@{signature}!vepheader@{vepheader}}
+\subsubsection{\texorpdfstring{signature}{signature}}
+{\footnotesize\ttfamily char vepheader\+::signature\mbox{[}2\mbox{]}}
+
+
+
+V\+EP signature, should be \textquotesingle{}VP\textquotesingle{}. 
+
+
+
+Definition at line 27 of file vep.\+h.
 
 \mbox{\Hypertarget{a00080_a6121693fa5ac3673d831b440aea8963e_a6121693fa5ac3673d831b440aea8963e}\label{a00080_a6121693fa5ac3673d831b440aea8963e_a6121693fa5ac3673d831b440aea8963e}} 
 \index{vepheader@{vepheader}!vepsize@{vepsize}}
@@ -84,7 +100,7 @@ V\+EP size.
 
 
 
-Definition at line 39 of file vep.\+h.
+Definition at line 43 of file vep.\+h.
 
 
 
