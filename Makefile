@@ -1,6 +1,6 @@
-C_SOURCES = $(wildcard libc/vitality/*.c libc/*.c drivers/*.c kernel/*.c)
+C_SOURCES = $(wildcard libc/vitality/*.c libc/*.c drivers/*.c kernel/*.c libc/ext/*.c)
 CPP_SOURCES = $(wildcard libc/g++/*.cpp)
-HEADERS = $(wildcard libc/vitality/*.h libc/*.h drivers/*.h kernel/*.h)
+HEADERS = $(wildcard libc/vitality/*.h libc/*.h drivers/*.h kernel/*.h libc/ext/*.h)
 CPP_HEADERS = $(wildcard libc/g++/*.h)
 A_SOURCES = ${wildcard kernel/libasm/*.s}
 OBJ = ${C_SOURCES:.c=.o}

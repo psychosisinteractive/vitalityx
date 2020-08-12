@@ -12,3 +12,7 @@ int loadvep(vepheader_t vep, char* data)  {
     }
     return 0;
 }
+
+int loadvepf(vepfile_t vep) {
+    return loadvep(vep.vepheader,(char*)vep.vepdata);
+}

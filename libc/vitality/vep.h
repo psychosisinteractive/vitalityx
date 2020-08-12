@@ -44,7 +44,26 @@ typedef struct vepheader {
 } vepheader_t;
 
 ///
+/// Standard Generated VEP file
+///
+typedef struct vepfile {
+    ///
+    /// VEP header
+    ///
+    vepheader_t vepheader;
+    ///
+    /// VEP Data
+    ///
+    char vepdata[65535];
+} vepfile_t;
+
+///
 /// Loads a VEP with a VEPHeader
 ///
 int loadvep(vepheader_t vep, char* data);
+
+///
+/// Loads a VEP with a VEPFile
+///
+int loadvepf(vepfile_t vep);
 #endif

@@ -51,6 +51,12 @@ static inline bool are_interrupts_enabled()
                    : "=g"(flags) );
     return flags & (1 << 9);
 }
+
+static inline void __native_flush_tlb_single(unsigned long addr)
+{
+   asm volatile("invlpg (%0)" ::"r" (addr) : "memory");
+}
+
 static inline unsigned long save_irqdisable(void)
 {
     unsigned long flags;

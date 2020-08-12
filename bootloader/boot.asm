@@ -63,7 +63,6 @@ ready:
     mov esp, ebp
 
     jmp PROGRAM
-    jmp $
 
 PROGRAM equ 0x1000
 

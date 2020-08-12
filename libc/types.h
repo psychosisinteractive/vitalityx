@@ -57,4 +57,8 @@ typedef uint32_t size_t;
 ///
 #define high_16(address) (uint16_t)(((address) >> 16) & 0xFFFF)
 
+#define NULL 0
+
+#define USHRT_MAX 65535 
+
 #endif
