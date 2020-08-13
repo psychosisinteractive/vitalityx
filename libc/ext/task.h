@@ -12,13 +12,14 @@ typedef struct {
 typedef struct Task {
     Registers regs;
     struct Task *next;
-    char name[16];
+    char *name;
 } Task;
  
 void initTasking();
 void createTask(Task*, void(*)(), uint32_t, uint32_t*, char [16]);
 void addTask(Task*);
 void yield(); // Switch task frontend
+struct Task* getctask();
 
 extern void switchTask(Registers *, Registers *); // The function which actually switches
 

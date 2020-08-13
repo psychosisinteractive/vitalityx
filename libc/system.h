@@ -22,5 +22,10 @@ uint8_t peekb(uint8_t *addr, uint32_t offset);
 ///@param len The length of bytes to set
 ///
 void *memset (void *dest, int val, size_t len);
-
+///
+/// Memcpy
+///@param dstptr Destination pointer
+///@param srcptr Source pointer
+///@param size Size
+void* memcpy(void* restrict dstptr, const void* restrict srcptr, size_t size);
 #endif

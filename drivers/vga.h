@@ -1,7 +1,6 @@
 #ifndef VGA_H
 #define VGA_H
 #include "../libc/types.h"
-#define VIDEO_SEGMENT 0x000A0000
 #define SCREEN_WIDTH 320 // we should be in mode 13h
 
 ///
@@ -11,6 +10,12 @@
 ///@param y The Y of the pixel
 ///
 void putpixel(uint8_t c, uint16_t x, uint16_t y);
+///
+/// Gets a pixel on the screen
+///@param x The X of the pixel
+///@param y The Y of the pixel
+///
+uint8_t getpixel(uint16_t x, uint16_t y);
 ///
 /// Puts a ASCII character on the screen
 ///@param c The character

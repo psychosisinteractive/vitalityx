@@ -2,24 +2,31 @@
 #include "vitality/inline.h"
 #include "types.h"
 #include "gdt.h"
+#include "page.h"
+#include "ext/debug.h"
 
 ///
 /// Loads the GDT (Global Descriptor Table)
 ///
 void init_gdt()
 {
-   gdt_ptr.limit = (sizeof(gdt_entry_t) * 5) - 1;
-   gdt_ptr.base  = (uint32_t)&gdt_entries;
+    BochsConsolePrintString("\nSetting up GDT\n");
+    gdt_ptr.limit = (sizeof(gdt_entry_t) * ENTRY_NUM) - 1;
+    gdt_ptr.base  = (uint32_t)&gdt_entries;
 
-   gdt_set_gate(0, 0, 0, 0, 0);                // Null segment
-   // kernel
-   gdt_set_gate(1, 0, 0xFFFFFFFF, 0x9A, 0xCF); // Code segment
-   gdt_set_gate(2, 0, 0xFFFFFFFF, 0x92, 0xCF); // Data segment
-   // user mode
-   gdt_set_gate(3, 0x00100000, 0x00EFFFFF, 0xFA, 0xCF); // User mode code segment
-   gdt_set_gate(4, 0x00100000, 0x00EFFFFF, 0xF2, 0xCF); // User mode data segment
+    gdt_set_gate(0, 0, 0, 0, 0);                // Null segment
+    // kernel
+    BochsConsolePrintString("\nSetting up Kernel gates\n");
+    gdt_set_gate(1, 0, 0xFFFFFFFF, 0x9A, 0xCF); // Code segment
+    gdt_set_gate(2, 0, 0xFFFFFFFF, 0x92, 0xCF); // Data segment
+    BochsConsolePrintString("\nDone\n");
+    // user mode
+    BochsConsolePrintString("\nSetting up User gates\n");
+    gdt_set_gate(3, 0x00500000, 0x009FFFFF, 0xFA, 0xCF); // User mode code segment
+    gdt_set_gate(4, 0x00500000, 0x009FFFFF, 0xF2, 0xCF); // User mode data segment
+    BochsConsolePrintString("\nDone, flushing\n");
 
-   gdt_flush((uint32_t)&gdt_ptr);
+    gdt_flush((uint32_t)&gdt_ptr);
 }
 
 ///

@@ -68,6 +68,10 @@ static inline void jump(uint32_t address) {
     jmp();
 }
  
+ static inline void bochs_bkpt() {
+     asm volatile ("xchgw %bx, %bx");
+ }
+
 static inline void irqrestore(unsigned long flags)
 {
     asm ("push %0\n\tpopf" : : "rm"(flags) : "memory","cc");

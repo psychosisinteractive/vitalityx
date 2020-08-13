@@ -23,20 +23,17 @@ CFLAGS = -g
 operating.bin: bootloader/boot.bin kernel.bin
 	${WSL} cat $^ > operating.bin
 
-kernel.bin: kernel/kentry.o ${OBJ} ${AOBJ}
+kernel.bin: kernel/kentry.o LINKER.ld ${OBJ} ${AOBJ}
 	i686-elf-ld -o $@ -Ttext 0x1000 $^ --oformat binary
 
-kernel.elf: kernel/kentry.o ${OBJ} ${AOBJ}
+kernel.elf: kernel/kentry.o LINKER.ld ${OBJ} ${AOBJ}
 	i686-elf-ld -o $@ -Ttext 0x1000 $^
 
 run: operating.bin
 	qemu-system-i386 -no-reboot -no-shutdown -fda operating.bin
 
-bochsdbg: operating.bin
-	${BOCHS}
-
 debug: operating.bin
-	qemu-system-i386 -d int -no-reboot -no-shutdown -s -fda operating.bin
+	${BOCHS}
 
 %.o: %.c ${HEADERS}
 	${CC} ${CFLAGS} -ffreestanding -c $< -o $@

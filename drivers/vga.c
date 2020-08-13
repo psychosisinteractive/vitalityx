@@ -1,15 +1,16 @@
 #include "vga.h"
 #include "../libc/system.h"
 #include "../libc/vitality/inline.h"
+#include "../libc/vitality/mem.h"
 
 void putpixel(uint8_t c, uint16_t x, uint16_t y) {
     uint16_t offset = (y * SCREEN_WIDTH) + x;
-    pokeb(VIDEO_SEGMENT,offset,c);
+	mempoke(1,offset,c);
 }
 
-void getpixel(uint16_t x, uint16_t y) {
+uint8_t getpixel(uint16_t x, uint16_t y) {
     uint16_t offset = (y * SCREEN_WIDTH) + x;
-	peekb(VIDEO_SEGMENT,offset);
+	return mempeek(1,offset);
 }
 
 unsigned char *vgafont;

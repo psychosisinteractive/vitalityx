@@ -8,7 +8,6 @@ static Task mainTask; // this is the kernel
 static Task otherTask;
  
 static void otherMain() {
-    BochsConsolePrintString("kernel-dispatch task\r\n");
     yield();
 }
  
@@ -17,7 +16,7 @@ void initTasking() {
     asm volatile("movl %%cr3, %%eax; movl %%eax, %0;":"=m"(mainTask.regs.cr3)::"%eax");
     asm volatile("pushfl; movl (%%esp), %%eax; movl %%eax, %0; popfl;":"=m"(mainTask.regs.eflags)::"%eax");
  
-    *mainTask.name = "vitality-system";
+    mainTask.name = "vitality-system";
     createTask(&otherTask, otherMain, mainTask.regs.eflags, (uint32_t*)mainTask.regs.cr3, "kernel-dispatch");
     mainTask.next = &otherTask;
     otherTask.next = &mainTask;
@@ -47,11 +46,15 @@ void createTask(Task *task, void (*main)(), uint32_t flags, uint32_t *pagedir, c
     task->regs.cr3 = (uint32_t) pagedir;
     task->regs.esp = runningTask->regs.esp; // Not implemented here
     task->next = 0;
-    *task->name = name;
+    task->name = name;
 }
  
 void yield() {
     Task *last = runningTask;
     runningTask = runningTask->next;
     switchTask(&last->regs, &runningTask->regs);
+}
+
+struct Task* getctask() {
+    return runningTask;
 }

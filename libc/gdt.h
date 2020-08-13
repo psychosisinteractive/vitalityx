@@ -1,6 +1,7 @@
 #ifndef GDT_H
 #define GDT_H
 #include "types.h"
+#define ENTRY_NUM 5
 
 struct gdt_ptr_struct
 {
@@ -21,7 +22,7 @@ struct gdt_entry_struct
 } __attribute__((packed));
 typedef struct gdt_entry_struct gdt_entry_t;
 
-gdt_entry_t gdt_entries[5];
+gdt_entry_t gdt_entries[ENTRY_NUM];
 gdt_ptr_t   gdt_ptr;
 
 extern void gdt_flush(uint32_t);
