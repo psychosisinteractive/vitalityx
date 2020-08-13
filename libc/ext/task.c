@@ -34,7 +34,7 @@ void addTask(Task *task) {
     oT->next = task;
 }
 
-void createTask(Task *task, void (*main)(), uint32_t flags, uint32_t *pagedir, char name[16]) {
+void createTask(Task *task, void (*main)(), uint32_t flags, uint32_t *pagedir, char name[16], uint8_t tflags) {
     task->regs.eax = 0;
     task->regs.ebx = 0;
     task->regs.ecx = 0;
@@ -47,12 +47,18 @@ void createTask(Task *task, void (*main)(), uint32_t flags, uint32_t *pagedir, c
     task->regs.esp = runningTask->regs.esp; // Not implemented here
     task->next = 0;
     task->name = name;
+    task->flags = tflags;
 }
  
 void yield() {
     Task *last = runningTask;
-    runningTask = runningTask->next;
-    switchTask(&last->regs, &runningTask->regs);
+    Task *nextTask = runningTask->next;
+    uint8_t ntS = nextTask->flags;
+    while(ntS & TASK_SKIP) {
+        nextTask = nextTask->next;
+        uint8_t ntS = nextTask->flags;
+    }
+    switchTask(&last->regs, &nextTask->regs);
 }
 
 struct Task* getctask() {

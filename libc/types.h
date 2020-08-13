@@ -72,4 +72,9 @@ typedef uint32_t size_t;
 ///
 typedef uint8_t byte;
 
+///
+/// Function Pointer
+///
+typedef (*func_ptr)(void);
+
 #endif

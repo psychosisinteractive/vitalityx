@@ -5,13 +5,17 @@
 #include "../drivers/vga.h"
 #include "../libc/ext/task.h"
 #include "../libc/vitality/mem.h"
+#include "../libc/vitality/vlib.h"
 ///
 /// The kernels C entry point
 ///
+vlib_entry_t vlibe[255];
+vlibdesriptor_t vlibd;
 int kernel() {
     setup_page(); // enable paging
     dt_install();
     setupmalloc();
+    loadvlib(&vlibd);
     setfont(0x7e00);
     initTasking();
     BochsConsolePrintString("VitalityX started\n");

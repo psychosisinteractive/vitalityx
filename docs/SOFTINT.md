@@ -12,10 +12,51 @@ string: db 'Hello VitalityX!',0
 
 Here is the current list of supported interrupts:
 
-eax 0x01
+```
+eax 0x01:
+
+gets:
 ebx {string}
+sets:
+none
+
 This will write {string} terminated with 0x0 to the Bochs output.
 
-eax 0x02
+eax 0x02:
+
+gets:
 ebx {string}
+sets:
+none
+
 This will write {string} terminated with 0x0 to the graphical output.
+
+eax 0x03:
+
+gets:
+edi {code pointer}
+edx {mode}
+sets:
+ebx {entry id}
+
+This will add a VLib entry and give you the VLib entry ID.
+
+eax 0x04:
+
+gets:
+none
+sets:
+none
+
+This yields the current task.
+
+eax 0x05:
+
+gets:
+ebx {entry id}
+sets:
+none by the interrupt, but the vlib entry may
+
+This calls a VLib Function by its entry ID.
+```
+

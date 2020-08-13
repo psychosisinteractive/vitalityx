@@ -2,6 +2,14 @@
 #define SYSTEM_H
 #include "types.h"
 
+#ifndef setBit
+#define setBit(word, mask) word |= mask
+#endif
+
+#ifndef clrBit
+#define clrBit(word, mask) word &= ~mask
+#endif
+
 ///
 /// Poke Byte
 ///@param addr The address of the byte

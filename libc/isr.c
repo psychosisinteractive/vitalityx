@@ -6,6 +6,7 @@
 #include "ext/task.h"
 #include "vitality/tty.h"
 #include "string.h"
+#include "vitality/vlib.h"
 
 void isr_handler(registers_t regs)
 {
@@ -58,6 +59,31 @@ void sysisr_handler(registers_t regs) {
             break;
         case 0x02: // console out
             tty_pputstring((char*)regs.ebx);
+            break;
+        case 0x03:
+            BochsConsolePrintString("\r\nTask ");
+            BochsConsolePrintString(ctask->name);
+            BochsConsolePrintString(" is adding itself to Vlib.\r\n");
+            addr_t base = descriptor->base;
+            int id = 0;
+            while(((vlib_entry_t*)base)->instantiated) {
+                id++;
+                base += sizeof(vlib_entry_t);
+            }
+            vlib_entry_t entry = *(vlib_entry_t*)base;
+            entry.instantiated = true;
+            entry.functionptr = regs.edi;
+            entry.mode = regs.edx;
+            regs.ebx = id;
+            break;
+        case 0x04:
+            BochsConsolePrintString("\r\nTask ");
+            BochsConsolePrintString(ctask->name);
+            BochsConsolePrintString(" is yielding.\r\n");
+            yield();
+            break;
+        case 0x05:
+            runvlib(regs.ebx);
             break;
         default: // dont know what to do
             BochsConsolePrintString("\r\nTask ");

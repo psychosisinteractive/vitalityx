@@ -3,6 +3,11 @@
 #define TASK_H
 #include "../types.h"
 
+#define TASK_SKIP 8
+#define TASK_KILLED 4
+#define TASK_PROTECTED 2
+#define TASK_KERNEL 1
+
 void initTasking();
  
 typedef struct {
@@ -13,6 +18,7 @@ typedef struct Task {
     Registers regs;
     struct Task *next;
     char *name;
+    uint8_t flags;
 } Task;
  
 void initTasking();
