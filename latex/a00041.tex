@@ -1,123 +1,37 @@
-\hypertarget{a00041}{}\section{libc/ext/liballoc\+\_\+hook.c File Reference}
-\label{a00041}\index{libc/ext/liballoc\+\_\+hook.\+c@{libc/ext/liballoc\+\_\+hook.\+c}}
-{\ttfamily \#include \char`\"{}liballoc.\+h\char`\"{}}\newline
-Include dependency graph for liballoc\+\_\+hook.\+c\+:
+\hypertarget{a00041}{}\section{libc/ext/debug.c File Reference}
+\label{a00041}\index{libc/ext/debug.\+c@{libc/ext/debug.\+c}}
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
+Include dependency graph for debug.\+c\+:
 % FIG 0
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{a00041_a8b5670e4594b0b6f8be78fe17f0c3b53_a8b5670e4594b0b6f8be78fe17f0c3b53}{liballoc\+\_\+lock} ()
-\begin{DoxyCompactList}\small\item\em This function is supposed to lock the memory data structures. \end{DoxyCompactList}\item 
-int \hyperlink{a00041_aedc23f198b2882d41d0caa316453967b_aedc23f198b2882d41d0caa316453967b}{liballoc\+\_\+unlock} ()
-\begin{DoxyCompactList}\small\item\em This function unlocks what was previously locked by the liballoc\+\_\+lock function. \end{DoxyCompactList}\item 
-void $\ast$ \hyperlink{a00041_a857110476fa9dd6317f60a76793a3274_a857110476fa9dd6317f60a76793a3274}{liballoc\+\_\+alloc} (int pages)
-\begin{DoxyCompactList}\small\item\em This is the hook into the local system which allocates pages. \end{DoxyCompactList}\item 
-int \hyperlink{a00041_aee2dc12f19409f4a76b2aa36f5ab1316_aee2dc12f19409f4a76b2aa36f5ab1316}{liballoc\+\_\+free} (void $\ast$ptr, int pages)
-\begin{DoxyCompactList}\small\item\em This frees previously allocated memory. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{Bochs\+Console\+Print\+String} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Outputs a string to the Bochs console. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00041_a857110476fa9dd6317f60a76793a3274_a857110476fa9dd6317f60a76793a3274}\label{a00041_a857110476fa9dd6317f60a76793a3274_a857110476fa9dd6317f60a76793a3274}} 
-\index{liballoc\+\_\+hook.\+c@{liballoc\+\_\+hook.\+c}!liballoc\+\_\+alloc@{liballoc\+\_\+alloc}}
-\index{liballoc\+\_\+alloc@{liballoc\+\_\+alloc}!liballoc\+\_\+hook.\+c@{liballoc\+\_\+hook.\+c}}
-\subsubsection{\texorpdfstring{liballoc\+\_\+alloc()}{liballoc\_alloc()}}
-{\footnotesize\ttfamily void$\ast$ liballoc\+\_\+alloc (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}\label{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}} 
+\index{debug.\+c@{debug.\+c}!Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}}
+\index{Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}!debug.\+c@{debug.\+c}}
+\subsubsection{\texorpdfstring{Bochs\+Console\+Print\+String()}{BochsConsolePrintString()}}
+{\footnotesize\ttfamily void Bochs\+Console\+Print\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
 
 
 
-This is the hook into the local system which allocates pages. 
-
-It accepts an integer parameter which is the number of pages required. The page size was set up in the liballoc\+\_\+init function.
-
-\begin{DoxyReturn}{Returns}
-N\+U\+LL if the pages were not allocated. 
-
-A pointer to the allocated memory. 
-\end{DoxyReturn}
+Outputs a string to the Bochs console. 
 
 
-Definition at line 11 of file liballoc\+\_\+hook.\+c.
+
+Definition at line 3 of file debug.\+c.
 
 
 \begin{DoxyCode}
-11                                 \{
-12 
-13 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00041_aee2dc12f19409f4a76b2aa36f5ab1316_aee2dc12f19409f4a76b2aa36f5ab1316}\label{a00041_aee2dc12f19409f4a76b2aa36f5ab1316_aee2dc12f19409f4a76b2aa36f5ab1316}} 
-\index{liballoc\+\_\+hook.\+c@{liballoc\+\_\+hook.\+c}!liballoc\+\_\+free@{liballoc\+\_\+free}}
-\index{liballoc\+\_\+free@{liballoc\+\_\+free}!liballoc\+\_\+hook.\+c@{liballoc\+\_\+hook.\+c}}
-\subsubsection{\texorpdfstring{liballoc\+\_\+free()}{liballoc\_free()}}
-{\footnotesize\ttfamily int liballoc\+\_\+free (\begin{DoxyParamCaption}\item[{void $\ast$}]{,  }\item[{int}]{ }\end{DoxyParamCaption})}
-
-
-
-This frees previously allocated memory. 
-
-The void$\ast$ parameter passed to the function is the exact same value returned from a previous liballoc\+\_\+alloc call.
-
-The integer value is the number of pages to free.
-
-\begin{DoxyReturn}{Returns}
-0 if the memory was successfully freed. 
-\end{DoxyReturn}
-
-
-Definition at line 15 of file liballoc\+\_\+hook.\+c.
-
-
-\begin{DoxyCode}
-15                                         \{
-16 
-17 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00041_a8b5670e4594b0b6f8be78fe17f0c3b53_a8b5670e4594b0b6f8be78fe17f0c3b53}\label{a00041_a8b5670e4594b0b6f8be78fe17f0c3b53_a8b5670e4594b0b6f8be78fe17f0c3b53}} 
-\index{liballoc\+\_\+hook.\+c@{liballoc\+\_\+hook.\+c}!liballoc\+\_\+lock@{liballoc\+\_\+lock}}
-\index{liballoc\+\_\+lock@{liballoc\+\_\+lock}!liballoc\+\_\+hook.\+c@{liballoc\+\_\+hook.\+c}}
-\subsubsection{\texorpdfstring{liballoc\+\_\+lock()}{liballoc\_lock()}}
-{\footnotesize\ttfamily int liballoc\+\_\+lock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-This function is supposed to lock the memory data structures. 
-
-It could be as simple as disabling interrupts or acquiring a spinlock. It\textquotesingle{}s up to you to decide.
-
-\begin{DoxyReturn}{Returns}
-0 if the lock was acquired successfully. Anything else is failure. 
-\end{DoxyReturn}
-
-
-Definition at line 3 of file liballoc\+\_\+hook.\+c.
-
-
-\begin{DoxyCode}
-3                     \{
-4     \textcolor{keywordflow}{return} 0;
-5 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00041_aedc23f198b2882d41d0caa316453967b_aedc23f198b2882d41d0caa316453967b}\label{a00041_aedc23f198b2882d41d0caa316453967b_aedc23f198b2882d41d0caa316453967b}} 
-\index{liballoc\+\_\+hook.\+c@{liballoc\+\_\+hook.\+c}!liballoc\+\_\+unlock@{liballoc\+\_\+unlock}}
-\index{liballoc\+\_\+unlock@{liballoc\+\_\+unlock}!liballoc\+\_\+hook.\+c@{liballoc\+\_\+hook.\+c}}
-\subsubsection{\texorpdfstring{liballoc\+\_\+unlock()}{liballoc\_unlock()}}
-{\footnotesize\ttfamily int liballoc\+\_\+unlock (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-This function unlocks what was previously locked by the liballoc\+\_\+lock function. 
-
-If it disabled interrupts, it enables interrupts. If it had acquiried a spinlock, it releases the spinlock. etc.
-
-\begin{DoxyReturn}{Returns}
-0 if the lock was successfully released. 
-\end{DoxyReturn}
-
-
-Definition at line 7 of file liballoc\+\_\+hook.\+c.
-
-
-\begin{DoxyCode}
-7                       \{
-8     \textcolor{keywordflow}{return} 0;
-9 \}
+4 \{
+5     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
+6     \textcolor{keywordflow}{while}(chara != 0x0) \{
+7         \hyperlink{a00044_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}{BochsConsolePrintChar}(chara);
+8         chara = *\textcolor{keywordtype}{string}++;
+9     \}
+10 \}
 \end{DoxyCode}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/ext/task.h File Reference</title>
+<title>VitalityX: libc/ext/task.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,53 +44,48 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">task.h File Reference</div>  </div>
+<div class="title">task.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00092_source.html">../types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00050_source.html">task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00095_source.html">../types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00044_source.html">debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00080_source.html">../page.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for task.h:</div>
+Include dependency graph for task.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00048.png" border="0" usemap="#libc_2ext_2task_8h" alt=""/></div>
+<div class="center"><img src="a00048.png" border="0" usemap="#libc_2ext_2task_8c" alt=""/></div>
 <!-- MAP 0 -->
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00049.png" border="0" usemap="#libc_2ext_2task_8hdep" alt=""/></div>
-<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00047_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00130.html">Registers</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00134.html">Task</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a7a90fbdcc84682f027affec67944111b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00134.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047_a7a90fbdcc84682f027affec67944111b.html#a7a90fbdcc84682f027affec67944111b">Task</a></td></tr>
-<tr class="separator:a7a90fbdcc84682f027affec67944111b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a4337f8ca98d2a8f8e09bf6e26b4e8bb0"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047_a4337f8ca98d2a8f8e09bf6e26b4e8bb0.html#a4337f8ca98d2a8f8e09bf6e26b4e8bb0">otherMain</a> ()</td></tr>
+<tr class="separator:a4337f8ca98d2a8f8e09bf6e26b4e8bb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aea945e91746a54801f4763ad264746b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047_aea945e91746a54801f4763ad264746b9.html#aea945e91746a54801f4763ad264746b9">initTasking</a> ()</td></tr>
 <tr class="separator:aea945e91746a54801f4763ad264746b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3abb1d0cc6fd9ea5a5b860f36bc81d6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047_a3abb1d0cc6fd9ea5a5b860f36bc81d6a.html#a3abb1d0cc6fd9ea5a5b860f36bc81d6a">createTask</a> (<a class="el" href="a00134.html">Task</a> *, void(*)(), <a class="el" href="a00092_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>, <a class="el" href="a00092_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> *, char [16])</td></tr>
-<tr class="separator:a3abb1d0cc6fd9ea5a5b860f36bc81d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a077ea59d35297d9fb3fa4675beefbd79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047_a077ea59d35297d9fb3fa4675beefbd79.html#a077ea59d35297d9fb3fa4675beefbd79">addTask</a> (<a class="el" href="a00134.html">Task</a> *)</td></tr>
-<tr class="separator:a077ea59d35297d9fb3fa4675beefbd79"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2814ff5e4f081736448dc705b05edcd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047_a2814ff5e4f081736448dc705b05edcd1.html#a2814ff5e4f081736448dc705b05edcd1">addTask</a> (<a class="el" href="a00136.html">Task</a> *task)</td></tr>
+<tr class="separator:a2814ff5e4f081736448dc705b05edcd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad60a944f16bf46088320833cf2464e1e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047_ad60a944f16bf46088320833cf2464e1e.html#ad60a944f16bf46088320833cf2464e1e">createTask</a> (<a class="el" href="a00136.html">Task</a> *task, void(*main)(), <a class="el" href="a00095_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="el" href="a00068_aa2585d779da0ab21273a8d92de9a0ebe.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a>, <a class="el" href="a00095_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> *pagedir, char name[16])</td></tr>
+<tr class="separator:ad60a944f16bf46088320833cf2464e1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a58c8b2ad0ea491a6642e5e1cbd358c89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047_a58c8b2ad0ea491a6642e5e1cbd358c89.html#a58c8b2ad0ea491a6642e5e1cbd358c89">yield</a> ()</td></tr>
 <tr class="separator:a58c8b2ad0ea491a6642e5e1cbd358c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2425ca34147fccde2d1503332d21c5bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047_a2425ca34147fccde2d1503332d21c5bd.html#a2425ca34147fccde2d1503332d21c5bd">switchTask</a> (<a class="el" href="a00130.html">Registers</a> *, <a class="el" href="a00130.html">Registers</a> *)</td></tr>
-<tr class="separator:a2425ca34147fccde2d1503332d21c5bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5913e9b2190b2b4118ee020721a320e2"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="a00136.html">Task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047_a5913e9b2190b2b4118ee020721a320e2.html#a5913e9b2190b2b4118ee020721a320e2">getctask</a> ()</td></tr>
+<tr class="separator:a5913e9b2190b2b4118ee020721a320e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a2c195d425b4a6791b3a89f7b219f93d9"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00136.html">Task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047_a2c195d425b4a6791b3a89f7b219f93d9.html#a2c195d425b4a6791b3a89f7b219f93d9">runningTask</a></td></tr>
+<tr class="separator:a2c195d425b4a6791b3a89f7b219f93d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a228ac88416ebaa8713846e3e5e3e9b6d"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00136.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047_a228ac88416ebaa8713846e3e5e3e9b6d.html#a228ac88416ebaa8713846e3e5e3e9b6d">mainTask</a></td></tr>
+<tr class="separator:a228ac88416ebaa8713846e3e5e3e9b6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0e87ab98b8b029839a398838d16e1f0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00136.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047_ab0e87ab98b8b029839a398838d16e1f0.html#ab0e87ab98b8b029839a398838d16e1f0">otherTask</a></td></tr>
+<tr class="separator:ab0e87ab98b8b029839a398838d16e1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

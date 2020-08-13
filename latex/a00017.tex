@@ -1,162 +1,106 @@
-\hypertarget{a00017}{}\section{drivers/vga.h File Reference}
-\label{a00017}\index{drivers/vga.\+h@{drivers/vga.\+h}}
-{\ttfamily \#include \char`\"{}../libc/types.\+h\char`\"{}}\newline
-Include dependency graph for vga.\+h\+:
+\hypertarget{a00017}{}\section{drivers/keyboard.h File Reference}
+\label{a00017}\index{drivers/keyboard.\+h@{drivers/keyboard.\+h}}
+{\ttfamily \#include \char`\"{}../libc/vitality/inline.\+h\char`\"{}}\newline
+Include dependency graph for keyboard.\+h\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
 % FIG 1
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{a00017_a818608c80027ef8ff56d31ebaedf58f3_a818608c80027ef8ff56d31ebaedf58f3}{V\+I\+D\+E\+O\+\_\+\+S\+E\+G\+M\+E\+NT}~0x000\+A0000
-\item 
-\#define \hyperlink{a00017_a2cd109632a6dcccaa80b43561b1ab700_a2cd109632a6dcccaa80b43561b1ab700}{S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH}~320
-\end{DoxyCompactItemize}
+\#define \hyperlink{a00017_a0ef8b0a5f135deeee1540a47eeb0a0d3_a0ef8b0a5f135deeee1540a47eeb0a0d3}{P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT}~0x60
+\begin{DoxyCompactList}\small\item\em P\+S/2 Data Port. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00017_ac53f79a633bdedad461bd9b969d9afcc_ac53f79a633bdedad461bd9b969d9afcc}{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}~0x64
+\begin{DoxyCompactList}\small\item\em P\+S/2 Status Register. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00017_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}{P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG}~\hyperlink{a00017_ac53f79a633bdedad461bd9b969d9afcc_ac53f79a633bdedad461bd9b969d9afcc}{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}
+\begin{DoxyCompactList}\small\item\em P\+S/2 Command Register. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00017_ab17a69b465efb1ebe54a6a2e5d7b7ce8_ab17a69b465efb1ebe54a6a2e5d7b7ce8}{putpixel} (\hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} c, \hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} x, \hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} y)
-\begin{DoxyCompactList}\small\item\em Puts a pixel on the screen. \end{DoxyCompactList}\item 
-void \hyperlink{a00017_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}{drawchar} (unsigned char c, \hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} x, \hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} y, \hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} fgcolor, \hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} bgcolor)
-\begin{DoxyCompactList}\small\item\em Puts a A\+S\+C\+II character on the screen. \end{DoxyCompactList}\item 
-\hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00017_af6d170c9401ea8f94d4c5cf09347cca7_af6d170c9401ea8f94d4c5cf09347cca7}{vgamode} ()
-\begin{DoxyCompactList}\small\item\em Gets the current V\+GA mode. \end{DoxyCompactList}\item 
-void \hyperlink{a00017_abb01dc16ea34f0a6de3d10d732b6c536_abb01dc16ea34f0a6de3d10d732b6c536}{setfont} (unsigned char $\ast$font)
-\begin{DoxyCompactList}\small\item\em Sets the font. \end{DoxyCompactList}\end{DoxyCompactItemize}
+char \hyperlink{a00017_ad6a916c09d63bcfc59bce46f2bb34811_ad6a916c09d63bcfc59bce46f2bb34811}{kb\+\_\+getscancode} ()
+\begin{DoxyCompactList}\small\item\em Gets a keyboard scancode. \end{DoxyCompactList}\item 
+void \hyperlink{a00017_ab55128c33115081a66a8acb39dc6c7dc_ab55128c33115081a66a8acb39dc6c7dc}{ps2init} ()
+\begin{DoxyCompactList}\small\item\em P\+S/2 Initialize. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{a00017_a2cd109632a6dcccaa80b43561b1ab700_a2cd109632a6dcccaa80b43561b1ab700}\label{a00017_a2cd109632a6dcccaa80b43561b1ab700_a2cd109632a6dcccaa80b43561b1ab700}} 
-\index{vga.\+h@{vga.\+h}!S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH@{S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH}}
-\index{S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH@{S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH}!vga.\+h@{vga.\+h}}
-\subsubsection{\texorpdfstring{S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH}{SCREEN\_WIDTH}}
-{\footnotesize\ttfamily \#define S\+C\+R\+E\+E\+N\+\_\+\+W\+I\+D\+TH~320}
+\mbox{\Hypertarget{a00017_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}\label{a00017_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}} 
+\index{keyboard.\+h@{keyboard.\+h}!P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG@{P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG}}
+\index{P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG@{P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG}{PS2\_COMMANDREG}}
+{\footnotesize\ttfamily \#define P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG~\hyperlink{a00017_ac53f79a633bdedad461bd9b969d9afcc_ac53f79a633bdedad461bd9b969d9afcc}{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}}
 
 
 
-Definition at line 5 of file vga.\+h.
-
-\mbox{\Hypertarget{a00017_a818608c80027ef8ff56d31ebaedf58f3_a818608c80027ef8ff56d31ebaedf58f3}\label{a00017_a818608c80027ef8ff56d31ebaedf58f3_a818608c80027ef8ff56d31ebaedf58f3}} 
-\index{vga.\+h@{vga.\+h}!V\+I\+D\+E\+O\+\_\+\+S\+E\+G\+M\+E\+NT@{V\+I\+D\+E\+O\+\_\+\+S\+E\+G\+M\+E\+NT}}
-\index{V\+I\+D\+E\+O\+\_\+\+S\+E\+G\+M\+E\+NT@{V\+I\+D\+E\+O\+\_\+\+S\+E\+G\+M\+E\+NT}!vga.\+h@{vga.\+h}}
-\subsubsection{\texorpdfstring{V\+I\+D\+E\+O\+\_\+\+S\+E\+G\+M\+E\+NT}{VIDEO\_SEGMENT}}
-{\footnotesize\ttfamily \#define V\+I\+D\+E\+O\+\_\+\+S\+E\+G\+M\+E\+NT~0x000\+A0000}
+P\+S/2 Command Register. 
 
 
 
-Definition at line 4 of file vga.\+h.
+Definition at line 21 of file keyboard.\+h.
+
+\mbox{\Hypertarget{a00017_a0ef8b0a5f135deeee1540a47eeb0a0d3_a0ef8b0a5f135deeee1540a47eeb0a0d3}\label{a00017_a0ef8b0a5f135deeee1540a47eeb0a0d3_a0ef8b0a5f135deeee1540a47eeb0a0d3}} 
+\index{keyboard.\+h@{keyboard.\+h}!P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT@{P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT}}
+\index{P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT@{P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT}{PS2\_DATAPORT}}
+{\footnotesize\ttfamily \#define P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT~0x60}
+
+
+
+P\+S/2 Data Port. 
+
+
+
+Definition at line 13 of file keyboard.\+h.
+
+\mbox{\Hypertarget{a00017_ac53f79a633bdedad461bd9b969d9afcc_ac53f79a633bdedad461bd9b969d9afcc}\label{a00017_ac53f79a633bdedad461bd9b969d9afcc_ac53f79a633bdedad461bd9b969d9afcc}} 
+\index{keyboard.\+h@{keyboard.\+h}!P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG@{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}}
+\index{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG@{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}{PS2\_STATUSREG}}
+{\footnotesize\ttfamily \#define P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG~0x64}
+
+
+
+P\+S/2 Status Register. 
+
+
+
+Definition at line 17 of file keyboard.\+h.
 
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00017_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}\label{a00017_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}} 
-\index{vga.\+h@{vga.\+h}!drawchar@{drawchar}}
-\index{drawchar@{drawchar}!vga.\+h@{vga.\+h}}
-\subsubsection{\texorpdfstring{drawchar()}{drawchar()}}
-{\footnotesize\ttfamily void drawchar (\begin{DoxyParamCaption}\item[{unsigned char}]{c,  }\item[{\hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{x,  }\item[{\hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{y,  }\item[{\hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{fgcolor,  }\item[{\hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{bgcolor }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00017_ad6a916c09d63bcfc59bce46f2bb34811_ad6a916c09d63bcfc59bce46f2bb34811}\label{a00017_ad6a916c09d63bcfc59bce46f2bb34811_ad6a916c09d63bcfc59bce46f2bb34811}} 
+\index{keyboard.\+h@{keyboard.\+h}!kb\+\_\+getscancode@{kb\+\_\+getscancode}}
+\index{kb\+\_\+getscancode@{kb\+\_\+getscancode}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{kb\+\_\+getscancode()}{kb\_getscancode()}}
+{\footnotesize\ttfamily char kb\+\_\+getscancode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Puts a A\+S\+C\+II character on the screen. 
+Gets a keyboard scancode. 
+
+\mbox{\Hypertarget{a00017_ab55128c33115081a66a8acb39dc6c7dc_ab55128c33115081a66a8acb39dc6c7dc}\label{a00017_ab55128c33115081a66a8acb39dc6c7dc_ab55128c33115081a66a8acb39dc6c7dc}} 
+\index{keyboard.\+h@{keyboard.\+h}!ps2init@{ps2init}}
+\index{ps2init@{ps2init}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{ps2init()}{ps2init()}}
+{\footnotesize\ttfamily void ps2init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}{Parameters}
-{\em c} & The character \\
-\hline
-{\em x} & The X of the character \\
-\hline
-{\em y} & The Y of the character \\
-\hline
-{\em fgcolor} & The foreground color \\
-\hline
-{\em bgcolor} & The background color \\
-\hline
-\end{DoxyParams}
+
+P\+S/2 Initialize. 
 
 
-Definition at line 17 of file vga.\+c.
+
+Definition at line 7 of file keyboard.\+c.
 
 
 \begin{DoxyCode}
-18 \{
-19     \textcolor{keywordtype}{int} cx,cy;
-20     \textcolor{keywordtype}{int} mask[8]=\{1,2,4,8,16,32,64,128\};
-21     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *gylph=\hyperlink{a00014_a586c0ac088deb9338d9b1464dcd587c8_a586c0ac088deb9338d9b1464dcd587c8}{vgafont}+(int)c*16;
-22  
-23     \textcolor{keywordflow}{for}(cy=0;cy<16;cy++)\{
-24         \textcolor{keywordflow}{for}(cx+8;cx<0;cx++)\{
-25             \hyperlink{a00014_ab17a69b465efb1ebe54a6a2e5d7b7ce8_ab17a69b465efb1ebe54a6a2e5d7b7ce8}{putpixel}(gylph[cy]&mask[cx]?fgcolor:bgcolor,x+cx,y+cy-12);
-26         \}
-27     \}
-28 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00017_ab17a69b465efb1ebe54a6a2e5d7b7ce8_ab17a69b465efb1ebe54a6a2e5d7b7ce8}\label{a00017_ab17a69b465efb1ebe54a6a2e5d7b7ce8_ab17a69b465efb1ebe54a6a2e5d7b7ce8}} 
-\index{vga.\+h@{vga.\+h}!putpixel@{putpixel}}
-\index{putpixel@{putpixel}!vga.\+h@{vga.\+h}}
-\subsubsection{\texorpdfstring{putpixel()}{putpixel()}}
-{\footnotesize\ttfamily void putpixel (\begin{DoxyParamCaption}\item[{\hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{c,  }\item[{\hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{x,  }\item[{\hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{y }\end{DoxyParamCaption})}
-
-
-
-Puts a pixel on the screen. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em c} & The color of the pixel \\
-\hline
-{\em x} & The X of the pixel \\
-\hline
-{\em y} & The Y of the pixel \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 5 of file vga.\+c.
-
-
-\begin{DoxyCode}
-5                                                  \{
-6     \hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} offset = (y * \hyperlink{a00017_a2cd109632a6dcccaa80b43561b1ab700_a2cd109632a6dcccaa80b43561b1ab700}{SCREEN\_WIDTH}) + x;
-7     \hyperlink{a00086_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}{pokeb}(\hyperlink{a00017_a818608c80027ef8ff56d31ebaedf58f3_a818608c80027ef8ff56d31ebaedf58f3}{VIDEO\_SEGMENT},offset,c);
-8 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00017_abb01dc16ea34f0a6de3d10d732b6c536_abb01dc16ea34f0a6de3d10d732b6c536}\label{a00017_abb01dc16ea34f0a6de3d10d732b6c536_abb01dc16ea34f0a6de3d10d732b6c536}} 
-\index{vga.\+h@{vga.\+h}!setfont@{setfont}}
-\index{setfont@{setfont}!vga.\+h@{vga.\+h}}
-\subsubsection{\texorpdfstring{setfont()}{setfont()}}
-{\footnotesize\ttfamily void setfont (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{font }\end{DoxyParamCaption})}
-
-
-
-Sets the font. 
-
-
-
-Definition at line 34 of file vga.\+c.
-
-
-\begin{DoxyCode}
-34                                   \{
-35     \hyperlink{a00014_a586c0ac088deb9338d9b1464dcd587c8_a586c0ac088deb9338d9b1464dcd587c8}{vgafont} = font;
-36 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00017_af6d170c9401ea8f94d4c5cf09347cca7_af6d170c9401ea8f94d4c5cf09347cca7}\label{a00017_af6d170c9401ea8f94d4c5cf09347cca7_af6d170c9401ea8f94d4c5cf09347cca7}} 
-\index{vga.\+h@{vga.\+h}!vgamode@{vgamode}}
-\index{vgamode@{vgamode}!vga.\+h@{vga.\+h}}
-\subsubsection{\texorpdfstring{vgamode()}{vgamode()}}
-{\footnotesize\ttfamily \hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} vgamode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Gets the current V\+GA mode. 
-
-
-
-Definition at line 30 of file vga.\+c.
-
-
-\begin{DoxyCode}
-30                    \{
-31     \textcolor{keywordflow}{return} 0x13; \textcolor{comment}{// we sure are using mode 13 so}
-32 \}
+7                \{
+8     \hyperlink{a00014_afbd5f7a0d5ee4c4e6e0615a7294e1e10_afbd5f7a0d5ee4c4e6e0615a7294e1e10}{rcv} = \textcolor{keyword}{false};
+9     \textcolor{comment}{// disable devices}
+10     \hyperlink{a00104_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00017_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}{PS2\_COMMANDREG},0xAD);  
+11     \hyperlink{a00104_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00017_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}{PS2\_COMMANDREG},0xA7);
+12     \hyperlink{a00104_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00017_a0ef8b0a5f135deeee1540a47eeb0a0d3_a0ef8b0a5f135deeee1540a47eeb0a0d3}{PS2\_DATAPORT});
+13 
+14 \}
 \end{DoxyCode}

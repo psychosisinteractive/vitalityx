@@ -50,6 +50,7 @@ $(function() {
         <table>
           <tr><td class="navtab"><a class="qindex" href="a00104_ad80d786594a109b21e30da4bf6f56a85.html#ad80d786594a109b21e30da4bf6f56a85">__native_flush_tlb_single</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="a00104_ae7df27a6150c6a020eead928af349b21.html#ae7df27a6150c6a020eead928af349b21">are_interrupts_enabled</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="a00104_a3f7e7be8f62f43b2b62df54cac1590be.html#a3f7e7be8f62f43b2b62df54cac1590be">bochs_bkpt</a></td></tr>
           <tr><td class="navtab"><a class="qindexHL" href="a00104_adacb2a50c30267ac5314bfcb92ac1d85.html#adacb2a50c30267ac5314bfcb92ac1d85">cpuid</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="a00104_aee0779a0581136320f91a72c4d6b5b90.html#aee0779a0581136320f91a72c4d6b5b90">farpeekl</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="a00104_a4e7b04b927c6dca2d20f54a5c14a01d6.html#a4e7b04b927c6dca2d20f54a5c14a01d6">farpokeb</a></td></tr>
@@ -87,13 +88,13 @@ $(function() {
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00092_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="a00095_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> *&#160;</td>
           <td class="paramname"><em>a</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00092_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="a00095_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> *&#160;</td>
           <td class="paramname"><em>d</em>&#160;</td>
         </tr>
         <tr>
@@ -109,8 +110,8 @@ $(function() {
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00085">85</a> of file <a class="el" href="a00104_source.html">inline.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;{</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span> ( <span class="stringliteral">&quot;cpuid&quot;</span> : <span class="stringliteral">&quot;=a&quot;</span>(*a), <span class="stringliteral">&quot;=d&quot;</span>(*d) : <span class="stringliteral">&quot;0&quot;</span>(code) : <span class="stringliteral">&quot;ebx&quot;</span>, <span class="stringliteral">&quot;ecx&quot;</span> );</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div></div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00089">89</a> of file <a class="el" href="a00104_source.html">inline.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;{</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keyword">asm</span> <span class="keyword">volatile</span> ( <span class="stringliteral">&quot;cpuid&quot;</span> : <span class="stringliteral">&quot;=a&quot;</span>(*a), <span class="stringliteral">&quot;=d&quot;</span>(*d) : <span class="stringliteral">&quot;0&quot;</span>(code) : <span class="stringliteral">&quot;ebx&quot;</span>, <span class="stringliteral">&quot;ecx&quot;</span> );</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div></div><!-- fragment -->
 </div>
 </div>
     </td>

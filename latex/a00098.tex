@@ -1,52 +1,109 @@
-\hypertarget{a00098}{}\section{libc/vitality/basfmts.h File Reference}
-\label{a00098}\index{libc/vitality/basfmts.\+h@{libc/vitality/basfmts.\+h}}
+\hypertarget{a00098}{}\section{libc/vitality/basfmts.c File Reference}
+\label{a00098}\index{libc/vitality/basfmts.\+c@{libc/vitality/basfmts.\+c}}
+{\ttfamily \#include \char`\"{}basfmts.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
-Include dependency graph for basfmts.\+h\+:
+Include dependency graph for basfmts.\+c\+:
 % FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
-\subsection*{Data Structures}
+\subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{a00158}{psf}
-\begin{DoxyCompactList}\small\item\em PC Screen Font struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Macros}
+void \hyperlink{a00098_a5b0c4eee15bbfa5858d6459bc62f366d_a5b0c4eee15bbfa5858d6459bc62f366d}{psf\+\_\+init} ()
+\begin{DoxyCompactList}\small\item\em Initialises an included P\+SF font. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{a00098_a73f827ead78113d46a0138e62e141ec8_a73f827ead78113d46a0138e62e141ec8}{P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC}~0x864ab572
-\begin{DoxyCompactList}\small\item\em P\+SF Magic. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Typedefs}
-\begin{DoxyCompactItemize}
+char \hyperlink{a00098_a5623e892e8fa81d5623024ca482d3c4a_a5623e892e8fa81d5623024ca482d3c4a}{\+\_\+binary\+\_\+font\+\_\+psf\+\_\+start}
 \item 
-typedef struct \hyperlink{a00158}{psf} \hyperlink{a00098_a6d3104625aeeda181b07e04f21e34e93_a6d3104625aeeda181b07e04f21e34e93}{psf\+\_\+t}
-\begin{DoxyCompactList}\small\item\em PC Screen Font struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+char \hyperlink{a00098_a8c827b5bc290c479623d7199dec99bf8_a8c827b5bc290c479623d7199dec99bf8}{\+\_\+binary\+\_\+font\+\_\+psf\+\_\+end}
+\item 
+\hyperlink{a00095_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$ \hyperlink{a00098_ae57061df1a719beec3cdb812051d5a4a_ae57061df1a719beec3cdb812051d5a4a}{unicode}
+\end{DoxyCompactItemize}
 
 
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{a00098_a73f827ead78113d46a0138e62e141ec8_a73f827ead78113d46a0138e62e141ec8}\label{a00098_a73f827ead78113d46a0138e62e141ec8_a73f827ead78113d46a0138e62e141ec8}} 
-\index{basfmts.\+h@{basfmts.\+h}!P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC@{P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC}}
-\index{P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC@{P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC}!basfmts.\+h@{basfmts.\+h}}
-\subsubsection{\texorpdfstring{P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC}{PSF\_FONT\_MAGIC}}
-{\footnotesize\ttfamily \#define P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC~0x864ab572}
-
-
-
-P\+SF Magic. 
-
-
-
-Definition at line 8 of file basfmts.\+h.
+\subsection{Function Documentation}
+\mbox{\Hypertarget{a00098_a5b0c4eee15bbfa5858d6459bc62f366d_a5b0c4eee15bbfa5858d6459bc62f366d}\label{a00098_a5b0c4eee15bbfa5858d6459bc62f366d_a5b0c4eee15bbfa5858d6459bc62f366d}} 
+\index{basfmts.\+c@{basfmts.\+c}!psf\+\_\+init@{psf\+\_\+init}}
+\index{psf\+\_\+init@{psf\+\_\+init}!basfmts.\+c@{basfmts.\+c}}
+\subsubsection{\texorpdfstring{psf\+\_\+init()}{psf\_init()}}
+{\footnotesize\ttfamily void psf\+\_\+init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-\subsection{Typedef Documentation}
-\mbox{\Hypertarget{a00098_a6d3104625aeeda181b07e04f21e34e93_a6d3104625aeeda181b07e04f21e34e93}\label{a00098_a6d3104625aeeda181b07e04f21e34e93_a6d3104625aeeda181b07e04f21e34e93}} 
-\index{basfmts.\+h@{basfmts.\+h}!psf\+\_\+t@{psf\+\_\+t}}
-\index{psf\+\_\+t@{psf\+\_\+t}!basfmts.\+h@{basfmts.\+h}}
-\subsubsection{\texorpdfstring{psf\+\_\+t}{psf\_t}}
-{\footnotesize\ttfamily typedef struct \hyperlink{a00158}{psf}  \hyperlink{a00098_a6d3104625aeeda181b07e04f21e34e93_a6d3104625aeeda181b07e04f21e34e93}{psf\+\_\+t}}
+Initialises an included P\+SF font. 
 
 
 
-PC Screen Font struct. 
+Definition at line 12 of file basfmts.\+c.
+
+
+\begin{DoxyCode}
+13 \{
+14     \textcolor{comment}{// uint16\_t glyph = 0;}
+15     \textcolor{comment}{// /* cast the address to PSF header struct */}
+16     \textcolor{comment}{// psf\_t *font = (psf\_t*)&\_binary\_font\_psf\_start;}
+17     \textcolor{comment}{// /* is there a unicode table? */}
+18     \textcolor{comment}{// if(font->flags) \{}
+19     \textcolor{comment}{//     /* get the offset of the table */}
+20     \textcolor{comment}{//     char *s = (char *)(}
+21     \textcolor{comment}{//       (unsigned char*)&\_binary\_font\_psf\_start +}
+22     \textcolor{comment}{//       font->headersize +}
+23     \textcolor{comment}{//       font->numglyph * font->bytesperglyph}
+24     \textcolor{comment}{//     );}
+25     \textcolor{comment}{//     /* allocate memory for translation table */}
+26     \textcolor{comment}{//     unicode = calloc(USHRT\_MAX, 2);}
+27     \textcolor{comment}{//     while(s>\_binary\_font\_psf\_end) \{}
+28     \textcolor{comment}{//         uint16\_t uc = (uint16\_t)((unsigned char *)s[0]);}
+29     \textcolor{comment}{//         if(uc == 0xFF) \{}
+30     \textcolor{comment}{//             glyph++;}
+31     \textcolor{comment}{//             s++;}
+32     \textcolor{comment}{//             continue;}
+33     \textcolor{comment}{//         \} else if(uc & 128) \{}
+34     \textcolor{comment}{//             /* UTF-8 to unicode */}
+35     \textcolor{comment}{//             if((uc & 32) == 0 ) \{}
+36     \textcolor{comment}{//                 uc = ((s[0] & 0x1F)<<6)+(s[1] & 0x3F);}
+37     \textcolor{comment}{//                 s++;}
+38     \textcolor{comment}{//             \} else}
+39     \textcolor{comment}{//             if((uc & 16) == 0 ) \{}
+40     \textcolor{comment}{//                 uc = ((((s[0] & 0xF)<<6)+(s[1] & 0x3F))<<6)+(s[2] & 0x3F);}
+41     \textcolor{comment}{//                 s+=2;}
+42     \textcolor{comment}{//             \} else}
+43     \textcolor{comment}{//             if((uc & 8) == 0 ) \{}
+44     \textcolor{comment}{//                 uc = ((((((s[0] & 0x7)<<6)+(s[1] & 0x3F))<<6)+(s[2] & 0x3F))<<6)+(s[3] & 0x3F);}
+45     \textcolor{comment}{//                 s+=3;}
+46     \textcolor{comment}{//             \} else}
+47     \textcolor{comment}{//                 uc = 0;}
+48     \textcolor{comment}{//         \}}
+49     \textcolor{comment}{//         /* save translation */}
+50     \textcolor{comment}{//         unicode[uc] = glyph;}
+51     \textcolor{comment}{//         s++;}
+52     \textcolor{comment}{//     \}}
+53     \textcolor{comment}{// \} else \{}
+54     \textcolor{comment}{//     unicode = NULL;}
+55     \textcolor{comment}{// \}}
+56 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{a00098_a8c827b5bc290c479623d7199dec99bf8_a8c827b5bc290c479623d7199dec99bf8}\label{a00098_a8c827b5bc290c479623d7199dec99bf8_a8c827b5bc290c479623d7199dec99bf8}} 
+\index{basfmts.\+c@{basfmts.\+c}!\+\_\+binary\+\_\+font\+\_\+psf\+\_\+end@{\+\_\+binary\+\_\+font\+\_\+psf\+\_\+end}}
+\index{\+\_\+binary\+\_\+font\+\_\+psf\+\_\+end@{\+\_\+binary\+\_\+font\+\_\+psf\+\_\+end}!basfmts.\+c@{basfmts.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+binary\+\_\+font\+\_\+psf\+\_\+end}{\_binary\_font\_psf\_end}}
+{\footnotesize\ttfamily char \+\_\+binary\+\_\+font\+\_\+psf\+\_\+end}
+
+\mbox{\Hypertarget{a00098_a5623e892e8fa81d5623024ca482d3c4a_a5623e892e8fa81d5623024ca482d3c4a}\label{a00098_a5623e892e8fa81d5623024ca482d3c4a_a5623e892e8fa81d5623024ca482d3c4a}} 
+\index{basfmts.\+c@{basfmts.\+c}!\+\_\+binary\+\_\+font\+\_\+psf\+\_\+start@{\+\_\+binary\+\_\+font\+\_\+psf\+\_\+start}}
+\index{\+\_\+binary\+\_\+font\+\_\+psf\+\_\+start@{\+\_\+binary\+\_\+font\+\_\+psf\+\_\+start}!basfmts.\+c@{basfmts.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+binary\+\_\+font\+\_\+psf\+\_\+start}{\_binary\_font\_psf\_start}}
+{\footnotesize\ttfamily char \+\_\+binary\+\_\+font\+\_\+psf\+\_\+start}
+
+\mbox{\Hypertarget{a00098_ae57061df1a719beec3cdb812051d5a4a_ae57061df1a719beec3cdb812051d5a4a}\label{a00098_ae57061df1a719beec3cdb812051d5a4a_ae57061df1a719beec3cdb812051d5a4a}} 
+\index{basfmts.\+c@{basfmts.\+c}!unicode@{unicode}}
+\index{unicode@{unicode}!basfmts.\+c@{basfmts.\+c}}
+\subsubsection{\texorpdfstring{unicode}{unicode}}
+{\footnotesize\ttfamily \hyperlink{a00095_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}$\ast$ unicode}
+
+
+
+Definition at line 7 of file basfmts.\+c.
 

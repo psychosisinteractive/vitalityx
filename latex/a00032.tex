@@ -1,61 +1,51 @@
-\hypertarget{a00032}{}\section{libc/ext/debug.h File Reference}
-\label{a00032}\index{libc/ext/debug.\+h@{libc/ext/debug.\+h}}
-{\ttfamily \#include \char`\"{}../vitality/inline.\+h\char`\"{}}\newline
-Include dependency graph for debug.\+h\+:
+\hypertarget{a00032}{}\section{kernel/kernel.c File Reference}
+\label{a00032}\index{kernel/kernel.\+c@{kernel/kernel.\+c}}
+{\ttfamily \#include \char`\"{}../libc/vitality/tty.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/descriptortables.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/page.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/ext/debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../drivers/vga.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/ext/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/vitality/mem.\+h\char`\"{}}\newline
+Include dependency graph for kernel.\+c\+:
 % FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{a00032_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}{Bochs\+Console\+Print\+Char}(c)~\hyperlink{a00104_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0xe9, c)
-\begin{DoxyCompactList}\small\item\em Outputs a character to the Bochs console. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00032_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{Bochs\+Console\+Print\+String} (char $\ast$string)
-\begin{DoxyCompactList}\small\item\em Outputs a string to the Bochs console. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{a00032_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}\label{a00032_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}} 
-\index{debug.\+h@{debug.\+h}!Bochs\+Console\+Print\+Char@{Bochs\+Console\+Print\+Char}}
-\index{Bochs\+Console\+Print\+Char@{Bochs\+Console\+Print\+Char}!debug.\+h@{debug.\+h}}
-\subsubsection{\texorpdfstring{Bochs\+Console\+Print\+Char}{BochsConsolePrintChar}}
-{\footnotesize\ttfamily \#define Bochs\+Console\+Print\+Char(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~\hyperlink{a00104_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0xe9, c)}
-
-
-
-Outputs a character to the Bochs console. 
-
-
-
-Definition at line 8 of file debug.\+h.
-
+int \hyperlink{a00032_a4ee3d1f05046b7afc6b4d516bf10667a_a4ee3d1f05046b7afc6b4d516bf10667a}{kernel} ()
+\begin{DoxyCompactList}\small\item\em The kernels C entry point. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00032_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}\label{a00032_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}} 
-\index{debug.\+h@{debug.\+h}!Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}}
-\index{Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}!debug.\+h@{debug.\+h}}
-\subsubsection{\texorpdfstring{Bochs\+Console\+Print\+String()}{BochsConsolePrintString()}}
-{\footnotesize\ttfamily void Bochs\+Console\+Print\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00032_a4ee3d1f05046b7afc6b4d516bf10667a_a4ee3d1f05046b7afc6b4d516bf10667a}\label{a00032_a4ee3d1f05046b7afc6b4d516bf10667a_a4ee3d1f05046b7afc6b4d516bf10667a}} 
+\index{kernel.\+c@{kernel.\+c}!kernel@{kernel}}
+\index{kernel@{kernel}!kernel.\+c@{kernel.\+c}}
+\subsubsection{\texorpdfstring{kernel()}{kernel()}}
+{\footnotesize\ttfamily int kernel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Outputs a string to the Bochs console. 
+The kernels C entry point. 
 
 
 
-Definition at line 3 of file debug.\+c.
+Definition at line 11 of file kernel.\+c.
 
 
 \begin{DoxyCode}
-4 \{
-5     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
-6     \textcolor{keywordflow}{while}(chara != 0x0) \{
-7         \hyperlink{a00032_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}{BochsConsolePrintChar}(chara);
-8         chara = *\textcolor{keywordtype}{string}++;
-9     \}
-10 \}
+11              \{
+12     \hyperlink{a00077_a51f6a37816540dea572d38f2713e9f5a_a51f6a37816540dea572d38f2713e9f5a}{setup\_page}(); \textcolor{comment}{// enable paging}
+13     \hyperlink{a00035_a4c38e3f3ee100ca4323081bf0970c1ac_a4c38e3f3ee100ca4323081bf0970c1ac}{dt\_install}();
+14     \hyperlink{a00107_a1add491f9ef2f8830ed5108f8dbc0ff2_a1add491f9ef2f8830ed5108f8dbc0ff2}{setupmalloc}();
+15     \hyperlink{a00026_abb01dc16ea34f0a6de3d10d732b6c536_abb01dc16ea34f0a6de3d10d732b6c536}{setfont}(0x7e00);
+16     \hyperlink{a00047_aea945e91746a54801f4763ad264746b9_aea945e91746a54801f4763ad264746b9}{initTasking}();
+17     \hyperlink{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"VitalityX started\(\backslash\)n"});
+18     \hyperlink{a00113_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"VitalityX"});
+19     \hyperlink{a00107_a2de854ee97d4e6d27f7aa7899a2d1d32_a2de854ee97d4e6d27f7aa7899a2d1d32}{mempoke}(0,5,\textcolor{charliteral}{'x'});
+20     \textcolor{keyword}{asm} \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"int $0x3f"});
+21     \textcolor{keywordflow}{for}(;;) \{
+22         \hyperlink{a00047_a58c8b2ad0ea491a6642e5e1cbd358c89_a58c8b2ad0ea491a6642e5e1cbd358c89}{yield}();
+23     \}
+24     \textcolor{keywordflow}{return} 0;
+25 \}
 \end{DoxyCode}

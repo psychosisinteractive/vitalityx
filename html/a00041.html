@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/ext/liballoc_hook.c File Reference</title>
+<title>VitalityX: libc/ext/debug.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,14 +46,14 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">liballoc_hook.c File Reference</div>  </div>
+<div class="title">debug.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00038_source.html">liballoc.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00044_source.html">debug.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for liballoc_hook.c:</div>
+Include dependency graph for debug.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00042.png" border="0" usemap="#libc_2ext_2liballoc__hook_8c" alt=""/></div>
+<div class="center"><img src="a00042.png" border="0" usemap="#libc_2ext_2debug_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
@@ -61,18 +61,9 @@ Include dependency graph for liballoc_hook.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8b5670e4594b0b6f8be78fe17f0c3b53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00041_a8b5670e4594b0b6f8be78fe17f0c3b53.html#a8b5670e4594b0b6f8be78fe17f0c3b53">liballoc_lock</a> ()</td></tr>
-<tr class="memdesc:a8b5670e4594b0b6f8be78fe17f0c3b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is supposed to lock the memory data structures.  <a href="a00041_a8b5670e4594b0b6f8be78fe17f0c3b53.html#a8b5670e4594b0b6f8be78fe17f0c3b53">More...</a><br /></td></tr>
-<tr class="separator:a8b5670e4594b0b6f8be78fe17f0c3b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedc23f198b2882d41d0caa316453967b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00041_aedc23f198b2882d41d0caa316453967b.html#aedc23f198b2882d41d0caa316453967b">liballoc_unlock</a> ()</td></tr>
-<tr class="memdesc:aedc23f198b2882d41d0caa316453967b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function unlocks what was previously locked by the liballoc_lock function.  <a href="a00041_aedc23f198b2882d41d0caa316453967b.html#aedc23f198b2882d41d0caa316453967b">More...</a><br /></td></tr>
-<tr class="separator:aedc23f198b2882d41d0caa316453967b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a857110476fa9dd6317f60a76793a3274"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00041_a857110476fa9dd6317f60a76793a3274.html#a857110476fa9dd6317f60a76793a3274">liballoc_alloc</a> (int pages)</td></tr>
-<tr class="memdesc:a857110476fa9dd6317f60a76793a3274"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the hook into the local system which allocates pages.  <a href="a00041_a857110476fa9dd6317f60a76793a3274.html#a857110476fa9dd6317f60a76793a3274">More...</a><br /></td></tr>
-<tr class="separator:a857110476fa9dd6317f60a76793a3274"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee2dc12f19409f4a76b2aa36f5ab1316"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00041_aee2dc12f19409f4a76b2aa36f5ab1316.html#aee2dc12f19409f4a76b2aa36f5ab1316">liballoc_free</a> (void *ptr, int pages)</td></tr>
-<tr class="memdesc:aee2dc12f19409f4a76b2aa36f5ab1316"><td class="mdescLeft">&#160;</td><td class="mdescRight">This frees previously allocated memory.  <a href="a00041_aee2dc12f19409f4a76b2aa36f5ab1316.html#aee2dc12f19409f4a76b2aa36f5ab1316">More...</a><br /></td></tr>
-<tr class="separator:aee2dc12f19409f4a76b2aa36f5ab1316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19e1f554d03c977f8b947f21489daa41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00041_a19e1f554d03c977f8b947f21489daa41.html#a19e1f554d03c977f8b947f21489daa41">BochsConsolePrintString</a> (char *string)</td></tr>
+<tr class="memdesc:a19e1f554d03c977f8b947f21489daa41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs a string to the Bochs console.  <a href="a00041_a19e1f554d03c977f8b947f21489daa41.html#a19e1f554d03c977f8b947f21489daa41">More...</a><br /></td></tr>
+<tr class="separator:a19e1f554d03c977f8b947f21489daa41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

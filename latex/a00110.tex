@@ -1,114 +1,178 @@
-\hypertarget{a00110}{}\section{libc/vitality/tty.h File Reference}
-\label{a00110}\index{libc/vitality/tty.\+h@{libc/vitality/tty.\+h}}
-This graph shows which files directly or indirectly include this file\+:
+\hypertarget{a00110}{}\section{libc/vitality/mem.h File Reference}
+\label{a00110}\index{libc/vitality/mem.\+h@{libc/vitality/mem.\+h}}
+{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
+Include dependency graph for mem.\+h\+:
 % FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{a00164}{mementry}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{a00164}{mementry} \hyperlink{a00110_a876b6ee19692762a87e4673911f9b8da_a876b6ee19692762a87e4673911f9b8da}{mementry\+\_\+t}
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00110_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}{tty\+\_\+putstring} (char $\ast$string)
-\begin{DoxyCompactList}\small\item\em Puts a string in V\+R\+AM, Text mode only. \end{DoxyCompactList}\item 
-void \hyperlink{a00110_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}{tty\+\_\+vgaputstring} (char $\ast$string)
-\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, Mode 13 only. \end{DoxyCompactList}\item 
-void \hyperlink{a00110_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\+\_\+pputstring} (char $\ast$string)
-\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, detects preferred mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{a00110_a1add491f9ef2f8830ed5108f8dbc0ff2_a1add491f9ef2f8830ed5108f8dbc0ff2}{setupmalloc} ()
+\item 
+\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00110_a9087e3504e5973deee6f3561705978c7_a9087e3504e5973deee6f3561705978c7}{malloc} (\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00068_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base}, \hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} size, char $\ast$purpose)
+\item 
+void \hyperlink{a00110_a54eab910cb28c3f5ff9b02bf5feaa778_a54eab910cb28c3f5ff9b02bf5feaa778}{memfree} (\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} memid)
+\item 
+void \hyperlink{a00110_a2de854ee97d4e6d27f7aa7899a2d1d32_a2de854ee97d4e6d27f7aa7899a2d1d32}{mempoke} (\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} memid, \hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} addr, \hyperlink{a00095_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} v)
+\item 
+\hyperlink{a00095_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00110_a60f8bf957bca47c651dc4024dc26f36e_a60f8bf957bca47c651dc4024dc26f36e}{mempeek} (\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} memid, \hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} addr)
+\item 
+\hyperlink{a00095_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\+\_\+t} \hyperlink{a00110_ae024364045572d15f9b90b8a046d6807_ae024364045572d15f9b90b8a046d6807}{malloctoaddr} (\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} memid, \hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} addr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{a00110_a876b6ee19692762a87e4673911f9b8da_a876b6ee19692762a87e4673911f9b8da}\label{a00110_a876b6ee19692762a87e4673911f9b8da_a876b6ee19692762a87e4673911f9b8da}} 
+\index{mem.\+h@{mem.\+h}!mementry\+\_\+t@{mementry\+\_\+t}}
+\index{mementry\+\_\+t@{mementry\+\_\+t}!mem.\+h@{mem.\+h}}
+\subsubsection{\texorpdfstring{mementry\+\_\+t}{mementry\_t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00164}{mementry}  \hyperlink{a00110_a876b6ee19692762a87e4673911f9b8da_a876b6ee19692762a87e4673911f9b8da}{mementry\+\_\+t}}
+
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00110_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}\label{a00110_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}} 
-\index{tty.\+h@{tty.\+h}!tty\+\_\+pputstring@{tty\+\_\+pputstring}}
-\index{tty\+\_\+pputstring@{tty\+\_\+pputstring}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{tty\+\_\+pputstring()}{tty\_pputstring()}}
-{\footnotesize\ttfamily void tty\+\_\+pputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00110_a9087e3504e5973deee6f3561705978c7_a9087e3504e5973deee6f3561705978c7}\label{a00110_a9087e3504e5973deee6f3561705978c7_a9087e3504e5973deee6f3561705978c7}} 
+\index{mem.\+h@{mem.\+h}!malloc@{malloc}}
+\index{malloc@{malloc}!mem.\+h@{mem.\+h}}
+\subsubsection{\texorpdfstring{malloc()}{malloc()}}
+{\footnotesize\ttfamily \hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} malloc (\begin{DoxyParamCaption}\item[{\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{base,  }\item[{\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{size,  }\item[{char $\ast$}]{purpose }\end{DoxyParamCaption})}
 
 
 
-Puts a string into V\+R\+AM, detects preferred mode. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 30 of file tty.\+c.
+Definition at line 25 of file mem.\+c.
 
 
 \begin{DoxyCode}
-30                                   \{
-31     \textcolor{keywordflow}{switch} (\hyperlink{a00014_af6d170c9401ea8f94d4c5cf09347cca7_af6d170c9401ea8f94d4c5cf09347cca7}{vgamode}())
-32     \{
-33     \textcolor{keywordflow}{case} 0x3:
-34         \hyperlink{a00107_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}{tty\_putstring}(\textcolor{keywordtype}{string});
-35         \textcolor{keywordflow}{break};
-36     \textcolor{keywordflow}{case} 0x13:
-37         \hyperlink{a00107_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}{tty\_vgaputstring}(\textcolor{keywordtype}{string});
-38         \textcolor{keywordflow}{break};
-39     \textcolor{keywordflow}{default}:
-40         \hyperlink{a00107_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}{tty\_vgaputstring}(\textcolor{keywordtype}{string});
-41         \textcolor{keywordflow}{break};
+25                                                              \{
+26     \hyperlink{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nNew memory allocation being made\(\backslash\)n"});
+27     \hyperlink{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"Purpose: "});
+28     \hyperlink{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(purpose);
+29     \hyperlink{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n"});
+30     \textcolor{keywordtype}{int} i = 0;
+31     \textcolor{keywordtype}{bool} mallocwork = \textcolor{keyword}{false};
+32     \textcolor{keywordflow}{for}(i = 0; i < \hyperlink{a00107_a48623ea6ed429e2f046b49041dde1dc5_a48623ea6ed429e2f046b49041dde1dc5}{MEMENTRY\_SIZE}; i++) \{
+33         \textcolor{keywordflow}{if}(!\hyperlink{a00107_a9ec3d7a60bca9bd965aba15905c6d1ed_a9ec3d7a60bca9bd965aba15905c6d1ed}{mementries}[i].instantiated) \{
+34             mallocwork = \textcolor{keyword}{true};
+35             \textcolor{keywordflow}{break};
+36         \} \textcolor{keywordflow}{else} \{
+37             \textcolor{keywordflow}{continue};
+38         \}
+39     \}
+40     \textcolor{keywordflow}{if}(!mallocwork) \{
+41         \textcolor{keywordflow}{return} 0; \textcolor{comment}{// nothing}
 42     \}
-43 \}
+43     \hyperlink{a00164}{mementry\_t} entry;
+44 
+45     \hyperlink{a00089_a113a42d20ee587a79f71464089007387_a113a42d20ee587a79f71464089007387}{memcpy}(&entry.\hyperlink{a00164_a5ad2dd8cc879cbc1bc76459b1b314c81_a5ad2dd8cc879cbc1bc76459b1b314c81}{purpose},purpose,16);
+46     \hyperlink{a00089_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(\hyperlink{a00062_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base},0x00,size);
+47     entry.\hyperlink{a00164_a4342b85bc8bdb60635df7a30e1d30fa2_a4342b85bc8bdb60635df7a30e1d30fa2}{instantiated} = \textcolor{keyword}{true};
+48     entry.\hyperlink{a00164_ad6175fdf80547c655c7f35cff7ff82f9_ad6175fdf80547c655c7f35cff7ff82f9}{base} = \hyperlink{a00062_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base};
+49     entry.\hyperlink{a00164_a9a3a95abc18136ba568cd9d5e594c5c6_a9a3a95abc18136ba568cd9d5e594c5c6}{size} = size;
+50     \hyperlink{a00107_a9ec3d7a60bca9bd965aba15905c6d1ed_a9ec3d7a60bca9bd965aba15905c6d1ed}{mementries}[i] = entry;
+51     \textcolor{keywordflow}{return} i;
+52 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00110_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}\label{a00110_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}} 
-\index{tty.\+h@{tty.\+h}!tty\+\_\+putstring@{tty\+\_\+putstring}}
-\index{tty\+\_\+putstring@{tty\+\_\+putstring}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{tty\+\_\+putstring()}{tty\_putstring()}}
-{\footnotesize\ttfamily void tty\+\_\+putstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00110_ae024364045572d15f9b90b8a046d6807_ae024364045572d15f9b90b8a046d6807}\label{a00110_ae024364045572d15f9b90b8a046d6807_ae024364045572d15f9b90b8a046d6807}} 
+\index{mem.\+h@{mem.\+h}!malloctoaddr@{malloctoaddr}}
+\index{malloctoaddr@{malloctoaddr}!mem.\+h@{mem.\+h}}
+\subsubsection{\texorpdfstring{malloctoaddr()}{malloctoaddr()}}
+{\footnotesize\ttfamily \hyperlink{a00095_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\+\_\+t} malloctoaddr (\begin{DoxyParamCaption}\item[{\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{memid,  }\item[{\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{addr }\end{DoxyParamCaption})}
 
 
 
-Puts a string in V\+R\+AM, Text mode only. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 7 of file tty.\+c.
+Definition at line 58 of file mem.\+c.
 
 
 \begin{DoxyCode}
-7                                  \{
-8     \hyperlink{a00029_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{keywordtype}{string});
-9     \hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} attrib = (0x0 << 4) | (0xf & 0x0F);
-10     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
-11     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'}) \{
-12         *\hyperlink{a00107_a3f896e9c00b9302e2287aad054199134_a3f896e9c00b9302e2287aad054199134}{videoMemoryPtr}++ = chara;
-13         chara = *\textcolor{keywordtype}{string}++;
-14     \}
-15 \}
+58                                                    \{
+59     addr += \hyperlink{a00107_a9ec3d7a60bca9bd965aba15905c6d1ed_a9ec3d7a60bca9bd965aba15905c6d1ed}{mementries}[memid].\hyperlink{a00164_ad6175fdf80547c655c7f35cff7ff82f9_ad6175fdf80547c655c7f35cff7ff82f9}{base};
+60     \textcolor{keywordflow}{return} (\hyperlink{a00095_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t})addr;
+61 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00110_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}\label{a00110_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}} 
-\index{tty.\+h@{tty.\+h}!tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}}
-\index{tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{tty\+\_\+vgaputstring()}{tty\_vgaputstring()}}
-{\footnotesize\ttfamily void tty\+\_\+vgaputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00110_a54eab910cb28c3f5ff9b02bf5feaa778_a54eab910cb28c3f5ff9b02bf5feaa778}\label{a00110_a54eab910cb28c3f5ff9b02bf5feaa778_a54eab910cb28c3f5ff9b02bf5feaa778}} 
+\index{mem.\+h@{mem.\+h}!memfree@{memfree}}
+\index{memfree@{memfree}!mem.\+h@{mem.\+h}}
+\subsubsection{\texorpdfstring{memfree()}{memfree()}}
+{\footnotesize\ttfamily void memfree (\begin{DoxyParamCaption}\item[{\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{memid }\end{DoxyParamCaption})}
 
 
 
-Puts a string into V\+R\+AM, Mode 13 only. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 20 of file tty.\+c.
+Definition at line 54 of file mem.\+c.
 
 
 \begin{DoxyCode}
-20                                     \{
-21     \hyperlink{a00029_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{keywordtype}{string});
-22     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
-23     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'}) \{
-24         \hyperlink{a00014_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}{drawchar}(chara,\hyperlink{a00107_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff},\hyperlink{a00107_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff}+17,0xf,0x0);
-25         \hyperlink{a00107_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff} += 8;
-26         chara = *\textcolor{keywordtype}{string}++;
-27     \}
-28 \}
+54                              \{
+55     
+56 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00110_a60f8bf957bca47c651dc4024dc26f36e_a60f8bf957bca47c651dc4024dc26f36e}\label{a00110_a60f8bf957bca47c651dc4024dc26f36e_a60f8bf957bca47c651dc4024dc26f36e}} 
+\index{mem.\+h@{mem.\+h}!mempeek@{mempeek}}
+\index{mempeek@{mempeek}!mem.\+h@{mem.\+h}}
+\subsubsection{\texorpdfstring{mempeek()}{mempeek()}}
+{\footnotesize\ttfamily \hyperlink{a00095_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} mempeek (\begin{DoxyParamCaption}\item[{\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{memid,  }\item[{\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{addr }\end{DoxyParamCaption})}
+
+
+
+Definition at line 68 of file mem.\+c.
+
+
+\begin{DoxyCode}
+68                                                \{
+69     \hyperlink{a00095_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} maddr = \hyperlink{a00107_ae024364045572d15f9b90b8a046d6807_ae024364045572d15f9b90b8a046d6807}{malloctoaddr}(memid,addr);
+70     \textcolor{keywordflow}{return} *maddr;
+71 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00110_a2de854ee97d4e6d27f7aa7899a2d1d32_a2de854ee97d4e6d27f7aa7899a2d1d32}\label{a00110_a2de854ee97d4e6d27f7aa7899a2d1d32_a2de854ee97d4e6d27f7aa7899a2d1d32}} 
+\index{mem.\+h@{mem.\+h}!mempoke@{mempoke}}
+\index{mempoke@{mempoke}!mem.\+h@{mem.\+h}}
+\subsubsection{\texorpdfstring{mempoke()}{mempoke()}}
+{\footnotesize\ttfamily void mempoke (\begin{DoxyParamCaption}\item[{\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{memid,  }\item[{\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{addr,  }\item[{\hyperlink{a00095_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{v }\end{DoxyParamCaption})}
+
+
+
+Definition at line 63 of file mem.\+c.
+
+
+\begin{DoxyCode}
+63                                                        \{
+64     \hyperlink{a00095_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} maddr = \hyperlink{a00107_ae024364045572d15f9b90b8a046d6807_ae024364045572d15f9b90b8a046d6807}{malloctoaddr}(memid,addr);
+65     *maddr = v;
+66 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00110_a1add491f9ef2f8830ed5108f8dbc0ff2_a1add491f9ef2f8830ed5108f8dbc0ff2}\label{a00110_a1add491f9ef2f8830ed5108f8dbc0ff2_a1add491f9ef2f8830ed5108f8dbc0ff2}} 
+\index{mem.\+h@{mem.\+h}!setupmalloc@{setupmalloc}}
+\index{setupmalloc@{setupmalloc}!mem.\+h@{mem.\+h}}
+\subsubsection{\texorpdfstring{setupmalloc()}{setupmalloc()}}
+{\footnotesize\ttfamily void setupmalloc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 12 of file mem.\+c.
+
+
+\begin{DoxyCode}
+12                    \{
+13     \hyperlink{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nSetting up memory allocator\(\backslash\)n"});
+14     \hyperlink{a00089_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&\hyperlink{a00107_a9ec3d7a60bca9bd965aba15905c6d1ed_a9ec3d7a60bca9bd965aba15905c6d1ed}{mementries},0,\textcolor{keyword}{sizeof}(\hyperlink{a00164}{mementry\_t})*
+      \hyperlink{a00107_a48623ea6ed429e2f046b49041dde1dc5_a48623ea6ed429e2f046b49041dde1dc5}{MEMENTRY\_SIZE});
+15     \hyperlink{a00107_a9087e3504e5973deee6f3561705978c7_a9087e3504e5973deee6f3561705978c7}{malloc}(0x01000000,255,\textcolor{stringliteral}{"vitality-system"});
+16     \hyperlink{a00107_a9087e3504e5973deee6f3561705978c7_a9087e3504e5973deee6f3561705978c7}{malloc}(0x000A0000,64000,\textcolor{stringliteral}{"graphic-display"});
+17     \hyperlink{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nMementries located at "});
+18     \textcolor{keywordtype}{char} \hyperlink{a00164}{mementry}[50];
+19     \hyperlink{a00089_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&mementry,0,50);
+20     \hyperlink{a00083_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(&\hyperlink{a00107_a9ec3d7a60bca9bd965aba15905c6d1ed_a9ec3d7a60bca9bd965aba15905c6d1ed}{mementries},mementry);
+21     \hyperlink{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(mementry);
+22     \hyperlink{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n"});
+23 \}
 \end{DoxyCode}

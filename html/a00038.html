@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/ext/liballoc.h File Reference</title>
+<title>VitalityX: libc/descriptortables.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,69 +39,37 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_c8aa6d4abc9a0662ff2d67630dd4c4d1.html">ext</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">liballoc.h File Reference</div>  </div>
+<div class="title">descriptortables.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &quot;<a class="el" href="a00062_source.html">gdt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00068_source.html">interrupt.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for descriptortables.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00039.png" border="0" usemap="#libc_2descriptortables_8h" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00040.png" border="0" usemap="#libc_2ext_2liballoc_8hdep" alt=""/></div>
-<!-- MAP 0 -->
+<div class="center"><img src="a00040.png" border="0" usemap="#libc_2descriptortables_8hdep" alt=""/></div>
+<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00038_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00126.html">boundary_tag</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a boundary tag which is prepended to the page or section of a page which we have allocated.  <a href="a00126.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a40684528083f4cc0dfe3ca1accae3f79"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_a40684528083f4cc0dfe3ca1accae3f79.html#a40684528083f4cc0dfe3ca1accae3f79">_HAVE_SIZE_T</a></td></tr>
-<tr class="memdesc:a40684528083f4cc0dfe3ca1accae3f79"><td class="mdescLeft">&#160;</td><td class="mdescRight">This code is released into the public domain.  <a href="a00038_a40684528083f4cc0dfe3ca1accae3f79.html#a40684528083f4cc0dfe3ca1accae3f79">More...</a><br /></td></tr>
-<tr class="separator:a40684528083f4cc0dfe3ca1accae3f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a070d2ce7b6bb7e5c05602aa8c308d0c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_a070d2ce7b6bb7e5c05602aa8c308d0c4.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>&#160;&#160;&#160;0</td></tr>
-<tr class="separator:a070d2ce7b6bb7e5c05602aa8c308d0c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a7c94ea6f8948649f8d181ae55911eeaf"><td class="memItemLeft" align="right" valign="top">typedef unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_a7c94ea6f8948649f8d181ae55911eeaf.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a></td></tr>
-<tr class="separator:a7c94ea6f8948649f8d181ae55911eeaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8b5670e4594b0b6f8be78fe17f0c3b53"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_a8b5670e4594b0b6f8be78fe17f0c3b53.html#a8b5670e4594b0b6f8be78fe17f0c3b53">liballoc_lock</a> ()</td></tr>
-<tr class="memdesc:a8b5670e4594b0b6f8be78fe17f0c3b53"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function is supposed to lock the memory data structures.  <a href="a00038_a8b5670e4594b0b6f8be78fe17f0c3b53.html#a8b5670e4594b0b6f8be78fe17f0c3b53">More...</a><br /></td></tr>
-<tr class="separator:a8b5670e4594b0b6f8be78fe17f0c3b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedc23f198b2882d41d0caa316453967b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_aedc23f198b2882d41d0caa316453967b.html#aedc23f198b2882d41d0caa316453967b">liballoc_unlock</a> ()</td></tr>
-<tr class="memdesc:aedc23f198b2882d41d0caa316453967b"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function unlocks what was previously locked by the liballoc_lock function.  <a href="a00038_aedc23f198b2882d41d0caa316453967b.html#aedc23f198b2882d41d0caa316453967b">More...</a><br /></td></tr>
-<tr class="separator:aedc23f198b2882d41d0caa316453967b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae002bb742dfc63fe18a305bd14bdf692"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_ae002bb742dfc63fe18a305bd14bdf692.html#ae002bb742dfc63fe18a305bd14bdf692">liballoc_alloc</a> (int)</td></tr>
-<tr class="memdesc:ae002bb742dfc63fe18a305bd14bdf692"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is the hook into the local system which allocates pages.  <a href="a00038_ae002bb742dfc63fe18a305bd14bdf692.html#ae002bb742dfc63fe18a305bd14bdf692">More...</a><br /></td></tr>
-<tr class="separator:ae002bb742dfc63fe18a305bd14bdf692"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1653870893230580e5d605148aa3c37a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_a1653870893230580e5d605148aa3c37a.html#a1653870893230580e5d605148aa3c37a">liballoc_free</a> (void *, int)</td></tr>
-<tr class="memdesc:a1653870893230580e5d605148aa3c37a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This frees previously allocated memory.  <a href="a00038_a1653870893230580e5d605148aa3c37a.html#a1653870893230580e5d605148aa3c37a">More...</a><br /></td></tr>
-<tr class="separator:a1653870893230580e5d605148aa3c37a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c8580582aae58105f16108d4ec89e9a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_a1c8580582aae58105f16108d4ec89e9a.html#a1c8580582aae58105f16108d4ec89e9a">malloc</a> (<a class="el" href="a00038_a7c94ea6f8948649f8d181ae55911eeaf.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>)</td></tr>
-<tr class="separator:a1c8580582aae58105f16108d4ec89e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa148085b6fa9594b4c35e100d94a183"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_afa148085b6fa9594b4c35e100d94a183.html#afa148085b6fa9594b4c35e100d94a183">realloc</a> (void *, <a class="el" href="a00038_a7c94ea6f8948649f8d181ae55911eeaf.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>)</td></tr>
-<tr class="separator:afa148085b6fa9594b4c35e100d94a183"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77e880b1033d5a912be4333fc5d31eef"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_a77e880b1033d5a912be4333fc5d31eef.html#a77e880b1033d5a912be4333fc5d31eef">calloc</a> (<a class="el" href="a00038_a7c94ea6f8948649f8d181ae55911eeaf.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>, <a class="el" href="a00038_a7c94ea6f8948649f8d181ae55911eeaf.html#a7c94ea6f8948649f8d181ae55911eeaf">size_t</a>)</td></tr>
-<tr class="separator:a77e880b1033d5a912be4333fc5d31eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af07d89f5ceaea0c7c8252cc41fd75f37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_af07d89f5ceaea0c7c8252cc41fd75f37.html#af07d89f5ceaea0c7c8252cc41fd75f37">free</a> (void *)</td></tr>
-<tr class="separator:af07d89f5ceaea0c7c8252cc41fd75f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c38e3f3ee100ca4323081bf0970c1ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00038_a4c38e3f3ee100ca4323081bf0970c1ac.html#a4c38e3f3ee100ca4323081bf0970c1ac">dt_install</a> ()</td></tr>
+<tr class="separator:a4c38e3f3ee100ca4323081bf0970c1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

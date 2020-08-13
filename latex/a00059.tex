@@ -1,101 +1,27 @@
-\hypertarget{a00059}{}\section{libc/gdt.h File Reference}
-\label{a00059}\index{libc/gdt.\+h@{libc/gdt.\+h}}
+\hypertarget{a00059}{}\section{libc/gdt.c File Reference}
+\label{a00059}\index{libc/gdt.\+c@{libc/gdt.\+c}}
+{\ttfamily \#include \char`\"{}gdt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vitality/inline.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
-Include dependency graph for gdt.\+h\+:
+{\ttfamily \#include \char`\"{}page.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ext/debug.\+h\char`\"{}}\newline
+Include dependency graph for gdt.\+c\+:
 % FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
-\subsection*{Data Structures}
-\begin{DoxyCompactItemize}
-\item 
-struct \hyperlink{a00138}{gdt\+\_\+ptr\+\_\+struct}
-\item 
-struct \hyperlink{a00142}{gdt\+\_\+entry\+\_\+struct}
-\end{DoxyCompactItemize}
-\subsection*{Typedefs}
-\begin{DoxyCompactItemize}
-\item 
-typedef struct \hyperlink{a00138}{gdt\+\_\+ptr\+\_\+struct} \hyperlink{a00059_a3bf3fa6f397bda8399e1afb6283b66ca_a3bf3fa6f397bda8399e1afb6283b66ca}{gdt\+\_\+ptr\+\_\+t}
-\item 
-typedef struct \hyperlink{a00142}{gdt\+\_\+entry\+\_\+struct} \hyperlink{a00059_ab0b5c60e06a63669c783705278ff641e_ab0b5c60e06a63669c783705278ff641e}{gdt\+\_\+entry\+\_\+t}
-\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{a00138}{gdt\+\_\+ptr\+\_\+struct} \hyperlink{a00059_a923c646cd3d9bcd6802303757a1302db_a923c646cd3d9bcd6802303757a1302db}{\+\_\+\+\_\+attribute\+\_\+\+\_\+} ((packed))
-\item 
-void \hyperlink{a00059_a62397fecbde23244b570ae632fe926fa_a62397fecbde23244b570ae632fe926fa}{gdt\+\_\+flush} (\hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t})
-\item 
 void \hyperlink{a00059_a86bb50044169930202cc403376ef40c3_a86bb50044169930202cc403376ef40c3}{init\+\_\+gdt} ()
 \begin{DoxyCompactList}\small\item\em Loads the G\+DT (Global Descriptor Table) \end{DoxyCompactList}\item 
-void \hyperlink{a00059_af6718a86f3fbcc96b26b09f3742d52a1_af6718a86f3fbcc96b26b09f3742d52a1}{gdt\+\_\+set\+\_\+gate} (\hyperlink{a00092_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\+\_\+t}, \hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}, \hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}, \hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}, \hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t})
+void \hyperlink{a00059_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\+\_\+set\+\_\+gate} (\hyperlink{a00095_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\+\_\+t} num, \hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00068_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base}, \hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00068_ab28e82ae69032cb4ad3ec3a0be3d7129_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}, \hyperlink{a00095_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00062_a8b0d6200bc639dd37ff68847a0adde5f_a8b0d6200bc639dd37ff68847a0adde5f}{access}, \hyperlink{a00095_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} gran)
 \begin{DoxyCompactList}\small\item\em Set the value of one G\+DT entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-\hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00059_ab28e82ae69032cb4ad3ec3a0be3d7129_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}
-\item 
-\hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00059_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base}
-\item 
-\hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00059_aa7ae5b5a918e00776ff07fb1c58a348d_aa7ae5b5a918e00776ff07fb1c58a348d}{limit\+\_\+low}
-\item 
-\hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00059_a71e21ea67de59991e9a27666a1752a8f_a71e21ea67de59991e9a27666a1752a8f}{base\+\_\+low}
-\item 
-\hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00059_a6b67e86f6de9204d76adab79069aec29_a6b67e86f6de9204d76adab79069aec29}{base\+\_\+middle}
-\item 
-\hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00059_a8b0d6200bc639dd37ff68847a0adde5f_a8b0d6200bc639dd37ff68847a0adde5f}{access}
-\item 
-\hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00059_acfea365f69e71368a2db03333d4afd6f_acfea365f69e71368a2db03333d4afd6f}{granularity}
-\item 
-\hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00059_a1a173457c7aa39c59c008fcc3332d2b3_a1a173457c7aa39c59c008fcc3332d2b3}{base\+\_\+high}
-\item 
-\hyperlink{a00059_ab0b5c60e06a63669c783705278ff641e_ab0b5c60e06a63669c783705278ff641e}{gdt\+\_\+entry\+\_\+t} \hyperlink{a00059_aa938d9ff79b4e6577a93f98e1ad1f917_aa938d9ff79b4e6577a93f98e1ad1f917}{gdt\+\_\+entries} \mbox{[}5\mbox{]}
-\item 
-\hyperlink{a00059_a3bf3fa6f397bda8399e1afb6283b66ca_a3bf3fa6f397bda8399e1afb6283b66ca}{gdt\+\_\+ptr\+\_\+t} \hyperlink{a00059_ab0888c07dfb9352ef76d05e63464cf0b_ab0888c07dfb9352ef76d05e63464cf0b}{gdt\+\_\+ptr}
-\end{DoxyCompactItemize}
-
-
-\subsection{Typedef Documentation}
-\mbox{\Hypertarget{a00059_ab0b5c60e06a63669c783705278ff641e_ab0b5c60e06a63669c783705278ff641e}\label{a00059_ab0b5c60e06a63669c783705278ff641e_ab0b5c60e06a63669c783705278ff641e}} 
-\index{gdt.\+h@{gdt.\+h}!gdt\+\_\+entry\+\_\+t@{gdt\+\_\+entry\+\_\+t}}
-\index{gdt\+\_\+entry\+\_\+t@{gdt\+\_\+entry\+\_\+t}!gdt.\+h@{gdt.\+h}}
-\subsubsection{\texorpdfstring{gdt\+\_\+entry\+\_\+t}{gdt\_entry\_t}}
-{\footnotesize\ttfamily typedef struct \hyperlink{a00142}{gdt\+\_\+entry\+\_\+struct} \hyperlink{a00059_ab0b5c60e06a63669c783705278ff641e_ab0b5c60e06a63669c783705278ff641e}{gdt\+\_\+entry\+\_\+t}}
-
-
-
-Definition at line 22 of file gdt.\+h.
-
-\mbox{\Hypertarget{a00059_a3bf3fa6f397bda8399e1afb6283b66ca_a3bf3fa6f397bda8399e1afb6283b66ca}\label{a00059_a3bf3fa6f397bda8399e1afb6283b66ca_a3bf3fa6f397bda8399e1afb6283b66ca}} 
-\index{gdt.\+h@{gdt.\+h}!gdt\+\_\+ptr\+\_\+t@{gdt\+\_\+ptr\+\_\+t}}
-\index{gdt\+\_\+ptr\+\_\+t@{gdt\+\_\+ptr\+\_\+t}!gdt.\+h@{gdt.\+h}}
-\subsubsection{\texorpdfstring{gdt\+\_\+ptr\+\_\+t}{gdt\_ptr\_t}}
-{\footnotesize\ttfamily typedef struct \hyperlink{a00138}{gdt\+\_\+ptr\+\_\+struct} \hyperlink{a00059_a3bf3fa6f397bda8399e1afb6283b66ca_a3bf3fa6f397bda8399e1afb6283b66ca}{gdt\+\_\+ptr\+\_\+t}}
-
-
-
-Definition at line 11 of file gdt.\+h.
-
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00059_a923c646cd3d9bcd6802303757a1302db_a923c646cd3d9bcd6802303757a1302db}\label{a00059_a923c646cd3d9bcd6802303757a1302db_a923c646cd3d9bcd6802303757a1302db}} 
-\index{gdt.\+h@{gdt.\+h}!\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
-\index{\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}!gdt.\+h@{gdt.\+h}}
-\subsubsection{\texorpdfstring{\+\_\+\+\_\+attribute\+\_\+\+\_\+()}{\_\_attribute\_\_()}}
-{\footnotesize\ttfamily struct \hyperlink{a00150}{idt\+\_\+ptr\+\_\+struct} \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(packed)}]{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{a00059_a62397fecbde23244b570ae632fe926fa_a62397fecbde23244b570ae632fe926fa}\label{a00059_a62397fecbde23244b570ae632fe926fa_a62397fecbde23244b570ae632fe926fa}} 
-\index{gdt.\+h@{gdt.\+h}!gdt\+\_\+flush@{gdt\+\_\+flush}}
-\index{gdt\+\_\+flush@{gdt\+\_\+flush}!gdt.\+h@{gdt.\+h}}
-\subsubsection{\texorpdfstring{gdt\+\_\+flush()}{gdt\_flush()}}
-{\footnotesize\ttfamily void gdt\+\_\+flush (\begin{DoxyParamCaption}\item[{\hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{ }\end{DoxyParamCaption})}
-
-\mbox{\Hypertarget{a00059_af6718a86f3fbcc96b26b09f3742d52a1_af6718a86f3fbcc96b26b09f3742d52a1}\label{a00059_af6718a86f3fbcc96b26b09f3742d52a1_af6718a86f3fbcc96b26b09f3742d52a1}} 
-\index{gdt.\+h@{gdt.\+h}!gdt\+\_\+set\+\_\+gate@{gdt\+\_\+set\+\_\+gate}}
-\index{gdt\+\_\+set\+\_\+gate@{gdt\+\_\+set\+\_\+gate}!gdt.\+h@{gdt.\+h}}
+\mbox{\Hypertarget{a00059_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}\label{a00059_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}} 
+\index{gdt.\+c@{gdt.\+c}!gdt\+\_\+set\+\_\+gate@{gdt\+\_\+set\+\_\+gate}}
+\index{gdt\+\_\+set\+\_\+gate@{gdt\+\_\+set\+\_\+gate}!gdt.\+c@{gdt.\+c}}
 \subsubsection{\texorpdfstring{gdt\+\_\+set\+\_\+gate()}{gdt\_set\_gate()}}
-{\footnotesize\ttfamily void gdt\+\_\+set\+\_\+gate (\begin{DoxyParamCaption}\item[{\hyperlink{a00092_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\+\_\+t}}]{,  }\item[{\hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{,  }\item[{\hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{,  }\item[{\hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{,  }\item[{\hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void gdt\+\_\+set\+\_\+gate (\begin{DoxyParamCaption}\item[{\hyperlink{a00095_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\+\_\+t}}]{num,  }\item[{\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{base,  }\item[{\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{limit,  }\item[{\hyperlink{a00095_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{access,  }\item[{\hyperlink{a00095_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{gran }\end{DoxyParamCaption})}
 
 
 
@@ -103,25 +29,25 @@ Set the value of one G\+DT entry.
 
 
 
-Definition at line 28 of file gdt.\+c.
+Definition at line 35 of file gdt.\+c.
 
 
 \begin{DoxyCode}
-29 \{
-30    \hyperlink{a00059_aa938d9ff79b4e6577a93f98e1ad1f917_aa938d9ff79b4e6577a93f98e1ad1f917}{gdt\_entries}[num].\hyperlink{a00142_adba88eafea5f07167d181e4090cbcf49_adba88eafea5f07167d181e4090cbcf49}{base\_low}    = (\hyperlink{a00059_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} & 0xFFFF);
-31    \hyperlink{a00059_aa938d9ff79b4e6577a93f98e1ad1f917_aa938d9ff79b4e6577a93f98e1ad1f917}{gdt\_entries}[num].\hyperlink{a00142_a986d46963d3ccdbec85b3749c1e09abf_a986d46963d3ccdbec85b3749c1e09abf}{base\_middle} = (\hyperlink{a00059_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} >> 16) & 0xFF;
-32    \hyperlink{a00059_aa938d9ff79b4e6577a93f98e1ad1f917_aa938d9ff79b4e6577a93f98e1ad1f917}{gdt\_entries}[num].\hyperlink{a00142_aa08eedea9c0f707b9fa052b7567879c7_aa08eedea9c0f707b9fa052b7567879c7}{base\_high}   = (\hyperlink{a00059_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} >> 24) & 0xFF;
-33 
-34    \hyperlink{a00059_aa938d9ff79b4e6577a93f98e1ad1f917_aa938d9ff79b4e6577a93f98e1ad1f917}{gdt\_entries}[num].\hyperlink{a00142_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2}{limit\_low}   = (\hyperlink{a00059_ab28e82ae69032cb4ad3ec3a0be3d7129_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit} & 0xFFFF);
-35    \hyperlink{a00059_aa938d9ff79b4e6577a93f98e1ad1f917_aa938d9ff79b4e6577a93f98e1ad1f917}{gdt\_entries}[num].\hyperlink{a00142_a7fb7b3704e10434dbe64564416cf1a25_a7fb7b3704e10434dbe64564416cf1a25}{granularity} = (\hyperlink{a00059_ab28e82ae69032cb4ad3ec3a0be3d7129_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit} >> 16) & 0x0F;
-36 
-37    \hyperlink{a00059_aa938d9ff79b4e6577a93f98e1ad1f917_aa938d9ff79b4e6577a93f98e1ad1f917}{gdt\_entries}[num].\hyperlink{a00142_a7fb7b3704e10434dbe64564416cf1a25_a7fb7b3704e10434dbe64564416cf1a25}{granularity} |= gran & 0xF0;
-38    \hyperlink{a00059_aa938d9ff79b4e6577a93f98e1ad1f917_aa938d9ff79b4e6577a93f98e1ad1f917}{gdt\_entries}[num].\hyperlink{a00142_ac07173385496c5b952e58ddc20f1cc99_ac07173385496c5b952e58ddc20f1cc99}{access}      = \hyperlink{a00059_a8b0d6200bc639dd37ff68847a0adde5f_a8b0d6200bc639dd37ff68847a0adde5f}{access};
-39 \}
+36 \{
+37    \hyperlink{a00062_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00144_adba88eafea5f07167d181e4090cbcf49_adba88eafea5f07167d181e4090cbcf49}{base\_low}    = (\hyperlink{a00062_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} & 0xFFFF);
+38    \hyperlink{a00062_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00144_a986d46963d3ccdbec85b3749c1e09abf_a986d46963d3ccdbec85b3749c1e09abf}{base\_middle} = (\hyperlink{a00062_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} >> 16) & 0xFF;
+39    \hyperlink{a00062_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00144_aa08eedea9c0f707b9fa052b7567879c7_aa08eedea9c0f707b9fa052b7567879c7}{base\_high}   = (\hyperlink{a00062_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} >> 24) & 0xFF;
+40 
+41    \hyperlink{a00062_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00144_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2}{limit\_low}   = (\hyperlink{a00062_ab28e82ae69032cb4ad3ec3a0be3d7129_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit} & 0xFFFF);
+42    \hyperlink{a00062_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00144_a7fb7b3704e10434dbe64564416cf1a25_a7fb7b3704e10434dbe64564416cf1a25}{granularity} = (\hyperlink{a00062_ab28e82ae69032cb4ad3ec3a0be3d7129_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit} >> 16) & 0x0F;
+43 
+44    \hyperlink{a00062_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00144_a7fb7b3704e10434dbe64564416cf1a25_a7fb7b3704e10434dbe64564416cf1a25}{granularity} |= gran & 0xF0;
+45    \hyperlink{a00062_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00144_ac07173385496c5b952e58ddc20f1cc99_ac07173385496c5b952e58ddc20f1cc99}{access}      = \hyperlink{a00062_a8b0d6200bc639dd37ff68847a0adde5f_a8b0d6200bc639dd37ff68847a0adde5f}{access};
+46 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00059_a86bb50044169930202cc403376ef40c3_a86bb50044169930202cc403376ef40c3}\label{a00059_a86bb50044169930202cc403376ef40c3_a86bb50044169930202cc403376ef40c3}} 
-\index{gdt.\+h@{gdt.\+h}!init\+\_\+gdt@{init\+\_\+gdt}}
-\index{init\+\_\+gdt@{init\+\_\+gdt}!gdt.\+h@{gdt.\+h}}
+\index{gdt.\+c@{gdt.\+c}!init\+\_\+gdt@{init\+\_\+gdt}}
+\index{init\+\_\+gdt@{init\+\_\+gdt}!gdt.\+c@{gdt.\+c}}
 \subsubsection{\texorpdfstring{init\+\_\+gdt()}{init\_gdt()}}
 {\footnotesize\ttfamily void init\+\_\+gdt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
@@ -131,125 +57,27 @@ Loads the G\+DT (Global Descriptor Table)
 
 
 
-Definition at line 9 of file gdt.\+c.
+Definition at line 11 of file gdt.\+c.
 
 
 \begin{DoxyCode}
-10 \{
-11    \hyperlink{a00059_ab0888c07dfb9352ef76d05e63464cf0b_ab0888c07dfb9352ef76d05e63464cf0b}{gdt\_ptr}.\hyperlink{a00138_abf557ff0ca1cf3e130e8ab0086ab4ce6_abf557ff0ca1cf3e130e8ab0086ab4ce6}{limit} = (\textcolor{keyword}{sizeof}(\hyperlink{a00059_ab0b5c60e06a63669c783705278ff641e_ab0b5c60e06a63669c783705278ff641e}{gdt\_entry\_t}) * 5) - 1;
-12    \hyperlink{a00059_ab0888c07dfb9352ef76d05e63464cf0b_ab0888c07dfb9352ef76d05e63464cf0b}{gdt\_ptr}.\hyperlink{a00138_a9b351f31bc261f3c2c3a87252350fb9c_a9b351f31bc261f3c2c3a87252350fb9c}{base}  = (\hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00059_aa938d9ff79b4e6577a93f98e1ad1f917_aa938d9ff79b4e6577a93f98e1ad1f917}{gdt\_entries};
-13 
-14    \hyperlink{a00056_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(0, 0, 0, 0, 0);                \textcolor{comment}{// Null segment}
-15    \textcolor{comment}{// kernel}
-16    \hyperlink{a00056_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(1, 0, 0xFFFFFFFF, 0x9A, 0xCF); \textcolor{comment}{// Code segment}
-17    \hyperlink{a00056_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(2, 0, 0xFFFFFFFF, 0x92, 0xCF); \textcolor{comment}{// Data segment}
-18    \textcolor{comment}{// user mode}
-19    \hyperlink{a00056_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(3, 0x00100000, 0x00EFFFFF, 0xFA, 0xCF); \textcolor{comment}{// User mode code segment}
-20    \hyperlink{a00056_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(4, 0x00100000, 0x00EFFFFF, 0xF2, 0xCF); \textcolor{comment}{// User mode data segment}
-21 
-22    \hyperlink{a00059_a62397fecbde23244b570ae632fe926fa_a62397fecbde23244b570ae632fe926fa}{gdt\_flush}((\hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00059_ab0888c07dfb9352ef76d05e63464cf0b_ab0888c07dfb9352ef76d05e63464cf0b}{gdt\_ptr});
-23 \}
+12 \{
+13     \hyperlink{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nSetting up GDT\(\backslash\)n"});
+14     \hyperlink{a00062_ab0888c07dfb9352ef76d05e63464cf0b_ab0888c07dfb9352ef76d05e63464cf0b}{gdt\_ptr}.\hyperlink{a00140_abf557ff0ca1cf3e130e8ab0086ab4ce6_abf557ff0ca1cf3e130e8ab0086ab4ce6}{limit} = (\textcolor{keyword}{sizeof}(\hyperlink{a00062_ab0b5c60e06a63669c783705278ff641e_ab0b5c60e06a63669c783705278ff641e}{gdt\_entry\_t}) * \hyperlink{a00062_abe29d44fbb5292a15af80cbb8e8a3a7d_abe29d44fbb5292a15af80cbb8e8a3a7d}{ENTRY\_NUM}) - 1;
+15     \hyperlink{a00062_ab0888c07dfb9352ef76d05e63464cf0b_ab0888c07dfb9352ef76d05e63464cf0b}{gdt\_ptr}.\hyperlink{a00140_a9b351f31bc261f3c2c3a87252350fb9c_a9b351f31bc261f3c2c3a87252350fb9c}{base}  = (\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00062_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries};
+16 
+17     \hyperlink{a00059_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(0, 0, 0, 0, 0);                \textcolor{comment}{// Null segment}
+18     \textcolor{comment}{// kernel}
+19     \hyperlink{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nSetting up Kernel gates\(\backslash\)n"});
+20     \hyperlink{a00059_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(1, 0, 0xFFFFFFFF, 0x9A, 0xCF); \textcolor{comment}{// Code segment}
+21     \hyperlink{a00059_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(2, 0, 0xFFFFFFFF, 0x92, 0xCF); \textcolor{comment}{// Data segment}
+22     \hyperlink{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nDone\(\backslash\)n"});
+23     \textcolor{comment}{// user mode}
+24     \hyperlink{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nSetting up User gates\(\backslash\)n"});
+25     \hyperlink{a00059_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(3, 0x00500000, 0x009FFFFF, 0xFA, 0xCF); \textcolor{comment}{// User mode code segment}
+26     \hyperlink{a00059_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(4, 0x00500000, 0x009FFFFF, 0xF2, 0xCF); \textcolor{comment}{// User mode data segment}
+27     \hyperlink{a00041_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nDone, flushing\(\backslash\)n"});
+28 
+29     \hyperlink{a00062_a62397fecbde23244b570ae632fe926fa_a62397fecbde23244b570ae632fe926fa}{gdt\_flush}((\hyperlink{a00095_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00062_ab0888c07dfb9352ef76d05e63464cf0b_ab0888c07dfb9352ef76d05e63464cf0b}{gdt\_ptr});
+30 \}
 \end{DoxyCode}
-
-
-\subsection{Variable Documentation}
-\mbox{\Hypertarget{a00059_a8b0d6200bc639dd37ff68847a0adde5f_a8b0d6200bc639dd37ff68847a0adde5f}\label{a00059_a8b0d6200bc639dd37ff68847a0adde5f_a8b0d6200bc639dd37ff68847a0adde5f}} 
-\index{gdt.\+h@{gdt.\+h}!access@{access}}
-\index{access@{access}!gdt.\+h@{gdt.\+h}}
-\subsubsection{\texorpdfstring{access}{access}}
-{\footnotesize\ttfamily \hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} access}
-
-
-
-Definition at line 32 of file gdt.\+h.
-
-\mbox{\Hypertarget{a00059_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}\label{a00059_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}} 
-\index{gdt.\+h@{gdt.\+h}!base@{base}}
-\index{base@{base}!gdt.\+h@{gdt.\+h}}
-\subsubsection{\texorpdfstring{base}{base}}
-{\footnotesize\ttfamily \hyperlink{a00092_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} base}
-
-
-
-Definition at line 30 of file gdt.\+h.
-
-\mbox{\Hypertarget{a00059_a1a173457c7aa39c59c008fcc3332d2b3_a1a173457c7aa39c59c008fcc3332d2b3}\label{a00059_a1a173457c7aa39c59c008fcc3332d2b3_a1a173457c7aa39c59c008fcc3332d2b3}} 
-\index{gdt.\+h@{gdt.\+h}!base\+\_\+high@{base\+\_\+high}}
-\index{base\+\_\+high@{base\+\_\+high}!gdt.\+h@{gdt.\+h}}
-\subsubsection{\texorpdfstring{base\+\_\+high}{base\_high}}
-{\footnotesize\ttfamily \hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} base\+\_\+high}
-
-
-
-Definition at line 34 of file gdt.\+h.
-
-\mbox{\Hypertarget{a00059_a71e21ea67de59991e9a27666a1752a8f_a71e21ea67de59991e9a27666a1752a8f}\label{a00059_a71e21ea67de59991e9a27666a1752a8f_a71e21ea67de59991e9a27666a1752a8f}} 
-\index{gdt.\+h@{gdt.\+h}!base\+\_\+low@{base\+\_\+low}}
-\index{base\+\_\+low@{base\+\_\+low}!gdt.\+h@{gdt.\+h}}
-\subsubsection{\texorpdfstring{base\+\_\+low}{base\_low}}
-{\footnotesize\ttfamily \hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} base\+\_\+low}
-
-
-
-Definition at line 30 of file gdt.\+h.
-
-\mbox{\Hypertarget{a00059_a6b67e86f6de9204d76adab79069aec29_a6b67e86f6de9204d76adab79069aec29}\label{a00059_a6b67e86f6de9204d76adab79069aec29_a6b67e86f6de9204d76adab79069aec29}} 
-\index{gdt.\+h@{gdt.\+h}!base\+\_\+middle@{base\+\_\+middle}}
-\index{base\+\_\+middle@{base\+\_\+middle}!gdt.\+h@{gdt.\+h}}
-\subsubsection{\texorpdfstring{base\+\_\+middle}{base\_middle}}
-{\footnotesize\ttfamily \hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} base\+\_\+middle}
-
-
-
-Definition at line 31 of file gdt.\+h.
-
-\mbox{\Hypertarget{a00059_aa938d9ff79b4e6577a93f98e1ad1f917_aa938d9ff79b4e6577a93f98e1ad1f917}\label{a00059_aa938d9ff79b4e6577a93f98e1ad1f917_aa938d9ff79b4e6577a93f98e1ad1f917}} 
-\index{gdt.\+h@{gdt.\+h}!gdt\+\_\+entries@{gdt\+\_\+entries}}
-\index{gdt\+\_\+entries@{gdt\+\_\+entries}!gdt.\+h@{gdt.\+h}}
-\subsubsection{\texorpdfstring{gdt\+\_\+entries}{gdt\_entries}}
-{\footnotesize\ttfamily \hyperlink{a00059_ab0b5c60e06a63669c783705278ff641e_ab0b5c60e06a63669c783705278ff641e}{gdt\+\_\+entry\+\_\+t} gdt\+\_\+entries\mbox{[}5\mbox{]}}
-
-
-
-Definition at line 24 of file gdt.\+h.
-
-\mbox{\Hypertarget{a00059_ab0888c07dfb9352ef76d05e63464cf0b_ab0888c07dfb9352ef76d05e63464cf0b}\label{a00059_ab0888c07dfb9352ef76d05e63464cf0b_ab0888c07dfb9352ef76d05e63464cf0b}} 
-\index{gdt.\+h@{gdt.\+h}!gdt\+\_\+ptr@{gdt\+\_\+ptr}}
-\index{gdt\+\_\+ptr@{gdt\+\_\+ptr}!gdt.\+h@{gdt.\+h}}
-\subsubsection{\texorpdfstring{gdt\+\_\+ptr}{gdt\_ptr}}
-{\footnotesize\ttfamily \hyperlink{a00059_a3bf3fa6f397bda8399e1afb6283b66ca_a3bf3fa6f397bda8399e1afb6283b66ca}{gdt\+\_\+ptr\+\_\+t} gdt\+\_\+ptr}
-
-
-
-Definition at line 25 of file gdt.\+h.
-
-\mbox{\Hypertarget{a00059_acfea365f69e71368a2db03333d4afd6f_acfea365f69e71368a2db03333d4afd6f}\label{a00059_acfea365f69e71368a2db03333d4afd6f_acfea365f69e71368a2db03333d4afd6f}} 
-\index{gdt.\+h@{gdt.\+h}!granularity@{granularity}}
-\index{granularity@{granularity}!gdt.\+h@{gdt.\+h}}
-\subsubsection{\texorpdfstring{granularity}{granularity}}
-{\footnotesize\ttfamily \hyperlink{a00092_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} granularity}
-
-
-
-Definition at line 33 of file gdt.\+h.
-
-\mbox{\Hypertarget{a00059_ab28e82ae69032cb4ad3ec3a0be3d7129_ab28e82ae69032cb4ad3ec3a0be3d7129}\label{a00059_ab28e82ae69032cb4ad3ec3a0be3d7129_ab28e82ae69032cb4ad3ec3a0be3d7129}} 
-\index{gdt.\+h@{gdt.\+h}!limit@{limit}}
-\index{limit@{limit}!gdt.\+h@{gdt.\+h}}
-\subsubsection{\texorpdfstring{limit}{limit}}
-{\footnotesize\ttfamily \hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} limit}
-
-
-
-Definition at line 29 of file gdt.\+h.
-
-\mbox{\Hypertarget{a00059_aa7ae5b5a918e00776ff07fb1c58a348d_aa7ae5b5a918e00776ff07fb1c58a348d}\label{a00059_aa7ae5b5a918e00776ff07fb1c58a348d_aa7ae5b5a918e00776ff07fb1c58a348d}} 
-\index{gdt.\+h@{gdt.\+h}!limit\+\_\+low@{limit\+\_\+low}}
-\index{limit\+\_\+low@{limit\+\_\+low}!gdt.\+h@{gdt.\+h}}
-\subsubsection{\texorpdfstring{limit\+\_\+low}{limit\_low}}
-{\footnotesize\ttfamily \hyperlink{a00092_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} limit\+\_\+low}
-
-
-
-Definition at line 29 of file gdt.\+h.
-

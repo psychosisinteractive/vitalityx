@@ -50,6 +50,7 @@ $(function() {
         <table>
           <tr><td class="navtab"><a class="qindex" href="a00104_ad80d786594a109b21e30da4bf6f56a85.html#ad80d786594a109b21e30da4bf6f56a85">__native_flush_tlb_single</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="a00104_ae7df27a6150c6a020eead928af349b21.html#ae7df27a6150c6a020eead928af349b21">are_interrupts_enabled</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="a00104_a3f7e7be8f62f43b2b62df54cac1590be.html#a3f7e7be8f62f43b2b62df54cac1590be">bochs_bkpt</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="a00104_adacb2a50c30267ac5314bfcb92ac1d85.html#adacb2a50c30267ac5314bfcb92ac1d85">cpuid</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="a00104_aee0779a0581136320f91a72c4d6b5b90.html#aee0779a0581136320f91a72c4d6b5b90">farpeekl</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="a00104_a4e7b04b927c6dca2d20f54a5c14a01d6.html#a4e7b04b927c6dca2d20f54a5c14a01d6">farpokeb</a></td></tr>
@@ -93,8 +94,8 @@ $(function() {
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00071">71</a> of file <a class="el" href="a00104_source.html">inline.h</a>.</p>
-<div class="fragment"><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;{</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keyword">asm</span> (<span class="stringliteral">&quot;push %0\n\tpopf&quot;</span> : : <span class="stringliteral">&quot;rm&quot;</span>(<a class="code" href="a00065_aa2585d779da0ab21273a8d92de9a0ebe.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a>) : <span class="stringliteral">&quot;memory&quot;</span>,<span class="stringliteral">&quot;cc&quot;</span>);</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;}</div><div class="ttc" id="a00065_aa2585d779da0ab21273a8d92de9a0ebe_html_aa2585d779da0ab21273a8d92de9a0ebe"><div class="ttname"><a href="a00065_aa2585d779da0ab21273a8d92de9a0ebe.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a></div><div class="ttdeci">uint8_t flags</div><div class="ttdef"><b>Definition:</b> <a href="a00065_source.html#l00052">interrupt.h:52</a></div></div>
+<p class="definition">Definition at line <a class="el" href="a00104_source.html#l00075">75</a> of file <a class="el" href="a00104_source.html">inline.h</a>.</p>
+<div class="fragment"><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;{</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">asm</span> (<span class="stringliteral">&quot;push %0\n\tpopf&quot;</span> : : <span class="stringliteral">&quot;rm&quot;</span>(<a class="code" href="a00068_aa2585d779da0ab21273a8d92de9a0ebe.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a>) : <span class="stringliteral">&quot;memory&quot;</span>,<span class="stringliteral">&quot;cc&quot;</span>);</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;}</div><div class="ttc" id="a00068_aa2585d779da0ab21273a8d92de9a0ebe_html_aa2585d779da0ab21273a8d92de9a0ebe"><div class="ttname"><a href="a00068_aa2585d779da0ab21273a8d92de9a0ebe.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a></div><div class="ttdeci">uint8_t flags</div><div class="ttdef"><b>Definition:</b> <a href="a00068_source.html#l00088">interrupt.h:88</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
