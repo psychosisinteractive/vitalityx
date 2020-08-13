@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: drivers/keyboard.c File Reference</title>
+<title>VitalityX: drivers/fdrive.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,36 +44,34 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">keyboard.c File Reference</div>  </div>
+<div class="title">fdrive.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00017_source.html">keyboard.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00095_source.html">../libc/types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00104_source.html">../libc/vitality/inline.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00017_source.html">fdrive.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00101_source.html">../libc/types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00110_source.html">../libc/vitality/inline.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for keyboard.c:</div>
+Include dependency graph for fdrive.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00015.png" border="0" usemap="#drivers_2keyboard_8c" alt=""/></div>
-<!-- MAP 0 -->
+<div class="center"><img src="a00015.png" border="0" usemap="#drivers_2fdrive_8c" alt=""/></div>
+<map name="drivers_2fdrive_8c" id="drivers_2fdrive_8c">
+</map>
 </div>
 </div>
 <p><a href="a00014_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab55128c33115081a66a8acb39dc6c7dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014_ab55128c33115081a66a8acb39dc6c7dc.html#ab55128c33115081a66a8acb39dc6c7dc">ps2init</a> ()</td></tr>
-<tr class="memdesc:ab55128c33115081a66a8acb39dc6c7dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">PS/2 Initialize.  <a href="a00014_ab55128c33115081a66a8acb39dc6c7dc.html#ab55128c33115081a66a8acb39dc6c7dc">More...</a><br /></td></tr>
-<tr class="separator:ab55128c33115081a66a8acb39dc6c7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:afbd5f7a0d5ee4c4e6e0615a7294e1e10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00095_af6a258d8f3ee5206d682d799316314b1.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014_afbd5f7a0d5ee4c4e6e0615a7294e1e10.html#afbd5f7a0d5ee4c4e6e0615a7294e1e10">rcv</a> = <a class="el" href="a00095_af6a258d8f3ee5206d682d799316314b1.html#af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c">false</a></td></tr>
-<tr class="separator:afbd5f7a0d5ee4c4e6e0615a7294e1e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae08385eb06ddff872e33966a60075435"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00095_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014_ae08385eb06ddff872e33966a60075435.html#ae08385eb06ddff872e33966a60075435">lbt</a> = 0</td></tr>
-<tr class="separator:ae08385eb06ddff872e33966a60075435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a782ff57a4ec7786197ec3a12d4f52332"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014_a782ff57a4ec7786197ec3a12d4f52332.html#a782ff57a4ec7786197ec3a12d4f52332">lba_2_chs</a> (<a class="el" href="a00101_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> lba, <a class="el" href="a00101_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *cyl, <a class="el" href="a00101_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *head, <a class="el" href="a00101_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *sector)</td></tr>
+<tr class="separator:a782ff57a4ec7786197ec3a12d4f52332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbe17688655526c3fa02f324ae8336ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014_acbe17688655526c3fa02f324ae8336ca.html#acbe17688655526c3fa02f324ae8336ca">floppyirq</a> ()</td></tr>
+<tr class="separator:acbe17688655526c3fa02f324ae8336ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad64d38a767bc5f30a3e13a5b01b9cf35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014_ad64d38a767bc5f30a3e13a5b01b9cf35.html#ad64d38a767bc5f30a3e13a5b01b9cf35">resetfloppy</a> ()</td></tr>
+<tr class="separator:ad64d38a767bc5f30a3e13a5b01b9cf35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd18cde0651886116331196acc91c9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00014_a6cd18cde0651886116331196acc91c9a.html#a6cd18cde0651886116331196acc91c9a">speedfloppymtr</a> ()</td></tr>
+<tr class="separator:a6cd18cde0651886116331196acc91c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

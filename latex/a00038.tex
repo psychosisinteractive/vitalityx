@@ -1,33 +1,51 @@
-\hypertarget{a00038}{}\section{libc/descriptortables.h File Reference}
-\label{a00038}\index{libc/descriptortables.\+h@{libc/descriptortables.\+h}}
-{\ttfamily \#include \char`\"{}gdt.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}interrupt.\+h\char`\"{}}\newline
-Include dependency graph for descriptortables.\+h\+:
+\hypertarget{a00038}{}\section{kernel/kernel.c File Reference}
+\label{a00038}\index{kernel/kernel.\+c@{kernel/kernel.\+c}}
+{\ttfamily \#include \char`\"{}../libc/vitality/tty.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/descriptortables.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/page.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/ext/debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../drivers/vga.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/ext/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/vitality/mem.\+h\char`\"{}}\newline
+Include dependency graph for kernel.\+c\+:
 % FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00038_a4c38e3f3ee100ca4323081bf0970c1ac_a4c38e3f3ee100ca4323081bf0970c1ac}{dt\+\_\+install} ()
-\end{DoxyCompactItemize}
+int \hyperlink{a00038_a4ee3d1f05046b7afc6b4d516bf10667a_a4ee3d1f05046b7afc6b4d516bf10667a}{kernel} ()
+\begin{DoxyCompactList}\small\item\em The kernels C entry point. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00038_a4c38e3f3ee100ca4323081bf0970c1ac_a4c38e3f3ee100ca4323081bf0970c1ac}\label{a00038_a4c38e3f3ee100ca4323081bf0970c1ac_a4c38e3f3ee100ca4323081bf0970c1ac}} 
-\index{descriptortables.\+h@{descriptortables.\+h}!dt\+\_\+install@{dt\+\_\+install}}
-\index{dt\+\_\+install@{dt\+\_\+install}!descriptortables.\+h@{descriptortables.\+h}}
-\subsubsection{\texorpdfstring{dt\+\_\+install()}{dt\_install()}}
-{\footnotesize\ttfamily void dt\+\_\+install (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00038_a4ee3d1f05046b7afc6b4d516bf10667a_a4ee3d1f05046b7afc6b4d516bf10667a}\label{a00038_a4ee3d1f05046b7afc6b4d516bf10667a_a4ee3d1f05046b7afc6b4d516bf10667a}} 
+\index{kernel.\+c@{kernel.\+c}!kernel@{kernel}}
+\index{kernel@{kernel}!kernel.\+c@{kernel.\+c}}
+\subsubsection{\texorpdfstring{kernel()}{kernel()}}
+{\footnotesize\ttfamily int kernel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 5 of file descriptortables.\+c.
+The kernels C entry point. 
+
+
+
+Definition at line 11 of file kernel.\+c.
 
 
 \begin{DoxyCode}
-5                   \{
-6     \hyperlink{a00065_a35fe413107af682030ab7a4b6dff19b8_a35fe413107af682030ab7a4b6dff19b8}{init\_idt}();
-7     \hyperlink{a00059_a86bb50044169930202cc403376ef40c3_a86bb50044169930202cc403376ef40c3}{init\_gdt}();
-8 \}
+11              \{
+12     \hyperlink{a00083_a51f6a37816540dea572d38f2713e9f5a_a51f6a37816540dea572d38f2713e9f5a}{setup\_page}(); \textcolor{comment}{// enable paging}
+13     \hyperlink{a00041_a4c38e3f3ee100ca4323081bf0970c1ac_a4c38e3f3ee100ca4323081bf0970c1ac}{dt\_install}();
+14     \hyperlink{a00113_a1add491f9ef2f8830ed5108f8dbc0ff2_a1add491f9ef2f8830ed5108f8dbc0ff2}{setupmalloc}();
+15     \hyperlink{a00032_abb01dc16ea34f0a6de3d10d732b6c536_abb01dc16ea34f0a6de3d10d732b6c536}{setfont}(0x7e00);
+16     \hyperlink{a00053_aea945e91746a54801f4763ad264746b9_aea945e91746a54801f4763ad264746b9}{initTasking}();
+17     \hyperlink{a00047_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"VitalityX started\(\backslash\)n"});
+18     \hyperlink{a00119_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"VitalityX"});
+19     \hyperlink{a00113_a2de854ee97d4e6d27f7aa7899a2d1d32_a2de854ee97d4e6d27f7aa7899a2d1d32}{mempoke}(0,5,\textcolor{charliteral}{'x'});
+20     \textcolor{keyword}{asm} \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"int $0x3f"});
+21     \textcolor{keywordflow}{for}(;;) \{
+22         \hyperlink{a00053_a58c8b2ad0ea491a6642e5e1cbd358c89_a58c8b2ad0ea491a6642e5e1cbd358c89}{yield}();
+23     \}
+24     \textcolor{keywordflow}{return} 0;
+25 \}
 \end{DoxyCode}

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/page.c File Reference</title>
+<title>VitalityX: libc/isr.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,16 +46,21 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">page.c File Reference</div>  </div>
+<div class="title">isr.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00080_source.html">page.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00095_source.html">types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00044_source.html">ext/debug.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00080_source.html">isr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00098_source.html">system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00050_source.html">ext/debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00023_source.html">../drivers/keyboard.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00029_source.html">../drivers/pic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00056_source.html">ext/task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00122_source.html">vitality/tty.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00092_source.html">string.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for page.c:</div>
+Include dependency graph for isr.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00078.png" border="0" usemap="#libc_2page_8c" alt=""/></div>
+<div class="center"><img src="a00078.png" border="0" usemap="#libc_2isr_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
@@ -63,18 +68,10 @@ Include dependency graph for page.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a37f8e955bf961194d85eb31c4083e0ba"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00095_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> page_directory [1024]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077_a37f8e955bf961194d85eb31c4083e0ba.html#a37f8e955bf961194d85eb31c4083e0ba">__attribute__</a> ((aligned(4096)))</td></tr>
-<tr class="separator:a37f8e955bf961194d85eb31c4083e0ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51f6a37816540dea572d38f2713e9f5a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077_a51f6a37816540dea572d38f2713e9f5a.html#a51f6a37816540dea572d38f2713e9f5a">setup_page</a> ()</td></tr>
-<tr class="separator:a51f6a37816540dea572d38f2713e9f5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7bb2c9b4c69002e17903710ce4de395c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077_a7bb2c9b4c69002e17903710ce4de395c.html#a7bb2c9b4c69002e17903710ce4de395c">create_page_table</a> (unsigned int i, unsigned int id)</td></tr>
-<tr class="separator:a7bb2c9b4c69002e17903710ce4de395c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae584a02a60a268b787ee275aee930051"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077_ae584a02a60a268b787ee275aee930051.html#ae584a02a60a268b787ee275aee930051">get_physaddr</a> (void *virtualaddr)</td></tr>
-<tr class="separator:ae584a02a60a268b787ee275aee930051"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf8c9211327b122b455fabf292cc2411"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077_adf8c9211327b122b455fabf292cc2411.html#adf8c9211327b122b455fabf292cc2411">map_page</a> (void *physaddr, void *virtualaddr, unsigned int <a class="el" href="a00068_aa2585d779da0ab21273a8d92de9a0ebe.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a>)</td></tr>
-<tr class="separator:adf8c9211327b122b455fabf292cc2411"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5a808805c707701e7fb8816d51896fb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077_a5a808805c707701e7fb8816d51896fb5.html#a5a808805c707701e7fb8816d51896fb5">umap_page</a> (void *physaddr, void *virtualaddr, unsigned int <a class="el" href="a00068_aa2585d779da0ab21273a8d92de9a0ebe.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a>)</td></tr>
-<tr class="separator:a5a808805c707701e7fb8816d51896fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a700e3ca056bf69296370f504f2cb6cc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077_a700e3ca056bf69296370f504f2cb6cc8.html#a700e3ca056bf69296370f504f2cb6cc8">isr_handler</a> (<a class="el" href="a00080_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
+<tr class="separator:a700e3ca056bf69296370f504f2cb6cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd1fa375737cd5ecd84c082738e3b195"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077_abd1fa375737cd5ecd84c082738e3b195.html#abd1fa375737cd5ecd84c082738e3b195">sysisr_handler</a> (<a class="el" href="a00080_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
+<tr class="separator:abd1fa375737cd5ecd84c082738e3b195"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

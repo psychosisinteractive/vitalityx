@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/mem.c File Reference</title>
+<title>VitalityX: libc/vitality/basfmts.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,53 +44,46 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
-<div class="title">mem.c File Reference</div>  </div>
+<div class="title">basfmts.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00110_source.html">mem.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00095_source.html">../types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00092_source.html">../system.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00044_source.html">../ext/debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00104_source.html">inline.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00086_source.html">../string.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00101_source.html">../types.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for mem.c:</div>
+Include dependency graph for basfmts.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00108.png" border="0" usemap="#libc_2vitality_2mem_8c" alt=""/></div>
+<div class="center"><img src="a00108.png" border="0" usemap="#libc_2vitality_2basfmts_8h" alt=""/></div>
 <!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00109.png" border="0" usemap="#libc_2vitality_2basfmts_8hdep" alt=""/></div>
+<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00107_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00166.html">psf</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">PC Screen Font struct.  <a href="a00166.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a48623ea6ed429e2f046b49041dde1dc5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a48623ea6ed429e2f046b49041dde1dc5.html#a48623ea6ed429e2f046b49041dde1dc5">MEMENTRY_SIZE</a>&#160;&#160;&#160;255</td></tr>
-<tr class="memdesc:a48623ea6ed429e2f046b49041dde1dc5"><td class="mdescLeft">&#160;</td><td class="mdescRight">This file is licensed under a seperated license listed below.  <a href="a00107_a48623ea6ed429e2f046b49041dde1dc5.html#a48623ea6ed429e2f046b49041dde1dc5">More...</a><br /></td></tr>
-<tr class="separator:a48623ea6ed429e2f046b49041dde1dc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73f827ead78113d46a0138e62e141ec8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a73f827ead78113d46a0138e62e141ec8.html#a73f827ead78113d46a0138e62e141ec8">PSF_FONT_MAGIC</a>&#160;&#160;&#160;0x864ab572</td></tr>
+<tr class="memdesc:a73f827ead78113d46a0138e62e141ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">PSF Magic.  <a href="a00107_a73f827ead78113d46a0138e62e141ec8.html#a73f827ead78113d46a0138e62e141ec8">More...</a><br /></td></tr>
+<tr class="separator:a73f827ead78113d46a0138e62e141ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a1add491f9ef2f8830ed5108f8dbc0ff2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a1add491f9ef2f8830ed5108f8dbc0ff2.html#a1add491f9ef2f8830ed5108f8dbc0ff2">setupmalloc</a> ()</td></tr>
-<tr class="separator:a1add491f9ef2f8830ed5108f8dbc0ff2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9087e3504e5973deee6f3561705978c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00095_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a9087e3504e5973deee6f3561705978c7.html#a9087e3504e5973deee6f3561705978c7">malloc</a> (<a class="el" href="a00095_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="el" href="a00068_a0523cedff47e2441fc198b7770ec5d3f.html#a0523cedff47e2441fc198b7770ec5d3f">base</a>, <a class="el" href="a00095_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> size, char *purpose)</td></tr>
-<tr class="separator:a9087e3504e5973deee6f3561705978c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a54eab910cb28c3f5ff9b02bf5feaa778"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a54eab910cb28c3f5ff9b02bf5feaa778.html#a54eab910cb28c3f5ff9b02bf5feaa778">memfree</a> (<a class="el" href="a00095_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> memid)</td></tr>
-<tr class="separator:a54eab910cb28c3f5ff9b02bf5feaa778"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae024364045572d15f9b90b8a046d6807"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00095_a295f71165288684c38c6bb836fbb3c59.html#a295f71165288684c38c6bb836fbb3c59">addr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_ae024364045572d15f9b90b8a046d6807.html#ae024364045572d15f9b90b8a046d6807">malloctoaddr</a> (<a class="el" href="a00095_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> memid, <a class="el" href="a00095_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> addr)</td></tr>
-<tr class="separator:ae024364045572d15f9b90b8a046d6807"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2de854ee97d4e6d27f7aa7899a2d1d32"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a2de854ee97d4e6d27f7aa7899a2d1d32.html#a2de854ee97d4e6d27f7aa7899a2d1d32">mempoke</a> (<a class="el" href="a00095_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> memid, <a class="el" href="a00095_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> addr, <a class="el" href="a00095_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> v)</td></tr>
-<tr class="separator:a2de854ee97d4e6d27f7aa7899a2d1d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60f8bf957bca47c651dc4024dc26f36e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00095_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a60f8bf957bca47c651dc4024dc26f36e.html#a60f8bf957bca47c651dc4024dc26f36e">mempeek</a> (<a class="el" href="a00095_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> memid, <a class="el" href="a00095_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> addr)</td></tr>
-<tr class="separator:a60f8bf957bca47c651dc4024dc26f36e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a9ec3d7a60bca9bd965aba15905c6d1ed"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00110_a876b6ee19692762a87e4673911f9b8da.html#a876b6ee19692762a87e4673911f9b8da">mementry_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a9ec3d7a60bca9bd965aba15905c6d1ed.html#a9ec3d7a60bca9bd965aba15905c6d1ed">mementries</a> [<a class="el" href="a00107_a48623ea6ed429e2f046b49041dde1dc5.html#a48623ea6ed429e2f046b49041dde1dc5">MEMENTRY_SIZE</a>]</td></tr>
-<tr class="separator:a9ec3d7a60bca9bd965aba15905c6d1ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a6d3104625aeeda181b07e04f21e34e93"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00166.html">psf</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a6d3104625aeeda181b07e04f21e34e93.html#a6d3104625aeeda181b07e04f21e34e93">psf_t</a></td></tr>
+<tr class="memdesc:a6d3104625aeeda181b07e04f21e34e93"><td class="mdescLeft">&#160;</td><td class="mdescRight">PC Screen Font struct.  <a href="a00107_a6d3104625aeeda181b07e04f21e34e93.html#a6d3104625aeeda181b07e04f21e34e93">More...</a><br /></td></tr>
+<tr class="separator:a6d3104625aeeda181b07e04f21e34e93"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

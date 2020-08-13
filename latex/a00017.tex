@@ -1,106 +1,539 @@
-\hypertarget{a00017}{}\section{drivers/keyboard.h File Reference}
-\label{a00017}\index{drivers/keyboard.\+h@{drivers/keyboard.\+h}}
-{\ttfamily \#include \char`\"{}../libc/vitality/inline.\+h\char`\"{}}\newline
-Include dependency graph for keyboard.\+h\+:
+\hypertarget{a00017}{}\section{drivers/fdrive.h File Reference}
+\label{a00017}\index{drivers/fdrive.\+h@{drivers/fdrive.\+h}}
+{\ttfamily \#include \char`\"{}../libc/types.\+h\char`\"{}}\newline
+Include dependency graph for fdrive.\+h\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
 % FIG 1
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{a00134}{Floppy\+Controller}
+\end{DoxyCompactItemize}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{a00017_a0ef8b0a5f135deeee1540a47eeb0a0d3_a0ef8b0a5f135deeee1540a47eeb0a0d3}{P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT}~0x60
-\begin{DoxyCompactList}\small\item\em P\+S/2 Data Port. \end{DoxyCompactList}\item 
-\#define \hyperlink{a00017_ac53f79a633bdedad461bd9b969d9afcc_ac53f79a633bdedad461bd9b969d9afcc}{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}~0x64
-\begin{DoxyCompactList}\small\item\em P\+S/2 Status Register. \end{DoxyCompactList}\item 
-\#define \hyperlink{a00017_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}{P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG}~\hyperlink{a00017_ac53f79a633bdedad461bd9b969d9afcc_ac53f79a633bdedad461bd9b969d9afcc}{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}
-\begin{DoxyCompactList}\small\item\em P\+S/2 Command Register. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\#define \hyperlink{a00017_a04d40064bde801f12fb73134cf328150_a04d40064bde801f12fb73134cf328150}{F\+L\+O\+P\+P\+Y\+\_\+144\+\_\+\+S\+E\+C\+T\+O\+R\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+CK}~18
+\item 
+\#define \hyperlink{a00017_ada23a6b331b9e651cfa2d1034d214cd0_ada23a6b331b9e651cfa2d1034d214cd0}{D\+O\+R\+\_\+\+M\+O\+TD}~0x80
+\item 
+\#define \hyperlink{a00017_ae7f4b3c26624086ab3969c7053f0288e_ae7f4b3c26624086ab3969c7053f0288e}{D\+O\+R\+\_\+\+M\+O\+TC}~0x40
+\item 
+\#define \hyperlink{a00017_a052f96bc57476550160245afea79d0e3_a052f96bc57476550160245afea79d0e3}{D\+O\+R\+\_\+\+M\+O\+TB}~0x20
+\item 
+\#define \hyperlink{a00017_aa7ddb0d096e3dc3d7e816f7a8569942d_aa7ddb0d096e3dc3d7e816f7a8569942d}{D\+O\+R\+\_\+\+M\+O\+TA}~0x10
+\item 
+\#define \hyperlink{a00017_ae392b097d8e6f4b7058dfef64e523da8_ae392b097d8e6f4b7058dfef64e523da8}{D\+O\+R\+\_\+\+I\+RQ}~0x8
+\item 
+\#define \hyperlink{a00017_a6ef9f5776b2d959e47c6c42111900071_a6ef9f5776b2d959e47c6c42111900071}{D\+O\+R\+\_\+\+R\+E\+S\+ET}~0x4
+\item 
+\#define \hyperlink{a00017_a5cd765b083a3ceaedbd4a49be6fe8dbc_a5cd765b083a3ceaedbd4a49be6fe8dbc}{D\+O\+R\+\_\+\+D\+S\+E\+L1}~0x1
+\item 
+\#define \hyperlink{a00017_a953189dd0b9a6f4162969f37d26af31d_a953189dd0b9a6f4162969f37d26af31d}{D\+O\+R\+\_\+\+D\+S\+E\+L0}~0x0
+\item 
+\#define \hyperlink{a00017_a052e37fe9f8f1b12791d5875486fb95d_a052e37fe9f8f1b12791d5875486fb95d}{M\+S\+R\+\_\+\+R\+QM}~0x80
+\item 
+\#define \hyperlink{a00017_ac28b112c15bf3fe55efb77454e77d99a_ac28b112c15bf3fe55efb77454e77d99a}{M\+S\+R\+\_\+\+D\+IO}~0x40
+\item 
+\#define \hyperlink{a00017_a7a7c0450e941d19be4df75db9447f99c_a7a7c0450e941d19be4df75db9447f99c}{M\+S\+R\+\_\+\+N\+D\+MA}~0x20
+\item 
+\#define \hyperlink{a00017_a917ceb5802c1ba5d115dbf155791b4eb_a917ceb5802c1ba5d115dbf155791b4eb}{M\+S\+R\+\_\+\+CB}~0x10
+\item 
+\#define \hyperlink{a00017_a786d96755a23385a8ae82861be34a9a9_a786d96755a23385a8ae82861be34a9a9}{M\+S\+R\+\_\+\+A\+C\+TD}~0x8
+\item 
+\#define \hyperlink{a00017_a4c9d380fea61cae261e0e1fd4b141d73_a4c9d380fea61cae261e0e1fd4b141d73}{M\+S\+R\+\_\+\+A\+C\+TC}~0x4
+\item 
+\#define \hyperlink{a00017_a002e08b11d8386c5350fb397444b6f0d_a002e08b11d8386c5350fb397444b6f0d}{M\+S\+R\+\_\+\+A\+C\+TB}~0x2
+\item 
+\#define \hyperlink{a00017_afc49214f2e640394a0f0911e037de74c_afc49214f2e640394a0f0911e037de74c}{M\+S\+R\+\_\+\+A\+C\+TA}~0x1
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144}{Floppy\+Registers} \{ \newline
+\hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a40c83bb204c81df2f0175bf12033734d}{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+A} = 0x3\+F0, 
+\hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a67594810c15eef9eb996987d025270b5}{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+B} = 0x3\+F1, 
+\hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a9767b7f5f447d5346411d03077fea82a}{D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER} = 0x3\+F2, 
+\hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a5326f39a6b9baad5841b4fa5c8bd2670}{T\+A\+P\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+G\+I\+S\+T\+ER} = 0x3\+F3, 
+\newline
+\hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144af852e6a0637776bcce17a714073abb83}{M\+A\+I\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+ER} = 0x3\+F4, 
+\hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a0c74cc445d28678eca05e6326bc10079}{D\+A\+T\+A\+R\+A\+T\+E\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER} = 0x3\+F4, 
+\hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a92a76f68a037ce115a979519e4f5d7f7}{D\+A\+T\+A\+\_\+\+F\+I\+FO} = 0x3\+F5, 
+\hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144af0590c51d0ee8e377caca59900bc9643}{D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER} = 0x3\+F7, 
+\newline
+\hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a109e7c2d2104dc338c02288846bd0d73}{C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+E\+G\+I\+S\+T\+ER} = 0x3\+F7
+ \}
+\item 
+enum \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148}{Floppy\+Commands} \{ \newline
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148af1446436b6d22bb0491cf73bba04052b}{R\+E\+A\+D\+\_\+\+T\+R\+A\+CK} = 2, 
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a9d287912c258310f1ecf4cda777e9629}{S\+P\+E\+C\+I\+FY} = 3, 
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a05a2817805f188a7dc04147e64e4823e}{S\+E\+N\+S\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+A\+T\+US} = 4, 
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ac6c55a4e76bf555712854329895490de}{W\+R\+I\+T\+E\+\_\+\+D\+A\+TA} = 5, 
+\newline
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a6c9aea235a9b44681dfcc088658ccdd6}{R\+E\+A\+D\+\_\+\+D\+A\+TA} = 6, 
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a3b7e7e1f8fad7122fd3cbc4fde8fc5db}{R\+E\+C\+A\+L\+I\+B\+R\+A\+TE} = 7, 
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a08f4155cad2e5f96be49ce68770b2e77}{S\+E\+N\+S\+E\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT} = 8, 
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ac6f0dd87b678d6e0b5cb0b172c217477}{W\+R\+I\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA} = 9, 
+\newline
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a08d1641fdf7c1a20c4f1563f57d958e8}{R\+E\+A\+D\+\_\+\+ID} = 10, 
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a474d4ccd11ea053ce51c83017b0fec9e}{R\+E\+A\+D\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA} = 12, 
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a04833e5e5e7a164181ecb2ab5260ca77}{F\+O\+R\+M\+A\+T\+\_\+\+T\+R\+A\+CK} = 13, 
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148af7d16413dc0530b68b826711b2c5214b}{D\+U\+M\+P\+R\+EG} = 14, 
+\newline
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ae11978ab3861bc9e4d9fece6ba277062}{S\+E\+EK} = 15, 
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a52f49aba124a600ad9581caabe6a099a}{V\+E\+R\+S\+I\+ON} = 16, 
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ae5e9c00995b16a0f18228582167f0383}{S\+C\+A\+N\+\_\+\+E\+Q\+U\+AL} = 17, 
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a32100c0c9ceab58096369a7aa65d9d38}{P\+E\+R\+P\+E\+N\+D\+I\+C\+U\+L\+A\+R\+\_\+\+M\+O\+DE} = 18, 
+\newline
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a5183723f609e1521f38450e9792af61d}{C\+O\+N\+F\+I\+G\+U\+RE} = 19, 
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a438b68412f24003b09e0993b62dc7b48}{L\+O\+CK} = 20, 
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a570b000ad5bd233482644aaaac095680}{V\+E\+R\+I\+FY} = 22, 
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a7eefaec5fabe1db94fd12a84af66b6cd}{S\+C\+A\+N\+\_\+\+L\+O\+W\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL} = 25, 
+\newline
+\hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a1ee024a89ac2dbd7845f63306f175546}{S\+C\+A\+N\+\_\+\+H\+I\+G\+H\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL} = 29
+ \}
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-char \hyperlink{a00017_ad6a916c09d63bcfc59bce46f2bb34811_ad6a916c09d63bcfc59bce46f2bb34811}{kb\+\_\+getscancode} ()
-\begin{DoxyCompactList}\small\item\em Gets a keyboard scancode. \end{DoxyCompactList}\item 
-void \hyperlink{a00017_ab55128c33115081a66a8acb39dc6c7dc_ab55128c33115081a66a8acb39dc6c7dc}{ps2init} ()
-\begin{DoxyCompactList}\small\item\em P\+S/2 Initialize. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{a00017_a782ff57a4ec7786197ec3a12d4f52332_a782ff57a4ec7786197ec3a12d4f52332}{lba\+\_\+2\+\_\+chs} (\hyperlink{a00101_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} lba, \hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$cyl, \hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$head, \hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$sector)
+\item 
+void \hyperlink{a00017_acbe17688655526c3fa02f324ae8336ca_acbe17688655526c3fa02f324ae8336ca}{floppyirq} ()
+\item 
+void \hyperlink{a00017_ad64d38a767bc5f30a3e13a5b01b9cf35_ad64d38a767bc5f30a3e13a5b01b9cf35}{resetfloppy} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+volatile \hyperlink{a00101_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00017_a2cfa75d25a7da8cb54551c7840e80d40_a2cfa75d25a7da8cb54551c7840e80d40}{floppyirq\+\_\+received} = \hyperlink{a00101_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}{false}
+\end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{a00017_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}\label{a00017_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}} 
-\index{keyboard.\+h@{keyboard.\+h}!P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG@{P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG}}
-\index{P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG@{P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG}{PS2\_COMMANDREG}}
-{\footnotesize\ttfamily \#define P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG~\hyperlink{a00017_ac53f79a633bdedad461bd9b969d9afcc_ac53f79a633bdedad461bd9b969d9afcc}{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}}
+\mbox{\Hypertarget{a00017_a953189dd0b9a6f4162969f37d26af31d_a953189dd0b9a6f4162969f37d26af31d}\label{a00017_a953189dd0b9a6f4162969f37d26af31d_a953189dd0b9a6f4162969f37d26af31d}} 
+\index{fdrive.\+h@{fdrive.\+h}!D\+O\+R\+\_\+\+D\+S\+E\+L0@{D\+O\+R\+\_\+\+D\+S\+E\+L0}}
+\index{D\+O\+R\+\_\+\+D\+S\+E\+L0@{D\+O\+R\+\_\+\+D\+S\+E\+L0}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{D\+O\+R\+\_\+\+D\+S\+E\+L0}{DOR\_DSEL0}}
+{\footnotesize\ttfamily \#define D\+O\+R\+\_\+\+D\+S\+E\+L0~0x0}
 
 
 
-P\+S/2 Command Register. 
+Definition at line 16 of file fdrive.\+h.
+
+\mbox{\Hypertarget{a00017_a5cd765b083a3ceaedbd4a49be6fe8dbc_a5cd765b083a3ceaedbd4a49be6fe8dbc}\label{a00017_a5cd765b083a3ceaedbd4a49be6fe8dbc_a5cd765b083a3ceaedbd4a49be6fe8dbc}} 
+\index{fdrive.\+h@{fdrive.\+h}!D\+O\+R\+\_\+\+D\+S\+E\+L1@{D\+O\+R\+\_\+\+D\+S\+E\+L1}}
+\index{D\+O\+R\+\_\+\+D\+S\+E\+L1@{D\+O\+R\+\_\+\+D\+S\+E\+L1}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{D\+O\+R\+\_\+\+D\+S\+E\+L1}{DOR\_DSEL1}}
+{\footnotesize\ttfamily \#define D\+O\+R\+\_\+\+D\+S\+E\+L1~0x1}
 
 
 
-Definition at line 21 of file keyboard.\+h.
+Definition at line 15 of file fdrive.\+h.
 
-\mbox{\Hypertarget{a00017_a0ef8b0a5f135deeee1540a47eeb0a0d3_a0ef8b0a5f135deeee1540a47eeb0a0d3}\label{a00017_a0ef8b0a5f135deeee1540a47eeb0a0d3_a0ef8b0a5f135deeee1540a47eeb0a0d3}} 
-\index{keyboard.\+h@{keyboard.\+h}!P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT@{P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT}}
-\index{P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT@{P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT}{PS2\_DATAPORT}}
-{\footnotesize\ttfamily \#define P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT~0x60}
-
-
-
-P\+S/2 Data Port. 
+\mbox{\Hypertarget{a00017_ae392b097d8e6f4b7058dfef64e523da8_ae392b097d8e6f4b7058dfef64e523da8}\label{a00017_ae392b097d8e6f4b7058dfef64e523da8_ae392b097d8e6f4b7058dfef64e523da8}} 
+\index{fdrive.\+h@{fdrive.\+h}!D\+O\+R\+\_\+\+I\+RQ@{D\+O\+R\+\_\+\+I\+RQ}}
+\index{D\+O\+R\+\_\+\+I\+RQ@{D\+O\+R\+\_\+\+I\+RQ}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{D\+O\+R\+\_\+\+I\+RQ}{DOR\_IRQ}}
+{\footnotesize\ttfamily \#define D\+O\+R\+\_\+\+I\+RQ~0x8}
 
 
 
-Definition at line 13 of file keyboard.\+h.
+Definition at line 13 of file fdrive.\+h.
 
-\mbox{\Hypertarget{a00017_ac53f79a633bdedad461bd9b969d9afcc_ac53f79a633bdedad461bd9b969d9afcc}\label{a00017_ac53f79a633bdedad461bd9b969d9afcc_ac53f79a633bdedad461bd9b969d9afcc}} 
-\index{keyboard.\+h@{keyboard.\+h}!P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG@{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}}
-\index{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG@{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}{PS2\_STATUSREG}}
-{\footnotesize\ttfamily \#define P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG~0x64}
-
-
-
-P\+S/2 Status Register. 
+\mbox{\Hypertarget{a00017_aa7ddb0d096e3dc3d7e816f7a8569942d_aa7ddb0d096e3dc3d7e816f7a8569942d}\label{a00017_aa7ddb0d096e3dc3d7e816f7a8569942d_aa7ddb0d096e3dc3d7e816f7a8569942d}} 
+\index{fdrive.\+h@{fdrive.\+h}!D\+O\+R\+\_\+\+M\+O\+TA@{D\+O\+R\+\_\+\+M\+O\+TA}}
+\index{D\+O\+R\+\_\+\+M\+O\+TA@{D\+O\+R\+\_\+\+M\+O\+TA}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{D\+O\+R\+\_\+\+M\+O\+TA}{DOR\_MOTA}}
+{\footnotesize\ttfamily \#define D\+O\+R\+\_\+\+M\+O\+TA~0x10}
 
 
 
-Definition at line 17 of file keyboard.\+h.
+Definition at line 12 of file fdrive.\+h.
+
+\mbox{\Hypertarget{a00017_a052f96bc57476550160245afea79d0e3_a052f96bc57476550160245afea79d0e3}\label{a00017_a052f96bc57476550160245afea79d0e3_a052f96bc57476550160245afea79d0e3}} 
+\index{fdrive.\+h@{fdrive.\+h}!D\+O\+R\+\_\+\+M\+O\+TB@{D\+O\+R\+\_\+\+M\+O\+TB}}
+\index{D\+O\+R\+\_\+\+M\+O\+TB@{D\+O\+R\+\_\+\+M\+O\+TB}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{D\+O\+R\+\_\+\+M\+O\+TB}{DOR\_MOTB}}
+{\footnotesize\ttfamily \#define D\+O\+R\+\_\+\+M\+O\+TB~0x20}
 
 
 
-\subsection{Function Documentation}
-\mbox{\Hypertarget{a00017_ad6a916c09d63bcfc59bce46f2bb34811_ad6a916c09d63bcfc59bce46f2bb34811}\label{a00017_ad6a916c09d63bcfc59bce46f2bb34811_ad6a916c09d63bcfc59bce46f2bb34811}} 
-\index{keyboard.\+h@{keyboard.\+h}!kb\+\_\+getscancode@{kb\+\_\+getscancode}}
-\index{kb\+\_\+getscancode@{kb\+\_\+getscancode}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{kb\+\_\+getscancode()}{kb\_getscancode()}}
-{\footnotesize\ttfamily char kb\+\_\+getscancode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+Definition at line 11 of file fdrive.\+h.
+
+\mbox{\Hypertarget{a00017_ae7f4b3c26624086ab3969c7053f0288e_ae7f4b3c26624086ab3969c7053f0288e}\label{a00017_ae7f4b3c26624086ab3969c7053f0288e_ae7f4b3c26624086ab3969c7053f0288e}} 
+\index{fdrive.\+h@{fdrive.\+h}!D\+O\+R\+\_\+\+M\+O\+TC@{D\+O\+R\+\_\+\+M\+O\+TC}}
+\index{D\+O\+R\+\_\+\+M\+O\+TC@{D\+O\+R\+\_\+\+M\+O\+TC}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{D\+O\+R\+\_\+\+M\+O\+TC}{DOR\_MOTC}}
+{\footnotesize\ttfamily \#define D\+O\+R\+\_\+\+M\+O\+TC~0x40}
 
 
 
-Gets a keyboard scancode. 
+Definition at line 10 of file fdrive.\+h.
 
-\mbox{\Hypertarget{a00017_ab55128c33115081a66a8acb39dc6c7dc_ab55128c33115081a66a8acb39dc6c7dc}\label{a00017_ab55128c33115081a66a8acb39dc6c7dc_ab55128c33115081a66a8acb39dc6c7dc}} 
-\index{keyboard.\+h@{keyboard.\+h}!ps2init@{ps2init}}
-\index{ps2init@{ps2init}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{ps2init()}{ps2init()}}
-{\footnotesize\ttfamily void ps2init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-P\+S/2 Initialize. 
+\mbox{\Hypertarget{a00017_ada23a6b331b9e651cfa2d1034d214cd0_ada23a6b331b9e651cfa2d1034d214cd0}\label{a00017_ada23a6b331b9e651cfa2d1034d214cd0_ada23a6b331b9e651cfa2d1034d214cd0}} 
+\index{fdrive.\+h@{fdrive.\+h}!D\+O\+R\+\_\+\+M\+O\+TD@{D\+O\+R\+\_\+\+M\+O\+TD}}
+\index{D\+O\+R\+\_\+\+M\+O\+TD@{D\+O\+R\+\_\+\+M\+O\+TD}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{D\+O\+R\+\_\+\+M\+O\+TD}{DOR\_MOTD}}
+{\footnotesize\ttfamily \#define D\+O\+R\+\_\+\+M\+O\+TD~0x80}
 
 
 
-Definition at line 7 of file keyboard.\+c.
+Definition at line 9 of file fdrive.\+h.
+
+\mbox{\Hypertarget{a00017_a6ef9f5776b2d959e47c6c42111900071_a6ef9f5776b2d959e47c6c42111900071}\label{a00017_a6ef9f5776b2d959e47c6c42111900071_a6ef9f5776b2d959e47c6c42111900071}} 
+\index{fdrive.\+h@{fdrive.\+h}!D\+O\+R\+\_\+\+R\+E\+S\+ET@{D\+O\+R\+\_\+\+R\+E\+S\+ET}}
+\index{D\+O\+R\+\_\+\+R\+E\+S\+ET@{D\+O\+R\+\_\+\+R\+E\+S\+ET}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{D\+O\+R\+\_\+\+R\+E\+S\+ET}{DOR\_RESET}}
+{\footnotesize\ttfamily \#define D\+O\+R\+\_\+\+R\+E\+S\+ET~0x4}
+
+
+
+Definition at line 14 of file fdrive.\+h.
+
+\mbox{\Hypertarget{a00017_a04d40064bde801f12fb73134cf328150_a04d40064bde801f12fb73134cf328150}\label{a00017_a04d40064bde801f12fb73134cf328150_a04d40064bde801f12fb73134cf328150}} 
+\index{fdrive.\+h@{fdrive.\+h}!F\+L\+O\+P\+P\+Y\+\_\+144\+\_\+\+S\+E\+C\+T\+O\+R\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+CK@{F\+L\+O\+P\+P\+Y\+\_\+144\+\_\+\+S\+E\+C\+T\+O\+R\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+CK}}
+\index{F\+L\+O\+P\+P\+Y\+\_\+144\+\_\+\+S\+E\+C\+T\+O\+R\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+CK@{F\+L\+O\+P\+P\+Y\+\_\+144\+\_\+\+S\+E\+C\+T\+O\+R\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+CK}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{F\+L\+O\+P\+P\+Y\+\_\+144\+\_\+\+S\+E\+C\+T\+O\+R\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+CK}{FLOPPY\_144\_SECTORS\_PER\_TRACK}}
+{\footnotesize\ttfamily \#define F\+L\+O\+P\+P\+Y\+\_\+144\+\_\+\+S\+E\+C\+T\+O\+R\+S\+\_\+\+P\+E\+R\+\_\+\+T\+R\+A\+CK~18}
+
+
+
+Definition at line 5 of file fdrive.\+h.
+
+\mbox{\Hypertarget{a00017_afc49214f2e640394a0f0911e037de74c_afc49214f2e640394a0f0911e037de74c}\label{a00017_afc49214f2e640394a0f0911e037de74c_afc49214f2e640394a0f0911e037de74c}} 
+\index{fdrive.\+h@{fdrive.\+h}!M\+S\+R\+\_\+\+A\+C\+TA@{M\+S\+R\+\_\+\+A\+C\+TA}}
+\index{M\+S\+R\+\_\+\+A\+C\+TA@{M\+S\+R\+\_\+\+A\+C\+TA}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{M\+S\+R\+\_\+\+A\+C\+TA}{MSR\_ACTA}}
+{\footnotesize\ttfamily \#define M\+S\+R\+\_\+\+A\+C\+TA~0x1}
+
+
+
+Definition at line 25 of file fdrive.\+h.
+
+\mbox{\Hypertarget{a00017_a002e08b11d8386c5350fb397444b6f0d_a002e08b11d8386c5350fb397444b6f0d}\label{a00017_a002e08b11d8386c5350fb397444b6f0d_a002e08b11d8386c5350fb397444b6f0d}} 
+\index{fdrive.\+h@{fdrive.\+h}!M\+S\+R\+\_\+\+A\+C\+TB@{M\+S\+R\+\_\+\+A\+C\+TB}}
+\index{M\+S\+R\+\_\+\+A\+C\+TB@{M\+S\+R\+\_\+\+A\+C\+TB}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{M\+S\+R\+\_\+\+A\+C\+TB}{MSR\_ACTB}}
+{\footnotesize\ttfamily \#define M\+S\+R\+\_\+\+A\+C\+TB~0x2}
+
+
+
+Definition at line 24 of file fdrive.\+h.
+
+\mbox{\Hypertarget{a00017_a4c9d380fea61cae261e0e1fd4b141d73_a4c9d380fea61cae261e0e1fd4b141d73}\label{a00017_a4c9d380fea61cae261e0e1fd4b141d73_a4c9d380fea61cae261e0e1fd4b141d73}} 
+\index{fdrive.\+h@{fdrive.\+h}!M\+S\+R\+\_\+\+A\+C\+TC@{M\+S\+R\+\_\+\+A\+C\+TC}}
+\index{M\+S\+R\+\_\+\+A\+C\+TC@{M\+S\+R\+\_\+\+A\+C\+TC}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{M\+S\+R\+\_\+\+A\+C\+TC}{MSR\_ACTC}}
+{\footnotesize\ttfamily \#define M\+S\+R\+\_\+\+A\+C\+TC~0x4}
+
+
+
+Definition at line 23 of file fdrive.\+h.
+
+\mbox{\Hypertarget{a00017_a786d96755a23385a8ae82861be34a9a9_a786d96755a23385a8ae82861be34a9a9}\label{a00017_a786d96755a23385a8ae82861be34a9a9_a786d96755a23385a8ae82861be34a9a9}} 
+\index{fdrive.\+h@{fdrive.\+h}!M\+S\+R\+\_\+\+A\+C\+TD@{M\+S\+R\+\_\+\+A\+C\+TD}}
+\index{M\+S\+R\+\_\+\+A\+C\+TD@{M\+S\+R\+\_\+\+A\+C\+TD}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{M\+S\+R\+\_\+\+A\+C\+TD}{MSR\_ACTD}}
+{\footnotesize\ttfamily \#define M\+S\+R\+\_\+\+A\+C\+TD~0x8}
+
+
+
+Definition at line 22 of file fdrive.\+h.
+
+\mbox{\Hypertarget{a00017_a917ceb5802c1ba5d115dbf155791b4eb_a917ceb5802c1ba5d115dbf155791b4eb}\label{a00017_a917ceb5802c1ba5d115dbf155791b4eb_a917ceb5802c1ba5d115dbf155791b4eb}} 
+\index{fdrive.\+h@{fdrive.\+h}!M\+S\+R\+\_\+\+CB@{M\+S\+R\+\_\+\+CB}}
+\index{M\+S\+R\+\_\+\+CB@{M\+S\+R\+\_\+\+CB}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{M\+S\+R\+\_\+\+CB}{MSR\_CB}}
+{\footnotesize\ttfamily \#define M\+S\+R\+\_\+\+CB~0x10}
+
+
+
+Definition at line 21 of file fdrive.\+h.
+
+\mbox{\Hypertarget{a00017_ac28b112c15bf3fe55efb77454e77d99a_ac28b112c15bf3fe55efb77454e77d99a}\label{a00017_ac28b112c15bf3fe55efb77454e77d99a_ac28b112c15bf3fe55efb77454e77d99a}} 
+\index{fdrive.\+h@{fdrive.\+h}!M\+S\+R\+\_\+\+D\+IO@{M\+S\+R\+\_\+\+D\+IO}}
+\index{M\+S\+R\+\_\+\+D\+IO@{M\+S\+R\+\_\+\+D\+IO}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{M\+S\+R\+\_\+\+D\+IO}{MSR\_DIO}}
+{\footnotesize\ttfamily \#define M\+S\+R\+\_\+\+D\+IO~0x40}
+
+
+
+Definition at line 19 of file fdrive.\+h.
+
+\mbox{\Hypertarget{a00017_a7a7c0450e941d19be4df75db9447f99c_a7a7c0450e941d19be4df75db9447f99c}\label{a00017_a7a7c0450e941d19be4df75db9447f99c_a7a7c0450e941d19be4df75db9447f99c}} 
+\index{fdrive.\+h@{fdrive.\+h}!M\+S\+R\+\_\+\+N\+D\+MA@{M\+S\+R\+\_\+\+N\+D\+MA}}
+\index{M\+S\+R\+\_\+\+N\+D\+MA@{M\+S\+R\+\_\+\+N\+D\+MA}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{M\+S\+R\+\_\+\+N\+D\+MA}{MSR\_NDMA}}
+{\footnotesize\ttfamily \#define M\+S\+R\+\_\+\+N\+D\+MA~0x20}
+
+
+
+Definition at line 20 of file fdrive.\+h.
+
+\mbox{\Hypertarget{a00017_a052e37fe9f8f1b12791d5875486fb95d_a052e37fe9f8f1b12791d5875486fb95d}\label{a00017_a052e37fe9f8f1b12791d5875486fb95d_a052e37fe9f8f1b12791d5875486fb95d}} 
+\index{fdrive.\+h@{fdrive.\+h}!M\+S\+R\+\_\+\+R\+QM@{M\+S\+R\+\_\+\+R\+QM}}
+\index{M\+S\+R\+\_\+\+R\+QM@{M\+S\+R\+\_\+\+R\+QM}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{M\+S\+R\+\_\+\+R\+QM}{MSR\_RQM}}
+{\footnotesize\ttfamily \#define M\+S\+R\+\_\+\+R\+QM~0x80}
+
+
+
+Definition at line 18 of file fdrive.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148}} 
+\index{fdrive.\+h@{fdrive.\+h}!Floppy\+Commands@{Floppy\+Commands}}
+\index{Floppy\+Commands@{Floppy\+Commands}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{Floppy\+Commands}{FloppyCommands}}
+{\footnotesize\ttfamily enum \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148}{Floppy\+Commands}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+A\+D\+\_\+\+T\+R\+A\+CK@{R\+E\+A\+D\+\_\+\+T\+R\+A\+CK}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!R\+E\+A\+D\+\_\+\+T\+R\+A\+CK@{R\+E\+A\+D\+\_\+\+T\+R\+A\+CK}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148af1446436b6d22bb0491cf73bba04052b}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148af1446436b6d22bb0491cf73bba04052b}} 
+R\+E\+A\+D\+\_\+\+T\+R\+A\+CK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+P\+E\+C\+I\+FY@{S\+P\+E\+C\+I\+FY}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!S\+P\+E\+C\+I\+FY@{S\+P\+E\+C\+I\+FY}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a9d287912c258310f1ecf4cda777e9629}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a9d287912c258310f1ecf4cda777e9629}} 
+S\+P\+E\+C\+I\+FY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+E\+N\+S\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+A\+T\+US@{S\+E\+N\+S\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+A\+T\+US}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!S\+E\+N\+S\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+A\+T\+US@{S\+E\+N\+S\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+A\+T\+US}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a05a2817805f188a7dc04147e64e4823e}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a05a2817805f188a7dc04147e64e4823e}} 
+S\+E\+N\+S\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+S\+T\+A\+T\+US&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+R\+I\+T\+E\+\_\+\+D\+A\+TA@{W\+R\+I\+T\+E\+\_\+\+D\+A\+TA}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!W\+R\+I\+T\+E\+\_\+\+D\+A\+TA@{W\+R\+I\+T\+E\+\_\+\+D\+A\+TA}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ac6c55a4e76bf555712854329895490de}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ac6c55a4e76bf555712854329895490de}} 
+W\+R\+I\+T\+E\+\_\+\+D\+A\+TA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+A\+D\+\_\+\+D\+A\+TA@{R\+E\+A\+D\+\_\+\+D\+A\+TA}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!R\+E\+A\+D\+\_\+\+D\+A\+TA@{R\+E\+A\+D\+\_\+\+D\+A\+TA}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a6c9aea235a9b44681dfcc088658ccdd6}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a6c9aea235a9b44681dfcc088658ccdd6}} 
+R\+E\+A\+D\+\_\+\+D\+A\+TA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+C\+A\+L\+I\+B\+R\+A\+TE@{R\+E\+C\+A\+L\+I\+B\+R\+A\+TE}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!R\+E\+C\+A\+L\+I\+B\+R\+A\+TE@{R\+E\+C\+A\+L\+I\+B\+R\+A\+TE}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a3b7e7e1f8fad7122fd3cbc4fde8fc5db}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a3b7e7e1f8fad7122fd3cbc4fde8fc5db}} 
+R\+E\+C\+A\+L\+I\+B\+R\+A\+TE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+E\+N\+S\+E\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT@{S\+E\+N\+S\+E\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!S\+E\+N\+S\+E\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT@{S\+E\+N\+S\+E\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a08f4155cad2e5f96be49ce68770b2e77}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a08f4155cad2e5f96be49ce68770b2e77}} 
+S\+E\+N\+S\+E\+\_\+\+I\+N\+T\+E\+R\+R\+U\+PT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{W\+R\+I\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA@{W\+R\+I\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!W\+R\+I\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA@{W\+R\+I\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ac6f0dd87b678d6e0b5cb0b172c217477}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ac6f0dd87b678d6e0b5cb0b172c217477}} 
+W\+R\+I\+T\+E\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+A\+D\+\_\+\+ID@{R\+E\+A\+D\+\_\+\+ID}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!R\+E\+A\+D\+\_\+\+ID@{R\+E\+A\+D\+\_\+\+ID}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a08d1641fdf7c1a20c4f1563f57d958e8}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a08d1641fdf7c1a20c4f1563f57d958e8}} 
+R\+E\+A\+D\+\_\+\+ID&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{R\+E\+A\+D\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA@{R\+E\+A\+D\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!R\+E\+A\+D\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA@{R\+E\+A\+D\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a474d4ccd11ea053ce51c83017b0fec9e}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a474d4ccd11ea053ce51c83017b0fec9e}} 
+R\+E\+A\+D\+\_\+\+D\+E\+L\+E\+T\+E\+D\+\_\+\+D\+A\+TA&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+O\+R\+M\+A\+T\+\_\+\+T\+R\+A\+CK@{F\+O\+R\+M\+A\+T\+\_\+\+T\+R\+A\+CK}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!F\+O\+R\+M\+A\+T\+\_\+\+T\+R\+A\+CK@{F\+O\+R\+M\+A\+T\+\_\+\+T\+R\+A\+CK}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a04833e5e5e7a164181ecb2ab5260ca77}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a04833e5e5e7a164181ecb2ab5260ca77}} 
+F\+O\+R\+M\+A\+T\+\_\+\+T\+R\+A\+CK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+U\+M\+P\+R\+EG@{D\+U\+M\+P\+R\+EG}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!D\+U\+M\+P\+R\+EG@{D\+U\+M\+P\+R\+EG}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148af7d16413dc0530b68b826711b2c5214b}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148af7d16413dc0530b68b826711b2c5214b}} 
+D\+U\+M\+P\+R\+EG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+E\+EK@{S\+E\+EK}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!S\+E\+EK@{S\+E\+EK}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ae11978ab3861bc9e4d9fece6ba277062}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ae11978ab3861bc9e4d9fece6ba277062}} 
+S\+E\+EK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{V\+E\+R\+S\+I\+ON@{V\+E\+R\+S\+I\+ON}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!V\+E\+R\+S\+I\+ON@{V\+E\+R\+S\+I\+ON}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a52f49aba124a600ad9581caabe6a099a}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a52f49aba124a600ad9581caabe6a099a}} 
+V\+E\+R\+S\+I\+ON&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+C\+A\+N\+\_\+\+E\+Q\+U\+AL@{S\+C\+A\+N\+\_\+\+E\+Q\+U\+AL}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!S\+C\+A\+N\+\_\+\+E\+Q\+U\+AL@{S\+C\+A\+N\+\_\+\+E\+Q\+U\+AL}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ae5e9c00995b16a0f18228582167f0383}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ae5e9c00995b16a0f18228582167f0383}} 
+S\+C\+A\+N\+\_\+\+E\+Q\+U\+AL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{P\+E\+R\+P\+E\+N\+D\+I\+C\+U\+L\+A\+R\+\_\+\+M\+O\+DE@{P\+E\+R\+P\+E\+N\+D\+I\+C\+U\+L\+A\+R\+\_\+\+M\+O\+DE}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!P\+E\+R\+P\+E\+N\+D\+I\+C\+U\+L\+A\+R\+\_\+\+M\+O\+DE@{P\+E\+R\+P\+E\+N\+D\+I\+C\+U\+L\+A\+R\+\_\+\+M\+O\+DE}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a32100c0c9ceab58096369a7aa65d9d38}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a32100c0c9ceab58096369a7aa65d9d38}} 
+P\+E\+R\+P\+E\+N\+D\+I\+C\+U\+L\+A\+R\+\_\+\+M\+O\+DE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+F\+I\+G\+U\+RE@{C\+O\+N\+F\+I\+G\+U\+RE}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!C\+O\+N\+F\+I\+G\+U\+RE@{C\+O\+N\+F\+I\+G\+U\+RE}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a5183723f609e1521f38450e9792af61d}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a5183723f609e1521f38450e9792af61d}} 
+C\+O\+N\+F\+I\+G\+U\+RE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{L\+O\+CK@{L\+O\+CK}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!L\+O\+CK@{L\+O\+CK}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a438b68412f24003b09e0993b62dc7b48}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a438b68412f24003b09e0993b62dc7b48}} 
+L\+O\+CK&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{V\+E\+R\+I\+FY@{V\+E\+R\+I\+FY}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!V\+E\+R\+I\+FY@{V\+E\+R\+I\+FY}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a570b000ad5bd233482644aaaac095680}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a570b000ad5bd233482644aaaac095680}} 
+V\+E\+R\+I\+FY&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+C\+A\+N\+\_\+\+L\+O\+W\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL@{S\+C\+A\+N\+\_\+\+L\+O\+W\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!S\+C\+A\+N\+\_\+\+L\+O\+W\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL@{S\+C\+A\+N\+\_\+\+L\+O\+W\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a7eefaec5fabe1db94fd12a84af66b6cd}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a7eefaec5fabe1db94fd12a84af66b6cd}} 
+S\+C\+A\+N\+\_\+\+L\+O\+W\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+C\+A\+N\+\_\+\+H\+I\+G\+H\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL@{S\+C\+A\+N\+\_\+\+H\+I\+G\+H\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!S\+C\+A\+N\+\_\+\+H\+I\+G\+H\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL@{S\+C\+A\+N\+\_\+\+H\+I\+G\+H\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL}}}\mbox{\Hypertarget{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a1ee024a89ac2dbd7845f63306f175546}\label{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a1ee024a89ac2dbd7845f63306f175546}} 
+S\+C\+A\+N\+\_\+\+H\+I\+G\+H\+\_\+\+O\+R\+\_\+\+E\+Q\+U\+AL&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 40 of file fdrive.\+h.
 
 
 \begin{DoxyCode}
-7                \{
-8     \hyperlink{a00014_afbd5f7a0d5ee4c4e6e0615a7294e1e10_afbd5f7a0d5ee4c4e6e0615a7294e1e10}{rcv} = \textcolor{keyword}{false};
-9     \textcolor{comment}{// disable devices}
-10     \hyperlink{a00104_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00017_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}{PS2\_COMMANDREG},0xAD);  
-11     \hyperlink{a00104_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00017_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}{PS2\_COMMANDREG},0xA7);
-12     \hyperlink{a00104_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00017_a0ef8b0a5f135deeee1540a47eeb0a0d3_a0ef8b0a5f135deeee1540a47eeb0a0d3}{PS2\_DATAPORT});
-13 
+41 \{
+42    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148af1446436b6d22bb0491cf73bba04052b}{READ\_TRACK} =                 2,    \textcolor{comment}{// generates IRQ6}
+43    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a9d287912c258310f1ecf4cda777e9629}{SPECIFY} =                    3,      \textcolor{comment}{// * set drive parameters}
+44    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a05a2817805f188a7dc04147e64e4823e}{SENSE\_DRIVE\_STATUS} =         4,
+45    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ac6c55a4e76bf555712854329895490de}{WRITE\_DATA} =                 5,      \textcolor{comment}{// * write to the disk}
+46    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a6c9aea235a9b44681dfcc088658ccdd6}{READ\_DATA} =                  6,      \textcolor{comment}{// * read from the disk}
+47    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a3b7e7e1f8fad7122fd3cbc4fde8fc5db}{RECALIBRATE} =                7,      \textcolor{comment}{// * seek to cylinder 0}
+48    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a08f4155cad2e5f96be49ce68770b2e77}{SENSE\_INTERRUPT} =            8,      \textcolor{comment}{// * ack IRQ6, get status of last command}
+49    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ac6f0dd87b678d6e0b5cb0b172c217477}{WRITE\_DELETED\_DATA} =         9,
+50    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a08d1641fdf7c1a20c4f1563f57d958e8}{READ\_ID} =                    10,  \textcolor{comment}{// generates IRQ6}
+51    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a474d4ccd11ea053ce51c83017b0fec9e}{READ\_DELETED\_DATA} =          12,
+52    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a04833e5e5e7a164181ecb2ab5260ca77}{FORMAT\_TRACK} =               13,     \textcolor{comment}{// *}
+53    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148af7d16413dc0530b68b826711b2c5214b}{DUMPREG} =                    14,
+54    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ae11978ab3861bc9e4d9fece6ba277062}{SEEK} =                       15,     \textcolor{comment}{// * seek both heads to cylinder X}
+55    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a52f49aba124a600ad9581caabe6a099a}{VERSION} =                    16,  \textcolor{comment}{// * used during initialization, once}
+56    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148ae5e9c00995b16a0f18228582167f0383}{SCAN\_EQUAL} =                 17,
+57    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a32100c0c9ceab58096369a7aa65d9d38}{PERPENDICULAR\_MODE} =         18,   \textcolor{comment}{// * used during initialization, once, maybe}
+58    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a5183723f609e1521f38450e9792af61d}{CONFIGURE} =                  19,     \textcolor{comment}{// * set controller parameters}
+59    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a438b68412f24003b09e0993b62dc7b48}{LOCK} =                       20,     \textcolor{comment}{// * protect controller params from a reset}
+60    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a570b000ad5bd233482644aaaac095680}{VERIFY} =                     22,
+61    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a7eefaec5fabe1db94fd12a84af66b6cd}{SCAN\_LOW\_OR\_EQUAL} =          25,
+62    \hyperlink{a00017_a9990a5de334fdaec2ce93b74b8676148_a9990a5de334fdaec2ce93b74b8676148a1ee024a89ac2dbd7845f63306f175546}{SCAN\_HIGH\_OR\_EQUAL} =         29
+63 \};
+\end{DoxyCode}
+\mbox{\Hypertarget{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144}\label{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144}} 
+\index{fdrive.\+h@{fdrive.\+h}!Floppy\+Registers@{Floppy\+Registers}}
+\index{Floppy\+Registers@{Floppy\+Registers}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{Floppy\+Registers}{FloppyRegisters}}
+{\footnotesize\ttfamily enum \hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144}{Floppy\+Registers}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+A@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+A}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+A@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+A}}}\mbox{\Hypertarget{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a40c83bb204c81df2f0175bf12033734d}\label{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a40c83bb204c81df2f0175bf12033734d}} 
+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+A&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+B@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+B}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+B@{S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+B}}}\mbox{\Hypertarget{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a67594810c15eef9eb996987d025270b5}\label{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a67594810c15eef9eb996987d025270b5}} 
+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+E\+R\+\_\+B&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER}}}\mbox{\Hypertarget{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a9767b7f5f447d5346411d03077fea82a}\label{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a9767b7f5f447d5346411d03077fea82a}} 
+D\+I\+G\+I\+T\+A\+L\+\_\+\+O\+U\+T\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{T\+A\+P\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{T\+A\+P\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+G\+I\+S\+T\+ER}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!T\+A\+P\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{T\+A\+P\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+G\+I\+S\+T\+ER}}}\mbox{\Hypertarget{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a5326f39a6b9baad5841b4fa5c8bd2670}\label{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a5326f39a6b9baad5841b4fa5c8bd2670}} 
+T\+A\+P\+E\+\_\+\+D\+R\+I\+V\+E\+\_\+\+R\+E\+G\+I\+S\+T\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{M\+A\+I\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{M\+A\+I\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+ER}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!M\+A\+I\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{M\+A\+I\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+ER}}}\mbox{\Hypertarget{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144af852e6a0637776bcce17a714073abb83}\label{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144af852e6a0637776bcce17a714073abb83}} 
+M\+A\+I\+N\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+R\+E\+G\+I\+S\+T\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+A\+T\+A\+R\+A\+T\+E\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{D\+A\+T\+A\+R\+A\+T\+E\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!D\+A\+T\+A\+R\+A\+T\+E\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{D\+A\+T\+A\+R\+A\+T\+E\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER}}}\mbox{\Hypertarget{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a0c74cc445d28678eca05e6326bc10079}\label{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a0c74cc445d28678eca05e6326bc10079}} 
+D\+A\+T\+A\+R\+A\+T\+E\+\_\+\+S\+E\+L\+E\+C\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+A\+T\+A\+\_\+\+F\+I\+FO@{D\+A\+T\+A\+\_\+\+F\+I\+FO}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!D\+A\+T\+A\+\_\+\+F\+I\+FO@{D\+A\+T\+A\+\_\+\+F\+I\+FO}}}\mbox{\Hypertarget{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a92a76f68a037ce115a979519e4f5d7f7}\label{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a92a76f68a037ce115a979519e4f5d7f7}} 
+D\+A\+T\+A\+\_\+\+F\+I\+FO&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER}}}\mbox{\Hypertarget{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144af0590c51d0ee8e377caca59900bc9643}\label{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144af0590c51d0ee8e377caca59900bc9643}} 
+D\+I\+G\+I\+T\+A\+L\+\_\+\+I\+N\+P\+U\+T\+\_\+\+R\+E\+G\+I\+S\+T\+ER&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+E\+G\+I\+S\+T\+ER}!fdrive.\+h@{fdrive.\+h}}\index{fdrive.\+h@{fdrive.\+h}!C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+E\+G\+I\+S\+T\+ER@{C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+E\+G\+I\+S\+T\+ER}}}\mbox{\Hypertarget{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a109e7c2d2104dc338c02288846bd0d73}\label{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a109e7c2d2104dc338c02288846bd0d73}} 
+C\+O\+N\+F\+I\+G\+U\+R\+A\+T\+I\+O\+N\+\_\+\+C\+O\+N\+T\+R\+O\+L\+\_\+\+R\+E\+G\+I\+S\+T\+ER&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 27 of file fdrive.\+h.
+
+
+\begin{DoxyCode}
+28 \{
+29    \hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a40c83bb204c81df2f0175bf12033734d}{STATUS\_REGISTER\_A}                = 0x3F0, \textcolor{comment}{// read-only}
+30    \hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a67594810c15eef9eb996987d025270b5}{STATUS\_REGISTER\_B}                = 0x3F1, \textcolor{comment}{// read-only}
+31    \hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a9767b7f5f447d5346411d03077fea82a}{DIGITAL\_OUTPUT\_REGISTER}          = 0x3F2,
+32    \hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a5326f39a6b9baad5841b4fa5c8bd2670}{TAPE\_DRIVE\_REGISTER}              = 0x3F3,
+33    \hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144af852e6a0637776bcce17a714073abb83}{MAIN\_STATUS\_REGISTER}             = 0x3F4, \textcolor{comment}{// read-only}
+34    \hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a0c74cc445d28678eca05e6326bc10079}{DATARATE\_SELECT\_REGISTER}         = 0x3F4, \textcolor{comment}{// write-only}
+35    \hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a92a76f68a037ce115a979519e4f5d7f7}{DATA\_FIFO}                        = 0x3F5,
+36    \hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144af0590c51d0ee8e377caca59900bc9643}{DIGITAL\_INPUT\_REGISTER}           = 0x3F7, \textcolor{comment}{// read-only}
+37    \hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a109e7c2d2104dc338c02288846bd0d73}{CONFIGURATION\_CONTROL\_REGISTER}   = 0x3F7  \textcolor{comment}{// write-only}
+38 \};
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{a00017_acbe17688655526c3fa02f324ae8336ca_acbe17688655526c3fa02f324ae8336ca}\label{a00017_acbe17688655526c3fa02f324ae8336ca_acbe17688655526c3fa02f324ae8336ca}} 
+\index{fdrive.\+h@{fdrive.\+h}!floppyirq@{floppyirq}}
+\index{floppyirq@{floppyirq}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{floppyirq()}{floppyirq()}}
+{\footnotesize\ttfamily void floppyirq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 12 of file fdrive.\+c.
+
+
+\begin{DoxyCode}
+12                  \{
+13     \hyperlink{a00017_a2cfa75d25a7da8cb54551c7840e80d40_a2cfa75d25a7da8cb54551c7840e80d40}{floppyirq\_received} = \textcolor{keyword}{true};
 14 \}
 \end{DoxyCode}
+\mbox{\Hypertarget{a00017_a782ff57a4ec7786197ec3a12d4f52332_a782ff57a4ec7786197ec3a12d4f52332}\label{a00017_a782ff57a4ec7786197ec3a12d4f52332_a782ff57a4ec7786197ec3a12d4f52332}} 
+\index{fdrive.\+h@{fdrive.\+h}!lba\+\_\+2\+\_\+chs@{lba\+\_\+2\+\_\+chs}}
+\index{lba\+\_\+2\+\_\+chs@{lba\+\_\+2\+\_\+chs}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{lba\+\_\+2\+\_\+chs()}{lba\_2\_chs()}}
+{\footnotesize\ttfamily void lba\+\_\+2\+\_\+chs (\begin{DoxyParamCaption}\item[{\hyperlink{a00101_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{lba,  }\item[{\hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$}]{cyl,  }\item[{\hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$}]{head,  }\item[{\hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$}]{sector }\end{DoxyParamCaption})}
+
+
+
+Definition at line 5 of file fdrive.\+c.
+
+
+\begin{DoxyCode}
+6 \{
+7     *cyl    = lba / (2 * \hyperlink{a00017_a04d40064bde801f12fb73134cf328150_a04d40064bde801f12fb73134cf328150}{FLOPPY\_144\_SECTORS\_PER\_TRACK});
+8     *head   = ((lba % (2 * \hyperlink{a00017_a04d40064bde801f12fb73134cf328150_a04d40064bde801f12fb73134cf328150}{FLOPPY\_144\_SECTORS\_PER\_TRACK})) / 
+      \hyperlink{a00017_a04d40064bde801f12fb73134cf328150_a04d40064bde801f12fb73134cf328150}{FLOPPY\_144\_SECTORS\_PER\_TRACK});
+9     *sector = ((lba % (2 * \hyperlink{a00017_a04d40064bde801f12fb73134cf328150_a04d40064bde801f12fb73134cf328150}{FLOPPY\_144\_SECTORS\_PER\_TRACK})) % 
+      \hyperlink{a00017_a04d40064bde801f12fb73134cf328150_a04d40064bde801f12fb73134cf328150}{FLOPPY\_144\_SECTORS\_PER\_TRACK} + 1);
+10 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00017_ad64d38a767bc5f30a3e13a5b01b9cf35_ad64d38a767bc5f30a3e13a5b01b9cf35}\label{a00017_ad64d38a767bc5f30a3e13a5b01b9cf35_ad64d38a767bc5f30a3e13a5b01b9cf35}} 
+\index{fdrive.\+h@{fdrive.\+h}!resetfloppy@{resetfloppy}}
+\index{resetfloppy@{resetfloppy}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{resetfloppy()}{resetfloppy()}}
+{\footnotesize\ttfamily void resetfloppy (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file fdrive.\+c.
+
+
+\begin{DoxyCode}
+16                    \{
+17     \hyperlink{a00017_a2cfa75d25a7da8cb54551c7840e80d40_a2cfa75d25a7da8cb54551c7840e80d40}{floppyirq\_received} = \textcolor{keyword}{false};
+18 
+19     \hyperlink{a00110_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00017_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a9767b7f5f447d5346411d03077fea82a}{DIGITAL\_OUTPUT\_REGISTER},\hyperlink{a00017_a6ef9f5776b2d959e47c6c42111900071_a6ef9f5776b2d959e47c6c42111900071}{DOR\_RESET});
+20 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{a00017_a2cfa75d25a7da8cb54551c7840e80d40_a2cfa75d25a7da8cb54551c7840e80d40}\label{a00017_a2cfa75d25a7da8cb54551c7840e80d40_a2cfa75d25a7da8cb54551c7840e80d40}} 
+\index{fdrive.\+h@{fdrive.\+h}!floppyirq\+\_\+received@{floppyirq\+\_\+received}}
+\index{floppyirq\+\_\+received@{floppyirq\+\_\+received}!fdrive.\+h@{fdrive.\+h}}
+\subsubsection{\texorpdfstring{floppyirq\+\_\+received}{floppyirq\_received}}
+{\footnotesize\ttfamily volatile \hyperlink{a00101_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} floppyirq\+\_\+received = \hyperlink{a00101_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}{false}}
+
+
+
+Definition at line 69 of file fdrive.\+h.
+

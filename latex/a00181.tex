@@ -1,2 +1,41 @@
-\begin{quote}
-Protected Mode 32-\/\+Bit Operating System\end{quote}
+V\+EP (Vitality Executable Program) is the standard executable format for VitalityX. It has a lightweight header and the V\+EP is semi-\/allowed to choose where it loads within memory.
+
+The struct for defining a V\+EP header is as follows\+:
+
+
+\begin{DoxyCode}
+typedef struct vepheader \{
+    ///
+    /// VEP signature, should be 'VP'
+    ///
+    char signature[2];
+    ///
+    /// VEP flags
+    /// 
+    char flags;
+    ///
+    /// 255 character array for name
+    ///
+    char name[255];
+    ///
+    /// Where the VEP should be loaded
+    ///
+    uint32\_t origin;
+    ///
+    /// VEP size
+    ///
+    uint32\_t vepsize;
+\} vepheader\_t;
+\end{DoxyCode}
+
+
+After the vepheader is the raw binary which will be loaded in. Example
+
+
+\begin{DoxyCode}
++-----------------------------------+--------------------+
+|VEPHEADER                          |PROGRAM DATA        |
+|signature flags name origin vepsize|                    |
++-----------------------------------+--------------------+
+\end{DoxyCode}
+ 

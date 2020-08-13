@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: drivers/pic.c File Reference</title>
+<title>VitalityX: drivers/keyboard.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,18 +44,19 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">pic.c File Reference</div>  </div>
+<div class="title">keyboard.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00095_source.html">../libc/types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00104_source.html">../libc/vitality/inline.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00023_source.html">pic.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00023_source.html">keyboard.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00101_source.html">../libc/types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00110_source.html">../libc/vitality/inline.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for pic.c:</div>
+Include dependency graph for keyboard.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00021.png" border="0" usemap="#drivers_2pic_8c" alt=""/></div>
+<div class="center"><img src="a00021.png" border="0" usemap="#drivers_2keyboard_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
@@ -63,22 +64,16 @@ Include dependency graph for pic.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1119739f7932598c83c3f8ce42a649de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020_a1119739f7932598c83c3f8ce42a649de.html#a1119739f7932598c83c3f8ce42a649de">PIC_sendEOI</a> (unsigned char irq)</td></tr>
-<tr class="memdesc:a1119739f7932598c83c3f8ce42a649de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send End of Interrupt to PIC.  <a href="a00020_a1119739f7932598c83c3f8ce42a649de.html#a1119739f7932598c83c3f8ce42a649de">More...</a><br /></td></tr>
-<tr class="separator:a1119739f7932598c83c3f8ce42a649de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5ed5530bfeaffadd8cd88c06d797f31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020_ab5ed5530bfeaffadd8cd88c06d797f31.html#ab5ed5530bfeaffadd8cd88c06d797f31">PIC_remap</a> (int offset1, int offset2)</td></tr>
-<tr class="memdesc:ab5ed5530bfeaffadd8cd88c06d797f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remap PIC.  <a href="a00020_ab5ed5530bfeaffadd8cd88c06d797f31.html#ab5ed5530bfeaffadd8cd88c06d797f31">More...</a><br /></td></tr>
-<tr class="separator:ab5ed5530bfeaffadd8cd88c06d797f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af654381e46179e377f9e26d7b3f48df0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020_af654381e46179e377f9e26d7b3f48df0.html#af654381e46179e377f9e26d7b3f48df0">IRQ_set_mask</a> (unsigned char IRQline)</td></tr>
-<tr class="separator:af654381e46179e377f9e26d7b3f48df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66ac96e9de8bb640d3d76ddd0a652ff4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020_a66ac96e9de8bb640d3d76ddd0a652ff4.html#a66ac96e9de8bb640d3d76ddd0a652ff4">IRQ_clear_mask</a> (unsigned char IRQline)</td></tr>
-<tr class="separator:a66ac96e9de8bb640d3d76ddd0a652ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36c512d574a4d820675e1026ac4a3db6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00095_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020_a36c512d574a4d820675e1026ac4a3db6.html#a36c512d574a4d820675e1026ac4a3db6">__pic_get_irq_reg</a> (int ocw3)</td></tr>
-<tr class="separator:a36c512d574a4d820675e1026ac4a3db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c413ca2499d8eb59d09ebe025f4ae8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00095_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020_a3c413ca2499d8eb59d09ebe025f4ae8e.html#a3c413ca2499d8eb59d09ebe025f4ae8e">pic_get_irr</a> (void)</td></tr>
-<tr class="separator:a3c413ca2499d8eb59d09ebe025f4ae8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b716de2a9d07df332b924d1608c8fd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00095_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020_a3b716de2a9d07df332b924d1608c8fd9.html#a3b716de2a9d07df332b924d1608c8fd9">pic_get_isr</a> (void)</td></tr>
-<tr class="separator:a3b716de2a9d07df332b924d1608c8fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab55128c33115081a66a8acb39dc6c7dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020_ab55128c33115081a66a8acb39dc6c7dc.html#ab55128c33115081a66a8acb39dc6c7dc">ps2init</a> ()</td></tr>
+<tr class="memdesc:ab55128c33115081a66a8acb39dc6c7dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">PS/2 Initialize.  <a href="a00020_ab55128c33115081a66a8acb39dc6c7dc.html#ab55128c33115081a66a8acb39dc6c7dc">More...</a><br /></td></tr>
+<tr class="separator:ab55128c33115081a66a8acb39dc6c7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:afbd5f7a0d5ee4c4e6e0615a7294e1e10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00101_af6a258d8f3ee5206d682d799316314b1.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020_afbd5f7a0d5ee4c4e6e0615a7294e1e10.html#afbd5f7a0d5ee4c4e6e0615a7294e1e10">rcv</a> = <a class="el" href="a00101_af6a258d8f3ee5206d682d799316314b1.html#af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c">false</a></td></tr>
+<tr class="separator:afbd5f7a0d5ee4c4e6e0615a7294e1e10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae08385eb06ddff872e33966a60075435"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00101_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00020_ae08385eb06ddff872e33966a60075435.html#ae08385eb06ddff872e33966a60075435">lbt</a> = 0</td></tr>
+<tr class="separator:ae08385eb06ddff872e33966a60075435"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

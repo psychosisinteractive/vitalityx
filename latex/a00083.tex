@@ -1,86 +1,174 @@
-\hypertarget{a00083}{}\section{libc/string.c File Reference}
-\label{a00083}\index{libc/string.\+c@{libc/string.\+c}}
-{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+\hypertarget{a00083}{}\section{libc/page.c File Reference}
+\label{a00083}\index{libc/page.\+c@{libc/page.\+c}}
+{\ttfamily \#include \char`\"{}page.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
-Include dependency graph for string.\+c\+:
+{\ttfamily \#include \char`\"{}ext/debug.\+h\char`\"{}}\newline
+Include dependency graph for page.\+c\+:
 % FIG 0
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00095_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} \hyperlink{a00083_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}{strlen} (const char $\ast$str)
+\hyperlink{a00101_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} page\+\_\+directory \mbox{[}1024\mbox{]} \hyperlink{a00083_a37f8e955bf961194d85eb31c4083e0ba_a37f8e955bf961194d85eb31c4083e0ba}{\+\_\+\+\_\+attribute\+\_\+\+\_\+} ((aligned(4096)))
 \item 
-void \hyperlink{a00083_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}{reverse} (char s\mbox{[}$\,$\mbox{]})
+void \hyperlink{a00083_a51f6a37816540dea572d38f2713e9f5a_a51f6a37816540dea572d38f2713e9f5a}{setup\+\_\+page} ()
 \item 
-void \hyperlink{a00083_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa} (int n, char s\mbox{[}$\,$\mbox{]})
+void \hyperlink{a00083_a7bb2c9b4c69002e17903710ce4de395c_a7bb2c9b4c69002e17903710ce4de395c}{create\+\_\+page\+\_\+table} (unsigned int i, unsigned int id)
+\item 
+void $\ast$ \hyperlink{a00083_ae584a02a60a268b787ee275aee930051_ae584a02a60a268b787ee275aee930051}{get\+\_\+physaddr} (void $\ast$virtualaddr)
+\item 
+void \hyperlink{a00083_adf8c9211327b122b455fabf292cc2411_adf8c9211327b122b455fabf292cc2411}{map\+\_\+page} (void $\ast$physaddr, void $\ast$virtualaddr, unsigned int \hyperlink{a00074_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags})
+\item 
+void \hyperlink{a00083_a5a808805c707701e7fb8816d51896fb5_a5a808805c707701e7fb8816d51896fb5}{umap\+\_\+page} (void $\ast$physaddr, void $\ast$virtualaddr, unsigned int \hyperlink{a00074_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags})
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00083_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}\label{a00083_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}} 
-\index{string.\+c@{string.\+c}!itoa@{itoa}}
-\index{itoa@{itoa}!string.\+c@{string.\+c}}
-\subsubsection{\texorpdfstring{itoa()}{itoa()}}
-{\footnotesize\ttfamily void itoa (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{char}]{s\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00083_a37f8e955bf961194d85eb31c4083e0ba_a37f8e955bf961194d85eb31c4083e0ba}\label{a00083_a37f8e955bf961194d85eb31c4083e0ba_a37f8e955bf961194d85eb31c4083e0ba}} 
+\index{page.\+c@{page.\+c}!\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}!page.\+c@{page.\+c}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+attribute\+\_\+\+\_\+()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily \hyperlink{a00101_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} page\+\_\+directory \mbox{[}1024\mbox{]} \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(aligned(4096))}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00083_a7bb2c9b4c69002e17903710ce4de395c_a7bb2c9b4c69002e17903710ce4de395c}\label{a00083_a7bb2c9b4c69002e17903710ce4de395c_a7bb2c9b4c69002e17903710ce4de395c}} 
+\index{page.\+c@{page.\+c}!create\+\_\+page\+\_\+table@{create\+\_\+page\+\_\+table}}
+\index{create\+\_\+page\+\_\+table@{create\+\_\+page\+\_\+table}!page.\+c@{page.\+c}}
+\subsubsection{\texorpdfstring{create\+\_\+page\+\_\+table()}{create\_page\_table()}}
+{\footnotesize\ttfamily void create\+\_\+page\+\_\+table (\begin{DoxyParamCaption}\item[{unsigned int}]{i,  }\item[{unsigned int}]{id }\end{DoxyParamCaption})}
 
 
 
-Definition at line 23 of file string.\+c.
+Definition at line 28 of file page.\+c.
 
 
 \begin{DoxyCode}
-24 \{
-25     \textcolor{keywordtype}{int} i, sign;
-26 
-27     \textcolor{keywordflow}{if} ((sign = n) < 0)  \textcolor{comment}{/* record sign */}
-28         n = -n;          \textcolor{comment}{/* make n positive */}
-29     i = 0;
-30     \textcolor{keywordflow}{do} \{       \textcolor{comment}{/* generate digits in reverse order */}
-31         s[i++] = n % 10 + \textcolor{charliteral}{'0'};   \textcolor{comment}{/* get next digit */}
-32     \} \textcolor{keywordflow}{while} ((n /= 10) > 0);     \textcolor{comment}{/* delete it */}
-33     \textcolor{keywordflow}{if} (sign < 0)
-34         s[i++] = \textcolor{charliteral}{'-'};
-35     s[i] = \textcolor{charliteral}{'\(\backslash\)0'};
-36     \hyperlink{a00083_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}{reverse}(s);
-37 \}
+28                                                         \{
+29     \hyperlink{a00047_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"setting up page table\(\backslash\)n"});
+30     \hyperlink{a00101_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t} page\_table[1024]
+31 \textcolor{preprocessor}{    #ifndef \_\_INTELLISENSE\_\_ }
+32         \hyperlink{a00083_a37f8e955bf961194d85eb31c4083e0ba_a37f8e955bf961194d85eb31c4083e0ba}{\_\_attribute\_\_}((aligned(4096)));
+33 \textcolor{preprocessor}{    #else}
+34         ;
+35 \textcolor{preprocessor}{    #endif}
+36     \textcolor{comment}{//we will fill all 1024 entries in the table, mapping 4 megabytes}
+37     \textcolor{keywordflow}{for}(i = 0; i < 1024; i++)
+38     \{
+39         \textcolor{comment}{// As the address is page aligned, it will always leave 12 bits zeroed.}
+40         \textcolor{comment}{// Those bits are used by the attributes ;)}
+41         page\_table[i] = (i * 0x1000) | 3; \textcolor{comment}{// attributes: supervisor level, read/write, present.}
+42     \}
+43     page\_directory[id] = ((\textcolor{keywordtype}{unsigned} int)page\_table) | 3;
+44     \hyperlink{a00047_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"page table setup\(\backslash\)n"});
+45 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00083_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}\label{a00083_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}} 
-\index{string.\+c@{string.\+c}!reverse@{reverse}}
-\index{reverse@{reverse}!string.\+c@{string.\+c}}
-\subsubsection{\texorpdfstring{reverse()}{reverse()}}
-{\footnotesize\ttfamily void reverse (\begin{DoxyParamCaption}\item[{char}]{s\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00083_ae584a02a60a268b787ee275aee930051_ae584a02a60a268b787ee275aee930051}\label{a00083_ae584a02a60a268b787ee275aee930051_ae584a02a60a268b787ee275aee930051}} 
+\index{page.\+c@{page.\+c}!get\+\_\+physaddr@{get\+\_\+physaddr}}
+\index{get\+\_\+physaddr@{get\+\_\+physaddr}!page.\+c@{page.\+c}}
+\subsubsection{\texorpdfstring{get\+\_\+physaddr()}{get\_physaddr()}}
+{\footnotesize\ttfamily void$\ast$ get\+\_\+physaddr (\begin{DoxyParamCaption}\item[{void $\ast$}]{virtualaddr }\end{DoxyParamCaption})}
 
 
 
-Definition at line 11 of file string.\+c.
+Definition at line 47 of file page.\+c.
 
 
 \begin{DoxyCode}
-12 \{
-13     \textcolor{keywordtype}{int} i, j;
-14     \textcolor{keywordtype}{char} c;
-15 
-16     \textcolor{keywordflow}{for} (i = 0, j = \hyperlink{a00083_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}{strlen}(s)-1; i<j; i++, j--) \{
-17         c = s[i];
-18         s[i] = s[j];
-19         s[j] = c;
-20     \}
-21 \}
+48 \{
+49     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} pdindex = (\textcolor{keywordtype}{unsigned} long)virtualaddr >> 22;
+50     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ptindex = (\textcolor{keywordtype}{unsigned} long)virtualaddr >> 12 & 0x03FF;
+51     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} * pd = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *)0xFFFFF000;
+52     \textcolor{comment}{// Here you need to check whether the PD entry is present.}
+53     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} * pt = ((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *)0xFFC00000) + (0x400 * pdindex);
+54     \textcolor{comment}{// Here you need to check whether the PT entry is present.}
+55     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{void} *)((pt[ptindex] & ~0xFFF) + ((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long})virtualaddr & 0xFFF));
+56 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00083_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}\label{a00083_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}} 
-\index{string.\+c@{string.\+c}!strlen@{strlen}}
-\index{strlen@{strlen}!string.\+c@{string.\+c}}
-\subsubsection{\texorpdfstring{strlen()}{strlen()}}
-{\footnotesize\ttfamily \hyperlink{a00095_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} strlen (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00083_adf8c9211327b122b455fabf292cc2411_adf8c9211327b122b455fabf292cc2411}\label{a00083_adf8c9211327b122b455fabf292cc2411_adf8c9211327b122b455fabf292cc2411}} 
+\index{page.\+c@{page.\+c}!map\+\_\+page@{map\+\_\+page}}
+\index{map\+\_\+page@{map\+\_\+page}!page.\+c@{page.\+c}}
+\subsubsection{\texorpdfstring{map\+\_\+page()}{map\_page()}}
+{\footnotesize\ttfamily void map\+\_\+page (\begin{DoxyParamCaption}\item[{void $\ast$}]{physaddr,  }\item[{void $\ast$}]{virtualaddr,  }\item[{unsigned int}]{flags }\end{DoxyParamCaption})}
 
 
 
-Definition at line 4 of file string.\+c.
+Definition at line 58 of file page.\+c.
 
 
 \begin{DoxyCode}
-5 \{
-6     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *s;
-7     \textcolor{keywordflow}{for} (s = str; *s; ++s) \{\}
-8     \textcolor{keywordflow}{return}(s - str);
-9 \}
+59 \{
+60     \textcolor{comment}{// Make sure that both addresses are page-aligned.}
+61     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} pdindex = (\textcolor{keywordtype}{unsigned} long)virtualaddr >> 22;
+62     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ptindex = (\textcolor{keywordtype}{unsigned} long)virtualaddr >> 12 & 0x03FF;
+63     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} * pd = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *)0xFFFFF000;
+64     \textcolor{comment}{// Here you need to check whether the PD entry is present.}
+65     \textcolor{comment}{// When it is not present, you need to create a new empty PT and}
+66     \textcolor{comment}{// adjust the PDE accordingly.}
+67     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} * pt = ((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *)0xFFC00000) + (0x400 * pdindex);
+68     \textcolor{comment}{// Here you need to check whether the PT entry is present.}
+69     \textcolor{comment}{// When it is, then there is already a mapping present. What do you do now?}
+70     pt[ptindex] = ((\textcolor{keywordtype}{unsigned} long)physaddr) | (\hyperlink{a00074_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags} & 0xFFF) | 0x01; \textcolor{comment}{// Present}
+71     \textcolor{comment}{// Now you need to flush the entry in the TLB}
+72     \textcolor{comment}{// or you might not notice the change.}
+73 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00083_a51f6a37816540dea572d38f2713e9f5a_a51f6a37816540dea572d38f2713e9f5a}\label{a00083_a51f6a37816540dea572d38f2713e9f5a_a51f6a37816540dea572d38f2713e9f5a}} 
+\index{page.\+c@{page.\+c}!setup\+\_\+page@{setup\+\_\+page}}
+\index{setup\+\_\+page@{setup\+\_\+page}!page.\+c@{page.\+c}}
+\subsubsection{\texorpdfstring{setup\+\_\+page()}{setup\_page()}}
+{\footnotesize\ttfamily void setup\+\_\+page (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 11 of file page.\+c.
+
+
+\begin{DoxyCode}
+11                   \{
+12     \hyperlink{a00047_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"page being setup\(\backslash\)n"});
+13     \textcolor{comment}{//set each entry to not present}
+14     \textcolor{keywordtype}{int} i;
+15     \textcolor{keywordflow}{for}(i = 0; i < 1024; i++)
+16     \{
+17         \textcolor{comment}{// This sets the following flags to the pages:}
+18         \textcolor{comment}{//   Supervisor: Only kernel-mode can access them}
+19         \textcolor{comment}{//   Write Enabled: It can be both read from and written to}
+20         \textcolor{comment}{//   Not Present: The page table is not present}
+21         page\_directory[i] = 0x00000002;
+22     \}
+23     \hyperlink{a00086_abfdf37b9c42cafa83b39f1a41264989c_abfdf37b9c42cafa83b39f1a41264989c}{loadPageDirectory}(page\_directory);
+24     \hyperlink{a00086_a8fe3a9cca4b2ccd7a2743e9943880a32_a8fe3a9cca4b2ccd7a2743e9943880a32}{enablePaging}();
+25     \hyperlink{a00047_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"pages setup\(\backslash\)n"});
+26 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00083_a5a808805c707701e7fb8816d51896fb5_a5a808805c707701e7fb8816d51896fb5}\label{a00083_a5a808805c707701e7fb8816d51896fb5_a5a808805c707701e7fb8816d51896fb5}} 
+\index{page.\+c@{page.\+c}!umap\+\_\+page@{umap\+\_\+page}}
+\index{umap\+\_\+page@{umap\+\_\+page}!page.\+c@{page.\+c}}
+\subsubsection{\texorpdfstring{umap\+\_\+page()}{umap\_page()}}
+{\footnotesize\ttfamily void umap\+\_\+page (\begin{DoxyParamCaption}\item[{void $\ast$}]{physaddr,  }\item[{void $\ast$}]{virtualaddr,  }\item[{unsigned int}]{flags }\end{DoxyParamCaption})}
+
+
+
+Definition at line 75 of file page.\+c.
+
+
+\begin{DoxyCode}
+76 \{
+77     \textcolor{comment}{// Make sure that both addresses are page-aligned.}
+78  
+79     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} pdindex = (\textcolor{keywordtype}{unsigned} long)virtualaddr >> 22;
+80     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} ptindex = (\textcolor{keywordtype}{unsigned} long)virtualaddr >> 12 & 0x03FF;
+81  
+82     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} * pd = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *)0xFFFFF000;
+83     \textcolor{comment}{// Here you need to check whether the PD entry is present.}
+84     \textcolor{comment}{// When it is not present, you need to create a new empty PT and}
+85     \textcolor{comment}{// adjust the PDE accordingly.}
+86  
+87     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} * pt = ((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} *)0xFFC00000) + (0x400 * pdindex);
+88     \textcolor{comment}{// Here you need to check whether the PT entry is present.}
+89     \textcolor{comment}{// When it is, then there is already a mapping present. What do you do now?}
+90  
+91     pt[ptindex] = 0x0; \textcolor{comment}{// Not Present}
+92  
+93     \textcolor{comment}{// Now you need to flush the entry in the TLB}
+94     \textcolor{comment}{// or you might not notice the change.}
+95 \}
 \end{DoxyCode}
