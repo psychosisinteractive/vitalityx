@@ -1,24 +1,13 @@
-\hypertarget{a00092}{}\section{libc/string.h File Reference}
-\label{a00092}\index{libc/string.\+h@{libc/string.\+h}}
+\hypertarget{a00092}{}\section{libc/string.c File Reference}
+\label{a00092}\index{libc/string.\+c@{libc/string.\+c}}
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
-Include dependency graph for string.\+h\+:
+Include dependency graph for string.\+c\+:
 % FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{a00092_a5338bd16a174527274acc5062483b702_a5338bd16a174527274acc5062483b702}{S\+T\+I\+R\+N\+G\+\_\+H}
-\end{DoxyCompactItemize}
-\subsection*{Typedefs}
-\begin{DoxyCompactItemize}
-\item 
-typedef char $\ast$ \hyperlink{a00092_ab0dcbec9b4b3c60b939b1095f93cb1b9_ab0dcbec9b4b3c60b939b1095f93cb1b9}{string\+\_\+t}
-\begin{DoxyCompactList}\small\item\em String typedef. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00101_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} \hyperlink{a00092_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}{strlen} (const char $\ast$str)
+\hyperlink{a00104_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} \hyperlink{a00092_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}{strlen} (const char $\ast$str)
 \item 
 void \hyperlink{a00092_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}{reverse} (char s\mbox{[}$\,$\mbox{]})
 \item 
@@ -26,40 +15,10 @@ void \hyperlink{a00092_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f
 \end{DoxyCompactItemize}
 
 
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{a00092_a5338bd16a174527274acc5062483b702_a5338bd16a174527274acc5062483b702}\label{a00092_a5338bd16a174527274acc5062483b702_a5338bd16a174527274acc5062483b702}} 
-\index{string.\+h@{string.\+h}!S\+T\+I\+R\+N\+G\+\_\+H@{S\+T\+I\+R\+N\+G\+\_\+H}}
-\index{S\+T\+I\+R\+N\+G\+\_\+H@{S\+T\+I\+R\+N\+G\+\_\+H}!string.\+h@{string.\+h}}
-\subsubsection{\texorpdfstring{S\+T\+I\+R\+N\+G\+\_\+H}{STIRNG\_H}}
-{\footnotesize\ttfamily \#define S\+T\+I\+R\+N\+G\+\_\+H}
-
-
-
-Definition at line 2 of file string.\+h.
-
-
-
-\subsection{Typedef Documentation}
-\mbox{\Hypertarget{a00092_ab0dcbec9b4b3c60b939b1095f93cb1b9_ab0dcbec9b4b3c60b939b1095f93cb1b9}\label{a00092_ab0dcbec9b4b3c60b939b1095f93cb1b9_ab0dcbec9b4b3c60b939b1095f93cb1b9}} 
-\index{string.\+h@{string.\+h}!string\+\_\+t@{string\+\_\+t}}
-\index{string\+\_\+t@{string\+\_\+t}!string.\+h@{string.\+h}}
-\subsubsection{\texorpdfstring{string\+\_\+t}{string\_t}}
-{\footnotesize\ttfamily typedef char$\ast$ \hyperlink{a00092_ab0dcbec9b4b3c60b939b1095f93cb1b9_ab0dcbec9b4b3c60b939b1095f93cb1b9}{string\+\_\+t}}
-
-
-
-String typedef. 
-
-
-
-Definition at line 8 of file string.\+h.
-
-
-
 \subsection{Function Documentation}
 \mbox{\Hypertarget{a00092_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}\label{a00092_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}} 
-\index{string.\+h@{string.\+h}!itoa@{itoa}}
-\index{itoa@{itoa}!string.\+h@{string.\+h}}
+\index{string.\+c@{string.\+c}!itoa@{itoa}}
+\index{itoa@{itoa}!string.\+c@{string.\+c}}
 \subsubsection{\texorpdfstring{itoa()}{itoa()}}
 {\footnotesize\ttfamily void itoa (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{char}]{s\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
@@ -81,12 +40,12 @@ Definition at line 23 of file string.\+c.
 33     \textcolor{keywordflow}{if} (sign < 0)
 34         s[i++] = \textcolor{charliteral}{'-'};
 35     s[i] = \textcolor{charliteral}{'\(\backslash\)0'};
-36     \hyperlink{a00089_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}{reverse}(s);
+36     \hyperlink{a00092_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}{reverse}(s);
 37 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00092_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}\label{a00092_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}} 
-\index{string.\+h@{string.\+h}!reverse@{reverse}}
-\index{reverse@{reverse}!string.\+h@{string.\+h}}
+\index{string.\+c@{string.\+c}!reverse@{reverse}}
+\index{reverse@{reverse}!string.\+c@{string.\+c}}
 \subsubsection{\texorpdfstring{reverse()}{reverse()}}
 {\footnotesize\ttfamily void reverse (\begin{DoxyParamCaption}\item[{char}]{s\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
@@ -100,7 +59,7 @@ Definition at line 11 of file string.\+c.
 13     \textcolor{keywordtype}{int} i, j;
 14     \textcolor{keywordtype}{char} c;
 15 
-16     \textcolor{keywordflow}{for} (i = 0, j = \hyperlink{a00089_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}{strlen}(s)-1; i<j; i++, j--) \{
+16     \textcolor{keywordflow}{for} (i = 0, j = \hyperlink{a00092_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}{strlen}(s)-1; i<j; i++, j--) \{
 17         c = s[i];
 18         s[i] = s[j];
 19         s[j] = c;
@@ -108,10 +67,10 @@ Definition at line 11 of file string.\+c.
 21 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00092_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}\label{a00092_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}} 
-\index{string.\+h@{string.\+h}!strlen@{strlen}}
-\index{strlen@{strlen}!string.\+h@{string.\+h}}
+\index{string.\+c@{string.\+c}!strlen@{strlen}}
+\index{strlen@{strlen}!string.\+c@{string.\+c}}
 \subsubsection{\texorpdfstring{strlen()}{strlen()}}
-{\footnotesize\ttfamily \hyperlink{a00101_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} strlen (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{a00104_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} strlen (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
 
 
 

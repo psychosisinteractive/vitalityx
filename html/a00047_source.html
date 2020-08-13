@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/ext/debug.c Source File</title>
+<title>VitalityX: libc/descriptortables.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,17 +39,17 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_c8aa6d4abc9a0662ff2d67630dd4c4d1.html">ext</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">debug.c</div>  </div>
+<div class="title">descriptortables.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="a00047.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00050.html">debug.h</a>&quot;</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00003"></a><span class="lineno"><a class="line" href="a00050_a19e1f554d03c977f8b947f21489daa41.html#a19e1f554d03c977f8b947f21489daa41">    3</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00047_a19e1f554d03c977f8b947f21489daa41.html#a19e1f554d03c977f8b947f21489daa41">BochsConsolePrintString</a>(<span class="keywordtype">char</span>* <span class="keywordtype">string</span>)</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordtype">char</span> chara = *<span class="keywordtype">string</span>++;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    <span class="keywordflow">while</span>(chara != 0x0) {</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <a class="code" href="a00050_aa2123d399356fa4ded8a39fdc167f31a.html#aa2123d399356fa4ded8a39fdc167f31a">BochsConsolePrintChar</a>(chara);</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        chara = *<span class="keywordtype">string</span>++;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    }</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div><div class="ttc" id="a00047_a19e1f554d03c977f8b947f21489daa41_html_a19e1f554d03c977f8b947f21489daa41"><div class="ttname"><a href="a00047_a19e1f554d03c977f8b947f21489daa41.html#a19e1f554d03c977f8b947f21489daa41">BochsConsolePrintString</a></div><div class="ttdeci">void BochsConsolePrintString(char *string)</div><div class="ttdoc">Outputs a string to the Bochs console. </div><div class="ttdef"><b>Definition:</b> <a href="a00047_source.html#l00003">debug.c:3</a></div></div>
-<div class="ttc" id="a00050_html"><div class="ttname"><a href="a00050.html">debug.h</a></div></div>
-<div class="ttc" id="a00050_aa2123d399356fa4ded8a39fdc167f31a_html_aa2123d399356fa4ded8a39fdc167f31a"><div class="ttname"><a href="a00050_aa2123d399356fa4ded8a39fdc167f31a.html#aa2123d399356fa4ded8a39fdc167f31a">BochsConsolePrintChar</a></div><div class="ttdeci">#define BochsConsolePrintChar(c)</div><div class="ttdoc">Outputs a character to the Bochs console. </div><div class="ttdef"><b>Definition:</b> <a href="a00050_source.html#l00008">debug.h:8</a></div></div>
+<a href="a00047.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef DESCRIPTORTABLES_H</span></div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define DESCRIPTORTABLES_H</span></div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00071.html">gdt.h</a>&quot;</span></div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="a00077.html">interrupt.h</a>&quot;</span></div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordtype">void</span> <a class="code" href="a00047_a4c38e3f3ee100ca4323081bf0970c1ac.html#a4c38e3f3ee100ca4323081bf0970c1ac">dt_install</a>();</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#endif</span></div><div class="ttc" id="a00047_a4c38e3f3ee100ca4323081bf0970c1ac_html_a4c38e3f3ee100ca4323081bf0970c1ac"><div class="ttname"><a href="a00047_a4c38e3f3ee100ca4323081bf0970c1ac.html#a4c38e3f3ee100ca4323081bf0970c1ac">dt_install</a></div><div class="ttdeci">void dt_install()</div><div class="ttdef"><b>Definition:</b> <a href="a00044_source.html#l00005">descriptortables.c:5</a></div></div>
+<div class="ttc" id="a00077_html"><div class="ttname"><a href="a00077.html">interrupt.h</a></div></div>
+<div class="ttc" id="a00071_html"><div class="ttname"><a href="a00071.html">gdt.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

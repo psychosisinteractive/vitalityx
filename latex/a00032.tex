@@ -1,181 +1,489 @@
-\hypertarget{a00032}{}\section{drivers/vga.c File Reference}
-\label{a00032}\index{drivers/vga.\+c@{drivers/vga.\+c}}
-{\ttfamily \#include \char`\"{}vga.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../libc/system.\+h\char`\"{}}\newline
+\hypertarget{a00032}{}\section{drivers/pic.h File Reference}
+\label{a00032}\index{drivers/pic.\+h@{drivers/pic.\+h}}
+{\ttfamily \#include \char`\"{}../libc/types.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../libc/vitality/inline.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../libc/vitality/mem.\+h\char`\"{}}\newline
-Include dependency graph for vga.\+c\+:
+Include dependency graph for pic.\+h\+:
 % FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00032_a6b115109e4a0d3c5fb6252d091e86bfe_a6b115109e4a0d3c5fb6252d091e86bfe}{P\+I\+C1}~0x20
+\begin{DoxyCompactList}\small\item\em Master P\+IC. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00032_ac90003f52c8d736193efc954ece08e58_ac90003f52c8d736193efc954ece08e58}{P\+I\+C2}~0x\+A0
+\begin{DoxyCompactList}\small\item\em Slave P\+IC. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00032_ad1ba81484ab03e762d2e09f851c0901f_ad1ba81484ab03e762d2e09f851c0901f}{P\+I\+C1\+\_\+\+C\+O\+M\+M\+A\+ND}~\hyperlink{a00032_a6b115109e4a0d3c5fb6252d091e86bfe_a6b115109e4a0d3c5fb6252d091e86bfe}{P\+I\+C1}
+\item 
+\#define \hyperlink{a00032_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{P\+I\+C1\+\_\+\+D\+A\+TA}~(\hyperlink{a00032_a6b115109e4a0d3c5fb6252d091e86bfe_a6b115109e4a0d3c5fb6252d091e86bfe}{P\+I\+C1}+1)
+\item 
+\#define \hyperlink{a00032_a11d8793812c9d340e9a64cce26ee0570_a11d8793812c9d340e9a64cce26ee0570}{P\+I\+C2\+\_\+\+C\+O\+M\+M\+A\+ND}~\hyperlink{a00032_ac90003f52c8d736193efc954ece08e58_ac90003f52c8d736193efc954ece08e58}{P\+I\+C2}
+\item 
+\#define \hyperlink{a00032_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{P\+I\+C2\+\_\+\+D\+A\+TA}~(\hyperlink{a00032_ac90003f52c8d736193efc954ece08e58_ac90003f52c8d736193efc954ece08e58}{P\+I\+C2}+1)
+\item 
+\#define \hyperlink{a00032_a170d8eebdb48c16cfcd60cbd46760cb2_a170d8eebdb48c16cfcd60cbd46760cb2}{P\+I\+C\+\_\+\+E\+OI}~0x20
+\begin{DoxyCompactList}\small\item\em End of Interrupt. \end{DoxyCompactList}\item 
+\#define \hyperlink{a00032_a964d12193d2b36e8a7ec7fa57438e313_a964d12193d2b36e8a7ec7fa57438e313}{I\+C\+W1\+\_\+\+I\+C\+W4}~0x01
+\item 
+\#define \hyperlink{a00032_a6c092603fb5e22cc80954531ae319d01_a6c092603fb5e22cc80954531ae319d01}{I\+C\+W1\+\_\+\+S\+I\+N\+G\+LE}~0x02
+\item 
+\#define \hyperlink{a00032_a6ba324062a88dc9ff1e2916abdcde17e_a6ba324062a88dc9ff1e2916abdcde17e}{I\+C\+W1\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L4}~0x04
+\item 
+\#define \hyperlink{a00032_a8b06fbc75942c0a61e6ad80ea4736bd3_a8b06fbc75942c0a61e6ad80ea4736bd3}{I\+C\+W1\+\_\+\+L\+E\+V\+EL}~0x08
+\item 
+\#define \hyperlink{a00032_a286dc251f3d73c08e08a53a4696f31ef_a286dc251f3d73c08e08a53a4696f31ef}{I\+C\+W1\+\_\+\+I\+N\+IT}~0x10
+\item 
+\#define \hyperlink{a00032_a42803c5ddcec9e120a6dbf7bc5c1b7af_a42803c5ddcec9e120a6dbf7bc5c1b7af}{I\+C\+W4\+\_\+8086}~0x01
+\item 
+\#define \hyperlink{a00032_a16777bf654a4c5630e4f53902a25235a_a16777bf654a4c5630e4f53902a25235a}{I\+C\+W4\+\_\+\+A\+U\+TO}~0x02
+\item 
+\#define \hyperlink{a00032_af5443900cdd9096e97898e5584c316bb_af5443900cdd9096e97898e5584c316bb}{I\+C\+W4\+\_\+\+B\+U\+F\+\_\+\+S\+L\+A\+VE}~0x08
+\item 
+\#define \hyperlink{a00032_af3f1b53c727d98166710d198aca13411_af3f1b53c727d98166710d198aca13411}{I\+C\+W4\+\_\+\+B\+U\+F\+\_\+\+M\+A\+S\+T\+ER}~0x0C
+\item 
+\#define \hyperlink{a00032_a0ecb67a3f71d1d10502fbd834b0292f1_a0ecb67a3f71d1d10502fbd834b0292f1}{I\+C\+W4\+\_\+\+S\+F\+NM}~0x10
+\item 
+\#define \hyperlink{a00032_a4c4c538b4d0809530a26a7a6d4469259_a4c4c538b4d0809530a26a7a6d4469259}{P\+I\+C1\+\_\+\+C\+MD}~0x20
+\item 
+\#define \hyperlink{a00032_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{P\+I\+C1\+\_\+\+D\+A\+TA}~0x21
+\item 
+\#define \hyperlink{a00032_ae21e6e278037d30c9548e2fbb4308306_ae21e6e278037d30c9548e2fbb4308306}{P\+I\+C2\+\_\+\+C\+MD}~0x\+A0
+\item 
+\#define \hyperlink{a00032_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{P\+I\+C2\+\_\+\+D\+A\+TA}~0x\+A1
+\item 
+\#define \hyperlink{a00032_a9dc9c02677e153a3451c7f4e4a05bf0e_a9dc9c02677e153a3451c7f4e4a05bf0e}{P\+I\+C\+\_\+\+R\+E\+A\+D\+\_\+\+I\+RR}~0x0a    /$\ast$ O\+C\+W3 irq ready next C\+M\+D read $\ast$/
+\item 
+\#define \hyperlink{a00032_ad32509788feeff9f03f167df6024ff4f_ad32509788feeff9f03f167df6024ff4f}{P\+I\+C\+\_\+\+R\+E\+A\+D\+\_\+\+I\+SR}~0x0b    /$\ast$ O\+C\+W3 irq service next C\+M\+D read $\ast$/
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00032_ab17a69b465efb1ebe54a6a2e5d7b7ce8_ab17a69b465efb1ebe54a6a2e5d7b7ce8}{putpixel} (\hyperlink{a00101_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} c, \hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} x, \hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} y)
-\begin{DoxyCompactList}\small\item\em Puts a pixel on the screen. \end{DoxyCompactList}\item 
-\hyperlink{a00101_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00032_aac0685da0bbf1115c2b76b0aedf7e1f0_aac0685da0bbf1115c2b76b0aedf7e1f0}{getpixel} (\hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} x, \hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} y)
-\begin{DoxyCompactList}\small\item\em Gets a pixel on the screen. \end{DoxyCompactList}\item 
-void \hyperlink{a00032_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}{drawchar} (unsigned char c, \hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} x, \hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} y, \hyperlink{a00101_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} fgcolor, \hyperlink{a00101_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} bgcolor)
-\begin{DoxyCompactList}\small\item\em Puts a A\+S\+C\+II character on the screen. \end{DoxyCompactList}\item 
-\hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00032_af6d170c9401ea8f94d4c5cf09347cca7_af6d170c9401ea8f94d4c5cf09347cca7}{vgamode} ()
-\begin{DoxyCompactList}\small\item\em Gets the current V\+GA mode. \end{DoxyCompactList}\item 
-void \hyperlink{a00032_abb01dc16ea34f0a6de3d10d732b6c536_abb01dc16ea34f0a6de3d10d732b6c536}{setfont} (unsigned char $\ast$font)
-\begin{DoxyCompactList}\small\item\em Sets the font. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
+void \hyperlink{a00032_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{P\+I\+C\+\_\+send\+E\+OI} (unsigned char irq)
+\begin{DoxyCompactList}\small\item\em Send End of Interrupt to P\+IC. \end{DoxyCompactList}\item 
+void \hyperlink{a00032_ab5ed5530bfeaffadd8cd88c06d797f31_ab5ed5530bfeaffadd8cd88c06d797f31}{P\+I\+C\+\_\+remap} (int offset1, int offset2)
+\begin{DoxyCompactList}\small\item\em Remap P\+IC. \end{DoxyCompactList}\item 
+void \hyperlink{a00032_af654381e46179e377f9e26d7b3f48df0_af654381e46179e377f9e26d7b3f48df0}{I\+R\+Q\+\_\+set\+\_\+mask} (unsigned char I\+R\+Qline)
 \item 
-unsigned char $\ast$ \hyperlink{a00032_a586c0ac088deb9338d9b1464dcd587c8_a586c0ac088deb9338d9b1464dcd587c8}{vgafont}
+void \hyperlink{a00032_a66ac96e9de8bb640d3d76ddd0a652ff4_a66ac96e9de8bb640d3d76ddd0a652ff4}{I\+R\+Q\+\_\+clear\+\_\+mask} (unsigned char I\+R\+Qline)
+\item 
+static \hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00032_a36c512d574a4d820675e1026ac4a3db6_a36c512d574a4d820675e1026ac4a3db6}{\+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg} (int ocw3)
+\item 
+\hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00032_a3c413ca2499d8eb59d09ebe025f4ae8e_a3c413ca2499d8eb59d09ebe025f4ae8e}{pic\+\_\+get\+\_\+irr} (void)
+\item 
+\hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00032_a3b716de2a9d07df332b924d1608c8fd9_a3b716de2a9d07df332b924d1608c8fd9}{pic\+\_\+get\+\_\+isr} (void)
 \end{DoxyCompactItemize}
 
 
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{a00032_a964d12193d2b36e8a7ec7fa57438e313_a964d12193d2b36e8a7ec7fa57438e313}\label{a00032_a964d12193d2b36e8a7ec7fa57438e313_a964d12193d2b36e8a7ec7fa57438e313}} 
+\index{pic.\+h@{pic.\+h}!I\+C\+W1\+\_\+\+I\+C\+W4@{I\+C\+W1\+\_\+\+I\+C\+W4}}
+\index{I\+C\+W1\+\_\+\+I\+C\+W4@{I\+C\+W1\+\_\+\+I\+C\+W4}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{I\+C\+W1\+\_\+\+I\+C\+W4}{ICW1\_ICW4}}
+{\footnotesize\ttfamily \#define I\+C\+W1\+\_\+\+I\+C\+W4~0x01}
+
+
+
+Definition at line 31 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_a286dc251f3d73c08e08a53a4696f31ef_a286dc251f3d73c08e08a53a4696f31ef}\label{a00032_a286dc251f3d73c08e08a53a4696f31ef_a286dc251f3d73c08e08a53a4696f31ef}} 
+\index{pic.\+h@{pic.\+h}!I\+C\+W1\+\_\+\+I\+N\+IT@{I\+C\+W1\+\_\+\+I\+N\+IT}}
+\index{I\+C\+W1\+\_\+\+I\+N\+IT@{I\+C\+W1\+\_\+\+I\+N\+IT}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{I\+C\+W1\+\_\+\+I\+N\+IT}{ICW1\_INIT}}
+{\footnotesize\ttfamily \#define I\+C\+W1\+\_\+\+I\+N\+IT~0x10}
+
+
+
+Definition at line 35 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_a6ba324062a88dc9ff1e2916abdcde17e_a6ba324062a88dc9ff1e2916abdcde17e}\label{a00032_a6ba324062a88dc9ff1e2916abdcde17e_a6ba324062a88dc9ff1e2916abdcde17e}} 
+\index{pic.\+h@{pic.\+h}!I\+C\+W1\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L4@{I\+C\+W1\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L4}}
+\index{I\+C\+W1\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L4@{I\+C\+W1\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L4}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{I\+C\+W1\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L4}{ICW1\_INTERVAL4}}
+{\footnotesize\ttfamily \#define I\+C\+W1\+\_\+\+I\+N\+T\+E\+R\+V\+A\+L4~0x04}
+
+
+
+Definition at line 33 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_a8b06fbc75942c0a61e6ad80ea4736bd3_a8b06fbc75942c0a61e6ad80ea4736bd3}\label{a00032_a8b06fbc75942c0a61e6ad80ea4736bd3_a8b06fbc75942c0a61e6ad80ea4736bd3}} 
+\index{pic.\+h@{pic.\+h}!I\+C\+W1\+\_\+\+L\+E\+V\+EL@{I\+C\+W1\+\_\+\+L\+E\+V\+EL}}
+\index{I\+C\+W1\+\_\+\+L\+E\+V\+EL@{I\+C\+W1\+\_\+\+L\+E\+V\+EL}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{I\+C\+W1\+\_\+\+L\+E\+V\+EL}{ICW1\_LEVEL}}
+{\footnotesize\ttfamily \#define I\+C\+W1\+\_\+\+L\+E\+V\+EL~0x08}
+
+
+
+Definition at line 34 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_a6c092603fb5e22cc80954531ae319d01_a6c092603fb5e22cc80954531ae319d01}\label{a00032_a6c092603fb5e22cc80954531ae319d01_a6c092603fb5e22cc80954531ae319d01}} 
+\index{pic.\+h@{pic.\+h}!I\+C\+W1\+\_\+\+S\+I\+N\+G\+LE@{I\+C\+W1\+\_\+\+S\+I\+N\+G\+LE}}
+\index{I\+C\+W1\+\_\+\+S\+I\+N\+G\+LE@{I\+C\+W1\+\_\+\+S\+I\+N\+G\+LE}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{I\+C\+W1\+\_\+\+S\+I\+N\+G\+LE}{ICW1\_SINGLE}}
+{\footnotesize\ttfamily \#define I\+C\+W1\+\_\+\+S\+I\+N\+G\+LE~0x02}
+
+
+
+Definition at line 32 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_a42803c5ddcec9e120a6dbf7bc5c1b7af_a42803c5ddcec9e120a6dbf7bc5c1b7af}\label{a00032_a42803c5ddcec9e120a6dbf7bc5c1b7af_a42803c5ddcec9e120a6dbf7bc5c1b7af}} 
+\index{pic.\+h@{pic.\+h}!I\+C\+W4\+\_\+8086@{I\+C\+W4\+\_\+8086}}
+\index{I\+C\+W4\+\_\+8086@{I\+C\+W4\+\_\+8086}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{I\+C\+W4\+\_\+8086}{ICW4\_8086}}
+{\footnotesize\ttfamily \#define I\+C\+W4\+\_\+8086~0x01}
+
+
+
+Definition at line 37 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_a16777bf654a4c5630e4f53902a25235a_a16777bf654a4c5630e4f53902a25235a}\label{a00032_a16777bf654a4c5630e4f53902a25235a_a16777bf654a4c5630e4f53902a25235a}} 
+\index{pic.\+h@{pic.\+h}!I\+C\+W4\+\_\+\+A\+U\+TO@{I\+C\+W4\+\_\+\+A\+U\+TO}}
+\index{I\+C\+W4\+\_\+\+A\+U\+TO@{I\+C\+W4\+\_\+\+A\+U\+TO}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{I\+C\+W4\+\_\+\+A\+U\+TO}{ICW4\_AUTO}}
+{\footnotesize\ttfamily \#define I\+C\+W4\+\_\+\+A\+U\+TO~0x02}
+
+
+
+Definition at line 38 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_af3f1b53c727d98166710d198aca13411_af3f1b53c727d98166710d198aca13411}\label{a00032_af3f1b53c727d98166710d198aca13411_af3f1b53c727d98166710d198aca13411}} 
+\index{pic.\+h@{pic.\+h}!I\+C\+W4\+\_\+\+B\+U\+F\+\_\+\+M\+A\+S\+T\+ER@{I\+C\+W4\+\_\+\+B\+U\+F\+\_\+\+M\+A\+S\+T\+ER}}
+\index{I\+C\+W4\+\_\+\+B\+U\+F\+\_\+\+M\+A\+S\+T\+ER@{I\+C\+W4\+\_\+\+B\+U\+F\+\_\+\+M\+A\+S\+T\+ER}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{I\+C\+W4\+\_\+\+B\+U\+F\+\_\+\+M\+A\+S\+T\+ER}{ICW4\_BUF\_MASTER}}
+{\footnotesize\ttfamily \#define I\+C\+W4\+\_\+\+B\+U\+F\+\_\+\+M\+A\+S\+T\+ER~0x0C}
+
+
+
+Definition at line 40 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_af5443900cdd9096e97898e5584c316bb_af5443900cdd9096e97898e5584c316bb}\label{a00032_af5443900cdd9096e97898e5584c316bb_af5443900cdd9096e97898e5584c316bb}} 
+\index{pic.\+h@{pic.\+h}!I\+C\+W4\+\_\+\+B\+U\+F\+\_\+\+S\+L\+A\+VE@{I\+C\+W4\+\_\+\+B\+U\+F\+\_\+\+S\+L\+A\+VE}}
+\index{I\+C\+W4\+\_\+\+B\+U\+F\+\_\+\+S\+L\+A\+VE@{I\+C\+W4\+\_\+\+B\+U\+F\+\_\+\+S\+L\+A\+VE}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{I\+C\+W4\+\_\+\+B\+U\+F\+\_\+\+S\+L\+A\+VE}{ICW4\_BUF\_SLAVE}}
+{\footnotesize\ttfamily \#define I\+C\+W4\+\_\+\+B\+U\+F\+\_\+\+S\+L\+A\+VE~0x08}
+
+
+
+Definition at line 39 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_a0ecb67a3f71d1d10502fbd834b0292f1_a0ecb67a3f71d1d10502fbd834b0292f1}\label{a00032_a0ecb67a3f71d1d10502fbd834b0292f1_a0ecb67a3f71d1d10502fbd834b0292f1}} 
+\index{pic.\+h@{pic.\+h}!I\+C\+W4\+\_\+\+S\+F\+NM@{I\+C\+W4\+\_\+\+S\+F\+NM}}
+\index{I\+C\+W4\+\_\+\+S\+F\+NM@{I\+C\+W4\+\_\+\+S\+F\+NM}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{I\+C\+W4\+\_\+\+S\+F\+NM}{ICW4\_SFNM}}
+{\footnotesize\ttfamily \#define I\+C\+W4\+\_\+\+S\+F\+NM~0x10}
+
+
+
+Definition at line 41 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_a6b115109e4a0d3c5fb6252d091e86bfe_a6b115109e4a0d3c5fb6252d091e86bfe}\label{a00032_a6b115109e4a0d3c5fb6252d091e86bfe_a6b115109e4a0d3c5fb6252d091e86bfe}} 
+\index{pic.\+h@{pic.\+h}!P\+I\+C1@{P\+I\+C1}}
+\index{P\+I\+C1@{P\+I\+C1}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+C1}{PIC1}}
+{\footnotesize\ttfamily \#define P\+I\+C1~0x20}
+
+
+
+Master P\+IC. 
+
+
+
+Definition at line 9 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_a4c4c538b4d0809530a26a7a6d4469259_a4c4c538b4d0809530a26a7a6d4469259}\label{a00032_a4c4c538b4d0809530a26a7a6d4469259_a4c4c538b4d0809530a26a7a6d4469259}} 
+\index{pic.\+h@{pic.\+h}!P\+I\+C1\+\_\+\+C\+MD@{P\+I\+C1\+\_\+\+C\+MD}}
+\index{P\+I\+C1\+\_\+\+C\+MD@{P\+I\+C1\+\_\+\+C\+MD}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+C1\+\_\+\+C\+MD}{PIC1\_CMD}}
+{\footnotesize\ttfamily \#define P\+I\+C1\+\_\+\+C\+MD~0x20}
+
+
+
+Definition at line 54 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_ad1ba81484ab03e762d2e09f851c0901f_ad1ba81484ab03e762d2e09f851c0901f}\label{a00032_ad1ba81484ab03e762d2e09f851c0901f_ad1ba81484ab03e762d2e09f851c0901f}} 
+\index{pic.\+h@{pic.\+h}!P\+I\+C1\+\_\+\+C\+O\+M\+M\+A\+ND@{P\+I\+C1\+\_\+\+C\+O\+M\+M\+A\+ND}}
+\index{P\+I\+C1\+\_\+\+C\+O\+M\+M\+A\+ND@{P\+I\+C1\+\_\+\+C\+O\+M\+M\+A\+ND}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+C1\+\_\+\+C\+O\+M\+M\+A\+ND}{PIC1\_COMMAND}}
+{\footnotesize\ttfamily \#define P\+I\+C1\+\_\+\+C\+O\+M\+M\+A\+ND~\hyperlink{a00032_a6b115109e4a0d3c5fb6252d091e86bfe_a6b115109e4a0d3c5fb6252d091e86bfe}{P\+I\+C1}}
+
+
+
+Definition at line 14 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}\label{a00032_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}} 
+\index{pic.\+h@{pic.\+h}!P\+I\+C1\+\_\+\+D\+A\+TA@{P\+I\+C1\+\_\+\+D\+A\+TA}}
+\index{P\+I\+C1\+\_\+\+D\+A\+TA@{P\+I\+C1\+\_\+\+D\+A\+TA}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+C1\+\_\+\+D\+A\+TA}{PIC1\_DATA}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define P\+I\+C1\+\_\+\+D\+A\+TA~(\hyperlink{a00032_a6b115109e4a0d3c5fb6252d091e86bfe_a6b115109e4a0d3c5fb6252d091e86bfe}{P\+I\+C1}+1)}
+
+
+
+Definition at line 55 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}\label{a00032_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}} 
+\index{pic.\+h@{pic.\+h}!P\+I\+C1\+\_\+\+D\+A\+TA@{P\+I\+C1\+\_\+\+D\+A\+TA}}
+\index{P\+I\+C1\+\_\+\+D\+A\+TA@{P\+I\+C1\+\_\+\+D\+A\+TA}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+C1\+\_\+\+D\+A\+TA}{PIC1\_DATA}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define P\+I\+C1\+\_\+\+D\+A\+TA~0x21}
+
+
+
+Definition at line 55 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_ac90003f52c8d736193efc954ece08e58_ac90003f52c8d736193efc954ece08e58}\label{a00032_ac90003f52c8d736193efc954ece08e58_ac90003f52c8d736193efc954ece08e58}} 
+\index{pic.\+h@{pic.\+h}!P\+I\+C2@{P\+I\+C2}}
+\index{P\+I\+C2@{P\+I\+C2}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+C2}{PIC2}}
+{\footnotesize\ttfamily \#define P\+I\+C2~0x\+A0}
+
+
+
+Slave P\+IC. 
+
+
+
+Definition at line 13 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_ae21e6e278037d30c9548e2fbb4308306_ae21e6e278037d30c9548e2fbb4308306}\label{a00032_ae21e6e278037d30c9548e2fbb4308306_ae21e6e278037d30c9548e2fbb4308306}} 
+\index{pic.\+h@{pic.\+h}!P\+I\+C2\+\_\+\+C\+MD@{P\+I\+C2\+\_\+\+C\+MD}}
+\index{P\+I\+C2\+\_\+\+C\+MD@{P\+I\+C2\+\_\+\+C\+MD}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+C2\+\_\+\+C\+MD}{PIC2\_CMD}}
+{\footnotesize\ttfamily \#define P\+I\+C2\+\_\+\+C\+MD~0x\+A0}
+
+
+
+Definition at line 56 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_a11d8793812c9d340e9a64cce26ee0570_a11d8793812c9d340e9a64cce26ee0570}\label{a00032_a11d8793812c9d340e9a64cce26ee0570_a11d8793812c9d340e9a64cce26ee0570}} 
+\index{pic.\+h@{pic.\+h}!P\+I\+C2\+\_\+\+C\+O\+M\+M\+A\+ND@{P\+I\+C2\+\_\+\+C\+O\+M\+M\+A\+ND}}
+\index{P\+I\+C2\+\_\+\+C\+O\+M\+M\+A\+ND@{P\+I\+C2\+\_\+\+C\+O\+M\+M\+A\+ND}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+C2\+\_\+\+C\+O\+M\+M\+A\+ND}{PIC2\_COMMAND}}
+{\footnotesize\ttfamily \#define P\+I\+C2\+\_\+\+C\+O\+M\+M\+A\+ND~\hyperlink{a00032_ac90003f52c8d736193efc954ece08e58_ac90003f52c8d736193efc954ece08e58}{P\+I\+C2}}
+
+
+
+Definition at line 16 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}\label{a00032_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}} 
+\index{pic.\+h@{pic.\+h}!P\+I\+C2\+\_\+\+D\+A\+TA@{P\+I\+C2\+\_\+\+D\+A\+TA}}
+\index{P\+I\+C2\+\_\+\+D\+A\+TA@{P\+I\+C2\+\_\+\+D\+A\+TA}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+C2\+\_\+\+D\+A\+TA}{PIC2\_DATA}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \#define P\+I\+C2\+\_\+\+D\+A\+TA~(\hyperlink{a00032_ac90003f52c8d736193efc954ece08e58_ac90003f52c8d736193efc954ece08e58}{P\+I\+C2}+1)}
+
+
+
+Definition at line 57 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}\label{a00032_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}} 
+\index{pic.\+h@{pic.\+h}!P\+I\+C2\+\_\+\+D\+A\+TA@{P\+I\+C2\+\_\+\+D\+A\+TA}}
+\index{P\+I\+C2\+\_\+\+D\+A\+TA@{P\+I\+C2\+\_\+\+D\+A\+TA}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+C2\+\_\+\+D\+A\+TA}{PIC2\_DATA}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \#define P\+I\+C2\+\_\+\+D\+A\+TA~0x\+A1}
+
+
+
+Definition at line 57 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_a170d8eebdb48c16cfcd60cbd46760cb2_a170d8eebdb48c16cfcd60cbd46760cb2}\label{a00032_a170d8eebdb48c16cfcd60cbd46760cb2_a170d8eebdb48c16cfcd60cbd46760cb2}} 
+\index{pic.\+h@{pic.\+h}!P\+I\+C\+\_\+\+E\+OI@{P\+I\+C\+\_\+\+E\+OI}}
+\index{P\+I\+C\+\_\+\+E\+OI@{P\+I\+C\+\_\+\+E\+OI}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+C\+\_\+\+E\+OI}{PIC\_EOI}}
+{\footnotesize\ttfamily \#define P\+I\+C\+\_\+\+E\+OI~0x20}
+
+
+
+End of Interrupt. 
+
+
+
+Definition at line 21 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_a9dc9c02677e153a3451c7f4e4a05bf0e_a9dc9c02677e153a3451c7f4e4a05bf0e}\label{a00032_a9dc9c02677e153a3451c7f4e4a05bf0e_a9dc9c02677e153a3451c7f4e4a05bf0e}} 
+\index{pic.\+h@{pic.\+h}!P\+I\+C\+\_\+\+R\+E\+A\+D\+\_\+\+I\+RR@{P\+I\+C\+\_\+\+R\+E\+A\+D\+\_\+\+I\+RR}}
+\index{P\+I\+C\+\_\+\+R\+E\+A\+D\+\_\+\+I\+RR@{P\+I\+C\+\_\+\+R\+E\+A\+D\+\_\+\+I\+RR}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+C\+\_\+\+R\+E\+A\+D\+\_\+\+I\+RR}{PIC\_READ\_IRR}}
+{\footnotesize\ttfamily \#define P\+I\+C\+\_\+\+R\+E\+A\+D\+\_\+\+I\+RR~0x0a    /$\ast$ O\+C\+W3 irq ready next C\+M\+D read $\ast$/}
+
+
+
+Definition at line 58 of file pic.\+h.
+
+\mbox{\Hypertarget{a00032_ad32509788feeff9f03f167df6024ff4f_ad32509788feeff9f03f167df6024ff4f}\label{a00032_ad32509788feeff9f03f167df6024ff4f_ad32509788feeff9f03f167df6024ff4f}} 
+\index{pic.\+h@{pic.\+h}!P\+I\+C\+\_\+\+R\+E\+A\+D\+\_\+\+I\+SR@{P\+I\+C\+\_\+\+R\+E\+A\+D\+\_\+\+I\+SR}}
+\index{P\+I\+C\+\_\+\+R\+E\+A\+D\+\_\+\+I\+SR@{P\+I\+C\+\_\+\+R\+E\+A\+D\+\_\+\+I\+SR}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+C\+\_\+\+R\+E\+A\+D\+\_\+\+I\+SR}{PIC\_READ\_ISR}}
+{\footnotesize\ttfamily \#define P\+I\+C\+\_\+\+R\+E\+A\+D\+\_\+\+I\+SR~0x0b    /$\ast$ O\+C\+W3 irq service next C\+M\+D read $\ast$/}
+
+
+
+Definition at line 59 of file pic.\+h.
+
+
+
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00032_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}\label{a00032_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}} 
-\index{vga.\+c@{vga.\+c}!drawchar@{drawchar}}
-\index{drawchar@{drawchar}!vga.\+c@{vga.\+c}}
-\subsubsection{\texorpdfstring{drawchar()}{drawchar()}}
-{\footnotesize\ttfamily void drawchar (\begin{DoxyParamCaption}\item[{unsigned char}]{c,  }\item[{\hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{x,  }\item[{\hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{y,  }\item[{\hyperlink{a00101_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{fgcolor,  }\item[{\hyperlink{a00101_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{bgcolor }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00032_a36c512d574a4d820675e1026ac4a3db6_a36c512d574a4d820675e1026ac4a3db6}\label{a00032_a36c512d574a4d820675e1026ac4a3db6_a36c512d574a4d820675e1026ac4a3db6}} 
+\index{pic.\+h@{pic.\+h}!\+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg@{\+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg}}
+\index{\+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg@{\+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg()}{\_\_pic\_get\_irq\_reg()}}
+{\footnotesize\ttfamily static \hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg (\begin{DoxyParamCaption}\item[{int}]{ocw3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{a00032_a66ac96e9de8bb640d3d76ddd0a652ff4_a66ac96e9de8bb640d3d76ddd0a652ff4}\label{a00032_a66ac96e9de8bb640d3d76ddd0a652ff4_a66ac96e9de8bb640d3d76ddd0a652ff4}} 
+\index{pic.\+h@{pic.\+h}!I\+R\+Q\+\_\+clear\+\_\+mask@{I\+R\+Q\+\_\+clear\+\_\+mask}}
+\index{I\+R\+Q\+\_\+clear\+\_\+mask@{I\+R\+Q\+\_\+clear\+\_\+mask}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{I\+R\+Q\+\_\+clear\+\_\+mask()}{IRQ\_clear\_mask()}}
+{\footnotesize\ttfamily void I\+R\+Q\+\_\+clear\+\_\+mask (\begin{DoxyParamCaption}\item[{unsigned char}]{I\+R\+Qline }\end{DoxyParamCaption})}
 
 
 
-Puts a A\+S\+C\+II character on the screen. 
+Definition at line 56 of file pic.\+c.
+
+
+\begin{DoxyCode}
+56                                            \{
+57     \hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} port;
+58     \hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} value;
+59  
+60     \textcolor{keywordflow}{if}(IRQline < 8) \{
+61         port = \hyperlink{a00032_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA};
+62     \} \textcolor{keywordflow}{else} \{
+63         port = \hyperlink{a00032_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA};
+64         IRQline -= 8;
+65     \}
+66     value = \hyperlink{a00113_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(port) & ~(1 << IRQline);
+67     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(port, value);        
+68 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00032_af654381e46179e377f9e26d7b3f48df0_af654381e46179e377f9e26d7b3f48df0}\label{a00032_af654381e46179e377f9e26d7b3f48df0_af654381e46179e377f9e26d7b3f48df0}} 
+\index{pic.\+h@{pic.\+h}!I\+R\+Q\+\_\+set\+\_\+mask@{I\+R\+Q\+\_\+set\+\_\+mask}}
+\index{I\+R\+Q\+\_\+set\+\_\+mask@{I\+R\+Q\+\_\+set\+\_\+mask}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{I\+R\+Q\+\_\+set\+\_\+mask()}{IRQ\_set\_mask()}}
+{\footnotesize\ttfamily void I\+R\+Q\+\_\+set\+\_\+mask (\begin{DoxyParamCaption}\item[{unsigned char}]{I\+R\+Qline }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file pic.\+c.
+
+
+\begin{DoxyCode}
+42                                          \{
+43     \hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} port;
+44     \hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} value;
+45  
+46     \textcolor{keywordflow}{if}(IRQline < 8) \{
+47         port = \hyperlink{a00032_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA};
+48     \} \textcolor{keywordflow}{else} \{
+49         port = \hyperlink{a00032_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA};
+50         IRQline -= 8;
+51     \}
+52     value = \hyperlink{a00113_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(port) | (1 << IRQline);
+53     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(port, value);        
+54 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00032_a3c413ca2499d8eb59d09ebe025f4ae8e_a3c413ca2499d8eb59d09ebe025f4ae8e}\label{a00032_a3c413ca2499d8eb59d09ebe025f4ae8e_a3c413ca2499d8eb59d09ebe025f4ae8e}} 
+\index{pic.\+h@{pic.\+h}!pic\+\_\+get\+\_\+irr@{pic\+\_\+get\+\_\+irr}}
+\index{pic\+\_\+get\+\_\+irr@{pic\+\_\+get\+\_\+irr}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{pic\+\_\+get\+\_\+irr()}{pic\_get\_irr()}}
+{\footnotesize\ttfamily \hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} pic\+\_\+get\+\_\+irr (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 79 of file pic.\+c.
+
+
+\begin{DoxyCode}
+80 \{
+81     \textcolor{keywordflow}{return} \hyperlink{a00029_a36c512d574a4d820675e1026ac4a3db6_a36c512d574a4d820675e1026ac4a3db6}{\_\_pic\_get\_irq\_reg}(\hyperlink{a00032_a9dc9c02677e153a3451c7f4e4a05bf0e_a9dc9c02677e153a3451c7f4e4a05bf0e}{PIC\_READ\_IRR});
+82 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00032_a3b716de2a9d07df332b924d1608c8fd9_a3b716de2a9d07df332b924d1608c8fd9}\label{a00032_a3b716de2a9d07df332b924d1608c8fd9_a3b716de2a9d07df332b924d1608c8fd9}} 
+\index{pic.\+h@{pic.\+h}!pic\+\_\+get\+\_\+isr@{pic\+\_\+get\+\_\+isr}}
+\index{pic\+\_\+get\+\_\+isr@{pic\+\_\+get\+\_\+isr}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{pic\+\_\+get\+\_\+isr()}{pic\_get\_isr()}}
+{\footnotesize\ttfamily \hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} pic\+\_\+get\+\_\+isr (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 84 of file pic.\+c.
+
+
+\begin{DoxyCode}
+85 \{
+86     \textcolor{keywordflow}{return} \hyperlink{a00029_a36c512d574a4d820675e1026ac4a3db6_a36c512d574a4d820675e1026ac4a3db6}{\_\_pic\_get\_irq\_reg}(\hyperlink{a00032_ad32509788feeff9f03f167df6024ff4f_ad32509788feeff9f03f167df6024ff4f}{PIC\_READ\_ISR});
+87 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00032_ab5ed5530bfeaffadd8cd88c06d797f31_ab5ed5530bfeaffadd8cd88c06d797f31}\label{a00032_ab5ed5530bfeaffadd8cd88c06d797f31_ab5ed5530bfeaffadd8cd88c06d797f31}} 
+\index{pic.\+h@{pic.\+h}!P\+I\+C\+\_\+remap@{P\+I\+C\+\_\+remap}}
+\index{P\+I\+C\+\_\+remap@{P\+I\+C\+\_\+remap}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+C\+\_\+remap()}{PIC\_remap()}}
+{\footnotesize\ttfamily void P\+I\+C\+\_\+remap (\begin{DoxyParamCaption}\item[{int}]{offset1,  }\item[{int}]{offset2 }\end{DoxyParamCaption})}
+
+
+
+Remap P\+IC. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em c} & The character \\
+{\em offset1} & -\/ vector offset for master P\+IC vectors on the master become offset1..offset1+7 \\
 \hline
-{\em x} & The X of the character \\
-\hline
-{\em y} & The Y of the character \\
-\hline
-{\em fgcolor} & The foreground color \\
-\hline
-{\em bgcolor} & The background color \\
+{\em offset2} & -\/ same for slave P\+IC\+: offset2..offset2+7 \\
 \hline
 \end{DoxyParams}
 
 
-Definition at line 18 of file vga.\+c.
+Definition at line 13 of file pic.\+c.
 
 
 \begin{DoxyCode}
-19 \{
-20     \textcolor{keywordtype}{int} cx,cy;
-21     \textcolor{keywordtype}{int} mask[8]=\{1,2,4,8,16,32,64,128\};
-22     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *gylph=\hyperlink{a00032_a586c0ac088deb9338d9b1464dcd587c8_a586c0ac088deb9338d9b1464dcd587c8}{vgafont}+(int)c*16;
-23  
-24     \textcolor{keywordflow}{for}(cy=0;cy<16;cy++)\{
-25         \textcolor{keywordflow}{for}(cx+8;cx<0;cx++)\{
-26             \hyperlink{a00032_ab17a69b465efb1ebe54a6a2e5d7b7ce8_ab17a69b465efb1ebe54a6a2e5d7b7ce8}{putpixel}(gylph[cy]&mask[cx]?fgcolor:bgcolor,x+cx,y+cy-12);
-27         \}
-28     \}
-29 \}
+14 \{
+15     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} a1, a2;
+16  
+17     a1 = \hyperlink{a00113_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00032_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA});                        \textcolor{comment}{// save masks}
+18     a2 = \hyperlink{a00113_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00032_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA});
+19  
+20     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00032_ad1ba81484ab03e762d2e09f851c0901f_ad1ba81484ab03e762d2e09f851c0901f}{PIC1\_COMMAND}, \hyperlink{a00032_a286dc251f3d73c08e08a53a4696f31ef_a286dc251f3d73c08e08a53a4696f31ef}{ICW1\_INIT} | \hyperlink{a00032_a964d12193d2b36e8a7ec7fa57438e313_a964d12193d2b36e8a7ec7fa57438e313}{ICW1\_ICW4});  \textcolor{comment}{// starts the
+       initialization sequence (in cascade mode)}
+21     \hyperlink{a00113_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+22     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00032_a11d8793812c9d340e9a64cce26ee0570_a11d8793812c9d340e9a64cce26ee0570}{PIC2\_COMMAND}, \hyperlink{a00032_a286dc251f3d73c08e08a53a4696f31ef_a286dc251f3d73c08e08a53a4696f31ef}{ICW1\_INIT} | \hyperlink{a00032_a964d12193d2b36e8a7ec7fa57438e313_a964d12193d2b36e8a7ec7fa57438e313}{ICW1\_ICW4});
+23     \hyperlink{a00113_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+24     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00032_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA}, offset1);                 \textcolor{comment}{// ICW2: Master PIC vector offset}
+25     \hyperlink{a00113_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+26     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00032_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA}, offset2);                 \textcolor{comment}{// ICW2: Slave PIC vector offset}
+27     \hyperlink{a00113_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+28     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00032_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA}, 4);                       \textcolor{comment}{// ICW3: tell Master PIC that there is a slave
+       PIC at IRQ2 (0000 0100)}
+29     \hyperlink{a00113_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+30     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00032_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA}, 2);                       \textcolor{comment}{// ICW3: tell Slave PIC its cascade identity
+       (0000 0010)}
+31     \hyperlink{a00113_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+32  
+33     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00032_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA}, \hyperlink{a00032_a42803c5ddcec9e120a6dbf7bc5c1b7af_a42803c5ddcec9e120a6dbf7bc5c1b7af}{ICW4\_8086});
+34     \hyperlink{a00113_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+35     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00032_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA}, \hyperlink{a00032_a42803c5ddcec9e120a6dbf7bc5c1b7af_a42803c5ddcec9e120a6dbf7bc5c1b7af}{ICW4\_8086});
+36     \hyperlink{a00113_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+37  
+38     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00032_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA}, a1);   \textcolor{comment}{// restore saved masks.}
+39     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00032_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA}, a2);
+40 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00032_aac0685da0bbf1115c2b76b0aedf7e1f0_aac0685da0bbf1115c2b76b0aedf7e1f0}\label{a00032_aac0685da0bbf1115c2b76b0aedf7e1f0_aac0685da0bbf1115c2b76b0aedf7e1f0}} 
-\index{vga.\+c@{vga.\+c}!getpixel@{getpixel}}
-\index{getpixel@{getpixel}!vga.\+c@{vga.\+c}}
-\subsubsection{\texorpdfstring{getpixel()}{getpixel()}}
-{\footnotesize\ttfamily \hyperlink{a00101_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} getpixel (\begin{DoxyParamCaption}\item[{\hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{x,  }\item[{\hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{y }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00032_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}\label{a00032_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}} 
+\index{pic.\+h@{pic.\+h}!P\+I\+C\+\_\+send\+E\+OI@{P\+I\+C\+\_\+send\+E\+OI}}
+\index{P\+I\+C\+\_\+send\+E\+OI@{P\+I\+C\+\_\+send\+E\+OI}!pic.\+h@{pic.\+h}}
+\subsubsection{\texorpdfstring{P\+I\+C\+\_\+send\+E\+O\+I()}{PIC\_sendEOI()}}
+{\footnotesize\ttfamily void P\+I\+C\+\_\+send\+E\+OI (\begin{DoxyParamCaption}\item[{unsigned char}]{irq }\end{DoxyParamCaption})}
 
 
 
-Gets a pixel on the screen. 
+Send End of Interrupt to P\+IC. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em x} & The X of the pixel \\
-\hline
-{\em y} & The Y of the pixel \\
-\hline
-\end{DoxyParams}
 
-
-Definition at line 11 of file vga.\+c.
+Definition at line 5 of file pic.\+c.
 
 
 \begin{DoxyCode}
-11                                          \{
-12     \hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} offset = (y * \hyperlink{a00035_a2cd109632a6dcccaa80b43561b1ab700_a2cd109632a6dcccaa80b43561b1ab700}{SCREEN\_WIDTH}) + x;
-13     \textcolor{keywordflow}{return} \hyperlink{a00113_a60f8bf957bca47c651dc4024dc26f36e_a60f8bf957bca47c651dc4024dc26f36e}{mempeek}(1,offset);
-14 \}
+6 \{
+7     \textcolor{keywordflow}{if}(irq >= 8)
+8         \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00032_a11d8793812c9d340e9a64cce26ee0570_a11d8793812c9d340e9a64cce26ee0570}{PIC2\_COMMAND},\hyperlink{a00032_a170d8eebdb48c16cfcd60cbd46760cb2_a170d8eebdb48c16cfcd60cbd46760cb2}{PIC\_EOI});
+9  
+10     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00032_ad1ba81484ab03e762d2e09f851c0901f_ad1ba81484ab03e762d2e09f851c0901f}{PIC1\_COMMAND},\hyperlink{a00032_a170d8eebdb48c16cfcd60cbd46760cb2_a170d8eebdb48c16cfcd60cbd46760cb2}{PIC\_EOI});
+11 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00032_ab17a69b465efb1ebe54a6a2e5d7b7ce8_ab17a69b465efb1ebe54a6a2e5d7b7ce8}\label{a00032_ab17a69b465efb1ebe54a6a2e5d7b7ce8_ab17a69b465efb1ebe54a6a2e5d7b7ce8}} 
-\index{vga.\+c@{vga.\+c}!putpixel@{putpixel}}
-\index{putpixel@{putpixel}!vga.\+c@{vga.\+c}}
-\subsubsection{\texorpdfstring{putpixel()}{putpixel()}}
-{\footnotesize\ttfamily void putpixel (\begin{DoxyParamCaption}\item[{\hyperlink{a00101_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{c,  }\item[{\hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{x,  }\item[{\hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{y }\end{DoxyParamCaption})}
-
-
-
-Puts a pixel on the screen. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em c} & The color of the pixel \\
-\hline
-{\em x} & The X of the pixel \\
-\hline
-{\em y} & The Y of the pixel \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 6 of file vga.\+c.
-
-
-\begin{DoxyCode}
-6                                                  \{
-7     \hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} offset = (y * \hyperlink{a00035_a2cd109632a6dcccaa80b43561b1ab700_a2cd109632a6dcccaa80b43561b1ab700}{SCREEN\_WIDTH}) + x;
-8     \hyperlink{a00113_a2de854ee97d4e6d27f7aa7899a2d1d32_a2de854ee97d4e6d27f7aa7899a2d1d32}{mempoke}(1,offset,c);
-9 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00032_abb01dc16ea34f0a6de3d10d732b6c536_abb01dc16ea34f0a6de3d10d732b6c536}\label{a00032_abb01dc16ea34f0a6de3d10d732b6c536_abb01dc16ea34f0a6de3d10d732b6c536}} 
-\index{vga.\+c@{vga.\+c}!setfont@{setfont}}
-\index{setfont@{setfont}!vga.\+c@{vga.\+c}}
-\subsubsection{\texorpdfstring{setfont()}{setfont()}}
-{\footnotesize\ttfamily void setfont (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{font }\end{DoxyParamCaption})}
-
-
-
-Sets the font. 
-
-
-
-Definition at line 35 of file vga.\+c.
-
-
-\begin{DoxyCode}
-35                                   \{
-36     \hyperlink{a00032_a586c0ac088deb9338d9b1464dcd587c8_a586c0ac088deb9338d9b1464dcd587c8}{vgafont} = font;
-37 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00032_af6d170c9401ea8f94d4c5cf09347cca7_af6d170c9401ea8f94d4c5cf09347cca7}\label{a00032_af6d170c9401ea8f94d4c5cf09347cca7_af6d170c9401ea8f94d4c5cf09347cca7}} 
-\index{vga.\+c@{vga.\+c}!vgamode@{vgamode}}
-\index{vgamode@{vgamode}!vga.\+c@{vga.\+c}}
-\subsubsection{\texorpdfstring{vgamode()}{vgamode()}}
-{\footnotesize\ttfamily \hyperlink{a00101_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} vgamode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Gets the current V\+GA mode. 
-
-
-
-Definition at line 31 of file vga.\+c.
-
-
-\begin{DoxyCode}
-31                    \{
-32     \textcolor{keywordflow}{return} 0x13; \textcolor{comment}{// we sure are using mode 13 so}
-33 \}
-\end{DoxyCode}
-
-
-\subsection{Variable Documentation}
-\mbox{\Hypertarget{a00032_a586c0ac088deb9338d9b1464dcd587c8_a586c0ac088deb9338d9b1464dcd587c8}\label{a00032_a586c0ac088deb9338d9b1464dcd587c8_a586c0ac088deb9338d9b1464dcd587c8}} 
-\index{vga.\+c@{vga.\+c}!vgafont@{vgafont}}
-\index{vgafont@{vgafont}!vga.\+c@{vga.\+c}}
-\subsubsection{\texorpdfstring{vgafont}{vgafont}}
-{\footnotesize\ttfamily unsigned char$\ast$ vgafont}
-
-
-
-Definition at line 16 of file vga.\+c.
-

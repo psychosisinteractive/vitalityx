@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/vep.c File Reference</title>
+<title>VitalityX: libc/vitality/tty.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,14 +46,13 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">vep.c File Reference</div>  </div>
+<div class="title">tty.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00128_source.html">vep.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for vep.c:</div>
+<div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00126.png" border="0" usemap="#libc_2vitality_2vep_8c" alt=""/></div>
+<div class="center"><img src="a00127.png" border="0" usemap="#libc_2vitality_2tty_8hdep" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
@@ -61,12 +60,15 @@ Include dependency graph for vep.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad5530515939c1e3332746affa700c759"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00125_ad5530515939c1e3332746affa700c759.html#ad5530515939c1e3332746affa700c759">loadvep</a> (<a class="el" href="a00128_a78392c340e1fe1be344df81d1438b74f.html#a78392c340e1fe1be344df81d1438b74f">vepheader_t</a> vep, char *data)</td></tr>
-<tr class="memdesc:ad5530515939c1e3332746affa700c759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a VEP with a VEPHeader.  <a href="a00125_ad5530515939c1e3332746affa700c759.html#ad5530515939c1e3332746affa700c759">More...</a><br /></td></tr>
-<tr class="separator:ad5530515939c1e3332746affa700c759"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7d608b906676086d77937044205aad33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00125_a7d608b906676086d77937044205aad33.html#a7d608b906676086d77937044205aad33">loadvepf</a> (<a class="el" href="a00128_af285fc2949acac5b7aa6f065c8811960.html#af285fc2949acac5b7aa6f065c8811960">vepfile_t</a> vep)</td></tr>
-<tr class="memdesc:a7d608b906676086d77937044205aad33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a VEP with a VEPFile.  <a href="a00125_a7d608b906676086d77937044205aad33.html#a7d608b906676086d77937044205aad33">More...</a><br /></td></tr>
-<tr class="separator:a7d608b906676086d77937044205aad33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ebb962f457a2677d70285d1c0f9be12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00125_a2ebb962f457a2677d70285d1c0f9be12.html#a2ebb962f457a2677d70285d1c0f9be12">tty_putstring</a> (char *string)</td></tr>
+<tr class="memdesc:a2ebb962f457a2677d70285d1c0f9be12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string in VRAM, Text mode only.  <a href="a00125_a2ebb962f457a2677d70285d1c0f9be12.html#a2ebb962f457a2677d70285d1c0f9be12">More...</a><br /></td></tr>
+<tr class="separator:a2ebb962f457a2677d70285d1c0f9be12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a13ff2c06d56753c5666ca56cb2d81100"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00125_a13ff2c06d56753c5666ca56cb2d81100.html#a13ff2c06d56753c5666ca56cb2d81100">tty_vgaputstring</a> (char *string)</td></tr>
+<tr class="memdesc:a13ff2c06d56753c5666ca56cb2d81100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string into VRAM, Mode 13 only.  <a href="a00125_a13ff2c06d56753c5666ca56cb2d81100.html#a13ff2c06d56753c5666ca56cb2d81100">More...</a><br /></td></tr>
+<tr class="separator:a13ff2c06d56753c5666ca56cb2d81100"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade960b1320324706aac6c00cc6b1b2fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00125_ade960b1320324706aac6c00cc6b1b2fe.html#ade960b1320324706aac6c00cc6b1b2fe">tty_pputstring</a> (char *string)</td></tr>
+<tr class="memdesc:ade960b1320324706aac6c00cc6b1b2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string into VRAM, detects preferred mode.  <a href="a00125_ade960b1320324706aac6c00cc6b1b2fe.html#ade960b1320324706aac6c00cc6b1b2fe">More...</a><br /></td></tr>
+<tr class="separator:ade960b1320324706aac6c00cc6b1b2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

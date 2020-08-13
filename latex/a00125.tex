@@ -1,64 +1,114 @@
-\hypertarget{a00125}{}\section{libc/vitality/vep.c File Reference}
-\label{a00125}\index{libc/vitality/vep.\+c@{libc/vitality/vep.\+c}}
-{\ttfamily \#include \char`\"{}vep.\+h\char`\"{}}\newline
-Include dependency graph for vep.\+c\+:
+\hypertarget{a00125}{}\section{libc/vitality/tty.h File Reference}
+\label{a00125}\index{libc/vitality/tty.\+h@{libc/vitality/tty.\+h}}
+This graph shows which files directly or indirectly include this file\+:
 % FIG 0
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{a00125_ad5530515939c1e3332746affa700c759_ad5530515939c1e3332746affa700c759}{loadvep} (\hyperlink{a00128_a78392c340e1fe1be344df81d1438b74f_a78392c340e1fe1be344df81d1438b74f}{vepheader\+\_\+t} vep, char $\ast$data)
-\begin{DoxyCompactList}\small\item\em Loads a V\+EP with a V\+E\+P\+Header. \end{DoxyCompactList}\item 
-int \hyperlink{a00125_a7d608b906676086d77937044205aad33_a7d608b906676086d77937044205aad33}{loadvepf} (\hyperlink{a00128_af285fc2949acac5b7aa6f065c8811960_af285fc2949acac5b7aa6f065c8811960}{vepfile\+\_\+t} vep)
-\begin{DoxyCompactList}\small\item\em Loads a V\+EP with a V\+E\+P\+File. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{a00125_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}{tty\+\_\+putstring} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Puts a string in V\+R\+AM, Text mode only. \end{DoxyCompactList}\item 
+void \hyperlink{a00125_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}{tty\+\_\+vgaputstring} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, Mode 13 only. \end{DoxyCompactList}\item 
+void \hyperlink{a00125_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\+\_\+pputstring} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, detects preferred mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00125_ad5530515939c1e3332746affa700c759_ad5530515939c1e3332746affa700c759}\label{a00125_ad5530515939c1e3332746affa700c759_ad5530515939c1e3332746affa700c759}} 
-\index{vep.\+c@{vep.\+c}!loadvep@{loadvep}}
-\index{loadvep@{loadvep}!vep.\+c@{vep.\+c}}
-\subsubsection{\texorpdfstring{loadvep()}{loadvep()}}
-{\footnotesize\ttfamily int loadvep (\begin{DoxyParamCaption}\item[{\hyperlink{a00128_a78392c340e1fe1be344df81d1438b74f_a78392c340e1fe1be344df81d1438b74f}{vepheader\+\_\+t}}]{vep,  }\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00125_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}\label{a00125_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}} 
+\index{tty.\+h@{tty.\+h}!tty\+\_\+pputstring@{tty\+\_\+pputstring}}
+\index{tty\+\_\+pputstring@{tty\+\_\+pputstring}!tty.\+h@{tty.\+h}}
+\subsubsection{\texorpdfstring{tty\+\_\+pputstring()}{tty\_pputstring()}}
+{\footnotesize\ttfamily void tty\+\_\+pputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
 
 
 
-Loads a V\+EP with a V\+E\+P\+Header. 
+Puts a string into V\+R\+AM, detects preferred mode. 
 
 
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to put \\
+\hline
+\end{DoxyParams}
 
-Definition at line 3 of file vep.\+c.
+
+Definition at line 30 of file tty.\+c.
 
 
 \begin{DoxyCode}
-3                                           \{
-4     \textcolor{keywordflow}{if}(vep.\hyperlink{a00174_a06d6ef138b4f63ef72ad6aadda58ab47_a06d6ef138b4f63ef72ad6aadda58ab47}{signature} != \textcolor{stringliteral}{"VP"}) \{
-5         \textcolor{keywordflow}{return} 1;
-6     \}
-7     \textcolor{keywordtype}{int} size = vep.\hyperlink{a00174_a6121693fa5ac3673d831b440aea8963e_a6121693fa5ac3673d831b440aea8963e}{vepsize};
-8     \textcolor{keywordtype}{char}* ptr = (\textcolor{keywordtype}{char}*)(vep.\hyperlink{a00174_aa81b6806dd33022ce60c314c908ba028_aa81b6806dd33022ce60c314c908ba028}{origin});
-9     \textcolor{keywordflow}{while}(size != 0) \{
-10         *ptr++ = *data++;
-11         size--;
-12     \}
-13     \textcolor{keywordflow}{return} 0;
-14 \}
+30                                   \{
+31     \textcolor{keywordflow}{switch} (\hyperlink{a00035_af6d170c9401ea8f94d4c5cf09347cca7_af6d170c9401ea8f94d4c5cf09347cca7}{vgamode}())
+32     \{
+33     \textcolor{keywordflow}{case} 0x3:
+34         \hyperlink{a00122_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}{tty\_putstring}(\textcolor{keywordtype}{string});
+35         \textcolor{keywordflow}{break};
+36     \textcolor{keywordflow}{case} 0x13:
+37         \hyperlink{a00122_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}{tty\_vgaputstring}(\textcolor{keywordtype}{string});
+38         \textcolor{keywordflow}{break};
+39     \textcolor{keywordflow}{default}:
+40         \hyperlink{a00122_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}{tty\_vgaputstring}(\textcolor{keywordtype}{string});
+41         \textcolor{keywordflow}{break};
+42     \}
+43 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00125_a7d608b906676086d77937044205aad33_a7d608b906676086d77937044205aad33}\label{a00125_a7d608b906676086d77937044205aad33_a7d608b906676086d77937044205aad33}} 
-\index{vep.\+c@{vep.\+c}!loadvepf@{loadvepf}}
-\index{loadvepf@{loadvepf}!vep.\+c@{vep.\+c}}
-\subsubsection{\texorpdfstring{loadvepf()}{loadvepf()}}
-{\footnotesize\ttfamily int loadvepf (\begin{DoxyParamCaption}\item[{\hyperlink{a00128_af285fc2949acac5b7aa6f065c8811960_af285fc2949acac5b7aa6f065c8811960}{vepfile\+\_\+t}}]{vep }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00125_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}\label{a00125_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}} 
+\index{tty.\+h@{tty.\+h}!tty\+\_\+putstring@{tty\+\_\+putstring}}
+\index{tty\+\_\+putstring@{tty\+\_\+putstring}!tty.\+h@{tty.\+h}}
+\subsubsection{\texorpdfstring{tty\+\_\+putstring()}{tty\_putstring()}}
+{\footnotesize\ttfamily void tty\+\_\+putstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
 
 
 
-Loads a V\+EP with a V\+E\+P\+File. 
+Puts a string in V\+R\+AM, Text mode only. 
 
 
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to put \\
+\hline
+\end{DoxyParams}
 
-Definition at line 16 of file vep.\+c.
+
+Definition at line 7 of file tty.\+c.
 
 
 \begin{DoxyCode}
-16                             \{
-17     \textcolor{keywordflow}{return} \hyperlink{a00125_ad5530515939c1e3332746affa700c759_ad5530515939c1e3332746affa700c759}{loadvep}(vep.\hyperlink{a00178_a0fa3b39f1e4974d4ed258db1d4b22402_a0fa3b39f1e4974d4ed258db1d4b22402}{vepheader},(\textcolor{keywordtype}{char}*)vep.\hyperlink{a00178_a6a40903035403710bf43295c34e883e7_a6a40903035403710bf43295c34e883e7}{vepdata});
-18 \}
+7                                  \{
+8     \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{keywordtype}{string});
+9     \hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} attrib = (0x0 << 4) | (0xf & 0x0F);
+10     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
+11     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'}) \{
+12         *\hyperlink{a00122_a3f896e9c00b9302e2287aad054199134_a3f896e9c00b9302e2287aad054199134}{videoMemoryPtr}++ = chara;
+13         chara = *\textcolor{keywordtype}{string}++;
+14     \}
+15 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00125_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}\label{a00125_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}} 
+\index{tty.\+h@{tty.\+h}!tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}}
+\index{tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}!tty.\+h@{tty.\+h}}
+\subsubsection{\texorpdfstring{tty\+\_\+vgaputstring()}{tty\_vgaputstring()}}
+{\footnotesize\ttfamily void tty\+\_\+vgaputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+Puts a string into V\+R\+AM, Mode 13 only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to put \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 20 of file tty.\+c.
+
+
+\begin{DoxyCode}
+20                                     \{
+21     \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{keywordtype}{string});
+22     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
+23     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'}) \{
+24         \hyperlink{a00035_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}{drawchar}(chara,\hyperlink{a00122_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff},\hyperlink{a00122_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff}+17,0xf,0x0);
+25         \hyperlink{a00122_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff} += 8;
+26         chara = *\textcolor{keywordtype}{string}++;
+27     \}
+28 \}
 \end{DoxyCode}

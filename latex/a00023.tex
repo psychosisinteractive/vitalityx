@@ -1,87 +1,28 @@
-\hypertarget{a00023}{}\section{drivers/keyboard.h File Reference}
-\label{a00023}\index{drivers/keyboard.\+h@{drivers/keyboard.\+h}}
+\hypertarget{a00023}{}\section{drivers/keyboard.c File Reference}
+\label{a00023}\index{drivers/keyboard.\+c@{drivers/keyboard.\+c}}
+{\ttfamily \#include \char`\"{}keyboard.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/types.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../libc/vitality/inline.\+h\char`\"{}}\newline
-Include dependency graph for keyboard.\+h\+:
+Include dependency graph for keyboard.\+c\+:
 % FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{a00023_a0ef8b0a5f135deeee1540a47eeb0a0d3_a0ef8b0a5f135deeee1540a47eeb0a0d3}{P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT}~0x60
-\begin{DoxyCompactList}\small\item\em P\+S/2 Data Port. \end{DoxyCompactList}\item 
-\#define \hyperlink{a00023_ac53f79a633bdedad461bd9b969d9afcc_ac53f79a633bdedad461bd9b969d9afcc}{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}~0x64
-\begin{DoxyCompactList}\small\item\em P\+S/2 Status Register. \end{DoxyCompactList}\item 
-\#define \hyperlink{a00023_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}{P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG}~\hyperlink{a00023_ac53f79a633bdedad461bd9b969d9afcc_ac53f79a633bdedad461bd9b969d9afcc}{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}
-\begin{DoxyCompactList}\small\item\em P\+S/2 Command Register. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-char \hyperlink{a00023_ad6a916c09d63bcfc59bce46f2bb34811_ad6a916c09d63bcfc59bce46f2bb34811}{kb\+\_\+getscancode} ()
-\begin{DoxyCompactList}\small\item\em Gets a keyboard scancode. \end{DoxyCompactList}\item 
 void \hyperlink{a00023_ab55128c33115081a66a8acb39dc6c7dc_ab55128c33115081a66a8acb39dc6c7dc}{ps2init} ()
 \begin{DoxyCompactList}\small\item\em P\+S/2 Initialize. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{a00023_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}\label{a00023_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}} 
-\index{keyboard.\+h@{keyboard.\+h}!P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG@{P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG}}
-\index{P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG@{P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG}{PS2\_COMMANDREG}}
-{\footnotesize\ttfamily \#define P\+S2\+\_\+\+C\+O\+M\+M\+A\+N\+D\+R\+EG~\hyperlink{a00023_ac53f79a633bdedad461bd9b969d9afcc_ac53f79a633bdedad461bd9b969d9afcc}{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}}
-
-
-
-P\+S/2 Command Register. 
-
-
-
-Definition at line 21 of file keyboard.\+h.
-
-\mbox{\Hypertarget{a00023_a0ef8b0a5f135deeee1540a47eeb0a0d3_a0ef8b0a5f135deeee1540a47eeb0a0d3}\label{a00023_a0ef8b0a5f135deeee1540a47eeb0a0d3_a0ef8b0a5f135deeee1540a47eeb0a0d3}} 
-\index{keyboard.\+h@{keyboard.\+h}!P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT@{P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT}}
-\index{P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT@{P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT}{PS2\_DATAPORT}}
-{\footnotesize\ttfamily \#define P\+S2\+\_\+\+D\+A\+T\+A\+P\+O\+RT~0x60}
-
-
-
-P\+S/2 Data Port. 
-
-
-
-Definition at line 13 of file keyboard.\+h.
-
-\mbox{\Hypertarget{a00023_ac53f79a633bdedad461bd9b969d9afcc_ac53f79a633bdedad461bd9b969d9afcc}\label{a00023_ac53f79a633bdedad461bd9b969d9afcc_ac53f79a633bdedad461bd9b969d9afcc}} 
-\index{keyboard.\+h@{keyboard.\+h}!P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG@{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}}
-\index{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG@{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG}{PS2\_STATUSREG}}
-{\footnotesize\ttfamily \#define P\+S2\+\_\+\+S\+T\+A\+T\+U\+S\+R\+EG~0x64}
-
-
-
-P\+S/2 Status Register. 
-
-
-
-Definition at line 17 of file keyboard.\+h.
-
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00104_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00023_afbd5f7a0d5ee4c4e6e0615a7294e1e10_afbd5f7a0d5ee4c4e6e0615a7294e1e10}{rcv} = \hyperlink{a00104_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}{false}
+\item 
+\hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00023_ae08385eb06ddff872e33966a60075435_ae08385eb06ddff872e33966a60075435}{lbt} = 0
+\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00023_ad6a916c09d63bcfc59bce46f2bb34811_ad6a916c09d63bcfc59bce46f2bb34811}\label{a00023_ad6a916c09d63bcfc59bce46f2bb34811_ad6a916c09d63bcfc59bce46f2bb34811}} 
-\index{keyboard.\+h@{keyboard.\+h}!kb\+\_\+getscancode@{kb\+\_\+getscancode}}
-\index{kb\+\_\+getscancode@{kb\+\_\+getscancode}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{kb\+\_\+getscancode()}{kb\_getscancode()}}
-{\footnotesize\ttfamily char kb\+\_\+getscancode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Gets a keyboard scancode. 
-
 \mbox{\Hypertarget{a00023_ab55128c33115081a66a8acb39dc6c7dc_ab55128c33115081a66a8acb39dc6c7dc}\label{a00023_ab55128c33115081a66a8acb39dc6c7dc_ab55128c33115081a66a8acb39dc6c7dc}} 
-\index{keyboard.\+h@{keyboard.\+h}!ps2init@{ps2init}}
-\index{ps2init@{ps2init}!keyboard.\+h@{keyboard.\+h}}
+\index{keyboard.\+c@{keyboard.\+c}!ps2init@{ps2init}}
+\index{ps2init@{ps2init}!keyboard.\+c@{keyboard.\+c}}
 \subsubsection{\texorpdfstring{ps2init()}{ps2init()}}
 {\footnotesize\ttfamily void ps2init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
@@ -96,11 +37,34 @@ Definition at line 7 of file keyboard.\+c.
 
 \begin{DoxyCode}
 7                \{
-8     \hyperlink{a00020_afbd5f7a0d5ee4c4e6e0615a7294e1e10_afbd5f7a0d5ee4c4e6e0615a7294e1e10}{rcv} = \textcolor{keyword}{false};
+8     \hyperlink{a00023_afbd5f7a0d5ee4c4e6e0615a7294e1e10_afbd5f7a0d5ee4c4e6e0615a7294e1e10}{rcv} = \textcolor{keyword}{false};
 9     \textcolor{comment}{// disable devices}
-10     \hyperlink{a00110_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00023_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}{PS2\_COMMANDREG},0xAD);  
-11     \hyperlink{a00110_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00023_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}{PS2\_COMMANDREG},0xA7);
-12     \hyperlink{a00110_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00023_a0ef8b0a5f135deeee1540a47eeb0a0d3_a0ef8b0a5f135deeee1540a47eeb0a0d3}{PS2\_DATAPORT});
+10     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00026_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}{PS2\_COMMANDREG},0xAD);  
+11     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00026_a2a483c14991550f19f0d3d7f6a3c22b7_a2a483c14991550f19f0d3d7f6a3c22b7}{PS2\_COMMANDREG},0xA7);
+12     \hyperlink{a00113_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00026_a0ef8b0a5f135deeee1540a47eeb0a0d3_a0ef8b0a5f135deeee1540a47eeb0a0d3}{PS2\_DATAPORT});
 13 
 14 \}
 \end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{a00023_ae08385eb06ddff872e33966a60075435_ae08385eb06ddff872e33966a60075435}\label{a00023_ae08385eb06ddff872e33966a60075435_ae08385eb06ddff872e33966a60075435}} 
+\index{keyboard.\+c@{keyboard.\+c}!lbt@{lbt}}
+\index{lbt@{lbt}!keyboard.\+c@{keyboard.\+c}}
+\subsubsection{\texorpdfstring{lbt}{lbt}}
+{\footnotesize\ttfamily \hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} lbt = 0}
+
+
+
+Definition at line 6 of file keyboard.\+c.
+
+\mbox{\Hypertarget{a00023_afbd5f7a0d5ee4c4e6e0615a7294e1e10_afbd5f7a0d5ee4c4e6e0615a7294e1e10}\label{a00023_afbd5f7a0d5ee4c4e6e0615a7294e1e10_afbd5f7a0d5ee4c4e6e0615a7294e1e10}} 
+\index{keyboard.\+c@{keyboard.\+c}!rcv@{rcv}}
+\index{rcv@{rcv}!keyboard.\+c@{keyboard.\+c}}
+\subsubsection{\texorpdfstring{rcv}{rcv}}
+{\footnotesize\ttfamily \hyperlink{a00104_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} rcv = \hyperlink{a00104_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}{false}}
+
+
+
+Definition at line 5 of file keyboard.\+c.
+

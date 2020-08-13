@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/tty.h File Reference</title>
+<title>VitalityX: libc/vitality/tty.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,15 +44,20 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">tty.h File Reference</div>  </div>
+<div class="title">tty.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
+<div class="textblock"><code>#include &quot;<a class="el" href="a00125_source.html">tty.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00104_source.html">../types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00038_source.html">../../drivers/vga.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00053_source.html">../ext/debug.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for tty.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00124.png" border="0" usemap="#libc_2vitality_2tty_8hdep" alt=""/></div>
+<div class="center"><img src="a00123.png" border="0" usemap="#libc_2vitality_2tty_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
@@ -69,6 +74,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ade960b1320324706aac6c00cc6b1b2fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00122_ade960b1320324706aac6c00cc6b1b2fe.html#ade960b1320324706aac6c00cc6b1b2fe">tty_pputstring</a> (char *string)</td></tr>
 <tr class="memdesc:ade960b1320324706aac6c00cc6b1b2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string into VRAM, detects preferred mode.  <a href="a00122_ade960b1320324706aac6c00cc6b1b2fe.html#ade960b1320324706aac6c00cc6b1b2fe">More...</a><br /></td></tr>
 <tr class="separator:ade960b1320324706aac6c00cc6b1b2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a3f896e9c00b9302e2287aad054199134"><td class="memItemLeft" align="right" valign="top">int *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00122_a3f896e9c00b9302e2287aad054199134.html#a3f896e9c00b9302e2287aad054199134">videoMemoryPtr</a> = (int*)0x000A0000</td></tr>
+<tr class="separator:a3f896e9c00b9302e2287aad054199134"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abaa0d20f0e52ce0d3a7d706f6ac16266"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00104_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00122_abaa0d20f0e52ce0d3a7d706f6ac16266.html#abaa0d20f0e52ce0d3a7d706f6ac16266">xoff</a> = 0</td></tr>
+<tr class="separator:abaa0d20f0e52ce0d3a7d706f6ac16266"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a7539764d0ae8cd06ce45c62cf92bca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00104_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00122_a1a7539764d0ae8cd06ce45c62cf92bca.html#a1a7539764d0ae8cd06ce45c62cf92bca">yoff</a> = 0</td></tr>
+<tr class="separator:a1a7539764d0ae8cd06ce45c62cf92bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

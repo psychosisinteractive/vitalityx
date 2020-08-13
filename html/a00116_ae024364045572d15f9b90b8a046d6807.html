@@ -39,7 +39,7 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li><li class="navelem"><a class="el" href="a00116.html">mem.h</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li><li class="navelem"><a class="el" href="a00116.html">mem.c</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="contents">
@@ -50,7 +50,8 @@ $(function() {
         <table>
           <tr><td class="navtab"><a class="qindex" href="a00116_a9087e3504e5973deee6f3561705978c7.html#a9087e3504e5973deee6f3561705978c7">malloc</a></td></tr>
           <tr><td class="navtab"><a class="qindexHL" href="a00116_ae024364045572d15f9b90b8a046d6807.html#ae024364045572d15f9b90b8a046d6807">malloctoaddr</a></td></tr>
-          <tr><td class="navtab"><a class="qindex" href="a00116_a876b6ee19692762a87e4673911f9b8da.html#a876b6ee19692762a87e4673911f9b8da">mementry_t</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="a00116_a9ec3d7a60bca9bd965aba15905c6d1ed.html#a9ec3d7a60bca9bd965aba15905c6d1ed">mementries</a></td></tr>
+          <tr><td class="navtab"><a class="qindex" href="a00116_a48623ea6ed429e2f046b49041dde1dc5.html#a48623ea6ed429e2f046b49041dde1dc5">MEMENTRY_SIZE</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="a00116_a54eab910cb28c3f5ff9b02bf5feaa778.html#a54eab910cb28c3f5ff9b02bf5feaa778">memfree</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="a00116_a60f8bf957bca47c651dc4024dc26f36e.html#a60f8bf957bca47c651dc4024dc26f36e">mempeek</a></td></tr>
           <tr><td class="navtab"><a class="qindex" href="a00116_a2de854ee97d4e6d27f7aa7899a2d1d32.html#a2de854ee97d4e6d27f7aa7899a2d1d32">mempoke</a></td></tr>
@@ -66,15 +67,15 @@ $(function() {
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="a00101_a295f71165288684c38c6bb836fbb3c59.html#a295f71165288684c38c6bb836fbb3c59">addr_t</a> malloctoaddr </td>
+          <td class="memname"><a class="el" href="a00104_a295f71165288684c38c6bb836fbb3c59.html#a295f71165288684c38c6bb836fbb3c59">addr_t</a> malloctoaddr </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00101_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="a00104_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td>
           <td class="paramname"><em>memid</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00101_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="a00104_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td>
           <td class="paramname"><em>addr</em>&#160;</td>
         </tr>
         <tr>
@@ -85,10 +86,10 @@ $(function() {
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00113_source.html#l00070">70</a> of file <a class="el" href="a00113_source.html">mem.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                   {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    addr += <a class="code" href="a00113_a9ec3d7a60bca9bd965aba15905c6d1ed.html#a9ec3d7a60bca9bd965aba15905c6d1ed">mementries</a>[memid].<a class="code" href="a00170_ad6175fdf80547c655c7f35cff7ff82f9.html#ad6175fdf80547c655c7f35cff7ff82f9">base</a>;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="a00101_a295f71165288684c38c6bb836fbb3c59.html#a295f71165288684c38c6bb836fbb3c59">addr_t</a>)addr;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div><div class="ttc" id="a00101_a295f71165288684c38c6bb836fbb3c59_html_a295f71165288684c38c6bb836fbb3c59"><div class="ttname"><a href="a00101_a295f71165288684c38c6bb836fbb3c59.html#a295f71165288684c38c6bb836fbb3c59">addr_t</a></div><div class="ttdeci">uint32_t * addr_t</div><div class="ttdoc">Address Pointer. </div><div class="ttdef"><b>Definition:</b> <a href="a00101_source.html#l00045">types.h:45</a></div></div>
-<div class="ttc" id="a00170_ad6175fdf80547c655c7f35cff7ff82f9_html_ad6175fdf80547c655c7f35cff7ff82f9"><div class="ttname"><a href="a00170_ad6175fdf80547c655c7f35cff7ff82f9.html#ad6175fdf80547c655c7f35cff7ff82f9">mementry::base</a></div><div class="ttdeci">uint32_t base</div><div class="ttdef"><b>Definition:</b> <a href="a00116_source.html#l00019">mem.h:19</a></div></div>
-<div class="ttc" id="a00113_a9ec3d7a60bca9bd965aba15905c6d1ed_html_a9ec3d7a60bca9bd965aba15905c6d1ed"><div class="ttname"><a href="a00113_a9ec3d7a60bca9bd965aba15905c6d1ed.html#a9ec3d7a60bca9bd965aba15905c6d1ed">mementries</a></div><div class="ttdeci">mementry_t mementries[MEMENTRY_SIZE]</div><div class="ttdef"><b>Definition:</b> <a href="a00113_source.html#l00022">mem.c:22</a></div></div>
+<p class="definition">Definition at line <a class="el" href="a00116_source.html#l00070">70</a> of file <a class="el" href="a00116_source.html">mem.c</a>.</p>
+<div class="fragment"><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                                                   {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    addr += <a class="code" href="a00116_a9ec3d7a60bca9bd965aba15905c6d1ed.html#a9ec3d7a60bca9bd965aba15905c6d1ed">mementries</a>[memid].<a class="code" href="a00179_ad6175fdf80547c655c7f35cff7ff82f9.html#ad6175fdf80547c655c7f35cff7ff82f9">base</a>;</div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="a00104_a295f71165288684c38c6bb836fbb3c59.html#a295f71165288684c38c6bb836fbb3c59">addr_t</a>)addr;</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;}</div><div class="ttc" id="a00104_a295f71165288684c38c6bb836fbb3c59_html_a295f71165288684c38c6bb836fbb3c59"><div class="ttname"><a href="a00104_a295f71165288684c38c6bb836fbb3c59.html#a295f71165288684c38c6bb836fbb3c59">addr_t</a></div><div class="ttdeci">uint32_t * addr_t</div><div class="ttdoc">Address Pointer. </div><div class="ttdef"><b>Definition:</b> <a href="a00104_source.html#l00045">types.h:45</a></div></div>
+<div class="ttc" id="a00179_ad6175fdf80547c655c7f35cff7ff82f9_html_ad6175fdf80547c655c7f35cff7ff82f9"><div class="ttname"><a href="a00179_ad6175fdf80547c655c7f35cff7ff82f9.html#ad6175fdf80547c655c7f35cff7ff82f9">mementry::base</a></div><div class="ttdeci">uint32_t base</div><div class="ttdef"><b>Definition:</b> <a href="a00119_source.html#l00019">mem.h:19</a></div></div>
+<div class="ttc" id="a00116_a9ec3d7a60bca9bd965aba15905c6d1ed_html_a9ec3d7a60bca9bd965aba15905c6d1ed"><div class="ttname"><a href="a00116_a9ec3d7a60bca9bd965aba15905c6d1ed.html#a9ec3d7a60bca9bd965aba15905c6d1ed">mementries</a></div><div class="ttdeci">mementry_t mementries[MEMENTRY_SIZE]</div><div class="ttdef"><b>Definition:</b> <a href="a00116_source.html#l00022">mem.c:22</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

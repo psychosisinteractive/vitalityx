@@ -1,15 +1,8 @@
-\hypertarget{a00050}{}\section{libc/ext/debug.h File Reference}
-\label{a00050}\index{libc/ext/debug.\+h@{libc/ext/debug.\+h}}
-{\ttfamily \#include \char`\"{}../vitality/inline.\+h\char`\"{}}\newline
-Include dependency graph for debug.\+h\+:
+\hypertarget{a00050}{}\section{libc/ext/debug.c File Reference}
+\label{a00050}\index{libc/ext/debug.\+c@{libc/ext/debug.\+c}}
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
+Include dependency graph for debug.\+c\+:
 % FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{a00050_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}{Bochs\+Console\+Print\+Char}(c)~\hyperlink{a00110_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0xe9, c)
-\begin{DoxyCompactList}\small\item\em Outputs a character to the Bochs console. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,27 +10,10 @@ void \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f
 \begin{DoxyCompactList}\small\item\em Outputs a string to the Bochs console. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{a00050_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}\label{a00050_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}} 
-\index{debug.\+h@{debug.\+h}!Bochs\+Console\+Print\+Char@{Bochs\+Console\+Print\+Char}}
-\index{Bochs\+Console\+Print\+Char@{Bochs\+Console\+Print\+Char}!debug.\+h@{debug.\+h}}
-\subsubsection{\texorpdfstring{Bochs\+Console\+Print\+Char}{BochsConsolePrintChar}}
-{\footnotesize\ttfamily \#define Bochs\+Console\+Print\+Char(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~\hyperlink{a00110_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0xe9, c)}
-
-
-
-Outputs a character to the Bochs console. 
-
-
-
-Definition at line 8 of file debug.\+h.
-
-
-
 \subsection{Function Documentation}
 \mbox{\Hypertarget{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}\label{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}} 
-\index{debug.\+h@{debug.\+h}!Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}}
-\index{Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}!debug.\+h@{debug.\+h}}
+\index{debug.\+c@{debug.\+c}!Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}}
+\index{Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}!debug.\+c@{debug.\+c}}
 \subsubsection{\texorpdfstring{Bochs\+Console\+Print\+String()}{BochsConsolePrintString()}}
 {\footnotesize\ttfamily void Bochs\+Console\+Print\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
 
@@ -54,7 +30,7 @@ Definition at line 3 of file debug.\+c.
 4 \{
 5     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
 6     \textcolor{keywordflow}{while}(chara != 0x0) \{
-7         \hyperlink{a00050_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}{BochsConsolePrintChar}(chara);
+7         \hyperlink{a00053_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}{BochsConsolePrintChar}(chara);
 8         chara = *\textcolor{keywordtype}{string}++;
 9     \}
 10 \}

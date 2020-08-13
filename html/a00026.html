@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: drivers/pic.c File Reference</title>
+<title>VitalityX: drivers/keyboard.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,41 +44,48 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">pic.c File Reference</div>  </div>
+<div class="title">keyboard.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00101_source.html">../libc/types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00110_source.html">../libc/vitality/inline.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00029_source.html">pic.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00113_source.html">../libc/vitality/inline.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for pic.c:</div>
+Include dependency graph for keyboard.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00027.png" border="0" usemap="#drivers_2pic_8c" alt=""/></div>
+<div class="center"><img src="a00027.png" border="0" usemap="#drivers_2keyboard_8h" alt=""/></div>
 <!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00028.png" border="0" usemap="#drivers_2keyboard_8hdep" alt=""/></div>
+<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00026_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a0ef8b0a5f135deeee1540a47eeb0a0d3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a0ef8b0a5f135deeee1540a47eeb0a0d3.html#a0ef8b0a5f135deeee1540a47eeb0a0d3">PS2_DATAPORT</a>&#160;&#160;&#160;0x60</td></tr>
+<tr class="memdesc:a0ef8b0a5f135deeee1540a47eeb0a0d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">PS/2 Data Port.  <a href="a00026_a0ef8b0a5f135deeee1540a47eeb0a0d3.html#a0ef8b0a5f135deeee1540a47eeb0a0d3">More...</a><br /></td></tr>
+<tr class="separator:a0ef8b0a5f135deeee1540a47eeb0a0d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac53f79a633bdedad461bd9b969d9afcc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_ac53f79a633bdedad461bd9b969d9afcc.html#ac53f79a633bdedad461bd9b969d9afcc">PS2_STATUSREG</a>&#160;&#160;&#160;0x64</td></tr>
+<tr class="memdesc:ac53f79a633bdedad461bd9b969d9afcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">PS/2 Status Register.  <a href="a00026_ac53f79a633bdedad461bd9b969d9afcc.html#ac53f79a633bdedad461bd9b969d9afcc">More...</a><br /></td></tr>
+<tr class="separator:ac53f79a633bdedad461bd9b969d9afcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a483c14991550f19f0d3d7f6a3c22b7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a2a483c14991550f19f0d3d7f6a3c22b7.html#a2a483c14991550f19f0d3d7f6a3c22b7">PS2_COMMANDREG</a>&#160;&#160;&#160;<a class="el" href="a00026_ac53f79a633bdedad461bd9b969d9afcc.html#ac53f79a633bdedad461bd9b969d9afcc">PS2_STATUSREG</a></td></tr>
+<tr class="memdesc:a2a483c14991550f19f0d3d7f6a3c22b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">PS/2 Command Register.  <a href="a00026_a2a483c14991550f19f0d3d7f6a3c22b7.html#a2a483c14991550f19f0d3d7f6a3c22b7">More...</a><br /></td></tr>
+<tr class="separator:a2a483c14991550f19f0d3d7f6a3c22b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1119739f7932598c83c3f8ce42a649de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a1119739f7932598c83c3f8ce42a649de.html#a1119739f7932598c83c3f8ce42a649de">PIC_sendEOI</a> (unsigned char irq)</td></tr>
-<tr class="memdesc:a1119739f7932598c83c3f8ce42a649de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send End of Interrupt to PIC.  <a href="a00026_a1119739f7932598c83c3f8ce42a649de.html#a1119739f7932598c83c3f8ce42a649de">More...</a><br /></td></tr>
-<tr class="separator:a1119739f7932598c83c3f8ce42a649de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5ed5530bfeaffadd8cd88c06d797f31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_ab5ed5530bfeaffadd8cd88c06d797f31.html#ab5ed5530bfeaffadd8cd88c06d797f31">PIC_remap</a> (int offset1, int offset2)</td></tr>
-<tr class="memdesc:ab5ed5530bfeaffadd8cd88c06d797f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remap PIC.  <a href="a00026_ab5ed5530bfeaffadd8cd88c06d797f31.html#ab5ed5530bfeaffadd8cd88c06d797f31">More...</a><br /></td></tr>
-<tr class="separator:ab5ed5530bfeaffadd8cd88c06d797f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af654381e46179e377f9e26d7b3f48df0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_af654381e46179e377f9e26d7b3f48df0.html#af654381e46179e377f9e26d7b3f48df0">IRQ_set_mask</a> (unsigned char IRQline)</td></tr>
-<tr class="separator:af654381e46179e377f9e26d7b3f48df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66ac96e9de8bb640d3d76ddd0a652ff4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a66ac96e9de8bb640d3d76ddd0a652ff4.html#a66ac96e9de8bb640d3d76ddd0a652ff4">IRQ_clear_mask</a> (unsigned char IRQline)</td></tr>
-<tr class="separator:a66ac96e9de8bb640d3d76ddd0a652ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36c512d574a4d820675e1026ac4a3db6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00101_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a36c512d574a4d820675e1026ac4a3db6.html#a36c512d574a4d820675e1026ac4a3db6">__pic_get_irq_reg</a> (int ocw3)</td></tr>
-<tr class="separator:a36c512d574a4d820675e1026ac4a3db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c413ca2499d8eb59d09ebe025f4ae8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00101_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a3c413ca2499d8eb59d09ebe025f4ae8e.html#a3c413ca2499d8eb59d09ebe025f4ae8e">pic_get_irr</a> (void)</td></tr>
-<tr class="separator:a3c413ca2499d8eb59d09ebe025f4ae8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b716de2a9d07df332b924d1608c8fd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00101_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a3b716de2a9d07df332b924d1608c8fd9.html#a3b716de2a9d07df332b924d1608c8fd9">pic_get_isr</a> (void)</td></tr>
-<tr class="separator:a3b716de2a9d07df332b924d1608c8fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6a916c09d63bcfc59bce46f2bb34811"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_ad6a916c09d63bcfc59bce46f2bb34811.html#ad6a916c09d63bcfc59bce46f2bb34811">kb_getscancode</a> ()</td></tr>
+<tr class="memdesc:ad6a916c09d63bcfc59bce46f2bb34811"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a keyboard scancode.  <a href="a00026_ad6a916c09d63bcfc59bce46f2bb34811.html#ad6a916c09d63bcfc59bce46f2bb34811">More...</a><br /></td></tr>
+<tr class="separator:ad6a916c09d63bcfc59bce46f2bb34811"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab55128c33115081a66a8acb39dc6c7dc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_ab55128c33115081a66a8acb39dc6c7dc.html#ab55128c33115081a66a8acb39dc6c7dc">ps2init</a> ()</td></tr>
+<tr class="memdesc:ab55128c33115081a66a8acb39dc6c7dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">PS/2 Initialize.  <a href="a00026_ab55128c33115081a66a8acb39dc6c7dc.html#ab55128c33115081a66a8acb39dc6c7dc">More...</a><br /></td></tr>
+<tr class="separator:ab55128c33115081a66a8acb39dc6c7dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
