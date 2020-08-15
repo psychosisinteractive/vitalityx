@@ -6,8 +6,7 @@
 typedef struct vlib_entry {
     uint16_t mode;
     bool instantiated;
-    addr_t functionptr;
-
+    func_ptr_args functionptr;
 } vlib_entry_t;
 
 typedef struct vlibdescriptor {

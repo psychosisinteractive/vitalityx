@@ -77,4 +77,27 @@ typedef uint8_t byte;
 ///
 typedef (*func_ptr)(void);
 
+///
+/// Struct for Registers
+///
+typedef struct {
+    uint32_t eax, ebx, ecx, edx, esi, edi, esp, ebp, eip, eflags, cr3;
+} Registers;
+
+///
+/// Function Pointer with Register Arguments
+///
+typedef (*func_ptr_args)(Registers);
+
+
+
+typedef sint8_t s8int;
+typedef uint8_t u8int;
+typedef sint16_t s16int;
+typedef uint16_t u16int;
+typedef sint32_t s32int;
+typedef uint32_t u32int;
+typedef sint64_t s64int;
+typedef uint64_t u64int;
+
 #endif

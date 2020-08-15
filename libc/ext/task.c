@@ -2,12 +2,16 @@
 #include "../types.h"
 #include "debug.h"
 #include "../page.h"
+#include "../system.h"
+#include "../vitality/tty.h"
 
 static Task *runningTask;
 static Task mainTask; // this is the kernel
 static Task otherTask;
  
 static void otherMain() {
+    tty_pputstring("Kernel dispatch\n");
+    tty_pputstring("Waiting for something to happen...\n");
     yield();
 }
  
@@ -16,8 +20,10 @@ void initTasking() {
     asm volatile("movl %%cr3, %%eax; movl %%eax, %0;":"=m"(mainTask.regs.cr3)::"%eax");
     asm volatile("pushfl; movl (%%esp), %%eax; movl %%eax, %0; popfl;":"=m"(mainTask.regs.eflags)::"%eax");
  
+    mainTask.flags = TASK_KERNEL | TASK_PROTECTED;
     mainTask.name = "vitality-system";
-    createTask(&otherTask, otherMain, mainTask.regs.eflags, (uint32_t*)mainTask.regs.cr3, "kernel-dispatch");
+    mainTask.instantiated = true;
+    createTask(&otherTask, otherMain, mainTask.regs.eflags, (uint32_t*)mainTask.regs.cr3, "kernel-dispatch",TASK_KERNEL | TASK_PROTECTED | TASK_CONSOLE);
     mainTask.next = &otherTask;
     otherTask.next = &mainTask;
  
@@ -48,17 +54,42 @@ void createTask(Task *task, void (*main)(), uint32_t flags, uint32_t *pagedir, c
     task->next = 0;
     task->name = name;
     task->flags = tflags;
+    task->instantiated = true;
+    // set space for console
+    memset(task->console,0,2000);
+    tty_pputstring("New task ");
+    tty_pputstring(name);
+    tty_pputstring("\n");
 }
  
+void swapscreen(char *newconsole[]) {
+    Task* ctask = getctask();
+    memcpy(&ctask->console,0xb8000,2000);
+    memcpy(0xb8000,newconsole,2000);
+}
+
 void yield() {
     Task *last = runningTask;
     Task *nextTask = runningTask->next;
-    uint8_t ntS = nextTask->flags;
-    while(ntS & TASK_SKIP) {
-        nextTask = nextTask->next;
+    if(nextTask->instantiated) {
         uint8_t ntS = nextTask->flags;
+        while(ntS & TASK_SKIP | ntS & TASK_KILLED) {
+            nextTask = nextTask->next;
+            uint8_t ntS = nextTask->flags;
+        }
+        tty_pputstring("Swapping to ");
+        tty_pputstring(nextTask->name);
+        tty_pputstring("\n");
+        if(nextTask->flags & TASK_CONSOLE) {
+            BochsConsolePrintString("Swapping consoles\n");
+            swapscreen(&nextTask->console);
+        }
+        bochs_bkpt();
+        switchTask(&last->regs, &nextTask->regs);
+        void (*prog) ();
+        prog = nextTask->regs.eip;
+        prog();
     }
-    switchTask(&last->regs, &nextTask->regs);
 }
 
 struct Task* getctask() {

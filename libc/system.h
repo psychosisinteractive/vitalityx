@@ -35,5 +35,5 @@ void *memset (void *dest, int val, size_t len);
 ///@param dstptr Destination pointer
 ///@param srcptr Source pointer
 ///@param size Size
-void* memcpy(void* restrict dstptr, const void* restrict srcptr, size_t size);
+void* memcpy(void* dstptr, const void* srcptr, size_t size);
 #endif

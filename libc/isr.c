@@ -7,27 +7,49 @@
 #include "vitality/tty.h"
 #include "string.h"
 #include "vitality/vlib.h"
+#include "page.h"
+#include "../drivers/ide.h"
 
 void isr_handler(registers_t regs)
 {
+    Task* ctask = getctask();
     switch(regs.int_no) {
         case 0:
             BochsConsolePrintString("\n\nDivide By Zero Failure\n\n");
+            
             PIC_sendEOI(regs.int_no);
             break;
-        case 1:
+        case 32:
             PIC_sendEOI(regs.int_no);
+            keyboard_handler_main();
             break;
         case 13:
             BochsConsolePrintString("\n\nGENERAL PROTECTION FAULT!!!\n\n");
+            clearscreen();
+            tty_pputstring("GENERAL PROTECTION FAULT!!!\n\n");
             char* errcode = "  ";
             itoa(regs.err_code,errcode);
             BochsConsolePrintString("Errorcode: ");
             BochsConsolePrintString(errcode);
+            tty_pputstring("Error Code:");
+            tty_pputstring(errcode);
+            tty_pputstring("\n\nPlease restart your system, and report the error code to a VitalityX developer.\n");
             bochs_bkpt();
             for(;;) {
 
             }
+            break;
+        case 14:
+            PIC_sendEOI(regs.int_no);
+            ide_irq();
+            page_fault(regs);
+            for(;;) {
+
+            }
+            break;
+        case 15:
+            PIC_sendEOI(regs.int_no);
+            ide_irq();
             break;
         case 63:
             PIC_sendEOI(regs.int_no);
@@ -35,14 +57,16 @@ void isr_handler(registers_t regs)
             sysisr_handler(regs);
             break;
         default:
+            clearscreen();
+            tty_pputstring("UNKNOWN SYSTEM INTERRUPT!!!\n\n");
             BochsConsolePrintString("\n\nVitalityXInterrupt\n\n");
             char* inttype = "  ";
+            tty_pputstring("No. ");
             itoa(regs.int_no,inttype);
             BochsConsolePrintString("Interrupt: ");
             BochsConsolePrintString(inttype);
-            for(;;) {
-
-            }
+            tty_pputstring(inttype);
+            tty_pputstring("\n");
             break;
     }
 }

@@ -1,6 +1,15 @@
 #include "../types.h"
 #ifndef INLINE_H
 #define INLINE_H
+
+#define insl(port, buf, nr) \
+__asm__ ("cld;rep;insl\n\t"   \
+::"d"(port), "D"(buf), "c"(nr))
+
+#define outsl(buf, nr, port) \
+__asm__ ("cld;rep;outsl\n\t"   \
+::"d"(port), "S" (buf), "c" (nr))
+
 static inline uint32_t farpeekl(uint16_t sel, void* off)
 {
     uint32_t ret;

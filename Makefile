@@ -16,18 +16,20 @@ BOCHS = C:\Program Files\Bochs-2.6.11\bochsdbg
 NASM = nasm
 GDB = i686-elf-GDB
 # flags for the compiler
-CFLAGS = -g
+CFLAGS = -g -DSILENT
 
 .DEFAULT_GOAL := run
+
+ORIGIN = 0x7e00
 
 operating.bin: bootloader/boot.bin kernel.bin
 	${WSL} cat $^ > operating.bin
 
 kernel.bin: kernel/kentry.o LINKER.ld ${OBJ} ${AOBJ}
-	i686-elf-ld -o $@ -Ttext 0x1000 $^ --oformat binary
+	i686-elf-ld -o $@ -Ttext ${ORIGIN} $^ --oformat binary
 
 kernel.elf: kernel/kentry.o LINKER.ld ${OBJ} ${AOBJ}
-	i686-elf-ld -o $@ -Ttext 0x1000 $^
+	i686-elf-ld -o $@ -Ttext ${ORIGIN} $^
 
 run: operating.bin
 	qemu-system-i386 -no-reboot -no-shutdown -fda operating.bin

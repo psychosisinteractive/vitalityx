@@ -25,6 +25,9 @@ void init_gdt()
     gdt_set_gate(3, 0x00500000, 0x009FFFFF, 0xFA, 0xCF); // User mode code segment
     gdt_set_gate(4, 0x00500000, 0x009FFFFF, 0xF2, 0xCF); // User mode data segment
     BochsConsolePrintString("\nDone, flushing\n");
+    BochsConsolePrintString("\nSetting up Misc gates\n");
+    gdt_set_gate(4, 0x000A0000, 0x000BFFFF, 0xF2, 0xCF); // User mode data segment
+
 
     gdt_flush((uint32_t)&gdt_ptr);
 }

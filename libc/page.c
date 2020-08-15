@@ -1,95 +1,200 @@
+#include "ext/debug.h"
+#include "ext/kheap.h"
 #include "page.h"
 #include "types.h"
-#include "ext/debug.h"
-uint32_t page_directory[1024] 
-#ifndef __INTELLISENSE__ 
-    __attribute__((aligned(4096)));
-#else
-    ;
-#endif
+#include "string.h"
 
-void setup_page() {
-    BochsConsolePrintString("page being setup\n");
-    //set each entry to not present
-    int i;
-    for(i = 0; i < 1024; i++)
+// A bitset of frames - used or free.
+u32int *frames;
+u32int nframes;
+
+page_directory_t* kernel_directory;
+page_directory_t* current_directory;
+
+// Defined in kheap.c
+extern u32int placement_address;
+
+// Macros used in the bitset algorithms.
+#define INDEX_FROM_BIT(a) (a/(8*4))
+#define OFFSET_FROM_BIT(a) (a%(8*4))
+
+// Static function to set a bit in the frames bitset
+static void set_frame(u32int frame_addr)
+{
+    u32int frame = frame_addr/0x1000;
+    u32int idx = INDEX_FROM_BIT(frame);
+    u32int off = OFFSET_FROM_BIT(frame);
+    frames[idx] |= (0x1 << off);
+}
+
+// Static function to clear a bit in the frames bitset
+static void clear_frame(u32int frame_addr)
+{
+    u32int frame = frame_addr/0x1000;
+    u32int idx = INDEX_FROM_BIT(frame);
+    u32int off = OFFSET_FROM_BIT(frame);
+    frames[idx] &= ~(0x1 << off);
+}
+
+// Static function to test if a bit is set.
+static u32int test_frame(u32int frame_addr)
+{
+    u32int frame = frame_addr/0x1000;
+    u32int idx = INDEX_FROM_BIT(frame);
+    u32int off = OFFSET_FROM_BIT(frame);
+    return (frames[idx] & (0x1 << off));
+}
+
+// Static function to find the first free frame.
+static u32int first_frame()
+{
+    u32int i, j;
+    for (i = 0; i < INDEX_FROM_BIT(nframes); i++)
     {
-        // This sets the following flags to the pages:
-        //   Supervisor: Only kernel-mode can access them
-        //   Write Enabled: It can be both read from and written to
-        //   Not Present: The page table is not present
-        page_directory[i] = 0x00000002;
+        if (frames[i] != 0xFFFFFFFF) // nothing free, exit early.
+        {
+            // at least one bit is free here.
+            for (j = 0; j < 32; j++)
+            {
+                u32int toTest = 0x1 << j;
+                if ( !(frames[i]&toTest) )
+                {
+                    return i*4*8+j;
+                }
+            }
+        }
     }
-    loadPageDirectory(page_directory);
-    enablePaging();
-    BochsConsolePrintString("pages setup\n");
 }
 
-void create_page_table(unsigned int i, unsigned int id) {
-    BochsConsolePrintString("setting up page table\n");
-    uint32_t page_table[1024]
-    #ifndef __INTELLISENSE__ 
-        __attribute__((aligned(4096)));
-    #else
-        ;
-    #endif
-    //we will fill all 1024 entries in the table, mapping 4 megabytes
-    for(i = 0; i < 1024; i++)
+// Function to allocate a frame.
+void alloc_frame(page_t *page, int is_kernel, int is_writeable)
+{
+    if (page->frame != 0)
     {
-        // As the address is page aligned, it will always leave 12 bits zeroed.
-        // Those bits are used by the attributes ;)
-        page_table[i] = (i * 0x1000) | 3; // attributes: supervisor level, read/write, present.
+        return; // Frame was already allocated, return straight away.
     }
-    page_directory[id] = ((unsigned int)page_table) | 3;
-    BochsConsolePrintString("page table setup\n");
+    else
+    {
+        u32int idx = first_frame(); // idx is now the index of the first free frame.
+        if (idx == (u32int)-1)
+        {
+            // PANIC is just a macro that prints a message to the screen then hits an infinite loop.
+            BochsConsolePrintString("No free frames!");
+        }
+        set_frame(idx*0x1000); // this frame is now ours!
+        page->present = 1; // Mark it as present.
+        page->rw = (is_writeable)?1:0; // Should the page be writeable?
+        page->user = (is_kernel)?0:1; // Should the page be user-mode?
+        page->frame = idx;
+    }
 }
 
-void * get_physaddr(void * virtualaddr)
+// Function to deallocate a frame.
+void free_frame(page_t *page)
 {
-    unsigned long pdindex = (unsigned long)virtualaddr >> 22;
-    unsigned long ptindex = (unsigned long)virtualaddr >> 12 & 0x03FF;
-    unsigned long * pd = (unsigned long *)0xFFFFF000;
-    // Here you need to check whether the PD entry is present.
-    unsigned long * pt = ((unsigned long *)0xFFC00000) + (0x400 * pdindex);
-    // Here you need to check whether the PT entry is present.
-    return (void *)((pt[ptindex] & ~0xFFF) + ((unsigned long)virtualaddr & 0xFFF));
+    u32int frame;
+    if (!(frame=page->frame))
+    {
+        return; // The given page didn't actually have an allocated frame!
+    }
+    else
+    {
+        clear_frame(frame); // Frame is now free again.
+        page->frame = 0x0; // Page now doesn't have a frame.
+    }
 }
 
-void map_page(void * physaddr, void * virtualaddr, unsigned int flags)
+void initialise_paging()
 {
-    // Make sure that both addresses are page-aligned.
-    unsigned long pdindex = (unsigned long)virtualaddr >> 22;
-    unsigned long ptindex = (unsigned long)virtualaddr >> 12 & 0x03FF;
-    unsigned long * pd = (unsigned long *)0xFFFFF000;
-    // Here you need to check whether the PD entry is present.
-    // When it is not present, you need to create a new empty PT and
-    // adjust the PDE accordingly.
-    unsigned long * pt = ((unsigned long *)0xFFC00000) + (0x400 * pdindex);
-    // Here you need to check whether the PT entry is present.
-    // When it is, then there is already a mapping present. What do you do now?
-    pt[ptindex] = ((unsigned long)physaddr) | (flags & 0xFFF) | 0x01; // Present
-    // Now you need to flush the entry in the TLB
-    // or you might not notice the change.
+    // The size of physical memory. For the moment we
+    // assume it is 16MB big.
+    u32int mem_end_page = 0x1000000;
+
+    nframes = mem_end_page / 0x1000;
+    frames = (u32int*)kmalloc(INDEX_FROM_BIT(nframes));
+    memset(frames, 0, INDEX_FROM_BIT(nframes));
+
+    // Let's make a page directory.
+    kernel_directory = (page_directory_t*)kmalloc_a(sizeof(page_directory_t));
+    memset(kernel_directory, 0, sizeof(page_directory_t));
+    current_directory = kernel_directory;
+
+    // We need to identity map (phys addr = virt addr) from
+    // 0x0 to the end of used memory, so we can access this
+    // transparently, as if paging wasn't enabled.
+    // NOTE that we use a while loop here deliberately.
+    // inside the loop body we actually change placement_address
+    // by calling kmalloc(). A while loop causes this to be
+    // computed on-the-fly rather than once at the start.
+    int i = 0;
+    while (i < placement_address)
+    {
+        // Kernel code is readable but not writeable from userspace.
+        alloc_frame( get_page(i, 1, kernel_directory), 0, 0);
+        i += 0x1000;
+    }
+
+    // Now, enable paging!
+    switch_page_directory(kernel_directory);
 }
 
-void umap_page(void * physaddr, void * virtualaddr, unsigned int flags)
+void switch_page_directory(page_directory_t *dir)
 {
-    // Make sure that both addresses are page-aligned.
- 
-    unsigned long pdindex = (unsigned long)virtualaddr >> 22;
-    unsigned long ptindex = (unsigned long)virtualaddr >> 12 & 0x03FF;
- 
-    unsigned long * pd = (unsigned long *)0xFFFFF000;
-    // Here you need to check whether the PD entry is present.
-    // When it is not present, you need to create a new empty PT and
-    // adjust the PDE accordingly.
- 
-    unsigned long * pt = ((unsigned long *)0xFFC00000) + (0x400 * pdindex);
-    // Here you need to check whether the PT entry is present.
-    // When it is, then there is already a mapping present. What do you do now?
- 
-    pt[ptindex] = 0x0; // Not Present
- 
-    // Now you need to flush the entry in the TLB
-    // or you might not notice the change.
+    current_directory = dir;
+    asm volatile("mov %0, %%cr3":: "r"(&dir->tablesPhysical));
+    u32int cr0;
+    asm volatile("mov %%cr0, %0": "=r"(cr0));
+    cr0 |= 0x80000000; // Enable paging!
+    asm volatile("mov %0, %%cr0":: "r"(cr0));
+}
+
+page_t *get_page(u32int address, int make, page_directory_t *dir)
+{
+    // Turn the address into an index.
+    address /= 0x1000;
+    // Find the page table containing this address.
+    u32int table_idx = address / 1024;
+    if (dir->tables[table_idx]) // If this table is already assigned
+    {
+        return &dir->tables[table_idx]->pages[address%1024];
+    }
+    else if(make)
+    {
+        u32int tmp;
+        dir->tables[table_idx] = (page_table_t*)kmalloc_ap(sizeof(page_table_t), &tmp);
+        memset(dir->tables[table_idx], 0, 0x1000);
+        dir->tablesPhysical[table_idx] = tmp | 0x7; // PRESENT, RW, US.
+        return &dir->tables[table_idx]->pages[address%1024];
+    }
+    else
+    {
+        return 0;
+    }
+}
+
+void page_fault(registers_t regs)
+{
+    // A page fault has occurred.
+    // The faulting address is stored in the CR2 register.
+    u32int faulting_address;
+    asm volatile("mov %%cr2, %0" : "=r" (faulting_address));
+
+    // The error code gives us details of what happened.
+    int present   = !(regs.err_code & 0x1); // Page not present
+    int rw = regs.err_code & 0x2;           // Write operation?
+    int us = regs.err_code & 0x4;           // Processor was in user-mode?
+    int reserved = regs.err_code & 0x8;     // Overwritten CPU-reserved bits of page entry?
+    int id = regs.err_code & 0x10;          // Caused by an instruction fetch?
+
+    // Output an error message.
+    BochsConsolePrintString("Page fault! ( ");
+    if (present) {BochsConsolePrintString("present ");}
+    if (rw) {BochsConsolePrintString("read-only ");}
+    if (us) {BochsConsolePrintString("user-mode ");}
+    if (reserved) {BochsConsolePrintString("reserved ");}
+    BochsConsolePrintString(") at 0d");
+    char* addr;
+    itoa(faulting_address,addr);
+    BochsConsolePrintString(addr);
+    BochsConsolePrintString("\n");
 }

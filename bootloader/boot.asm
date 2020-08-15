@@ -14,7 +14,7 @@ start:
     call print_dbg_x
     ; LOAD the system
     mov ah,02h
-    mov al,20
+    mov al,PROGRAM_SIZE/512
     mov ch,0
     mov cl,02h
     mov dh,0
@@ -25,27 +25,13 @@ start:
     ; next setup the gdt
     call print_dbg_x
     mov di,0x7e00
-    ;in: es:di=4k buffer
-	;out: buffer filled with font
-    push			ds
-    push			es
-    ;ask BIOS to return VGA bitmap fonts
-    mov			ax, 1130h
-    mov			bh, 6
-    int			10h
-    ;copy charmap
-    push			es
-    pop			ds
-    pop			es
-    mov			si, bp
-    mov			cx, 256*16/4
-    rep			movsd
-    pop			ds
 
     cli
     mov ax, 0x2401
     int 0x15 ; enable A20 bit
-
+    mov ah,00h
+    mov al,3h
+    int 10h
     call switch_to_pm
 
 load_kern_err:
@@ -82,7 +68,8 @@ ready:
 
     jmp PROGRAM
 
-PROGRAM equ 0x1000
+PROGRAM equ 0x7e00
+PROGRAM_SIZE equ 30000 ; in bytes
 
 times 510 - ($ - $$) db 0
 dw 0AA55h

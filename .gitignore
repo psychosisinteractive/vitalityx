@@ -12,3 +12,6 @@
 /*.elf
 /bochslog.txt
 /bx_enh_dbg.ini
+*.img
+*.bak
+*.lock

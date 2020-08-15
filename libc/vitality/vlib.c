@@ -19,10 +19,13 @@ void runvlib(int id) {
         vlib += sizeof(vlib_entry_t);
     }
     vlib_entry_t* sel = (vlib_entry_t*)vlib;
-    func_ptr funcptr = sel->functionptr;
+    func_ptr_args funcptr = sel->functionptr;
     Task* ctask = getctask();
     switchTask(&ctask->regs, &vlib_registers);
     // we can now run vlib code
-    (*(funcptr))(&ctask->regs);
+    Registers ctaskregs = ctask->regs;
+    void (*functionptr)(Registers ctaskregs);
+    functionptr = *sel->functionptr;
+    functionptr(ctask->regs);
     switchTask(&vlib_registers, &ctask->regs);
 }

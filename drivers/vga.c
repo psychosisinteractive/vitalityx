@@ -5,12 +5,12 @@
 
 void putpixel(uint8_t c, uint16_t x, uint16_t y) {
     uint16_t offset = (y * SCREEN_WIDTH) + x;
-	mempoke(1,offset,c);
+	pokeb(0xa0000,offset,c);
 }
 
 uint8_t getpixel(uint16_t x, uint16_t y) {
     uint16_t offset = (y * SCREEN_WIDTH) + x;
-	return mempeek(1,offset);
+	return peekb(0xa0000,offset);
 }
 
 unsigned char *vgafont;
@@ -29,7 +29,7 @@ void drawchar(unsigned char c, uint16_t x, uint16_t y, uint8_t fgcolor, uint8_t 
 }
 
 uint16_t vgamode() {
-	return 0x13; // we sure are using mode 13 so
+	return 0x3; // we sure are using mode 3 so
 }
 
 void setfont(unsigned char *font) {
