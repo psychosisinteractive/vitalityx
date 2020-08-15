@@ -1,18 +1,24 @@
-digraph "libc/ext/task.h"
+digraph "libc/ext/debug.h"
 {
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node2 [label="libc/ext/task.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node3 [label="kernel/kernel.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00041.html"];
-  Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node4 [label="libc/vitality/vlib.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00137.html"];
-  Node4 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node5 [label="libc/isr.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00080.html"];
-  Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node6 [label="libc/vitality/vlib.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00134.html"];
-  Node2 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node7 [label="libc/ext/task.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00056.html"];
-  Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node3 [label="libc/ext/debug.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node4 [label="kernel/kernel.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00047.html"];
+  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="libc/ext/debug.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00056.html"];
+  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node6 [label="libc/ext/task.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00068.html"];
+  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="libc/gdt.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00080.html"];
+  Node3 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node8 [label="libc/interrupt.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00086.html"];
+  Node3 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node9 [label="libc/isr.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00092.html"];
+  Node3 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node10 [label="libc/page.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00098.html"];
+  Node3 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node11 [label="libc/vitality/mem.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00134.html"];
+  Node3 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node12 [label="libc/vitality/tty.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00140.html"];
 }

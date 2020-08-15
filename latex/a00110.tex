@@ -1,52 +1,165 @@
-\hypertarget{a00110}{}\section{libc/vitality/basfmts.h File Reference}
-\label{a00110}\index{libc/vitality/basfmts.\+h@{libc/vitality/basfmts.\+h}}
-{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
-Include dependency graph for basfmts.\+h\+:
+\hypertarget{a00110}{}\section{libc/system.c File Reference}
+\label{a00110}\index{libc/system.\+c@{libc/system.\+c}}
+{\ttfamily \#include \char`\"{}system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+Include dependency graph for system.\+c\+:
 % FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
-\subsection*{Data Structures}
+\subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{a00175}{psf}
-\begin{DoxyCompactList}\small\item\em PC Screen Font struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{a00110_a73f827ead78113d46a0138e62e141ec8_a73f827ead78113d46a0138e62e141ec8}{P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC}~0x864ab572
-\begin{DoxyCompactList}\small\item\em P\+SF Magic. \end{DoxyCompactList}\end{DoxyCompactItemize}
-\subsection*{Typedefs}
-\begin{DoxyCompactItemize}
-\item 
-typedef struct \hyperlink{a00175}{psf} \hyperlink{a00110_a6d3104625aeeda181b07e04f21e34e93_a6d3104625aeeda181b07e04f21e34e93}{psf\+\_\+t}
-\begin{DoxyCompactList}\small\item\em PC Screen Font struct. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{a00110_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}{pokeb} (\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$addr, \hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} offset, \hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} val)
+\begin{DoxyCompactList}\small\item\em Poke Byte. \end{DoxyCompactList}\item 
+\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00110_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}{peekb} (\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} $\ast$addr, \hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} offset)
+\begin{DoxyCompactList}\small\item\em Peek Byte. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset} (void $\ast$dest, int val, \hyperlink{a00116_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} len)
+\begin{DoxyCompactList}\small\item\em Memset. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{a00110_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy} (void $\ast$dstptr, const void $\ast$srcptr, \hyperlink{a00116_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} size)
+\begin{DoxyCompactList}\small\item\em Memcpy. \end{DoxyCompactList}\item 
+void \hyperlink{a00110_afcc76b3d055f3137e37a9c1ce82d0b95_afcc76b3d055f3137e37a9c1ce82d0b95}{sleep} (int duration)
+\end{DoxyCompactItemize}
 
 
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{a00110_a73f827ead78113d46a0138e62e141ec8_a73f827ead78113d46a0138e62e141ec8}\label{a00110_a73f827ead78113d46a0138e62e141ec8_a73f827ead78113d46a0138e62e141ec8}} 
-\index{basfmts.\+h@{basfmts.\+h}!P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC@{P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC}}
-\index{P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC@{P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC}!basfmts.\+h@{basfmts.\+h}}
-\subsubsection{\texorpdfstring{P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC}{PSF\_FONT\_MAGIC}}
-{\footnotesize\ttfamily \#define P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC~0x864ab572}
-
-
-
-P\+SF Magic. 
+\subsection{Function Documentation}
+\mbox{\Hypertarget{a00110_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}\label{a00110_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}} 
+\index{system.\+c@{system.\+c}!memcpy@{memcpy}}
+\index{memcpy@{memcpy}!system.\+c@{system.\+c}}
+\subsubsection{\texorpdfstring{memcpy()}{memcpy()}}
+{\footnotesize\ttfamily void$\ast$ memcpy (\begin{DoxyParamCaption}\item[{void $\ast$}]{dstptr,  }\item[{const void $\ast$}]{srcptr,  }\item[{\hyperlink{a00116_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{size }\end{DoxyParamCaption})}
 
 
 
-Definition at line 8 of file basfmts.\+h.
+Memcpy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dstptr} & Destination pointer \\
+\hline
+{\em srcptr} & Source pointer \\
+\hline
+{\em size} & Size \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file system.\+c.
+
+
+\begin{DoxyCode}
+19                                                             \{
+20     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* dst = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*) dstptr;
+21     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* src = (\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*) srcptr;
+22     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < size; i++)
+23         dst[i] = src[i];
+24     \textcolor{keywordflow}{return} dstptr;
+25 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}\label{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}} 
+\index{system.\+c@{system.\+c}!memset@{memset}}
+\index{memset@{memset}!system.\+c@{system.\+c}}
+\subsubsection{\texorpdfstring{memset()}{memset()}}
+{\footnotesize\ttfamily void$\ast$ memset (\begin{DoxyParamCaption}\item[{void $\ast$}]{dest,  }\item[{int}]{val,  }\item[{\hyperlink{a00116_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{len }\end{DoxyParamCaption})}
 
 
 
-\subsection{Typedef Documentation}
-\mbox{\Hypertarget{a00110_a6d3104625aeeda181b07e04f21e34e93_a6d3104625aeeda181b07e04f21e34e93}\label{a00110_a6d3104625aeeda181b07e04f21e34e93_a6d3104625aeeda181b07e04f21e34e93}} 
-\index{basfmts.\+h@{basfmts.\+h}!psf\+\_\+t@{psf\+\_\+t}}
-\index{psf\+\_\+t@{psf\+\_\+t}!basfmts.\+h@{basfmts.\+h}}
-\subsubsection{\texorpdfstring{psf\+\_\+t}{psf\_t}}
-{\footnotesize\ttfamily typedef struct \hyperlink{a00175}{psf}  \hyperlink{a00110_a6d3104625aeeda181b07e04f21e34e93_a6d3104625aeeda181b07e04f21e34e93}{psf\+\_\+t}}
+Memset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & The destination \\
+\hline
+{\em val} & The value to set \\
+\hline
+{\em len} & The length of bytes to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file system.\+c.
+
+
+\begin{DoxyCode}
+13 \{
+14   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *ptr = dest;
+15   \textcolor{keywordflow}{while} (len-- > 0)
+16     *ptr++ = val;
+17   \textcolor{keywordflow}{return} dest;
+18 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00110_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}\label{a00110_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}} 
+\index{system.\+c@{system.\+c}!peekb@{peekb}}
+\index{peekb@{peekb}!system.\+c@{system.\+c}}
+\subsubsection{\texorpdfstring{peekb()}{peekb()}}
+{\footnotesize\ttfamily \hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} peekb (\begin{DoxyParamCaption}\item[{\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} $\ast$}]{addr,  }\item[{\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{offset }\end{DoxyParamCaption})}
 
 
 
-PC Screen Font struct. 
+Peek Byte. 
 
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The address of the byte \\
+\hline
+{\em offset} & The offset from the address \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 8 of file system.\+c.
+
+
+\begin{DoxyCode}
+8                                               \{
+9     addr+=offset;
+10     \textcolor{keywordflow}{return} *addr;
+11 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00110_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}\label{a00110_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}} 
+\index{system.\+c@{system.\+c}!pokeb@{pokeb}}
+\index{pokeb@{pokeb}!system.\+c@{system.\+c}}
+\subsubsection{\texorpdfstring{pokeb()}{pokeb()}}
+{\footnotesize\ttfamily void pokeb (\begin{DoxyParamCaption}\item[{\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$}]{addr,  }\item[{\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{offset,  }\item[{\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{val }\end{DoxyParamCaption})}
+
+
+
+Poke Byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The address of the byte \\
+\hline
+{\em offset} & The offset from the address \\
+\hline
+{\em val} & The value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 4 of file system.\+c.
+
+
+\begin{DoxyCode}
+4                                                          \{
+5     addr+=offset;
+6     *addr=val;
+7 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00110_afcc76b3d055f3137e37a9c1ce82d0b95_afcc76b3d055f3137e37a9c1ce82d0b95}\label{a00110_afcc76b3d055f3137e37a9c1ce82d0b95_afcc76b3d055f3137e37a9c1ce82d0b95}} 
+\index{system.\+c@{system.\+c}!sleep@{sleep}}
+\index{sleep@{sleep}!system.\+c@{system.\+c}}
+\subsubsection{\texorpdfstring{sleep()}{sleep()}}
+{\footnotesize\ttfamily void sleep (\begin{DoxyParamCaption}\item[{int}]{duration }\end{DoxyParamCaption})}
+
+
+
+Definition at line 27 of file system.\+c.
+
+
+\begin{DoxyCode}
+27                          \{
+28     \textcolor{keywordtype}{int} time = duration;
+29     \textcolor{keywordflow}{do} \{
+30       time--;
+31       \_\_asm\_\_(\textcolor{stringliteral}{"nop"});
+32     \}\textcolor{keywordflow}{while}(time = 0);
+33 \}
+\end{DoxyCode}

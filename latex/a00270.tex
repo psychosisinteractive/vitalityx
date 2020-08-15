@@ -1,0 +1,49 @@
+V\+Lib is the current Vitality driver system. You manipulate it using Interrupt 3\+Fh (refer to VitalityX Interrupt 3\+Fh (63), or \hyperlink{a00008}{S\+O\+F\+T\+I\+N\+T.\+md})
+
+VitalityX takes care of initalizing your V\+Lib entry for you via Int 3fh\+:Eax=03h, which requires the following\+:
+
+
+\begin{DoxyItemize}
+\item E\+DI -\/ Pointer to the Function
+\item E\+DX -\/ Mode
+\end{DoxyItemize}
+
+and it will set
+
+
+\begin{DoxyItemize}
+\item E\+BX -\/ Entry ID
+\end{DoxyItemize}
+
+Entry ID\textquotesingle{}s are how you call the driver functions. In order to call a function you must use Int 3fh\+:Eax=05h, which requires the following\+:
+
+
+\begin{DoxyItemize}
+\item E\+BX -\/ Entry ID
+\end{DoxyItemize}
+
+You\textquotesingle{}d notice that Int 3fh\+:Eax=03h outputs to E\+BX, and 3fh\+:Eax=05h takes in E\+BX and that is intentional. If you want to test your V\+Lib before running it then it would be as simple as 
+\begin{DoxyCode}
+; create vlib here
+mov eax,03h
+int 3fh ; moves the entry id to ebx
+mov eax,05h
+int 3fh ; calls the entry id, which should already have been set by the previous int 3fh
+\end{DoxyCode}
+
+
+In order to implement a V\+Lib function, a struct is passed defining the registers where the V\+Lib started. The struct is as defined below\+:
+
+
+\begin{DoxyCode}
+typedef struct \{
+    uint32\_t eax, ebx, ecx, edx, esi, edi, esp, ebp, eip, eflags, cr3;
+\} Registers;
+\end{DoxyCode}
+
+
+Thus, youd define a V\+Lib function in C as follows\+: 
+\begin{DoxyCode}
+void vlib\_function(Registers reg);
+\end{DoxyCode}
+ 

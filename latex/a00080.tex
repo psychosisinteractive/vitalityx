@@ -1,131 +1,86 @@
-\hypertarget{a00080}{}\section{libc/isr.c File Reference}
-\label{a00080}\index{libc/isr.\+c@{libc/isr.\+c}}
-{\ttfamily \#include \char`\"{}isr.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}system.\+h\char`\"{}}\newline
+\hypertarget{a00080}{}\section{libc/gdt.c File Reference}
+\label{a00080}\index{libc/gdt.\+c@{libc/gdt.\+c}}
+{\ttfamily \#include \char`\"{}gdt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vitality/inline.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}page.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}ext/debug.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../drivers/keyboard.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../drivers/pic.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}ext/task.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}vitality/tty.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}vitality/vlib.\+h\char`\"{}}\newline
-Include dependency graph for isr.\+c\+:
+Include dependency graph for gdt.\+c\+:
 % FIG 0
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00080_a700e3ca056bf69296370f504f2cb6cc8_a700e3ca056bf69296370f504f2cb6cc8}{isr\+\_\+handler} (\hyperlink{a00083_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t} regs)
-\item 
-void \hyperlink{a00080_abd1fa375737cd5ecd84c082738e3b195_abd1fa375737cd5ecd84c082738e3b195}{sysisr\+\_\+handler} (\hyperlink{a00083_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t} regs)
-\end{DoxyCompactItemize}
+void \hyperlink{a00080_a86bb50044169930202cc403376ef40c3_a86bb50044169930202cc403376ef40c3}{init\+\_\+gdt} ()
+\begin{DoxyCompactList}\small\item\em Loads the G\+DT (Global Descriptor Table) \end{DoxyCompactList}\item 
+void \hyperlink{a00080_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\+\_\+set\+\_\+gate} (\hyperlink{a00116_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\+\_\+t} num, \hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00089_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base}, \hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00089_ab28e82ae69032cb4ad3ec3a0be3d7129_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}, \hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00083_a8b0d6200bc639dd37ff68847a0adde5f_a8b0d6200bc639dd37ff68847a0adde5f}{access}, \hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} gran)
+\begin{DoxyCompactList}\small\item\em Set the value of one G\+DT entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00080_a700e3ca056bf69296370f504f2cb6cc8_a700e3ca056bf69296370f504f2cb6cc8}\label{a00080_a700e3ca056bf69296370f504f2cb6cc8_a700e3ca056bf69296370f504f2cb6cc8}} 
-\index{isr.\+c@{isr.\+c}!isr\+\_\+handler@{isr\+\_\+handler}}
-\index{isr\+\_\+handler@{isr\+\_\+handler}!isr.\+c@{isr.\+c}}
-\subsubsection{\texorpdfstring{isr\+\_\+handler()}{isr\_handler()}}
-{\footnotesize\ttfamily void isr\+\_\+handler (\begin{DoxyParamCaption}\item[{\hyperlink{a00083_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t}}]{regs }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00080_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}\label{a00080_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}} 
+\index{gdt.\+c@{gdt.\+c}!gdt\+\_\+set\+\_\+gate@{gdt\+\_\+set\+\_\+gate}}
+\index{gdt\+\_\+set\+\_\+gate@{gdt\+\_\+set\+\_\+gate}!gdt.\+c@{gdt.\+c}}
+\subsubsection{\texorpdfstring{gdt\+\_\+set\+\_\+gate()}{gdt\_set\_gate()}}
+{\footnotesize\ttfamily void gdt\+\_\+set\+\_\+gate (\begin{DoxyParamCaption}\item[{\hyperlink{a00116_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\+\_\+t}}]{num,  }\item[{\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{base,  }\item[{\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{limit,  }\item[{\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{access,  }\item[{\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{gran }\end{DoxyParamCaption})}
 
 
 
-Definition at line 11 of file isr.\+c.
+Set the value of one G\+DT entry. 
+
+
+
+Definition at line 38 of file gdt.\+c.
+
+
+\begin{DoxyCode}
+39 \{
+40    \hyperlink{a00083_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00190_adba88eafea5f07167d181e4090cbcf49_adba88eafea5f07167d181e4090cbcf49}{base\_low}    = (\hyperlink{a00083_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} & 0xFFFF);
+41    \hyperlink{a00083_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00190_a986d46963d3ccdbec85b3749c1e09abf_a986d46963d3ccdbec85b3749c1e09abf}{base\_middle} = (\hyperlink{a00083_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} >> 16) & 0xFF;
+42    \hyperlink{a00083_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00190_aa08eedea9c0f707b9fa052b7567879c7_aa08eedea9c0f707b9fa052b7567879c7}{base\_high}   = (\hyperlink{a00083_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} >> 24) & 0xFF;
+43 
+44    \hyperlink{a00083_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00190_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2}{limit\_low}   = (\hyperlink{a00083_ab28e82ae69032cb4ad3ec3a0be3d7129_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit} & 0xFFFF);
+45    \hyperlink{a00083_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00190_a7fb7b3704e10434dbe64564416cf1a25_a7fb7b3704e10434dbe64564416cf1a25}{granularity} = (\hyperlink{a00083_ab28e82ae69032cb4ad3ec3a0be3d7129_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit} >> 16) & 0x0F;
+46 
+47    \hyperlink{a00083_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00190_a7fb7b3704e10434dbe64564416cf1a25_a7fb7b3704e10434dbe64564416cf1a25}{granularity} |= gran & 0xF0;
+48    \hyperlink{a00083_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00190_ac07173385496c5b952e58ddc20f1cc99_ac07173385496c5b952e58ddc20f1cc99}{access}      = \hyperlink{a00083_a8b0d6200bc639dd37ff68847a0adde5f_a8b0d6200bc639dd37ff68847a0adde5f}{access};
+49 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00080_a86bb50044169930202cc403376ef40c3_a86bb50044169930202cc403376ef40c3}\label{a00080_a86bb50044169930202cc403376ef40c3_a86bb50044169930202cc403376ef40c3}} 
+\index{gdt.\+c@{gdt.\+c}!init\+\_\+gdt@{init\+\_\+gdt}}
+\index{init\+\_\+gdt@{init\+\_\+gdt}!gdt.\+c@{gdt.\+c}}
+\subsubsection{\texorpdfstring{init\+\_\+gdt()}{init\_gdt()}}
+{\footnotesize\ttfamily void init\+\_\+gdt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Loads the G\+DT (Global Descriptor Table) 
+
+
+
+Definition at line 11 of file gdt.\+c.
 
 
 \begin{DoxyCode}
 12 \{
-13     \textcolor{keywordflow}{switch}(regs.\hyperlink{a00171_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no}) \{
-14         \textcolor{keywordflow}{case} 0:
-15             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nDivide By Zero Failure\(\backslash\)n\(\backslash\)n"});
-16             \hyperlink{a00029_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00171_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
-17             \textcolor{keywordflow}{break};
-18         \textcolor{keywordflow}{case} 1:
-19             \hyperlink{a00029_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00171_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
-20             \textcolor{keywordflow}{break};
-21         \textcolor{keywordflow}{case} 13:
-22             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nGENERAL PROTECTION FAULT!!!\(\backslash\)n\(\backslash\)n"});
-23             \textcolor{keywordtype}{char}* errcode = \textcolor{stringliteral}{"  "};
-24             \hyperlink{a00092_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00171_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code},errcode);
-25             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"Errorcode: "});
-26             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(errcode);
-27             \hyperlink{a00113_a3f7e7be8f62f43b2b62df54cac1590be_a3f7e7be8f62f43b2b62df54cac1590be}{bochs\_bkpt}();
-28             \textcolor{keywordflow}{for}(;;) \{
-29 
-30             \}
-31             \textcolor{keywordflow}{break};
-32         \textcolor{keywordflow}{case} 63:
-33             \hyperlink{a00029_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00171_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
-34             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nVitalityX SysISR Hit\(\backslash\)n\(\backslash\)n"});
-35             \hyperlink{a00080_abd1fa375737cd5ecd84c082738e3b195_abd1fa375737cd5ecd84c082738e3b195}{sysisr\_handler}(regs);
-36             \textcolor{keywordflow}{break};
-37         \textcolor{keywordflow}{default}:
-38             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nVitalityXInterrupt\(\backslash\)n\(\backslash\)n"});
-39             \textcolor{keywordtype}{char}* inttype = \textcolor{stringliteral}{"  "};
-40             \hyperlink{a00092_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00171_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no},inttype);
-41             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"Interrupt: "});
-42             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(inttype);
-43             \textcolor{keywordflow}{for}(;;) \{
-44 
-45             \}
-46             \textcolor{keywordflow}{break};
-47     \}
-48 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00080_abd1fa375737cd5ecd84c082738e3b195_abd1fa375737cd5ecd84c082738e3b195}\label{a00080_abd1fa375737cd5ecd84c082738e3b195_abd1fa375737cd5ecd84c082738e3b195}} 
-\index{isr.\+c@{isr.\+c}!sysisr\+\_\+handler@{sysisr\+\_\+handler}}
-\index{sysisr\+\_\+handler@{sysisr\+\_\+handler}!isr.\+c@{isr.\+c}}
-\subsubsection{\texorpdfstring{sysisr\+\_\+handler()}{sysisr\_handler()}}
-{\footnotesize\ttfamily void sysisr\+\_\+handler (\begin{DoxyParamCaption}\item[{\hyperlink{a00083_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t}}]{regs }\end{DoxyParamCaption})}
-
-
-
-Definition at line 50 of file isr.\+c.
-
-
-\begin{DoxyCode}
-50                                       \{
-51     \hyperlink{a00151}{Task}* ctask = \hyperlink{a00056_a5913e9b2190b2b4118ee020721a320e2_a5913e9b2190b2b4118ee020721a320e2}{getctask}();
-52     \textcolor{comment}{// command switcher}
-53     \textcolor{keywordflow}{switch}(regs.\hyperlink{a00171_a1e01e806248cd98e55e0b053db6a6a51_a1e01e806248cd98e55e0b053db6a6a51}{eax}) \{
-54         \textcolor{keywordflow}{case} 0x01: \textcolor{comment}{// debug out}
-55             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)nTask "});
-56             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(ctask->\hyperlink{a00151_a9cf84d1792cda878178fd3691e472b97_a9cf84d1792cda878178fd3691e472b97}{name});
-57             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{":"});
-58             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}((\textcolor{keywordtype}{char} *)regs.\hyperlink{a00171_aa8989b2fef42dca1d656f724eb324f51_aa8989b2fef42dca1d656f724eb324f51}{ebx});
-59             \textcolor{keywordflow}{break};
-60         \textcolor{keywordflow}{case} 0x02: \textcolor{comment}{// console out}
-61             \hyperlink{a00122_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}((\textcolor{keywordtype}{char}*)regs.\hyperlink{a00171_aa8989b2fef42dca1d656f724eb324f51_aa8989b2fef42dca1d656f724eb324f51}{ebx});
-62             \textcolor{keywordflow}{break};
-63         \textcolor{keywordflow}{case} 0x03:
-64             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)nTask "});
-65             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(ctask->\hyperlink{a00151_a9cf84d1792cda878178fd3691e472b97_a9cf84d1792cda878178fd3691e472b97}{name});
-66             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{" is adding itself to Vlib.\(\backslash\)r\(\backslash\)n"});
-67             \hyperlink{a00104_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} \hyperlink{a00071_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} = \hyperlink{a00137_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00195_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
-68             \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = 0;
-69             \textcolor{keywordflow}{while}(((\hyperlink{a00191}{vlib\_entry\_t}*)base)->instantiated) \{
-70                 \textcolor{keywordtype}{id}++;
-71                 base += \textcolor{keyword}{sizeof}(\hyperlink{a00137_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\_entry\_t});
-72             \}
-73             \hyperlink{a00191}{vlib\_entry\_t} entry = *(\hyperlink{a00191}{vlib\_entry\_t}*)base;
-74             entry.\hyperlink{a00191_ab67e2f60e6622a2d0b7c8a3ac6fd7c71_ab67e2f60e6622a2d0b7c8a3ac6fd7c71}{instantiated} = \textcolor{keyword}{true};
-75             entry.\hyperlink{a00191_abf69fb4a112a5bf0ccf2b441c1038f0d_abf69fb4a112a5bf0ccf2b441c1038f0d}{functionptr} = regs.\hyperlink{a00171_aeedcb447fe6640d43d09c27b7cb8db3b_aeedcb447fe6640d43d09c27b7cb8db3b}{edi};
-76             entry.\hyperlink{a00191_a46df5a47ac05a46ce871e5132153949c_a46df5a47ac05a46ce871e5132153949c}{mode} = regs.\hyperlink{a00171_af3b40afa73ecdaf2c9279b9ed482d26b_af3b40afa73ecdaf2c9279b9ed482d26b}{edx};
-77             regs.\hyperlink{a00171_aa8989b2fef42dca1d656f724eb324f51_aa8989b2fef42dca1d656f724eb324f51}{ebx} = id;
-78             \textcolor{keywordflow}{break};
-79         \textcolor{keywordflow}{case} 0x04:
-80             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)nTask "});
-81             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(ctask->\hyperlink{a00151_a9cf84d1792cda878178fd3691e472b97_a9cf84d1792cda878178fd3691e472b97}{name});
-82             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{" is yielding.\(\backslash\)r\(\backslash\)n"});
-83             \hyperlink{a00056_a58c8b2ad0ea491a6642e5e1cbd358c89_a58c8b2ad0ea491a6642e5e1cbd358c89}{yield}();
-84             \textcolor{keywordflow}{break};
-85         \textcolor{keywordflow}{case} 0x05:
-86             \hyperlink{a00134_a6889af26c1cca94090023d5975955cbf_a6889af26c1cca94090023d5975955cbf}{runvlib}(regs.\hyperlink{a00171_aa8989b2fef42dca1d656f724eb324f51_aa8989b2fef42dca1d656f724eb324f51}{ebx});
-87             \textcolor{keywordflow}{break};
-88         \textcolor{keywordflow}{default}: \textcolor{comment}{// dont know what to do}
-89             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)nTask "});
-90             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(ctask->\hyperlink{a00151_a9cf84d1792cda878178fd3691e472b97_a9cf84d1792cda878178fd3691e472b97}{name});
-91             \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{" gave a bad sysisr.\(\backslash\)r\(\backslash\)n"});
-92             \textcolor{keywordflow}{break};
-93     \}
-94 \}
+13     \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nSetting up GDT\(\backslash\)n"});
+14     \hyperlink{a00083_ab0888c07dfb9352ef76d05e63464cf0b_ab0888c07dfb9352ef76d05e63464cf0b}{gdt\_ptr}.\hyperlink{a00186_abf557ff0ca1cf3e130e8ab0086ab4ce6_abf557ff0ca1cf3e130e8ab0086ab4ce6}{limit} = (\textcolor{keyword}{sizeof}(\hyperlink{a00083_ab0b5c60e06a63669c783705278ff641e_ab0b5c60e06a63669c783705278ff641e}{gdt\_entry\_t}) * \hyperlink{a00083_abe29d44fbb5292a15af80cbb8e8a3a7d_abe29d44fbb5292a15af80cbb8e8a3a7d}{ENTRY\_NUM}) - 1;
+15     \hyperlink{a00083_ab0888c07dfb9352ef76d05e63464cf0b_ab0888c07dfb9352ef76d05e63464cf0b}{gdt\_ptr}.\hyperlink{a00186_a9b351f31bc261f3c2c3a87252350fb9c_a9b351f31bc261f3c2c3a87252350fb9c}{base}  = (\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00083_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries};
+16 
+17     \hyperlink{a00080_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(0, 0, 0, 0, 0);                \textcolor{comment}{// Null segment}
+18     \textcolor{comment}{// kernel}
+19     \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nSetting up Kernel gates\(\backslash\)n"});
+20     \hyperlink{a00080_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(1, 0, 0xFFFFFFFF, 0x9A, 0xCF); \textcolor{comment}{// Code segment}
+21     \hyperlink{a00080_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(2, 0, 0xFFFFFFFF, 0x92, 0xCF); \textcolor{comment}{// Data segment}
+22     \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nDone\(\backslash\)n"});
+23     \textcolor{comment}{// user mode}
+24     \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nSetting up User gates\(\backslash\)n"});
+25     \hyperlink{a00080_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(3, 0x00500000, 0x009FFFFF, 0xFA, 0xCF); \textcolor{comment}{// User mode code segment}
+26     \hyperlink{a00080_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(4, 0x00500000, 0x009FFFFF, 0xF2, 0xCF); \textcolor{comment}{// User mode data segment}
+27     \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nDone, flushing\(\backslash\)n"});
+28     \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nSetting up Misc gates\(\backslash\)n"});
+29     \hyperlink{a00080_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(4, 0x000A0000, 0x000BFFFF, 0xF2, 0xCF); \textcolor{comment}{// User mode data segment}
+30 
+31 
+32     \hyperlink{a00083_a62397fecbde23244b570ae632fe926fa_a62397fecbde23244b570ae632fe926fa}{gdt\_flush}((\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00083_ab0888c07dfb9352ef76d05e63464cf0b_ab0888c07dfb9352ef76d05e63464cf0b}{gdt\_ptr});
+33 \}
 \end{DoxyCode}

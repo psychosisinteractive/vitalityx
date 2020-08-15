@@ -15,7 +15,7 @@ Entry ID's are how you call the driver functions. In order to call a function yo
 
 - EBX - Entry ID
 
-You'd notice that Int 3fh:Eax=03h outputs to Int 3fh:Eax=05h, and that is intentional. If you want to test your VLib before running it then it would be as simple as
+You'd notice that Int 3fh:Eax=03h outputs to EBX, and 3fh:Eax=05h takes in EBX and that is intentional. If you want to test your VLib before running it then it would be as simple as
 ```
 ; create vlib here
 mov eax,03h

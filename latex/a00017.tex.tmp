@@ -8,7 +8,7 @@ Include dependency graph for fdrive.\+c\+:
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00017_a782ff57a4ec7786197ec3a12d4f52332_a782ff57a4ec7786197ec3a12d4f52332}{lba\+\_\+2\+\_\+chs} (\hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} lba, \hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$cyl, \hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$head, \hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$sector)
+void \hyperlink{a00017_a782ff57a4ec7786197ec3a12d4f52332_a782ff57a4ec7786197ec3a12d4f52332}{lba\+\_\+2\+\_\+chs} (\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} lba, \hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$cyl, \hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$head, \hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$sector)
 \item 
 void \hyperlink{a00017_acbe17688655526c3fa02f324ae8336ca_acbe17688655526c3fa02f324ae8336ca}{floppyirq} ()
 \item 
@@ -39,7 +39,7 @@ Definition at line 12 of file fdrive.\+c.
 \index{fdrive.\+c@{fdrive.\+c}!lba\+\_\+2\+\_\+chs@{lba\+\_\+2\+\_\+chs}}
 \index{lba\+\_\+2\+\_\+chs@{lba\+\_\+2\+\_\+chs}!fdrive.\+c@{fdrive.\+c}}
 \subsubsection{\texorpdfstring{lba\+\_\+2\+\_\+chs()}{lba\_2\_chs()}}
-{\footnotesize\ttfamily void lba\+\_\+2\+\_\+chs (\begin{DoxyParamCaption}\item[{\hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{lba,  }\item[{\hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$}]{cyl,  }\item[{\hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$}]{head,  }\item[{\hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$}]{sector }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void lba\+\_\+2\+\_\+chs (\begin{DoxyParamCaption}\item[{\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{lba,  }\item[{\hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$}]{cyl,  }\item[{\hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$}]{head,  }\item[{\hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} $\ast$}]{sector }\end{DoxyParamCaption})}
 
 
 
@@ -70,7 +70,7 @@ Definition at line 16 of file fdrive.\+c.
 16                    \{
 17     \hyperlink{a00020_a2cfa75d25a7da8cb54551c7840e80d40_a2cfa75d25a7da8cb54551c7840e80d40}{floppyirq\_received} = \textcolor{keyword}{false};
 18 
-19     \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00020_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a9767b7f5f447d5346411d03077fea82a}{DIGITAL\_OUTPUT\_REGISTER},\hyperlink{a00020_a6ef9f5776b2d959e47c6c42111900071_a6ef9f5776b2d959e47c6c42111900071}{DOR\_RESET});
+19     \hyperlink{a00131_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00020_a203a664e6f1b58c27efb4db8ff9db144_a203a664e6f1b58c27efb4db8ff9db144a9767b7f5f447d5346411d03077fea82a}{DIGITAL\_OUTPUT\_REGISTER},\hyperlink{a00020_a6ef9f5776b2d959e47c6c42111900071_a6ef9f5776b2d959e47c6c42111900071}{DOR\_RESET});
 20 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00017_a6cd18cde0651886116331196acc91c9a_a6cd18cde0651886116331196acc91c9a}\label{a00017_a6cd18cde0651886116331196acc91c9a_a6cd18cde0651886116331196acc91c9a}} 

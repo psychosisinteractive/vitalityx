@@ -1,86 +1,156 @@
-\hypertarget{a00092}{}\section{libc/string.c File Reference}
-\label{a00092}\index{libc/string.\+c@{libc/string.\+c}}
+\hypertarget{a00092}{}\section{libc/isr.c File Reference}
+\label{a00092}\index{libc/isr.\+c@{libc/isr.\+c}}
+{\ttfamily \#include \char`\"{}isr.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ext/debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../drivers/keyboard.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../drivers/pic.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ext/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vitality/tty.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
-Include dependency graph for string.\+c\+:
+{\ttfamily \#include \char`\"{}vitality/vlib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}page.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../drivers/ide.\+h\char`\"{}}\newline
+Include dependency graph for isr.\+c\+:
 % FIG 0
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00104_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} \hyperlink{a00092_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}{strlen} (const char $\ast$str)
+void \hyperlink{a00092_a700e3ca056bf69296370f504f2cb6cc8_a700e3ca056bf69296370f504f2cb6cc8}{isr\+\_\+handler} (\hyperlink{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t} regs)
 \item 
-void \hyperlink{a00092_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}{reverse} (char s\mbox{[}$\,$\mbox{]})
-\item 
-void \hyperlink{a00092_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa} (int n, char s\mbox{[}$\,$\mbox{]})
+void \hyperlink{a00092_abd1fa375737cd5ecd84c082738e3b195_abd1fa375737cd5ecd84c082738e3b195}{sysisr\+\_\+handler} (\hyperlink{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t} regs)
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00092_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}\label{a00092_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}} 
-\index{string.\+c@{string.\+c}!itoa@{itoa}}
-\index{itoa@{itoa}!string.\+c@{string.\+c}}
-\subsubsection{\texorpdfstring{itoa()}{itoa()}}
-{\footnotesize\ttfamily void itoa (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{char}]{s\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00092_a700e3ca056bf69296370f504f2cb6cc8_a700e3ca056bf69296370f504f2cb6cc8}\label{a00092_a700e3ca056bf69296370f504f2cb6cc8_a700e3ca056bf69296370f504f2cb6cc8}} 
+\index{isr.\+c@{isr.\+c}!isr\+\_\+handler@{isr\+\_\+handler}}
+\index{isr\+\_\+handler@{isr\+\_\+handler}!isr.\+c@{isr.\+c}}
+\subsubsection{\texorpdfstring{isr\+\_\+handler()}{isr\_handler()}}
+{\footnotesize\ttfamily void isr\+\_\+handler (\begin{DoxyParamCaption}\item[{\hyperlink{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t}}]{regs }\end{DoxyParamCaption})}
 
 
 
-Definition at line 23 of file string.\+c.
+Definition at line 13 of file isr.\+c.
 
 
 \begin{DoxyCode}
-24 \{
-25     \textcolor{keywordtype}{int} i, sign;
-26 
-27     \textcolor{keywordflow}{if} ((sign = n) < 0)  \textcolor{comment}{/* record sign */}
-28         n = -n;          \textcolor{comment}{/* make n positive */}
-29     i = 0;
-30     \textcolor{keywordflow}{do} \{       \textcolor{comment}{/* generate digits in reverse order */}
-31         s[i++] = n % 10 + \textcolor{charliteral}{'0'};   \textcolor{comment}{/* get next digit */}
-32     \} \textcolor{keywordflow}{while} ((n /= 10) > 0);     \textcolor{comment}{/* delete it */}
-33     \textcolor{keywordflow}{if} (sign < 0)
-34         s[i++] = \textcolor{charliteral}{'-'};
-35     s[i] = \textcolor{charliteral}{'\(\backslash\)0'};
-36     \hyperlink{a00092_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}{reverse}(s);
-37 \}
+14 \{
+15     \hyperlink{a00182}{Task}* ctask = \hyperlink{a00068_a5913e9b2190b2b4118ee020721a320e2_a5913e9b2190b2b4118ee020721a320e2}{getctask}();
+16     \textcolor{keywordflow}{switch}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no}) \{
+17         \textcolor{keywordflow}{case} 0:
+18             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nDivide By Zero Failure\(\backslash\)n\(\backslash\)n"});
+19             
+20             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
+21             \textcolor{keywordflow}{break};
+22         \textcolor{keywordflow}{case} 32:
+23             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
+24             \hyperlink{a00029_a1db933be72a0547c4070ba55e6697ba2_a1db933be72a0547c4070ba55e6697ba2}{keyboard\_handler\_main}();
+25             \textcolor{keywordflow}{break};
+26         \textcolor{keywordflow}{case} 13:
+27             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nGENERAL PROTECTION FAULT!!!\(\backslash\)n\(\backslash\)n"});
+28             \hyperlink{a00140_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}{clearscreen}();
+29             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"GENERAL PROTECTION FAULT!!!\(\backslash\)n\(\backslash\)n"});
+30             \textcolor{keywordtype}{char}* errcode = \textcolor{stringliteral}{"  "};
+31             \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code},errcode);
+32             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"Errorcode: "});
+33             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(errcode);
+34             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Error Code:"});
+35             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(errcode);
+36             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nPlease restart your system, and report the error code to a
+       VitalityX developer.\(\backslash\)n"});
+37             \hyperlink{a00131_a3f7e7be8f62f43b2b62df54cac1590be_a3f7e7be8f62f43b2b62df54cac1590be}{bochs\_bkpt}();
+38             \textcolor{keywordflow}{for}(;;) \{
+39 
+40             \}
+41             \textcolor{keywordflow}{break};
+42         \textcolor{keywordflow}{case} 14:
+43             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
+44             \hyperlink{a00023_ad7ea572af581cc0623a2fb74a579ca83_ad7ea572af581cc0623a2fb74a579ca83}{ide\_irq}();
+45             \hyperlink{a00098_a6293af8e675059a566216be86660854b_a6293af8e675059a566216be86660854b}{page\_fault}(regs);
+46             \textcolor{keywordflow}{for}(;;) \{
+47 
+48             \}
+49             \textcolor{keywordflow}{break};
+50         \textcolor{keywordflow}{case} 15:
+51             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
+52             \hyperlink{a00023_ad7ea572af581cc0623a2fb74a579ca83_ad7ea572af581cc0623a2fb74a579ca83}{ide\_irq}();
+53             \textcolor{keywordflow}{break};
+54         \textcolor{keywordflow}{case} 63:
+55             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
+56             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nVitalityX SysISR Hit\(\backslash\)n\(\backslash\)n"});
+57             \hyperlink{a00092_abd1fa375737cd5ecd84c082738e3b195_abd1fa375737cd5ecd84c082738e3b195}{sysisr\_handler}(regs);
+58             \textcolor{keywordflow}{break};
+59         \textcolor{keywordflow}{default}:
+60             \hyperlink{a00140_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}{clearscreen}();
+61             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"UNKNOWN SYSTEM INTERRUPT!!!\(\backslash\)n\(\backslash\)n"});
+62             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nVitalityXInterrupt\(\backslash\)n\(\backslash\)n"});
+63             \textcolor{keywordtype}{char}* inttype = \textcolor{stringliteral}{"  "};
+64             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"No. "});
+65             \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no},inttype);
+66             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"Interrupt: "});
+67             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(inttype);
+68             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(inttype);
+69             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+70             \textcolor{keywordflow}{break};
+71     \}
+72 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00092_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}\label{a00092_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}} 
-\index{string.\+c@{string.\+c}!reverse@{reverse}}
-\index{reverse@{reverse}!string.\+c@{string.\+c}}
-\subsubsection{\texorpdfstring{reverse()}{reverse()}}
-{\footnotesize\ttfamily void reverse (\begin{DoxyParamCaption}\item[{char}]{s\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00092_abd1fa375737cd5ecd84c082738e3b195_abd1fa375737cd5ecd84c082738e3b195}\label{a00092_abd1fa375737cd5ecd84c082738e3b195_abd1fa375737cd5ecd84c082738e3b195}} 
+\index{isr.\+c@{isr.\+c}!sysisr\+\_\+handler@{sysisr\+\_\+handler}}
+\index{sysisr\+\_\+handler@{sysisr\+\_\+handler}!isr.\+c@{isr.\+c}}
+\subsubsection{\texorpdfstring{sysisr\+\_\+handler()}{sysisr\_handler()}}
+{\footnotesize\ttfamily void sysisr\+\_\+handler (\begin{DoxyParamCaption}\item[{\hyperlink{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t}}]{regs }\end{DoxyParamCaption})}
 
 
 
-Definition at line 11 of file string.\+c.
-
-
-\begin{DoxyCode}
-12 \{
-13     \textcolor{keywordtype}{int} i, j;
-14     \textcolor{keywordtype}{char} c;
-15 
-16     \textcolor{keywordflow}{for} (i = 0, j = \hyperlink{a00092_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}{strlen}(s)-1; i<j; i++, j--) \{
-17         c = s[i];
-18         s[i] = s[j];
-19         s[j] = c;
-20     \}
-21 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00092_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}\label{a00092_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}} 
-\index{string.\+c@{string.\+c}!strlen@{strlen}}
-\index{strlen@{strlen}!string.\+c@{string.\+c}}
-\subsubsection{\texorpdfstring{strlen()}{strlen()}}
-{\footnotesize\ttfamily \hyperlink{a00104_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} strlen (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
-
-
-
-Definition at line 4 of file string.\+c.
+Definition at line 74 of file isr.\+c.
 
 
 \begin{DoxyCode}
-5 \{
-6     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *s;
-7     \textcolor{keywordflow}{for} (s = str; *s; ++s) \{\}
-8     \textcolor{keywordflow}{return}(s - str);
-9 \}
+74                                       \{
+75     \hyperlink{a00182}{Task}* ctask = \hyperlink{a00068_a5913e9b2190b2b4118ee020721a320e2_a5913e9b2190b2b4118ee020721a320e2}{getctask}();
+76     \textcolor{comment}{// command switcher}
+77     \textcolor{keywordflow}{switch}(regs.\hyperlink{a00202_a1e01e806248cd98e55e0b053db6a6a51_a1e01e806248cd98e55e0b053db6a6a51}{eax}) \{
+78         \textcolor{keywordflow}{case} 0x01: \textcolor{comment}{// debug out}
+79             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)nTask "});
+80             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(ctask->\hyperlink{a00182_a9cf84d1792cda878178fd3691e472b97_a9cf84d1792cda878178fd3691e472b97}{name});
+81             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{":"});
+82             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}((\textcolor{keywordtype}{char} *)regs.\hyperlink{a00202_aa8989b2fef42dca1d656f724eb324f51_aa8989b2fef42dca1d656f724eb324f51}{ebx});
+83             \textcolor{keywordflow}{break};
+84         \textcolor{keywordflow}{case} 0x02: \textcolor{comment}{// console out}
+85             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}((\textcolor{keywordtype}{char}*)regs.\hyperlink{a00202_aa8989b2fef42dca1d656f724eb324f51_aa8989b2fef42dca1d656f724eb324f51}{ebx});
+86             \textcolor{keywordflow}{break};
+87         \textcolor{keywordflow}{case} 0x03:
+88             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)nTask "});
+89             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(ctask->\hyperlink{a00182_a9cf84d1792cda878178fd3691e472b97_a9cf84d1792cda878178fd3691e472b97}{name});
+90             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{" is adding itself to Vlib.\(\backslash\)r\(\backslash\)n"});
+91             \hyperlink{a00116_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} \hyperlink{a00083_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} = \hyperlink{a00158_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00254_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
+92             \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = 0;
+93             \textcolor{keywordflow}{while}(((\hyperlink{a00250}{vlib\_entry\_t}*)base)->instantiated) \{
+94                 \textcolor{keywordtype}{id}++;
+95                 base += \textcolor{keyword}{sizeof}(\hyperlink{a00158_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\_entry\_t});
+96             \}
+97             \hyperlink{a00250}{vlib\_entry\_t} entry = *(\hyperlink{a00250}{vlib\_entry\_t}*)base;
+98             entry.\hyperlink{a00250_ab67e2f60e6622a2d0b7c8a3ac6fd7c71_ab67e2f60e6622a2d0b7c8a3ac6fd7c71}{instantiated} = \textcolor{keyword}{true};
+99             entry.\hyperlink{a00250_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr} = regs.\hyperlink{a00202_aeedcb447fe6640d43d09c27b7cb8db3b_aeedcb447fe6640d43d09c27b7cb8db3b}{edi};
+100             entry.\hyperlink{a00250_a46df5a47ac05a46ce871e5132153949c_a46df5a47ac05a46ce871e5132153949c}{mode} = regs.\hyperlink{a00202_af3b40afa73ecdaf2c9279b9ed482d26b_af3b40afa73ecdaf2c9279b9ed482d26b}{edx};
+101             regs.\hyperlink{a00202_aa8989b2fef42dca1d656f724eb324f51_aa8989b2fef42dca1d656f724eb324f51}{ebx} = id;
+102             \textcolor{keywordflow}{break};
+103         \textcolor{keywordflow}{case} 0x04:
+104             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)nTask "});
+105             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(ctask->\hyperlink{a00182_a9cf84d1792cda878178fd3691e472b97_a9cf84d1792cda878178fd3691e472b97}{name});
+106             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{" is yielding.\(\backslash\)r\(\backslash\)n"});
+107             \hyperlink{a00068_a58c8b2ad0ea491a6642e5e1cbd358c89_a58c8b2ad0ea491a6642e5e1cbd358c89}{yield}();
+108             \textcolor{keywordflow}{break};
+109         \textcolor{keywordflow}{case} 0x05:
+110             \hyperlink{a00155_a6889af26c1cca94090023d5975955cbf_a6889af26c1cca94090023d5975955cbf}{runvlib}(regs.\hyperlink{a00202_aa8989b2fef42dca1d656f724eb324f51_aa8989b2fef42dca1d656f724eb324f51}{ebx});
+111             \textcolor{keywordflow}{break};
+112         \textcolor{keywordflow}{default}: \textcolor{comment}{// dont know what to do}
+113             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)nTask "});
+114             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(ctask->\hyperlink{a00182_a9cf84d1792cda878178fd3691e472b97_a9cf84d1792cda878178fd3691e472b97}{name});
+115             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{" gave a bad sysisr.\(\backslash\)r\(\backslash\)n"});
+116             \textcolor{keywordflow}{break};
+117     \}
+118 \}
 \end{DoxyCode}

@@ -1,379 +1,174 @@
-\hypertarget{a00113}{}\section{libc/vitality/inline.h File Reference}
-\label{a00113}\index{libc/vitality/inline.\+h@{libc/vitality/inline.\+h}}
-{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
-Include dependency graph for inline.\+h\+:
+\hypertarget{a00113}{}\section{libc/system.h File Reference}
+\label{a00113}\index{libc/system.\+h@{libc/system.\+h}}
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+Include dependency graph for system.\+h\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
 % FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00113_a3c47e49052cc52d10755358512c10135_a3c47e49052cc52d10755358512c10135}{set\+Bit}(word,  mask)~word $\vert$= mask
+\item 
+\#define \hyperlink{a00113_ab6ca194e33920928b4bdeff67bf0edec_ab6ca194e33920928b4bdeff67bf0edec}{clr\+Bit}(word,  mask)~word \&= $\sim$mask
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00113_aee0779a0581136320f91a72c4d6b5b90_aee0779a0581136320f91a72c4d6b5b90}{farpeekl} (\hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00077_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel}, void $\ast$off)
-\item 
-static void \hyperlink{a00113_a4e7b04b927c6dca2d20f54a5c14a01d6_a4e7b04b927c6dca2d20f54a5c14a01d6}{farpokeb} (\hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00077_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel}, void $\ast$off, \hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} v)
-\item 
-static void \hyperlink{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb} (\hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} port, \hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} val)
-\item 
-static \hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00113_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb} (\hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} port)
-\item 
-static void \hyperlink{a00113_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\+\_\+wait} (void)
-\item 
-static \hyperlink{a00104_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00113_ae7df27a6150c6a020eead928af349b21_ae7df27a6150c6a020eead928af349b21}{are\+\_\+interrupts\+\_\+enabled} ()
-\item 
-static void \hyperlink{a00113_ad80d786594a109b21e30da4bf6f56a85_ad80d786594a109b21e30da4bf6f56a85}{\+\_\+\+\_\+native\+\_\+flush\+\_\+tlb\+\_\+single} (unsigned long addr)
-\item 
-static unsigned long \hyperlink{a00113_ab1dca2d7fd57d56f7548a81ef081ba74_ab1dca2d7fd57d56f7548a81ef081ba74}{save\+\_\+irqdisable} (void)
-\item 
-static void \hyperlink{a00113_aa090eac3bad049e35e9360403f42b565_aa090eac3bad049e35e9360403f42b565}{jump} (\hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} address)
-\item 
-static void \hyperlink{a00113_a3f7e7be8f62f43b2b62df54cac1590be_a3f7e7be8f62f43b2b62df54cac1590be}{bochs\+\_\+bkpt} ()
-\item 
-static void \hyperlink{a00113_a7dd6b2cd918b8cbca3c8b0381628ca83_a7dd6b2cd918b8cbca3c8b0381628ca83}{irqrestore} (unsigned long \hyperlink{a00077_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags})
-\item 
-static void \hyperlink{a00113_a31967dec32575d3d398e6d289e888d1f_a31967dec32575d3d398e6d289e888d1f}{lidt} (void $\ast$\hyperlink{a00077_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base}, \hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} size)
-\item 
-static void \hyperlink{a00113_adacb2a50c30267ac5314bfcb92ac1d85_adacb2a50c30267ac5314bfcb92ac1d85}{cpuid} (int code, \hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$a, \hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$d)
-\item 
-static \hyperlink{a00104_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t} \hyperlink{a00113_a47b9d70be3022fd0b5687d9794ca47bc_a47b9d70be3022fd0b5687d9794ca47bc}{rdtsc} ()
-\item 
-static unsigned long \hyperlink{a00113_ac85e095222f364961e091702bb6bc2ff_ac85e095222f364961e091702bb6bc2ff}{read\+\_\+cr0} (void)
-\item 
-static void \hyperlink{a00113_a20faed26baa341152aa32288418f1457_a20faed26baa341152aa32288418f1457}{invlpg} (void $\ast$m)
-\item 
-static void \hyperlink{a00113_a368f08346121290f513a26011e0f68f8_a368f08346121290f513a26011e0f68f8}{wrmsr} (\hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} msr\+\_\+id, \hyperlink{a00104_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t} msr\+\_\+value)
-\item 
-static \hyperlink{a00104_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t} \hyperlink{a00113_a6fa28502e33e305c4335fe3032dc7799_a6fa28502e33e305c4335fe3032dc7799}{rdmsr} (\hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} msr\+\_\+id)
-\end{DoxyCompactItemize}
+void \hyperlink{a00113_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}{pokeb} (\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$addr, \hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} offset, \hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} val)
+\begin{DoxyCompactList}\small\item\em Poke Byte. \end{DoxyCompactList}\item 
+\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00113_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}{peekb} (\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} $\ast$addr, \hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} offset)
+\begin{DoxyCompactList}\small\item\em Peek Byte. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{a00113_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset} (void $\ast$dest, int val, \hyperlink{a00116_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} len)
+\begin{DoxyCompactList}\small\item\em Memset. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{a00113_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy} (void $\ast$dstptr, const void $\ast$srcptr, \hyperlink{a00116_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} size)
+\begin{DoxyCompactList}\small\item\em Memcpy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{a00113_ab6ca194e33920928b4bdeff67bf0edec_ab6ca194e33920928b4bdeff67bf0edec}\label{a00113_ab6ca194e33920928b4bdeff67bf0edec_ab6ca194e33920928b4bdeff67bf0edec}} 
+\index{system.\+h@{system.\+h}!clr\+Bit@{clr\+Bit}}
+\index{clr\+Bit@{clr\+Bit}!system.\+h@{system.\+h}}
+\subsubsection{\texorpdfstring{clr\+Bit}{clrBit}}
+{\footnotesize\ttfamily \#define clr\+Bit(\begin{DoxyParamCaption}\item[{}]{word,  }\item[{}]{mask }\end{DoxyParamCaption})~word \&= $\sim$mask}
+
+
+
+Definition at line 10 of file system.\+h.
+
+\mbox{\Hypertarget{a00113_a3c47e49052cc52d10755358512c10135_a3c47e49052cc52d10755358512c10135}\label{a00113_a3c47e49052cc52d10755358512c10135_a3c47e49052cc52d10755358512c10135}} 
+\index{system.\+h@{system.\+h}!set\+Bit@{set\+Bit}}
+\index{set\+Bit@{set\+Bit}!system.\+h@{system.\+h}}
+\subsubsection{\texorpdfstring{set\+Bit}{setBit}}
+{\footnotesize\ttfamily \#define set\+Bit(\begin{DoxyParamCaption}\item[{}]{word,  }\item[{}]{mask }\end{DoxyParamCaption})~word $\vert$= mask}
+
+
+
+Definition at line 6 of file system.\+h.
+
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00113_ad80d786594a109b21e30da4bf6f56a85_ad80d786594a109b21e30da4bf6f56a85}\label{a00113_ad80d786594a109b21e30da4bf6f56a85_ad80d786594a109b21e30da4bf6f56a85}} 
-\index{inline.\+h@{inline.\+h}!\+\_\+\+\_\+native\+\_\+flush\+\_\+tlb\+\_\+single@{\+\_\+\+\_\+native\+\_\+flush\+\_\+tlb\+\_\+single}}
-\index{\+\_\+\+\_\+native\+\_\+flush\+\_\+tlb\+\_\+single@{\+\_\+\+\_\+native\+\_\+flush\+\_\+tlb\+\_\+single}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{\+\_\+\+\_\+native\+\_\+flush\+\_\+tlb\+\_\+single()}{\_\_native\_flush\_tlb\_single()}}
-{\footnotesize\ttfamily static void \+\_\+\+\_\+native\+\_\+flush\+\_\+tlb\+\_\+single (\begin{DoxyParamCaption}\item[{unsigned long}]{addr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\mbox{\Hypertarget{a00113_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}\label{a00113_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}} 
+\index{system.\+h@{system.\+h}!memcpy@{memcpy}}
+\index{memcpy@{memcpy}!system.\+h@{system.\+h}}
+\subsubsection{\texorpdfstring{memcpy()}{memcpy()}}
+{\footnotesize\ttfamily void$\ast$ memcpy (\begin{DoxyParamCaption}\item[{void $\ast$}]{dstptr,  }\item[{const void $\ast$}]{srcptr,  }\item[{\hyperlink{a00116_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{size }\end{DoxyParamCaption})}
 
 
 
-Definition at line 55 of file inline.\+h.
+Memcpy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dstptr} & Destination pointer \\
+\hline
+{\em srcptr} & Source pointer \\
+\hline
+{\em size} & Size \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file system.\+c.
 
 
 \begin{DoxyCode}
-56 \{
-57    \textcolor{keyword}{asm} \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"invlpg (%0)"} ::\textcolor{stringliteral}{"r"} (addr) : \textcolor{stringliteral}{"memory"});
-58 \}
+19                                                             \{
+20     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* dst = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*) dstptr;
+21     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* src = (\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*) srcptr;
+22     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < size; i++)
+23         dst[i] = src[i];
+24     \textcolor{keywordflow}{return} dstptr;
+25 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00113_ae7df27a6150c6a020eead928af349b21_ae7df27a6150c6a020eead928af349b21}\label{a00113_ae7df27a6150c6a020eead928af349b21_ae7df27a6150c6a020eead928af349b21}} 
-\index{inline.\+h@{inline.\+h}!are\+\_\+interrupts\+\_\+enabled@{are\+\_\+interrupts\+\_\+enabled}}
-\index{are\+\_\+interrupts\+\_\+enabled@{are\+\_\+interrupts\+\_\+enabled}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{are\+\_\+interrupts\+\_\+enabled()}{are\_interrupts\_enabled()}}
-{\footnotesize\ttfamily static \hyperlink{a00104_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} are\+\_\+interrupts\+\_\+enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\mbox{\Hypertarget{a00113_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}\label{a00113_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}} 
+\index{system.\+h@{system.\+h}!memset@{memset}}
+\index{memset@{memset}!system.\+h@{system.\+h}}
+\subsubsection{\texorpdfstring{memset()}{memset()}}
+{\footnotesize\ttfamily void$\ast$ memset (\begin{DoxyParamCaption}\item[{void $\ast$}]{dest,  }\item[{int}]{val,  }\item[{\hyperlink{a00116_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{len }\end{DoxyParamCaption})}
 
 
 
-Definition at line 46 of file inline.\+h.
+Memset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & The destination \\
+\hline
+{\em val} & The value to set \\
+\hline
+{\em len} & The length of bytes to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file system.\+c.
 
 
 \begin{DoxyCode}
-47 \{
-48     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \hyperlink{a00077_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags};
-49     \textcolor{keyword}{asm} \textcolor{keyword}{volatile} ( \textcolor{stringliteral}{"pushf\(\backslash\)n\(\backslash\)t"}
-50                    \textcolor{stringliteral}{"pop %0"}
-51                    : \textcolor{stringliteral}{"=g"}(\hyperlink{a00077_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags}) );
-52     \textcolor{keywordflow}{return} flags & (1 << 9);
-53 \}
+13 \{
+14   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *ptr = dest;
+15   \textcolor{keywordflow}{while} (len-- > 0)
+16     *ptr++ = val;
+17   \textcolor{keywordflow}{return} dest;
+18 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00113_a3f7e7be8f62f43b2b62df54cac1590be_a3f7e7be8f62f43b2b62df54cac1590be}\label{a00113_a3f7e7be8f62f43b2b62df54cac1590be_a3f7e7be8f62f43b2b62df54cac1590be}} 
-\index{inline.\+h@{inline.\+h}!bochs\+\_\+bkpt@{bochs\+\_\+bkpt}}
-\index{bochs\+\_\+bkpt@{bochs\+\_\+bkpt}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{bochs\+\_\+bkpt()}{bochs\_bkpt()}}
-{\footnotesize\ttfamily static void bochs\+\_\+bkpt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\mbox{\Hypertarget{a00113_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}\label{a00113_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}} 
+\index{system.\+h@{system.\+h}!peekb@{peekb}}
+\index{peekb@{peekb}!system.\+h@{system.\+h}}
+\subsubsection{\texorpdfstring{peekb()}{peekb()}}
+{\footnotesize\ttfamily \hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} peekb (\begin{DoxyParamCaption}\item[{\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} $\ast$}]{addr,  }\item[{\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{offset }\end{DoxyParamCaption})}
 
 
 
-Definition at line 71 of file inline.\+h.
+Peek Byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The address of the byte \\
+\hline
+{\em offset} & The offset from the address \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 8 of file system.\+c.
 
 
 \begin{DoxyCode}
-71                                  \{
-72      \textcolor{keyword}{asm} \textcolor{keyword}{volatile} (\textcolor{stringliteral}{"xchgw %bx, %bx"});
-73  \}
+8                                               \{
+9     addr+=offset;
+10     \textcolor{keywordflow}{return} *addr;
+11 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00113_adacb2a50c30267ac5314bfcb92ac1d85_adacb2a50c30267ac5314bfcb92ac1d85}\label{a00113_adacb2a50c30267ac5314bfcb92ac1d85_adacb2a50c30267ac5314bfcb92ac1d85}} 
-\index{inline.\+h@{inline.\+h}!cpuid@{cpuid}}
-\index{cpuid@{cpuid}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{cpuid()}{cpuid()}}
-{\footnotesize\ttfamily static void cpuid (\begin{DoxyParamCaption}\item[{int}]{code,  }\item[{\hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$}]{a,  }\item[{\hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$}]{d }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\mbox{\Hypertarget{a00113_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}\label{a00113_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}} 
+\index{system.\+h@{system.\+h}!pokeb@{pokeb}}
+\index{pokeb@{pokeb}!system.\+h@{system.\+h}}
+\subsubsection{\texorpdfstring{pokeb()}{pokeb()}}
+{\footnotesize\ttfamily void pokeb (\begin{DoxyParamCaption}\item[{\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$}]{addr,  }\item[{\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{offset,  }\item[{\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{val }\end{DoxyParamCaption})}
 
 
 
-Definition at line 89 of file inline.\+h.
+Poke Byte. 
 
 
-\begin{DoxyCode}
-90 \{
-91     \textcolor{keyword}{asm} \textcolor{keyword}{volatile} ( \textcolor{stringliteral}{"cpuid"} : \textcolor{stringliteral}{"=a"}(*a), \textcolor{stringliteral}{"=d"}(*d) : \textcolor{stringliteral}{"0"}(code) : \textcolor{stringliteral}{"ebx"}, \textcolor{stringliteral}{"ecx"} );
-92 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00113_aee0779a0581136320f91a72c4d6b5b90_aee0779a0581136320f91a72c4d6b5b90}\label{a00113_aee0779a0581136320f91a72c4d6b5b90_aee0779a0581136320f91a72c4d6b5b90}} 
-\index{inline.\+h@{inline.\+h}!farpeekl@{farpeekl}}
-\index{farpeekl@{farpeekl}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{farpeekl()}{farpeekl()}}
-{\footnotesize\ttfamily static \hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} farpeekl (\begin{DoxyParamCaption}\item[{\hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{sel,  }\item[{void $\ast$}]{off }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\begin{DoxyParams}{Parameters}
+{\em addr} & The address of the byte \\
+\hline
+{\em offset} & The offset from the address \\
+\hline
+{\em val} & The value \\
+\hline
+\end{DoxyParams}
 
 
-
-Definition at line 4 of file inline.\+h.
+Definition at line 4 of file system.\+c.
 
 
 \begin{DoxyCode}
-5 \{
-6     \hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t} ret;
-7     \textcolor{keyword}{asm} ( \textcolor{stringliteral}{"push %%fs\(\backslash\)n\(\backslash\)t"}
-8           \textcolor{stringliteral}{"mov  %1, %%fs\(\backslash\)n\(\backslash\)t"}
-9           \textcolor{stringliteral}{"mov  %%fs:(%2), %0\(\backslash\)n\(\backslash\)t"}
-10           \textcolor{stringliteral}{"pop  %%fs"}
-11           : \textcolor{stringliteral}{"=r"}(ret) : \textcolor{stringliteral}{"g"}(\hyperlink{a00077_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel}), \textcolor{stringliteral}{"r"}(off) );
-12     \textcolor{keywordflow}{return} ret;
-13 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00113_a4e7b04b927c6dca2d20f54a5c14a01d6_a4e7b04b927c6dca2d20f54a5c14a01d6}\label{a00113_a4e7b04b927c6dca2d20f54a5c14a01d6_a4e7b04b927c6dca2d20f54a5c14a01d6}} 
-\index{inline.\+h@{inline.\+h}!farpokeb@{farpokeb}}
-\index{farpokeb@{farpokeb}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{farpokeb()}{farpokeb()}}
-{\footnotesize\ttfamily static void farpokeb (\begin{DoxyParamCaption}\item[{\hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{sel,  }\item[{void $\ast$}]{off,  }\item[{\hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 14 of file inline.\+h.
-
-
-\begin{DoxyCode}
-15 \{
-16     \textcolor{keyword}{asm} ( \textcolor{stringliteral}{"push %%fs\(\backslash\)n\(\backslash\)t"}
-17           \textcolor{stringliteral}{"mov  %0, %%fs\(\backslash\)n\(\backslash\)t"}
-18           \textcolor{stringliteral}{"movb %2, %%fs:(%1)\(\backslash\)n\(\backslash\)t"}
-19           \textcolor{stringliteral}{"pop %%fs"}
-20           : : \textcolor{stringliteral}{"g"}(\hyperlink{a00077_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel}), \textcolor{stringliteral}{"r"}(off), \textcolor{stringliteral}{"r"}(v) );
-21     \textcolor{comment}{/* TODO: Should "memory" be in the clobber list here? */}
-22 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00113_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}\label{a00113_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}} 
-\index{inline.\+h@{inline.\+h}!inb@{inb}}
-\index{inb@{inb}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{inb()}{inb()}}
-{\footnotesize\ttfamily static \hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} inb (\begin{DoxyParamCaption}\item[{\hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 31 of file inline.\+h.
-
-
-\begin{DoxyCode}
-32 \{
-33     \hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} ret;
-34     \textcolor{keyword}{asm} \textcolor{keyword}{volatile} ( \textcolor{stringliteral}{"inb %1, %0"}
-35                    : \textcolor{stringliteral}{"=a"}(ret)
-36                    : \textcolor{stringliteral}{"Nd"}(port) );
-37     \textcolor{keywordflow}{return} ret;
-38 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00113_a20faed26baa341152aa32288418f1457_a20faed26baa341152aa32288418f1457}\label{a00113_a20faed26baa341152aa32288418f1457_a20faed26baa341152aa32288418f1457}} 
-\index{inline.\+h@{inline.\+h}!invlpg@{invlpg}}
-\index{invlpg@{invlpg}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{invlpg()}{invlpg()}}
-{\footnotesize\ttfamily static void invlpg (\begin{DoxyParamCaption}\item[{void $\ast$}]{m }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 105 of file inline.\+h.
-
-
-\begin{DoxyCode}
-106 \{
-107     \textcolor{comment}{/* Clobber memory to avoid optimizer re-ordering access before invlpg, which may cause nasty bugs. */}
-108     \textcolor{keyword}{asm} \textcolor{keyword}{volatile} ( \textcolor{stringliteral}{"invlpg (%0)"} : : \textcolor{stringliteral}{"b"}(m) : \textcolor{stringliteral}{"memory"} );
-109 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00113_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}\label{a00113_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}} 
-\index{inline.\+h@{inline.\+h}!io\+\_\+wait@{io\+\_\+wait}}
-\index{io\+\_\+wait@{io\+\_\+wait}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{io\+\_\+wait()}{io\_wait()}}
-{\footnotesize\ttfamily static void io\+\_\+wait (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 39 of file inline.\+h.
-
-
-\begin{DoxyCode}
-40 \{
-41     \textcolor{comment}{/* Port 0x80 is used for 'checkpoints' during POST. */}
-42     \textcolor{comment}{/* The Linux kernel seems to think it is free for use :-/ */}
-43     \textcolor{keyword}{asm} \textcolor{keyword}{volatile} ( \textcolor{stringliteral}{"outb %%al, $0x80"} : : \textcolor{stringliteral}{"a"}(0) );
-44     \textcolor{comment}{/* %%al instead of %0 makes no difference.  TODO: does the register need to be zeroed? */}
-45 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00113_a7dd6b2cd918b8cbca3c8b0381628ca83_a7dd6b2cd918b8cbca3c8b0381628ca83}\label{a00113_a7dd6b2cd918b8cbca3c8b0381628ca83_a7dd6b2cd918b8cbca3c8b0381628ca83}} 
-\index{inline.\+h@{inline.\+h}!irqrestore@{irqrestore}}
-\index{irqrestore@{irqrestore}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{irqrestore()}{irqrestore()}}
-{\footnotesize\ttfamily static void irqrestore (\begin{DoxyParamCaption}\item[{unsigned long}]{flags }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 75 of file inline.\+h.
-
-
-\begin{DoxyCode}
-76 \{
-77     \textcolor{keyword}{asm} (\textcolor{stringliteral}{"push %0\(\backslash\)n\(\backslash\)tpopf"} : : \textcolor{stringliteral}{"rm"}(\hyperlink{a00077_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags}) : \textcolor{stringliteral}{"memory"},\textcolor{stringliteral}{"cc"});
-78 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00113_aa090eac3bad049e35e9360403f42b565_aa090eac3bad049e35e9360403f42b565}\label{a00113_aa090eac3bad049e35e9360403f42b565_aa090eac3bad049e35e9360403f42b565}} 
-\index{inline.\+h@{inline.\+h}!jump@{jump}}
-\index{jump@{jump}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{jump()}{jump()}}
-{\footnotesize\ttfamily static void jump (\begin{DoxyParamCaption}\item[{\hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{address }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 66 of file inline.\+h.
-
-
-\begin{DoxyCode}
-66                                           \{
-67     void (*jmp)(void) = (\textcolor{keywordtype}{void} (*)())address;
-68     jmp();
-69 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00113_a31967dec32575d3d398e6d289e888d1f_a31967dec32575d3d398e6d289e888d1f}\label{a00113_a31967dec32575d3d398e6d289e888d1f_a31967dec32575d3d398e6d289e888d1f}} 
-\index{inline.\+h@{inline.\+h}!lidt@{lidt}}
-\index{lidt@{lidt}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{lidt()}{lidt()}}
-{\footnotesize\ttfamily static void lidt (\begin{DoxyParamCaption}\item[{void $\ast$}]{base,  }\item[{\hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 79 of file inline.\+h.
-
-
-\begin{DoxyCode}
-80 \{   \textcolor{comment}{// This function works in 32 and 64bit mode}
-81     \textcolor{keyword}{struct }\{
-82         \hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} length;
-83         \textcolor{keywordtype}{void}*    \hyperlink{a00071_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base};
-84     \} \hyperlink{a00071_a923c646cd3d9bcd6802303757a1302db_a923c646cd3d9bcd6802303757a1302db}{\_\_attribute\_\_}((packed)) IDTR = \{ size, \hyperlink{a00071_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} \};
-85  
-86     \textcolor{keyword}{asm} ( \textcolor{stringliteral}{"lidt %0"} : : \textcolor{stringliteral}{"m"}(IDTR) );  \textcolor{comment}{// let the compiler choose an addressing mode}
-87 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}\label{a00113_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}} 
-\index{inline.\+h@{inline.\+h}!outb@{outb}}
-\index{outb@{outb}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{outb()}{outb()}}
-{\footnotesize\ttfamily static void outb (\begin{DoxyParamCaption}\item[{\hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{port,  }\item[{\hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{val }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 23 of file inline.\+h.
-
-
-\begin{DoxyCode}
-24 \{
-25     \textcolor{keyword}{asm} \textcolor{keyword}{volatile} ( \textcolor{stringliteral}{"outb %0, %1"} : : \textcolor{stringliteral}{"a"}(val), \textcolor{stringliteral}{"Nd"}(port) );
-26     \textcolor{comment}{/* There's an outb %al, $imm8  encoding, for compile-time constant port numbers that fit in 8b.  (N
-       constraint).}
-27 \textcolor{comment}{     * Wider immediate constants would be truncated at assemble-time (e.g. "i" constraint).}
-28 \textcolor{comment}{     * The  outb  %al, %dx  encoding is the only option for all other cases.}
-29 \textcolor{comment}{     * %1 expands to %dx because  port  is a uint16\_t.  %w1 could be used if we had the port number a wider
-       C type */}
-30 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00113_a6fa28502e33e305c4335fe3032dc7799_a6fa28502e33e305c4335fe3032dc7799}\label{a00113_a6fa28502e33e305c4335fe3032dc7799_a6fa28502e33e305c4335fe3032dc7799}} 
-\index{inline.\+h@{inline.\+h}!rdmsr@{rdmsr}}
-\index{rdmsr@{rdmsr}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{rdmsr()}{rdmsr()}}
-{\footnotesize\ttfamily static \hyperlink{a00104_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t} rdmsr (\begin{DoxyParamCaption}\item[{\hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{msr\+\_\+id }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 114 of file inline.\+h.
-
-
-\begin{DoxyCode}
-115 \{
-116     \hyperlink{a00104_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\_t} msr\_value;
-117     \textcolor{keyword}{asm} \textcolor{keyword}{volatile} ( \textcolor{stringliteral}{"rdmsr"} : \textcolor{stringliteral}{"=A"} (msr\_value) : \textcolor{stringliteral}{"c"} (msr\_id) );
-118     \textcolor{keywordflow}{return} msr\_value;
-119 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00113_a47b9d70be3022fd0b5687d9794ca47bc_a47b9d70be3022fd0b5687d9794ca47bc}\label{a00113_a47b9d70be3022fd0b5687d9794ca47bc_a47b9d70be3022fd0b5687d9794ca47bc}} 
-\index{inline.\+h@{inline.\+h}!rdtsc@{rdtsc}}
-\index{rdtsc@{rdtsc}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{rdtsc()}{rdtsc()}}
-{\footnotesize\ttfamily static \hyperlink{a00104_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t} rdtsc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 93 of file inline.\+h.
-
-
-\begin{DoxyCode}
-94 \{
-95     \hyperlink{a00104_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\_t} ret;
-96     \textcolor{keyword}{asm} \textcolor{keyword}{volatile} ( \textcolor{stringliteral}{"rdtsc"} : \textcolor{stringliteral}{"=A"}(ret) );
-97     \textcolor{keywordflow}{return} ret;
-98 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00113_ac85e095222f364961e091702bb6bc2ff_ac85e095222f364961e091702bb6bc2ff}\label{a00113_ac85e095222f364961e091702bb6bc2ff_ac85e095222f364961e091702bb6bc2ff}} 
-\index{inline.\+h@{inline.\+h}!read\+\_\+cr0@{read\+\_\+cr0}}
-\index{read\+\_\+cr0@{read\+\_\+cr0}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{read\+\_\+cr0()}{read\_cr0()}}
-{\footnotesize\ttfamily static unsigned long read\+\_\+cr0 (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 99 of file inline.\+h.
-
-
-\begin{DoxyCode}
-100 \{
-101     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} val;
-102     \textcolor{keyword}{asm} \textcolor{keyword}{volatile} ( \textcolor{stringliteral}{"mov %%cr0, %0"} : \textcolor{stringliteral}{"=r"}(val) );
-103     \textcolor{keywordflow}{return} val;
-104 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00113_ab1dca2d7fd57d56f7548a81ef081ba74_ab1dca2d7fd57d56f7548a81ef081ba74}\label{a00113_ab1dca2d7fd57d56f7548a81ef081ba74_ab1dca2d7fd57d56f7548a81ef081ba74}} 
-\index{inline.\+h@{inline.\+h}!save\+\_\+irqdisable@{save\+\_\+irqdisable}}
-\index{save\+\_\+irqdisable@{save\+\_\+irqdisable}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{save\+\_\+irqdisable()}{save\_irqdisable()}}
-{\footnotesize\ttfamily static unsigned long save\+\_\+irqdisable (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 60 of file inline.\+h.
-
-
-\begin{DoxyCode}
-61 \{
-62     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} \hyperlink{a00077_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags};
-63     \textcolor{keyword}{asm} \textcolor{keyword}{volatile} (\textcolor{stringliteral}{"pushf\(\backslash\)n\(\backslash\)tcli\(\backslash\)n\(\backslash\)tpop %0"} : \textcolor{stringliteral}{"=r"}(\hyperlink{a00077_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags}) : : \textcolor{stringliteral}{"memory"});
-64 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00113_a368f08346121290f513a26011e0f68f8_a368f08346121290f513a26011e0f68f8}\label{a00113_a368f08346121290f513a26011e0f68f8_a368f08346121290f513a26011e0f68f8}} 
-\index{inline.\+h@{inline.\+h}!wrmsr@{wrmsr}}
-\index{wrmsr@{wrmsr}!inline.\+h@{inline.\+h}}
-\subsubsection{\texorpdfstring{wrmsr()}{wrmsr()}}
-{\footnotesize\ttfamily static void wrmsr (\begin{DoxyParamCaption}\item[{\hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{msr\+\_\+id,  }\item[{\hyperlink{a00104_aa232ecf786a74ce5363c36c10798d2b1_aa232ecf786a74ce5363c36c10798d2b1}{uint64\+\_\+t}}]{msr\+\_\+value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-
-
-Definition at line 110 of file inline.\+h.
-
-
-\begin{DoxyCode}
-111 \{
-112     \textcolor{keyword}{asm} \textcolor{keyword}{volatile} ( \textcolor{stringliteral}{"wrmsr"} : : \textcolor{stringliteral}{"c"} (msr\_id), \textcolor{stringliteral}{"A"} (msr\_value) );
-113 \}
+4                                                          \{
+5     addr+=offset;
+6     *addr=val;
+7 \}
 \end{DoxyCode}

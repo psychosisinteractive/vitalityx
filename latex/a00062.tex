@@ -1,86 +1,166 @@
-\hypertarget{a00062}{}\section{libc/g++/cpp\+\_\+classdef.cpp File Reference}
-\label{a00062}\index{libc/g++/cpp\+\_\+classdef.\+cpp@{libc/g++/cpp\+\_\+classdef.\+cpp}}
-{\ttfamily \#include \char`\"{}../vitality/tty.\+h\char`\"{}}\newline
+\hypertarget{a00062}{}\section{libc/ext/kheap.c File Reference}
+\label{a00062}\index{libc/ext/kheap.\+c@{libc/ext/kheap.\+c}}
+{\ttfamily \#include \char`\"{}kheap.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}cpp\+\_\+classdef.\+h\char`\"{}}\newline
-Include dependency graph for cpp\+\_\+classdef.\+cpp\+:
+Include dependency graph for kheap.\+c\+:
 % FIG 0
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{a00062_abbdfa8f54b7fc7761d12ecc473f87bc4_abbdfa8f54b7fc7761d12ecc473f87bc4}{C\+PP}
-\begin{DoxyCompactList}\small\item\em This flag means the source file is being compiled under C++ mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00062_a6be7d9ce80c86f5178635fa86c2dd5e7_a6be7d9ce80c86f5178635fa86c2dd5e7}{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual} ()
-\begin{DoxyCompactList}\small\item\em C++ Pure Virtual Function, called when a virtual function is required Y\+ET there is nothing to handle its call. \end{DoxyCompactList}\item 
-char $\ast$ \hyperlink{a00062_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}{c\+\_\+stc} (const char string\mbox{[}$\,$\mbox{]})
-\begin{DoxyCompactList}\small\item\em Converts a const char array into a char$\ast$. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{a00062_abbdfa8f54b7fc7761d12ecc473f87bc4_abbdfa8f54b7fc7761d12ecc473f87bc4}\label{a00062_abbdfa8f54b7fc7761d12ecc473f87bc4_abbdfa8f54b7fc7761d12ecc473f87bc4}} 
-\index{cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}!C\+PP@{C\+PP}}
-\index{C\+PP@{C\+PP}!cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}}
-\subsubsection{\texorpdfstring{C\+PP}{CPP}}
-{\footnotesize\ttfamily \#define C\+PP}
-
-
-
-This flag means the source file is being compiled under C++ mode. 
-
-
-
-Definition at line 4 of file cpp\+\_\+classdef.\+cpp.
-
+\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00062_a8b976e8a7e805ef85fcfa68b9b9bbd63_a8b976e8a7e805ef85fcfa68b9b9bbd63}{kmalloc\+\_\+int} (\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} sz, int align, \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} $\ast$phys)
+\begin{DoxyCompactList}\small\item\em Allocate a chunk of memory, sz in size. \end{DoxyCompactList}\item 
+\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00062_a2f7fc26d2604f7bd8bd6d4fac5c98f16_a2f7fc26d2604f7bd8bd6d4fac5c98f16}{kmalloc\+\_\+a} (\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} sz)
+\begin{DoxyCompactList}\small\item\em Allocate a chunk of memory, sz in size. \end{DoxyCompactList}\item 
+\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00062_ac688411503d5934c65d6c5c1ef204d81_ac688411503d5934c65d6c5c1ef204d81}{kmalloc\+\_\+p} (\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} sz, \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} $\ast$phys)
+\begin{DoxyCompactList}\small\item\em Allocate a chunk of memory, sz in size. \end{DoxyCompactList}\item 
+\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00062_ab4fd209369f6c18acead48b80e7f09c7_ab4fd209369f6c18acead48b80e7f09c7}{kmalloc\+\_\+ap} (\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} sz, \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} $\ast$phys)
+\begin{DoxyCompactList}\small\item\em Allocate a chunk of memory, sz in size. \end{DoxyCompactList}\item 
+\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00062_a57133c6165a95f09de1806a08042e5e0_a57133c6165a95f09de1806a08042e5e0}{kmalloc} (\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} sz)
+\begin{DoxyCompactList}\small\item\em General allocation function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00062_a6342e29537636642d9a1477deabf683f_a6342e29537636642d9a1477deabf683f}{end}
+\item 
+\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00062_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}{placement\+\_\+address} = (\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int})\&\hyperlink{a00062_a6342e29537636642d9a1477deabf683f_a6342e29537636642d9a1477deabf683f}{end}
+\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00062_a6be7d9ce80c86f5178635fa86c2dd5e7_a6be7d9ce80c86f5178635fa86c2dd5e7}\label{a00062_a6be7d9ce80c86f5178635fa86c2dd5e7_a6be7d9ce80c86f5178635fa86c2dd5e7}} 
-\index{cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}!\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual@{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual}}
-\index{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual@{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual}!cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}}
-\subsubsection{\texorpdfstring{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual()}{\_\_cxa\_pure\_virtual()}}
-{\footnotesize\ttfamily void \+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00062_a57133c6165a95f09de1806a08042e5e0_a57133c6165a95f09de1806a08042e5e0}\label{a00062_a57133c6165a95f09de1806a08042e5e0_a57133c6165a95f09de1806a08042e5e0}} 
+\index{kheap.\+c@{kheap.\+c}!kmalloc@{kmalloc}}
+\index{kmalloc@{kmalloc}!kheap.\+c@{kheap.\+c}}
+\subsubsection{\texorpdfstring{kmalloc()}{kmalloc()}}
+{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} kmalloc (\begin{DoxyParamCaption}\item[{\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int}}]{sz }\end{DoxyParamCaption})}
 
 
 
-C++ Pure Virtual Function, called when a virtual function is required Y\+ET there is nothing to handle its call. 
+General allocation function. 
 
 
 
-Definition at line 13 of file cpp\+\_\+classdef.\+cpp.
-
-
-\begin{DoxyCode}
-14 \{
-15     \hyperlink{a00122_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\hyperlink{a00062_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}{c\_stc}(\textcolor{stringliteral}{"[KERNEL ERROR]\_\_cxa\_pure\_virtual called, No class spec,
-       halting"}));
-16     
-17 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00062_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}\label{a00062_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}} 
-\index{cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}!c\+\_\+stc@{c\+\_\+stc}}
-\index{c\+\_\+stc@{c\+\_\+stc}!cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}}
-\subsubsection{\texorpdfstring{c\+\_\+stc()}{c\_stc()}}
-{\footnotesize\ttfamily char$\ast$ c\+\_\+stc (\begin{DoxyParamCaption}\item[{const char}]{string\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
-
-
-
-Converts a const char array into a char$\ast$. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The array \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 23 of file cpp\+\_\+classdef.\+cpp.
+Definition at line 44 of file kheap.\+c.
 
 
 \begin{DoxyCode}
-23                                  \{
-24     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)&\textcolor{keywordtype}{string}[0];
-25 \}
+45 \{
+46     \textcolor{keywordflow}{return} \hyperlink{a00062_a8b976e8a7e805ef85fcfa68b9b9bbd63_a8b976e8a7e805ef85fcfa68b9b9bbd63}{kmalloc\_int}(sz, 0, 0);
+47 \}
 \end{DoxyCode}
+\mbox{\Hypertarget{a00062_a2f7fc26d2604f7bd8bd6d4fac5c98f16_a2f7fc26d2604f7bd8bd6d4fac5c98f16}\label{a00062_a2f7fc26d2604f7bd8bd6d4fac5c98f16_a2f7fc26d2604f7bd8bd6d4fac5c98f16}} 
+\index{kheap.\+c@{kheap.\+c}!kmalloc\+\_\+a@{kmalloc\+\_\+a}}
+\index{kmalloc\+\_\+a@{kmalloc\+\_\+a}!kheap.\+c@{kheap.\+c}}
+\subsubsection{\texorpdfstring{kmalloc\+\_\+a()}{kmalloc\_a()}}
+{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} kmalloc\+\_\+a (\begin{DoxyParamCaption}\item[{\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int}}]{sz }\end{DoxyParamCaption})}
+
+
+
+Allocate a chunk of memory, sz in size. 
+
+The chunk must be page aligned. 
+
+Definition at line 29 of file kheap.\+c.
+
+
+\begin{DoxyCode}
+30 \{
+31     \textcolor{keywordflow}{return} \hyperlink{a00062_a8b976e8a7e805ef85fcfa68b9b9bbd63_a8b976e8a7e805ef85fcfa68b9b9bbd63}{kmalloc\_int}(sz, 1, 0);
+32 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00062_ab4fd209369f6c18acead48b80e7f09c7_ab4fd209369f6c18acead48b80e7f09c7}\label{a00062_ab4fd209369f6c18acead48b80e7f09c7_ab4fd209369f6c18acead48b80e7f09c7}} 
+\index{kheap.\+c@{kheap.\+c}!kmalloc\+\_\+ap@{kmalloc\+\_\+ap}}
+\index{kmalloc\+\_\+ap@{kmalloc\+\_\+ap}!kheap.\+c@{kheap.\+c}}
+\subsubsection{\texorpdfstring{kmalloc\+\_\+ap()}{kmalloc\_ap()}}
+{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} kmalloc\+\_\+ap (\begin{DoxyParamCaption}\item[{\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int}}]{sz,  }\item[{\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} $\ast$}]{phys }\end{DoxyParamCaption})}
+
+
+
+Allocate a chunk of memory, sz in size. 
+
+The physical address is returned in phys. It must be page-\/aligned. 
+
+Definition at line 39 of file kheap.\+c.
+
+
+\begin{DoxyCode}
+40 \{
+41     \textcolor{keywordflow}{return} \hyperlink{a00062_a8b976e8a7e805ef85fcfa68b9b9bbd63_a8b976e8a7e805ef85fcfa68b9b9bbd63}{kmalloc\_int}(sz, 1, phys);
+42 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00062_a8b976e8a7e805ef85fcfa68b9b9bbd63_a8b976e8a7e805ef85fcfa68b9b9bbd63}\label{a00062_a8b976e8a7e805ef85fcfa68b9b9bbd63_a8b976e8a7e805ef85fcfa68b9b9bbd63}} 
+\index{kheap.\+c@{kheap.\+c}!kmalloc\+\_\+int@{kmalloc\+\_\+int}}
+\index{kmalloc\+\_\+int@{kmalloc\+\_\+int}!kheap.\+c@{kheap.\+c}}
+\subsubsection{\texorpdfstring{kmalloc\+\_\+int()}{kmalloc\_int()}}
+{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} kmalloc\+\_\+int (\begin{DoxyParamCaption}\item[{\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int}}]{sz,  }\item[{int}]{align,  }\item[{\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} $\ast$}]{phys }\end{DoxyParamCaption})}
+
+
+
+Allocate a chunk of memory, sz in size. 
+
+If align == 1, the chunk must be page-\/aligned. If phys != 0, the physical location of the allocated chunk will be stored into phys.
+
+This is the internal version of kmalloc. More user-\/friendly parameter representations are available in kmalloc, kmalloc\+\_\+a, kmalloc\+\_\+ap, kmalloc\+\_\+p. 
+
+Definition at line 8 of file kheap.\+c.
+
+
+\begin{DoxyCode}
+9 \{
+10     \textcolor{comment}{// This will eventually call malloc() on the kernel heap.}
+11     \textcolor{comment}{// For now, though, we just assign memory at placement\_address}
+12     \textcolor{comment}{// and increment it by sz. Even when we've coded our kernel}
+13     \textcolor{comment}{// heap, this will be useful for use before the heap is initialised.}
+14     \textcolor{keywordflow}{if} (align == 1 && (\hyperlink{a00062_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}{placement\_address} & 0xFFFFF000) )
+15     \{
+16         \textcolor{comment}{// Align the placement address;}
+17         \hyperlink{a00062_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}{placement\_address} &= 0xFFFFF000;
+18         \hyperlink{a00062_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}{placement\_address} += 0x1000;
+19     \}
+20     \textcolor{keywordflow}{if} (phys)
+21     \{
+22         *phys = \hyperlink{a00062_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}{placement\_address};
+23     \}
+24     \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} tmp = \hyperlink{a00062_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}{placement\_address};
+25     \hyperlink{a00062_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}{placement\_address} += sz;
+26     \textcolor{keywordflow}{return} tmp;
+27 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00062_ac688411503d5934c65d6c5c1ef204d81_ac688411503d5934c65d6c5c1ef204d81}\label{a00062_ac688411503d5934c65d6c5c1ef204d81_ac688411503d5934c65d6c5c1ef204d81}} 
+\index{kheap.\+c@{kheap.\+c}!kmalloc\+\_\+p@{kmalloc\+\_\+p}}
+\index{kmalloc\+\_\+p@{kmalloc\+\_\+p}!kheap.\+c@{kheap.\+c}}
+\subsubsection{\texorpdfstring{kmalloc\+\_\+p()}{kmalloc\_p()}}
+{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} kmalloc\+\_\+p (\begin{DoxyParamCaption}\item[{\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int}}]{sz,  }\item[{\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} $\ast$}]{phys }\end{DoxyParamCaption})}
+
+
+
+Allocate a chunk of memory, sz in size. 
+
+The physical address is returned in phys. Phys M\+U\+ST be a valid pointer to u32int! 
+
+Definition at line 34 of file kheap.\+c.
+
+
+\begin{DoxyCode}
+35 \{
+36     \textcolor{keywordflow}{return} \hyperlink{a00062_a8b976e8a7e805ef85fcfa68b9b9bbd63_a8b976e8a7e805ef85fcfa68b9b9bbd63}{kmalloc\_int}(sz, 0, phys);
+37 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{a00062_a6342e29537636642d9a1477deabf683f_a6342e29537636642d9a1477deabf683f}\label{a00062_a6342e29537636642d9a1477deabf683f_a6342e29537636642d9a1477deabf683f}} 
+\index{kheap.\+c@{kheap.\+c}!end@{end}}
+\index{end@{end}!kheap.\+c@{kheap.\+c}}
+\subsubsection{\texorpdfstring{end}{end}}
+{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} end}
+
+\mbox{\Hypertarget{a00062_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}\label{a00062_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}} 
+\index{kheap.\+c@{kheap.\+c}!placement\+\_\+address@{placement\+\_\+address}}
+\index{placement\+\_\+address@{placement\+\_\+address}!kheap.\+c@{kheap.\+c}}
+\subsubsection{\texorpdfstring{placement\+\_\+address}{placement\_address}}
+{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} placement\+\_\+address = (\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int})\&\hyperlink{a00062_a6342e29537636642d9a1477deabf683f_a6342e29537636642d9a1477deabf683f}{end}}
+
+
+
+Definition at line 6 of file kheap.\+c.
+

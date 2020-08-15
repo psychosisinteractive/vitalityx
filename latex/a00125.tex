@@ -1,114 +1,116 @@
-\hypertarget{a00125}{}\section{libc/vitality/tty.h File Reference}
-\label{a00125}\index{libc/vitality/tty.\+h@{libc/vitality/tty.\+h}}
-This graph shows which files directly or indirectly include this file\+:
+\hypertarget{a00125}{}\section{libc/vitality/fs.c File Reference}
+\label{a00125}\index{libc/vitality/fs.\+c@{libc/vitality/fs.\+c}}
+{\ttfamily \#include \char`\"{}fs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../drivers/ide.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tty.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vxbfs.\+h\char`\"{}}\newline
+Include dependency graph for fs.\+c\+:
 % FIG 0
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00125_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}{tty\+\_\+putstring} (char $\ast$string)
-\begin{DoxyCompactList}\small\item\em Puts a string in V\+R\+AM, Text mode only. \end{DoxyCompactList}\item 
-void \hyperlink{a00125_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}{tty\+\_\+vgaputstring} (char $\ast$string)
-\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, Mode 13 only. \end{DoxyCompactList}\item 
-void \hyperlink{a00125_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\+\_\+pputstring} (char $\ast$string)
-\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, detects preferred mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{a00125_a414110036132977c34813673360e1a63_a414110036132977c34813673360e1a63}{getentries} ()
+\item 
+int \hyperlink{a00125_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry} (int id)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const char $\ast$ \hyperlink{a00125_a36265ac74fd925405e1179e799961f1e_a36265ac74fd925405e1179e799961f1e}{nullfs} = \char`\"{}null\char`\"{}
+\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00125_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}\label{a00125_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}} 
-\index{tty.\+h@{tty.\+h}!tty\+\_\+pputstring@{tty\+\_\+pputstring}}
-\index{tty\+\_\+pputstring@{tty\+\_\+pputstring}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{tty\+\_\+pputstring()}{tty\_pputstring()}}
-{\footnotesize\ttfamily void tty\+\_\+pputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00125_a414110036132977c34813673360e1a63_a414110036132977c34813673360e1a63}\label{a00125_a414110036132977c34813673360e1a63_a414110036132977c34813673360e1a63}} 
+\index{fs.\+c@{fs.\+c}!getentries@{getentries}}
+\index{getentries@{getentries}!fs.\+c@{fs.\+c}}
+\subsubsection{\texorpdfstring{getentries()}{getentries()}}
+{\footnotesize\ttfamily void getentries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Puts a string into V\+R\+AM, detects preferred mode. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 30 of file tty.\+c.
+Definition at line 10 of file fs.\+c.
 
 
 \begin{DoxyCode}
-30                                   \{
-31     \textcolor{keywordflow}{switch} (\hyperlink{a00035_af6d170c9401ea8f94d4c5cf09347cca7_af6d170c9401ea8f94d4c5cf09347cca7}{vgamode}())
-32     \{
-33     \textcolor{keywordflow}{case} 0x3:
-34         \hyperlink{a00122_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}{tty\_putstring}(\textcolor{keywordtype}{string});
-35         \textcolor{keywordflow}{break};
-36     \textcolor{keywordflow}{case} 0x13:
-37         \hyperlink{a00122_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}{tty\_vgaputstring}(\textcolor{keywordtype}{string});
-38         \textcolor{keywordflow}{break};
-39     \textcolor{keywordflow}{default}:
-40         \hyperlink{a00122_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}{tty\_vgaputstring}(\textcolor{keywordtype}{string});
-41         \textcolor{keywordflow}{break};
-42     \}
-43 \}
+10                   \{
+11     \textcolor{keywordtype}{int} done = 0;
+12     done += \hyperlink{a00125_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(0);
+13     done += \hyperlink{a00125_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(1);
+14     done += \hyperlink{a00125_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(2);
+15     done += \hyperlink{a00125_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(3);
+16     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Setup "});
+17     \textcolor{keywordtype}{char}* numsetup;
+18     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(done,numsetup);
+19     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(numsetup);
+20     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" drive(s).\(\backslash\)n"});
+21 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00125_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}\label{a00125_a2ebb962f457a2677d70285d1c0f9be12_a2ebb962f457a2677d70285d1c0f9be12}} 
-\index{tty.\+h@{tty.\+h}!tty\+\_\+putstring@{tty\+\_\+putstring}}
-\index{tty\+\_\+putstring@{tty\+\_\+putstring}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{tty\+\_\+putstring()}{tty\_putstring()}}
-{\footnotesize\ttfamily void tty\+\_\+putstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00125_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}\label{a00125_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}} 
+\index{fs.\+c@{fs.\+c}!getentry@{getentry}}
+\index{getentry@{getentry}!fs.\+c@{fs.\+c}}
+\subsubsection{\texorpdfstring{getentry()}{getentry()}}
+{\footnotesize\ttfamily int getentry (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
 
 
 
-Puts a string in V\+R\+AM, Text mode only. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 7 of file tty.\+c.
+Definition at line 23 of file fs.\+c.
 
 
 \begin{DoxyCode}
-7                                  \{
-8     \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{keywordtype}{string});
-9     \hyperlink{a00104_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} attrib = (0x0 << 4) | (0xf & 0x0F);
-10     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
-11     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'}) \{
-12         *\hyperlink{a00122_a3f896e9c00b9302e2287aad054199134_a3f896e9c00b9302e2287aad054199134}{videoMemoryPtr}++ = chara;
-13         chara = *\textcolor{keywordtype}{string}++;
-14     \}
-15 \}
+23                      \{
+24     \textcolor{keywordtype}{char}* cnam;
+25     \textcolor{keywordflow}{if}(\hyperlink{a00026_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Reserved) \{
+26         \hyperlink{a00226}{fsentry\_t} *entry = &\hyperlink{a00128_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[id];
+27         entry->\hyperlink{a00226_a284522ed97fe1eeebd0fcc039b2ea00a_a284522ed97fe1eeebd0fcc039b2ea00a}{ready} = \textcolor{keyword}{true};
+28         entry->\hyperlink{a00226_aaea66ea744fa50f1c54666033884d8d2_aaea66ea744fa50f1c54666033884d8d2}{dev} = &\hyperlink{a00026_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[id];
+29         
+30         \textcolor{keywordtype}{char}* num = \textcolor{stringliteral}{"x"};
+31         \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(\textcolor{keywordtype}{id},num);
+32         \textcolor{keywordflow}{switch}(\hyperlink{a00026_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Type) \{
+33             \textcolor{keywordflow}{case} 0: \textcolor{comment}{// ata}
+34                 cnam = \textcolor{stringliteral}{"ataX"};
+35                 \textcolor{keywordflow}{break};
+36             \textcolor{keywordflow}{case} 1: \textcolor{comment}{// atapi}
+37                 cnam = \textcolor{stringliteral}{"atpX"};
+38                 \textcolor{keywordflow}{break};
+39         \}
+40         \textcolor{keywordflow}{if}(\hyperlink{a00026_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Type == 0) \{
+41             \hyperlink{a00023_a9dd84843412753d236e17a15277c5b98_a9dd84843412753d236e17a15277c5b98}{ide\_read\_sectors}(\textcolor{keywordtype}{id},4,0,0,0x500);
+42             \textcolor{keywordflow}{if}(\hyperlink{a00161_a078a66e7d52fd4a6df768277b605199c_a078a66e7d52fd4a6df768277b605199c}{validvxbfs}((\hyperlink{a00266}{vxbfs\_header\_t}*)0x500)) \{
+43                 \hyperlink{a00266}{vxbfs\_header\_t}* header = (\hyperlink{a00266}{vxbfs\_header\_t}*)0x500;
+44                 \hyperlink{a00110_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(cnam,header->\hyperlink{a00266_af0310ee852d6ec20fe68052fff0d1378_af0310ee852d6ec20fe68052fff0d1378}{uniquename},3);
+45             \}
+46         \}
+47         \hyperlink{a00110_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(cnam+3,num,1);
+48         \hyperlink{a00110_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(entry->\hyperlink{a00226_a9c5a4f5b02eb2c9e9e797f79dc99028a_a9c5a4f5b02eb2c9e9e797f79dc99028a}{name},&cnam,4);
+49         \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Registered "});
+50         \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(cnam);
+51         \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" Model "});
+52         \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}((\textcolor{keywordtype}{char}*)\hyperlink{a00026_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Model);
+53         \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+54         \textcolor{keywordflow}{return} 1;
+55     \} \textcolor{keywordflow}{else} \{
+56         \hyperlink{a00128_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[id].\hyperlink{a00226_a284522ed97fe1eeebd0fcc039b2ea00a_a284522ed97fe1eeebd0fcc039b2ea00a}{ready} = \textcolor{keyword}{false};
+57         \hyperlink{a00128_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[id].\hyperlink{a00226_aaea66ea744fa50f1c54666033884d8d2_aaea66ea744fa50f1c54666033884d8d2}{dev} = 0;
+58 
+59         \hyperlink{a00110_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(&\hyperlink{a00128_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[\textcolor{keywordtype}{id}].name,&\hyperlink{a00125_a36265ac74fd925405e1179e799961f1e_a36265ac74fd925405e1179e799961f1e}{nullfs},4);
+60         \textcolor{keywordflow}{return} 0;
+61     \} 
+62 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00125_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}\label{a00125_a13ff2c06d56753c5666ca56cb2d81100_a13ff2c06d56753c5666ca56cb2d81100}} 
-\index{tty.\+h@{tty.\+h}!tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}}
-\index{tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{tty\+\_\+vgaputstring()}{tty\_vgaputstring()}}
-{\footnotesize\ttfamily void tty\+\_\+vgaputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{a00125_a36265ac74fd925405e1179e799961f1e_a36265ac74fd925405e1179e799961f1e}\label{a00125_a36265ac74fd925405e1179e799961f1e_a36265ac74fd925405e1179e799961f1e}} 
+\index{fs.\+c@{fs.\+c}!nullfs@{nullfs}}
+\index{nullfs@{nullfs}!fs.\+c@{fs.\+c}}
+\subsubsection{\texorpdfstring{nullfs}{nullfs}}
+{\footnotesize\ttfamily const char$\ast$ nullfs = \char`\"{}null\char`\"{}}
 
 
 
-Puts a string into V\+R\+AM, Mode 13 only. 
+Definition at line 8 of file fs.\+c.
 
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 20 of file tty.\+c.
-
-
-\begin{DoxyCode}
-20                                     \{
-21     \hyperlink{a00050_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{keywordtype}{string});
-22     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
-23     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'}) \{
-24         \hyperlink{a00035_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}{drawchar}(chara,\hyperlink{a00122_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff},\hyperlink{a00122_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff}+17,0xf,0x0);
-25         \hyperlink{a00122_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff} += 8;
-26         chara = *\textcolor{keywordtype}{string}++;
-27     \}
-28 \}
-\end{DoxyCode}

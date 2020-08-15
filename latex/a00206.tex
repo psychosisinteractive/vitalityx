@@ -1,26 +1,108 @@
-The vitality folder contains specialized libraries available for the user or the kernel. These libraries are licensed under the licensing agreement below U\+N\+L\+E\+SS specified in the respective source file.
+\hypertarget{a00206}{}\section{page Struct Reference}
+\label{a00206}\index{page@{page}}
 
 
-\begin{DoxyCode}
-BSD 2-Clause License
+{\ttfamily \#include $<$page.\+h$>$}
 
-Copyright (c) 2020-2021, Psychosis Interactive All rights reserved.
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00206_ac24cf5706a32824c01eb237807f66b0f_ac24cf5706a32824c01eb237807f66b0f}{present}\+: 1
+\item 
+\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00206_a41593c100a0772860647a70d3fae45ae_a41593c100a0772860647a70d3fae45ae}{rw}\+: 1
+\item 
+\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00206_adb5b07c014fc7101308d5d04156c14ca_adb5b07c014fc7101308d5d04156c14ca}{user}\+: 1
+\item 
+\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00206_aeef35dbd003b348db0d707acf191a91b_aeef35dbd003b348db0d707acf191a91b}{accessed}\+: 1
+\item 
+\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00206_a36f67eec25fe18ad7bf0307fd31564ae_a36f67eec25fe18ad7bf0307fd31564ae}{dirty}\+: 1
+\item 
+\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00206_ab700ed2b8cfaf36d94b6b9f102b0fc50_ab700ed2b8cfaf36d94b6b9f102b0fc50}{unused}\+: 7
+\item 
+\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00206_a1f21eb0f1aa1ab7f126b2a261c1021f1_a1f21eb0f1aa1ab7f126b2a261c1021f1}{frame}\+: 20
+\end{DoxyCompactItemize}
 
-Redistribution and use in source and binary forms, with or without modification, are permitted provided
-       that the following conditions are met:
 
-Redistributions of source code must retain the above copyright notice, this list of conditions and the
-       following disclaimer.
+\subsection{Detailed Description}
 
-Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
-       following disclaimer in the documentation and/or other materials provided with the distribution.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
-       WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-       PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
-       INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-       PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
-       AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
-       OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-\end{DoxyCode}
- 
+Definition at line 6 of file page.\+h.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{a00206_aeef35dbd003b348db0d707acf191a91b_aeef35dbd003b348db0d707acf191a91b}\label{a00206_aeef35dbd003b348db0d707acf191a91b_aeef35dbd003b348db0d707acf191a91b}} 
+\index{page@{page}!accessed@{accessed}}
+\index{accessed@{accessed}!page@{page}}
+\subsubsection{\texorpdfstring{accessed}{accessed}}
+{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+::accessed}
+
+
+
+Definition at line 11 of file page.\+h.
+
+\mbox{\Hypertarget{a00206_a36f67eec25fe18ad7bf0307fd31564ae_a36f67eec25fe18ad7bf0307fd31564ae}\label{a00206_a36f67eec25fe18ad7bf0307fd31564ae_a36f67eec25fe18ad7bf0307fd31564ae}} 
+\index{page@{page}!dirty@{dirty}}
+\index{dirty@{dirty}!page@{page}}
+\subsubsection{\texorpdfstring{dirty}{dirty}}
+{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+::dirty}
+
+
+
+Definition at line 12 of file page.\+h.
+
+\mbox{\Hypertarget{a00206_a1f21eb0f1aa1ab7f126b2a261c1021f1_a1f21eb0f1aa1ab7f126b2a261c1021f1}\label{a00206_a1f21eb0f1aa1ab7f126b2a261c1021f1_a1f21eb0f1aa1ab7f126b2a261c1021f1}} 
+\index{page@{page}!frame@{frame}}
+\index{frame@{frame}!page@{page}}
+\subsubsection{\texorpdfstring{frame}{frame}}
+{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+::frame}
+
+
+
+Definition at line 14 of file page.\+h.
+
+\mbox{\Hypertarget{a00206_ac24cf5706a32824c01eb237807f66b0f_ac24cf5706a32824c01eb237807f66b0f}\label{a00206_ac24cf5706a32824c01eb237807f66b0f_ac24cf5706a32824c01eb237807f66b0f}} 
+\index{page@{page}!present@{present}}
+\index{present@{present}!page@{page}}
+\subsubsection{\texorpdfstring{present}{present}}
+{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+::present}
+
+
+
+Definition at line 8 of file page.\+h.
+
+\mbox{\Hypertarget{a00206_a41593c100a0772860647a70d3fae45ae_a41593c100a0772860647a70d3fae45ae}\label{a00206_a41593c100a0772860647a70d3fae45ae_a41593c100a0772860647a70d3fae45ae}} 
+\index{page@{page}!rw@{rw}}
+\index{rw@{rw}!page@{page}}
+\subsubsection{\texorpdfstring{rw}{rw}}
+{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+::rw}
+
+
+
+Definition at line 9 of file page.\+h.
+
+\mbox{\Hypertarget{a00206_ab700ed2b8cfaf36d94b6b9f102b0fc50_ab700ed2b8cfaf36d94b6b9f102b0fc50}\label{a00206_ab700ed2b8cfaf36d94b6b9f102b0fc50_ab700ed2b8cfaf36d94b6b9f102b0fc50}} 
+\index{page@{page}!unused@{unused}}
+\index{unused@{unused}!page@{page}}
+\subsubsection{\texorpdfstring{unused}{unused}}
+{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+::unused}
+
+
+
+Definition at line 13 of file page.\+h.
+
+\mbox{\Hypertarget{a00206_adb5b07c014fc7101308d5d04156c14ca_adb5b07c014fc7101308d5d04156c14ca}\label{a00206_adb5b07c014fc7101308d5d04156c14ca_adb5b07c014fc7101308d5d04156c14ca}} 
+\index{page@{page}!user@{user}}
+\index{user@{user}!page@{page}}
+\subsubsection{\texorpdfstring{user}{user}}
+{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+::user}
+
+
+
+Definition at line 10 of file page.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libc/\hyperlink{a00101}{page.\+h}\end{DoxyCompactItemize}

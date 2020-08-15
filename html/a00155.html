@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: gdt_ptr_struct Struct Reference</title>
+<title>VitalityX: libc/vitality/vlib.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -37,30 +37,38 @@ $(function() {
 });
 </script>
 <div id="main-nav"></div>
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#pub-attribs">Data Fields</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">gdt_ptr_struct Struct Reference</div>  </div>
+<div class="title">vlib.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="a00071_source.html">gdt.h</a>&gt;</code></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="a00158_source.html">vlib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00116_source.html">../types.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for vlib.c:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00156.png" border="0" usemap="#libc_2vitality_2vlib_8c" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div>
+<p><a href="a00155_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:abf557ff0ca1cf3e130e8ab0086ab4ce6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00104_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00155_abf557ff0ca1cf3e130e8ab0086ab4ce6.html#abf557ff0ca1cf3e130e8ab0086ab4ce6">limit</a></td></tr>
-<tr class="separator:abf557ff0ca1cf3e130e8ab0086ab4ce6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b351f31bc261f3c2c3a87252350fb9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00104_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00155_a9b351f31bc261f3c2c3a87252350fb9c.html#a9b351f31bc261f3c2c3a87252350fb9c">base</a></td></tr>
-<tr class="separator:a9b351f31bc261f3c2c3a87252350fb9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:aee69008de31826f28854c29a54cb315e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00155_aee69008de31826f28854c29a54cb315e.html#aee69008de31826f28854c29a54cb315e">loadvlib</a> (<a class="el" href="a00158_a2d9000b4fbb25c5ed2950a2d8f4921d5.html#a2d9000b4fbb25c5ed2950a2d8f4921d5">vlibdesriptor_t</a> *d)</td></tr>
+<tr class="separator:aee69008de31826f28854c29a54cb315e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeb1b55b301de7b4c7aa360c387c3ef9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00158_a97c1a7136f2ab06368e93c2d7533d619.html#a97c1a7136f2ab06368e93c2d7533d619">vlib_entry_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00155_aeeb1b55b301de7b4c7aa360c387c3ef9.html#aeeb1b55b301de7b4c7aa360c387c3ef9">getvlibentry</a> (int id)</td></tr>
+<tr class="separator:aeeb1b55b301de7b4c7aa360c387c3ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6889af26c1cca94090023d5975955cbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00155_a6889af26c1cca94090023d5975955cbf.html#a6889af26c1cca94090023d5975955cbf">runvlib</a> (int id)</td></tr>
+<tr class="separator:a6889af26c1cca94090023d5975955cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="a00071_source.html#l00006">6</a> of file <a class="el" href="a00071_source.html">gdt.h</a>.</p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>libc/<a class="el" href="a00071_source.html">gdt.h</a></li>
-</ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

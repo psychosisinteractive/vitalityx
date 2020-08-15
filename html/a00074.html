@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/interrupt.c File Reference</title>
+<title>VitalityX: libc/g++/cpp_classdef.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,35 +39,43 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_740231a46c27238b7c2b9234f80cf181.html">g++</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">interrupt.c File Reference</div>  </div>
+<div class="title">cpp_classdef.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00077_source.html">interrupt.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00053_source.html">ext/debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00032_source.html">../drivers/pic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00101_source.html">system.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00143_source.html">../vitality/tty.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00116_source.html">../types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00077_source.html">cpp_classdef.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for interrupt.c:</div>
+Include dependency graph for cpp_classdef.cpp:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00075.png" border="0" usemap="#libc_2interrupt_8c" alt=""/></div>
+<div class="center"><img src="a00075.png" border="0" usemap="#libc_2g_09_09_2cpp__classdef_8cpp" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
 <p><a href="a00074_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:abbdfa8f54b7fc7761d12ecc473f87bc4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074_abbdfa8f54b7fc7761d12ecc473f87bc4.html#abbdfa8f54b7fc7761d12ecc473f87bc4">CPP</a></td></tr>
+<tr class="memdesc:abbdfa8f54b7fc7761d12ecc473f87bc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">This flag means the source file is being compiled under C++ mode.  <a href="a00074_abbdfa8f54b7fc7761d12ecc473f87bc4.html#abbdfa8f54b7fc7761d12ecc473f87bc4">More...</a><br /></td></tr>
+<tr class="separator:abbdfa8f54b7fc7761d12ecc473f87bc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a35fe413107af682030ab7a4b6dff19b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074_a35fe413107af682030ab7a4b6dff19b8.html#a35fe413107af682030ab7a4b6dff19b8">init_idt</a> ()</td></tr>
-<tr class="separator:a35fe413107af682030ab7a4b6dff19b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a498f153edfbc59b873e0ae610c3b0335"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074_a498f153edfbc59b873e0ae610c3b0335.html#a498f153edfbc59b873e0ae610c3b0335">idt_set_gate</a> (<a class="el" href="a00104_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> num, <a class="el" href="a00104_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="el" href="a00077_a0523cedff47e2441fc198b7770ec5d3f.html#a0523cedff47e2441fc198b7770ec5d3f">base</a>, <a class="el" href="a00104_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="el" href="a00077_af0b0a7e10694e3b600c7561311cc8271.html#af0b0a7e10694e3b600c7561311cc8271">sel</a>, <a class="el" href="a00104_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="a00077_aa2585d779da0ab21273a8d92de9a0ebe.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a>)</td></tr>
-<tr class="separator:a498f153edfbc59b873e0ae610c3b0335"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6be7d9ce80c86f5178635fa86c2dd5e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074_a6be7d9ce80c86f5178635fa86c2dd5e7.html#a6be7d9ce80c86f5178635fa86c2dd5e7">__cxa_pure_virtual</a> ()</td></tr>
+<tr class="memdesc:a6be7d9ce80c86f5178635fa86c2dd5e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++ Pure Virtual Function, called when a virtual function is required YET there is nothing to handle its call.  <a href="a00074_a6be7d9ce80c86f5178635fa86c2dd5e7.html#a6be7d9ce80c86f5178635fa86c2dd5e7">More...</a><br /></td></tr>
+<tr class="separator:a6be7d9ce80c86f5178635fa86c2dd5e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88ab127aec9ce8ef76f95c9dc7edfe9a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074_a88ab127aec9ce8ef76f95c9dc7edfe9a.html#a88ab127aec9ce8ef76f95c9dc7edfe9a">c_stc</a> (const char string[])</td></tr>
+<tr class="memdesc:a88ab127aec9ce8ef76f95c9dc7edfe9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a const char array into a char*.  <a href="a00074_a88ab127aec9ce8ef76f95c9dc7edfe9a.html#a88ab127aec9ce8ef76f95c9dc7edfe9a">More...</a><br /></td></tr>
+<tr class="separator:a88ab127aec9ce8ef76f95c9dc7edfe9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

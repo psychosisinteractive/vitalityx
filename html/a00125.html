@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/tty.h File Reference</title>
+<title>VitalityX: libc/vitality/fs.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,15 +44,22 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">tty.h File Reference</div>  </div>
+<div class="title">fs.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
+<div class="textblock"><code>#include &quot;<a class="el" href="a00128_source.html">fs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00026_source.html">../../drivers/ide.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00113_source.html">../system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00143_source.html">tty.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00107_source.html">../string.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00164_source.html">vxbfs.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for fs.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00127.png" border="0" usemap="#libc_2vitality_2tty_8hdep" alt=""/></div>
+<div class="center"><img src="a00126.png" border="0" usemap="#libc_2vitality_2fs_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
@@ -60,15 +67,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2ebb962f457a2677d70285d1c0f9be12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00125_a2ebb962f457a2677d70285d1c0f9be12.html#a2ebb962f457a2677d70285d1c0f9be12">tty_putstring</a> (char *string)</td></tr>
-<tr class="memdesc:a2ebb962f457a2677d70285d1c0f9be12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string in VRAM, Text mode only.  <a href="a00125_a2ebb962f457a2677d70285d1c0f9be12.html#a2ebb962f457a2677d70285d1c0f9be12">More...</a><br /></td></tr>
-<tr class="separator:a2ebb962f457a2677d70285d1c0f9be12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13ff2c06d56753c5666ca56cb2d81100"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00125_a13ff2c06d56753c5666ca56cb2d81100.html#a13ff2c06d56753c5666ca56cb2d81100">tty_vgaputstring</a> (char *string)</td></tr>
-<tr class="memdesc:a13ff2c06d56753c5666ca56cb2d81100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string into VRAM, Mode 13 only.  <a href="a00125_a13ff2c06d56753c5666ca56cb2d81100.html#a13ff2c06d56753c5666ca56cb2d81100">More...</a><br /></td></tr>
-<tr class="separator:a13ff2c06d56753c5666ca56cb2d81100"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade960b1320324706aac6c00cc6b1b2fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00125_ade960b1320324706aac6c00cc6b1b2fe.html#ade960b1320324706aac6c00cc6b1b2fe">tty_pputstring</a> (char *string)</td></tr>
-<tr class="memdesc:ade960b1320324706aac6c00cc6b1b2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string into VRAM, detects preferred mode.  <a href="a00125_ade960b1320324706aac6c00cc6b1b2fe.html#ade960b1320324706aac6c00cc6b1b2fe">More...</a><br /></td></tr>
-<tr class="separator:ade960b1320324706aac6c00cc6b1b2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a414110036132977c34813673360e1a63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00125_a414110036132977c34813673360e1a63.html#a414110036132977c34813673360e1a63">getentries</a> ()</td></tr>
+<tr class="separator:a414110036132977c34813673360e1a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fb32d07d3bd05144a196c94fc59c0d1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00125_a3fb32d07d3bd05144a196c94fc59c0d1.html#a3fb32d07d3bd05144a196c94fc59c0d1">getentry</a> (int id)</td></tr>
+<tr class="separator:a3fb32d07d3bd05144a196c94fc59c0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a36265ac74fd925405e1179e799961f1e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00125_a36265ac74fd925405e1179e799961f1e.html#a36265ac74fd925405e1179e799961f1e">nullfs</a> = &quot;null&quot;</td></tr>
+<tr class="separator:a36265ac74fd925405e1179e799961f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

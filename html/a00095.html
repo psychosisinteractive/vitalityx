@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/string.h File Reference</title>
+<title>VitalityX: libc/isr.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,48 +44,43 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">string.h File Reference</div>  </div>
+<div class="title">isr.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00104_source.html">types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00116_source.html">types.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for string.h:</div>
+Include dependency graph for isr.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00096.png" border="0" usemap="#libc_2string_8h" alt=""/></div>
+<div class="center"><img src="a00096.png" border="0" usemap="#libc_2isr_8h" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00097.png" border="0" usemap="#libc_2string_8hdep" alt=""/></div>
+<div class="center"><img src="a00097.png" border="0" usemap="#libc_2isr_8hdep" alt=""/></div>
 <!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00095_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a5338bd16a174527274acc5062483b702"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00095_a5338bd16a174527274acc5062483b702.html#a5338bd16a174527274acc5062483b702">STIRNG_H</a></td></tr>
-<tr class="separator:a5338bd16a174527274acc5062483b702"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00202.html">registers</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ab0dcbec9b4b3c60b939b1095f93cb1b9"><td class="memItemLeft" align="right" valign="top">typedef char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00095_ab0dcbec9b4b3c60b939b1095f93cb1b9.html#ab0dcbec9b4b3c60b939b1095f93cb1b9">string_t</a></td></tr>
-<tr class="memdesc:ab0dcbec9b4b3c60b939b1095f93cb1b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">String typedef.  <a href="a00095_ab0dcbec9b4b3c60b939b1095f93cb1b9.html#ab0dcbec9b4b3c60b939b1095f93cb1b9">More...</a><br /></td></tr>
-<tr class="separator:ab0dcbec9b4b3c60b939b1095f93cb1b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf58dbaf6139b4957c348711f2026957"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00202.html">registers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00095_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a></td></tr>
+<tr class="separator:adf58dbaf6139b4957c348711f2026957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a008e171a518fe0e0352f31b245e03875"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00104_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00095_a008e171a518fe0e0352f31b245e03875.html#a008e171a518fe0e0352f31b245e03875">strlen</a> (const char *str)</td></tr>
-<tr class="separator:a008e171a518fe0e0352f31b245e03875"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8a9a8836962d890b4939c112fd29190"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00095_aa8a9a8836962d890b4939c112fd29190.html#aa8a9a8836962d890b4939c112fd29190">reverse</a> (char s[])</td></tr>
-<tr class="separator:aa8a9a8836962d890b4939c112fd29190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af749add1ff19b6ff96a62f35ebb49b7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00095_af749add1ff19b6ff96a62f35ebb49b7e.html#af749add1ff19b6ff96a62f35ebb49b7e">itoa</a> (int n, char s[])</td></tr>
-<tr class="separator:af749add1ff19b6ff96a62f35ebb49b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a700e3ca056bf69296370f504f2cb6cc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00095_a700e3ca056bf69296370f504f2cb6cc8.html#a700e3ca056bf69296370f504f2cb6cc8">isr_handler</a> (<a class="el" href="a00095_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
+<tr class="separator:a700e3ca056bf69296370f504f2cb6cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

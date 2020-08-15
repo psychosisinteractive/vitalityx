@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/string.c File Reference</title>
+<title>VitalityX: libc/isr.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,15 +46,24 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">string.c File Reference</div>  </div>
+<div class="title">isr.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00095_source.html">string.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00104_source.html">types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00095_source.html">isr.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00113_source.html">system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00059_source.html">ext/debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00032_source.html">../drivers/keyboard.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00038_source.html">../drivers/pic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00071_source.html">ext/task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00143_source.html">vitality/tty.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00107_source.html">string.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00158_source.html">vitality/vlib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00101_source.html">page.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00026_source.html">../drivers/ide.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for string.c:</div>
+Include dependency graph for isr.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00093.png" border="0" usemap="#libc_2string_8c" alt=""/></div>
+<div class="center"><img src="a00093.png" border="0" usemap="#libc_2isr_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
@@ -62,12 +71,10 @@ Include dependency graph for string.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a008e171a518fe0e0352f31b245e03875"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00104_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00092_a008e171a518fe0e0352f31b245e03875.html#a008e171a518fe0e0352f31b245e03875">strlen</a> (const char *str)</td></tr>
-<tr class="separator:a008e171a518fe0e0352f31b245e03875"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8a9a8836962d890b4939c112fd29190"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00092_aa8a9a8836962d890b4939c112fd29190.html#aa8a9a8836962d890b4939c112fd29190">reverse</a> (char s[])</td></tr>
-<tr class="separator:aa8a9a8836962d890b4939c112fd29190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af749add1ff19b6ff96a62f35ebb49b7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00092_af749add1ff19b6ff96a62f35ebb49b7e.html#af749add1ff19b6ff96a62f35ebb49b7e">itoa</a> (int n, char s[])</td></tr>
-<tr class="separator:af749add1ff19b6ff96a62f35ebb49b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a700e3ca056bf69296370f504f2cb6cc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00092_a700e3ca056bf69296370f504f2cb6cc8.html#a700e3ca056bf69296370f504f2cb6cc8">isr_handler</a> (<a class="el" href="a00095_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
+<tr class="separator:a700e3ca056bf69296370f504f2cb6cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd1fa375737cd5ecd84c082738e3b195"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00092_abd1fa375737cd5ecd84c082738e3b195.html#abd1fa375737cd5ecd84c082738e3b195">sysisr_handler</a> (<a class="el" href="a00095_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
+<tr class="separator:abd1fa375737cd5ecd84c082738e3b195"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

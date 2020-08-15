@@ -1,174 +1,219 @@
-\hypertarget{a00101}{}\section{libc/system.h File Reference}
-\label{a00101}\index{libc/system.\+h@{libc/system.\+h}}
+\hypertarget{a00101}{}\section{libc/page.h File Reference}
+\label{a00101}\index{libc/page.\+h@{libc/page.\+h}}
+{\ttfamily \#include \char`\"{}isr.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
-Include dependency graph for system.\+h\+:
+Include dependency graph for page.\+h\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
 % FIG 1
-\subsection*{Macros}
+\subsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{a00101_a3c47e49052cc52d10755358512c10135_a3c47e49052cc52d10755358512c10135}{set\+Bit}(word,  mask)~word $\vert$= mask
+struct \hyperlink{a00206}{page}
 \item 
-\#define \hyperlink{a00101_ab6ca194e33920928b4bdeff67bf0edec_ab6ca194e33920928b4bdeff67bf0edec}{clr\+Bit}(word,  mask)~word \&= $\sim$mask
+struct \hyperlink{a00210}{page\+\_\+table}
+\item 
+struct \hyperlink{a00214}{page\+\_\+directory}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{a00206}{page} \hyperlink{a00101_a76113662e059e0926a92c5b15c098f4a_a76113662e059e0926a92c5b15c098f4a}{page\+\_\+t}
+\item 
+typedef struct \hyperlink{a00210}{page\+\_\+table} \hyperlink{a00101_a052d6ef76d4f16828bb0f478b24b6b55_a052d6ef76d4f16828bb0f478b24b6b55}{page\+\_\+table\+\_\+t}
+\item 
+typedef struct \hyperlink{a00214}{page\+\_\+directory} \hyperlink{a00101_aa6e79064ffe1eb8c43be4dc1be3f64a1_aa6e79064ffe1eb8c43be4dc1be3f64a1}{page\+\_\+directory\+\_\+t}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00101_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}{pokeb} (\hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$addr, \hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} offset, \hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} val)
-\begin{DoxyCompactList}\small\item\em Poke Byte. \end{DoxyCompactList}\item 
-\hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00101_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}{peekb} (\hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} $\ast$addr, \hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} offset)
-\begin{DoxyCompactList}\small\item\em Peek Byte. \end{DoxyCompactList}\item 
-void $\ast$ \hyperlink{a00101_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset} (void $\ast$dest, int val, \hyperlink{a00104_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} len)
-\begin{DoxyCompactList}\small\item\em Memset. \end{DoxyCompactList}\item 
-void $\ast$ \hyperlink{a00101_a113a42d20ee587a79f71464089007387_a113a42d20ee587a79f71464089007387}{memcpy} (void $\ast$restrict dstptr, const void $\ast$restrict srcptr, \hyperlink{a00104_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} size)
-\begin{DoxyCompactList}\small\item\em Memcpy. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{a00101_ad05c453b13c69ecf5c7963798704cc18_ad05c453b13c69ecf5c7963798704cc18}{initialise\+\_\+paging} ()
+\begin{DoxyCompactList}\small\item\em Sets up the environment, page directories etc and enables paging. \end{DoxyCompactList}\item 
+void \hyperlink{a00101_af364044d82ac10c64dc653f8e3620dba_af364044d82ac10c64dc653f8e3620dba}{switch\+\_\+page\+\_\+directory} (\hyperlink{a00101_aa6e79064ffe1eb8c43be4dc1be3f64a1_aa6e79064ffe1eb8c43be4dc1be3f64a1}{page\+\_\+directory\+\_\+t} $\ast$new)
+\begin{DoxyCompactList}\small\item\em Causes the specified page directory to be loaded into the C\+R3 register. \end{DoxyCompactList}\item 
+\hyperlink{a00101_a76113662e059e0926a92c5b15c098f4a_a76113662e059e0926a92c5b15c098f4a}{page\+\_\+t} $\ast$ \hyperlink{a00101_ab80db06fa94f1003fd5a5ec106bc9f6e_ab80db06fa94f1003fd5a5ec106bc9f6e}{get\+\_\+page} (\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} address, int make, \hyperlink{a00101_aa6e79064ffe1eb8c43be4dc1be3f64a1_aa6e79064ffe1eb8c43be4dc1be3f64a1}{page\+\_\+directory\+\_\+t} $\ast$dir)
+\begin{DoxyCompactList}\small\item\em Retrieves a pointer to the page required. \end{DoxyCompactList}\item 
+void \hyperlink{a00101_a6293af8e675059a566216be86660854b_a6293af8e675059a566216be86660854b}{page\+\_\+fault} (\hyperlink{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t} regs)
+\begin{DoxyCompactList}\small\item\em Handler for page faults. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{a00101_ab6ca194e33920928b4bdeff67bf0edec_ab6ca194e33920928b4bdeff67bf0edec}\label{a00101_ab6ca194e33920928b4bdeff67bf0edec_ab6ca194e33920928b4bdeff67bf0edec}} 
-\index{system.\+h@{system.\+h}!clr\+Bit@{clr\+Bit}}
-\index{clr\+Bit@{clr\+Bit}!system.\+h@{system.\+h}}
-\subsubsection{\texorpdfstring{clr\+Bit}{clrBit}}
-{\footnotesize\ttfamily \#define clr\+Bit(\begin{DoxyParamCaption}\item[{}]{word,  }\item[{}]{mask }\end{DoxyParamCaption})~word \&= $\sim$mask}
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{a00101_aa6e79064ffe1eb8c43be4dc1be3f64a1_aa6e79064ffe1eb8c43be4dc1be3f64a1}\label{a00101_aa6e79064ffe1eb8c43be4dc1be3f64a1_aa6e79064ffe1eb8c43be4dc1be3f64a1}} 
+\index{page.\+h@{page.\+h}!page\+\_\+directory\+\_\+t@{page\+\_\+directory\+\_\+t}}
+\index{page\+\_\+directory\+\_\+t@{page\+\_\+directory\+\_\+t}!page.\+h@{page.\+h}}
+\subsubsection{\texorpdfstring{page\+\_\+directory\+\_\+t}{page\_directory\_t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00214}{page\+\_\+directory}  \hyperlink{a00101_aa6e79064ffe1eb8c43be4dc1be3f64a1_aa6e79064ffe1eb8c43be4dc1be3f64a1}{page\+\_\+directory\+\_\+t}}
 
+\mbox{\Hypertarget{a00101_a76113662e059e0926a92c5b15c098f4a_a76113662e059e0926a92c5b15c098f4a}\label{a00101_a76113662e059e0926a92c5b15c098f4a_a76113662e059e0926a92c5b15c098f4a}} 
+\index{page.\+h@{page.\+h}!page\+\_\+t@{page\+\_\+t}}
+\index{page\+\_\+t@{page\+\_\+t}!page.\+h@{page.\+h}}
+\subsubsection{\texorpdfstring{page\+\_\+t}{page\_t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00206}{page}  \hyperlink{a00101_a76113662e059e0926a92c5b15c098f4a_a76113662e059e0926a92c5b15c098f4a}{page\+\_\+t}}
 
-
-Definition at line 10 of file system.\+h.
-
-\mbox{\Hypertarget{a00101_a3c47e49052cc52d10755358512c10135_a3c47e49052cc52d10755358512c10135}\label{a00101_a3c47e49052cc52d10755358512c10135_a3c47e49052cc52d10755358512c10135}} 
-\index{system.\+h@{system.\+h}!set\+Bit@{set\+Bit}}
-\index{set\+Bit@{set\+Bit}!system.\+h@{system.\+h}}
-\subsubsection{\texorpdfstring{set\+Bit}{setBit}}
-{\footnotesize\ttfamily \#define set\+Bit(\begin{DoxyParamCaption}\item[{}]{word,  }\item[{}]{mask }\end{DoxyParamCaption})~word $\vert$= mask}
-
-
-
-Definition at line 6 of file system.\+h.
+\mbox{\Hypertarget{a00101_a052d6ef76d4f16828bb0f478b24b6b55_a052d6ef76d4f16828bb0f478b24b6b55}\label{a00101_a052d6ef76d4f16828bb0f478b24b6b55_a052d6ef76d4f16828bb0f478b24b6b55}} 
+\index{page.\+h@{page.\+h}!page\+\_\+table\+\_\+t@{page\+\_\+table\+\_\+t}}
+\index{page\+\_\+table\+\_\+t@{page\+\_\+table\+\_\+t}!page.\+h@{page.\+h}}
+\subsubsection{\texorpdfstring{page\+\_\+table\+\_\+t}{page\_table\_t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00210}{page\+\_\+table}  \hyperlink{a00101_a052d6ef76d4f16828bb0f478b24b6b55_a052d6ef76d4f16828bb0f478b24b6b55}{page\+\_\+table\+\_\+t}}
 
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00101_a113a42d20ee587a79f71464089007387_a113a42d20ee587a79f71464089007387}\label{a00101_a113a42d20ee587a79f71464089007387_a113a42d20ee587a79f71464089007387}} 
-\index{system.\+h@{system.\+h}!memcpy@{memcpy}}
-\index{memcpy@{memcpy}!system.\+h@{system.\+h}}
-\subsubsection{\texorpdfstring{memcpy()}{memcpy()}}
-{\footnotesize\ttfamily void$\ast$ memcpy (\begin{DoxyParamCaption}\item[{void $\ast$restrict}]{dstptr,  }\item[{const void $\ast$restrict}]{srcptr,  }\item[{\hyperlink{a00104_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{size }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00101_ab80db06fa94f1003fd5a5ec106bc9f6e_ab80db06fa94f1003fd5a5ec106bc9f6e}\label{a00101_ab80db06fa94f1003fd5a5ec106bc9f6e_ab80db06fa94f1003fd5a5ec106bc9f6e}} 
+\index{page.\+h@{page.\+h}!get\+\_\+page@{get\+\_\+page}}
+\index{get\+\_\+page@{get\+\_\+page}!page.\+h@{page.\+h}}
+\subsubsection{\texorpdfstring{get\+\_\+page()}{get\_page()}}
+{\footnotesize\ttfamily \hyperlink{a00101_a76113662e059e0926a92c5b15c098f4a_a76113662e059e0926a92c5b15c098f4a}{page\+\_\+t}$\ast$ get\+\_\+page (\begin{DoxyParamCaption}\item[{\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int}}]{address,  }\item[{int}]{make,  }\item[{\hyperlink{a00101_aa6e79064ffe1eb8c43be4dc1be3f64a1_aa6e79064ffe1eb8c43be4dc1be3f64a1}{page\+\_\+directory\+\_\+t} $\ast$}]{dir }\end{DoxyParamCaption})}
 
 
 
-Memcpy. 
+Retrieves a pointer to the page required. 
 
+If make == 1, if the page-\/table in which this page should reside isn\textquotesingle{}t created, create it! 
 
-\begin{DoxyParams}{Parameters}
-{\em dstptr} & Destination pointer \\
-\hline
-{\em srcptr} & Source pointer \\
-\hline
-{\em size} & Size \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 19 of file system.\+c.
+Definition at line 151 of file page.\+c.
 
 
 \begin{DoxyCode}
-19                                                                               \{
-20     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* dst = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*) dstptr;
-21     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* src = (\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*) srcptr;
-22     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < size; i++)
-23         dst[i] = src[i];
-24     \textcolor{keywordflow}{return} dstptr;
-25 \}
+152 \{
+153     \textcolor{comment}{// Turn the address into an index.}
+154     address /= 0x1000;
+155     \textcolor{comment}{// Find the page table containing this address.}
+156     \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} table\_idx = address / 1024;
+157     \textcolor{keywordflow}{if} (dir->\hyperlink{a00214_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables}[table\_idx]) \textcolor{comment}{// If this table is already assigned}
+158     \{
+159         \textcolor{keywordflow}{return} &dir->\hyperlink{a00214_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables}[table\_idx]->\hyperlink{a00210_a48867fe3c6d8599eff21b790260d55b4_a48867fe3c6d8599eff21b790260d55b4}{pages}[address%1024];
+160     \}
+161     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(make)
+162     \{
+163         \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} tmp;
+164         dir->\hyperlink{a00214_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables}[table\_idx] = (\hyperlink{a00210}{page\_table\_t}*)\hyperlink{a00062_ab4fd209369f6c18acead48b80e7f09c7_ab4fd209369f6c18acead48b80e7f09c7}{kmalloc\_ap}(\textcolor{keyword}{sizeof}(
+      \hyperlink{a00210}{page\_table\_t}), &tmp);
+165         \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(dir->\hyperlink{a00214_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables}[table\_idx], 0, 0x1000);
+166         dir->\hyperlink{a00214_a99a9e823491d762288ceb3faf2b1088b_a99a9e823491d762288ceb3faf2b1088b}{tablesPhysical}[table\_idx] = tmp | 0x7; \textcolor{comment}{// PRESENT, RW, US.}
+167         \textcolor{keywordflow}{return} &dir->\hyperlink{a00214_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables}[table\_idx]->\hyperlink{a00210_a48867fe3c6d8599eff21b790260d55b4_a48867fe3c6d8599eff21b790260d55b4}{pages}[address%1024];
+168     \}
+169     \textcolor{keywordflow}{else}
+170     \{
+171         \textcolor{keywordflow}{return} 0;
+172     \}
+173 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00101_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}\label{a00101_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}} 
-\index{system.\+h@{system.\+h}!memset@{memset}}
-\index{memset@{memset}!system.\+h@{system.\+h}}
-\subsubsection{\texorpdfstring{memset()}{memset()}}
-{\footnotesize\ttfamily void$\ast$ memset (\begin{DoxyParamCaption}\item[{void $\ast$}]{dest,  }\item[{int}]{val,  }\item[{\hyperlink{a00104_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{len }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00101_ad05c453b13c69ecf5c7963798704cc18_ad05c453b13c69ecf5c7963798704cc18}\label{a00101_ad05c453b13c69ecf5c7963798704cc18_ad05c453b13c69ecf5c7963798704cc18}} 
+\index{page.\+h@{page.\+h}!initialise\+\_\+paging@{initialise\+\_\+paging}}
+\index{initialise\+\_\+paging@{initialise\+\_\+paging}!page.\+h@{page.\+h}}
+\subsubsection{\texorpdfstring{initialise\+\_\+paging()}{initialise\_paging()}}
+{\footnotesize\ttfamily void initialise\+\_\+paging (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Memset. 
+Sets up the environment, page directories etc and enables paging. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em dest} & The destination \\
-\hline
-{\em val} & The value to set \\
-\hline
-{\em len} & The length of bytes to set \\
-\hline
-\end{DoxyParams}
 
-
-Definition at line 12 of file system.\+c.
+Definition at line 107 of file page.\+c.
 
 
 \begin{DoxyCode}
-13 \{
-14   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *ptr = dest;
-15   \textcolor{keywordflow}{while} (len-- > 0)
-16     *ptr++ = val;
-17   \textcolor{keywordflow}{return} dest;
-18 \}
+108 \{
+109     \textcolor{comment}{// The size of physical memory. For the moment we}
+110     \textcolor{comment}{// assume it is 16MB big.}
+111     \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} mem\_end\_page = 0x1000000;
+112 
+113     \hyperlink{a00098_abf36580d5618820f15388083c9313e60_abf36580d5618820f15388083c9313e60}{nframes} = mem\_end\_page / 0x1000;
+114     \hyperlink{a00098_a76492529572a1a20a06076ac40d66b29_a76492529572a1a20a06076ac40d66b29}{frames} = (\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int}*)\hyperlink{a00062_a57133c6165a95f09de1806a08042e5e0_a57133c6165a95f09de1806a08042e5e0}{kmalloc}(\hyperlink{a00098_a94f8d624e19f4f1ecc503e2f82071c9e_a94f8d624e19f4f1ecc503e2f82071c9e}{INDEX\_FROM\_BIT}(
+      \hyperlink{a00098_abf36580d5618820f15388083c9313e60_abf36580d5618820f15388083c9313e60}{nframes}));
+115     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(\hyperlink{a00098_a76492529572a1a20a06076ac40d66b29_a76492529572a1a20a06076ac40d66b29}{frames}, 0, \hyperlink{a00098_a94f8d624e19f4f1ecc503e2f82071c9e_a94f8d624e19f4f1ecc503e2f82071c9e}{INDEX\_FROM\_BIT}(\hyperlink{a00098_abf36580d5618820f15388083c9313e60_abf36580d5618820f15388083c9313e60}{nframes}));
+116 
+117     \textcolor{comment}{// Let's make a page directory.}
+118     \hyperlink{a00098_ada87161706c337a35f601e680b647a81_ada87161706c337a35f601e680b647a81}{kernel\_directory} = (\hyperlink{a00214}{page\_directory\_t}*)
+      \hyperlink{a00062_a2f7fc26d2604f7bd8bd6d4fac5c98f16_a2f7fc26d2604f7bd8bd6d4fac5c98f16}{kmalloc\_a}(\textcolor{keyword}{sizeof}(\hyperlink{a00214}{page\_directory\_t}));
+119     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(\hyperlink{a00098_ada87161706c337a35f601e680b647a81_ada87161706c337a35f601e680b647a81}{kernel\_directory}, 0, \textcolor{keyword}{sizeof}(\hyperlink{a00214}{page\_directory\_t}));
+120     \hyperlink{a00098_a69cc0aac8cd0b433e9ffa124ad11da56_a69cc0aac8cd0b433e9ffa124ad11da56}{current\_directory} = \hyperlink{a00098_ada87161706c337a35f601e680b647a81_ada87161706c337a35f601e680b647a81}{kernel\_directory};
+121 
+122     \textcolor{comment}{// We need to identity map (phys addr = virt addr) from}
+123     \textcolor{comment}{// 0x0 to the end of used memory, so we can access this}
+124     \textcolor{comment}{// transparently, as if paging wasn't enabled.}
+125     \textcolor{comment}{// NOTE that we use a while loop here deliberately.}
+126     \textcolor{comment}{// inside the loop body we actually change placement\_address}
+127     \textcolor{comment}{// by calling kmalloc(). A while loop causes this to be}
+128     \textcolor{comment}{// computed on-the-fly rather than once at the start.}
+129     \textcolor{keywordtype}{int} i = 0;
+130     \textcolor{keywordflow}{while} (i < \hyperlink{a00098_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}{placement\_address})
+131     \{
+132         \textcolor{comment}{// Kernel code is readable but not writeable from userspace.}
+133         \hyperlink{a00098_a3a397c4898938528b31b726193ad3542_a3a397c4898938528b31b726193ad3542}{alloc\_frame}( \hyperlink{a00098_ab80db06fa94f1003fd5a5ec106bc9f6e_ab80db06fa94f1003fd5a5ec106bc9f6e}{get\_page}(i, 1, \hyperlink{a00098_ada87161706c337a35f601e680b647a81_ada87161706c337a35f601e680b647a81}{kernel\_directory}), 0, 0);
+134         i += 0x1000;
+135     \}
+136 
+137     \textcolor{comment}{// Now, enable paging!}
+138     \hyperlink{a00098_a6f2bd6a5d2bbda0dee6b65c511a9cb98_a6f2bd6a5d2bbda0dee6b65c511a9cb98}{switch\_page\_directory}(\hyperlink{a00098_ada87161706c337a35f601e680b647a81_ada87161706c337a35f601e680b647a81}{kernel\_directory});
+139 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00101_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}\label{a00101_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}} 
-\index{system.\+h@{system.\+h}!peekb@{peekb}}
-\index{peekb@{peekb}!system.\+h@{system.\+h}}
-\subsubsection{\texorpdfstring{peekb()}{peekb()}}
-{\footnotesize\ttfamily \hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} peekb (\begin{DoxyParamCaption}\item[{\hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} $\ast$}]{addr,  }\item[{\hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{offset }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00101_a6293af8e675059a566216be86660854b_a6293af8e675059a566216be86660854b}\label{a00101_a6293af8e675059a566216be86660854b_a6293af8e675059a566216be86660854b}} 
+\index{page.\+h@{page.\+h}!page\+\_\+fault@{page\+\_\+fault}}
+\index{page\+\_\+fault@{page\+\_\+fault}!page.\+h@{page.\+h}}
+\subsubsection{\texorpdfstring{page\+\_\+fault()}{page\_fault()}}
+{\footnotesize\ttfamily void page\+\_\+fault (\begin{DoxyParamCaption}\item[{\hyperlink{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t}}]{regs }\end{DoxyParamCaption})}
 
 
 
-Peek Byte. 
+Handler for page faults. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em addr} & The address of the byte \\
-\hline
-{\em offset} & The offset from the address \\
-\hline
-\end{DoxyParams}
 
-
-Definition at line 8 of file system.\+c.
+Definition at line 175 of file page.\+c.
 
 
 \begin{DoxyCode}
-8                                               \{
-9     addr+=offset;
-10     \textcolor{keywordflow}{return} *addr;
-11 \}
+176 \{
+177     \textcolor{comment}{// A page fault has occurred.}
+178     \textcolor{comment}{// The faulting address is stored in the CR2 register.}
+179     \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} faulting\_address;
+180     \textcolor{keyword}{asm} \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"mov %%cr2, %0"} : \textcolor{stringliteral}{"=r"} (faulting\_address));
+181 
+182     \textcolor{comment}{// The error code gives us details of what happened.}
+183     \textcolor{keywordtype}{int} present   = !(regs.\hyperlink{a00202_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code} & 0x1); \textcolor{comment}{// Page not present}
+184     \textcolor{keywordtype}{int} rw = regs.\hyperlink{a00202_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code} & 0x2;           \textcolor{comment}{// Write operation?}
+185     \textcolor{keywordtype}{int} us = regs.\hyperlink{a00202_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code} & 0x4;           \textcolor{comment}{// Processor was in user-mode?}
+186     \textcolor{keywordtype}{int} reserved = regs.\hyperlink{a00202_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code} & 0x8;     \textcolor{comment}{// Overwritten CPU-reserved bits of page entry?}
+187     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = regs.\hyperlink{a00202_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code} & 0x10;          \textcolor{comment}{// Caused by an instruction fetch?}
+188 
+189     \textcolor{comment}{// Output an error message.}
+190     \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"Page fault! ( "});
+191     \textcolor{keywordflow}{if} (present) \{\hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"present "});\}
+192     \textcolor{keywordflow}{if} (rw) \{\hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"read-only "});\}
+193     \textcolor{keywordflow}{if} (us) \{\hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"user-mode "});\}
+194     \textcolor{keywordflow}{if} (reserved) \{\hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"reserved "});\}
+195     \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{") at 0d"});
+196     \textcolor{keywordtype}{char}* addr;
+197     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(faulting\_address,addr);
+198     \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(addr);
+199     \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n"});
+200 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00101_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}\label{a00101_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}} 
-\index{system.\+h@{system.\+h}!pokeb@{pokeb}}
-\index{pokeb@{pokeb}!system.\+h@{system.\+h}}
-\subsubsection{\texorpdfstring{pokeb()}{pokeb()}}
-{\footnotesize\ttfamily void pokeb (\begin{DoxyParamCaption}\item[{\hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$}]{addr,  }\item[{\hyperlink{a00104_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{offset,  }\item[{\hyperlink{a00104_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{val }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00101_af364044d82ac10c64dc653f8e3620dba_af364044d82ac10c64dc653f8e3620dba}\label{a00101_af364044d82ac10c64dc653f8e3620dba_af364044d82ac10c64dc653f8e3620dba}} 
+\index{page.\+h@{page.\+h}!switch\+\_\+page\+\_\+directory@{switch\+\_\+page\+\_\+directory}}
+\index{switch\+\_\+page\+\_\+directory@{switch\+\_\+page\+\_\+directory}!page.\+h@{page.\+h}}
+\subsubsection{\texorpdfstring{switch\+\_\+page\+\_\+directory()}{switch\_page\_directory()}}
+{\footnotesize\ttfamily void switch\+\_\+page\+\_\+directory (\begin{DoxyParamCaption}\item[{\hyperlink{a00101_aa6e79064ffe1eb8c43be4dc1be3f64a1_aa6e79064ffe1eb8c43be4dc1be3f64a1}{page\+\_\+directory\+\_\+t} $\ast$}]{new }\end{DoxyParamCaption})}
 
 
 
-Poke Byte. 
+Causes the specified page directory to be loaded into the C\+R3 register. 
 
 
-\begin{DoxyParams}{Parameters}
-{\em addr} & The address of the byte \\
-\hline
-{\em offset} & The offset from the address \\
-\hline
-{\em val} & The value \\
-\hline
-\end{DoxyParams}
 
-
-Definition at line 4 of file system.\+c.
+Definition at line 141 of file page.\+c.
 
 
 \begin{DoxyCode}
-4                                                          \{
-5     addr+=offset;
-6     *addr=val;
-7 \}
+142 \{
+143     \hyperlink{a00098_a69cc0aac8cd0b433e9ffa124ad11da56_a69cc0aac8cd0b433e9ffa124ad11da56}{current\_directory} = dir;
+144     \textcolor{keyword}{asm} \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"mov %0, %%cr3"}:: \textcolor{stringliteral}{"r"}(&dir->tablesPhysical));
+145     \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} cr0;
+146     \textcolor{keyword}{asm} \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"mov %%cr0, %0"}: \textcolor{stringliteral}{"=r"}(cr0));
+147     cr0 |= 0x80000000; \textcolor{comment}{// Enable paging!}
+148     \textcolor{keyword}{asm} \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"mov %0, %%cr0"}:: \textcolor{stringliteral}{"r"}(cr0));
+149 \}
 \end{DoxyCode}
