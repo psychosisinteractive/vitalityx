@@ -8,6 +8,7 @@ POBJ = ${CPP_SOURCES:.cpp=.o}
 AOBJ = ${A_SOURCES:.s=.o}
 
 CC = i686-elf-gcc
+LD = i686-elf-ld
 PP = i686-elf-g++
 WSL = C:\Windows\sysnative\wsl
 AS = i686-elf-as
@@ -26,10 +27,10 @@ operating.bin: bootloader/boot.bin kernel.bin
 	${WSL} cat $^ > operating.bin
 
 kernel.bin: kernel/kentry.o LINKER.ld ${OBJ} ${AOBJ}
-	i686-elf-ld -o $@ -Ttext ${ORIGIN} $^ --oformat binary
+	${LD} -o $@ -Ttext ${ORIGIN} $^ --oformat binary
 
 kernel.elf: kernel/kentry.o LINKER.ld ${OBJ} ${AOBJ}
-	i686-elf-ld -o $@ -Ttext ${ORIGIN} $^
+	${LD} -o $@ -Ttext ${ORIGIN} $^
 
 run: operating.bin
 	qemu-system-i386 -no-reboot -no-shutdown -fda operating.bin

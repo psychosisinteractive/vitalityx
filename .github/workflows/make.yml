@@ -26,12 +26,10 @@ jobs:
     - name: Setup Environment
       run: |
         git clone https://github.com/rm-hull/barebones-toolchain.git
-        cd barebones-toolchain
-        . ./setenv.sh
         sudo apt-get install make
         sudo apt-get install nasm
         cd ..
     - name: Compile
       run: |
-        make WSL=  operating.bin
+        make CC=barebones-toolchain/cross/i686/bin/i686-elf-gcc LD=barebones-toolchain/cross/i686/bin/i686-elf-ld AS=barebones-toolchain/cross/i686/bin/i686-elf-as WSL=  operating.bin
         make clean
