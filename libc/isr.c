@@ -10,15 +10,69 @@
 #include "page.h"
 #include "../drivers/ide.h"
 
+void sdump(registers_t regs) {
+    tty_pputstring("\n");
+    tty_pputstring("EAX: ");
+    char reg[128];
+    itoa(regs.eax,reg);
+    tty_pputstring("\n");
+    tty_pputstring("EBX: ");
+    memset(&reg,0,128);
+    itoa(regs.ebx,reg);
+    tty_pputstring("\n");
+    tty_pputstring("ECX: ");
+    memset(&reg,0,128);
+    itoa(regs.ecx,reg);
+    tty_pputstring("\n");
+    tty_pputstring("EDI: ");
+    memset(&reg,0,128);
+    itoa(regs.edi,reg);
+    tty_pputstring("\n");
+    tty_pputstring("EDX: ");
+    memset(&reg,0,128);
+    itoa(regs.edx,reg);
+    tty_pputstring("\n");
+    tty_pputstring("EIP: ");
+    memset(&reg,0,128);
+    itoa(regs.eip,reg);
+    tty_pputstring("\n");
+    tty_pputstring("ESI: ");
+    memset(&reg,0,128);
+    itoa(regs.esi,reg);
+    tty_pputstring("\n");
+    tty_pputstring("ESP: ");
+    memset(&reg,0,128);
+    itoa(regs.esp,reg);
+    tty_pputstring("\n");
+    tty_pputstring("user ESP: ");
+    memset(&reg,0,128);
+    itoa(regs.useresp,reg);
+    tty_pputstring("\n");
+    tty_pputstring("SS: ");
+    memset(&reg,0,128);
+    itoa(regs.ss,reg);
+    tty_pputstring(" CS: ");
+    memset(&reg,0,128);
+    itoa(regs.cs,reg);
+    tty_pputstring(" DS: ");
+    memset(&reg,0,128);
+    itoa(regs.ds,reg);
+    tty_pputstring("\n");
+    tty_pputstring("EFLAGS: ");
+    memset(&reg,0,128);
+    itoa(regs.eflags,reg);
+}
+
 void isr_handler(registers_t regs)
 {
     Task* ctask = getctask();
     switch(regs.int_no) {
         case 0:
             BochsConsolePrintString("\n\nDivide By Zero Failure\n\n");
-            
+            sdump(regs);
             PIC_sendEOI(regs.int_no);
             break;
+        case 1:
         case 32:
             PIC_sendEOI(regs.int_no);
             keyboard_handler_main();
@@ -33,7 +87,8 @@ void isr_handler(registers_t regs)
             BochsConsolePrintString(errcode);
             tty_pputstring("Error Code:");
             tty_pputstring(errcode);
-            tty_pputstring("\n\nPlease restart your system, and report the error code to a VitalityX developer.\n");
+            tty_pputstring("\n\nPlease restart your system, and report the error code and following dump to a VitalityX developer.\n");
+            sdump(regs);
             bochs_bkpt();
             for(;;) {
 
@@ -67,9 +122,11 @@ void isr_handler(registers_t regs)
             BochsConsolePrintString(inttype);
             tty_pputstring(inttype);
             tty_pputstring("\n");
+            sdump(regs);
             break;
     }
 }
+
 
 void sysisr_handler(registers_t regs) {
     Task* ctask = getctask();

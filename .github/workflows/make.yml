@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: VitalityCompile
+name: Vitality Compile Service
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -29,7 +29,8 @@ jobs:
         cd barebones-toolchain
         . ./setenv.sh
         sudo apt-get install make
-    #- name: Compile
-    #  run: |
-    #    cd ..
-    #    make operating.bin
+        cd ..
+    - name: Compile
+      run: |
+        make operating.bin
+        make clean

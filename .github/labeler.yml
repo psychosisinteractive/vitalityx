@@ -1,0 +1,19 @@
+vx:
+  - ./*
+
+bootloader:
+  - bootloader/*
+  - bootloader/**/*
+
+kernel:
+  - kernel/*
+  - kernel/**/*
+
+libc:
+  - libc/*
+
+vitalitylibc:
+  - libc/vitality/*
+
+drivers:
+  - drivers/*
