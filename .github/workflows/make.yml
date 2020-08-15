@@ -29,8 +29,9 @@ jobs:
         cd barebones-toolchain
         . ./setenv.sh
         sudo apt-get install make
+        sudo apt-get install nasm
         cd ..
     - name: Compile
       run: |
-        make operating.bin
+        make WSL=  operating.bin
         make clean
