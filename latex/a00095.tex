@@ -18,8 +18,10 @@ typedef struct \hyperlink{a00202}{registers} \hyperlink{a00095_adf58dbaf6139b495
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \hyperlink{a00095_a4b4233daef6e041e7278cae2b21b5ed4_a4b4233daef6e041e7278cae2b21b5ed4}{sdump} (\hyperlink{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t} regs)
+\begin{DoxyCompactList}\small\item\em Dump interrupt registers. \end{DoxyCompactList}\item 
 void \hyperlink{a00095_a700e3ca056bf69296370f504f2cb6cc8_a700e3ca056bf69296370f504f2cb6cc8}{isr\+\_\+handler} (\hyperlink{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t} regs)
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em I\+SR handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Typedef Documentation}
@@ -40,68 +42,149 @@ void \hyperlink{a00095_a700e3ca056bf69296370f504f2cb6cc8_a700e3ca056bf69296370f5
 
 
 
+I\+SR handler. 
+
+
+
+Definition at line 66 of file isr.\+c.
+
+
+\begin{DoxyCode}
+67 \{
+68     \hyperlink{a00182}{Task}* ctask = \hyperlink{a00068_a5913e9b2190b2b4118ee020721a320e2_a5913e9b2190b2b4118ee020721a320e2}{getctask}();
+69     \textcolor{keywordflow}{switch}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no}) \{
+70         \textcolor{keywordflow}{case} 0:
+71             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nDivide By Zero Failure\(\backslash\)n\(\backslash\)n"});
+72             \hyperlink{a00092_a4b4233daef6e041e7278cae2b21b5ed4_a4b4233daef6e041e7278cae2b21b5ed4}{sdump}(regs);
+73             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
+74             \textcolor{keywordflow}{break};
+75         \textcolor{keywordflow}{case} 1:
+76         \textcolor{keywordflow}{case} 32:
+77             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
+78             \hyperlink{a00029_a1db933be72a0547c4070ba55e6697ba2_a1db933be72a0547c4070ba55e6697ba2}{keyboard\_handler\_main}();
+79             \textcolor{keywordflow}{break};
+80         \textcolor{keywordflow}{case} 13:
+81             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nGENERAL PROTECTION FAULT!!!\(\backslash\)n\(\backslash\)n"});
+82             \hyperlink{a00140_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}{clearscreen}();
+83             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"GENERAL PROTECTION FAULT!!!\(\backslash\)n\(\backslash\)n"});
+84             \textcolor{keywordtype}{char}* errcode = \textcolor{stringliteral}{"  "};
+85             \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code},errcode);
+86             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"Errorcode: "});
+87             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(errcode);
+88             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Error Code:"});
+89             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(errcode);
+90             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nPlease restart your system, and report the error code and
+       following dump to a VitalityX developer.\(\backslash\)n"});
+91             \hyperlink{a00092_a4b4233daef6e041e7278cae2b21b5ed4_a4b4233daef6e041e7278cae2b21b5ed4}{sdump}(regs);
+92             \hyperlink{a00131_a3f7e7be8f62f43b2b62df54cac1590be_a3f7e7be8f62f43b2b62df54cac1590be}{bochs\_bkpt}();
+93             \textcolor{keywordflow}{for}(;;) \{
+94 
+95             \}
+96             \textcolor{keywordflow}{break};
+97         \textcolor{keywordflow}{case} 14:
+98             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
+99             \hyperlink{a00023_ad7ea572af581cc0623a2fb74a579ca83_ad7ea572af581cc0623a2fb74a579ca83}{ide\_irq}();
+100             \hyperlink{a00098_a6293af8e675059a566216be86660854b_a6293af8e675059a566216be86660854b}{page\_fault}(regs);
+101             \textcolor{keywordflow}{for}(;;) \{
+102 
+103             \}
+104             \textcolor{keywordflow}{break};
+105         \textcolor{keywordflow}{case} 15:
+106             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
+107             \hyperlink{a00023_ad7ea572af581cc0623a2fb74a579ca83_ad7ea572af581cc0623a2fb74a579ca83}{ide\_irq}();
+108             \textcolor{keywordflow}{break};
+109         \textcolor{keywordflow}{case} 63:
+110             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
+111             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nVitalityX SysISR Hit\(\backslash\)n\(\backslash\)n"});
+112             \hyperlink{a00092_abd1fa375737cd5ecd84c082738e3b195_abd1fa375737cd5ecd84c082738e3b195}{sysisr\_handler}(regs);
+113             \textcolor{keywordflow}{break};
+114         \textcolor{keywordflow}{default}:
+115             \hyperlink{a00140_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}{clearscreen}();
+116             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"UNKNOWN SYSTEM INTERRUPT!!!\(\backslash\)n\(\backslash\)n"});
+117             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nVitalityXInterrupt\(\backslash\)n\(\backslash\)n"});
+118             \textcolor{keywordtype}{char}* inttype = \textcolor{stringliteral}{"  "};
+119             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"No. "});
+120             \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no},inttype);
+121             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"Interrupt: "});
+122             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(inttype);
+123             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(inttype);
+124             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+125             \hyperlink{a00092_a4b4233daef6e041e7278cae2b21b5ed4_a4b4233daef6e041e7278cae2b21b5ed4}{sdump}(regs);
+126             \textcolor{keywordflow}{break};
+127     \}
+128 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00095_a4b4233daef6e041e7278cae2b21b5ed4_a4b4233daef6e041e7278cae2b21b5ed4}\label{a00095_a4b4233daef6e041e7278cae2b21b5ed4_a4b4233daef6e041e7278cae2b21b5ed4}} 
+\index{isr.\+h@{isr.\+h}!sdump@{sdump}}
+\index{sdump@{sdump}!isr.\+h@{isr.\+h}}
+\subsubsection{\texorpdfstring{sdump()}{sdump()}}
+{\footnotesize\ttfamily void sdump (\begin{DoxyParamCaption}\item[{\hyperlink{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t}}]{regs }\end{DoxyParamCaption})}
+
+
+
+Dump interrupt registers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em regs} & The reigsters \\
+\hline
+\end{DoxyParams}
+
+
 Definition at line 13 of file isr.\+c.
 
 
 \begin{DoxyCode}
-14 \{
-15     \hyperlink{a00182}{Task}* ctask = \hyperlink{a00068_a5913e9b2190b2b4118ee020721a320e2_a5913e9b2190b2b4118ee020721a320e2}{getctask}();
-16     \textcolor{keywordflow}{switch}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no}) \{
-17         \textcolor{keywordflow}{case} 0:
-18             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nDivide By Zero Failure\(\backslash\)n\(\backslash\)n"});
-19             
-20             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
-21             \textcolor{keywordflow}{break};
-22         \textcolor{keywordflow}{case} 32:
-23             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
-24             \hyperlink{a00029_a1db933be72a0547c4070ba55e6697ba2_a1db933be72a0547c4070ba55e6697ba2}{keyboard\_handler\_main}();
-25             \textcolor{keywordflow}{break};
-26         \textcolor{keywordflow}{case} 13:
-27             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nGENERAL PROTECTION FAULT!!!\(\backslash\)n\(\backslash\)n"});
-28             \hyperlink{a00140_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}{clearscreen}();
-29             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"GENERAL PROTECTION FAULT!!!\(\backslash\)n\(\backslash\)n"});
-30             \textcolor{keywordtype}{char}* errcode = \textcolor{stringliteral}{"  "};
-31             \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code},errcode);
-32             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"Errorcode: "});
-33             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(errcode);
-34             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Error Code:"});
-35             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(errcode);
-36             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nPlease restart your system, and report the error code to a
-       VitalityX developer.\(\backslash\)n"});
-37             \hyperlink{a00131_a3f7e7be8f62f43b2b62df54cac1590be_a3f7e7be8f62f43b2b62df54cac1590be}{bochs\_bkpt}();
-38             \textcolor{keywordflow}{for}(;;) \{
-39 
-40             \}
-41             \textcolor{keywordflow}{break};
-42         \textcolor{keywordflow}{case} 14:
-43             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
-44             \hyperlink{a00023_ad7ea572af581cc0623a2fb74a579ca83_ad7ea572af581cc0623a2fb74a579ca83}{ide\_irq}();
-45             \hyperlink{a00098_a6293af8e675059a566216be86660854b_a6293af8e675059a566216be86660854b}{page\_fault}(regs);
-46             \textcolor{keywordflow}{for}(;;) \{
-47 
-48             \}
-49             \textcolor{keywordflow}{break};
-50         \textcolor{keywordflow}{case} 15:
-51             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
-52             \hyperlink{a00023_ad7ea572af581cc0623a2fb74a579ca83_ad7ea572af581cc0623a2fb74a579ca83}{ide\_irq}();
-53             \textcolor{keywordflow}{break};
-54         \textcolor{keywordflow}{case} 63:
-55             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
-56             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nVitalityX SysISR Hit\(\backslash\)n\(\backslash\)n"});
-57             \hyperlink{a00092_abd1fa375737cd5ecd84c082738e3b195_abd1fa375737cd5ecd84c082738e3b195}{sysisr\_handler}(regs);
-58             \textcolor{keywordflow}{break};
-59         \textcolor{keywordflow}{default}:
-60             \hyperlink{a00140_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}{clearscreen}();
-61             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"UNKNOWN SYSTEM INTERRUPT!!!\(\backslash\)n\(\backslash\)n"});
-62             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nVitalityXInterrupt\(\backslash\)n\(\backslash\)n"});
-63             \textcolor{keywordtype}{char}* inttype = \textcolor{stringliteral}{"  "};
-64             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"No. "});
-65             \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no},inttype);
-66             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"Interrupt: "});
-67             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(inttype);
-68             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(inttype);
-69             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-70             \textcolor{keywordflow}{break};
-71     \}
-72 \}
+13                              \{
+14     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+15     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"EAX: "});
+16     \textcolor{keywordtype}{char} reg[128];
+17     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a1e01e806248cd98e55e0b053db6a6a51_a1e01e806248cd98e55e0b053db6a6a51}{eax},reg);
+18     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+19     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"EBX: "});
+20     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
+21     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_aa8989b2fef42dca1d656f724eb324f51_aa8989b2fef42dca1d656f724eb324f51}{ebx},reg);
+22     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+23     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"ECX: "});
+24     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
+25     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a00ce491148fd90800c18bd2d4c22e090_a00ce491148fd90800c18bd2d4c22e090}{ecx},reg);
+26     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+27     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"EDI: "});
+28     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
+29     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_aeedcb447fe6640d43d09c27b7cb8db3b_aeedcb447fe6640d43d09c27b7cb8db3b}{edi},reg);
+30     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+31     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"EDX: "});
+32     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
+33     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_af3b40afa73ecdaf2c9279b9ed482d26b_af3b40afa73ecdaf2c9279b9ed482d26b}{edx},reg);
+34     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+35     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"EIP: "});
+36     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
+37     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_aaeedf83509826a731e436025aeb53576_aaeedf83509826a731e436025aeb53576}{eip},reg);
+38     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+39     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"ESI: "});
+40     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
+41     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a8da011d75d93d36da6c4cf28e1fa3179_a8da011d75d93d36da6c4cf28e1fa3179}{esi},reg);
+42     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+43     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"ESP: "});
+44     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
+45     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a9cc3091e4c0f25d142ac74443dc8d384_a9cc3091e4c0f25d142ac74443dc8d384}{esp},reg);
+46     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+47     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"user ESP: "});
+48     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
+49     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_ad4734529e5faf04f6c61cfabfe4324e9_ad4734529e5faf04f6c61cfabfe4324e9}{useresp},reg);
+50     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+51     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"SS: "});
+52     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
+53     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a0da8015246d96b8dcebe98c945fd3d61_a0da8015246d96b8dcebe98c945fd3d61}{ss},reg);
+54     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" CS: "});
+55     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
+56     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a7d73555c87de229a90292640f544ab27_a7d73555c87de229a90292640f544ab27}{cs},reg);
+57     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" DS: "});
+58     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
+59     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a806ec3ba0cf965d456601aea4c039ec3_a806ec3ba0cf965d456601aea4c039ec3}{ds},reg);
+60     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+61     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"EFLAGS: "});
+62     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
+63     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_af9a17981c1cdac71d6f82ba32466a036_af9a17981c1cdac71d6f82ba32466a036}{eflags},reg);
+64 \}
 \end{DoxyCode}
