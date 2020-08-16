@@ -8,16 +8,10 @@
 const char* nullfs = "null";
 
 void getentries() {
-    int done = 0;
-    done += getentry(0);
-    done += getentry(1);
-    done += getentry(2);
-    done += getentry(3);
-    tty_pputstring("Setup ");
-    char* numsetup;
-    itoa(done,numsetup);
-    tty_pputstring(numsetup);
-    tty_pputstring(" drive(s).\n");
+    getentry(0);
+    getentry(1);
+    getentry(2);
+    getentry(3);
 }
 
 int getentry(int id) {
@@ -47,9 +41,9 @@ int getentry(int id) {
         memcpy(cnam+3,num,1);
         memcpy(entry->name,&cnam,4);
         tty_pputstring("Registered ");
-        tty_pputstring(cnam);
+        tty_pputstringl(cnam,3);
         tty_pputstring(" Model ");
-        tty_pputstring((char*)ide_devices[id].Model);
+        tty_pputstringl(&ide_devices[id].Model,11);
         tty_pputstring("\n");
         return 1;
     } else {

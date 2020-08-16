@@ -63,6 +63,10 @@ void sdump(registers_t regs) {
     itoa(regs.eflags,reg);
 }
 
+void eoi() {
+    outb(0x20, 0x20);
+}
+
 void isr_handler(registers_t regs)
 {
     Task* ctask = getctask();
@@ -71,11 +75,12 @@ void isr_handler(registers_t regs)
             BochsConsolePrintString("\n\nDivide By Zero Failure\n\n");
             sdump(regs);
             PIC_sendEOI(regs.int_no);
+            eoi();
             break;
         case 1:
-        case 32:
             PIC_sendEOI(regs.int_no);
             keyboard_handler_main();
+            eoi();
             break;
         case 13:
             BochsConsolePrintString("\n\nGENERAL PROTECTION FAULT!!!\n\n");
@@ -95,6 +100,7 @@ void isr_handler(registers_t regs)
             }
             break;
         case 14:
+            eoi();
             PIC_sendEOI(regs.int_no);
             ide_irq();
             page_fault(regs);
@@ -103,16 +109,17 @@ void isr_handler(registers_t regs)
             }
             break;
         case 15:
+            eoi();
             PIC_sendEOI(regs.int_no);
             ide_irq();
             break;
         case 63:
+            eoi();
             PIC_sendEOI(regs.int_no);
             BochsConsolePrintString("\n\nVitalityX SysISR Hit\n\n");
             sysisr_handler(regs);
             break;
         default:
-            clearscreen();
             tty_pputstring("UNKNOWN SYSTEM INTERRUPT!!!\n\n");
             BochsConsolePrintString("\n\nVitalityXInterrupt\n\n");
             char* inttype = "  ";
@@ -123,6 +130,9 @@ void isr_handler(registers_t regs)
             tty_pputstring(inttype);
             tty_pputstring("\n");
             sdump(regs);
+            while(true) {
+
+            }
             break;
     }
 }

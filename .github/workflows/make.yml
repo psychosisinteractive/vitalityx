@@ -31,5 +31,5 @@ jobs:
         cd ..
     - name: Compile
       run: |
-        make CC=barebones-toolchain/cross/i686/bin/i686-elf-gcc LD=barebones-toolchain/cross/i686/bin/i686-elf-ld AS=barebones-toolchain/cross/i686/bin/i686-elf-as WSL=  operating.bin
+        make CFLAGS=-w PP=barebones-toolchain/cross/i686/bin/i686-elf-g++ CC=barebones-toolchain/cross/i686/bin/i686-elf-gcc LD=barebones-toolchain/cross/i686/bin/i686-elf-ld AS=barebones-toolchain/cross/i686/bin/i686-elf-as WSL=  operating.bin
         make clean

@@ -32,8 +32,9 @@ int kernel() {
     initTasking();
     tty_pputstring("Setting up FS\n");
     ide_initialize(0x1F0, 0x3F6, 0x170, 0x376, 0x000);
+    clearscreen();
     getentries();
-    tty_pputstring("Select primary ATA/ATP drive number otherwise ATA/ATP0... ");
+    tty_pputstring("Select drive number otherwise bfs/ata/atp0... ");
     switch(getch()) {
         case '0':
             primarydrive = 0;

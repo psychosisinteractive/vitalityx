@@ -17,7 +17,7 @@ BOCHS = C:\Program Files\Bochs-2.6.11\bochsdbg
 NASM = nasm
 GDB = i686-elf-GDB
 # flags for the compiler
-CFLAGS = -g -DSILENT
+CFLAGS = -g
 
 .DEFAULT_GOAL := run
 
@@ -33,7 +33,7 @@ kernel.elf: kernel/kentry.o LINKER.ld ${OBJ} ${AOBJ}
 	${LD} -o $@ -Ttext ${ORIGIN} $^
 
 run: operating.bin
-	qemu-system-i386 -no-reboot -no-shutdown -fda operating.bin
+	qemu-system-i386 -no-reboot -no-shutdown -fda operating.bin -hda sys.img -boot a
 
 debug: operating.bin
 	${BOCHS}

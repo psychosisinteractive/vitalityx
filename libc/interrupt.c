@@ -77,6 +77,9 @@ void init_idt()
     idt_set_gate(63, (uint32_t)isr63, 0x08, 0x8E);
     // just remap the pic for gods sake
     PIC_remap(0x20,0x28);
+    // enable our keyboard interrupt
+    outb(0x21,0xfd);
+    outb(0xa1,0xff);
 
     idt_flush((uint32_t)&idt_ptr);
 }

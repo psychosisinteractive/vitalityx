@@ -69,7 +69,7 @@ ready:
     jmp PROGRAM
 
 PROGRAM equ 0x7e00
-PROGRAM_SIZE equ 30000 ; in bytes
+PROGRAM_SIZE equ 32768  ; in bytes
 
 times 510 - ($ - $$) db 0
 dw 0AA55h

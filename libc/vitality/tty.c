@@ -70,7 +70,7 @@ uint16_t xoff = 0;
 uint16_t yoff = 0;
 
 void clearscreen() {
-    memset(0xb8000,0,80*25);
+    memset(0xb8000,0,0x1fff);
     xoff = 0;
     yoff = 0;
     cursor_x = xoff;
