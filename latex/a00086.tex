@@ -24,20 +24,20 @@ void \hyperlink{a00086_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae
 
 
 
-Definition at line 84 of file interrupt.\+c.
+Definition at line 87 of file interrupt.\+c.
 
 
 \begin{DoxyCode}
-85 \{
-86     \hyperlink{a00089_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00194_a4b5fce0881deb4959d33da77d1ed0202_a4b5fce0881deb4959d33da77d1ed0202}{base\_lo} = \hyperlink{a00083_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} & 0xFFFF;
-87     \hyperlink{a00089_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00194_af46adb2603d1d8b4a3bedf7f1c6daed4_af46adb2603d1d8b4a3bedf7f1c6daed4}{base\_hi} = (\hyperlink{a00083_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} >> 16) & 0xFFFF;
-88 
-89     \hyperlink{a00089_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00194_a3c9321c263139e56901a05efee220047_a3c9321c263139e56901a05efee220047}{sel}     = \hyperlink{a00089_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel};
-90     \hyperlink{a00089_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00194_adc747b3ff87142c71b7b8c51e03c067c_adc747b3ff87142c71b7b8c51e03c067c}{always0} = 0;
-91     \textcolor{comment}{// We must uncomment the OR below when we get to using user-mode.}
-92     \textcolor{comment}{// It sets the interrupt gate's privilege level to 3.}
-93     \hyperlink{a00089_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00194_a02277c77564820972ae5df0a37c80be0_a02277c77564820972ae5df0a37c80be0}{flags}   = \hyperlink{a00089_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags} \textcolor{comment}{/* | 0x60 */};
-94 \}
+88 \{
+89     \hyperlink{a00089_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00194_a4b5fce0881deb4959d33da77d1ed0202_a4b5fce0881deb4959d33da77d1ed0202}{base\_lo} = \hyperlink{a00083_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} & 0xFFFF;
+90     \hyperlink{a00089_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00194_af46adb2603d1d8b4a3bedf7f1c6daed4_af46adb2603d1d8b4a3bedf7f1c6daed4}{base\_hi} = (\hyperlink{a00083_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} >> 16) & 0xFFFF;
+91 
+92     \hyperlink{a00089_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00194_a3c9321c263139e56901a05efee220047_a3c9321c263139e56901a05efee220047}{sel}     = \hyperlink{a00089_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel};
+93     \hyperlink{a00089_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00194_adc747b3ff87142c71b7b8c51e03c067c_adc747b3ff87142c71b7b8c51e03c067c}{always0} = 0;
+94     \textcolor{comment}{// We must uncomment the OR below when we get to using user-mode.}
+95     \textcolor{comment}{// It sets the interrupt gate's privilege level to 3.}
+96     \hyperlink{a00089_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00194_a02277c77564820972ae5df0a37c80be0_a02277c77564820972ae5df0a37c80be0}{flags}   = \hyperlink{a00089_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags} \textcolor{comment}{/* | 0x60 */};
+97 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00086_a35fe413107af682030ab7a4b6dff19b8_a35fe413107af682030ab7a4b6dff19b8}\label{a00086_a35fe413107af682030ab7a4b6dff19b8_a35fe413107af682030ab7a4b6dff19b8}} 
 \index{interrupt.\+c@{interrupt.\+c}!init\+\_\+idt@{init\+\_\+idt}}
@@ -124,7 +124,10 @@ Definition at line 6 of file interrupt.\+c.
 77     \hyperlink{a00086_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(63, (\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00089_adc5cdf67dec64ed778df8091afeac450_adc5cdf67dec64ed778df8091afeac450}{isr63}, 0x08, 0x8E);
 78     \textcolor{comment}{// just remap the pic for gods sake}
 79     \hyperlink{a00035_ab5ed5530bfeaffadd8cd88c06d797f31_ab5ed5530bfeaffadd8cd88c06d797f31}{PIC\_remap}(0x20,0x28);
-80 
-81     \hyperlink{a00089_a7f063f0c0d27643faa13723e8086b808_a7f063f0c0d27643faa13723e8086b808}{idt\_flush}((\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00089_a3f2660783240a0a506d85e3750dff814_a3f2660783240a0a506d85e3750dff814}{idt\_ptr});
-82 \}
+80     \textcolor{comment}{// enable our keyboard interrupt}
+81     \hyperlink{a00131_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x21,0xfd);
+82     \hyperlink{a00131_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0xa1,0xff);
+83 
+84     \hyperlink{a00089_a7f063f0c0d27643faa13723e8086b808_a7f063f0c0d27643faa13723e8086b808}{idt\_flush}((\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00089_a3f2660783240a0a506d85e3750dff814_a3f2660783240a0a506d85e3750dff814}{idt\_ptr});
+85 \}
 \end{DoxyCode}

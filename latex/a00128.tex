@@ -56,17 +56,11 @@ Definition at line 10 of file fs.\+c.
 
 \begin{DoxyCode}
 10                   \{
-11     \textcolor{keywordtype}{int} done = 0;
-12     done += \hyperlink{a00125_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(0);
-13     done += \hyperlink{a00125_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(1);
-14     done += \hyperlink{a00125_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(2);
-15     done += \hyperlink{a00125_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(3);
-16     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Setup "});
-17     \textcolor{keywordtype}{char}* numsetup;
-18     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(done,numsetup);
-19     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(numsetup);
-20     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" drive(s).\(\backslash\)n"});
-21 \}
+11     \hyperlink{a00125_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(0);
+12     \hyperlink{a00125_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(1);
+13     \hyperlink{a00125_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(2);
+14     \hyperlink{a00125_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(3);
+15 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00128_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}\label{a00128_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}} 
 \index{fs.\+h@{fs.\+h}!getentry@{getentry}}
@@ -76,50 +70,50 @@ Definition at line 10 of file fs.\+c.
 
 
 
-Definition at line 23 of file fs.\+c.
+Definition at line 17 of file fs.\+c.
 
 
 \begin{DoxyCode}
-23                      \{
-24     \textcolor{keywordtype}{char}* cnam;
-25     \textcolor{keywordflow}{if}(\hyperlink{a00026_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Reserved) \{
-26         \hyperlink{a00226}{fsentry\_t} *entry = &\hyperlink{a00128_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[id];
-27         entry->\hyperlink{a00226_a284522ed97fe1eeebd0fcc039b2ea00a_a284522ed97fe1eeebd0fcc039b2ea00a}{ready} = \textcolor{keyword}{true};
-28         entry->\hyperlink{a00226_aaea66ea744fa50f1c54666033884d8d2_aaea66ea744fa50f1c54666033884d8d2}{dev} = &\hyperlink{a00026_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[id];
-29         
-30         \textcolor{keywordtype}{char}* num = \textcolor{stringliteral}{"x"};
-31         \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(\textcolor{keywordtype}{id},num);
-32         \textcolor{keywordflow}{switch}(\hyperlink{a00026_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Type) \{
-33             \textcolor{keywordflow}{case} 0: \textcolor{comment}{// ata}
-34                 cnam = \textcolor{stringliteral}{"ataX"};
-35                 \textcolor{keywordflow}{break};
-36             \textcolor{keywordflow}{case} 1: \textcolor{comment}{// atapi}
-37                 cnam = \textcolor{stringliteral}{"atpX"};
-38                 \textcolor{keywordflow}{break};
-39         \}
-40         \textcolor{keywordflow}{if}(\hyperlink{a00026_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Type == 0) \{
-41             \hyperlink{a00023_a9dd84843412753d236e17a15277c5b98_a9dd84843412753d236e17a15277c5b98}{ide\_read\_sectors}(\textcolor{keywordtype}{id},4,0,0,0x500);
-42             \textcolor{keywordflow}{if}(\hyperlink{a00161_a078a66e7d52fd4a6df768277b605199c_a078a66e7d52fd4a6df768277b605199c}{validvxbfs}((\hyperlink{a00266}{vxbfs\_header\_t}*)0x500)) \{
-43                 \hyperlink{a00266}{vxbfs\_header\_t}* header = (\hyperlink{a00266}{vxbfs\_header\_t}*)0x500;
-44                 \hyperlink{a00110_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(cnam,header->\hyperlink{a00266_af0310ee852d6ec20fe68052fff0d1378_af0310ee852d6ec20fe68052fff0d1378}{uniquename},3);
-45             \}
-46         \}
-47         \hyperlink{a00110_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(cnam+3,num,1);
-48         \hyperlink{a00110_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(entry->\hyperlink{a00226_a9c5a4f5b02eb2c9e9e797f79dc99028a_a9c5a4f5b02eb2c9e9e797f79dc99028a}{name},&cnam,4);
-49         \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Registered "});
-50         \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(cnam);
-51         \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" Model "});
-52         \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}((\textcolor{keywordtype}{char}*)\hyperlink{a00026_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Model);
-53         \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-54         \textcolor{keywordflow}{return} 1;
-55     \} \textcolor{keywordflow}{else} \{
-56         \hyperlink{a00128_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[id].\hyperlink{a00226_a284522ed97fe1eeebd0fcc039b2ea00a_a284522ed97fe1eeebd0fcc039b2ea00a}{ready} = \textcolor{keyword}{false};
-57         \hyperlink{a00128_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[id].\hyperlink{a00226_aaea66ea744fa50f1c54666033884d8d2_aaea66ea744fa50f1c54666033884d8d2}{dev} = 0;
-58 
-59         \hyperlink{a00110_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(&\hyperlink{a00128_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[\textcolor{keywordtype}{id}].name,&\hyperlink{a00125_a36265ac74fd925405e1179e799961f1e_a36265ac74fd925405e1179e799961f1e}{nullfs},4);
-60         \textcolor{keywordflow}{return} 0;
-61     \} 
-62 \}
+17                      \{
+18     \textcolor{keywordtype}{char}* cnam;
+19     \textcolor{keywordflow}{if}(\hyperlink{a00026_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Reserved) \{
+20         \hyperlink{a00226}{fsentry\_t} *entry = &\hyperlink{a00128_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[id];
+21         entry->\hyperlink{a00226_a284522ed97fe1eeebd0fcc039b2ea00a_a284522ed97fe1eeebd0fcc039b2ea00a}{ready} = \textcolor{keyword}{true};
+22         entry->\hyperlink{a00226_aaea66ea744fa50f1c54666033884d8d2_aaea66ea744fa50f1c54666033884d8d2}{dev} = &\hyperlink{a00026_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[id];
+23         
+24         \textcolor{keywordtype}{char}* num = \textcolor{stringliteral}{"x"};
+25         \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(\textcolor{keywordtype}{id},num);
+26         \textcolor{keywordflow}{switch}(\hyperlink{a00026_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Type) \{
+27             \textcolor{keywordflow}{case} 0: \textcolor{comment}{// ata}
+28                 cnam = \textcolor{stringliteral}{"ataX"};
+29                 \textcolor{keywordflow}{break};
+30             \textcolor{keywordflow}{case} 1: \textcolor{comment}{// atapi}
+31                 cnam = \textcolor{stringliteral}{"atpX"};
+32                 \textcolor{keywordflow}{break};
+33         \}
+34         \textcolor{keywordflow}{if}(\hyperlink{a00026_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Type == 0) \{
+35             \hyperlink{a00023_a9dd84843412753d236e17a15277c5b98_a9dd84843412753d236e17a15277c5b98}{ide\_read\_sectors}(\textcolor{keywordtype}{id},4,0,0,0x500);
+36             \textcolor{keywordflow}{if}(\hyperlink{a00161_a078a66e7d52fd4a6df768277b605199c_a078a66e7d52fd4a6df768277b605199c}{validvxbfs}((\hyperlink{a00266}{vxbfs\_header\_t}*)0x500)) \{
+37                 \hyperlink{a00266}{vxbfs\_header\_t}* header = (\hyperlink{a00266}{vxbfs\_header\_t}*)0x500;
+38                 \hyperlink{a00110_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(cnam,header->\hyperlink{a00266_af0310ee852d6ec20fe68052fff0d1378_af0310ee852d6ec20fe68052fff0d1378}{uniquename},3);
+39             \}
+40         \}
+41         \hyperlink{a00110_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(cnam+3,num,1);
+42         \hyperlink{a00110_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(entry->\hyperlink{a00226_a9c5a4f5b02eb2c9e9e797f79dc99028a_a9c5a4f5b02eb2c9e9e797f79dc99028a}{name},&cnam,4);
+43         \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Registered "});
+44         \hyperlink{a00140_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\_pputstringl}(cnam,3);
+45         \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" Model "});
+46         \hyperlink{a00140_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\_pputstringl}(&\hyperlink{a00026_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Model,11);
+47         \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+48         \textcolor{keywordflow}{return} 1;
+49     \} \textcolor{keywordflow}{else} \{
+50         \hyperlink{a00128_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[id].\hyperlink{a00226_a284522ed97fe1eeebd0fcc039b2ea00a_a284522ed97fe1eeebd0fcc039b2ea00a}{ready} = \textcolor{keyword}{false};
+51         \hyperlink{a00128_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[id].\hyperlink{a00226_aaea66ea744fa50f1c54666033884d8d2_aaea66ea744fa50f1c54666033884d8d2}{dev} = 0;
+52 
+53         \hyperlink{a00110_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(&\hyperlink{a00128_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[\textcolor{keywordtype}{id}].name,&\hyperlink{a00125_a36265ac74fd925405e1179e799961f1e_a36265ac74fd925405e1179e799961f1e}{nullfs},4);
+54         \textcolor{keywordflow}{return} 0;
+55     \} 
+56 \}
 \end{DoxyCode}
 
 
