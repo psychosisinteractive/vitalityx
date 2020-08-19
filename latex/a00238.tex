@@ -1,48 +1,157 @@
-\hypertarget{a00238}{}\section{file Struct Reference}
-\label{a00238}\index{file@{file}}
+\hypertarget{a00238}{}\section{psf Struct Reference}
+\label{a00238}\index{psf@{psf}}
 
 
-{\ttfamily \#include $<$vfs.\+h$>$}
+PC Screen Font struct.  
+
+
+
+
+{\ttfamily \#include $<$basfmts.\+h$>$}
 
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$ \hyperlink{a00238_a93164d6663f12c00df3d65b7b0990cc2_a93164d6663f12c00df3d65b7b0990cc2}{name}
-\item 
-char $\ast$ \hyperlink{a00238_a9c9154337f0c0aa90f11e5c60e93efdd_a9c9154337f0c0aa90f11e5c60e93efdd}{data}
-\end{DoxyCompactItemize}
+\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00238_a7ffcee1c6726b0e6a041acda0ee57779_a7ffcee1c6726b0e6a041acda0ee57779}{magic}
+\begin{DoxyCompactList}\small\item\em P\+SF Magic, should be P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC. \end{DoxyCompactList}\item 
+\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00238_a55aee164a0bd7cd2a712772e19297ffd_a55aee164a0bd7cd2a712772e19297ffd}{version}
+\begin{DoxyCompactList}\small\item\em P\+SF Version. \end{DoxyCompactList}\item 
+\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00238_a10d0edb9f9359072c5c20afc4a5c3e6f_a10d0edb9f9359072c5c20afc4a5c3e6f}{headersize}
+\begin{DoxyCompactList}\small\item\em Size of the H\+Eader. \end{DoxyCompactList}\item 
+\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00238_a84c2597d290244a701cf4503560aa8d5_a84c2597d290244a701cf4503560aa8d5}{flags}
+\begin{DoxyCompactList}\small\item\em Flags. \end{DoxyCompactList}\item 
+\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00238_a0bfa25c6f9da329a6f2ce522221a6834_a0bfa25c6f9da329a6f2ce522221a6834}{numglyph}
+\begin{DoxyCompactList}\small\item\em Number of Glyphs. \end{DoxyCompactList}\item 
+\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00238_afe8eb6e5f5eae54b8d7bd6ca2f828ad3_afe8eb6e5f5eae54b8d7bd6ca2f828ad3}{bytesperglyph}
+\begin{DoxyCompactList}\small\item\em Bytes per Glyph. \end{DoxyCompactList}\item 
+\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00238_a361cd1a0b4619497e43292f89ee1ca3b_a361cd1a0b4619497e43292f89ee1ca3b}{height}
+\begin{DoxyCompactList}\small\item\em Height in Pixels. \end{DoxyCompactList}\item 
+\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00238_af3ac02bc54ef1990550ccef65a4e2dac_af3ac02bc54ef1990550ccef65a4e2dac}{width}
+\begin{DoxyCompactList}\small\item\em Width in Pixels. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+PC Screen Font struct. 
 
-
-Definition at line 4 of file vfs.\+h.
+Definition at line 13 of file basfmts.\+h.
 
 
 
 \subsection{Field Documentation}
-\mbox{\Hypertarget{a00238_a9c9154337f0c0aa90f11e5c60e93efdd_a9c9154337f0c0aa90f11e5c60e93efdd}\label{a00238_a9c9154337f0c0aa90f11e5c60e93efdd_a9c9154337f0c0aa90f11e5c60e93efdd}} 
-\index{file@{file}!data@{data}}
-\index{data@{data}!file@{file}}
-\subsubsection{\texorpdfstring{data}{data}}
-{\footnotesize\ttfamily char$\ast$ file\+::data}
+\mbox{\Hypertarget{a00238_afe8eb6e5f5eae54b8d7bd6ca2f828ad3_afe8eb6e5f5eae54b8d7bd6ca2f828ad3}\label{a00238_afe8eb6e5f5eae54b8d7bd6ca2f828ad3_afe8eb6e5f5eae54b8d7bd6ca2f828ad3}} 
+\index{psf@{psf}!bytesperglyph@{bytesperglyph}}
+\index{bytesperglyph@{bytesperglyph}!psf@{psf}}
+\subsubsection{\texorpdfstring{bytesperglyph}{bytesperglyph}}
+{\footnotesize\ttfamily \hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} psf\+::bytesperglyph}
 
 
 
-Definition at line 6 of file vfs.\+h.
-
-\mbox{\Hypertarget{a00238_a93164d6663f12c00df3d65b7b0990cc2_a93164d6663f12c00df3d65b7b0990cc2}\label{a00238_a93164d6663f12c00df3d65b7b0990cc2_a93164d6663f12c00df3d65b7b0990cc2}} 
-\index{file@{file}!name@{name}}
-\index{name@{name}!file@{file}}
-\subsubsection{\texorpdfstring{name}{name}}
-{\footnotesize\ttfamily char$\ast$ file\+::name}
+Bytes per Glyph. 
 
 
 
-Definition at line 5 of file vfs.\+h.
+Definition at line 37 of file basfmts.\+h.
+
+\mbox{\Hypertarget{a00238_a84c2597d290244a701cf4503560aa8d5_a84c2597d290244a701cf4503560aa8d5}\label{a00238_a84c2597d290244a701cf4503560aa8d5_a84c2597d290244a701cf4503560aa8d5}} 
+\index{psf@{psf}!flags@{flags}}
+\index{flags@{flags}!psf@{psf}}
+\subsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily \hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} psf\+::flags}
+
+
+
+Flags. 
+
+
+
+Definition at line 29 of file basfmts.\+h.
+
+\mbox{\Hypertarget{a00238_a10d0edb9f9359072c5c20afc4a5c3e6f_a10d0edb9f9359072c5c20afc4a5c3e6f}\label{a00238_a10d0edb9f9359072c5c20afc4a5c3e6f_a10d0edb9f9359072c5c20afc4a5c3e6f}} 
+\index{psf@{psf}!headersize@{headersize}}
+\index{headersize@{headersize}!psf@{psf}}
+\subsubsection{\texorpdfstring{headersize}{headersize}}
+{\footnotesize\ttfamily \hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} psf\+::headersize}
+
+
+
+Size of the H\+Eader. 
+
+
+
+Definition at line 25 of file basfmts.\+h.
+
+\mbox{\Hypertarget{a00238_a361cd1a0b4619497e43292f89ee1ca3b_a361cd1a0b4619497e43292f89ee1ca3b}\label{a00238_a361cd1a0b4619497e43292f89ee1ca3b_a361cd1a0b4619497e43292f89ee1ca3b}} 
+\index{psf@{psf}!height@{height}}
+\index{height@{height}!psf@{psf}}
+\subsubsection{\texorpdfstring{height}{height}}
+{\footnotesize\ttfamily \hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} psf\+::height}
+
+
+
+Height in Pixels. 
+
+
+
+Definition at line 41 of file basfmts.\+h.
+
+\mbox{\Hypertarget{a00238_a7ffcee1c6726b0e6a041acda0ee57779_a7ffcee1c6726b0e6a041acda0ee57779}\label{a00238_a7ffcee1c6726b0e6a041acda0ee57779_a7ffcee1c6726b0e6a041acda0ee57779}} 
+\index{psf@{psf}!magic@{magic}}
+\index{magic@{magic}!psf@{psf}}
+\subsubsection{\texorpdfstring{magic}{magic}}
+{\footnotesize\ttfamily \hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} psf\+::magic}
+
+
+
+P\+SF Magic, should be P\+S\+F\+\_\+\+F\+O\+N\+T\+\_\+\+M\+A\+G\+IC. 
+
+
+
+Definition at line 17 of file basfmts.\+h.
+
+\mbox{\Hypertarget{a00238_a0bfa25c6f9da329a6f2ce522221a6834_a0bfa25c6f9da329a6f2ce522221a6834}\label{a00238_a0bfa25c6f9da329a6f2ce522221a6834_a0bfa25c6f9da329a6f2ce522221a6834}} 
+\index{psf@{psf}!numglyph@{numglyph}}
+\index{numglyph@{numglyph}!psf@{psf}}
+\subsubsection{\texorpdfstring{numglyph}{numglyph}}
+{\footnotesize\ttfamily \hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} psf\+::numglyph}
+
+
+
+Number of Glyphs. 
+
+
+
+Definition at line 33 of file basfmts.\+h.
+
+\mbox{\Hypertarget{a00238_a55aee164a0bd7cd2a712772e19297ffd_a55aee164a0bd7cd2a712772e19297ffd}\label{a00238_a55aee164a0bd7cd2a712772e19297ffd_a55aee164a0bd7cd2a712772e19297ffd}} 
+\index{psf@{psf}!version@{version}}
+\index{version@{version}!psf@{psf}}
+\subsubsection{\texorpdfstring{version}{version}}
+{\footnotesize\ttfamily \hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} psf\+::version}
+
+
+
+P\+SF Version. 
+
+
+
+Definition at line 21 of file basfmts.\+h.
+
+\mbox{\Hypertarget{a00238_af3ac02bc54ef1990550ccef65a4e2dac_af3ac02bc54ef1990550ccef65a4e2dac}\label{a00238_af3ac02bc54ef1990550ccef65a4e2dac_af3ac02bc54ef1990550ccef65a4e2dac}} 
+\index{psf@{psf}!width@{width}}
+\index{width@{width}!psf@{psf}}
+\subsubsection{\texorpdfstring{width}{width}}
+{\footnotesize\ttfamily \hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} psf\+::width}
+
+
+
+Width in Pixels. 
+
+
+
+Definition at line 45 of file basfmts.\+h.
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-libc/vitality/\hyperlink{a00152}{vfs.\+h}\end{DoxyCompactItemize}
+libc/vitality/\hyperlink{a00131}{basfmts.\+h}\end{DoxyCompactItemize}

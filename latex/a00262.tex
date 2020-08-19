@@ -1,119 +1,117 @@
-\hypertarget{a00262}{}\section{V\+X\+B\+F\+S\+File Struct Reference}
-\label{a00262}\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
+\hypertarget{a00262}{}\section{mbr Struct Reference}
+\label{a00262}\index{mbr@{mbr}}
 
 
-This is a V\+X\+B\+FS File.  
-
-
-
-
-{\ttfamily \#include $<$vxbfs.\+h$>$}
+Master Boot Record.  
 
 
 
-Collaboration diagram for V\+X\+B\+F\+S\+File\+:
+
+{\ttfamily \#include $<$vfs.\+h$>$}
+
+
+
+Collaboration diagram for mbr\+:
 % FIG 0
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-char \hyperlink{a00262_a07ecc9bacdc2943442f26f62f6749055_a07ecc9bacdc2943442f26f62f6749055}{name} \mbox{[}11\mbox{]}
+char \hyperlink{a00262_acd9201425a84fdd1d341c2d529494ab1_acd9201425a84fdd1d341c2d529494ab1}{bootstrap} \mbox{[}440\mbox{]}
 \item 
-char \hyperlink{a00262_a03b954de114d8e01bb783ddef964e8ca_a03b954de114d8e01bb783ddef964e8ca}{guid} \mbox{[}8\mbox{]}
+char \hyperlink{a00262_a7a01b3c5837cdb118fdf778197aff57b_a7a01b3c5837cdb118fdf778197aff57b}{signature} \mbox{[}4\mbox{]}
 \item 
-char \hyperlink{a00262_ad030f5719e51b0b41b7cb6047f4110b2_ad030f5719e51b0b41b7cb6047f4110b2}{ext} \mbox{[}3\mbox{]}
+\hyperlink{a00161_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} \hyperlink{a00262_abd208d0cb66e336d565beb33de1b5056_abd208d0cb66e336d565beb33de1b5056}{firstpte}
 \item 
-char \hyperlink{a00262_a8fc3bc64d7f2330f923507d2430bdde4_a8fc3bc64d7f2330f923507d2430bdde4}{flags}
+\hyperlink{a00161_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} \hyperlink{a00262_a6539d6c096872ae8ff274a277b2652a4_a6539d6c096872ae8ff274a277b2652a4}{secondpte}
 \item 
-\hyperlink{a00164_a0774a42f7a124b6d3054ccabd4d35463_a0774a42f7a124b6d3054ccabd4d35463}{vxbfs\+\_\+modblock\+\_\+t} $\ast$ \hyperlink{a00262_ac0784f3fae88428f37dfb64fd79c0004_ac0784f3fae88428f37dfb64fd79c0004}{modblock}
+\hyperlink{a00161_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} \hyperlink{a00262_ace5aefce3038d09ee29fec72826eef97_ace5aefce3038d09ee29fec72826eef97}{thirdpte}
 \item 
-struct \hyperlink{a00262}{V\+X\+B\+F\+S\+File} $\ast$ \hyperlink{a00262_aa2c7e2e1b3827ce9fbaa045b89202784_aa2c7e2e1b3827ce9fbaa045b89202784}{nextfile}
+\hyperlink{a00161_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} \hyperlink{a00262_ace1c3d3ab069c2620bc27f49168f1e6b_ace1c3d3ab069c2620bc27f49168f1e6b}{fourthpte}
 \item 
-\hyperlink{a00116_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00262_adb380ce440ec23ef6c9c06d871be3c0d_adb380ce440ec23ef6c9c06d871be3c0d}{md}
+char \hyperlink{a00262_a586361d132b342e9628f1079ad7b4b8d_a586361d132b342e9628f1079ad7b4b8d}{bssignature} \mbox{[}2\mbox{]}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-This is a V\+X\+B\+FS File. 
+Master Boot Record. 
 
-It stores the 11 character name, a G\+U\+ID, an ext, flags, next modblock, nextfile and a md boolean. The G\+U\+ID is a unique identifier so multiple V\+X\+B\+FS files can share the same name. The ext is the V\+X\+B\+FS File type. The md means \char`\"{}\+More Data\char`\"{}, this signifies that there should be a search for more data after this. The flags are data which is for the OS. 
-
-Definition at line 29 of file vxbfs.\+h.
+Definition at line 24 of file vfs.\+h.
 
 
 
 \subsection{Field Documentation}
-\mbox{\Hypertarget{a00262_ad030f5719e51b0b41b7cb6047f4110b2_ad030f5719e51b0b41b7cb6047f4110b2}\label{a00262_ad030f5719e51b0b41b7cb6047f4110b2_ad030f5719e51b0b41b7cb6047f4110b2}} 
-\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!ext@{ext}}
-\index{ext@{ext}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
-\subsubsection{\texorpdfstring{ext}{ext}}
-{\footnotesize\ttfamily char V\+X\+B\+F\+S\+File\+::ext\mbox{[}3\mbox{]}}
+\mbox{\Hypertarget{a00262_acd9201425a84fdd1d341c2d529494ab1_acd9201425a84fdd1d341c2d529494ab1}\label{a00262_acd9201425a84fdd1d341c2d529494ab1_acd9201425a84fdd1d341c2d529494ab1}} 
+\index{mbr@{mbr}!bootstrap@{bootstrap}}
+\index{bootstrap@{bootstrap}!mbr@{mbr}}
+\subsubsection{\texorpdfstring{bootstrap}{bootstrap}}
+{\footnotesize\ttfamily char mbr\+::bootstrap\mbox{[}440\mbox{]}}
 
 
 
-Definition at line 32 of file vxbfs.\+h.
+Definition at line 25 of file vfs.\+h.
 
-\mbox{\Hypertarget{a00262_a8fc3bc64d7f2330f923507d2430bdde4_a8fc3bc64d7f2330f923507d2430bdde4}\label{a00262_a8fc3bc64d7f2330f923507d2430bdde4_a8fc3bc64d7f2330f923507d2430bdde4}} 
-\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!flags@{flags}}
-\index{flags@{flags}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
-\subsubsection{\texorpdfstring{flags}{flags}}
-{\footnotesize\ttfamily char V\+X\+B\+F\+S\+File\+::flags}
-
-
-
-Definition at line 33 of file vxbfs.\+h.
-
-\mbox{\Hypertarget{a00262_a03b954de114d8e01bb783ddef964e8ca_a03b954de114d8e01bb783ddef964e8ca}\label{a00262_a03b954de114d8e01bb783ddef964e8ca_a03b954de114d8e01bb783ddef964e8ca}} 
-\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!guid@{guid}}
-\index{guid@{guid}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
-\subsubsection{\texorpdfstring{guid}{guid}}
-{\footnotesize\ttfamily char V\+X\+B\+F\+S\+File\+::guid\mbox{[}8\mbox{]}}
+\mbox{\Hypertarget{a00262_a586361d132b342e9628f1079ad7b4b8d_a586361d132b342e9628f1079ad7b4b8d}\label{a00262_a586361d132b342e9628f1079ad7b4b8d_a586361d132b342e9628f1079ad7b4b8d}} 
+\index{mbr@{mbr}!bssignature@{bssignature}}
+\index{bssignature@{bssignature}!mbr@{mbr}}
+\subsubsection{\texorpdfstring{bssignature}{bssignature}}
+{\footnotesize\ttfamily char mbr\+::bssignature\mbox{[}2\mbox{]}}
 
 
 
-Definition at line 31 of file vxbfs.\+h.
+Definition at line 31 of file vfs.\+h.
 
-\mbox{\Hypertarget{a00262_adb380ce440ec23ef6c9c06d871be3c0d_adb380ce440ec23ef6c9c06d871be3c0d}\label{a00262_adb380ce440ec23ef6c9c06d871be3c0d_adb380ce440ec23ef6c9c06d871be3c0d}} 
-\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!md@{md}}
-\index{md@{md}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
-\subsubsection{\texorpdfstring{md}{md}}
-{\footnotesize\ttfamily \hyperlink{a00116_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} V\+X\+B\+F\+S\+File\+::md}
-
-
-
-Definition at line 36 of file vxbfs.\+h.
-
-\mbox{\Hypertarget{a00262_ac0784f3fae88428f37dfb64fd79c0004_ac0784f3fae88428f37dfb64fd79c0004}\label{a00262_ac0784f3fae88428f37dfb64fd79c0004_ac0784f3fae88428f37dfb64fd79c0004}} 
-\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!modblock@{modblock}}
-\index{modblock@{modblock}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
-\subsubsection{\texorpdfstring{modblock}{modblock}}
-{\footnotesize\ttfamily \hyperlink{a00164_a0774a42f7a124b6d3054ccabd4d35463_a0774a42f7a124b6d3054ccabd4d35463}{vxbfs\+\_\+modblock\+\_\+t}$\ast$ V\+X\+B\+F\+S\+File\+::modblock}
+\mbox{\Hypertarget{a00262_abd208d0cb66e336d565beb33de1b5056_abd208d0cb66e336d565beb33de1b5056}\label{a00262_abd208d0cb66e336d565beb33de1b5056_abd208d0cb66e336d565beb33de1b5056}} 
+\index{mbr@{mbr}!firstpte@{firstpte}}
+\index{firstpte@{firstpte}!mbr@{mbr}}
+\subsubsection{\texorpdfstring{firstpte}{firstpte}}
+{\footnotesize\ttfamily \hyperlink{a00161_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} mbr\+::firstpte}
 
 
 
-Definition at line 34 of file vxbfs.\+h.
+Definition at line 27 of file vfs.\+h.
 
-\mbox{\Hypertarget{a00262_a07ecc9bacdc2943442f26f62f6749055_a07ecc9bacdc2943442f26f62f6749055}\label{a00262_a07ecc9bacdc2943442f26f62f6749055_a07ecc9bacdc2943442f26f62f6749055}} 
-\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!name@{name}}
-\index{name@{name}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
-\subsubsection{\texorpdfstring{name}{name}}
-{\footnotesize\ttfamily char V\+X\+B\+F\+S\+File\+::name\mbox{[}11\mbox{]}}
-
-
-
-Definition at line 30 of file vxbfs.\+h.
-
-\mbox{\Hypertarget{a00262_aa2c7e2e1b3827ce9fbaa045b89202784_aa2c7e2e1b3827ce9fbaa045b89202784}\label{a00262_aa2c7e2e1b3827ce9fbaa045b89202784_aa2c7e2e1b3827ce9fbaa045b89202784}} 
-\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!nextfile@{nextfile}}
-\index{nextfile@{nextfile}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
-\subsubsection{\texorpdfstring{nextfile}{nextfile}}
-{\footnotesize\ttfamily struct \hyperlink{a00262}{V\+X\+B\+F\+S\+File}$\ast$ V\+X\+B\+F\+S\+File\+::nextfile}
+\mbox{\Hypertarget{a00262_ace1c3d3ab069c2620bc27f49168f1e6b_ace1c3d3ab069c2620bc27f49168f1e6b}\label{a00262_ace1c3d3ab069c2620bc27f49168f1e6b_ace1c3d3ab069c2620bc27f49168f1e6b}} 
+\index{mbr@{mbr}!fourthpte@{fourthpte}}
+\index{fourthpte@{fourthpte}!mbr@{mbr}}
+\subsubsection{\texorpdfstring{fourthpte}{fourthpte}}
+{\footnotesize\ttfamily \hyperlink{a00161_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} mbr\+::fourthpte}
 
 
 
-Definition at line 35 of file vxbfs.\+h.
+Definition at line 30 of file vfs.\+h.
+
+\mbox{\Hypertarget{a00262_a6539d6c096872ae8ff274a277b2652a4_a6539d6c096872ae8ff274a277b2652a4}\label{a00262_a6539d6c096872ae8ff274a277b2652a4_a6539d6c096872ae8ff274a277b2652a4}} 
+\index{mbr@{mbr}!secondpte@{secondpte}}
+\index{secondpte@{secondpte}!mbr@{mbr}}
+\subsubsection{\texorpdfstring{secondpte}{secondpte}}
+{\footnotesize\ttfamily \hyperlink{a00161_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} mbr\+::secondpte}
+
+
+
+Definition at line 28 of file vfs.\+h.
+
+\mbox{\Hypertarget{a00262_a7a01b3c5837cdb118fdf778197aff57b_a7a01b3c5837cdb118fdf778197aff57b}\label{a00262_a7a01b3c5837cdb118fdf778197aff57b_a7a01b3c5837cdb118fdf778197aff57b}} 
+\index{mbr@{mbr}!signature@{signature}}
+\index{signature@{signature}!mbr@{mbr}}
+\subsubsection{\texorpdfstring{signature}{signature}}
+{\footnotesize\ttfamily char mbr\+::signature\mbox{[}4\mbox{]}}
+
+
+
+Definition at line 26 of file vfs.\+h.
+
+\mbox{\Hypertarget{a00262_ace5aefce3038d09ee29fec72826eef97_ace5aefce3038d09ee29fec72826eef97}\label{a00262_ace5aefce3038d09ee29fec72826eef97_ace5aefce3038d09ee29fec72826eef97}} 
+\index{mbr@{mbr}!thirdpte@{thirdpte}}
+\index{thirdpte@{thirdpte}!mbr@{mbr}}
+\subsubsection{\texorpdfstring{thirdpte}{thirdpte}}
+{\footnotesize\ttfamily \hyperlink{a00161_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} mbr\+::thirdpte}
+
+
+
+Definition at line 29 of file vfs.\+h.
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-libc/vitality/\hyperlink{a00164}{vxbfs.\+h}\end{DoxyCompactItemize}
+libc/vitality/\hyperlink{a00161}{vfs.\+h}\end{DoxyCompactItemize}

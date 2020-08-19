@@ -15,10 +15,6 @@ typedef struct vepheader {
     /// 
     char flags;
     ///
-    /// 255 character array for name
-    ///
-    char name[255];
-    ///
     /// Where the VEP should be loaded
     ///
     uint32_t origin;
@@ -26,14 +22,27 @@ typedef struct vepheader {
     /// VEP size
     ///
     uint32_t vepsize;
+    ///
+    /// VEP mode
+    /// 
+    uint32_t mode;
+    ///
+    /// Reserved data
+    /// 
+    char reserved[255];
 } vepheader_t;
 ```
 
-After the vepheader is the raw binary which will be loaded in. Example
+After the vepheader is the raw binary which will be loaded in. Example:
 
 ```
-+-----------------------------------+--------------------+
-|VEPHEADER                          |PROGRAM DATA        |
-|signature flags name origin vepsize|                    |
-+-----------------------------------+--------------------+
++---------------------------------------------+--------------------+
+|VEPHEADER                                    |PROGRAM DATA        |
+|signature flags origin vepsize mode reserved |                    |
++---------------------------------------------+--------------------+
 ```
+
+The current VEP modes are:
+1. VEPMODE_MONOLITHIC, interrupts to system are allowed, no VEP or VAM access
+2. VEPMODE_VLIB, interrupts to system are allowed, VEP access is allowed except VAM, shows a consent dialog
+3. VEPMODE_VAM, interrupts to system are allowed, VEP access and VAM access is allowed, requires permissions

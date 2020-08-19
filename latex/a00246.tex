@@ -1,117 +1,125 @@
-\hypertarget{a00246}{}\section{mbr Struct Reference}
-\label{a00246}\index{mbr@{mbr}}
+\hypertarget{a00246}{}\section{vepheader Struct Reference}
+\label{a00246}\index{vepheader@{vepheader}}
 
 
-Master Boot Record.  
-
-
-
-
-{\ttfamily \#include $<$vfs.\+h$>$}
+Header for a V\+EP file V\+EP stands for Vitality Executable Program.  
 
 
 
-Collaboration diagram for mbr\+:
-% FIG 0
+
+{\ttfamily \#include $<$vep.\+h$>$}
+
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-char \hyperlink{a00246_acd9201425a84fdd1d341c2d529494ab1_acd9201425a84fdd1d341c2d529494ab1}{bootstrap} \mbox{[}440\mbox{]}
-\item 
-char \hyperlink{a00246_a7a01b3c5837cdb118fdf778197aff57b_a7a01b3c5837cdb118fdf778197aff57b}{signature} \mbox{[}4\mbox{]}
-\item 
-\hyperlink{a00152_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} \hyperlink{a00246_abd208d0cb66e336d565beb33de1b5056_abd208d0cb66e336d565beb33de1b5056}{firstpte}
-\item 
-\hyperlink{a00152_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} \hyperlink{a00246_a6539d6c096872ae8ff274a277b2652a4_a6539d6c096872ae8ff274a277b2652a4}{secondpte}
-\item 
-\hyperlink{a00152_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} \hyperlink{a00246_ace5aefce3038d09ee29fec72826eef97_ace5aefce3038d09ee29fec72826eef97}{thirdpte}
-\item 
-\hyperlink{a00152_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} \hyperlink{a00246_ace1c3d3ab069c2620bc27f49168f1e6b_ace1c3d3ab069c2620bc27f49168f1e6b}{fourthpte}
-\item 
-char \hyperlink{a00246_a586361d132b342e9628f1079ad7b4b8d_a586361d132b342e9628f1079ad7b4b8d}{bssignature} \mbox{[}2\mbox{]}
-\end{DoxyCompactItemize}
+char \hyperlink{a00246_a06d6ef138b4f63ef72ad6aadda58ab47_a06d6ef138b4f63ef72ad6aadda58ab47}{signature} \mbox{[}2\mbox{]}
+\begin{DoxyCompactList}\small\item\em V\+EP signature, should be \textquotesingle{}VP\textquotesingle{}. \end{DoxyCompactList}\item 
+char \hyperlink{a00246_ad19a09798439f6a12c5794c2ce224e9b_ad19a09798439f6a12c5794c2ce224e9b}{flags}
+\begin{DoxyCompactList}\small\item\em V\+EP flags. \end{DoxyCompactList}\item 
+\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00246_aa81b6806dd33022ce60c314c908ba028_aa81b6806dd33022ce60c314c908ba028}{origin}
+\begin{DoxyCompactList}\small\item\em Where the V\+EP should be loaded. \end{DoxyCompactList}\item 
+\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00246_a6121693fa5ac3673d831b440aea8963e_a6121693fa5ac3673d831b440aea8963e}{vepsize}
+\begin{DoxyCompactList}\small\item\em V\+EP size. \end{DoxyCompactList}\item 
+\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00246_aa2ddca6dc67944c8119ba78c50d2d8e9_aa2ddca6dc67944c8119ba78c50d2d8e9}{mode}
+\begin{DoxyCompactList}\small\item\em V\+EP mode. \end{DoxyCompactList}\item 
+char \hyperlink{a00246_ad12e2dbbe2219f9739e59c4724d917a6_ad12e2dbbe2219f9739e59c4724d917a6}{reserved} \mbox{[}255\mbox{]}
+\begin{DoxyCompactList}\small\item\em Reserved data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Master Boot Record. 
+Header for a V\+EP file V\+EP stands for Vitality Executable Program. 
 
-Definition at line 24 of file vfs.\+h.
+Definition at line 23 of file vep.\+h.
 
 
 
 \subsection{Field Documentation}
-\mbox{\Hypertarget{a00246_acd9201425a84fdd1d341c2d529494ab1_acd9201425a84fdd1d341c2d529494ab1}\label{a00246_acd9201425a84fdd1d341c2d529494ab1_acd9201425a84fdd1d341c2d529494ab1}} 
-\index{mbr@{mbr}!bootstrap@{bootstrap}}
-\index{bootstrap@{bootstrap}!mbr@{mbr}}
-\subsubsection{\texorpdfstring{bootstrap}{bootstrap}}
-{\footnotesize\ttfamily char mbr\+::bootstrap\mbox{[}440\mbox{]}}
+\mbox{\Hypertarget{a00246_ad19a09798439f6a12c5794c2ce224e9b_ad19a09798439f6a12c5794c2ce224e9b}\label{a00246_ad19a09798439f6a12c5794c2ce224e9b_ad19a09798439f6a12c5794c2ce224e9b}} 
+\index{vepheader@{vepheader}!flags@{flags}}
+\index{flags@{flags}!vepheader@{vepheader}}
+\subsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily char vepheader\+::flags}
 
 
 
-Definition at line 25 of file vfs.\+h.
-
-\mbox{\Hypertarget{a00246_a586361d132b342e9628f1079ad7b4b8d_a586361d132b342e9628f1079ad7b4b8d}\label{a00246_a586361d132b342e9628f1079ad7b4b8d_a586361d132b342e9628f1079ad7b4b8d}} 
-\index{mbr@{mbr}!bssignature@{bssignature}}
-\index{bssignature@{bssignature}!mbr@{mbr}}
-\subsubsection{\texorpdfstring{bssignature}{bssignature}}
-{\footnotesize\ttfamily char mbr\+::bssignature\mbox{[}2\mbox{]}}
+V\+EP flags. 
 
 
 
-Definition at line 31 of file vfs.\+h.
+Definition at line 31 of file vep.\+h.
 
-\mbox{\Hypertarget{a00246_abd208d0cb66e336d565beb33de1b5056_abd208d0cb66e336d565beb33de1b5056}\label{a00246_abd208d0cb66e336d565beb33de1b5056_abd208d0cb66e336d565beb33de1b5056}} 
-\index{mbr@{mbr}!firstpte@{firstpte}}
-\index{firstpte@{firstpte}!mbr@{mbr}}
-\subsubsection{\texorpdfstring{firstpte}{firstpte}}
-{\footnotesize\ttfamily \hyperlink{a00152_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} mbr\+::firstpte}
-
-
-
-Definition at line 27 of file vfs.\+h.
-
-\mbox{\Hypertarget{a00246_ace1c3d3ab069c2620bc27f49168f1e6b_ace1c3d3ab069c2620bc27f49168f1e6b}\label{a00246_ace1c3d3ab069c2620bc27f49168f1e6b_ace1c3d3ab069c2620bc27f49168f1e6b}} 
-\index{mbr@{mbr}!fourthpte@{fourthpte}}
-\index{fourthpte@{fourthpte}!mbr@{mbr}}
-\subsubsection{\texorpdfstring{fourthpte}{fourthpte}}
-{\footnotesize\ttfamily \hyperlink{a00152_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} mbr\+::fourthpte}
+\mbox{\Hypertarget{a00246_aa2ddca6dc67944c8119ba78c50d2d8e9_aa2ddca6dc67944c8119ba78c50d2d8e9}\label{a00246_aa2ddca6dc67944c8119ba78c50d2d8e9_aa2ddca6dc67944c8119ba78c50d2d8e9}} 
+\index{vepheader@{vepheader}!mode@{mode}}
+\index{mode@{mode}!vepheader@{vepheader}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily \hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} vepheader\+::mode}
 
 
 
-Definition at line 30 of file vfs.\+h.
-
-\mbox{\Hypertarget{a00246_a6539d6c096872ae8ff274a277b2652a4_a6539d6c096872ae8ff274a277b2652a4}\label{a00246_a6539d6c096872ae8ff274a277b2652a4_a6539d6c096872ae8ff274a277b2652a4}} 
-\index{mbr@{mbr}!secondpte@{secondpte}}
-\index{secondpte@{secondpte}!mbr@{mbr}}
-\subsubsection{\texorpdfstring{secondpte}{secondpte}}
-{\footnotesize\ttfamily \hyperlink{a00152_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} mbr\+::secondpte}
+V\+EP mode. 
 
 
 
-Definition at line 28 of file vfs.\+h.
+Definition at line 43 of file vep.\+h.
 
-\mbox{\Hypertarget{a00246_a7a01b3c5837cdb118fdf778197aff57b_a7a01b3c5837cdb118fdf778197aff57b}\label{a00246_a7a01b3c5837cdb118fdf778197aff57b_a7a01b3c5837cdb118fdf778197aff57b}} 
-\index{mbr@{mbr}!signature@{signature}}
-\index{signature@{signature}!mbr@{mbr}}
+\mbox{\Hypertarget{a00246_aa81b6806dd33022ce60c314c908ba028_aa81b6806dd33022ce60c314c908ba028}\label{a00246_aa81b6806dd33022ce60c314c908ba028_aa81b6806dd33022ce60c314c908ba028}} 
+\index{vepheader@{vepheader}!origin@{origin}}
+\index{origin@{origin}!vepheader@{vepheader}}
+\subsubsection{\texorpdfstring{origin}{origin}}
+{\footnotesize\ttfamily \hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} vepheader\+::origin}
+
+
+
+Where the V\+EP should be loaded. 
+
+
+
+Definition at line 35 of file vep.\+h.
+
+\mbox{\Hypertarget{a00246_ad12e2dbbe2219f9739e59c4724d917a6_ad12e2dbbe2219f9739e59c4724d917a6}\label{a00246_ad12e2dbbe2219f9739e59c4724d917a6_ad12e2dbbe2219f9739e59c4724d917a6}} 
+\index{vepheader@{vepheader}!reserved@{reserved}}
+\index{reserved@{reserved}!vepheader@{vepheader}}
+\subsubsection{\texorpdfstring{reserved}{reserved}}
+{\footnotesize\ttfamily char vepheader\+::reserved\mbox{[}255\mbox{]}}
+
+
+
+Reserved data. 
+
+
+
+Definition at line 47 of file vep.\+h.
+
+\mbox{\Hypertarget{a00246_a06d6ef138b4f63ef72ad6aadda58ab47_a06d6ef138b4f63ef72ad6aadda58ab47}\label{a00246_a06d6ef138b4f63ef72ad6aadda58ab47_a06d6ef138b4f63ef72ad6aadda58ab47}} 
+\index{vepheader@{vepheader}!signature@{signature}}
+\index{signature@{signature}!vepheader@{vepheader}}
 \subsubsection{\texorpdfstring{signature}{signature}}
-{\footnotesize\ttfamily char mbr\+::signature\mbox{[}4\mbox{]}}
+{\footnotesize\ttfamily char vepheader\+::signature\mbox{[}2\mbox{]}}
 
 
 
-Definition at line 26 of file vfs.\+h.
-
-\mbox{\Hypertarget{a00246_ace5aefce3038d09ee29fec72826eef97_ace5aefce3038d09ee29fec72826eef97}\label{a00246_ace5aefce3038d09ee29fec72826eef97_ace5aefce3038d09ee29fec72826eef97}} 
-\index{mbr@{mbr}!thirdpte@{thirdpte}}
-\index{thirdpte@{thirdpte}!mbr@{mbr}}
-\subsubsection{\texorpdfstring{thirdpte}{thirdpte}}
-{\footnotesize\ttfamily \hyperlink{a00152_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t} mbr\+::thirdpte}
+V\+EP signature, should be \textquotesingle{}VP\textquotesingle{}. 
 
 
 
-Definition at line 29 of file vfs.\+h.
+Definition at line 27 of file vep.\+h.
+
+\mbox{\Hypertarget{a00246_a6121693fa5ac3673d831b440aea8963e_a6121693fa5ac3673d831b440aea8963e}\label{a00246_a6121693fa5ac3673d831b440aea8963e_a6121693fa5ac3673d831b440aea8963e}} 
+\index{vepheader@{vepheader}!vepsize@{vepsize}}
+\index{vepsize@{vepsize}!vepheader@{vepheader}}
+\subsubsection{\texorpdfstring{vepsize}{vepsize}}
+{\footnotesize\ttfamily \hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} vepheader\+::vepsize}
+
+
+
+V\+EP size. 
+
+
+
+Definition at line 39 of file vep.\+h.
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-libc/vitality/\hyperlink{a00152}{vfs.\+h}\end{DoxyCompactItemize}
+libc/vitality/\hyperlink{a00158}{vep.\+h}\end{DoxyCompactItemize}

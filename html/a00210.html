@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: page_table Struct Reference</title>
+<title>VitalityX: idt_entry_struct Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -42,28 +42,30 @@ $(function() {
   <div class="summary">
 <a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">page_table Struct Reference</div>  </div>
+<div class="title">idt_entry_struct Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="a00101_source.html">page.h</a>&gt;</code></p>
-<div class="dynheader">
-Collaboration diagram for page_table:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00208.png" border="0" usemap="#page__table_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 0 -->
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<p><code>#include &lt;<a class="el" href="a00098_source.html">interrupt.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:a48867fe3c6d8599eff21b790260d55b4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00101_a76113662e059e0926a92c5b15c098f4a.html#a76113662e059e0926a92c5b15c098f4a">page_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00210_a48867fe3c6d8599eff21b790260d55b4.html#a48867fe3c6d8599eff21b790260d55b4">pages</a> [1024]</td></tr>
-<tr class="separator:a48867fe3c6d8599eff21b790260d55b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b5fce0881deb4959d33da77d1ed0202"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00210_a4b5fce0881deb4959d33da77d1ed0202.html#a4b5fce0881deb4959d33da77d1ed0202">base_lo</a></td></tr>
+<tr class="separator:a4b5fce0881deb4959d33da77d1ed0202"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c9321c263139e56901a05efee220047"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00210_a3c9321c263139e56901a05efee220047.html#a3c9321c263139e56901a05efee220047">sel</a></td></tr>
+<tr class="separator:a3c9321c263139e56901a05efee220047"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc747b3ff87142c71b7b8c51e03c067c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00210_adc747b3ff87142c71b7b8c51e03c067c.html#adc747b3ff87142c71b7b8c51e03c067c">always0</a></td></tr>
+<tr class="separator:adc747b3ff87142c71b7b8c51e03c067c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02277c77564820972ae5df0a37c80be0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00210_a02277c77564820972ae5df0a37c80be0.html#a02277c77564820972ae5df0a37c80be0">flags</a></td></tr>
+<tr class="separator:a02277c77564820972ae5df0a37c80be0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af46adb2603d1d8b4a3bedf7f1c6daed4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00210_af46adb2603d1d8b4a3bedf7f1c6daed4.html#af46adb2603d1d8b4a3bedf7f1c6daed4">base_hi</a></td></tr>
+<tr class="separator:af46adb2603d1d8b4a3bedf7f1c6daed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="a00101_source.html#l00017">17</a> of file <a class="el" href="a00101_source.html">page.h</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00098_source.html#l00006">6</a> of file <a class="el" href="a00098_source.html">interrupt.h</a>.</p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
-<li>libc/<a class="el" href="a00101_source.html">page.h</a></li>
+<li>libc/<a class="el" href="a00098_source.html">interrupt.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,37 +1,134 @@
-\hypertarget{a00056}{}\section{libc/ext/debug.c File Reference}
-\label{a00056}\index{libc/ext/debug.\+c@{libc/ext/debug.\+c}}
-{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
-Include dependency graph for debug.\+c\+:
+\hypertarget{a00056}{}\section{kernel/kernel.c File Reference}
+\label{a00056}\index{kernel/kernel.\+c@{kernel/kernel.\+c}}
+{\ttfamily \#include \char`\"{}../libc/vitality/tty.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/descriptortables.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/page.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/ext/debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../drivers/vga.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/ext/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/vitality/mem.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/vitality/vlib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../drivers/ide.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/vitality/fs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/vitality/vxbfs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/vitality/vfs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../drivers/keyboard.\+h\char`\"{}}\newline
+Include dependency graph for kernel.\+c\+:
 % FIG 0
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{Bochs\+Console\+Print\+String} (char $\ast$string)
-\begin{DoxyCompactList}\small\item\em Outputs a string to the Bochs console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+int \hyperlink{a00056_a4ee3d1f05046b7afc6b4d516bf10667a_a4ee3d1f05046b7afc6b4d516bf10667a}{kernel} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00170_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\+\_\+entry\+\_\+t} \hyperlink{a00056_af69f4f709fdab28dec6b8fb75fb4d526_af69f4f709fdab28dec6b8fb75fb4d526}{vlibe} \mbox{[}255\mbox{]}
+\begin{DoxyCompactList}\small\item\em The kernels C entry point. \end{DoxyCompactList}\item 
+\hyperlink{a00170_a2d9000b4fbb25c5ed2950a2d8f4921d5_a2d9000b4fbb25c5ed2950a2d8f4921d5}{vlibdesriptor\+\_\+t} \hyperlink{a00056_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}{vlibd}
+\item 
+int \hyperlink{a00056_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive}
+\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}\label{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}} 
-\index{debug.\+c@{debug.\+c}!Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}}
-\index{Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}!debug.\+c@{debug.\+c}}
-\subsubsection{\texorpdfstring{Bochs\+Console\+Print\+String()}{BochsConsolePrintString()}}
-{\footnotesize\ttfamily void Bochs\+Console\+Print\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00056_a4ee3d1f05046b7afc6b4d516bf10667a_a4ee3d1f05046b7afc6b4d516bf10667a}\label{a00056_a4ee3d1f05046b7afc6b4d516bf10667a_a4ee3d1f05046b7afc6b4d516bf10667a}} 
+\index{kernel.\+c@{kernel.\+c}!kernel@{kernel}}
+\index{kernel@{kernel}!kernel.\+c@{kernel.\+c}}
+\subsubsection{\texorpdfstring{kernel()}{kernel()}}
+{\footnotesize\ttfamily int kernel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Outputs a string to the Bochs console. 
-
-
-
-Definition at line 3 of file debug.\+c.
+Definition at line 20 of file kernel.\+c.
 
 
 \begin{DoxyCode}
-4 \{
-5     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
-6     \textcolor{keywordflow}{while}(chara != 0x0) \{
-7         \hyperlink{a00059_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}{BochsConsolePrintChar}(chara);
-8         chara = *\textcolor{keywordtype}{string}++;
-9     \}
-10 \}
+20              \{
+21     \hyperlink{a00149_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"VitalityX\(\backslash\)n"});
+22     \textcolor{comment}{//initialise\_paging();}
+23     \hyperlink{a00149_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Enabling keyboard\(\backslash\)n"});
+24     \hyperlink{a00038_aabdb223e5290f3b3c07bc82d075b87d7_aabdb223e5290f3b3c07bc82d075b87d7}{kb\_init}();
+25     \hyperlink{a00149_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Setting up new descriptor tables\(\backslash\)n"});
+26     \hyperlink{a00059_a4c38e3f3ee100ca4323081bf0970c1ac_a4c38e3f3ee100ca4323081bf0970c1ac}{dt\_install}();
+27     \hyperlink{a00056_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}{vlibd}.\hyperlink{a00270_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base} = &\hyperlink{a00056_af69f4f709fdab28dec6b8fb75fb4d526_af69f4f709fdab28dec6b8fb75fb4d526}{vlibe};
+28     \hyperlink{a00056_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}{vlibd}.\hyperlink{a00270_a1cebf64c2c1ec72bca5cf673be70b3a7_a1cebf64c2c1ec72bca5cf673be70b3a7}{len} = 255;
+29     \hyperlink{a00149_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Loading VLib\(\backslash\)n"});
+30     \hyperlink{a00167_aee69008de31826f28854c29a54cb315e_aee69008de31826f28854c29a54cb315e}{loadvlib}(&\hyperlink{a00056_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}{vlibd});
+31     \hyperlink{a00149_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Starting multitasking\(\backslash\)n"});
+32     \hyperlink{a00077_aea945e91746a54801f4763ad264746b9_aea945e91746a54801f4763ad264746b9}{initTasking}();
+33     \hyperlink{a00149_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Setting up FS\(\backslash\)n"});
+34     \hyperlink{a00032_ab5397c8432be802172da8f04c8840ca3_ab5397c8432be802172da8f04c8840ca3}{ide\_initialize}(0x1F0, 0x3F6, 0x170, 0x376, 0x000);
+35     \hyperlink{a00149_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}{clearscreen}();
+36     \hyperlink{a00134_a414110036132977c34813673360e1a63_a414110036132977c34813673360e1a63}{getentries}();
+37     \hyperlink{a00149_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Select drive number otherwise bfs/ata/atp0... "});
+38     \textcolor{keywordflow}{switch}(\hyperlink{a00038_af3facad10e05defa48d45b46eb9ebe7e_af3facad10e05defa48d45b46eb9ebe7e}{getch}()) \{
+39         \textcolor{keywordflow}{case} \textcolor{charliteral}{'0'}:
+40             \hyperlink{a00056_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive} = 0;
+41         \textcolor{keywordflow}{case} \textcolor{charliteral}{'1'}:
+42             \hyperlink{a00056_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive} = 1;
+43         \textcolor{keywordflow}{case} \textcolor{charliteral}{'2'}:
+44             \hyperlink{a00056_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive} = 2;
+45         \textcolor{keywordflow}{case} \textcolor{charliteral}{'3'}:
+46             \hyperlink{a00056_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive} = 4;
+47         \textcolor{keywordflow}{default}:
+48             \hyperlink{a00056_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive} = 0;
+49     \}
+50     \hyperlink{a00149_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{charliteral}{'\(\backslash\)n'});
+51     \hyperlink{a00149_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Loading VXBFS on "});
+52     \hyperlink{a00149_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\_pputstringl}((\textcolor{keywordtype}{char}*)\hyperlink{a00137_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[\hyperlink{a00056_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive}].name,4);
+53     \hyperlink{a00149_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+54     \hyperlink{a00032_a9dd84843412753d236e17a15277c5b98_a9dd84843412753d236e17a15277c5b98}{ide\_read\_sectors}(\hyperlink{a00056_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive},4,0,0,0x500);
+55     \hyperlink{a00282}{vxbfs\_header\_t} header = *(\hyperlink{a00282}{vxbfs\_header\_t}*)0x500;
+56     \textcolor{keywordflow}{if}(header.\hyperlink{a00282_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[0] == \textcolor{charliteral}{'V'} && header.\hyperlink{a00282_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[1] == \textcolor{charliteral}{'X'} && header.
+      \hyperlink{a00282_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[2] == \textcolor{charliteral}{'F'} && header.\hyperlink{a00282_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[3] == \textcolor{charliteral}{'S'}) \{
+57         \hyperlink{a00149_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"VXBFS found."});
+58         \hyperlink{a00149_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" label: "});
+59         \hyperlink{a00149_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\_pputstringl}(header.\hyperlink{a00282_af3cd6b4358b6ba93a7bd541c09c959c8_af3cd6b4358b6ba93a7bd541c09c959c8}{label},6);
+60         \hyperlink{a00278}{vxbfs\_file\_t} *firstfile = header.\hyperlink{a00282_a3b903de5c5034494530cdc0c2d4ff9b1_a3b903de5c5034494530cdc0c2d4ff9b1}{file};
+61         \hyperlink{a00149_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" First VXBDS File: "});
+62         \hyperlink{a00149_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\_pputstringl}((\textcolor{keywordtype}{char}*)firstfile->\hyperlink{a00278_a07ecc9bacdc2943442f26f62f6749055_a07ecc9bacdc2943442f26f62f6749055}{name},11);
+63     \}
+64     \textcolor{keywordflow}{while}(\textcolor{keyword}{true}) \{
+65         \hyperlink{a00038_ab88a2e96bbe585e228a5b201435c0240_ab88a2e96bbe585e228a5b201435c0240}{getst}();
+66     \}
+67     \textcolor{keywordflow}{return} 0;
+68 \}
 \end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{a00056_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}\label{a00056_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}} 
+\index{kernel.\+c@{kernel.\+c}!primarydrive@{primarydrive}}
+\index{primarydrive@{primarydrive}!kernel.\+c@{kernel.\+c}}
+\subsubsection{\texorpdfstring{primarydrive}{primarydrive}}
+{\footnotesize\ttfamily int primarydrive}
+
+
+
+Definition at line 19 of file kernel.\+c.
+
+\mbox{\Hypertarget{a00056_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}\label{a00056_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}} 
+\index{kernel.\+c@{kernel.\+c}!vlibd@{vlibd}}
+\index{vlibd@{vlibd}!kernel.\+c@{kernel.\+c}}
+\subsubsection{\texorpdfstring{vlibd}{vlibd}}
+{\footnotesize\ttfamily \hyperlink{a00170_a2d9000b4fbb25c5ed2950a2d8f4921d5_a2d9000b4fbb25c5ed2950a2d8f4921d5}{vlibdesriptor\+\_\+t} vlibd}
+
+
+
+Definition at line 18 of file kernel.\+c.
+
+\mbox{\Hypertarget{a00056_af69f4f709fdab28dec6b8fb75fb4d526_af69f4f709fdab28dec6b8fb75fb4d526}\label{a00056_af69f4f709fdab28dec6b8fb75fb4d526_af69f4f709fdab28dec6b8fb75fb4d526}} 
+\index{kernel.\+c@{kernel.\+c}!vlibe@{vlibe}}
+\index{vlibe@{vlibe}!kernel.\+c@{kernel.\+c}}
+\subsubsection{\texorpdfstring{vlibe}{vlibe}}
+{\footnotesize\ttfamily \hyperlink{a00170_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\+\_\+entry\+\_\+t} vlibe\mbox{[}255\mbox{]}}
+
+
+
+The kernels C entry point. 
+
+
+
+Definition at line 17 of file kernel.\+c.
+

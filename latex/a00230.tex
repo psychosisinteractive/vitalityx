@@ -1,109 +1,76 @@
-\hypertarget{a00230}{}\section{vepheader Struct Reference}
-\label{a00230}\index{vepheader@{vepheader}}
+\hypertarget{a00230}{}\section{page\+\_\+directory Struct Reference}
+\label{a00230}\index{page\+\_\+directory@{page\+\_\+directory}}
 
 
-Header for a V\+EP file V\+EP stands for Vitality Executable Program.  
+{\ttfamily \#include $<$page.\+h$>$}
 
 
 
-
-{\ttfamily \#include $<$vep.\+h$>$}
-
+Collaboration diagram for page\+\_\+directory\+:
+% FIG 0
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-char \hyperlink{a00230_a06d6ef138b4f63ef72ad6aadda58ab47_a06d6ef138b4f63ef72ad6aadda58ab47}{signature} \mbox{[}2\mbox{]}
-\begin{DoxyCompactList}\small\item\em V\+EP signature, should be \textquotesingle{}VP\textquotesingle{}. \end{DoxyCompactList}\item 
-char \hyperlink{a00230_ad19a09798439f6a12c5794c2ce224e9b_ad19a09798439f6a12c5794c2ce224e9b}{flags}
-\begin{DoxyCompactList}\small\item\em V\+EP flags. \end{DoxyCompactList}\item 
-char \hyperlink{a00230_ab1972b24045dbe7a528c6d79ffd2a5ad_ab1972b24045dbe7a528c6d79ffd2a5ad}{name} \mbox{[}255\mbox{]}
-\begin{DoxyCompactList}\small\item\em 255 character array for name \end{DoxyCompactList}\item 
-\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00230_aa81b6806dd33022ce60c314c908ba028_aa81b6806dd33022ce60c314c908ba028}{origin}
-\begin{DoxyCompactList}\small\item\em Where the V\+EP should be loaded. \end{DoxyCompactList}\item 
-\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00230_a6121693fa5ac3673d831b440aea8963e_a6121693fa5ac3673d831b440aea8963e}{vepsize}
-\begin{DoxyCompactList}\small\item\em V\+EP size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{a00110_a052d6ef76d4f16828bb0f478b24b6b55_a052d6ef76d4f16828bb0f478b24b6b55}{page\+\_\+table\+\_\+t} $\ast$ \hyperlink{a00230_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables} \mbox{[}1024\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of pointers to pagetables. \end{DoxyCompactList}\item 
+\hyperlink{a00125_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00230_a99a9e823491d762288ceb3faf2b1088b_a99a9e823491d762288ceb3faf2b1088b}{tables\+Physical} \mbox{[}1024\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of pointers to the pagetables above, but gives their {\itshape physical} location, for loading into the C\+R3 register. \end{DoxyCompactList}\item 
+\hyperlink{a00125_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00230_a69f56a12e20a59682292842323aabefb_a69f56a12e20a59682292842323aabefb}{physical\+Addr}
+\begin{DoxyCompactList}\small\item\em The physical address of tables\+Physical. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Header for a V\+EP file V\+EP stands for Vitality Executable Program. 
 
-Definition at line 23 of file vep.\+h.
+
+Definition at line 22 of file page.\+h.
 
 
 
 \subsection{Field Documentation}
-\mbox{\Hypertarget{a00230_ad19a09798439f6a12c5794c2ce224e9b_ad19a09798439f6a12c5794c2ce224e9b}\label{a00230_ad19a09798439f6a12c5794c2ce224e9b_ad19a09798439f6a12c5794c2ce224e9b}} 
-\index{vepheader@{vepheader}!flags@{flags}}
-\index{flags@{flags}!vepheader@{vepheader}}
-\subsubsection{\texorpdfstring{flags}{flags}}
-{\footnotesize\ttfamily char vepheader\+::flags}
+\mbox{\Hypertarget{a00230_a69f56a12e20a59682292842323aabefb_a69f56a12e20a59682292842323aabefb}\label{a00230_a69f56a12e20a59682292842323aabefb_a69f56a12e20a59682292842323aabefb}} 
+\index{page\+\_\+directory@{page\+\_\+directory}!physical\+Addr@{physical\+Addr}}
+\index{physical\+Addr@{physical\+Addr}!page\+\_\+directory@{page\+\_\+directory}}
+\subsubsection{\texorpdfstring{physical\+Addr}{physicalAddr}}
+{\footnotesize\ttfamily \hyperlink{a00125_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+\_\+directory\+::physical\+Addr}
 
 
 
-V\+EP flags. 
+The physical address of tables\+Physical. 
+
+This comes into play when we get our kernel heap allocated and the directory may be in a different location in virtual memory. 
+
+Definition at line 38 of file page.\+h.
+
+\mbox{\Hypertarget{a00230_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}\label{a00230_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}} 
+\index{page\+\_\+directory@{page\+\_\+directory}!tables@{tables}}
+\index{tables@{tables}!page\+\_\+directory@{page\+\_\+directory}}
+\subsubsection{\texorpdfstring{tables}{tables}}
+{\footnotesize\ttfamily \hyperlink{a00110_a052d6ef76d4f16828bb0f478b24b6b55_a052d6ef76d4f16828bb0f478b24b6b55}{page\+\_\+table\+\_\+t}$\ast$ page\+\_\+directory\+::tables\mbox{[}1024\mbox{]}}
 
 
 
-Definition at line 31 of file vep.\+h.
-
-\mbox{\Hypertarget{a00230_ab1972b24045dbe7a528c6d79ffd2a5ad_ab1972b24045dbe7a528c6d79ffd2a5ad}\label{a00230_ab1972b24045dbe7a528c6d79ffd2a5ad_ab1972b24045dbe7a528c6d79ffd2a5ad}} 
-\index{vepheader@{vepheader}!name@{name}}
-\index{name@{name}!vepheader@{vepheader}}
-\subsubsection{\texorpdfstring{name}{name}}
-{\footnotesize\ttfamily char vepheader\+::name\mbox{[}255\mbox{]}}
+Array of pointers to pagetables. 
 
 
 
-255 character array for name 
+Definition at line 27 of file page.\+h.
+
+\mbox{\Hypertarget{a00230_a99a9e823491d762288ceb3faf2b1088b_a99a9e823491d762288ceb3faf2b1088b}\label{a00230_a99a9e823491d762288ceb3faf2b1088b_a99a9e823491d762288ceb3faf2b1088b}} 
+\index{page\+\_\+directory@{page\+\_\+directory}!tables\+Physical@{tables\+Physical}}
+\index{tables\+Physical@{tables\+Physical}!page\+\_\+directory@{page\+\_\+directory}}
+\subsubsection{\texorpdfstring{tables\+Physical}{tablesPhysical}}
+{\footnotesize\ttfamily \hyperlink{a00125_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+\_\+directory\+::tables\+Physical\mbox{[}1024\mbox{]}}
 
 
 
-Definition at line 35 of file vep.\+h.
-
-\mbox{\Hypertarget{a00230_aa81b6806dd33022ce60c314c908ba028_aa81b6806dd33022ce60c314c908ba028}\label{a00230_aa81b6806dd33022ce60c314c908ba028_aa81b6806dd33022ce60c314c908ba028}} 
-\index{vepheader@{vepheader}!origin@{origin}}
-\index{origin@{origin}!vepheader@{vepheader}}
-\subsubsection{\texorpdfstring{origin}{origin}}
-{\footnotesize\ttfamily \hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} vepheader\+::origin}
+Array of pointers to the pagetables above, but gives their {\itshape physical} location, for loading into the C\+R3 register. 
 
 
 
-Where the V\+EP should be loaded. 
-
-
-
-Definition at line 39 of file vep.\+h.
-
-\mbox{\Hypertarget{a00230_a06d6ef138b4f63ef72ad6aadda58ab47_a06d6ef138b4f63ef72ad6aadda58ab47}\label{a00230_a06d6ef138b4f63ef72ad6aadda58ab47_a06d6ef138b4f63ef72ad6aadda58ab47}} 
-\index{vepheader@{vepheader}!signature@{signature}}
-\index{signature@{signature}!vepheader@{vepheader}}
-\subsubsection{\texorpdfstring{signature}{signature}}
-{\footnotesize\ttfamily char vepheader\+::signature\mbox{[}2\mbox{]}}
-
-
-
-V\+EP signature, should be \textquotesingle{}VP\textquotesingle{}. 
-
-
-
-Definition at line 27 of file vep.\+h.
-
-\mbox{\Hypertarget{a00230_a6121693fa5ac3673d831b440aea8963e_a6121693fa5ac3673d831b440aea8963e}\label{a00230_a6121693fa5ac3673d831b440aea8963e_a6121693fa5ac3673d831b440aea8963e}} 
-\index{vepheader@{vepheader}!vepsize@{vepsize}}
-\index{vepsize@{vepsize}!vepheader@{vepheader}}
-\subsubsection{\texorpdfstring{vepsize}{vepsize}}
-{\footnotesize\ttfamily \hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} vepheader\+::vepsize}
-
-
-
-V\+EP size. 
-
-
-
-Definition at line 43 of file vep.\+h.
+Definition at line 32 of file page.\+h.
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-libc/vitality/\hyperlink{a00149}{vep.\+h}\end{DoxyCompactItemize}
+libc/\hyperlink{a00110}{page.\+h}\end{DoxyCompactItemize}

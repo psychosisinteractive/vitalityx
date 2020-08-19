@@ -1,0 +1,37 @@
+\hypertarget{a00020}{}\section{drivers/bios32.c File Reference}
+\label{a00020}\index{drivers/bios32.\+c@{drivers/bios32.\+c}}
+{\ttfamily \#include \char`\"{}bios32.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/types.\+h\char`\"{}}\newline
+Include dependency graph for bios32.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00023_a0b697968013559ff92bb6b61bf2ffab9_a0b697968013559ff92bb6b61bf2ffab9}{bios32\+\_\+sdh\+\_\+t} $\ast$ \hyperlink{a00020_ade2bed6c220faa5fdd24745c0dc91369_ade2bed6c220faa5fdd24745c0dc91369}{findbios32} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{a00020_ade2bed6c220faa5fdd24745c0dc91369_ade2bed6c220faa5fdd24745c0dc91369}\label{a00020_ade2bed6c220faa5fdd24745c0dc91369_ade2bed6c220faa5fdd24745c0dc91369}} 
+\index{bios32.\+c@{bios32.\+c}!findbios32@{findbios32}}
+\index{findbios32@{findbios32}!bios32.\+c@{bios32.\+c}}
+\subsubsection{\texorpdfstring{findbios32()}{findbios32()}}
+{\footnotesize\ttfamily \hyperlink{a00023_a0b697968013559ff92bb6b61bf2ffab9_a0b697968013559ff92bb6b61bf2ffab9}{bios32\+\_\+sdh\+\_\+t}$\ast$ findbios32 (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file bios32.\+c.
+
+
+\begin{DoxyCode}
+4                            \{
+5     \hyperlink{a00182}{bios32\_sdh\_t}* sdh = (\hyperlink{a00182}{bios32\_sdh\_t}*)0xe000;
+6     \textcolor{keywordflow}{if}(sdh->\hyperlink{a00182_a5d56b651b0453b6078d0efd500369fe0_a5d56b651b0453b6078d0efd500369fe0}{signature} != \hyperlink{a00023_ab76c5cf329d92fbb28daf7b57ea1744d_ab76c5cf329d92fbb28daf7b57ea1744d}{BIOS32\_SIGNATURE}) \{
+7         \hyperlink{a00023_a3bf8c7fb9844d36624b622e275c175ed_a3bf8c7fb9844d36624b622e275c175ed}{bios32\_state} = \textcolor{keyword}{false};
+8         \textcolor{keywordflow}{return} sdh;
+9     \} \textcolor{keywordflow}{else} \{
+10         \hyperlink{a00023_a3bf8c7fb9844d36624b622e275c175ed_a3bf8c7fb9844d36624b622e275c175ed}{bios32\_state} = \textcolor{keyword}{true};
+11         \textcolor{keywordflow}{return} sdh;
+12     \}
+13 \}
+\end{DoxyCode}

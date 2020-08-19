@@ -1,196 +1,133 @@
-\hypertarget{a00095}{}\section{libc/isr.h File Reference}
-\label{a00095}\index{libc/isr.\+h@{libc/isr.\+h}}
-{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
-Include dependency graph for isr.\+h\+:
+\hypertarget{a00095}{}\section{libc/interrupt.c File Reference}
+\label{a00095}\index{libc/interrupt.\+c@{libc/interrupt.\+c}}
+{\ttfamily \#include \char`\"{}interrupt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}ext/debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../drivers/pic.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}system.\+h\char`\"{}}\newline
+Include dependency graph for interrupt.\+c\+:
 % FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
-\subsection*{Data Structures}
-\begin{DoxyCompactItemize}
-\item 
-struct \hyperlink{a00202}{registers}
-\end{DoxyCompactItemize}
-\subsection*{Typedefs}
-\begin{DoxyCompactItemize}
-\item 
-typedef struct \hyperlink{a00202}{registers} \hyperlink{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t}
-\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00095_a4b4233daef6e041e7278cae2b21b5ed4_a4b4233daef6e041e7278cae2b21b5ed4}{sdump} (\hyperlink{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t} regs)
-\begin{DoxyCompactList}\small\item\em Dump interrupt registers. \end{DoxyCompactList}\item 
-void \hyperlink{a00095_a700e3ca056bf69296370f504f2cb6cc8_a700e3ca056bf69296370f504f2cb6cc8}{isr\+\_\+handler} (\hyperlink{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t} regs)
-\begin{DoxyCompactList}\small\item\em I\+SR handler. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\subsection{Typedef Documentation}
-\mbox{\Hypertarget{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}\label{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}} 
-\index{isr.\+h@{isr.\+h}!registers\+\_\+t@{registers\+\_\+t}}
-\index{registers\+\_\+t@{registers\+\_\+t}!isr.\+h@{isr.\+h}}
-\subsubsection{\texorpdfstring{registers\+\_\+t}{registers\_t}}
-{\footnotesize\ttfamily typedef struct \hyperlink{a00202}{registers}  \hyperlink{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t}}
-
+void \hyperlink{a00095_a35fe413107af682030ab7a4b6dff19b8_a35fe413107af682030ab7a4b6dff19b8}{init\+\_\+idt} ()
+\item 
+void \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\+\_\+set\+\_\+gate} (\hyperlink{a00125_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} num, \hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00098_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base}, \hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00098_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel}, \hyperlink{a00125_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00098_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags})
+\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00095_a700e3ca056bf69296370f504f2cb6cc8_a700e3ca056bf69296370f504f2cb6cc8}\label{a00095_a700e3ca056bf69296370f504f2cb6cc8_a700e3ca056bf69296370f504f2cb6cc8}} 
-\index{isr.\+h@{isr.\+h}!isr\+\_\+handler@{isr\+\_\+handler}}
-\index{isr\+\_\+handler@{isr\+\_\+handler}!isr.\+h@{isr.\+h}}
-\subsubsection{\texorpdfstring{isr\+\_\+handler()}{isr\_handler()}}
-{\footnotesize\ttfamily void isr\+\_\+handler (\begin{DoxyParamCaption}\item[{\hyperlink{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t}}]{regs }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}\label{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}} 
+\index{interrupt.\+c@{interrupt.\+c}!idt\+\_\+set\+\_\+gate@{idt\+\_\+set\+\_\+gate}}
+\index{idt\+\_\+set\+\_\+gate@{idt\+\_\+set\+\_\+gate}!interrupt.\+c@{interrupt.\+c}}
+\subsubsection{\texorpdfstring{idt\+\_\+set\+\_\+gate()}{idt\_set\_gate()}}
+{\footnotesize\ttfamily void idt\+\_\+set\+\_\+gate (\begin{DoxyParamCaption}\item[{\hyperlink{a00125_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{num,  }\item[{\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{base,  }\item[{\hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{sel,  }\item[{\hyperlink{a00125_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{flags }\end{DoxyParamCaption})}
 
 
 
-I\+SR handler. 
-
-
-
-Definition at line 70 of file isr.\+c.
+Definition at line 87 of file interrupt.\+c.
 
 
 \begin{DoxyCode}
-71 \{
-72     \hyperlink{a00182}{Task}* ctask = \hyperlink{a00068_a5913e9b2190b2b4118ee020721a320e2_a5913e9b2190b2b4118ee020721a320e2}{getctask}();
-73     \textcolor{keywordflow}{switch}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no}) \{
-74         \textcolor{keywordflow}{case} 0:
-75             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nDivide By Zero Failure\(\backslash\)n\(\backslash\)n"});
-76             \hyperlink{a00092_a4b4233daef6e041e7278cae2b21b5ed4_a4b4233daef6e041e7278cae2b21b5ed4}{sdump}(regs);
-77             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
-78             \hyperlink{a00092_a4af3b3eec03921259f5db474506c0c8d_a4af3b3eec03921259f5db474506c0c8d}{eoi}();
-79             \textcolor{keywordflow}{break};
-80         \textcolor{keywordflow}{case} 1:
-81             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
-82             \hyperlink{a00029_a1db933be72a0547c4070ba55e6697ba2_a1db933be72a0547c4070ba55e6697ba2}{keyboard\_handler\_main}();
-83             \hyperlink{a00092_a4af3b3eec03921259f5db474506c0c8d_a4af3b3eec03921259f5db474506c0c8d}{eoi}();
-84             \textcolor{keywordflow}{break};
-85         \textcolor{keywordflow}{case} 13:
-86             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nGENERAL PROTECTION FAULT!!!\(\backslash\)n\(\backslash\)n"});
-87             \hyperlink{a00140_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}{clearscreen}();
-88             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"GENERAL PROTECTION FAULT!!!\(\backslash\)n\(\backslash\)n"});
-89             \textcolor{keywordtype}{char}* errcode = \textcolor{stringliteral}{"  "};
-90             \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code},errcode);
-91             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"Errorcode: "});
-92             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(errcode);
-93             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Error Code:"});
-94             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(errcode);
-95             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nPlease restart your system, and report the error code and
-       following dump to a VitalityX developer.\(\backslash\)n"});
-96             \hyperlink{a00092_a4b4233daef6e041e7278cae2b21b5ed4_a4b4233daef6e041e7278cae2b21b5ed4}{sdump}(regs);
-97             \hyperlink{a00131_a3f7e7be8f62f43b2b62df54cac1590be_a3f7e7be8f62f43b2b62df54cac1590be}{bochs\_bkpt}();
-98             \textcolor{keywordflow}{for}(;;) \{
-99 
-100             \}
-101             \textcolor{keywordflow}{break};
-102         \textcolor{keywordflow}{case} 14:
-103             \hyperlink{a00092_a4af3b3eec03921259f5db474506c0c8d_a4af3b3eec03921259f5db474506c0c8d}{eoi}();
-104             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
-105             \hyperlink{a00023_ad7ea572af581cc0623a2fb74a579ca83_ad7ea572af581cc0623a2fb74a579ca83}{ide\_irq}();
-106             \hyperlink{a00098_a6293af8e675059a566216be86660854b_a6293af8e675059a566216be86660854b}{page\_fault}(regs);
-107             \textcolor{keywordflow}{for}(;;) \{
-108 
-109             \}
-110             \textcolor{keywordflow}{break};
-111         \textcolor{keywordflow}{case} 15:
-112             \hyperlink{a00092_a4af3b3eec03921259f5db474506c0c8d_a4af3b3eec03921259f5db474506c0c8d}{eoi}();
-113             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
-114             \hyperlink{a00023_ad7ea572af581cc0623a2fb74a579ca83_ad7ea572af581cc0623a2fb74a579ca83}{ide\_irq}();
-115             \textcolor{keywordflow}{break};
-116         \textcolor{keywordflow}{case} 63:
-117             \hyperlink{a00092_a4af3b3eec03921259f5db474506c0c8d_a4af3b3eec03921259f5db474506c0c8d}{eoi}();
-118             \hyperlink{a00035_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}{PIC\_sendEOI}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no});
-119             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nVitalityX SysISR Hit\(\backslash\)n\(\backslash\)n"});
-120             \hyperlink{a00092_abd1fa375737cd5ecd84c082738e3b195_abd1fa375737cd5ecd84c082738e3b195}{sysisr\_handler}(regs);
-121             \textcolor{keywordflow}{break};
-122         \textcolor{keywordflow}{default}:
-123             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"UNKNOWN SYSTEM INTERRUPT!!!\(\backslash\)n\(\backslash\)n"});
-124             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nVitalityXInterrupt\(\backslash\)n\(\backslash\)n"});
-125             \textcolor{keywordtype}{char}* inttype = \textcolor{stringliteral}{"  "};
-126             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"No. "});
-127             \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no},inttype);
-128             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"Interrupt: "});
-129             \hyperlink{a00056_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(inttype);
-130             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(inttype);
-131             \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-132             \hyperlink{a00092_a4b4233daef6e041e7278cae2b21b5ed4_a4b4233daef6e041e7278cae2b21b5ed4}{sdump}(regs);
-133             \textcolor{keywordflow}{while}(\textcolor{keyword}{true}) \{
-134 
-135             \}
-136             \textcolor{keywordflow}{break};
-137     \}
-138 \}
+88 \{
+89     \hyperlink{a00098_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00210_a4b5fce0881deb4959d33da77d1ed0202_a4b5fce0881deb4959d33da77d1ed0202}{base\_lo} = \hyperlink{a00092_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} & 0xFFFF;
+90     \hyperlink{a00098_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00210_af46adb2603d1d8b4a3bedf7f1c6daed4_af46adb2603d1d8b4a3bedf7f1c6daed4}{base\_hi} = (\hyperlink{a00092_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} >> 16) & 0xFFFF;
+91 
+92     \hyperlink{a00098_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00210_a3c9321c263139e56901a05efee220047_a3c9321c263139e56901a05efee220047}{sel}     = \hyperlink{a00098_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel};
+93     \hyperlink{a00098_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00210_adc747b3ff87142c71b7b8c51e03c067c_adc747b3ff87142c71b7b8c51e03c067c}{always0} = 0;
+94     \textcolor{comment}{// We must uncomment the OR below when we get to using user-mode.}
+95     \textcolor{comment}{// It sets the interrupt gate's privilege level to 3.}
+96     \hyperlink{a00098_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00210_a02277c77564820972ae5df0a37c80be0_a02277c77564820972ae5df0a37c80be0}{flags}   = \hyperlink{a00098_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags} \textcolor{comment}{/* | 0x60 */};
+97 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00095_a4b4233daef6e041e7278cae2b21b5ed4_a4b4233daef6e041e7278cae2b21b5ed4}\label{a00095_a4b4233daef6e041e7278cae2b21b5ed4_a4b4233daef6e041e7278cae2b21b5ed4}} 
-\index{isr.\+h@{isr.\+h}!sdump@{sdump}}
-\index{sdump@{sdump}!isr.\+h@{isr.\+h}}
-\subsubsection{\texorpdfstring{sdump()}{sdump()}}
-{\footnotesize\ttfamily void sdump (\begin{DoxyParamCaption}\item[{\hyperlink{a00095_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t}}]{regs }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00095_a35fe413107af682030ab7a4b6dff19b8_a35fe413107af682030ab7a4b6dff19b8}\label{a00095_a35fe413107af682030ab7a4b6dff19b8_a35fe413107af682030ab7a4b6dff19b8}} 
+\index{interrupt.\+c@{interrupt.\+c}!init\+\_\+idt@{init\+\_\+idt}}
+\index{init\+\_\+idt@{init\+\_\+idt}!interrupt.\+c@{interrupt.\+c}}
+\subsubsection{\texorpdfstring{init\+\_\+idt()}{init\_idt()}}
+{\footnotesize\ttfamily void init\+\_\+idt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Dump interrupt registers. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em regs} & The reigsters \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 13 of file isr.\+c.
+Definition at line 6 of file interrupt.\+c.
 
 
 \begin{DoxyCode}
-13                              \{
-14     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-15     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"EAX: "});
-16     \textcolor{keywordtype}{char} reg[128];
-17     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a1e01e806248cd98e55e0b053db6a6a51_a1e01e806248cd98e55e0b053db6a6a51}{eax},reg);
-18     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-19     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"EBX: "});
-20     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
-21     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_aa8989b2fef42dca1d656f724eb324f51_aa8989b2fef42dca1d656f724eb324f51}{ebx},reg);
-22     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-23     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"ECX: "});
-24     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
-25     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a00ce491148fd90800c18bd2d4c22e090_a00ce491148fd90800c18bd2d4c22e090}{ecx},reg);
-26     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-27     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"EDI: "});
-28     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
-29     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_aeedcb447fe6640d43d09c27b7cb8db3b_aeedcb447fe6640d43d09c27b7cb8db3b}{edi},reg);
-30     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-31     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"EDX: "});
-32     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
-33     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_af3b40afa73ecdaf2c9279b9ed482d26b_af3b40afa73ecdaf2c9279b9ed482d26b}{edx},reg);
-34     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-35     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"EIP: "});
-36     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
-37     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_aaeedf83509826a731e436025aeb53576_aaeedf83509826a731e436025aeb53576}{eip},reg);
-38     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-39     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"ESI: "});
-40     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
-41     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a8da011d75d93d36da6c4cf28e1fa3179_a8da011d75d93d36da6c4cf28e1fa3179}{esi},reg);
-42     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-43     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"ESP: "});
-44     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
-45     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a9cc3091e4c0f25d142ac74443dc8d384_a9cc3091e4c0f25d142ac74443dc8d384}{esp},reg);
-46     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-47     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"user ESP: "});
-48     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
-49     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_ad4734529e5faf04f6c61cfabfe4324e9_ad4734529e5faf04f6c61cfabfe4324e9}{useresp},reg);
-50     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-51     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"SS: "});
-52     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
-53     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a0da8015246d96b8dcebe98c945fd3d61_a0da8015246d96b8dcebe98c945fd3d61}{ss},reg);
-54     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" CS: "});
-55     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
-56     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a7d73555c87de229a90292640f544ab27_a7d73555c87de229a90292640f544ab27}{cs},reg);
-57     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" DS: "});
-58     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
-59     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_a806ec3ba0cf965d456601aea4c039ec3_a806ec3ba0cf965d456601aea4c039ec3}{ds},reg);
-60     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-61     \hyperlink{a00140_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"EFLAGS: "});
-62     \hyperlink{a00110_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&reg,0,128);
-63     \hyperlink{a00104_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(regs.\hyperlink{a00202_af9a17981c1cdac71d6f82ba32466a036_af9a17981c1cdac71d6f82ba32466a036}{eflags},reg);
-64 \}
+7 \{
+8     \hyperlink{a00065_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nSetting up IDT\(\backslash\)n"});
+9     \hyperlink{a00098_a3f2660783240a0a506d85e3750dff814_a3f2660783240a0a506d85e3750dff814}{idt\_ptr}.\hyperlink{a00214_a0401a63eb17ed7519442b1e828510acc_a0401a63eb17ed7519442b1e828510acc}{limit} = \textcolor{keyword}{sizeof}(\hyperlink{a00098_a1ad45e5b006481ff3604f7b54bd26e13_a1ad45e5b006481ff3604f7b54bd26e13}{idt\_entry\_t}) * 256 -1;
+10     \hyperlink{a00098_a3f2660783240a0a506d85e3750dff814_a3f2660783240a0a506d85e3750dff814}{idt\_ptr}.\hyperlink{a00214_a1d3ba4d284df0cea7c7b2d1a22a7d9fb_a1d3ba4d284df0cea7c7b2d1a22a7d9fb}{base}  = (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00098_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries};
+11 
+12     \hyperlink{a00119_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&\hyperlink{a00098_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}, 0, \textcolor{keyword}{sizeof}(\hyperlink{a00210}{idt\_entry\_t})*256);
+13 
+14     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}( 0, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_af88eb8e98d943aa0461c01de3cb53493_af88eb8e98d943aa0461c01de3cb53493}{isr0} , 0x08, 0x8E);
+15     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}( 1, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_aeab0ed9ae661801c25f7dc9089c19f72_aeab0ed9ae661801c25f7dc9089c19f72}{isr1} , 0x08, 0x8E);
+16     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}( 2, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a99e457875cca040c3f7c77b61e960b53_a99e457875cca040c3f7c77b61e960b53}{isr2} , 0x08, 0x8E);
+17     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}( 3, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a0ef268d2c16a7b318356451a05fd507b_a0ef268d2c16a7b318356451a05fd507b}{isr3} , 0x08, 0x8E);
+18     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}( 4, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a09af768d636144aaeaddd76c92a0a2f5_a09af768d636144aaeaddd76c92a0a2f5}{isr4} , 0x08, 0x8E);
+19     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}( 5, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_aa91d821a4bcafb44933d92945727b0df_aa91d821a4bcafb44933d92945727b0df}{isr5} , 0x08, 0x8E);
+20     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}( 6, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a9fadb95f34937b1ded02c4171b4920ba_a9fadb95f34937b1ded02c4171b4920ba}{isr6} , 0x08, 0x8E);
+21     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}( 7, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a7eb6ec30db7077fb1c9c9d926a0fc407_a7eb6ec30db7077fb1c9c9d926a0fc407}{isr7} , 0x08, 0x8E);
+22     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}( 8, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a86bc69345a3bb409665dbadb77a9d393_a86bc69345a3bb409665dbadb77a9d393}{isr8} , 0x08, 0x8E);
+23     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}( 9, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_aacb7c8490cbd623a3a2bf933ffedd131_aacb7c8490cbd623a3a2bf933ffedd131}{isr9} , 0x08, 0x8E);
+24     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(10, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a3c8cb1341cf756883a2e7dc317d5272d_a3c8cb1341cf756883a2e7dc317d5272d}{isr10}, 0x08, 0x8E);
+25     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(11, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a0d8145cf6ee1ef7834f459ba777d323c_a0d8145cf6ee1ef7834f459ba777d323c}{isr11}, 0x08, 0x8E);
+26     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(12, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a00f00421039cb85f9dd9375995c784bd_a00f00421039cb85f9dd9375995c784bd}{isr12}, 0x08, 0x8E);
+27     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(13, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_af985dcf66872ee696e5f30d819ac16a1_af985dcf66872ee696e5f30d819ac16a1}{isr13}, 0x08, 0x8E);
+28     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(14, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a8b63eaa37c03743718870964a3429ba8_a8b63eaa37c03743718870964a3429ba8}{isr14}, 0x08, 0x8E);
+29     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(15, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a9160f355325318a990c106ad5c3b8954_a9160f355325318a990c106ad5c3b8954}{isr15}, 0x08, 0x8E);
+30     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(16, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_add0980c10028b377643da169e52e5be7_add0980c10028b377643da169e52e5be7}{isr16}, 0x08, 0x8E);
+31     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(17, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_ac7d1e81e585bc7c56b46280006402f9e_ac7d1e81e585bc7c56b46280006402f9e}{isr17}, 0x08, 0x8E);
+32     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(18, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_ae685c5ca5ed9c9c5e7d297ad8d14de49_ae685c5ca5ed9c9c5e7d297ad8d14de49}{isr18}, 0x08, 0x8E);
+33     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(19, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_ad16b5f77287df551e63d3f0c67f8f75d_ad16b5f77287df551e63d3f0c67f8f75d}{isr19}, 0x08, 0x8E);
+34     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(20, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a552d2aedae97d97083d3f9caf6ad59a5_a552d2aedae97d97083d3f9caf6ad59a5}{isr20}, 0x08, 0x8E);
+35     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(21, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_af106b9a26e06abf17eebb6f7ae54f905_af106b9a26e06abf17eebb6f7ae54f905}{isr21}, 0x08, 0x8E);
+36     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(22, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_aa4b6f47f27ac3b31fc426f5c2a1a669c_aa4b6f47f27ac3b31fc426f5c2a1a669c}{isr22}, 0x08, 0x8E);
+37     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(23, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a277e9cc418a637ae584c1ff6525eb2e1_a277e9cc418a637ae584c1ff6525eb2e1}{isr23}, 0x08, 0x8E);
+38     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(24, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a2ea113ad8536ca8311ab00d077ece7f1_a2ea113ad8536ca8311ab00d077ece7f1}{isr24}, 0x08, 0x8E);
+39     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(25, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a73e919f327e846f72b99de088ae9b822_a73e919f327e846f72b99de088ae9b822}{isr25}, 0x08, 0x8E);
+40     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(26, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a24c118fd7e75c96d19da1bbaf87731e4_a24c118fd7e75c96d19da1bbaf87731e4}{isr26}, 0x08, 0x8E);
+41     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(27, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_ad97e98084cbcdc21bf03ba314dc243e0_ad97e98084cbcdc21bf03ba314dc243e0}{isr27}, 0x08, 0x8E);
+42     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(28, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_ab2a5fe4d3cf67be0c67db612aa757c5f_ab2a5fe4d3cf67be0c67db612aa757c5f}{isr28}, 0x08, 0x8E);
+43     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(29, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a8cce4d55d6a199607cd3a9e2a33241b2_a8cce4d55d6a199607cd3a9e2a33241b2}{isr29}, 0x08, 0x8E);
+44     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(30, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_af868664393aedd51c04e3ddd48b8f84f_af868664393aedd51c04e3ddd48b8f84f}{isr30}, 0x08, 0x8E);
+45     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(31, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_af4ae10cea59f9bb2f79c13b8036d81f1_af4ae10cea59f9bb2f79c13b8036d81f1}{isr31}, 0x08, 0x8E);
+46     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(32, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a8eb785d6bbda394a250c49dfa8fab00b_a8eb785d6bbda394a250c49dfa8fab00b}{isr32}, 0x08, 0x8E);
+47     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(33, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a21f7d304ed1a2251165542b493dee9a2_a21f7d304ed1a2251165542b493dee9a2}{isr33}, 0x08, 0x8E);
+48     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(34, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a7cfa599d239e63047a44c62877175cbf_a7cfa599d239e63047a44c62877175cbf}{isr34}, 0x08, 0x8E);
+49     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(35, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_ad2f4c871f5381ebfeaa2a2f8af1aed61_ad2f4c871f5381ebfeaa2a2f8af1aed61}{isr35}, 0x08, 0x8E);
+50     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(36, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a1bb712d4ccccb24cda231817620c3661_a1bb712d4ccccb24cda231817620c3661}{isr36}, 0x08, 0x8E);
+51     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(37, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a3fc83a957a4d871719c869b548f1de71_a3fc83a957a4d871719c869b548f1de71}{isr37}, 0x08, 0x8E);
+52     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(38, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_adb0460191436d577924530009c7bc6a0_adb0460191436d577924530009c7bc6a0}{isr38}, 0x08, 0x8E);
+53     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(39, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_af263b0cf187b9db2e92b3c34b4eb8bad_af263b0cf187b9db2e92b3c34b4eb8bad}{isr39}, 0x08, 0x8E);
+54     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(40, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a0e89ca2ed800d0addb8a381eec627701_a0e89ca2ed800d0addb8a381eec627701}{isr40}, 0x08, 0x8E);
+55     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(41, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_af53b9e4adb4b19ab0ea0160501f8ffd8_af53b9e4adb4b19ab0ea0160501f8ffd8}{isr41}, 0x08, 0x8E);
+56     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(42, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_aab13bbe1d1467a2845f77c906333ba12_aab13bbe1d1467a2845f77c906333ba12}{isr42}, 0x08, 0x8E);
+57     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(43, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a9e4b8d4743f568573b7ea3b75fe76583_a9e4b8d4743f568573b7ea3b75fe76583}{isr43}, 0x08, 0x8E);
+58     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(44, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_af594546ff71d7094ffe85d68e752bf42_af594546ff71d7094ffe85d68e752bf42}{isr44}, 0x08, 0x8E);
+59     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(45, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a36a09aefac3255cb33d9db137c59d940_a36a09aefac3255cb33d9db137c59d940}{isr45}, 0x08, 0x8E);
+60     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(46, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a34327a17155443d07113ee7cf1f136f4_a34327a17155443d07113ee7cf1f136f4}{isr46}, 0x08, 0x8E);
+61     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(47, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a49550949aaf658848fa625402cff53a5_a49550949aaf658848fa625402cff53a5}{isr47}, 0x08, 0x8E);
+62     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(48, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a936294c6af994448d1d8ecd310a1e4b1_a936294c6af994448d1d8ecd310a1e4b1}{isr48}, 0x08, 0x8E);
+63     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(49, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a202b1d754829efba9e38698024cba38b_a202b1d754829efba9e38698024cba38b}{isr49}, 0x08, 0x8E);
+64     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(50, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a3f365888e016294187eab955e25df421_a3f365888e016294187eab955e25df421}{isr50}, 0x08, 0x8E);
+65     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(51, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a30f6c8ad173fe01a4274211a0f8d592e_a30f6c8ad173fe01a4274211a0f8d592e}{isr51}, 0x08, 0x8E);
+66     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(52, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_af8c04f8faa1d7f3e170e53578e86bcb3_af8c04f8faa1d7f3e170e53578e86bcb3}{isr52}, 0x08, 0x8E);
+67     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(53, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a99418c5179bcdc1cab6f0a9d3f10619e_a99418c5179bcdc1cab6f0a9d3f10619e}{isr53}, 0x08, 0x8E);
+68     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(54, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a882af846de64d40c15e7d882824e5d9f_a882af846de64d40c15e7d882824e5d9f}{isr54}, 0x08, 0x8E);
+69     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(55, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a0f5b2af7809bbbfa1dc71aea022480c6_a0f5b2af7809bbbfa1dc71aea022480c6}{isr55}, 0x08, 0x8E);
+70     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(56, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_ab6b87d95bfd61e8e229131b744c1c688_ab6b87d95bfd61e8e229131b744c1c688}{isr56}, 0x08, 0x8E);
+71     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(57, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a4e5cde3d86094617db34e32ac8f25a8e_a4e5cde3d86094617db34e32ac8f25a8e}{isr57}, 0x08, 0x8E);
+72     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(58, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a418134e2b31c7f516257fbc8db1166f5_a418134e2b31c7f516257fbc8db1166f5}{isr58}, 0x08, 0x8E);
+73     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(59, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a6636d2a9207ae7f55065a6e0ccbe5b37_a6636d2a9207ae7f55065a6e0ccbe5b37}{isr59}, 0x08, 0x8E);
+74     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(60, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_a773134283196c0c27680c712854fe208_a773134283196c0c27680c712854fe208}{isr60}, 0x08, 0x8E);
+75     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(61, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_ada77d8b31bc33e883c36712962d562ab_ada77d8b31bc33e883c36712962d562ab}{isr61}, 0x08, 0x8E);
+76     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(62, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_ac4bc2b72e89677bfb068d53efa637933_ac4bc2b72e89677bfb068d53efa637933}{isr62}, 0x08, 0x8E);
+77     \hyperlink{a00095_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(63, (\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00098_adc5cdf67dec64ed778df8091afeac450_adc5cdf67dec64ed778df8091afeac450}{isr63}, 0x08, 0x8E);
+78     \textcolor{comment}{// just remap the pic for gods sake}
+79     \hyperlink{a00044_ab5ed5530bfeaffadd8cd88c06d797f31_ab5ed5530bfeaffadd8cd88c06d797f31}{PIC\_remap}(0x20,0x28);
+80     \textcolor{comment}{// enable our keyboard interrupt}
+81     \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x21,0xfd);
+82     \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0xa1,0xff);
+83 
+84     \hyperlink{a00098_a7f063f0c0d27643faa13723e8086b808_a7f063f0c0d27643faa13723e8086b808}{idt\_flush}((\hyperlink{a00125_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00098_a3f2660783240a0a506d85e3750dff814_a3f2660783240a0a506d85e3750dff814}{idt\_ptr});
+85 \}
 \end{DoxyCode}

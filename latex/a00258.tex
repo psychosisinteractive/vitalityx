@@ -1,71 +1,101 @@
-\hypertarget{a00258}{}\section{V\+X\+B\+F\+S\+Modification\+Block Struct Reference}
-\label{a00258}\index{V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}}
+\hypertarget{a00258}{}\section{pte Struct Reference}
+\label{a00258}\index{pte@{pte}}
 
 
-This is a V\+X\+B\+FS Modification Block.  
-
-
-
-
-{\ttfamily \#include $<$vxbfs.\+h$>$}
+Partition Table Entry.  
 
 
 
-Collaboration diagram for V\+X\+B\+F\+S\+Modification\+Block\+:
-% FIG 0
+
+{\ttfamily \#include $<$vfs.\+h$>$}
+
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-char \hyperlink{a00258_a327348a3ea3a02cfde4cdb1ccdcf2073_a327348a3ea3a02cfde4cdb1ccdcf2073}{data} \mbox{[}507\mbox{]}
+char \hyperlink{a00258_ac180cd19bbf223f1cf01382edf5f33d7_ac180cd19bbf223f1cf01382edf5f33d7}{attributes}
 \item 
-\hyperlink{a00116_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00258_a0f4e6adc96a9bee9135ce10b344679fb_a0f4e6adc96a9bee9135ce10b344679fb}{ignore}
+char \hyperlink{a00258_a9a685a291a8603d45227bd8b7bba1396_a9a685a291a8603d45227bd8b7bba1396}{chs} \mbox{[}3\mbox{]}
 \item 
-struct \hyperlink{a00258}{V\+X\+B\+F\+S\+Modification\+Block} $\ast$ \hyperlink{a00258_afbf261c73a36b4d33e8a8b5179d4385b_afbf261c73a36b4d33e8a8b5179d4385b}{nextmodblock}
+char \hyperlink{a00258_a518189ab91155ff21eace46594ca9ff9_a518189ab91155ff21eace46594ca9ff9}{partitiontype}
+\item 
+char \hyperlink{a00258_a3786090625c83032c607fa0e4f3f7ca7_a3786090625c83032c607fa0e4f3f7ca7}{chslps} \mbox{[}3\mbox{]}
+\item 
+int \hyperlink{a00258_af720c0207ddf9e2b99fe122ef464918c_af720c0207ddf9e2b99fe122ef464918c}{lba}
+\item 
+int \hyperlink{a00258_a358fa65259e3cc42a599466253cbdeda_a358fa65259e3cc42a599466253cbdeda}{sectors}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-This is a V\+X\+B\+FS Modification Block. 
+Partition Table Entry. 
 
-It stores 507 bytes of data (in order to fit in 1 sector), an ignore boolean and a nextmodblock address. 
-
-Definition at line 15 of file vxbfs.\+h.
+Definition at line 12 of file vfs.\+h.
 
 
 
 \subsection{Field Documentation}
-\mbox{\Hypertarget{a00258_a327348a3ea3a02cfde4cdb1ccdcf2073_a327348a3ea3a02cfde4cdb1ccdcf2073}\label{a00258_a327348a3ea3a02cfde4cdb1ccdcf2073_a327348a3ea3a02cfde4cdb1ccdcf2073}} 
-\index{V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}!data@{data}}
-\index{data@{data}!V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}}
-\subsubsection{\texorpdfstring{data}{data}}
-{\footnotesize\ttfamily char V\+X\+B\+F\+S\+Modification\+Block\+::data\mbox{[}507\mbox{]}}
+\mbox{\Hypertarget{a00258_ac180cd19bbf223f1cf01382edf5f33d7_ac180cd19bbf223f1cf01382edf5f33d7}\label{a00258_ac180cd19bbf223f1cf01382edf5f33d7_ac180cd19bbf223f1cf01382edf5f33d7}} 
+\index{pte@{pte}!attributes@{attributes}}
+\index{attributes@{attributes}!pte@{pte}}
+\subsubsection{\texorpdfstring{attributes}{attributes}}
+{\footnotesize\ttfamily char pte\+::attributes}
 
 
 
-Definition at line 16 of file vxbfs.\+h.
+Definition at line 13 of file vfs.\+h.
 
-\mbox{\Hypertarget{a00258_a0f4e6adc96a9bee9135ce10b344679fb_a0f4e6adc96a9bee9135ce10b344679fb}\label{a00258_a0f4e6adc96a9bee9135ce10b344679fb_a0f4e6adc96a9bee9135ce10b344679fb}} 
-\index{V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}!ignore@{ignore}}
-\index{ignore@{ignore}!V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}}
-\subsubsection{\texorpdfstring{ignore}{ignore}}
-{\footnotesize\ttfamily \hyperlink{a00116_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} V\+X\+B\+F\+S\+Modification\+Block\+::ignore}
-
-
-
-Definition at line 17 of file vxbfs.\+h.
-
-\mbox{\Hypertarget{a00258_afbf261c73a36b4d33e8a8b5179d4385b_afbf261c73a36b4d33e8a8b5179d4385b}\label{a00258_afbf261c73a36b4d33e8a8b5179d4385b_afbf261c73a36b4d33e8a8b5179d4385b}} 
-\index{V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}!nextmodblock@{nextmodblock}}
-\index{nextmodblock@{nextmodblock}!V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}}
-\subsubsection{\texorpdfstring{nextmodblock}{nextmodblock}}
-{\footnotesize\ttfamily struct \hyperlink{a00258}{V\+X\+B\+F\+S\+Modification\+Block}$\ast$ V\+X\+B\+F\+S\+Modification\+Block\+::nextmodblock}
+\mbox{\Hypertarget{a00258_a9a685a291a8603d45227bd8b7bba1396_a9a685a291a8603d45227bd8b7bba1396}\label{a00258_a9a685a291a8603d45227bd8b7bba1396_a9a685a291a8603d45227bd8b7bba1396}} 
+\index{pte@{pte}!chs@{chs}}
+\index{chs@{chs}!pte@{pte}}
+\subsubsection{\texorpdfstring{chs}{chs}}
+{\footnotesize\ttfamily char pte\+::chs\mbox{[}3\mbox{]}}
 
 
 
-Definition at line 18 of file vxbfs.\+h.
+Definition at line 14 of file vfs.\+h.
+
+\mbox{\Hypertarget{a00258_a3786090625c83032c607fa0e4f3f7ca7_a3786090625c83032c607fa0e4f3f7ca7}\label{a00258_a3786090625c83032c607fa0e4f3f7ca7_a3786090625c83032c607fa0e4f3f7ca7}} 
+\index{pte@{pte}!chslps@{chslps}}
+\index{chslps@{chslps}!pte@{pte}}
+\subsubsection{\texorpdfstring{chslps}{chslps}}
+{\footnotesize\ttfamily char pte\+::chslps\mbox{[}3\mbox{]}}
+
+
+
+Definition at line 16 of file vfs.\+h.
+
+\mbox{\Hypertarget{a00258_af720c0207ddf9e2b99fe122ef464918c_af720c0207ddf9e2b99fe122ef464918c}\label{a00258_af720c0207ddf9e2b99fe122ef464918c_af720c0207ddf9e2b99fe122ef464918c}} 
+\index{pte@{pte}!lba@{lba}}
+\index{lba@{lba}!pte@{pte}}
+\subsubsection{\texorpdfstring{lba}{lba}}
+{\footnotesize\ttfamily int pte\+::lba}
+
+
+
+Definition at line 17 of file vfs.\+h.
+
+\mbox{\Hypertarget{a00258_a518189ab91155ff21eace46594ca9ff9_a518189ab91155ff21eace46594ca9ff9}\label{a00258_a518189ab91155ff21eace46594ca9ff9_a518189ab91155ff21eace46594ca9ff9}} 
+\index{pte@{pte}!partitiontype@{partitiontype}}
+\index{partitiontype@{partitiontype}!pte@{pte}}
+\subsubsection{\texorpdfstring{partitiontype}{partitiontype}}
+{\footnotesize\ttfamily char pte\+::partitiontype}
+
+
+
+Definition at line 15 of file vfs.\+h.
+
+\mbox{\Hypertarget{a00258_a358fa65259e3cc42a599466253cbdeda_a358fa65259e3cc42a599466253cbdeda}\label{a00258_a358fa65259e3cc42a599466253cbdeda_a358fa65259e3cc42a599466253cbdeda}} 
+\index{pte@{pte}!sectors@{sectors}}
+\index{sectors@{sectors}!pte@{pte}}
+\subsubsection{\texorpdfstring{sectors}{sectors}}
+{\footnotesize\ttfamily int pte\+::sectors}
+
+
+
+Definition at line 18 of file vfs.\+h.
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-libc/vitality/\hyperlink{a00164}{vxbfs.\+h}\end{DoxyCompactItemize}
+libc/vitality/\hyperlink{a00161}{vfs.\+h}\end{DoxyCompactItemize}

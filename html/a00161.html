@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/vxbfs.c File Reference</title>
+<title>VitalityX: libc/vitality/vfs.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,28 +44,42 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
-<div class="title">vxbfs.c File Reference</div>  </div>
+<div class="title">vfs.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00164_source.html">vxbfs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00152_source.html">vfs.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for vxbfs.c:</div>
+<div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00162.png" border="0" usemap="#libc_2vitality_2vxbfs_8c" alt=""/></div>
+<div class="center"><img src="a00163.png" border="0" usemap="#libc_2vitality_2vfs_8hdep" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
 <p><a href="a00161_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:afa5caeb58da2ae814ac3adbb167a77fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00152_aa5445a6474a23ee3e7756d432dfa4ba1.html#aa5445a6474a23ee3e7756d432dfa4ba1">file_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_afa5caeb58da2ae814ac3adbb167a77fe.html#afa5caeb58da2ae814ac3adbb167a77fe">loadfile</a> (<a class="el" href="a00164_abb93e2407af0d8fe0f5629ce6456c6f9.html#abb93e2407af0d8fe0f5629ce6456c6f9">vxbfs_file_t</a> *<a class="el" href="a00238.html">file</a>)</td></tr>
-<tr class="separator:afa5caeb58da2ae814ac3adbb167a77fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a078a66e7d52fd4a6df768277b605199c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00116_af6a258d8f3ee5206d682d799316314b1.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_a078a66e7d52fd4a6df768277b605199c.html#a078a66e7d52fd4a6df768277b605199c">validvxbfs</a> (<a class="el" href="a00164_ac5678b6d5dd5ed5ca86e5ccd4c30d39d.html#ac5678b6d5dd5ed5ca86e5ccd4c30d39d">vxbfs_header_t</a> *header)</td></tr>
-<tr class="separator:a078a66e7d52fd4a6df768277b605199c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00254.html">file</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00258.html">pte</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Partition Table Entry.  <a href="a00258.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00262.html">mbr</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master Boot Record.  <a href="a00262.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:aa5445a6474a23ee3e7756d432dfa4ba1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00254.html">file</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_aa5445a6474a23ee3e7756d432dfa4ba1.html#aa5445a6474a23ee3e7756d432dfa4ba1">file_t</a></td></tr>
+<tr class="separator:aa5445a6474a23ee3e7756d432dfa4ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeef6bb6b6bbfd4d912338e1e5c6938a5"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00258.html">pte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_aeef6bb6b6bbfd4d912338e1e5c6938a5.html#aeef6bb6b6bbfd4d912338e1e5c6938a5">pte_t</a></td></tr>
+<tr class="memdesc:aeef6bb6b6bbfd4d912338e1e5c6938a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Partition Table Entry.  <a href="a00161_aeef6bb6b6bbfd4d912338e1e5c6938a5.html#aeef6bb6b6bbfd4d912338e1e5c6938a5">More...</a><br /></td></tr>
+<tr class="separator:aeef6bb6b6bbfd4d912338e1e5c6938a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb8ab3f846ea25ce3271bfabb17fc767"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00262.html">mbr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_adb8ab3f846ea25ce3271bfabb17fc767.html#adb8ab3f846ea25ce3271bfabb17fc767">mbr_t</a></td></tr>
+<tr class="memdesc:adb8ab3f846ea25ce3271bfabb17fc767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master Boot Record.  <a href="a00161_adb8ab3f846ea25ce3271bfabb17fc767.html#adb8ab3f846ea25ce3271bfabb17fc767">More...</a><br /></td></tr>
+<tr class="separator:adb8ab3f846ea25ce3271bfabb17fc767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

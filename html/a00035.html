@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: drivers/pic.c File Reference</title>
+<title>VitalityX: drivers/ide.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,41 +44,71 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">pic.c File Reference</div>  </div>
+<div class="title">ide.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00116_source.html">../libc/types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00131_source.html">../libc/vitality/inline.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00038_source.html">pic.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00125_source.html">../libc/types.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for pic.c:</div>
+Include dependency graph for ide.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00036.png" border="0" usemap="#drivers_2pic_8c" alt=""/></div>
+<div class="center"><img src="a00036.png" border="0" usemap="#drivers_2ide_8h" alt=""/></div>
 <!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00037.png" border="0" usemap="#drivers_2ide_8hdep" alt=""/></div>
+<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00035_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00190.html">IDEChannelRegisters</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00194.html">ide_device</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1119739f7932598c83c3f8ce42a649de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a1119739f7932598c83c3f8ce42a649de.html#a1119739f7932598c83c3f8ce42a649de">PIC_sendEOI</a> (unsigned char irq)</td></tr>
-<tr class="memdesc:a1119739f7932598c83c3f8ce42a649de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send End of Interrupt to PIC.  <a href="a00035_a1119739f7932598c83c3f8ce42a649de.html#a1119739f7932598c83c3f8ce42a649de">More...</a><br /></td></tr>
-<tr class="separator:a1119739f7932598c83c3f8ce42a649de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5ed5530bfeaffadd8cd88c06d797f31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_ab5ed5530bfeaffadd8cd88c06d797f31.html#ab5ed5530bfeaffadd8cd88c06d797f31">PIC_remap</a> (int offset1, int offset2)</td></tr>
-<tr class="memdesc:ab5ed5530bfeaffadd8cd88c06d797f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remap PIC.  <a href="a00035_ab5ed5530bfeaffadd8cd88c06d797f31.html#ab5ed5530bfeaffadd8cd88c06d797f31">More...</a><br /></td></tr>
-<tr class="separator:ab5ed5530bfeaffadd8cd88c06d797f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af654381e46179e377f9e26d7b3f48df0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_af654381e46179e377f9e26d7b3f48df0.html#af654381e46179e377f9e26d7b3f48df0">IRQ_set_mask</a> (unsigned char IRQline)</td></tr>
-<tr class="separator:af654381e46179e377f9e26d7b3f48df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66ac96e9de8bb640d3d76ddd0a652ff4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a66ac96e9de8bb640d3d76ddd0a652ff4.html#a66ac96e9de8bb640d3d76ddd0a652ff4">IRQ_clear_mask</a> (unsigned char IRQline)</td></tr>
-<tr class="separator:a66ac96e9de8bb640d3d76ddd0a652ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a36c512d574a4d820675e1026ac4a3db6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00116_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a36c512d574a4d820675e1026ac4a3db6.html#a36c512d574a4d820675e1026ac4a3db6">__pic_get_irq_reg</a> (int ocw3)</td></tr>
-<tr class="separator:a36c512d574a4d820675e1026ac4a3db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c413ca2499d8eb59d09ebe025f4ae8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00116_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a3c413ca2499d8eb59d09ebe025f4ae8e.html#a3c413ca2499d8eb59d09ebe025f4ae8e">pic_get_irr</a> (void)</td></tr>
-<tr class="separator:a3c413ca2499d8eb59d09ebe025f4ae8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b716de2a9d07df332b924d1608c8fd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00116_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a3b716de2a9d07df332b924d1608c8fd9.html#a3b716de2a9d07df332b924d1608c8fd9">pic_get_isr</a> (void)</td></tr>
-<tr class="separator:a3b716de2a9d07df332b924d1608c8fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb22c37a32d86fcb64e55b3edab4790"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_afdb22c37a32d86fcb64e55b3edab4790.html#afdb22c37a32d86fcb64e55b3edab4790">ide_write</a> (unsigned char channel, unsigned char reg, unsigned char data)</td></tr>
+<tr class="separator:afdb22c37a32d86fcb64e55b3edab4790"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef734da4bdc0c1d014528fd2f66e0686"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_aef734da4bdc0c1d014528fd2f66e0686.html#aef734da4bdc0c1d014528fd2f66e0686">ide_read</a> (unsigned char channel, unsigned char reg)</td></tr>
+<tr class="separator:aef734da4bdc0c1d014528fd2f66e0686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac338a611110448d6bd9b8edc491ed19b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_ac338a611110448d6bd9b8edc491ed19b.html#ac338a611110448d6bd9b8edc491ed19b">ide_read_buffer</a> (unsigned char channel, unsigned char reg, unsigned int buffer, unsigned int quads)</td></tr>
+<tr class="separator:ac338a611110448d6bd9b8edc491ed19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03e85b94d6fbfb957e1b88c3dd064eca"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a03e85b94d6fbfb957e1b88c3dd064eca.html#a03e85b94d6fbfb957e1b88c3dd064eca">ide_polling</a> (unsigned char channel, unsigned int advanced_check)</td></tr>
+<tr class="separator:a03e85b94d6fbfb957e1b88c3dd064eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af7757307613c29c9bcbf0f8f5b2feee5"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_af7757307613c29c9bcbf0f8f5b2feee5.html#af7757307613c29c9bcbf0f8f5b2feee5">ide_print_error</a> (unsigned int drive, unsigned char err)</td></tr>
+<tr class="separator:af7757307613c29c9bcbf0f8f5b2feee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5397c8432be802172da8f04c8840ca3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_ab5397c8432be802172da8f04c8840ca3.html#ab5397c8432be802172da8f04c8840ca3">ide_initialize</a> (unsigned int BAR0, unsigned int BAR1, unsigned int BAR2, unsigned int BAR3, unsigned int BAR4)</td></tr>
+<tr class="separator:ab5397c8432be802172da8f04c8840ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4da0883393a98b937fdc3015a0a3f265"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a4da0883393a98b937fdc3015a0a3f265.html#a4da0883393a98b937fdc3015a0a3f265">ide_ata_access</a> (unsigned char direction, unsigned char drive, unsigned int lba, unsigned char numsects, unsigned short selector, unsigned int edi)</td></tr>
+<tr class="separator:a4da0883393a98b937fdc3015a0a3f265"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dd84843412753d236e17a15277c5b98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a9dd84843412753d236e17a15277c5b98.html#a9dd84843412753d236e17a15277c5b98">ide_read_sectors</a> (unsigned char drive, unsigned char numsects, unsigned int lba, unsigned short es, unsigned int edi)</td></tr>
+<tr class="separator:a9dd84843412753d236e17a15277c5b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8632fb3a8cd41b7d60ee56942afbde03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a8632fb3a8cd41b7d60ee56942afbde03.html#a8632fb3a8cd41b7d60ee56942afbde03">ide_write_sectors</a> (unsigned char drive, unsigned char numsects, unsigned int lba, unsigned short es, unsigned int edi)</td></tr>
+<tr class="separator:a8632fb3a8cd41b7d60ee56942afbde03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92d054539c112a72e080e35a3341b0b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a92d054539c112a72e080e35a3341b0b9.html#a92d054539c112a72e080e35a3341b0b9">ide_atapi_eject</a> (unsigned char drive)</td></tr>
+<tr class="separator:a92d054539c112a72e080e35a3341b0b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7ea572af581cc0623a2fb74a579ca83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_ad7ea572af581cc0623a2fb74a579ca83.html#ad7ea572af581cc0623a2fb74a579ca83">ide_irq</a> ()</td></tr>
+<tr class="separator:ad7ea572af581cc0623a2fb74a579ca83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31655fcec0cc8f9f8792b98cd4441fdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a31655fcec0cc8f9f8792b98cd4441fdf.html#a31655fcec0cc8f9f8792b98cd4441fdf">ide_wait_irq</a> ()</td></tr>
+<tr class="separator:a31655fcec0cc8f9f8792b98cd4441fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aecefa15f62cf60846ddb1a56f9153143"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="a00190.html">IDEChannelRegisters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_aecefa15f62cf60846ddb1a56f9153143.html#aecefa15f62cf60846ddb1a56f9153143">channels</a> [2]</td></tr>
+<tr class="separator:aecefa15f62cf60846ddb1a56f9153143"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a820b2230ab700e13350794494bd4a60f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_ab8ef12fab634c171394422d0ee8baf94.html#ab8ef12fab634c171394422d0ee8baf94">byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_a820b2230ab700e13350794494bd4a60f.html#a820b2230ab700e13350794494bd4a60f">package</a> [1]</td></tr>
+<tr class="separator:a820b2230ab700e13350794494bd4a60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab97a828ed4839b575dc382e2bf826e87"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="a00194.html">ide_device</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00035_ab97a828ed4839b575dc382e2bf826e87.html#ab97a828ed4839b575dc382e2bf826e87">ide_devices</a> [4]</td></tr>
+<tr class="separator:ab97a828ed4839b575dc382e2bf826e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -1,108 +1,96 @@
-\hypertarget{a00206}{}\section{page Struct Reference}
-\label{a00206}\index{page@{page}}
+\hypertarget{a00206}{}\section{gdt\+\_\+entry\+\_\+struct Struct Reference}
+\label{a00206}\index{gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}}
 
 
-{\ttfamily \#include $<$page.\+h$>$}
+{\ttfamily \#include $<$gdt.\+h$>$}
 
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00206_ac24cf5706a32824c01eb237807f66b0f_ac24cf5706a32824c01eb237807f66b0f}{present}\+: 1
+\hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00206_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2}{limit\+\_\+low}
 \item 
-\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00206_a41593c100a0772860647a70d3fae45ae_a41593c100a0772860647a70d3fae45ae}{rw}\+: 1
+\hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00206_adba88eafea5f07167d181e4090cbcf49_adba88eafea5f07167d181e4090cbcf49}{base\+\_\+low}
 \item 
-\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00206_adb5b07c014fc7101308d5d04156c14ca_adb5b07c014fc7101308d5d04156c14ca}{user}\+: 1
+\hyperlink{a00125_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00206_a986d46963d3ccdbec85b3749c1e09abf_a986d46963d3ccdbec85b3749c1e09abf}{base\+\_\+middle}
 \item 
-\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00206_aeef35dbd003b348db0d707acf191a91b_aeef35dbd003b348db0d707acf191a91b}{accessed}\+: 1
+\hyperlink{a00125_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00206_ac07173385496c5b952e58ddc20f1cc99_ac07173385496c5b952e58ddc20f1cc99}{access}
 \item 
-\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00206_a36f67eec25fe18ad7bf0307fd31564ae_a36f67eec25fe18ad7bf0307fd31564ae}{dirty}\+: 1
+\hyperlink{a00125_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00206_a7fb7b3704e10434dbe64564416cf1a25_a7fb7b3704e10434dbe64564416cf1a25}{granularity}
 \item 
-\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00206_ab700ed2b8cfaf36d94b6b9f102b0fc50_ab700ed2b8cfaf36d94b6b9f102b0fc50}{unused}\+: 7
-\item 
-\hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00206_a1f21eb0f1aa1ab7f126b2a261c1021f1_a1f21eb0f1aa1ab7f126b2a261c1021f1}{frame}\+: 20
+\hyperlink{a00125_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00206_aa08eedea9c0f707b9fa052b7567879c7_aa08eedea9c0f707b9fa052b7567879c7}{base\+\_\+high}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 6 of file page.\+h.
+Definition at line 14 of file gdt.\+h.
 
 
 
 \subsection{Field Documentation}
-\mbox{\Hypertarget{a00206_aeef35dbd003b348db0d707acf191a91b_aeef35dbd003b348db0d707acf191a91b}\label{a00206_aeef35dbd003b348db0d707acf191a91b_aeef35dbd003b348db0d707acf191a91b}} 
-\index{page@{page}!accessed@{accessed}}
-\index{accessed@{accessed}!page@{page}}
-\subsubsection{\texorpdfstring{accessed}{accessed}}
-{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+::accessed}
+\mbox{\Hypertarget{a00206_ac07173385496c5b952e58ddc20f1cc99_ac07173385496c5b952e58ddc20f1cc99}\label{a00206_ac07173385496c5b952e58ddc20f1cc99_ac07173385496c5b952e58ddc20f1cc99}} 
+\index{gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}!access@{access}}
+\index{access@{access}!gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}}
+\subsubsection{\texorpdfstring{access}{access}}
+{\footnotesize\ttfamily \hyperlink{a00125_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} gdt\+\_\+entry\+\_\+struct\+::access}
 
 
 
-Definition at line 11 of file page.\+h.
+Definition at line 19 of file gdt.\+h.
 
-\mbox{\Hypertarget{a00206_a36f67eec25fe18ad7bf0307fd31564ae_a36f67eec25fe18ad7bf0307fd31564ae}\label{a00206_a36f67eec25fe18ad7bf0307fd31564ae_a36f67eec25fe18ad7bf0307fd31564ae}} 
-\index{page@{page}!dirty@{dirty}}
-\index{dirty@{dirty}!page@{page}}
-\subsubsection{\texorpdfstring{dirty}{dirty}}
-{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+::dirty}
-
-
-
-Definition at line 12 of file page.\+h.
-
-\mbox{\Hypertarget{a00206_a1f21eb0f1aa1ab7f126b2a261c1021f1_a1f21eb0f1aa1ab7f126b2a261c1021f1}\label{a00206_a1f21eb0f1aa1ab7f126b2a261c1021f1_a1f21eb0f1aa1ab7f126b2a261c1021f1}} 
-\index{page@{page}!frame@{frame}}
-\index{frame@{frame}!page@{page}}
-\subsubsection{\texorpdfstring{frame}{frame}}
-{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+::frame}
+\mbox{\Hypertarget{a00206_aa08eedea9c0f707b9fa052b7567879c7_aa08eedea9c0f707b9fa052b7567879c7}\label{a00206_aa08eedea9c0f707b9fa052b7567879c7_aa08eedea9c0f707b9fa052b7567879c7}} 
+\index{gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}!base\+\_\+high@{base\+\_\+high}}
+\index{base\+\_\+high@{base\+\_\+high}!gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}}
+\subsubsection{\texorpdfstring{base\+\_\+high}{base\_high}}
+{\footnotesize\ttfamily \hyperlink{a00125_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} gdt\+\_\+entry\+\_\+struct\+::base\+\_\+high}
 
 
 
-Definition at line 14 of file page.\+h.
+Definition at line 21 of file gdt.\+h.
 
-\mbox{\Hypertarget{a00206_ac24cf5706a32824c01eb237807f66b0f_ac24cf5706a32824c01eb237807f66b0f}\label{a00206_ac24cf5706a32824c01eb237807f66b0f_ac24cf5706a32824c01eb237807f66b0f}} 
-\index{page@{page}!present@{present}}
-\index{present@{present}!page@{page}}
-\subsubsection{\texorpdfstring{present}{present}}
-{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+::present}
-
-
-
-Definition at line 8 of file page.\+h.
-
-\mbox{\Hypertarget{a00206_a41593c100a0772860647a70d3fae45ae_a41593c100a0772860647a70d3fae45ae}\label{a00206_a41593c100a0772860647a70d3fae45ae_a41593c100a0772860647a70d3fae45ae}} 
-\index{page@{page}!rw@{rw}}
-\index{rw@{rw}!page@{page}}
-\subsubsection{\texorpdfstring{rw}{rw}}
-{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+::rw}
+\mbox{\Hypertarget{a00206_adba88eafea5f07167d181e4090cbcf49_adba88eafea5f07167d181e4090cbcf49}\label{a00206_adba88eafea5f07167d181e4090cbcf49_adba88eafea5f07167d181e4090cbcf49}} 
+\index{gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}!base\+\_\+low@{base\+\_\+low}}
+\index{base\+\_\+low@{base\+\_\+low}!gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}}
+\subsubsection{\texorpdfstring{base\+\_\+low}{base\_low}}
+{\footnotesize\ttfamily \hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} gdt\+\_\+entry\+\_\+struct\+::base\+\_\+low}
 
 
 
-Definition at line 9 of file page.\+h.
+Definition at line 17 of file gdt.\+h.
 
-\mbox{\Hypertarget{a00206_ab700ed2b8cfaf36d94b6b9f102b0fc50_ab700ed2b8cfaf36d94b6b9f102b0fc50}\label{a00206_ab700ed2b8cfaf36d94b6b9f102b0fc50_ab700ed2b8cfaf36d94b6b9f102b0fc50}} 
-\index{page@{page}!unused@{unused}}
-\index{unused@{unused}!page@{page}}
-\subsubsection{\texorpdfstring{unused}{unused}}
-{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+::unused}
-
-
-
-Definition at line 13 of file page.\+h.
-
-\mbox{\Hypertarget{a00206_adb5b07c014fc7101308d5d04156c14ca_adb5b07c014fc7101308d5d04156c14ca}\label{a00206_adb5b07c014fc7101308d5d04156c14ca_adb5b07c014fc7101308d5d04156c14ca}} 
-\index{page@{page}!user@{user}}
-\index{user@{user}!page@{page}}
-\subsubsection{\texorpdfstring{user}{user}}
-{\footnotesize\ttfamily \hyperlink{a00116_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+::user}
+\mbox{\Hypertarget{a00206_a986d46963d3ccdbec85b3749c1e09abf_a986d46963d3ccdbec85b3749c1e09abf}\label{a00206_a986d46963d3ccdbec85b3749c1e09abf_a986d46963d3ccdbec85b3749c1e09abf}} 
+\index{gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}!base\+\_\+middle@{base\+\_\+middle}}
+\index{base\+\_\+middle@{base\+\_\+middle}!gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}}
+\subsubsection{\texorpdfstring{base\+\_\+middle}{base\_middle}}
+{\footnotesize\ttfamily \hyperlink{a00125_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} gdt\+\_\+entry\+\_\+struct\+::base\+\_\+middle}
 
 
 
-Definition at line 10 of file page.\+h.
+Definition at line 18 of file gdt.\+h.
+
+\mbox{\Hypertarget{a00206_a7fb7b3704e10434dbe64564416cf1a25_a7fb7b3704e10434dbe64564416cf1a25}\label{a00206_a7fb7b3704e10434dbe64564416cf1a25_a7fb7b3704e10434dbe64564416cf1a25}} 
+\index{gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}!granularity@{granularity}}
+\index{granularity@{granularity}!gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}}
+\subsubsection{\texorpdfstring{granularity}{granularity}}
+{\footnotesize\ttfamily \hyperlink{a00125_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} gdt\+\_\+entry\+\_\+struct\+::granularity}
+
+
+
+Definition at line 20 of file gdt.\+h.
+
+\mbox{\Hypertarget{a00206_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2}\label{a00206_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2}} 
+\index{gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}!limit\+\_\+low@{limit\+\_\+low}}
+\index{limit\+\_\+low@{limit\+\_\+low}!gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}}
+\subsubsection{\texorpdfstring{limit\+\_\+low}{limit\_low}}
+{\footnotesize\ttfamily \hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} gdt\+\_\+entry\+\_\+struct\+::limit\+\_\+low}
+
+
+
+Definition at line 16 of file gdt.\+h.
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-libc/\hyperlink{a00101}{page.\+h}\end{DoxyCompactItemize}
+libc/\hyperlink{a00092}{gdt.\+h}\end{DoxyCompactItemize}

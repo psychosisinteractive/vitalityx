@@ -1,60 +1,65 @@
-\hypertarget{a00250}{}\section{vlib\+\_\+entry Struct Reference}
-\label{a00250}\index{vlib\+\_\+entry@{vlib\+\_\+entry}}
+\hypertarget{a00250}{}\section{vepfile Struct Reference}
+\label{a00250}\index{vepfile@{vepfile}}
 
 
-{\ttfamily \#include $<$vlib.\+h$>$}
+Standard Generated V\+EP file.  
 
+
+
+
+{\ttfamily \#include $<$vep.\+h$>$}
+
+
+
+Collaboration diagram for vepfile\+:
+% FIG 0
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00250_a46df5a47ac05a46ce871e5132153949c_a46df5a47ac05a46ce871e5132153949c}{mode}
-\item 
-\hyperlink{a00116_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00250_ab67e2f60e6622a2d0b7c8a3ac6fd7c71_ab67e2f60e6622a2d0b7c8a3ac6fd7c71}{instantiated}
-\item 
-\hyperlink{a00116_a7ec4af7c086c1f2c2a0e01fc23203a56_a7ec4af7c086c1f2c2a0e01fc23203a56}{func\+\_\+ptr\+\_\+args} \hyperlink{a00250_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr}
-\end{DoxyCompactItemize}
+\hyperlink{a00158_a78392c340e1fe1be344df81d1438b74f_a78392c340e1fe1be344df81d1438b74f}{vepheader\+\_\+t} \hyperlink{a00250_a0fa3b39f1e4974d4ed258db1d4b22402_a0fa3b39f1e4974d4ed258db1d4b22402}{vepheader}
+\begin{DoxyCompactList}\small\item\em V\+EP header. \end{DoxyCompactList}\item 
+char \hyperlink{a00250_a6a40903035403710bf43295c34e883e7_a6a40903035403710bf43295c34e883e7}{vepdata} \mbox{[}65535\mbox{]}
+\begin{DoxyCompactList}\small\item\em V\+EP Data. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+Standard Generated V\+EP file. 
 
-
-Definition at line 6 of file vlib.\+h.
+Definition at line 53 of file vep.\+h.
 
 
 
 \subsection{Field Documentation}
-\mbox{\Hypertarget{a00250_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}\label{a00250_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}} 
-\index{vlib\+\_\+entry@{vlib\+\_\+entry}!functionptr@{functionptr}}
-\index{functionptr@{functionptr}!vlib\+\_\+entry@{vlib\+\_\+entry}}
-\subsubsection{\texorpdfstring{functionptr}{functionptr}}
-{\footnotesize\ttfamily \hyperlink{a00116_a7ec4af7c086c1f2c2a0e01fc23203a56_a7ec4af7c086c1f2c2a0e01fc23203a56}{func\+\_\+ptr\+\_\+args} vlib\+\_\+entry\+::functionptr}
+\mbox{\Hypertarget{a00250_a6a40903035403710bf43295c34e883e7_a6a40903035403710bf43295c34e883e7}\label{a00250_a6a40903035403710bf43295c34e883e7_a6a40903035403710bf43295c34e883e7}} 
+\index{vepfile@{vepfile}!vepdata@{vepdata}}
+\index{vepdata@{vepdata}!vepfile@{vepfile}}
+\subsubsection{\texorpdfstring{vepdata}{vepdata}}
+{\footnotesize\ttfamily char vepfile\+::vepdata\mbox{[}65535\mbox{]}}
 
 
 
-Definition at line 9 of file vlib.\+h.
-
-\mbox{\Hypertarget{a00250_ab67e2f60e6622a2d0b7c8a3ac6fd7c71_ab67e2f60e6622a2d0b7c8a3ac6fd7c71}\label{a00250_ab67e2f60e6622a2d0b7c8a3ac6fd7c71_ab67e2f60e6622a2d0b7c8a3ac6fd7c71}} 
-\index{vlib\+\_\+entry@{vlib\+\_\+entry}!instantiated@{instantiated}}
-\index{instantiated@{instantiated}!vlib\+\_\+entry@{vlib\+\_\+entry}}
-\subsubsection{\texorpdfstring{instantiated}{instantiated}}
-{\footnotesize\ttfamily \hyperlink{a00116_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} vlib\+\_\+entry\+::instantiated}
+V\+EP Data. 
 
 
 
-Definition at line 8 of file vlib.\+h.
+Definition at line 61 of file vep.\+h.
 
-\mbox{\Hypertarget{a00250_a46df5a47ac05a46ce871e5132153949c_a46df5a47ac05a46ce871e5132153949c}\label{a00250_a46df5a47ac05a46ce871e5132153949c_a46df5a47ac05a46ce871e5132153949c}} 
-\index{vlib\+\_\+entry@{vlib\+\_\+entry}!mode@{mode}}
-\index{mode@{mode}!vlib\+\_\+entry@{vlib\+\_\+entry}}
-\subsubsection{\texorpdfstring{mode}{mode}}
-{\footnotesize\ttfamily \hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} vlib\+\_\+entry\+::mode}
+\mbox{\Hypertarget{a00250_a0fa3b39f1e4974d4ed258db1d4b22402_a0fa3b39f1e4974d4ed258db1d4b22402}\label{a00250_a0fa3b39f1e4974d4ed258db1d4b22402_a0fa3b39f1e4974d4ed258db1d4b22402}} 
+\index{vepfile@{vepfile}!vepheader@{vepheader}}
+\index{vepheader@{vepheader}!vepfile@{vepfile}}
+\subsubsection{\texorpdfstring{vepheader}{vepheader}}
+{\footnotesize\ttfamily \hyperlink{a00158_a78392c340e1fe1be344df81d1438b74f_a78392c340e1fe1be344df81d1438b74f}{vepheader\+\_\+t} vepfile\+::vepheader}
 
 
 
-Definition at line 7 of file vlib.\+h.
+V\+EP header. 
+
+
+
+Definition at line 57 of file vep.\+h.
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-libc/vitality/\hyperlink{a00158}{vlib.\+h}\end{DoxyCompactItemize}
+libc/vitality/\hyperlink{a00158}{vep.\+h}\end{DoxyCompactItemize}

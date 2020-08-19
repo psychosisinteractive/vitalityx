@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: drivers/ide.h File Reference</title>
+<title>VitalityX: drivers/fdrive.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,71 +44,33 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">ide.h File Reference</div>  </div>
+<div class="title">fdrive.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00116_source.html">../libc/types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00029_source.html">fdrive.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00125_source.html">../libc/types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00140_source.html">../libc/vitality/inline.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for ide.h:</div>
+Include dependency graph for fdrive.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00027.png" border="0" usemap="#drivers_2ide_8h" alt=""/></div>
+<div class="center"><img src="a00027.png" border="0" usemap="#drivers_2fdrive_8c" alt=""/></div>
 <!-- MAP 0 -->
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00028.png" border="0" usemap="#drivers_2ide_8hdep" alt=""/></div>
-<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00026_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00174.html">IDEChannelRegisters</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00178.html">ide_device</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afdb22c37a32d86fcb64e55b3edab4790"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_afdb22c37a32d86fcb64e55b3edab4790.html#afdb22c37a32d86fcb64e55b3edab4790">ide_write</a> (unsigned char channel, unsigned char reg, unsigned char data)</td></tr>
-<tr class="separator:afdb22c37a32d86fcb64e55b3edab4790"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aef734da4bdc0c1d014528fd2f66e0686"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_aef734da4bdc0c1d014528fd2f66e0686.html#aef734da4bdc0c1d014528fd2f66e0686">ide_read</a> (unsigned char channel, unsigned char reg)</td></tr>
-<tr class="separator:aef734da4bdc0c1d014528fd2f66e0686"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac338a611110448d6bd9b8edc491ed19b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_ac338a611110448d6bd9b8edc491ed19b.html#ac338a611110448d6bd9b8edc491ed19b">ide_read_buffer</a> (unsigned char channel, unsigned char reg, unsigned int buffer, unsigned int quads)</td></tr>
-<tr class="separator:ac338a611110448d6bd9b8edc491ed19b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a03e85b94d6fbfb957e1b88c3dd064eca"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a03e85b94d6fbfb957e1b88c3dd064eca.html#a03e85b94d6fbfb957e1b88c3dd064eca">ide_polling</a> (unsigned char channel, unsigned int advanced_check)</td></tr>
-<tr class="separator:a03e85b94d6fbfb957e1b88c3dd064eca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af7757307613c29c9bcbf0f8f5b2feee5"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_af7757307613c29c9bcbf0f8f5b2feee5.html#af7757307613c29c9bcbf0f8f5b2feee5">ide_print_error</a> (unsigned int drive, unsigned char err)</td></tr>
-<tr class="separator:af7757307613c29c9bcbf0f8f5b2feee5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5397c8432be802172da8f04c8840ca3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_ab5397c8432be802172da8f04c8840ca3.html#ab5397c8432be802172da8f04c8840ca3">ide_initialize</a> (unsigned int BAR0, unsigned int BAR1, unsigned int BAR2, unsigned int BAR3, unsigned int BAR4)</td></tr>
-<tr class="separator:ab5397c8432be802172da8f04c8840ca3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4da0883393a98b937fdc3015a0a3f265"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a4da0883393a98b937fdc3015a0a3f265.html#a4da0883393a98b937fdc3015a0a3f265">ide_ata_access</a> (unsigned char direction, unsigned char drive, unsigned int lba, unsigned char numsects, unsigned short selector, unsigned int edi)</td></tr>
-<tr class="separator:a4da0883393a98b937fdc3015a0a3f265"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dd84843412753d236e17a15277c5b98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a9dd84843412753d236e17a15277c5b98.html#a9dd84843412753d236e17a15277c5b98">ide_read_sectors</a> (unsigned char drive, unsigned char numsects, unsigned int lba, unsigned short es, unsigned int edi)</td></tr>
-<tr class="separator:a9dd84843412753d236e17a15277c5b98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8632fb3a8cd41b7d60ee56942afbde03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a8632fb3a8cd41b7d60ee56942afbde03.html#a8632fb3a8cd41b7d60ee56942afbde03">ide_write_sectors</a> (unsigned char drive, unsigned char numsects, unsigned int lba, unsigned short es, unsigned int edi)</td></tr>
-<tr class="separator:a8632fb3a8cd41b7d60ee56942afbde03"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92d054539c112a72e080e35a3341b0b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a92d054539c112a72e080e35a3341b0b9.html#a92d054539c112a72e080e35a3341b0b9">ide_atapi_eject</a> (unsigned char drive)</td></tr>
-<tr class="separator:a92d054539c112a72e080e35a3341b0b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad7ea572af581cc0623a2fb74a579ca83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_ad7ea572af581cc0623a2fb74a579ca83.html#ad7ea572af581cc0623a2fb74a579ca83">ide_irq</a> ()</td></tr>
-<tr class="separator:ad7ea572af581cc0623a2fb74a579ca83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31655fcec0cc8f9f8792b98cd4441fdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a31655fcec0cc8f9f8792b98cd4441fdf.html#a31655fcec0cc8f9f8792b98cd4441fdf">ide_wait_irq</a> ()</td></tr>
-<tr class="separator:a31655fcec0cc8f9f8792b98cd4441fdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:aecefa15f62cf60846ddb1a56f9153143"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="a00174.html">IDEChannelRegisters</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_aecefa15f62cf60846ddb1a56f9153143.html#aecefa15f62cf60846ddb1a56f9153143">channels</a> [2]</td></tr>
-<tr class="separator:aecefa15f62cf60846ddb1a56f9153143"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a820b2230ab700e13350794494bd4a60f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00116_ab8ef12fab634c171394422d0ee8baf94.html#ab8ef12fab634c171394422d0ee8baf94">byte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a820b2230ab700e13350794494bd4a60f.html#a820b2230ab700e13350794494bd4a60f">package</a> [1]</td></tr>
-<tr class="separator:a820b2230ab700e13350794494bd4a60f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab97a828ed4839b575dc382e2bf826e87"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="a00178.html">ide_device</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_ab97a828ed4839b575dc382e2bf826e87.html#ab97a828ed4839b575dc382e2bf826e87">ide_devices</a> [4]</td></tr>
-<tr class="separator:ab97a828ed4839b575dc382e2bf826e87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a782ff57a4ec7786197ec3a12d4f52332"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a782ff57a4ec7786197ec3a12d4f52332.html#a782ff57a4ec7786197ec3a12d4f52332">lba_2_chs</a> (<a class="el" href="a00125_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> lba, <a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *cyl, <a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *head, <a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *sector)</td></tr>
+<tr class="separator:a782ff57a4ec7786197ec3a12d4f52332"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbe17688655526c3fa02f324ae8336ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_acbe17688655526c3fa02f324ae8336ca.html#acbe17688655526c3fa02f324ae8336ca">floppyirq</a> ()</td></tr>
+<tr class="separator:acbe17688655526c3fa02f324ae8336ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad64d38a767bc5f30a3e13a5b01b9cf35"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_ad64d38a767bc5f30a3e13a5b01b9cf35.html#ad64d38a767bc5f30a3e13a5b01b9cf35">resetfloppy</a> ()</td></tr>
+<tr class="separator:ad64d38a767bc5f30a3e13a5b01b9cf35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cd18cde0651886116331196acc91c9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00026_a6cd18cde0651886116331196acc91c9a.html#a6cd18cde0651886116331196acc91c9a">speedfloppymtr</a> ()</td></tr>
+<tr class="separator:a6cd18cde0651886116331196acc91c9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

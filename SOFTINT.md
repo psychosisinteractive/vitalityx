@@ -50,13 +50,6 @@ none
 
 This yields the current task.
 
-eax 0x05:
-
-gets:
-ebx {entry id}
-sets:
-none by the interrupt, but the vlib entry may
-
-This calls a VLib Function by its entry ID.
+Int 3fh:eax=5h was moved to Int3eh, instead of changing the value of eax you just interrupt 3eH
 ```
 

@@ -1,174 +1,86 @@
-\hypertarget{a00113}{}\section{libc/system.h File Reference}
-\label{a00113}\index{libc/system.\+h@{libc/system.\+h}}
+\hypertarget{a00113}{}\section{libc/string.c File Reference}
+\label{a00113}\index{libc/string.\+c@{libc/string.\+c}}
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
-Include dependency graph for system.\+h\+:
+Include dependency graph for string.\+c\+:
 % FIG 0
-This graph shows which files directly or indirectly include this file\+:
-% FIG 1
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{a00113_a3c47e49052cc52d10755358512c10135_a3c47e49052cc52d10755358512c10135}{set\+Bit}(word,  mask)~word $\vert$= mask
-\item 
-\#define \hyperlink{a00113_ab6ca194e33920928b4bdeff67bf0edec_ab6ca194e33920928b4bdeff67bf0edec}{clr\+Bit}(word,  mask)~word \&= $\sim$mask
-\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00113_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}{pokeb} (\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$addr, \hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} offset, \hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} val)
-\begin{DoxyCompactList}\small\item\em Poke Byte. \end{DoxyCompactList}\item 
-\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00113_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}{peekb} (\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} $\ast$addr, \hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} offset)
-\begin{DoxyCompactList}\small\item\em Peek Byte. \end{DoxyCompactList}\item 
-void $\ast$ \hyperlink{a00113_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset} (void $\ast$dest, int val, \hyperlink{a00116_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} len)
-\begin{DoxyCompactList}\small\item\em Memset. \end{DoxyCompactList}\item 
-void $\ast$ \hyperlink{a00113_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy} (void $\ast$dstptr, const void $\ast$srcptr, \hyperlink{a00116_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} size)
-\begin{DoxyCompactList}\small\item\em Memcpy. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{a00113_ab6ca194e33920928b4bdeff67bf0edec_ab6ca194e33920928b4bdeff67bf0edec}\label{a00113_ab6ca194e33920928b4bdeff67bf0edec_ab6ca194e33920928b4bdeff67bf0edec}} 
-\index{system.\+h@{system.\+h}!clr\+Bit@{clr\+Bit}}
-\index{clr\+Bit@{clr\+Bit}!system.\+h@{system.\+h}}
-\subsubsection{\texorpdfstring{clr\+Bit}{clrBit}}
-{\footnotesize\ttfamily \#define clr\+Bit(\begin{DoxyParamCaption}\item[{}]{word,  }\item[{}]{mask }\end{DoxyParamCaption})~word \&= $\sim$mask}
-
-
-
-Definition at line 10 of file system.\+h.
-
-\mbox{\Hypertarget{a00113_a3c47e49052cc52d10755358512c10135_a3c47e49052cc52d10755358512c10135}\label{a00113_a3c47e49052cc52d10755358512c10135_a3c47e49052cc52d10755358512c10135}} 
-\index{system.\+h@{system.\+h}!set\+Bit@{set\+Bit}}
-\index{set\+Bit@{set\+Bit}!system.\+h@{system.\+h}}
-\subsubsection{\texorpdfstring{set\+Bit}{setBit}}
-{\footnotesize\ttfamily \#define set\+Bit(\begin{DoxyParamCaption}\item[{}]{word,  }\item[{}]{mask }\end{DoxyParamCaption})~word $\vert$= mask}
-
-
-
-Definition at line 6 of file system.\+h.
-
+\hyperlink{a00125_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} \hyperlink{a00113_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}{strlen} (const char $\ast$str)
+\item 
+void \hyperlink{a00113_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}{reverse} (char s\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{a00113_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa} (int n, char s\mbox{[}$\,$\mbox{]})
+\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00113_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}\label{a00113_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}} 
-\index{system.\+h@{system.\+h}!memcpy@{memcpy}}
-\index{memcpy@{memcpy}!system.\+h@{system.\+h}}
-\subsubsection{\texorpdfstring{memcpy()}{memcpy()}}
-{\footnotesize\ttfamily void$\ast$ memcpy (\begin{DoxyParamCaption}\item[{void $\ast$}]{dstptr,  }\item[{const void $\ast$}]{srcptr,  }\item[{\hyperlink{a00116_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{size }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00113_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}\label{a00113_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}} 
+\index{string.\+c@{string.\+c}!itoa@{itoa}}
+\index{itoa@{itoa}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{itoa()}{itoa()}}
+{\footnotesize\ttfamily void itoa (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{char}]{s\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
 
 
-Memcpy. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em dstptr} & Destination pointer \\
-\hline
-{\em srcptr} & Source pointer \\
-\hline
-{\em size} & Size \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 19 of file system.\+c.
+Definition at line 23 of file string.\+c.
 
 
 \begin{DoxyCode}
-19                                                             \{
-20     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* dst = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*) dstptr;
-21     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* src = (\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*) srcptr;
-22     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < size; i++)
-23         dst[i] = src[i];
-24     \textcolor{keywordflow}{return} dstptr;
-25 \}
+24 \{
+25     \textcolor{keywordtype}{int} i, sign;
+26 
+27     \textcolor{keywordflow}{if} ((sign = n) < 0)  \textcolor{comment}{/* record sign */}
+28         n = -n;          \textcolor{comment}{/* make n positive */}
+29     i = 0;
+30     \textcolor{keywordflow}{do} \{       \textcolor{comment}{/* generate digits in reverse order */}
+31         s[i++] = n % 10 + \textcolor{charliteral}{'0'};   \textcolor{comment}{/* get next digit */}
+32     \} \textcolor{keywordflow}{while} ((n /= 10) > 0);     \textcolor{comment}{/* delete it */}
+33     \textcolor{keywordflow}{if} (sign < 0)
+34         s[i++] = \textcolor{charliteral}{'-'};
+35     s[i] = \textcolor{charliteral}{'\(\backslash\)0'};
+36     \hyperlink{a00113_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}{reverse}(s);
+37 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00113_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}\label{a00113_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}} 
-\index{system.\+h@{system.\+h}!memset@{memset}}
-\index{memset@{memset}!system.\+h@{system.\+h}}
-\subsubsection{\texorpdfstring{memset()}{memset()}}
-{\footnotesize\ttfamily void$\ast$ memset (\begin{DoxyParamCaption}\item[{void $\ast$}]{dest,  }\item[{int}]{val,  }\item[{\hyperlink{a00116_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{len }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00113_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}\label{a00113_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}} 
+\index{string.\+c@{string.\+c}!reverse@{reverse}}
+\index{reverse@{reverse}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{reverse()}{reverse()}}
+{\footnotesize\ttfamily void reverse (\begin{DoxyParamCaption}\item[{char}]{s\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
 
 
-Memset. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em dest} & The destination \\
-\hline
-{\em val} & The value to set \\
-\hline
-{\em len} & The length of bytes to set \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 12 of file system.\+c.
+Definition at line 11 of file string.\+c.
 
 
 \begin{DoxyCode}
-13 \{
-14   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *ptr = dest;
-15   \textcolor{keywordflow}{while} (len-- > 0)
-16     *ptr++ = val;
-17   \textcolor{keywordflow}{return} dest;
-18 \}
+12 \{
+13     \textcolor{keywordtype}{int} i, j;
+14     \textcolor{keywordtype}{char} c;
+15 
+16     \textcolor{keywordflow}{for} (i = 0, j = \hyperlink{a00113_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}{strlen}(s)-1; i<j; i++, j--) \{
+17         c = s[i];
+18         s[i] = s[j];
+19         s[j] = c;
+20     \}
+21 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00113_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}\label{a00113_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}} 
-\index{system.\+h@{system.\+h}!peekb@{peekb}}
-\index{peekb@{peekb}!system.\+h@{system.\+h}}
-\subsubsection{\texorpdfstring{peekb()}{peekb()}}
-{\footnotesize\ttfamily \hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} peekb (\begin{DoxyParamCaption}\item[{\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} $\ast$}]{addr,  }\item[{\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{offset }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00113_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}\label{a00113_a008e171a518fe0e0352f31b245e03875_a008e171a518fe0e0352f31b245e03875}} 
+\index{string.\+c@{string.\+c}!strlen@{strlen}}
+\index{strlen@{strlen}!string.\+c@{string.\+c}}
+\subsubsection{\texorpdfstring{strlen()}{strlen()}}
+{\footnotesize\ttfamily \hyperlink{a00125_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} strlen (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})}
 
 
 
-Peek Byte. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em addr} & The address of the byte \\
-\hline
-{\em offset} & The offset from the address \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 8 of file system.\+c.
+Definition at line 4 of file string.\+c.
 
 
 \begin{DoxyCode}
-8                                               \{
-9     addr+=offset;
-10     \textcolor{keywordflow}{return} *addr;
-11 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00113_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}\label{a00113_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}} 
-\index{system.\+h@{system.\+h}!pokeb@{pokeb}}
-\index{pokeb@{pokeb}!system.\+h@{system.\+h}}
-\subsubsection{\texorpdfstring{pokeb()}{pokeb()}}
-{\footnotesize\ttfamily void pokeb (\begin{DoxyParamCaption}\item[{\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$}]{addr,  }\item[{\hyperlink{a00116_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{offset,  }\item[{\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{val }\end{DoxyParamCaption})}
-
-
-
-Poke Byte. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em addr} & The address of the byte \\
-\hline
-{\em offset} & The offset from the address \\
-\hline
-{\em val} & The value \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 4 of file system.\+c.
-
-
-\begin{DoxyCode}
-4                                                          \{
-5     addr+=offset;
-6     *addr=val;
-7 \}
+5 \{
+6     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *s;
+7     \textcolor{keywordflow}{for} (s = str; *s; ++s) \{\}
+8     \textcolor{keywordflow}{return}(s - str);
+9 \}
 \end{DoxyCode}

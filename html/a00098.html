@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/page.c File Reference</title>
+<title>VitalityX: libc/interrupt.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,73 +44,204 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">page.c File Reference</div>  </div>
+<div class="title">interrupt.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00059_source.html">ext/debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00065_source.html">ext/kheap.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00101_source.html">page.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00116_source.html">types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00107_source.html">string.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00125_source.html">types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00122_source.html">system.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for page.c:</div>
+Include dependency graph for interrupt.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00099.png" border="0" usemap="#libc_2page_8c" alt=""/></div>
+<div class="center"><img src="a00099.png" border="0" usemap="#libc_2interrupt_8h" alt=""/></div>
 <!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00100.png" border="0" usemap="#libc_2interrupt_8hdep" alt=""/></div>
+<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00098_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a94f8d624e19f4f1ecc503e2f82071c9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a94f8d624e19f4f1ecc503e2f82071c9e.html#a94f8d624e19f4f1ecc503e2f82071c9e">INDEX_FROM_BIT</a>(a)&#160;&#160;&#160;(a/(8*4))</td></tr>
-<tr class="separator:a94f8d624e19f4f1ecc503e2f82071c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9d53b10c4e0cac33faba5168b41d0daa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a9d53b10c4e0cac33faba5168b41d0daa.html#a9d53b10c4e0cac33faba5168b41d0daa">OFFSET_FROM_BIT</a>(a)&#160;&#160;&#160;(a%(8*4))</td></tr>
-<tr class="separator:a9d53b10c4e0cac33faba5168b41d0daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00210.html">idt_entry_struct</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00214.html">idt_ptr_struct</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a1ad45e5b006481ff3604f7b54bd26e13"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00210.html">idt_entry_struct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a1ad45e5b006481ff3604f7b54bd26e13.html#a1ad45e5b006481ff3604f7b54bd26e13">idt_entry_t</a></td></tr>
+<tr class="separator:a1ad45e5b006481ff3604f7b54bd26e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c173f183e148c7a8a8c1ed9214b909e"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00214.html">idt_ptr_struct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a4c173f183e148c7a8a8c1ed9214b909e.html#a4c173f183e148c7a8a8c1ed9214b909e">idt_ptr_t</a></td></tr>
+<tr class="separator:a4c173f183e148c7a8a8c1ed9214b909e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a332df9447ad2bb202a036225a81fa749"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a332df9447ad2bb202a036225a81fa749.html#a332df9447ad2bb202a036225a81fa749">set_frame</a> (<a class="el" href="a00116_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> frame_addr)</td></tr>
-<tr class="separator:a332df9447ad2bb202a036225a81fa749"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4bfe71e798c0e565587ed4c007e9e454"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a4bfe71e798c0e565587ed4c007e9e454.html#a4bfe71e798c0e565587ed4c007e9e454">clear_frame</a> (<a class="el" href="a00116_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> frame_addr)</td></tr>
-<tr class="separator:a4bfe71e798c0e565587ed4c007e9e454"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b764779c4819ab69a7781fffa5ffc68"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00116_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a3b764779c4819ab69a7781fffa5ffc68.html#a3b764779c4819ab69a7781fffa5ffc68">test_frame</a> (<a class="el" href="a00116_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> frame_addr)</td></tr>
-<tr class="separator:a3b764779c4819ab69a7781fffa5ffc68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3c186a88fa227f4f5a5bfb0791958c47"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00116_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a3c186a88fa227f4f5a5bfb0791958c47.html#a3c186a88fa227f4f5a5bfb0791958c47">first_frame</a> ()</td></tr>
-<tr class="separator:a3c186a88fa227f4f5a5bfb0791958c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a397c4898938528b31b726193ad3542"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a3a397c4898938528b31b726193ad3542.html#a3a397c4898938528b31b726193ad3542">alloc_frame</a> (<a class="el" href="a00101_a76113662e059e0926a92c5b15c098f4a.html#a76113662e059e0926a92c5b15c098f4a">page_t</a> *<a class="el" href="a00206.html">page</a>, int is_kernel, int is_writeable)</td></tr>
-<tr class="separator:a3a397c4898938528b31b726193ad3542"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b8ed22ee60c3275eb0a80135d540799"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a5b8ed22ee60c3275eb0a80135d540799.html#a5b8ed22ee60c3275eb0a80135d540799">free_frame</a> (<a class="el" href="a00101_a76113662e059e0926a92c5b15c098f4a.html#a76113662e059e0926a92c5b15c098f4a">page_t</a> *<a class="el" href="a00206.html">page</a>)</td></tr>
-<tr class="separator:a5b8ed22ee60c3275eb0a80135d540799"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad05c453b13c69ecf5c7963798704cc18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ad05c453b13c69ecf5c7963798704cc18.html#ad05c453b13c69ecf5c7963798704cc18">initialise_paging</a> ()</td></tr>
-<tr class="memdesc:ad05c453b13c69ecf5c7963798704cc18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the environment, page directories etc and enables paging.  <a href="a00098_ad05c453b13c69ecf5c7963798704cc18.html#ad05c453b13c69ecf5c7963798704cc18">More...</a><br /></td></tr>
-<tr class="separator:ad05c453b13c69ecf5c7963798704cc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f2bd6a5d2bbda0dee6b65c511a9cb98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a6f2bd6a5d2bbda0dee6b65c511a9cb98.html#a6f2bd6a5d2bbda0dee6b65c511a9cb98">switch_page_directory</a> (<a class="el" href="a00101_aa6e79064ffe1eb8c43be4dc1be3f64a1.html#aa6e79064ffe1eb8c43be4dc1be3f64a1">page_directory_t</a> *dir)</td></tr>
-<tr class="memdesc:a6f2bd6a5d2bbda0dee6b65c511a9cb98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the specified page directory to be loaded into the CR3 register.  <a href="a00098_a6f2bd6a5d2bbda0dee6b65c511a9cb98.html#a6f2bd6a5d2bbda0dee6b65c511a9cb98">More...</a><br /></td></tr>
-<tr class="separator:a6f2bd6a5d2bbda0dee6b65c511a9cb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab80db06fa94f1003fd5a5ec106bc9f6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00101_a76113662e059e0926a92c5b15c098f4a.html#a76113662e059e0926a92c5b15c098f4a">page_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ab80db06fa94f1003fd5a5ec106bc9f6e.html#ab80db06fa94f1003fd5a5ec106bc9f6e">get_page</a> (<a class="el" href="a00116_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> address, int make, <a class="el" href="a00101_aa6e79064ffe1eb8c43be4dc1be3f64a1.html#aa6e79064ffe1eb8c43be4dc1be3f64a1">page_directory_t</a> *dir)</td></tr>
-<tr class="memdesc:ab80db06fa94f1003fd5a5ec106bc9f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a pointer to the page required.  <a href="a00098_ab80db06fa94f1003fd5a5ec106bc9f6e.html#ab80db06fa94f1003fd5a5ec106bc9f6e">More...</a><br /></td></tr>
-<tr class="separator:ab80db06fa94f1003fd5a5ec106bc9f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6293af8e675059a566216be86660854b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a6293af8e675059a566216be86660854b.html#a6293af8e675059a566216be86660854b">page_fault</a> (<a class="el" href="a00095_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
-<tr class="memdesc:a6293af8e675059a566216be86660854b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler for page faults.  <a href="a00098_a6293af8e675059a566216be86660854b.html#a6293af8e675059a566216be86660854b">More...</a><br /></td></tr>
-<tr class="separator:a6293af8e675059a566216be86660854b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b9a185998656ad933e6a14203d9b0c5"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="a00210.html">idt_entry_struct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a4b9a185998656ad933e6a14203d9b0c5.html#a4b9a185998656ad933e6a14203d9b0c5">__attribute__</a> ((packed))</td></tr>
+<tr class="separator:a4b9a185998656ad933e6a14203d9b0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af88eb8e98d943aa0461c01de3cb53493"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_af88eb8e98d943aa0461c01de3cb53493.html#af88eb8e98d943aa0461c01de3cb53493">isr0</a> ()</td></tr>
+<tr class="separator:af88eb8e98d943aa0461c01de3cb53493"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeab0ed9ae661801c25f7dc9089c19f72"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_aeab0ed9ae661801c25f7dc9089c19f72.html#aeab0ed9ae661801c25f7dc9089c19f72">isr1</a> ()</td></tr>
+<tr class="separator:aeab0ed9ae661801c25f7dc9089c19f72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99e457875cca040c3f7c77b61e960b53"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a99e457875cca040c3f7c77b61e960b53.html#a99e457875cca040c3f7c77b61e960b53">isr2</a> ()</td></tr>
+<tr class="separator:a99e457875cca040c3f7c77b61e960b53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ef268d2c16a7b318356451a05fd507b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a0ef268d2c16a7b318356451a05fd507b.html#a0ef268d2c16a7b318356451a05fd507b">isr3</a> ()</td></tr>
+<tr class="separator:a0ef268d2c16a7b318356451a05fd507b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09af768d636144aaeaddd76c92a0a2f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a09af768d636144aaeaddd76c92a0a2f5.html#a09af768d636144aaeaddd76c92a0a2f5">isr4</a> ()</td></tr>
+<tr class="separator:a09af768d636144aaeaddd76c92a0a2f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa91d821a4bcafb44933d92945727b0df"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_aa91d821a4bcafb44933d92945727b0df.html#aa91d821a4bcafb44933d92945727b0df">isr5</a> ()</td></tr>
+<tr class="separator:aa91d821a4bcafb44933d92945727b0df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fadb95f34937b1ded02c4171b4920ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a9fadb95f34937b1ded02c4171b4920ba.html#a9fadb95f34937b1ded02c4171b4920ba">isr6</a> ()</td></tr>
+<tr class="separator:a9fadb95f34937b1ded02c4171b4920ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7eb6ec30db7077fb1c9c9d926a0fc407"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a7eb6ec30db7077fb1c9c9d926a0fc407.html#a7eb6ec30db7077fb1c9c9d926a0fc407">isr7</a> ()</td></tr>
+<tr class="separator:a7eb6ec30db7077fb1c9c9d926a0fc407"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86bc69345a3bb409665dbadb77a9d393"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a86bc69345a3bb409665dbadb77a9d393.html#a86bc69345a3bb409665dbadb77a9d393">isr8</a> ()</td></tr>
+<tr class="separator:a86bc69345a3bb409665dbadb77a9d393"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aacb7c8490cbd623a3a2bf933ffedd131"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_aacb7c8490cbd623a3a2bf933ffedd131.html#aacb7c8490cbd623a3a2bf933ffedd131">isr9</a> ()</td></tr>
+<tr class="separator:aacb7c8490cbd623a3a2bf933ffedd131"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c8cb1341cf756883a2e7dc317d5272d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a3c8cb1341cf756883a2e7dc317d5272d.html#a3c8cb1341cf756883a2e7dc317d5272d">isr10</a> ()</td></tr>
+<tr class="separator:a3c8cb1341cf756883a2e7dc317d5272d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d8145cf6ee1ef7834f459ba777d323c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a0d8145cf6ee1ef7834f459ba777d323c.html#a0d8145cf6ee1ef7834f459ba777d323c">isr11</a> ()</td></tr>
+<tr class="separator:a0d8145cf6ee1ef7834f459ba777d323c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00f00421039cb85f9dd9375995c784bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a00f00421039cb85f9dd9375995c784bd.html#a00f00421039cb85f9dd9375995c784bd">isr12</a> ()</td></tr>
+<tr class="separator:a00f00421039cb85f9dd9375995c784bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af985dcf66872ee696e5f30d819ac16a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_af985dcf66872ee696e5f30d819ac16a1.html#af985dcf66872ee696e5f30d819ac16a1">isr13</a> ()</td></tr>
+<tr class="separator:af985dcf66872ee696e5f30d819ac16a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b63eaa37c03743718870964a3429ba8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a8b63eaa37c03743718870964a3429ba8.html#a8b63eaa37c03743718870964a3429ba8">isr14</a> ()</td></tr>
+<tr class="separator:a8b63eaa37c03743718870964a3429ba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9160f355325318a990c106ad5c3b8954"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a9160f355325318a990c106ad5c3b8954.html#a9160f355325318a990c106ad5c3b8954">isr15</a> ()</td></tr>
+<tr class="separator:a9160f355325318a990c106ad5c3b8954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add0980c10028b377643da169e52e5be7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_add0980c10028b377643da169e52e5be7.html#add0980c10028b377643da169e52e5be7">isr16</a> ()</td></tr>
+<tr class="separator:add0980c10028b377643da169e52e5be7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7d1e81e585bc7c56b46280006402f9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ac7d1e81e585bc7c56b46280006402f9e.html#ac7d1e81e585bc7c56b46280006402f9e">isr17</a> ()</td></tr>
+<tr class="separator:ac7d1e81e585bc7c56b46280006402f9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae685c5ca5ed9c9c5e7d297ad8d14de49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ae685c5ca5ed9c9c5e7d297ad8d14de49.html#ae685c5ca5ed9c9c5e7d297ad8d14de49">isr18</a> ()</td></tr>
+<tr class="separator:ae685c5ca5ed9c9c5e7d297ad8d14de49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad16b5f77287df551e63d3f0c67f8f75d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ad16b5f77287df551e63d3f0c67f8f75d.html#ad16b5f77287df551e63d3f0c67f8f75d">isr19</a> ()</td></tr>
+<tr class="separator:ad16b5f77287df551e63d3f0c67f8f75d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a552d2aedae97d97083d3f9caf6ad59a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a552d2aedae97d97083d3f9caf6ad59a5.html#a552d2aedae97d97083d3f9caf6ad59a5">isr20</a> ()</td></tr>
+<tr class="separator:a552d2aedae97d97083d3f9caf6ad59a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af106b9a26e06abf17eebb6f7ae54f905"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_af106b9a26e06abf17eebb6f7ae54f905.html#af106b9a26e06abf17eebb6f7ae54f905">isr21</a> ()</td></tr>
+<tr class="separator:af106b9a26e06abf17eebb6f7ae54f905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4b6f47f27ac3b31fc426f5c2a1a669c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_aa4b6f47f27ac3b31fc426f5c2a1a669c.html#aa4b6f47f27ac3b31fc426f5c2a1a669c">isr22</a> ()</td></tr>
+<tr class="separator:aa4b6f47f27ac3b31fc426f5c2a1a669c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a277e9cc418a637ae584c1ff6525eb2e1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a277e9cc418a637ae584c1ff6525eb2e1.html#a277e9cc418a637ae584c1ff6525eb2e1">isr23</a> ()</td></tr>
+<tr class="separator:a277e9cc418a637ae584c1ff6525eb2e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ea113ad8536ca8311ab00d077ece7f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a2ea113ad8536ca8311ab00d077ece7f1.html#a2ea113ad8536ca8311ab00d077ece7f1">isr24</a> ()</td></tr>
+<tr class="separator:a2ea113ad8536ca8311ab00d077ece7f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a73e919f327e846f72b99de088ae9b822"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a73e919f327e846f72b99de088ae9b822.html#a73e919f327e846f72b99de088ae9b822">isr25</a> ()</td></tr>
+<tr class="separator:a73e919f327e846f72b99de088ae9b822"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24c118fd7e75c96d19da1bbaf87731e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a24c118fd7e75c96d19da1bbaf87731e4.html#a24c118fd7e75c96d19da1bbaf87731e4">isr26</a> ()</td></tr>
+<tr class="separator:a24c118fd7e75c96d19da1bbaf87731e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad97e98084cbcdc21bf03ba314dc243e0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ad97e98084cbcdc21bf03ba314dc243e0.html#ad97e98084cbcdc21bf03ba314dc243e0">isr27</a> ()</td></tr>
+<tr class="separator:ad97e98084cbcdc21bf03ba314dc243e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab2a5fe4d3cf67be0c67db612aa757c5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ab2a5fe4d3cf67be0c67db612aa757c5f.html#ab2a5fe4d3cf67be0c67db612aa757c5f">isr28</a> ()</td></tr>
+<tr class="separator:ab2a5fe4d3cf67be0c67db612aa757c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cce4d55d6a199607cd3a9e2a33241b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a8cce4d55d6a199607cd3a9e2a33241b2.html#a8cce4d55d6a199607cd3a9e2a33241b2">isr29</a> ()</td></tr>
+<tr class="separator:a8cce4d55d6a199607cd3a9e2a33241b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af868664393aedd51c04e3ddd48b8f84f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_af868664393aedd51c04e3ddd48b8f84f.html#af868664393aedd51c04e3ddd48b8f84f">isr30</a> ()</td></tr>
+<tr class="separator:af868664393aedd51c04e3ddd48b8f84f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4ae10cea59f9bb2f79c13b8036d81f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_af4ae10cea59f9bb2f79c13b8036d81f1.html#af4ae10cea59f9bb2f79c13b8036d81f1">isr31</a> ()</td></tr>
+<tr class="separator:af4ae10cea59f9bb2f79c13b8036d81f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8eb785d6bbda394a250c49dfa8fab00b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a8eb785d6bbda394a250c49dfa8fab00b.html#a8eb785d6bbda394a250c49dfa8fab00b">isr32</a> ()</td></tr>
+<tr class="separator:a8eb785d6bbda394a250c49dfa8fab00b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21f7d304ed1a2251165542b493dee9a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a21f7d304ed1a2251165542b493dee9a2.html#a21f7d304ed1a2251165542b493dee9a2">isr33</a> ()</td></tr>
+<tr class="separator:a21f7d304ed1a2251165542b493dee9a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cfa599d239e63047a44c62877175cbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a7cfa599d239e63047a44c62877175cbf.html#a7cfa599d239e63047a44c62877175cbf">isr34</a> ()</td></tr>
+<tr class="separator:a7cfa599d239e63047a44c62877175cbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2f4c871f5381ebfeaa2a2f8af1aed61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ad2f4c871f5381ebfeaa2a2f8af1aed61.html#ad2f4c871f5381ebfeaa2a2f8af1aed61">isr35</a> ()</td></tr>
+<tr class="separator:ad2f4c871f5381ebfeaa2a2f8af1aed61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1bb712d4ccccb24cda231817620c3661"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a1bb712d4ccccb24cda231817620c3661.html#a1bb712d4ccccb24cda231817620c3661">isr36</a> ()</td></tr>
+<tr class="separator:a1bb712d4ccccb24cda231817620c3661"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fc83a957a4d871719c869b548f1de71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a3fc83a957a4d871719c869b548f1de71.html#a3fc83a957a4d871719c869b548f1de71">isr37</a> ()</td></tr>
+<tr class="separator:a3fc83a957a4d871719c869b548f1de71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb0460191436d577924530009c7bc6a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_adb0460191436d577924530009c7bc6a0.html#adb0460191436d577924530009c7bc6a0">isr38</a> ()</td></tr>
+<tr class="separator:adb0460191436d577924530009c7bc6a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af263b0cf187b9db2e92b3c34b4eb8bad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_af263b0cf187b9db2e92b3c34b4eb8bad.html#af263b0cf187b9db2e92b3c34b4eb8bad">isr39</a> ()</td></tr>
+<tr class="separator:af263b0cf187b9db2e92b3c34b4eb8bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e89ca2ed800d0addb8a381eec627701"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a0e89ca2ed800d0addb8a381eec627701.html#a0e89ca2ed800d0addb8a381eec627701">isr40</a> ()</td></tr>
+<tr class="separator:a0e89ca2ed800d0addb8a381eec627701"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af53b9e4adb4b19ab0ea0160501f8ffd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_af53b9e4adb4b19ab0ea0160501f8ffd8.html#af53b9e4adb4b19ab0ea0160501f8ffd8">isr41</a> ()</td></tr>
+<tr class="separator:af53b9e4adb4b19ab0ea0160501f8ffd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab13bbe1d1467a2845f77c906333ba12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_aab13bbe1d1467a2845f77c906333ba12.html#aab13bbe1d1467a2845f77c906333ba12">isr42</a> ()</td></tr>
+<tr class="separator:aab13bbe1d1467a2845f77c906333ba12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e4b8d4743f568573b7ea3b75fe76583"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a9e4b8d4743f568573b7ea3b75fe76583.html#a9e4b8d4743f568573b7ea3b75fe76583">isr43</a> ()</td></tr>
+<tr class="separator:a9e4b8d4743f568573b7ea3b75fe76583"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af594546ff71d7094ffe85d68e752bf42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_af594546ff71d7094ffe85d68e752bf42.html#af594546ff71d7094ffe85d68e752bf42">isr44</a> ()</td></tr>
+<tr class="separator:af594546ff71d7094ffe85d68e752bf42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36a09aefac3255cb33d9db137c59d940"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a36a09aefac3255cb33d9db137c59d940.html#a36a09aefac3255cb33d9db137c59d940">isr45</a> ()</td></tr>
+<tr class="separator:a36a09aefac3255cb33d9db137c59d940"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34327a17155443d07113ee7cf1f136f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a34327a17155443d07113ee7cf1f136f4.html#a34327a17155443d07113ee7cf1f136f4">isr46</a> ()</td></tr>
+<tr class="separator:a34327a17155443d07113ee7cf1f136f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49550949aaf658848fa625402cff53a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a49550949aaf658848fa625402cff53a5.html#a49550949aaf658848fa625402cff53a5">isr47</a> ()</td></tr>
+<tr class="separator:a49550949aaf658848fa625402cff53a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a936294c6af994448d1d8ecd310a1e4b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a936294c6af994448d1d8ecd310a1e4b1.html#a936294c6af994448d1d8ecd310a1e4b1">isr48</a> ()</td></tr>
+<tr class="separator:a936294c6af994448d1d8ecd310a1e4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a202b1d754829efba9e38698024cba38b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a202b1d754829efba9e38698024cba38b.html#a202b1d754829efba9e38698024cba38b">isr49</a> ()</td></tr>
+<tr class="separator:a202b1d754829efba9e38698024cba38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f365888e016294187eab955e25df421"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a3f365888e016294187eab955e25df421.html#a3f365888e016294187eab955e25df421">isr50</a> ()</td></tr>
+<tr class="separator:a3f365888e016294187eab955e25df421"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30f6c8ad173fe01a4274211a0f8d592e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a30f6c8ad173fe01a4274211a0f8d592e.html#a30f6c8ad173fe01a4274211a0f8d592e">isr51</a> ()</td></tr>
+<tr class="separator:a30f6c8ad173fe01a4274211a0f8d592e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8c04f8faa1d7f3e170e53578e86bcb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_af8c04f8faa1d7f3e170e53578e86bcb3.html#af8c04f8faa1d7f3e170e53578e86bcb3">isr52</a> ()</td></tr>
+<tr class="separator:af8c04f8faa1d7f3e170e53578e86bcb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99418c5179bcdc1cab6f0a9d3f10619e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a99418c5179bcdc1cab6f0a9d3f10619e.html#a99418c5179bcdc1cab6f0a9d3f10619e">isr53</a> ()</td></tr>
+<tr class="separator:a99418c5179bcdc1cab6f0a9d3f10619e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a882af846de64d40c15e7d882824e5d9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a882af846de64d40c15e7d882824e5d9f.html#a882af846de64d40c15e7d882824e5d9f">isr54</a> ()</td></tr>
+<tr class="separator:a882af846de64d40c15e7d882824e5d9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f5b2af7809bbbfa1dc71aea022480c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a0f5b2af7809bbbfa1dc71aea022480c6.html#a0f5b2af7809bbbfa1dc71aea022480c6">isr55</a> ()</td></tr>
+<tr class="separator:a0f5b2af7809bbbfa1dc71aea022480c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6b87d95bfd61e8e229131b744c1c688"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ab6b87d95bfd61e8e229131b744c1c688.html#ab6b87d95bfd61e8e229131b744c1c688">isr56</a> ()</td></tr>
+<tr class="separator:ab6b87d95bfd61e8e229131b744c1c688"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e5cde3d86094617db34e32ac8f25a8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a4e5cde3d86094617db34e32ac8f25a8e.html#a4e5cde3d86094617db34e32ac8f25a8e">isr57</a> ()</td></tr>
+<tr class="separator:a4e5cde3d86094617db34e32ac8f25a8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a418134e2b31c7f516257fbc8db1166f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a418134e2b31c7f516257fbc8db1166f5.html#a418134e2b31c7f516257fbc8db1166f5">isr58</a> ()</td></tr>
+<tr class="separator:a418134e2b31c7f516257fbc8db1166f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6636d2a9207ae7f55065a6e0ccbe5b37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a6636d2a9207ae7f55065a6e0ccbe5b37.html#a6636d2a9207ae7f55065a6e0ccbe5b37">isr59</a> ()</td></tr>
+<tr class="separator:a6636d2a9207ae7f55065a6e0ccbe5b37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a773134283196c0c27680c712854fe208"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a773134283196c0c27680c712854fe208.html#a773134283196c0c27680c712854fe208">isr60</a> ()</td></tr>
+<tr class="separator:a773134283196c0c27680c712854fe208"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada77d8b31bc33e883c36712962d562ab"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ada77d8b31bc33e883c36712962d562ab.html#ada77d8b31bc33e883c36712962d562ab">isr61</a> ()</td></tr>
+<tr class="separator:ada77d8b31bc33e883c36712962d562ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4bc2b72e89677bfb068d53efa637933"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ac4bc2b72e89677bfb068d53efa637933.html#ac4bc2b72e89677bfb068d53efa637933">isr62</a> ()</td></tr>
+<tr class="separator:ac4bc2b72e89677bfb068d53efa637933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc5cdf67dec64ed778df8091afeac450"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_adc5cdf67dec64ed778df8091afeac450.html#adc5cdf67dec64ed778df8091afeac450">isr63</a> ()</td></tr>
+<tr class="separator:adc5cdf67dec64ed778df8091afeac450"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f063f0c0d27643faa13723e8086b808"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a7f063f0c0d27643faa13723e8086b808.html#a7f063f0c0d27643faa13723e8086b808">idt_flush</a> (<a class="el" href="a00125_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>)</td></tr>
+<tr class="separator:a7f063f0c0d27643faa13723e8086b808"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35fe413107af682030ab7a4b6dff19b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a35fe413107af682030ab7a4b6dff19b8.html#a35fe413107af682030ab7a4b6dff19b8">init_idt</a> ()</td></tr>
+<tr class="separator:a35fe413107af682030ab7a4b6dff19b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cd823f02a917fa61f2887bf001effbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a1cd823f02a917fa61f2887bf001effbf.html#a1cd823f02a917fa61f2887bf001effbf">idt_set_gate</a> (<a class="el" href="a00125_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>, <a class="el" href="a00125_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>, <a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>, <a class="el" href="a00125_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>)</td></tr>
+<tr class="separator:a1cd823f02a917fa61f2887bf001effbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a76492529572a1a20a06076ac40d66b29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00116_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a76492529572a1a20a06076ac40d66b29.html#a76492529572a1a20a06076ac40d66b29">frames</a></td></tr>
-<tr class="separator:a76492529572a1a20a06076ac40d66b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf36580d5618820f15388083c9313e60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00116_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_abf36580d5618820f15388083c9313e60.html#abf36580d5618820f15388083c9313e60">nframes</a></td></tr>
-<tr class="separator:abf36580d5618820f15388083c9313e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada87161706c337a35f601e680b647a81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00101_aa6e79064ffe1eb8c43be4dc1be3f64a1.html#aa6e79064ffe1eb8c43be4dc1be3f64a1">page_directory_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ada87161706c337a35f601e680b647a81.html#ada87161706c337a35f601e680b647a81">kernel_directory</a></td></tr>
-<tr class="separator:ada87161706c337a35f601e680b647a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a69cc0aac8cd0b433e9ffa124ad11da56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00101_aa6e79064ffe1eb8c43be4dc1be3f64a1.html#aa6e79064ffe1eb8c43be4dc1be3f64a1">page_directory_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a69cc0aac8cd0b433e9ffa124ad11da56.html#a69cc0aac8cd0b433e9ffa124ad11da56">current_directory</a></td></tr>
-<tr class="separator:a69cc0aac8cd0b433e9ffa124ad11da56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9df9c77e08423957a655e27605284987"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00116_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a9df9c77e08423957a655e27605284987.html#a9df9c77e08423957a655e27605284987">placement_address</a></td></tr>
-<tr class="separator:a9df9c77e08423957a655e27605284987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a4688f97e405d4c0700427f4b74a355"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a1a4688f97e405d4c0700427f4b74a355.html#a1a4688f97e405d4c0700427f4b74a355">base_lo</a></td></tr>
+<tr class="separator:a1a4688f97e405d4c0700427f4b74a355"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0b0a7e10694e3b600c7561311cc8271"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_af0b0a7e10694e3b600c7561311cc8271.html#af0b0a7e10694e3b600c7561311cc8271">sel</a></td></tr>
+<tr class="separator:af0b0a7e10694e3b600c7561311cc8271"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a66c700ff7fdb6daca8d968d8d95acf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a4a66c700ff7fdb6daca8d968d8d95acf.html#a4a66c700ff7fdb6daca8d968d8d95acf">always0</a></td></tr>
+<tr class="separator:a4a66c700ff7fdb6daca8d968d8d95acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2585d779da0ab21273a8d92de9a0ebe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_aa2585d779da0ab21273a8d92de9a0ebe.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a></td></tr>
+<tr class="separator:aa2585d779da0ab21273a8d92de9a0ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af85e6d5e4292b0c25c18f701e61d51fa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_af85e6d5e4292b0c25c18f701e61d51fa.html#af85e6d5e4292b0c25c18f701e61d51fa">base_hi</a></td></tr>
+<tr class="separator:af85e6d5e4292b0c25c18f701e61d51fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab28e82ae69032cb4ad3ec3a0be3d7129"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ab28e82ae69032cb4ad3ec3a0be3d7129.html#ab28e82ae69032cb4ad3ec3a0be3d7129">limit</a></td></tr>
+<tr class="separator:ab28e82ae69032cb4ad3ec3a0be3d7129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0523cedff47e2441fc198b7770ec5d3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a0523cedff47e2441fc198b7770ec5d3f.html#a0523cedff47e2441fc198b7770ec5d3f">base</a></td></tr>
+<tr class="separator:a0523cedff47e2441fc198b7770ec5d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02c62ffc54da283f5faaa40b125d2dce"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00098_a1ad45e5b006481ff3604f7b54bd26e13.html#a1ad45e5b006481ff3604f7b54bd26e13">idt_entry_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a02c62ffc54da283f5faaa40b125d2dce.html#a02c62ffc54da283f5faaa40b125d2dce">idt_entries</a> [256]</td></tr>
+<tr class="separator:a02c62ffc54da283f5faaa40b125d2dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f2660783240a0a506d85e3750dff814"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00098_a4c173f183e148c7a8a8c1ed9214b909e.html#a4c173f183e148c7a8a8c1ed9214b909e">idt_ptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a3f2660783240a0a506d85e3750dff814.html#a3f2660783240a0a506d85e3750dff814">idt_ptr</a></td></tr>
+<tr class="separator:a3f2660783240a0a506d85e3750dff814"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

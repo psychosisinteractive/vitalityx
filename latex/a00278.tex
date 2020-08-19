@@ -1,122 +1,119 @@
-\href{https://app.fossa.com/projects/git%2Bgithub.com%2Fryelow90210%2FVitalityX?ref=badge_shield}{\tt }
+\hypertarget{a00278}{}\section{V\+X\+B\+F\+S\+File Struct Reference}
+\label{a00278}\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
 
-Protected Mode 32-\/\+Bit Operating System/\+Kernel/\+Bootloader.
 
-Also responsible for\+:
-\begin{DoxyEnumerate}
-\item V\+EP
-\item V\+X\+B\+FS
-\item V\+L\+IB
-\end{DoxyEnumerate}\hypertarget{a00278_autotoc_md13}{}\section{License}\label{a00278_autotoc_md13}
-\href{https://app.fossa.com/projects/git%2Bgithub.com%2Fryelow90210%2FVitalityX?ref=badge_large}{\tt }\hypertarget{a00278_autotoc_md14}{}\section{Individual Licenses}\label{a00278_autotoc_md14}
-\#\# /bootloader/ 
-\begin{DoxyCode}
-MIT License
+This is a V\+X\+B\+FS File.  
 
-Copyright (c) 2020-2021, Psychosis Interactive All Rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
-       associated documentation files (the "Software"), to deal in the Software without restriction, including without
-       limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
-       Software, and to permit persons to whom the Software is furnished to do so, subject to the following
-       conditions:
 
-The above copyright notice and this permission notice must be included in all copies or substantial
-       portions of the Software.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-       LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
-       SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-       ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-       OTHER DEALINGS IN THE SOFTWARE.
-\end{DoxyCode}
- \#\# /kernel/ 
-\begin{DoxyCode}
-BSD 2-Clause License
+{\ttfamily \#include $<$vxbfs.\+h$>$}
 
-Copyright (c) 2020-2021, Psychosis Interactive All rights reserved.
 
-Redistribution and use in source and binary forms, with or without modification, are permitted provided
-       that the following conditions are met:
 
-Redistributions of source code must retain the above copyright notice, this list of conditions and the
-       following disclaimer.
+Collaboration diagram for V\+X\+B\+F\+S\+File\+:
+% FIG 0
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{a00278_a07ecc9bacdc2943442f26f62f6749055_a07ecc9bacdc2943442f26f62f6749055}{name} \mbox{[}11\mbox{]}
+\item 
+char \hyperlink{a00278_a03b954de114d8e01bb783ddef964e8ca_a03b954de114d8e01bb783ddef964e8ca}{guid} \mbox{[}8\mbox{]}
+\item 
+char \hyperlink{a00278_ad030f5719e51b0b41b7cb6047f4110b2_ad030f5719e51b0b41b7cb6047f4110b2}{ext} \mbox{[}3\mbox{]}
+\item 
+char \hyperlink{a00278_a8fc3bc64d7f2330f923507d2430bdde4_a8fc3bc64d7f2330f923507d2430bdde4}{flags}
+\item 
+\hyperlink{a00176_a0774a42f7a124b6d3054ccabd4d35463_a0774a42f7a124b6d3054ccabd4d35463}{vxbfs\+\_\+modblock\+\_\+t} $\ast$ \hyperlink{a00278_ac0784f3fae88428f37dfb64fd79c0004_ac0784f3fae88428f37dfb64fd79c0004}{modblock}
+\item 
+struct \hyperlink{a00278}{V\+X\+B\+F\+S\+File} $\ast$ \hyperlink{a00278_aa2c7e2e1b3827ce9fbaa045b89202784_aa2c7e2e1b3827ce9fbaa045b89202784}{nextfile}
+\item 
+\hyperlink{a00125_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00278_adb380ce440ec23ef6c9c06d871be3c0d_adb380ce440ec23ef6c9c06d871be3c0d}{md}
+\end{DoxyCompactItemize}
 
-Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
-       following disclaimer in the documentation and/or other materials provided with the distribution.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
-       WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-       PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
-       INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-       PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
-       AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
-       OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-\end{DoxyCode}
- \#\# /libc/ 
-\begin{DoxyCode}
-Modified MIT License
+\subsection{Detailed Description}
+This is a V\+X\+B\+FS File. 
 
-Copyright (c) 2020-2021, Psychosis Interactive All rights reserved.
+It stores the 11 character name, a G\+U\+ID, an ext, flags, next modblock, nextfile and a md boolean. The G\+U\+ID is a unique identifier so multiple V\+X\+B\+FS files can share the same name. The ext is the V\+X\+B\+FS File type. The md means \char`\"{}\+More Data\char`\"{}, this signifies that there should be a search for more data after this. The flags are data which is for the OS. 
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
-       associated documentation files (the "Software"), to deal in the Software without restriction, including without
-       limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
-       Software, and to permit persons to whom the Software is furnished to do so, subject to the following
-       conditions:
+Definition at line 29 of file vxbfs.\+h.
 
-The above copyright notice and this permission notice must be included in all copies or substantial
-       portions of the Software unless if said Software is closed source.
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-       LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
-       SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-       ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-       OTHER DEALINGS IN THE SOFTWARE.
-\end{DoxyCode}
- \#\# /libc/vitality/ 
-\begin{DoxyCode}
-BSD 2-Clause License
 
-Copyright (c) 2020-2021, Psychosis Interactive All rights reserved.
+\subsection{Field Documentation}
+\mbox{\Hypertarget{a00278_ad030f5719e51b0b41b7cb6047f4110b2_ad030f5719e51b0b41b7cb6047f4110b2}\label{a00278_ad030f5719e51b0b41b7cb6047f4110b2_ad030f5719e51b0b41b7cb6047f4110b2}} 
+\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!ext@{ext}}
+\index{ext@{ext}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
+\subsubsection{\texorpdfstring{ext}{ext}}
+{\footnotesize\ttfamily char V\+X\+B\+F\+S\+File\+::ext\mbox{[}3\mbox{]}}
 
-Redistribution and use in source and binary forms, with or without modification, are permitted provided
-       that the following conditions are met:
 
-Redistributions of source code must retain the above copyright notice, this list of conditions and the
-       following disclaimer.
 
-Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the
-       following disclaimer in the documentation and/or other materials provided with the distribution.
+Definition at line 32 of file vxbfs.\+h.
 
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
-       WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
-       PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT,
-       INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
-       PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
-       AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
-       OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-\end{DoxyCode}
- \hypertarget{a00278_autotoc_md15}{}\subsection{/drivers/}\label{a00278_autotoc_md15}
+\mbox{\Hypertarget{a00278_a8fc3bc64d7f2330f923507d2430bdde4_a8fc3bc64d7f2330f923507d2430bdde4}\label{a00278_a8fc3bc64d7f2330f923507d2430bdde4_a8fc3bc64d7f2330f923507d2430bdde4}} 
+\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!flags@{flags}}
+\index{flags@{flags}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
+\subsubsection{\texorpdfstring{flags}{flags}}
+{\footnotesize\ttfamily char V\+X\+B\+F\+S\+File\+::flags}
 
-\begin{DoxyCode}
-Modified MIT License
 
-Copyright (c) 2020-2021, Psychosis Interactive All rights reserved.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
-       associated documentation files (the "Software"), to deal in the Software without restriction, including without
-       limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
-       Software, and to permit persons to whom the Software is furnished to do so, subject to the following
-       conditions:
+Definition at line 33 of file vxbfs.\+h.
 
-The above copyright notice and this permission notice must be included in all copies or substantial
-       portions of the Software unless if said Software is closed source.
+\mbox{\Hypertarget{a00278_a03b954de114d8e01bb783ddef964e8ca_a03b954de114d8e01bb783ddef964e8ca}\label{a00278_a03b954de114d8e01bb783ddef964e8ca_a03b954de114d8e01bb783ddef964e8ca}} 
+\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!guid@{guid}}
+\index{guid@{guid}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
+\subsubsection{\texorpdfstring{guid}{guid}}
+{\footnotesize\ttfamily char V\+X\+B\+F\+S\+File\+::guid\mbox{[}8\mbox{]}}
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-       LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
-       SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-       ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-       OTHER DEALINGS IN THE SOFTWARE.
-\end{DoxyCode}
- 
+
+
+Definition at line 31 of file vxbfs.\+h.
+
+\mbox{\Hypertarget{a00278_adb380ce440ec23ef6c9c06d871be3c0d_adb380ce440ec23ef6c9c06d871be3c0d}\label{a00278_adb380ce440ec23ef6c9c06d871be3c0d_adb380ce440ec23ef6c9c06d871be3c0d}} 
+\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!md@{md}}
+\index{md@{md}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
+\subsubsection{\texorpdfstring{md}{md}}
+{\footnotesize\ttfamily \hyperlink{a00125_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} V\+X\+B\+F\+S\+File\+::md}
+
+
+
+Definition at line 36 of file vxbfs.\+h.
+
+\mbox{\Hypertarget{a00278_ac0784f3fae88428f37dfb64fd79c0004_ac0784f3fae88428f37dfb64fd79c0004}\label{a00278_ac0784f3fae88428f37dfb64fd79c0004_ac0784f3fae88428f37dfb64fd79c0004}} 
+\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!modblock@{modblock}}
+\index{modblock@{modblock}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
+\subsubsection{\texorpdfstring{modblock}{modblock}}
+{\footnotesize\ttfamily \hyperlink{a00176_a0774a42f7a124b6d3054ccabd4d35463_a0774a42f7a124b6d3054ccabd4d35463}{vxbfs\+\_\+modblock\+\_\+t}$\ast$ V\+X\+B\+F\+S\+File\+::modblock}
+
+
+
+Definition at line 34 of file vxbfs.\+h.
+
+\mbox{\Hypertarget{a00278_a07ecc9bacdc2943442f26f62f6749055_a07ecc9bacdc2943442f26f62f6749055}\label{a00278_a07ecc9bacdc2943442f26f62f6749055_a07ecc9bacdc2943442f26f62f6749055}} 
+\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!name@{name}}
+\index{name@{name}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
+\subsubsection{\texorpdfstring{name}{name}}
+{\footnotesize\ttfamily char V\+X\+B\+F\+S\+File\+::name\mbox{[}11\mbox{]}}
+
+
+
+Definition at line 30 of file vxbfs.\+h.
+
+\mbox{\Hypertarget{a00278_aa2c7e2e1b3827ce9fbaa045b89202784_aa2c7e2e1b3827ce9fbaa045b89202784}\label{a00278_aa2c7e2e1b3827ce9fbaa045b89202784_aa2c7e2e1b3827ce9fbaa045b89202784}} 
+\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!nextfile@{nextfile}}
+\index{nextfile@{nextfile}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
+\subsubsection{\texorpdfstring{nextfile}{nextfile}}
+{\footnotesize\ttfamily struct \hyperlink{a00278}{V\+X\+B\+F\+S\+File}$\ast$ V\+X\+B\+F\+S\+File\+::nextfile}
+
+
+
+Definition at line 35 of file vxbfs.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libc/vitality/\hyperlink{a00176}{vxbfs.\+h}\end{DoxyCompactItemize}

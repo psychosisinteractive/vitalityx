@@ -1,60 +1,51 @@
-\hypertarget{a00161}{}\section{libc/vitality/vxbfs.c File Reference}
-\label{a00161}\index{libc/vitality/vxbfs.\+c@{libc/vitality/vxbfs.\+c}}
-{\ttfamily \#include \char`\"{}vxbfs.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}vfs.\+h\char`\"{}}\newline
-Include dependency graph for vxbfs.\+c\+:
+\hypertarget{a00161}{}\section{libc/vitality/vfs.h File Reference}
+\label{a00161}\index{libc/vitality/vfs.\+h@{libc/vitality/vfs.\+h}}
+This graph shows which files directly or indirectly include this file\+:
 % FIG 0
-\subsection*{Functions}
+\subsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00152_aa5445a6474a23ee3e7756d432dfa4ba1_aa5445a6474a23ee3e7756d432dfa4ba1}{file\+\_\+t} \hyperlink{a00161_afa5caeb58da2ae814ac3adbb167a77fe_afa5caeb58da2ae814ac3adbb167a77fe}{loadfile} (\hyperlink{a00164_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}{vxbfs\+\_\+file\+\_\+t} $\ast$\hyperlink{a00238}{file})
+struct \hyperlink{a00254}{file}
 \item 
-\hyperlink{a00116_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00161_a078a66e7d52fd4a6df768277b605199c_a078a66e7d52fd4a6df768277b605199c}{validvxbfs} (\hyperlink{a00164_ac5678b6d5dd5ed5ca86e5ccd4c30d39d_ac5678b6d5dd5ed5ca86e5ccd4c30d39d}{vxbfs\+\_\+header\+\_\+t} $\ast$header)
-\end{DoxyCompactItemize}
+struct \hyperlink{a00258}{pte}
+\begin{DoxyCompactList}\small\item\em Partition Table Entry. \end{DoxyCompactList}\item 
+struct \hyperlink{a00262}{mbr}
+\begin{DoxyCompactList}\small\item\em Master Boot Record. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{a00254}{file} \hyperlink{a00161_aa5445a6474a23ee3e7756d432dfa4ba1_aa5445a6474a23ee3e7756d432dfa4ba1}{file\+\_\+t}
+\item 
+typedef struct \hyperlink{a00258}{pte} \hyperlink{a00161_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Partition Table Entry. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{a00262}{mbr} \hyperlink{a00161_adb8ab3f846ea25ce3271bfabb17fc767_adb8ab3f846ea25ce3271bfabb17fc767}{mbr\+\_\+t}
+\begin{DoxyCompactList}\small\item\em Master Boot Record. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Function Documentation}
-\mbox{\Hypertarget{a00161_afa5caeb58da2ae814ac3adbb167a77fe_afa5caeb58da2ae814ac3adbb167a77fe}\label{a00161_afa5caeb58da2ae814ac3adbb167a77fe_afa5caeb58da2ae814ac3adbb167a77fe}} 
-\index{vxbfs.\+c@{vxbfs.\+c}!loadfile@{loadfile}}
-\index{loadfile@{loadfile}!vxbfs.\+c@{vxbfs.\+c}}
-\subsubsection{\texorpdfstring{loadfile()}{loadfile()}}
-{\footnotesize\ttfamily \hyperlink{a00152_aa5445a6474a23ee3e7756d432dfa4ba1_aa5445a6474a23ee3e7756d432dfa4ba1}{file\+\_\+t} loadfile (\begin{DoxyParamCaption}\item[{\hyperlink{a00164_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}{vxbfs\+\_\+file\+\_\+t} $\ast$}]{file }\end{DoxyParamCaption})}
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{a00161_aa5445a6474a23ee3e7756d432dfa4ba1_aa5445a6474a23ee3e7756d432dfa4ba1}\label{a00161_aa5445a6474a23ee3e7756d432dfa4ba1_aa5445a6474a23ee3e7756d432dfa4ba1}} 
+\index{vfs.\+h@{vfs.\+h}!file\+\_\+t@{file\+\_\+t}}
+\index{file\+\_\+t@{file\+\_\+t}!vfs.\+h@{vfs.\+h}}
+\subsubsection{\texorpdfstring{file\+\_\+t}{file\_t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00254}{file}  \hyperlink{a00161_aa5445a6474a23ee3e7756d432dfa4ba1_aa5445a6474a23ee3e7756d432dfa4ba1}{file\+\_\+t}}
 
-
-
-Definition at line 4 of file vxbfs.\+c.
-
-
-\begin{DoxyCode}
-5 \{
-6     \hyperlink{a00238}{file\_t} vfile;
-7     vfile.\hyperlink{a00238_a93164d6663f12c00df3d65b7b0990cc2_a93164d6663f12c00df3d65b7b0990cc2}{name} = file->\hyperlink{a00262_a07ecc9bacdc2943442f26f62f6749055_a07ecc9bacdc2943442f26f62f6749055}{name};
-8     \textcolor{keywordflow}{if}(file->\hyperlink{a00262_adb380ce440ec23ef6c9c06d871be3c0d_adb380ce440ec23ef6c9c06d871be3c0d}{md}) \{
-9         vfile.\hyperlink{a00238_a9c9154337f0c0aa90f11e5c60e93efdd_a9c9154337f0c0aa90f11e5c60e93efdd}{data} = file+\textcolor{keyword}{sizeof}(\hyperlink{a00164_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}{vxbfs\_file\_t});
-10     \} \textcolor{keywordflow}{else} \{
-11         vfile.\hyperlink{a00238_a9c9154337f0c0aa90f11e5c60e93efdd_a9c9154337f0c0aa90f11e5c60e93efdd}{data} = file->\hyperlink{a00262_ac0784f3fae88428f37dfb64fd79c0004_ac0784f3fae88428f37dfb64fd79c0004}{modblock}->\hyperlink{a00258_a327348a3ea3a02cfde4cdb1ccdcf2073_a327348a3ea3a02cfde4cdb1ccdcf2073}{data};
-12     \}
-13     \textcolor{keywordflow}{return} vfile;
-14 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00161_a078a66e7d52fd4a6df768277b605199c_a078a66e7d52fd4a6df768277b605199c}\label{a00161_a078a66e7d52fd4a6df768277b605199c_a078a66e7d52fd4a6df768277b605199c}} 
-\index{vxbfs.\+c@{vxbfs.\+c}!validvxbfs@{validvxbfs}}
-\index{validvxbfs@{validvxbfs}!vxbfs.\+c@{vxbfs.\+c}}
-\subsubsection{\texorpdfstring{validvxbfs()}{validvxbfs()}}
-{\footnotesize\ttfamily \hyperlink{a00116_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} validvxbfs (\begin{DoxyParamCaption}\item[{\hyperlink{a00164_ac5678b6d5dd5ed5ca86e5ccd4c30d39d_ac5678b6d5dd5ed5ca86e5ccd4c30d39d}{vxbfs\+\_\+header\+\_\+t} $\ast$}]{header }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00161_adb8ab3f846ea25ce3271bfabb17fc767_adb8ab3f846ea25ce3271bfabb17fc767}\label{a00161_adb8ab3f846ea25ce3271bfabb17fc767_adb8ab3f846ea25ce3271bfabb17fc767}} 
+\index{vfs.\+h@{vfs.\+h}!mbr\+\_\+t@{mbr\+\_\+t}}
+\index{mbr\+\_\+t@{mbr\+\_\+t}!vfs.\+h@{vfs.\+h}}
+\subsubsection{\texorpdfstring{mbr\+\_\+t}{mbr\_t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00262}{mbr}  \hyperlink{a00161_adb8ab3f846ea25ce3271bfabb17fc767_adb8ab3f846ea25ce3271bfabb17fc767}{mbr\+\_\+t}}
 
 
 
-Definition at line 16 of file vxbfs.\+c.
+Master Boot Record. 
+
+\mbox{\Hypertarget{a00161_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}\label{a00161_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}} 
+\index{vfs.\+h@{vfs.\+h}!pte\+\_\+t@{pte\+\_\+t}}
+\index{pte\+\_\+t@{pte\+\_\+t}!vfs.\+h@{vfs.\+h}}
+\subsubsection{\texorpdfstring{pte\+\_\+t}{pte\_t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00258}{pte}  \hyperlink{a00161_aeef6bb6b6bbfd4d912338e1e5c6938a5_aeef6bb6b6bbfd4d912338e1e5c6938a5}{pte\+\_\+t}}
 
 
-\begin{DoxyCode}
-16                                         \{
-17     \textcolor{keywordtype}{bool} valid = \textcolor{keyword}{false};
-18     \textcolor{keywordflow}{if}(header->\hyperlink{a00266_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[0] == \textcolor{charliteral}{'V'} && header->\hyperlink{a00266_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[1] == \textcolor{charliteral}{'X'} && header->
-      \hyperlink{a00266_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[2] == \textcolor{charliteral}{'F'} && header->\hyperlink{a00266_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[3] == \textcolor{charliteral}{'S'}) \{
-19         valid = \textcolor{keyword}{true};
-20     \}
-21     \textcolor{keywordflow}{return} valid;
-22 \}
-\end{DoxyCode}
+
+Partition Table Entry. 
+

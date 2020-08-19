@@ -1,96 +1,72 @@
-\hypertarget{a00190}{}\section{gdt\+\_\+entry\+\_\+struct Struct Reference}
-\label{a00190}\index{gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}}
+\hypertarget{a00190}{}\section{I\+D\+E\+Channel\+Registers Struct Reference}
+\label{a00190}\index{I\+D\+E\+Channel\+Registers@{I\+D\+E\+Channel\+Registers}}
 
 
-{\ttfamily \#include $<$gdt.\+h$>$}
+{\ttfamily \#include $<$ide.\+h$>$}
 
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00190_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2}{limit\+\_\+low}
+unsigned short \hyperlink{a00190_a39be732a5e3e643508fc5bc3e0bfb4e8_a39be732a5e3e643508fc5bc3e0bfb4e8}{base}
 \item 
-\hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00190_adba88eafea5f07167d181e4090cbcf49_adba88eafea5f07167d181e4090cbcf49}{base\+\_\+low}
+unsigned short \hyperlink{a00190_aff63cdf64356750ad0c564fc7d6cd7b9_aff63cdf64356750ad0c564fc7d6cd7b9}{ctrl}
 \item 
-\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00190_a986d46963d3ccdbec85b3749c1e09abf_a986d46963d3ccdbec85b3749c1e09abf}{base\+\_\+middle}
+unsigned short \hyperlink{a00190_a037009656fd72b00bdd5aacd92a22f18_a037009656fd72b00bdd5aacd92a22f18}{bmide}
 \item 
-\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00190_ac07173385496c5b952e58ddc20f1cc99_ac07173385496c5b952e58ddc20f1cc99}{access}
-\item 
-\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00190_a7fb7b3704e10434dbe64564416cf1a25_a7fb7b3704e10434dbe64564416cf1a25}{granularity}
-\item 
-\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00190_aa08eedea9c0f707b9fa052b7567879c7_aa08eedea9c0f707b9fa052b7567879c7}{base\+\_\+high}
+unsigned char \hyperlink{a00190_a23340aa271745fba054e2c26cf7b9a90_a23340aa271745fba054e2c26cf7b9a90}{n\+I\+EN}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 14 of file gdt.\+h.
+Definition at line 5 of file ide.\+h.
 
 
 
 \subsection{Field Documentation}
-\mbox{\Hypertarget{a00190_ac07173385496c5b952e58ddc20f1cc99_ac07173385496c5b952e58ddc20f1cc99}\label{a00190_ac07173385496c5b952e58ddc20f1cc99_ac07173385496c5b952e58ddc20f1cc99}} 
-\index{gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}!access@{access}}
-\index{access@{access}!gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}}
-\subsubsection{\texorpdfstring{access}{access}}
-{\footnotesize\ttfamily \hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} gdt\+\_\+entry\+\_\+struct\+::access}
+\mbox{\Hypertarget{a00190_a39be732a5e3e643508fc5bc3e0bfb4e8_a39be732a5e3e643508fc5bc3e0bfb4e8}\label{a00190_a39be732a5e3e643508fc5bc3e0bfb4e8_a39be732a5e3e643508fc5bc3e0bfb4e8}} 
+\index{I\+D\+E\+Channel\+Registers@{I\+D\+E\+Channel\+Registers}!base@{base}}
+\index{base@{base}!I\+D\+E\+Channel\+Registers@{I\+D\+E\+Channel\+Registers}}
+\subsubsection{\texorpdfstring{base}{base}}
+{\footnotesize\ttfamily unsigned short I\+D\+E\+Channel\+Registers\+::base}
 
 
 
-Definition at line 19 of file gdt.\+h.
+Definition at line 6 of file ide.\+h.
 
-\mbox{\Hypertarget{a00190_aa08eedea9c0f707b9fa052b7567879c7_aa08eedea9c0f707b9fa052b7567879c7}\label{a00190_aa08eedea9c0f707b9fa052b7567879c7_aa08eedea9c0f707b9fa052b7567879c7}} 
-\index{gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}!base\+\_\+high@{base\+\_\+high}}
-\index{base\+\_\+high@{base\+\_\+high}!gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}}
-\subsubsection{\texorpdfstring{base\+\_\+high}{base\_high}}
-{\footnotesize\ttfamily \hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} gdt\+\_\+entry\+\_\+struct\+::base\+\_\+high}
-
-
-
-Definition at line 21 of file gdt.\+h.
-
-\mbox{\Hypertarget{a00190_adba88eafea5f07167d181e4090cbcf49_adba88eafea5f07167d181e4090cbcf49}\label{a00190_adba88eafea5f07167d181e4090cbcf49_adba88eafea5f07167d181e4090cbcf49}} 
-\index{gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}!base\+\_\+low@{base\+\_\+low}}
-\index{base\+\_\+low@{base\+\_\+low}!gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}}
-\subsubsection{\texorpdfstring{base\+\_\+low}{base\_low}}
-{\footnotesize\ttfamily \hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} gdt\+\_\+entry\+\_\+struct\+::base\+\_\+low}
+\mbox{\Hypertarget{a00190_a037009656fd72b00bdd5aacd92a22f18_a037009656fd72b00bdd5aacd92a22f18}\label{a00190_a037009656fd72b00bdd5aacd92a22f18_a037009656fd72b00bdd5aacd92a22f18}} 
+\index{I\+D\+E\+Channel\+Registers@{I\+D\+E\+Channel\+Registers}!bmide@{bmide}}
+\index{bmide@{bmide}!I\+D\+E\+Channel\+Registers@{I\+D\+E\+Channel\+Registers}}
+\subsubsection{\texorpdfstring{bmide}{bmide}}
+{\footnotesize\ttfamily unsigned short I\+D\+E\+Channel\+Registers\+::bmide}
 
 
 
-Definition at line 17 of file gdt.\+h.
+Definition at line 8 of file ide.\+h.
 
-\mbox{\Hypertarget{a00190_a986d46963d3ccdbec85b3749c1e09abf_a986d46963d3ccdbec85b3749c1e09abf}\label{a00190_a986d46963d3ccdbec85b3749c1e09abf_a986d46963d3ccdbec85b3749c1e09abf}} 
-\index{gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}!base\+\_\+middle@{base\+\_\+middle}}
-\index{base\+\_\+middle@{base\+\_\+middle}!gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}}
-\subsubsection{\texorpdfstring{base\+\_\+middle}{base\_middle}}
-{\footnotesize\ttfamily \hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} gdt\+\_\+entry\+\_\+struct\+::base\+\_\+middle}
-
-
-
-Definition at line 18 of file gdt.\+h.
-
-\mbox{\Hypertarget{a00190_a7fb7b3704e10434dbe64564416cf1a25_a7fb7b3704e10434dbe64564416cf1a25}\label{a00190_a7fb7b3704e10434dbe64564416cf1a25_a7fb7b3704e10434dbe64564416cf1a25}} 
-\index{gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}!granularity@{granularity}}
-\index{granularity@{granularity}!gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}}
-\subsubsection{\texorpdfstring{granularity}{granularity}}
-{\footnotesize\ttfamily \hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} gdt\+\_\+entry\+\_\+struct\+::granularity}
+\mbox{\Hypertarget{a00190_aff63cdf64356750ad0c564fc7d6cd7b9_aff63cdf64356750ad0c564fc7d6cd7b9}\label{a00190_aff63cdf64356750ad0c564fc7d6cd7b9_aff63cdf64356750ad0c564fc7d6cd7b9}} 
+\index{I\+D\+E\+Channel\+Registers@{I\+D\+E\+Channel\+Registers}!ctrl@{ctrl}}
+\index{ctrl@{ctrl}!I\+D\+E\+Channel\+Registers@{I\+D\+E\+Channel\+Registers}}
+\subsubsection{\texorpdfstring{ctrl}{ctrl}}
+{\footnotesize\ttfamily unsigned short I\+D\+E\+Channel\+Registers\+::ctrl}
 
 
 
-Definition at line 20 of file gdt.\+h.
+Definition at line 7 of file ide.\+h.
 
-\mbox{\Hypertarget{a00190_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2}\label{a00190_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2}} 
-\index{gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}!limit\+\_\+low@{limit\+\_\+low}}
-\index{limit\+\_\+low@{limit\+\_\+low}!gdt\+\_\+entry\+\_\+struct@{gdt\+\_\+entry\+\_\+struct}}
-\subsubsection{\texorpdfstring{limit\+\_\+low}{limit\_low}}
-{\footnotesize\ttfamily \hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} gdt\+\_\+entry\+\_\+struct\+::limit\+\_\+low}
+\mbox{\Hypertarget{a00190_a23340aa271745fba054e2c26cf7b9a90_a23340aa271745fba054e2c26cf7b9a90}\label{a00190_a23340aa271745fba054e2c26cf7b9a90_a23340aa271745fba054e2c26cf7b9a90}} 
+\index{I\+D\+E\+Channel\+Registers@{I\+D\+E\+Channel\+Registers}!n\+I\+EN@{n\+I\+EN}}
+\index{n\+I\+EN@{n\+I\+EN}!I\+D\+E\+Channel\+Registers@{I\+D\+E\+Channel\+Registers}}
+\subsubsection{\texorpdfstring{n\+I\+EN}{nIEN}}
+{\footnotesize\ttfamily unsigned char I\+D\+E\+Channel\+Registers\+::n\+I\+EN}
 
 
 
-Definition at line 16 of file gdt.\+h.
+Definition at line 9 of file ide.\+h.
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-libc/\hyperlink{a00083}{gdt.\+h}\end{DoxyCompactItemize}
+drivers/\hyperlink{a00035}{ide.\+h}\end{DoxyCompactItemize}

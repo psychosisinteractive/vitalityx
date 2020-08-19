@@ -1,84 +1,132 @@
-\hypertarget{a00194}{}\section{idt\+\_\+entry\+\_\+struct Struct Reference}
-\label{a00194}\index{idt\+\_\+entry\+\_\+struct@{idt\+\_\+entry\+\_\+struct}}
+\hypertarget{a00194}{}\section{ide\+\_\+device Struct Reference}
+\label{a00194}\index{ide\+\_\+device@{ide\+\_\+device}}
 
 
-{\ttfamily \#include $<$interrupt.\+h$>$}
+{\ttfamily \#include $<$ide.\+h$>$}
 
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00194_a4b5fce0881deb4959d33da77d1ed0202_a4b5fce0881deb4959d33da77d1ed0202}{base\+\_\+lo}
+unsigned char \hyperlink{a00194_a293fdfa780f639d9eb98fcf664699b08_a293fdfa780f639d9eb98fcf664699b08}{Reserved}
 \item 
-\hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00194_a3c9321c263139e56901a05efee220047_a3c9321c263139e56901a05efee220047}{sel}
+unsigned char \hyperlink{a00194_aea5a88e5bb25bdf109e66a51cba51699_aea5a88e5bb25bdf109e66a51cba51699}{Channel}
 \item 
-\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00194_adc747b3ff87142c71b7b8c51e03c067c_adc747b3ff87142c71b7b8c51e03c067c}{always0}
+unsigned char \hyperlink{a00194_a8b7ef57ccb98cb9511bd285f1bf057f5_a8b7ef57ccb98cb9511bd285f1bf057f5}{Drive}
 \item 
-\hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00194_a02277c77564820972ae5df0a37c80be0_a02277c77564820972ae5df0a37c80be0}{flags}
+unsigned short \hyperlink{a00194_a3a1fc6eda2f5cafc41f8626c67ec9631_a3a1fc6eda2f5cafc41f8626c67ec9631}{Type}
 \item 
-\hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00194_af46adb2603d1d8b4a3bedf7f1c6daed4_af46adb2603d1d8b4a3bedf7f1c6daed4}{base\+\_\+hi}
+unsigned short \hyperlink{a00194_ad31d088a8fd56a5760a2bcff6891f21d_ad31d088a8fd56a5760a2bcff6891f21d}{Signature}
+\item 
+unsigned short \hyperlink{a00194_af318d471b2f7093cd2ba95e9711b617c_af318d471b2f7093cd2ba95e9711b617c}{Capabilities}
+\item 
+unsigned int \hyperlink{a00194_ad090e2f34b0618e837e048593f480683_ad090e2f34b0618e837e048593f480683}{Command\+Sets}
+\item 
+unsigned int \hyperlink{a00194_a37f4be958e0c710ab62e2536497f392d_a37f4be958e0c710ab62e2536497f392d}{Size}
+\item 
+unsigned char \hyperlink{a00194_a8528ca17136240ce55c9441d68711e78_a8528ca17136240ce55c9441d68711e78}{Model} \mbox{[}41\mbox{]}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 6 of file interrupt.\+h.
+Definition at line 14 of file ide.\+h.
 
 
 
 \subsection{Field Documentation}
-\mbox{\Hypertarget{a00194_adc747b3ff87142c71b7b8c51e03c067c_adc747b3ff87142c71b7b8c51e03c067c}\label{a00194_adc747b3ff87142c71b7b8c51e03c067c_adc747b3ff87142c71b7b8c51e03c067c}} 
-\index{idt\+\_\+entry\+\_\+struct@{idt\+\_\+entry\+\_\+struct}!always0@{always0}}
-\index{always0@{always0}!idt\+\_\+entry\+\_\+struct@{idt\+\_\+entry\+\_\+struct}}
-\subsubsection{\texorpdfstring{always0}{always0}}
-{\footnotesize\ttfamily \hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} idt\+\_\+entry\+\_\+struct\+::always0}
+\mbox{\Hypertarget{a00194_af318d471b2f7093cd2ba95e9711b617c_af318d471b2f7093cd2ba95e9711b617c}\label{a00194_af318d471b2f7093cd2ba95e9711b617c_af318d471b2f7093cd2ba95e9711b617c}} 
+\index{ide\+\_\+device@{ide\+\_\+device}!Capabilities@{Capabilities}}
+\index{Capabilities@{Capabilities}!ide\+\_\+device@{ide\+\_\+device}}
+\subsubsection{\texorpdfstring{Capabilities}{Capabilities}}
+{\footnotesize\ttfamily unsigned short ide\+\_\+device\+::\+Capabilities}
 
 
 
-Definition at line 10 of file interrupt.\+h.
+Definition at line 20 of file ide.\+h.
 
-\mbox{\Hypertarget{a00194_af46adb2603d1d8b4a3bedf7f1c6daed4_af46adb2603d1d8b4a3bedf7f1c6daed4}\label{a00194_af46adb2603d1d8b4a3bedf7f1c6daed4_af46adb2603d1d8b4a3bedf7f1c6daed4}} 
-\index{idt\+\_\+entry\+\_\+struct@{idt\+\_\+entry\+\_\+struct}!base\+\_\+hi@{base\+\_\+hi}}
-\index{base\+\_\+hi@{base\+\_\+hi}!idt\+\_\+entry\+\_\+struct@{idt\+\_\+entry\+\_\+struct}}
-\subsubsection{\texorpdfstring{base\+\_\+hi}{base\_hi}}
-{\footnotesize\ttfamily \hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} idt\+\_\+entry\+\_\+struct\+::base\+\_\+hi}
-
-
-
-Definition at line 12 of file interrupt.\+h.
-
-\mbox{\Hypertarget{a00194_a4b5fce0881deb4959d33da77d1ed0202_a4b5fce0881deb4959d33da77d1ed0202}\label{a00194_a4b5fce0881deb4959d33da77d1ed0202_a4b5fce0881deb4959d33da77d1ed0202}} 
-\index{idt\+\_\+entry\+\_\+struct@{idt\+\_\+entry\+\_\+struct}!base\+\_\+lo@{base\+\_\+lo}}
-\index{base\+\_\+lo@{base\+\_\+lo}!idt\+\_\+entry\+\_\+struct@{idt\+\_\+entry\+\_\+struct}}
-\subsubsection{\texorpdfstring{base\+\_\+lo}{base\_lo}}
-{\footnotesize\ttfamily \hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} idt\+\_\+entry\+\_\+struct\+::base\+\_\+lo}
+\mbox{\Hypertarget{a00194_aea5a88e5bb25bdf109e66a51cba51699_aea5a88e5bb25bdf109e66a51cba51699}\label{a00194_aea5a88e5bb25bdf109e66a51cba51699_aea5a88e5bb25bdf109e66a51cba51699}} 
+\index{ide\+\_\+device@{ide\+\_\+device}!Channel@{Channel}}
+\index{Channel@{Channel}!ide\+\_\+device@{ide\+\_\+device}}
+\subsubsection{\texorpdfstring{Channel}{Channel}}
+{\footnotesize\ttfamily unsigned char ide\+\_\+device\+::\+Channel}
 
 
 
-Definition at line 8 of file interrupt.\+h.
+Definition at line 16 of file ide.\+h.
 
-\mbox{\Hypertarget{a00194_a02277c77564820972ae5df0a37c80be0_a02277c77564820972ae5df0a37c80be0}\label{a00194_a02277c77564820972ae5df0a37c80be0_a02277c77564820972ae5df0a37c80be0}} 
-\index{idt\+\_\+entry\+\_\+struct@{idt\+\_\+entry\+\_\+struct}!flags@{flags}}
-\index{flags@{flags}!idt\+\_\+entry\+\_\+struct@{idt\+\_\+entry\+\_\+struct}}
-\subsubsection{\texorpdfstring{flags}{flags}}
-{\footnotesize\ttfamily \hyperlink{a00116_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} idt\+\_\+entry\+\_\+struct\+::flags}
-
-
-
-Definition at line 11 of file interrupt.\+h.
-
-\mbox{\Hypertarget{a00194_a3c9321c263139e56901a05efee220047_a3c9321c263139e56901a05efee220047}\label{a00194_a3c9321c263139e56901a05efee220047_a3c9321c263139e56901a05efee220047}} 
-\index{idt\+\_\+entry\+\_\+struct@{idt\+\_\+entry\+\_\+struct}!sel@{sel}}
-\index{sel@{sel}!idt\+\_\+entry\+\_\+struct@{idt\+\_\+entry\+\_\+struct}}
-\subsubsection{\texorpdfstring{sel}{sel}}
-{\footnotesize\ttfamily \hyperlink{a00116_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} idt\+\_\+entry\+\_\+struct\+::sel}
+\mbox{\Hypertarget{a00194_ad090e2f34b0618e837e048593f480683_ad090e2f34b0618e837e048593f480683}\label{a00194_ad090e2f34b0618e837e048593f480683_ad090e2f34b0618e837e048593f480683}} 
+\index{ide\+\_\+device@{ide\+\_\+device}!Command\+Sets@{Command\+Sets}}
+\index{Command\+Sets@{Command\+Sets}!ide\+\_\+device@{ide\+\_\+device}}
+\subsubsection{\texorpdfstring{Command\+Sets}{CommandSets}}
+{\footnotesize\ttfamily unsigned int ide\+\_\+device\+::\+Command\+Sets}
 
 
 
-Definition at line 9 of file interrupt.\+h.
+Definition at line 21 of file ide.\+h.
+
+\mbox{\Hypertarget{a00194_a8b7ef57ccb98cb9511bd285f1bf057f5_a8b7ef57ccb98cb9511bd285f1bf057f5}\label{a00194_a8b7ef57ccb98cb9511bd285f1bf057f5_a8b7ef57ccb98cb9511bd285f1bf057f5}} 
+\index{ide\+\_\+device@{ide\+\_\+device}!Drive@{Drive}}
+\index{Drive@{Drive}!ide\+\_\+device@{ide\+\_\+device}}
+\subsubsection{\texorpdfstring{Drive}{Drive}}
+{\footnotesize\ttfamily unsigned char ide\+\_\+device\+::\+Drive}
+
+
+
+Definition at line 17 of file ide.\+h.
+
+\mbox{\Hypertarget{a00194_a8528ca17136240ce55c9441d68711e78_a8528ca17136240ce55c9441d68711e78}\label{a00194_a8528ca17136240ce55c9441d68711e78_a8528ca17136240ce55c9441d68711e78}} 
+\index{ide\+\_\+device@{ide\+\_\+device}!Model@{Model}}
+\index{Model@{Model}!ide\+\_\+device@{ide\+\_\+device}}
+\subsubsection{\texorpdfstring{Model}{Model}}
+{\footnotesize\ttfamily unsigned char ide\+\_\+device\+::\+Model\mbox{[}41\mbox{]}}
+
+
+
+Definition at line 23 of file ide.\+h.
+
+\mbox{\Hypertarget{a00194_a293fdfa780f639d9eb98fcf664699b08_a293fdfa780f639d9eb98fcf664699b08}\label{a00194_a293fdfa780f639d9eb98fcf664699b08_a293fdfa780f639d9eb98fcf664699b08}} 
+\index{ide\+\_\+device@{ide\+\_\+device}!Reserved@{Reserved}}
+\index{Reserved@{Reserved}!ide\+\_\+device@{ide\+\_\+device}}
+\subsubsection{\texorpdfstring{Reserved}{Reserved}}
+{\footnotesize\ttfamily unsigned char ide\+\_\+device\+::\+Reserved}
+
+
+
+Definition at line 15 of file ide.\+h.
+
+\mbox{\Hypertarget{a00194_ad31d088a8fd56a5760a2bcff6891f21d_ad31d088a8fd56a5760a2bcff6891f21d}\label{a00194_ad31d088a8fd56a5760a2bcff6891f21d_ad31d088a8fd56a5760a2bcff6891f21d}} 
+\index{ide\+\_\+device@{ide\+\_\+device}!Signature@{Signature}}
+\index{Signature@{Signature}!ide\+\_\+device@{ide\+\_\+device}}
+\subsubsection{\texorpdfstring{Signature}{Signature}}
+{\footnotesize\ttfamily unsigned short ide\+\_\+device\+::\+Signature}
+
+
+
+Definition at line 19 of file ide.\+h.
+
+\mbox{\Hypertarget{a00194_a37f4be958e0c710ab62e2536497f392d_a37f4be958e0c710ab62e2536497f392d}\label{a00194_a37f4be958e0c710ab62e2536497f392d_a37f4be958e0c710ab62e2536497f392d}} 
+\index{ide\+\_\+device@{ide\+\_\+device}!Size@{Size}}
+\index{Size@{Size}!ide\+\_\+device@{ide\+\_\+device}}
+\subsubsection{\texorpdfstring{Size}{Size}}
+{\footnotesize\ttfamily unsigned int ide\+\_\+device\+::\+Size}
+
+
+
+Definition at line 22 of file ide.\+h.
+
+\mbox{\Hypertarget{a00194_a3a1fc6eda2f5cafc41f8626c67ec9631_a3a1fc6eda2f5cafc41f8626c67ec9631}\label{a00194_a3a1fc6eda2f5cafc41f8626c67ec9631_a3a1fc6eda2f5cafc41f8626c67ec9631}} 
+\index{ide\+\_\+device@{ide\+\_\+device}!Type@{Type}}
+\index{Type@{Type}!ide\+\_\+device@{ide\+\_\+device}}
+\subsubsection{\texorpdfstring{Type}{Type}}
+{\footnotesize\ttfamily unsigned short ide\+\_\+device\+::\+Type}
+
+
+
+Definition at line 18 of file ide.\+h.
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-libc/\hyperlink{a00089}{interrupt.\+h}\end{DoxyCompactItemize}
+drivers/\hyperlink{a00035}{ide.\+h}\end{DoxyCompactItemize}

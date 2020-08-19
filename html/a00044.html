@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: drivers/vga.h File Reference</title>
+<title>VitalityX: drivers/pic.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,50 +44,41 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">vga.h File Reference</div>  </div>
+<div class="title">pic.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00116_source.html">../libc/types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00125_source.html">../libc/types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00140_source.html">../libc/vitality/inline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00047_source.html">pic.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for vga.h:</div>
+Include dependency graph for pic.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00045.png" border="0" usemap="#drivers_2vga_8h" alt=""/></div>
+<div class="center"><img src="a00045.png" border="0" usemap="#drivers_2pic_8c" alt=""/></div>
 <!-- MAP 0 -->
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00046.png" border="0" usemap="#drivers_2vga_8hdep" alt=""/></div>
-<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00044_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a2cd109632a6dcccaa80b43561b1ab700"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a2cd109632a6dcccaa80b43561b1ab700.html#a2cd109632a6dcccaa80b43561b1ab700">SCREEN_WIDTH</a>&#160;&#160;&#160;320</td></tr>
-<tr class="separator:a2cd109632a6dcccaa80b43561b1ab700"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab17a69b465efb1ebe54a6a2e5d7b7ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_ab17a69b465efb1ebe54a6a2e5d7b7ce8.html#ab17a69b465efb1ebe54a6a2e5d7b7ce8">putpixel</a> (<a class="el" href="a00116_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> c, <a class="el" href="a00116_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> x, <a class="el" href="a00116_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> y)</td></tr>
-<tr class="memdesc:ab17a69b465efb1ebe54a6a2e5d7b7ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a pixel on the screen.  <a href="a00044_ab17a69b465efb1ebe54a6a2e5d7b7ce8.html#ab17a69b465efb1ebe54a6a2e5d7b7ce8">More...</a><br /></td></tr>
-<tr class="separator:ab17a69b465efb1ebe54a6a2e5d7b7ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac0685da0bbf1115c2b76b0aedf7e1f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00116_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_aac0685da0bbf1115c2b76b0aedf7e1f0.html#aac0685da0bbf1115c2b76b0aedf7e1f0">getpixel</a> (<a class="el" href="a00116_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> x, <a class="el" href="a00116_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> y)</td></tr>
-<tr class="memdesc:aac0685da0bbf1115c2b76b0aedf7e1f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a pixel on the screen.  <a href="a00044_aac0685da0bbf1115c2b76b0aedf7e1f0.html#aac0685da0bbf1115c2b76b0aedf7e1f0">More...</a><br /></td></tr>
-<tr class="separator:aac0685da0bbf1115c2b76b0aedf7e1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c8df7a20b47341b70d97a7ff21d86ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a2c8df7a20b47341b70d97a7ff21d86ea.html#a2c8df7a20b47341b70d97a7ff21d86ea">drawchar</a> (unsigned char c, <a class="el" href="a00116_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> x, <a class="el" href="a00116_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> y, <a class="el" href="a00116_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> fgcolor, <a class="el" href="a00116_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> bgcolor)</td></tr>
-<tr class="memdesc:a2c8df7a20b47341b70d97a7ff21d86ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a ASCII character on the screen.  <a href="a00044_a2c8df7a20b47341b70d97a7ff21d86ea.html#a2c8df7a20b47341b70d97a7ff21d86ea">More...</a><br /></td></tr>
-<tr class="separator:a2c8df7a20b47341b70d97a7ff21d86ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af6d170c9401ea8f94d4c5cf09347cca7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00116_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_af6d170c9401ea8f94d4c5cf09347cca7.html#af6d170c9401ea8f94d4c5cf09347cca7">vgamode</a> ()</td></tr>
-<tr class="memdesc:af6d170c9401ea8f94d4c5cf09347cca7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the current VGA mode.  <a href="a00044_af6d170c9401ea8f94d4c5cf09347cca7.html#af6d170c9401ea8f94d4c5cf09347cca7">More...</a><br /></td></tr>
-<tr class="separator:af6d170c9401ea8f94d4c5cf09347cca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb01dc16ea34f0a6de3d10d732b6c536"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_abb01dc16ea34f0a6de3d10d732b6c536.html#abb01dc16ea34f0a6de3d10d732b6c536">setfont</a> (unsigned char *font)</td></tr>
-<tr class="memdesc:abb01dc16ea34f0a6de3d10d732b6c536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the font.  <a href="a00044_abb01dc16ea34f0a6de3d10d732b6c536.html#abb01dc16ea34f0a6de3d10d732b6c536">More...</a><br /></td></tr>
-<tr class="separator:abb01dc16ea34f0a6de3d10d732b6c536"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1119739f7932598c83c3f8ce42a649de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a1119739f7932598c83c3f8ce42a649de.html#a1119739f7932598c83c3f8ce42a649de">PIC_sendEOI</a> (unsigned char irq)</td></tr>
+<tr class="memdesc:a1119739f7932598c83c3f8ce42a649de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send End of Interrupt to PIC.  <a href="a00044_a1119739f7932598c83c3f8ce42a649de.html#a1119739f7932598c83c3f8ce42a649de">More...</a><br /></td></tr>
+<tr class="separator:a1119739f7932598c83c3f8ce42a649de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5ed5530bfeaffadd8cd88c06d797f31"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_ab5ed5530bfeaffadd8cd88c06d797f31.html#ab5ed5530bfeaffadd8cd88c06d797f31">PIC_remap</a> (int offset1, int offset2)</td></tr>
+<tr class="memdesc:ab5ed5530bfeaffadd8cd88c06d797f31"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remap PIC.  <a href="a00044_ab5ed5530bfeaffadd8cd88c06d797f31.html#ab5ed5530bfeaffadd8cd88c06d797f31">More...</a><br /></td></tr>
+<tr class="separator:ab5ed5530bfeaffadd8cd88c06d797f31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af654381e46179e377f9e26d7b3f48df0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_af654381e46179e377f9e26d7b3f48df0.html#af654381e46179e377f9e26d7b3f48df0">IRQ_set_mask</a> (unsigned char IRQline)</td></tr>
+<tr class="separator:af654381e46179e377f9e26d7b3f48df0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66ac96e9de8bb640d3d76ddd0a652ff4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a66ac96e9de8bb640d3d76ddd0a652ff4.html#a66ac96e9de8bb640d3d76ddd0a652ff4">IRQ_clear_mask</a> (unsigned char IRQline)</td></tr>
+<tr class="separator:a66ac96e9de8bb640d3d76ddd0a652ff4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36c512d574a4d820675e1026ac4a3db6"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a36c512d574a4d820675e1026ac4a3db6.html#a36c512d574a4d820675e1026ac4a3db6">__pic_get_irq_reg</a> (int ocw3)</td></tr>
+<tr class="separator:a36c512d574a4d820675e1026ac4a3db6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c413ca2499d8eb59d09ebe025f4ae8e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a3c413ca2499d8eb59d09ebe025f4ae8e.html#a3c413ca2499d8eb59d09ebe025f4ae8e">pic_get_irr</a> (void)</td></tr>
+<tr class="separator:a3c413ca2499d8eb59d09ebe025f4ae8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b716de2a9d07df332b924d1608c8fd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00044_a3b716de2a9d07df332b924d1608c8fd9.html#a3b716de2a9d07df332b924d1608c8fd9">pic_get_isr</a> (void)</td></tr>
+<tr class="separator:a3b716de2a9d07df332b924d1608c8fd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

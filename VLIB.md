@@ -15,13 +15,12 @@ Entry ID's are how you call the driver functions. In order to call a function yo
 
 - EBX - Entry ID
 
-You'd notice that Int 3fh:Eax=03h outputs to EBX, and 3fh:Eax=05h takes in EBX and that is intentional. If you want to test your VLib before running it then it would be as simple as
+You'd notice that Int 3fh:Eax=03h outputs to EBX, and 3eh takes in EBX and that is intentional. If you want to test your VLib before running it then it would be as simple as
 ```
 ; create vlib here
 mov eax,03h
 int 3fh ; moves the entry id to ebx
-mov eax,05h
-int 3fh ; calls the entry id, which should already have been set by the previous int 3fh
+int 3eh ; calls the entry id, which should already have been set by the previous int 3fh
 ```
 
 In order to implement a VLib function, a struct is passed defining the registers where the VLib started. The struct is as defined below:
@@ -35,4 +34,26 @@ typedef struct {
 Thus, youd define a VLib function in C as follows:
 ```
 void vlib_function(Registers reg);
+```
+
+```
+             +----------------------------------------------v
+     +---------+                                         +-----------------+
+     |  Kernel +-----------------+                       |Hardware         |
+     +----^--^-+             +---v--+                    |                 |
+  Int 3fh |  |               | VLib | +----------------->+-----------------+
++------+  |  |               +------+
+|VLib  |--+  |
+|Creator     |
+|      +     |
+|      |     |
++------+     |
+             |
++-----+      |
+|Soft |      |
+|ware |      |
+|with +------+
+|VLIB |  Int 3eh
+|perm |
++-----+
 ```
