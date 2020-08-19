@@ -113,6 +113,9 @@ void isr_handler(registers_t regs)
             PIC_sendEOI(regs.int_no);
             ide_irq();
             break;
+        case 62:
+            runvlib(regs.ebx);
+            break;
         case 63:
             eoi();
             PIC_sendEOI(regs.int_no);
@@ -137,6 +140,8 @@ void isr_handler(registers_t regs)
     }
 }
 
+extern void sv13h();
+extern void sv3h();
 
 void sysisr_handler(registers_t regs) {
     Task* ctask = getctask();
@@ -173,8 +178,18 @@ void sysisr_handler(registers_t regs) {
             BochsConsolePrintString(" is yielding.\r\n");
             yield();
             break;
-        case 0x05:
-            runvlib(regs.ebx);
+        case 0x06:
+            switch (regs.edx)
+            {
+                case 0:
+                    sv13h();
+                    break;
+                case 1:
+                    sv3h();
+                    break;
+                default:
+                    break;
+            }
             break;
         default: // dont know what to do
             BochsConsolePrintString("\r\nTask ");

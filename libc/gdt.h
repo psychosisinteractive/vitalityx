@@ -1,7 +1,7 @@
 #ifndef GDT_H
 #define GDT_H
 #include "types.h"
-#define ENTRY_NUM 5
+#define ENTRY_NUM 6
 
 struct gdt_ptr_struct
 {

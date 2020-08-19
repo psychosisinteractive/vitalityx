@@ -30,10 +30,6 @@ typedef struct vepheader {
     /// 
     char flags;
     ///
-    /// 255 character array for name
-    ///
-    char name[255];
-    ///
     /// Where the VEP should be loaded
     ///
     uint32_t origin;
@@ -41,6 +37,14 @@ typedef struct vepheader {
     /// VEP size
     ///
     uint32_t vepsize;
+    ///
+    /// VEP mode
+    /// 
+    uint32_t mode;
+    ///
+    /// Reserved data
+    /// 
+    char reserved[255];
 } vepheader_t;
 
 ///
@@ -56,6 +60,21 @@ typedef struct vepfile {
     ///
     char vepdata[65535];
 } vepfile_t;
+
+typedef enum {
+    ///
+    /// Default mode, supports interrupts by system, requires no permissions
+    ///
+    VEPMODE_MONOLITHIC,
+    ///
+    /// Supports VLIB interrupts & Interrupts, should show a consent dialogue before opening
+    ///
+    VEPMODE_VLIB,
+    ///
+    /// Supports Vitality Alternate Mode, Interrupts & VLIB Interrupts, requires adminisrator
+    ///
+    VEPMODE_VAM
+} vepmode_t;
 
 ///
 /// Loads a VEP with a VEPHeader

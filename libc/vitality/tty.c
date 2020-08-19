@@ -89,7 +89,7 @@ void tty_vgaputstring(char* string, int len) {
 }
 
 void tty_pputstring(char* string) {
-    switch (vgamode())
+    switch (vgamode)
     {
     case 0x3:
         tty_putstring(string,0);
@@ -104,7 +104,7 @@ void tty_pputstring(char* string) {
 }
 
 void tty_pputstringl(char* string, int len) {
-    switch (vgamode())
+    switch (vgamode)
     {
     case 0x3:
         tty_putstring(string,len);

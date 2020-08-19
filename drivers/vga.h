@@ -25,13 +25,18 @@ uint8_t getpixel(uint16_t x, uint16_t y);
 ///@param bgcolor The background color
 ///
 void drawchar(unsigned char c, uint16_t x, uint16_t y, uint8_t fgcolor, uint8_t bgcolor);
-///
-/// Gets the current VGA mode
-///
-uint16_t vgamode();
+uint16_t vgamode = 0x3;
 ///
 /// Sets the font
 ///
 void setfont(unsigned char *font);
+///
+/// X resolution of the screen
+///
+uint32_t resolution_x;
+///
+/// Y resolution of the screen
+///
+uint32_t resolution_y;
 
 #endif

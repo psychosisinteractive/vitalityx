@@ -19,5 +19,9 @@ _DATA_START_ = .;
 _DATA_END = .;
     }
 
-
+    .virt : {
+_VIRTUAL_8086_START = .;
+        *(.virt)
+_VIRTUAL_8086_END = .;
+    }
 }

@@ -2,9 +2,10 @@
 #include "../libc/system.h"
 #include "../libc/vitality/inline.h"
 #include "../libc/vitality/mem.h"
+#include "../libc/isr.h"
 
 void putpixel(uint8_t c, uint16_t x, uint16_t y) {
-    uint16_t offset = (y * SCREEN_WIDTH) + x;
+    uint16_t offset = (y * resolution_y) + x;
 	pokeb(0xa0000,offset,c);
 }
 
@@ -28,8 +29,27 @@ void drawchar(unsigned char c, uint16_t x, uint16_t y, uint8_t fgcolor, uint8_t 
 	}
 }
 
-uint16_t vgamode() {
-	return 0x3; // we sure are using mode 3 so
+typedef enum {
+	Mode3h,
+	Mode13h
+} vgamode_t;
+
+void setvgamode(vgamode_t vgamode) {
+	registers_t regs;
+	switch(vgamode) {
+		case Mode3h:
+			regs.eax = 0x6;
+			regs.edx = 0x1;
+			regs.int_no = 0x3f;
+			isr_handler(regs);
+			break;
+		case Mode13h:
+			regs.eax = 0x6;
+			regs.edx = 0x0;
+			regs.int_no = 0x3f;
+			isr_handler(regs);
+			break;
+	}
 }
 
 void setfont(unsigned char *font) {
