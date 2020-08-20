@@ -2,6 +2,7 @@
 \label{a00167}\index{libc/vitality/vlib.\+c@{libc/vitality/vlib.\+c}}
 {\ttfamily \#include \char`\"{}vlib.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../isr.\+h\char`\"{}}\newline
 Include dependency graph for vlib.\+c\+:
 % FIG 0
 \subsection*{Functions}
@@ -11,7 +12,7 @@ void \hyperlink{a00167_aee69008de31826f28854c29a54cb315e_aee69008de31826f28854c2
 \item 
 \hyperlink{a00170_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\+\_\+entry\+\_\+t} $\ast$ \hyperlink{a00167_aeeb1b55b301de7b4c7aa360c387c3ef9_aeeb1b55b301de7b4c7aa360c387c3ef9}{getvlibentry} (int id)
 \item 
-void \hyperlink{a00167_a6889af26c1cca94090023d5975955cbf_a6889af26c1cca94090023d5975955cbf}{runvlib} (int id)
+void \hyperlink{a00167_a268c6e227f2761807244c0695d78d01c_a268c6e227f2761807244c0695d78d01c}{runvlib} (\hyperlink{a00104_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t} regs)
 \end{DoxyCompactItemize}
 
 
@@ -24,17 +25,17 @@ void \hyperlink{a00167_a6889af26c1cca94090023d5975955cbf_a6889af26c1cca94090023d
 
 
 
-Definition at line 8 of file vlib.\+c.
+Definition at line 9 of file vlib.\+c.
 
 
 \begin{DoxyCode}
-8                                    \{
-9     \hyperlink{a00125_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} vlib = \hyperlink{a00170_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00270_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
-10     \textcolor{keywordflow}{while}(\textcolor{keywordtype}{id} != 0) \{
-11         vlib += \textcolor{keyword}{sizeof}(\hyperlink{a00170_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\_entry\_t});
-12     \}
-13     \textcolor{keywordflow}{return} (\hyperlink{a00266}{vlib\_entry\_t}*)vlib;
-14 \}
+9                                    \{
+10     \hyperlink{a00125_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} vlib = \hyperlink{a00170_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00270_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
+11     \textcolor{keywordflow}{while}(\textcolor{keywordtype}{id} != 0) \{
+12         vlib += \textcolor{keyword}{sizeof}(\hyperlink{a00170_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\_entry\_t});
+13     \}
+14     \textcolor{keywordflow}{return} (\hyperlink{a00266}{vlib\_entry\_t}*)vlib;
+15 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00167_aee69008de31826f28854c29a54cb315e_aee69008de31826f28854c29a54cb315e}\label{a00167_aee69008de31826f28854c29a54cb315e_aee69008de31826f28854c29a54cb315e}} 
 \index{vlib.\+c@{vlib.\+c}!loadvlib@{loadvlib}}
@@ -44,40 +45,37 @@ Definition at line 8 of file vlib.\+c.
 
 
 
-Definition at line 4 of file vlib.\+c.
+Definition at line 5 of file vlib.\+c.
 
 
 \begin{DoxyCode}
-4                                   \{
-5     \hyperlink{a00170_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor} = d;
-6 \}
+5                                   \{
+6     \hyperlink{a00170_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor} = d;
+7 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00167_a6889af26c1cca94090023d5975955cbf_a6889af26c1cca94090023d5975955cbf}\label{a00167_a6889af26c1cca94090023d5975955cbf_a6889af26c1cca94090023d5975955cbf}} 
+\mbox{\Hypertarget{a00167_a268c6e227f2761807244c0695d78d01c_a268c6e227f2761807244c0695d78d01c}\label{a00167_a268c6e227f2761807244c0695d78d01c_a268c6e227f2761807244c0695d78d01c}} 
 \index{vlib.\+c@{vlib.\+c}!runvlib@{runvlib}}
 \index{runvlib@{runvlib}!vlib.\+c@{vlib.\+c}}
 \subsubsection{\texorpdfstring{runvlib()}{runvlib()}}
-{\footnotesize\ttfamily void runvlib (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void runvlib (\begin{DoxyParamCaption}\item[{\hyperlink{a00104_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t}}]{regs }\end{DoxyParamCaption})}
 
 
 
-Definition at line 16 of file vlib.\+c.
+Definition at line 17 of file vlib.\+c.
 
 
 \begin{DoxyCode}
-16                      \{
-17     \hyperlink{a00125_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} vlib = \hyperlink{a00170_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00270_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
-18     \textcolor{keywordflow}{while}(\textcolor{keywordtype}{id} != 0) \{
-19         vlib += \textcolor{keyword}{sizeof}(\hyperlink{a00170_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\_entry\_t});
-20     \}
-21     \hyperlink{a00266}{vlib\_entry\_t}* \hyperlink{a00098_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel} = (\hyperlink{a00266}{vlib\_entry\_t}*)vlib;
-22     \hyperlink{a00125_a7ec4af7c086c1f2c2a0e01fc23203a56_a7ec4af7c086c1f2c2a0e01fc23203a56}{func\_ptr\_args} funcptr = sel->\hyperlink{a00266_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr};
-23     \hyperlink{a00198}{Task}* ctask = \hyperlink{a00077_a5913e9b2190b2b4118ee020721a320e2_a5913e9b2190b2b4118ee020721a320e2}{getctask}();
-24     \hyperlink{a00080_a2425ca34147fccde2d1503332d21c5bd_a2425ca34147fccde2d1503332d21c5bd}{switchTask}(&ctask->\hyperlink{a00198_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}, &\hyperlink{a00170_ae94a2076c3fb43c35d18daf9cf664e23_ae94a2076c3fb43c35d18daf9cf664e23}{vlib\_registers});
+17                                \{
+18     \hyperlink{a00125_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} vlib = \hyperlink{a00170_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00270_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
+19     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = regs.\hyperlink{a00218_aa8989b2fef42dca1d656f724eb324f51_aa8989b2fef42dca1d656f724eb324f51}{ebx};
+20     \textcolor{keywordflow}{while}(\textcolor{keywordtype}{id} != 0) \{
+21         vlib += \textcolor{keyword}{sizeof}(\hyperlink{a00170_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\_entry\_t});
+22     \}
+23     \hyperlink{a00266}{vlib\_entry\_t}* \hyperlink{a00098_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel} = (\hyperlink{a00266}{vlib\_entry\_t}*)vlib;
+24     \hyperlink{a00125_a7ec4af7c086c1f2c2a0e01fc23203a56_a7ec4af7c086c1f2c2a0e01fc23203a56}{func\_ptr\_args} funcptr = sel->\hyperlink{a00266_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr};
 25     \textcolor{comment}{// we can now run vlib code}
-26     \hyperlink{a00234}{Registers} ctaskregs = ctask->\hyperlink{a00198_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs};
-27     void (*functionptr)(\hyperlink{a00234}{Registers} ctaskregs);
-28     functionptr = *sel->\hyperlink{a00266_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr};
-29     functionptr(ctask->\hyperlink{a00198_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs});
-30     \hyperlink{a00080_a2425ca34147fccde2d1503332d21c5bd_a2425ca34147fccde2d1503332d21c5bd}{switchTask}(&\hyperlink{a00170_ae94a2076c3fb43c35d18daf9cf664e23_ae94a2076c3fb43c35d18daf9cf664e23}{vlib\_registers}, &ctask->\hyperlink{a00198_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs});
-31 \}
+26     void (*functionptr)(\hyperlink{a00218}{registers\_t} ctaskregs);
+27     functionptr = *sel->\hyperlink{a00266_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr};
+28     functionptr(regs);
+29 \}
 \end{DoxyCode}

@@ -35,15 +35,19 @@ In order to implement a V\+Lib function, a struct is passed defining the registe
 
 
 \begin{DoxyCode}
-typedef struct \{
-    uint32\_t eax, ebx, ecx, edx, esi, edi, esp, ebp, eip, eflags, cr3;
-\} Registers;
+typedef struct registers
+\{
+   uint32\_t ds;                  // Data segment selector
+   uint32\_t edi, esi, ebp, esp, ebx, edx, ecx, eax; // Pushed by pusha.
+   uint32\_t int\_no, err\_code;    // Interrupt number and error code (if applicable)
+   uint32\_t eip, cs, eflags, useresp, ss; // Pushed by the processor automatically.
+\} registers\_t;
 \end{DoxyCode}
 
 
 Thus, youd define a V\+Lib function in C as follows\+: 
 \begin{DoxyCode}
-void vlib\_function(Registers reg);
+void vlib\_function(registers\_t regs);
 \end{DoxyCode}
 
 

@@ -1499,10 +1499,10 @@
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00182_ac087e76f32980fb89fa7fc24c90d437a.html#ac087e76f32980fb89fa7fc24c90d437a"><param name="Name" value="revision"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00077_a2c195d425b4a6791b3a89f7b219f93d9.html#a2c195d425b4a6791b3a89f7b219f93d9"><param name="Name" value="runningTask"></OBJECT>
-  <LI><OBJECT type="text/sitemap"><param name="Local" value="a00167_a6889af26c1cca94090023d5975955cbf.html#a6889af26c1cca94090023d5975955cbf"><param name="Name" value="runvlib"></OBJECT>
+  <LI><OBJECT type="text/sitemap"><param name="Local" value="a00167_a268c6e227f2761807244c0695d78d01c.html#a268c6e227f2761807244c0695d78d01c"><param name="Name" value="runvlib"></OBJECT>
   <UL>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="a00167_a6889af26c1cca94090023d5975955cbf.html#a6889af26c1cca94090023d5975955cbf"><param name="Name" value="vlib.c"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="a00170_a6889af26c1cca94090023d5975955cbf.html#a6889af26c1cca94090023d5975955cbf"><param name="Name" value="vlib.h"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="a00167_a268c6e227f2761807244c0695d78d01c.html#a268c6e227f2761807244c0695d78d01c"><param name="Name" value="vlib.c"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="a00170_a268c6e227f2761807244c0695d78d01c.html#a268c6e227f2761807244c0695d78d01c"><param name="Name" value="vlib.h"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00282_aad660a962d04482ff03bce38000c1a37.html#aad660a962d04482ff03bce38000c1a37"><param name="Name" value="rvsp"></OBJECT>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00222_a41593c100a0772860647a70d3fae45ae.html#a41593c100a0772860647a70d3fae45ae"><param name="Name" value="rw"></OBJECT>
@@ -1846,14 +1846,14 @@
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="a00167_aeeb1b55b301de7b4c7aa360c387c3ef9.html#aeeb1b55b301de7b4c7aa360c387c3ef9"><param name="Name" value="getvlibentry"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="a00167_aee69008de31826f28854c29a54cb315e.html#aee69008de31826f28854c29a54cb315e"><param name="Name" value="loadvlib"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="a00167_a6889af26c1cca94090023d5975955cbf.html#a6889af26c1cca94090023d5975955cbf"><param name="Name" value="runvlib"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="a00167_a268c6e227f2761807244c0695d78d01c.html#a268c6e227f2761807244c0695d78d01c"><param name="Name" value="runvlib"></OBJECT>
   </UL>
   <LI><OBJECT type="text/sitemap"><param name="Local" value="a00170_abe9fbaaf473cf2fa8d2a0ef1786fabd2.html"><param name="Name" value="vlib.h"></OBJECT>
   <UL>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="a00170_abe9fbaaf473cf2fa8d2a0ef1786fabd2.html#abe9fbaaf473cf2fa8d2a0ef1786fabd2"><param name="Name" value="descriptor"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="a00170_aeeb1b55b301de7b4c7aa360c387c3ef9.html#aeeb1b55b301de7b4c7aa360c387c3ef9"><param name="Name" value="getvlibentry"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="a00170_aee69008de31826f28854c29a54cb315e.html#aee69008de31826f28854c29a54cb315e"><param name="Name" value="loadvlib"></OBJECT>
-    <LI><OBJECT type="text/sitemap"><param name="Local" value="a00170_a6889af26c1cca94090023d5975955cbf.html#a6889af26c1cca94090023d5975955cbf"><param name="Name" value="runvlib"></OBJECT>
+    <LI><OBJECT type="text/sitemap"><param name="Local" value="a00170_a268c6e227f2761807244c0695d78d01c.html#a268c6e227f2761807244c0695d78d01c"><param name="Name" value="runvlib"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="a00170_a97c1a7136f2ab06368e93c2d7533d619.html#a97c1a7136f2ab06368e93c2d7533d619"><param name="Name" value="vlib_entry_t"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="a00170_ae94a2076c3fb43c35d18daf9cf664e23.html#ae94a2076c3fb43c35d18daf9cf664e23"><param name="Name" value="vlib_registers"></OBJECT>
     <LI><OBJECT type="text/sitemap"><param name="Local" value="a00170_a2d9000b4fbb25c5ed2950a2d8f4921d5.html#a2d9000b4fbb25c5ed2950a2d8f4921d5"><param name="Name" value="vlibdesriptor_t"></OBJECT>

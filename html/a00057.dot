@@ -41,6 +41,7 @@ digraph "kernel/kernel.c"
   Node14 [label="../libc/vitality/vlib.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00170.html"];
   Node14 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node14 -> Node12 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node14 -> Node8 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node0 -> Node15 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node15 [label="../drivers/ide.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00035.html"];
   Node15 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
