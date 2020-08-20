@@ -26,14 +26,18 @@ int 3eh ; calls the entry id, which should already have been set by the previous
 In order to implement a VLib function, a struct is passed defining the registers where the VLib started. The struct is as defined below:
 
 ```
-typedef struct {
-    uint32_t eax, ebx, ecx, edx, esi, edi, esp, ebp, eip, eflags, cr3;
-} Registers;
+typedef struct registers
+{
+   uint32_t ds;                  // Data segment selector
+   uint32_t edi, esi, ebp, esp, ebx, edx, ecx, eax; // Pushed by pusha.
+   uint32_t int_no, err_code;    // Interrupt number and error code (if applicable)
+   uint32_t eip, cs, eflags, useresp, ss; // Pushed by the processor automatically.
+} registers_t;
 ```
 
 Thus, youd define a VLib function in C as follows:
 ```
-void vlib_function(Registers reg);
+void vlib_function(registers_t regs);
 ```
 
 ```

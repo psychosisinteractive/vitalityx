@@ -2,6 +2,7 @@
 #define VLIB_H
 #include "../types.h"
 #include "../ext/task.h"
+#include "../isr.h"
 
 typedef struct vlib_entry {
     uint16_t mode;
@@ -18,6 +19,6 @@ vlibdesriptor_t *descriptor;
 Registers vlib_registers;
 void loadvlib(vlibdesriptor_t* d);
 vlib_entry_t* getvlibentry(int id);
-void runvlib(int id);
+void runvlib(registers_t regs);
 
 #endif

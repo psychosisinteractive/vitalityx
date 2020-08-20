@@ -114,7 +114,7 @@ void isr_handler(registers_t regs)
             ide_irq();
             break;
         case 62:
-            runvlib(regs.ebx);
+            runvlib(regs);
             break;
         case 63:
             eoi();
