@@ -45,6 +45,6 @@ jobs:
         # secrets.GITHUB_TOKEN, or a token with read/write access to the repo
         github-token: ${{ secrets.GITHUB_TOKEN }}
         # Version to create
-        version: ${{ GITHUB_RUN_ID }}
+        version: ${{ env.GITHUB_RUN_ID }}
         # json string array of assets paths to upload to the release. E.G. '[ "win-x64.zip", "linux-x24.zip" ]'
         assets: '[ "vx-release/operating.bin", "vx-release/kernel.bin", "vx-release/kernel.elf" ]'
