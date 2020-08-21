@@ -4,6 +4,7 @@
 /kernel/*.o
 /libc/ext/*.o
 /libc/g++/*.o
+/libc/vitality/fs_implementations/*.o
 /kernel/libasm/*.o
 /bootloader/*.bin
 /drivers/*.o

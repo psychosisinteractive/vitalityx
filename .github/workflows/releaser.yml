@@ -1,0 +1,63 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Vitality Release Service
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    # Runs a set of commands using the runners shell
+    - name: Setup Environment
+      run: |
+        git clone https://github.com/rm-hull/barebones-toolchain.git
+        sudo apt-get install make
+        sudo apt-get install nasm
+        cd ..
+    - name: Compile
+      run: |
+        make CFLAGS=-w PP=barebones-toolchain/cross/i686/bin/i686-elf-g++ CC=barebones-toolchain/cross/i686/bin/i686-elf-gcc LD=barebones-toolchain/cross/i686/bin/i686-elf-ld AS=barebones-toolchain/cross/i686/bin/i686-elf-as WSL=  operating.bin
+        make CFLAGS=-w PP=barebones-toolchain/cross/i686/bin/i686-elf-g++ CC=barebones-toolchain/cross/i686/bin/i686-elf-gcc LD=barebones-toolchain/cross/i686/bin/i686-elf-ld AS=barebones-toolchain/cross/i686/bin/i686-elf-as WSL=  kernel.bin
+        make CFLAGS=-w PP=barebones-toolchain/cross/i686/bin/i686-elf-g++ CC=barebones-toolchain/cross/i686/bin/i686-elf-gcc LD=barebones-toolchain/cross/i686/bin/i686-elf-ld AS=barebones-toolchain/cross/i686/bin/i686-elf-as WSL=  kernel.elf
+    - name: Prepare Release
+      run: |
+        mkdir vx-release
+        mv operating.bin vx-release
+        mv kernel.bin vx-release
+        mv kernel.elf vx-release
+    - name: Random name for New Release
+      # You may pin to the exact commit or the version.
+      # uses: TGPSKI/name-generator-node-action@5c1c97cdae4ef40d21eb05f1a46ead10ac61037b
+      uses: TGPSKI/name-generator-node-action@v2
+      id: generator
+      with:
+        # What separator to use
+        separator: . # default is -
+        # How many words in the name
+        length: 2 # default is 2
+        # Name output case style
+        style: LowerCase # default is lowerCase
+    - name: Tag and Release and Upload
+      # You may pin to the exact commit or the version.
+      # uses: jasondavis303/tag-and-release-and-upload@b1910f9c470483b899ae6fcc7d987b6fe707132b
+      uses: jasondavis303/tag-and-release-and-upload@v1.2.0
+      with:
+        # secrets.GITHUB_TOKEN, or a token with read/write access to the repo
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        # Version to create
+        version: ${{ steps.generator.outputs.name }}
+        # json string array of assets paths to upload to the release. E.G. '[ "win-x64.zip", "linux-x24.zip" ]'
+        assets: '[ "vx-release/operating.bin", "vx-release/kernel.bin", "vx-release/kernel.elf" ]'
