@@ -19,20 +19,6 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-    - name: Random name for New Release
-      # You may pin to the exact commit or the version.
-      # uses: TGPSKI/name-generator-node-action@5c1c97cdae4ef40d21eb05f1a46ead10ac61037b
-      uses: TGPSKI/name-generator-node-action@v2
-      id: generator
-      with:
-        # What separator to use
-        separator: . # default is -
-        # How many words in the name
-        length: 2 # default is 2
-        # Name output case style
-        style: LowerCase # default is lowerCase
-    - name: Test output
-      run: echo "latest,${{ steps.generator.outputs.name }}"
     # Runs a set of commands using the runners shell
     - name: Setup Environment
       run: |
@@ -59,6 +45,6 @@ jobs:
         # secrets.GITHUB_TOKEN, or a token with read/write access to the repo
         github-token: ${{ secrets.GITHUB_TOKEN }}
         # Version to create
-        version: "${{ steps.generator.outputs.name }}"
+        version: Vitality Release Service $GITHUB_ACTOR $GITHUB_RUN_ID
         # json string array of assets paths to upload to the release. E.G. '[ "win-x64.zip", "linux-x24.zip" ]'
         assets: '[ "vx-release/operating.bin", "vx-release/kernel.bin", "vx-release/kernel.elf" ]'
