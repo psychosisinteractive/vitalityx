@@ -3,6 +3,7 @@
 #include "../libc/vitality/inline.h"
 #include "pic.h"
 #include "../libc/vitality/tty.h"
+#include "serial.h"
 
 bool wfk = false;
 char lkey = 0;
@@ -121,11 +122,17 @@ void kb_init(void)
 	outb(0x60, config);
 }
 
+char getsch() {
+    return read_serial();
+}
+
 char getch() {
     wfk = true;
+    enable_cursor(0,15);
     while(wfk)
         ;
     tty_pputstring(lkey);
+    disable_cursor();
     return lkey;
 }
 

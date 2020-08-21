@@ -1,7 +1,7 @@
+#include "vitality/tty.h"
 #include "system.h"
 #include "types.h"
 #include "isr.h"
-#include "tty.h"
 
 void pokeb(uint32_t *addr, uint32_t offset, uint8_t val) {
     addr+=offset;
@@ -32,21 +32,4 @@ void sleep(int duration) {
       time--;
       __asm__("nop");
     }while(time = 0);
-}
-
-void panic(char* reason) {
-
-}
-
-// Task panic
-void panic_task(char* reason, Registers regs) {
-
-}
-
-// Register panic
-void panic_regs(char* reason, registers_t regs) {
-  tty_pputstring("KERNEL PANIC\n");
-  tty_pputstring(reason);
-  tty_pputstring("\n");
-  sdump(regs);
 }

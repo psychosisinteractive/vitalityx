@@ -11,6 +11,7 @@
 #include "../libc/vitality/vxbfs.h"
 #include "../libc/vitality/vfs.h"
 #include "../drivers/keyboard.h"
+#include "../drivers/serial.h"
 ///
 /// The kernels C entry point
 ///
@@ -26,6 +27,11 @@ int kernel() {
     dt_install();
     vlibd.base = &vlibe;
     vlibd.len = 255;
+    tty_pputstring("Setting up serial interface\n");
+    init_serial();
+    write_serial('H');
+    write_serial('I');
+    write_serial('\n');
     tty_pputstring("Loading VLib\n");
     loadvlib(&vlibd);
     tty_pputstring("Starting multitasking\n");
@@ -34,8 +40,8 @@ int kernel() {
     ide_initialize(0x1F0, 0x3F6, 0x170, 0x376, 0x000);
     clearscreen();
     getentries();
-    tty_pputstring("Select drive number otherwise bfs/ata/atp0... ");
-    switch(getch()) {
+    tty_pputstring("Select drive number from serial otherwise bfs/ata/atp0... ");
+    switch(getsch()) {
         case '0':
             primarydrive = 0;
         case '1':

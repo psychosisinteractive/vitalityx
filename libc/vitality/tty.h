@@ -1,5 +1,6 @@
 #ifndef TTY_H
 #define TTY_H
+#include "../types.h"
 
 /// 
 /// Puts a string in VRAM, Text mode only
@@ -36,5 +37,25 @@ void drawchar3(unsigned char c, unsigned char forecolor, unsigned char backcolor
 /// Clears the console.
 /// 
 void clearscreen();
+///
+/// Sets the VGA TTY mode.
+///
+void set_ttyvgamode(short mode);
+///
+/// Disables the console mode cursor.
+///
+void disable_cursor();
+///
+/// Enables the console mode cursor.
+///@param cursor_start Scanline the cursor starts at.
+///@param cursor_end Scanline the cursor ends at.
+///
+void enable_cursor(uint8_t cursor_start, uint8_t cursor_end);
+///
+/// Updates the cursor position.
+///@param x The X position of the cursor.
+///@param y The Y position of the cursor.
+///
+void update_cursor(int x, int y);
 
 #endif

@@ -72,10 +72,7 @@ typedef uint32_t size_t;
 ///
 typedef uint8_t byte;
 
-///
-/// Function Pointer
-///
-typedef (*func_ptr)(void);
+
 
 ///
 /// Struct for Registers
@@ -85,11 +82,29 @@ typedef struct {
 } Registers;
 
 ///
+/// Struct for Interrupt Registers
+///
+typedef struct registers
+{
+   uint32_t ds;                  // Data segment selector
+   uint32_t edi, esi, ebp, esp, ebx, edx, ecx, eax; // Pushed by pusha.
+   uint32_t int_no, err_code;    // Interrupt number and error code (if applicable)
+   uint32_t eip, cs, eflags, useresp, ss; // Pushed by the processor automatically.
+} registers_t;
+
+///
+/// Function Pointer
+///
+typedef void(*func_ptr)(void);
+///
 /// Function Pointer with Register Arguments
 ///
-typedef (*func_ptr_args)(Registers);
+typedef int(*func_ptr_args)(registers_t);
 
-
+///
+/// ALIGN to 16 bytes
+///
+typedef char U_ALIGN16[16];
 
 typedef sint8_t s8int;
 typedef uint8_t u8int;

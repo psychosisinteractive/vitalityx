@@ -68,6 +68,11 @@ void drawchar3(unsigned char c, unsigned char forecolour, unsigned char backcolo
 
 uint16_t xoff = 0;
 uint16_t yoff = 0;
+uint16_t vgamode = 0x3;
+
+void set_ttyvgamode(short mode) {
+    vgamode = mode;
+}
 
 void clearscreen() {
     memset(0xb8000,0,0x1fff);

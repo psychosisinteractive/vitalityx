@@ -8,6 +8,7 @@
 void kb_init(void);
 char *getst();
 char getch();
+char getsch();
 void keyboard_handler_main();
 
 #endif
