@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/page.h File Reference</title>
+<title>VitalityX: libc/isr.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,62 +44,35 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">page.h File Reference</div>  </div>
+<div class="title">isr.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00104_source.html">isr.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00125_source.html">types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00134_source.html">types.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for page.h:</div>
+Include dependency graph for isr.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00111.png" border="0" usemap="#libc_2page_8h" alt=""/></div>
+<div class="center"><img src="a00111.png" border="0" usemap="#libc_2isr_8h" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00112.png" border="0" usemap="#libc_2page_8hdep" alt=""/></div>
+<div class="center"><img src="a00112.png" border="0" usemap="#libc_2isr_8hdep" alt=""/></div>
 <!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00110_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00222.html">page</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00226.html">page_table</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00230.html">page_directory</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a76113662e059e0926a92c5b15c098f4a"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00222.html">page</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00110_a76113662e059e0926a92c5b15c098f4a.html#a76113662e059e0926a92c5b15c098f4a">page_t</a></td></tr>
-<tr class="separator:a76113662e059e0926a92c5b15c098f4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a052d6ef76d4f16828bb0f478b24b6b55"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00226.html">page_table</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00110_a052d6ef76d4f16828bb0f478b24b6b55.html#a052d6ef76d4f16828bb0f478b24b6b55">page_table_t</a></td></tr>
-<tr class="separator:a052d6ef76d4f16828bb0f478b24b6b55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6e79064ffe1eb8c43be4dc1be3f64a1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00230.html">page_directory</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00110_aa6e79064ffe1eb8c43be4dc1be3f64a1.html#aa6e79064ffe1eb8c43be4dc1be3f64a1">page_directory_t</a></td></tr>
-<tr class="separator:aa6e79064ffe1eb8c43be4dc1be3f64a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad05c453b13c69ecf5c7963798704cc18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00110_ad05c453b13c69ecf5c7963798704cc18.html#ad05c453b13c69ecf5c7963798704cc18">initialise_paging</a> ()</td></tr>
-<tr class="memdesc:ad05c453b13c69ecf5c7963798704cc18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the environment, page directories etc and enables paging.  <a href="a00110_ad05c453b13c69ecf5c7963798704cc18.html#ad05c453b13c69ecf5c7963798704cc18">More...</a><br /></td></tr>
-<tr class="separator:ad05c453b13c69ecf5c7963798704cc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af364044d82ac10c64dc653f8e3620dba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00110_af364044d82ac10c64dc653f8e3620dba.html#af364044d82ac10c64dc653f8e3620dba">switch_page_directory</a> (<a class="el" href="a00110_aa6e79064ffe1eb8c43be4dc1be3f64a1.html#aa6e79064ffe1eb8c43be4dc1be3f64a1">page_directory_t</a> *new)</td></tr>
-<tr class="memdesc:af364044d82ac10c64dc653f8e3620dba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the specified page directory to be loaded into the CR3 register.  <a href="a00110_af364044d82ac10c64dc653f8e3620dba.html#af364044d82ac10c64dc653f8e3620dba">More...</a><br /></td></tr>
-<tr class="separator:af364044d82ac10c64dc653f8e3620dba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab80db06fa94f1003fd5a5ec106bc9f6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00110_a76113662e059e0926a92c5b15c098f4a.html#a76113662e059e0926a92c5b15c098f4a">page_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00110_ab80db06fa94f1003fd5a5ec106bc9f6e.html#ab80db06fa94f1003fd5a5ec106bc9f6e">get_page</a> (<a class="el" href="a00125_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> address, int make, <a class="el" href="a00110_aa6e79064ffe1eb8c43be4dc1be3f64a1.html#aa6e79064ffe1eb8c43be4dc1be3f64a1">page_directory_t</a> *dir)</td></tr>
-<tr class="memdesc:ab80db06fa94f1003fd5a5ec106bc9f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a pointer to the page required.  <a href="a00110_ab80db06fa94f1003fd5a5ec106bc9f6e.html#ab80db06fa94f1003fd5a5ec106bc9f6e">More...</a><br /></td></tr>
-<tr class="separator:ab80db06fa94f1003fd5a5ec106bc9f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6293af8e675059a566216be86660854b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00110_a6293af8e675059a566216be86660854b.html#a6293af8e675059a566216be86660854b">page_fault</a> (<a class="el" href="a00104_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
-<tr class="memdesc:a6293af8e675059a566216be86660854b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler for page faults.  <a href="a00110_a6293af8e675059a566216be86660854b.html#a6293af8e675059a566216be86660854b">More...</a><br /></td></tr>
-<tr class="separator:a6293af8e675059a566216be86660854b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b4233daef6e041e7278cae2b21b5ed4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00110_a4b4233daef6e041e7278cae2b21b5ed4.html#a4b4233daef6e041e7278cae2b21b5ed4">sdump</a> (<a class="el" href="a00134_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
+<tr class="memdesc:a4b4233daef6e041e7278cae2b21b5ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump interrupt registers.  <a href="a00110_a4b4233daef6e041e7278cae2b21b5ed4.html#a4b4233daef6e041e7278cae2b21b5ed4">More...</a><br /></td></tr>
+<tr class="separator:a4b4233daef6e041e7278cae2b21b5ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a700e3ca056bf69296370f504f2cb6cc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00110_a700e3ca056bf69296370f504f2cb6cc8.html#a700e3ca056bf69296370f504f2cb6cc8">isr_handler</a> (<a class="el" href="a00134_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
+<tr class="memdesc:a700e3ca056bf69296370f504f2cb6cc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">ISR handler.  <a href="a00110_a700e3ca056bf69296370f504f2cb6cc8.html#a700e3ca056bf69296370f504f2cb6cc8">More...</a><br /></td></tr>
+<tr class="separator:a700e3ca056bf69296370f504f2cb6cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

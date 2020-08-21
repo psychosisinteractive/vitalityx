@@ -66,11 +66,11 @@ void \hyperlink{a00047_af654381e46179e377f9e26d7b3f48df0_af654381e46179e377f9e26
 \item 
 void \hyperlink{a00047_a66ac96e9de8bb640d3d76ddd0a652ff4_a66ac96e9de8bb640d3d76ddd0a652ff4}{I\+R\+Q\+\_\+clear\+\_\+mask} (unsigned char I\+R\+Qline)
 \item 
-static \hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00047_a36c512d574a4d820675e1026ac4a3db6_a36c512d574a4d820675e1026ac4a3db6}{\+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg} (int ocw3)
+static \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00047_a36c512d574a4d820675e1026ac4a3db6_a36c512d574a4d820675e1026ac4a3db6}{\+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg} (int ocw3)
 \item 
-\hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00047_a3c413ca2499d8eb59d09ebe025f4ae8e_a3c413ca2499d8eb59d09ebe025f4ae8e}{pic\+\_\+get\+\_\+irr} (void)
+\hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00047_a3c413ca2499d8eb59d09ebe025f4ae8e_a3c413ca2499d8eb59d09ebe025f4ae8e}{pic\+\_\+get\+\_\+irr} (void)
 \item 
-\hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00047_a3b716de2a9d07df332b924d1608c8fd9_a3b716de2a9d07df332b924d1608c8fd9}{pic\+\_\+get\+\_\+isr} (void)
+\hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00047_a3b716de2a9d07df332b924d1608c8fd9_a3b716de2a9d07df332b924d1608c8fd9}{pic\+\_\+get\+\_\+isr} (void)
 \end{DoxyCompactItemize}
 
 
@@ -324,7 +324,7 @@ Definition at line 59 of file pic.\+h.
 \index{pic.\+h@{pic.\+h}!\+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg@{\+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg}}
 \index{\+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg@{\+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg}!pic.\+h@{pic.\+h}}
 \subsubsection{\texorpdfstring{\+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg()}{\_\_pic\_get\_irq\_reg()}}
-{\footnotesize\ttfamily static \hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg (\begin{DoxyParamCaption}\item[{int}]{ocw3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily static \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \+\_\+\+\_\+pic\+\_\+get\+\_\+irq\+\_\+reg (\begin{DoxyParamCaption}\item[{int}]{ocw3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 \mbox{\Hypertarget{a00047_a66ac96e9de8bb640d3d76ddd0a652ff4_a66ac96e9de8bb640d3d76ddd0a652ff4}\label{a00047_a66ac96e9de8bb640d3d76ddd0a652ff4_a66ac96e9de8bb640d3d76ddd0a652ff4}} 
 \index{pic.\+h@{pic.\+h}!I\+R\+Q\+\_\+clear\+\_\+mask@{I\+R\+Q\+\_\+clear\+\_\+mask}}
@@ -339,8 +339,8 @@ Definition at line 56 of file pic.\+c.
 
 \begin{DoxyCode}
 56                                            \{
-57     \hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} port;
-58     \hyperlink{a00125_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} value;
+57     \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} port;
+58     \hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} value;
 59  
 60     \textcolor{keywordflow}{if}(IRQline < 8) \{
 61         port = \hyperlink{a00047_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA};
@@ -348,8 +348,8 @@ Definition at line 56 of file pic.\+c.
 63         port = \hyperlink{a00047_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA};
 64         IRQline -= 8;
 65     \}
-66     value = \hyperlink{a00140_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(port) & ~(1 << IRQline);
-67     \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(port, value);        
+66     value = \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(port) & ~(1 << IRQline);
+67     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(port, value);        
 68 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00047_af654381e46179e377f9e26d7b3f48df0_af654381e46179e377f9e26d7b3f48df0}\label{a00047_af654381e46179e377f9e26d7b3f48df0_af654381e46179e377f9e26d7b3f48df0}} 
@@ -365,8 +365,8 @@ Definition at line 42 of file pic.\+c.
 
 \begin{DoxyCode}
 42                                          \{
-43     \hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} port;
-44     \hyperlink{a00125_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} value;
+43     \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} port;
+44     \hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} value;
 45  
 46     \textcolor{keywordflow}{if}(IRQline < 8) \{
 47         port = \hyperlink{a00047_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA};
@@ -374,15 +374,15 @@ Definition at line 42 of file pic.\+c.
 49         port = \hyperlink{a00047_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA};
 50         IRQline -= 8;
 51     \}
-52     value = \hyperlink{a00140_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(port) | (1 << IRQline);
-53     \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(port, value);        
+52     value = \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(port) | (1 << IRQline);
+53     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(port, value);        
 54 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00047_a3c413ca2499d8eb59d09ebe025f4ae8e_a3c413ca2499d8eb59d09ebe025f4ae8e}\label{a00047_a3c413ca2499d8eb59d09ebe025f4ae8e_a3c413ca2499d8eb59d09ebe025f4ae8e}} 
 \index{pic.\+h@{pic.\+h}!pic\+\_\+get\+\_\+irr@{pic\+\_\+get\+\_\+irr}}
 \index{pic\+\_\+get\+\_\+irr@{pic\+\_\+get\+\_\+irr}!pic.\+h@{pic.\+h}}
 \subsubsection{\texorpdfstring{pic\+\_\+get\+\_\+irr()}{pic\_get\_irr()}}
-{\footnotesize\ttfamily \hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} pic\+\_\+get\+\_\+irr (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} pic\+\_\+get\+\_\+irr (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -398,7 +398,7 @@ Definition at line 79 of file pic.\+c.
 \index{pic.\+h@{pic.\+h}!pic\+\_\+get\+\_\+isr@{pic\+\_\+get\+\_\+isr}}
 \index{pic\+\_\+get\+\_\+isr@{pic\+\_\+get\+\_\+isr}!pic.\+h@{pic.\+h}}
 \subsubsection{\texorpdfstring{pic\+\_\+get\+\_\+isr()}{pic\_get\_isr()}}
-{\footnotesize\ttfamily \hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} pic\+\_\+get\+\_\+isr (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} pic\+\_\+get\+\_\+isr (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -436,32 +436,32 @@ Definition at line 13 of file pic.\+c.
 14 \{
 15     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} a1, a2;
 16  
-17     a1 = \hyperlink{a00140_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00047_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA});                        \textcolor{comment}{// save masks}
-18     a2 = \hyperlink{a00140_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00047_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA});
+17     a1 = \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00047_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA});                        \textcolor{comment}{// save masks}
+18     a2 = \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00047_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA});
 19  
-20     \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_ad1ba81484ab03e762d2e09f851c0901f_ad1ba81484ab03e762d2e09f851c0901f}{PIC1\_COMMAND}, \hyperlink{a00047_a286dc251f3d73c08e08a53a4696f31ef_a286dc251f3d73c08e08a53a4696f31ef}{ICW1\_INIT} | \hyperlink{a00047_a964d12193d2b36e8a7ec7fa57438e313_a964d12193d2b36e8a7ec7fa57438e313}{ICW1\_ICW4});  \textcolor{comment}{// starts the
+20     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_ad1ba81484ab03e762d2e09f851c0901f_ad1ba81484ab03e762d2e09f851c0901f}{PIC1\_COMMAND}, \hyperlink{a00047_a286dc251f3d73c08e08a53a4696f31ef_a286dc251f3d73c08e08a53a4696f31ef}{ICW1\_INIT} | \hyperlink{a00047_a964d12193d2b36e8a7ec7fa57438e313_a964d12193d2b36e8a7ec7fa57438e313}{ICW1\_ICW4});  \textcolor{comment}{// starts the
        initialization sequence (in cascade mode)}
-21     \hyperlink{a00140_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
-22     \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_a11d8793812c9d340e9a64cce26ee0570_a11d8793812c9d340e9a64cce26ee0570}{PIC2\_COMMAND}, \hyperlink{a00047_a286dc251f3d73c08e08a53a4696f31ef_a286dc251f3d73c08e08a53a4696f31ef}{ICW1\_INIT} | \hyperlink{a00047_a964d12193d2b36e8a7ec7fa57438e313_a964d12193d2b36e8a7ec7fa57438e313}{ICW1\_ICW4});
-23     \hyperlink{a00140_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
-24     \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA}, offset1);                 \textcolor{comment}{// ICW2: Master PIC vector offset}
-25     \hyperlink{a00140_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
-26     \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA}, offset2);                 \textcolor{comment}{// ICW2: Slave PIC vector offset}
-27     \hyperlink{a00140_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
-28     \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA}, 4);                       \textcolor{comment}{// ICW3: tell Master PIC that there is a slave
+21     \hyperlink{a00158_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+22     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_a11d8793812c9d340e9a64cce26ee0570_a11d8793812c9d340e9a64cce26ee0570}{PIC2\_COMMAND}, \hyperlink{a00047_a286dc251f3d73c08e08a53a4696f31ef_a286dc251f3d73c08e08a53a4696f31ef}{ICW1\_INIT} | \hyperlink{a00047_a964d12193d2b36e8a7ec7fa57438e313_a964d12193d2b36e8a7ec7fa57438e313}{ICW1\_ICW4});
+23     \hyperlink{a00158_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+24     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA}, offset1);                 \textcolor{comment}{// ICW2: Master PIC vector offset}
+25     \hyperlink{a00158_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+26     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA}, offset2);                 \textcolor{comment}{// ICW2: Slave PIC vector offset}
+27     \hyperlink{a00158_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+28     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA}, 4);                       \textcolor{comment}{// ICW3: tell Master PIC that there is a slave
        PIC at IRQ2 (0000 0100)}
-29     \hyperlink{a00140_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
-30     \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA}, 2);                       \textcolor{comment}{// ICW3: tell Slave PIC its cascade identity
+29     \hyperlink{a00158_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+30     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA}, 2);                       \textcolor{comment}{// ICW3: tell Slave PIC its cascade identity
        (0000 0010)}
-31     \hyperlink{a00140_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+31     \hyperlink{a00158_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
 32  
-33     \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA}, \hyperlink{a00047_a42803c5ddcec9e120a6dbf7bc5c1b7af_a42803c5ddcec9e120a6dbf7bc5c1b7af}{ICW4\_8086});
-34     \hyperlink{a00140_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
-35     \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA}, \hyperlink{a00047_a42803c5ddcec9e120a6dbf7bc5c1b7af_a42803c5ddcec9e120a6dbf7bc5c1b7af}{ICW4\_8086});
-36     \hyperlink{a00140_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+33     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA}, \hyperlink{a00047_a42803c5ddcec9e120a6dbf7bc5c1b7af_a42803c5ddcec9e120a6dbf7bc5c1b7af}{ICW4\_8086});
+34     \hyperlink{a00158_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
+35     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA}, \hyperlink{a00047_a42803c5ddcec9e120a6dbf7bc5c1b7af_a42803c5ddcec9e120a6dbf7bc5c1b7af}{ICW4\_8086});
+36     \hyperlink{a00158_a488d1b3600792ee3aac5be4b7e0be16b_a488d1b3600792ee3aac5be4b7e0be16b}{io\_wait}();
 37  
-38     \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA}, a1);   \textcolor{comment}{// restore saved masks.}
-39     \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA}, a2);
+38     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_af27e966ec947ca1172f30ae301c5f24b_af27e966ec947ca1172f30ae301c5f24b}{PIC1\_DATA}, a1);   \textcolor{comment}{// restore saved masks.}
+39     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_ab6d3b9f6f427357310896adf176145f1_ab6d3b9f6f427357310896adf176145f1}{PIC2\_DATA}, a2);
 40 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00047_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}\label{a00047_a1119739f7932598c83c3f8ce42a649de_a1119739f7932598c83c3f8ce42a649de}} 
@@ -482,8 +482,8 @@ Definition at line 5 of file pic.\+c.
 \begin{DoxyCode}
 6 \{
 7     \textcolor{keywordflow}{if}(irq >= 8)
-8         \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_a11d8793812c9d340e9a64cce26ee0570_a11d8793812c9d340e9a64cce26ee0570}{PIC2\_COMMAND},\hyperlink{a00047_a170d8eebdb48c16cfcd60cbd46760cb2_a170d8eebdb48c16cfcd60cbd46760cb2}{PIC\_EOI});
+8         \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_a11d8793812c9d340e9a64cce26ee0570_a11d8793812c9d340e9a64cce26ee0570}{PIC2\_COMMAND},\hyperlink{a00047_a170d8eebdb48c16cfcd60cbd46760cb2_a170d8eebdb48c16cfcd60cbd46760cb2}{PIC\_EOI});
 9  
-10     \hyperlink{a00140_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_ad1ba81484ab03e762d2e09f851c0901f_ad1ba81484ab03e762d2e09f851c0901f}{PIC1\_COMMAND},\hyperlink{a00047_a170d8eebdb48c16cfcd60cbd46760cb2_a170d8eebdb48c16cfcd60cbd46760cb2}{PIC\_EOI});
+10     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00047_ad1ba81484ab03e762d2e09f851c0901f_ad1ba81484ab03e762d2e09f851c0901f}{PIC1\_COMMAND},\hyperlink{a00047_a170d8eebdb48c16cfcd60cbd46760cb2_a170d8eebdb48c16cfcd60cbd46760cb2}{PIC\_EOI});
 11 \}
 \end{DoxyCode}

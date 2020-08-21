@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: /drivers/</title>
+<title>VitalityX: vepheader Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,12 +39,47 @@ $(function() {
 <div id="main-nav"></div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">/drivers/ </div>  </div>
+<div class="title">vepheader Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The drivers folder contains generic system drivers available for the kernel. These libraries are licensed under the licensing agreement below UNLESS specified in the respective source file.</p>
-<div class="fragment"><div class="line">Modified MIT License</div><div class="line"></div><div class="line">Copyright (c) 2020-2021, Psychosis Interactive All rights reserved.</div><div class="line"></div><div class="line">Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the &quot;Software&quot;), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</div><div class="line"></div><div class="line">The above copyright notice and this permission notice must be included in all copies or substantial portions of the Software unless if said Software is closed source.</div><div class="line"></div><div class="line">THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</div></div><!-- fragment --> </div></div><!-- contents -->
+
+<p>Header for a VEP file VEP stands for Vitality Executable Program.  
+ <a href="a00288.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="a00176_source.html">vep.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a06d6ef138b4f63ef72ad6aadda58ab47"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00288_a06d6ef138b4f63ef72ad6aadda58ab47.html#a06d6ef138b4f63ef72ad6aadda58ab47">signature</a> [2]</td></tr>
+<tr class="memdesc:a06d6ef138b4f63ef72ad6aadda58ab47"><td class="mdescLeft">&#160;</td><td class="mdescRight">VEP signature, should be 'VP'.  <a href="a00288_a06d6ef138b4f63ef72ad6aadda58ab47.html#a06d6ef138b4f63ef72ad6aadda58ab47">More...</a><br /></td></tr>
+<tr class="separator:a06d6ef138b4f63ef72ad6aadda58ab47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad19a09798439f6a12c5794c2ce224e9b"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00288_ad19a09798439f6a12c5794c2ce224e9b.html#ad19a09798439f6a12c5794c2ce224e9b">flags</a></td></tr>
+<tr class="memdesc:ad19a09798439f6a12c5794c2ce224e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">VEP flags.  <a href="a00288_ad19a09798439f6a12c5794c2ce224e9b.html#ad19a09798439f6a12c5794c2ce224e9b">More...</a><br /></td></tr>
+<tr class="separator:ad19a09798439f6a12c5794c2ce224e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa81b6806dd33022ce60c314c908ba028"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00288_aa81b6806dd33022ce60c314c908ba028.html#aa81b6806dd33022ce60c314c908ba028">origin</a></td></tr>
+<tr class="memdesc:aa81b6806dd33022ce60c314c908ba028"><td class="mdescLeft">&#160;</td><td class="mdescRight">Where the VEP should be loaded.  <a href="a00288_aa81b6806dd33022ce60c314c908ba028.html#aa81b6806dd33022ce60c314c908ba028">More...</a><br /></td></tr>
+<tr class="separator:aa81b6806dd33022ce60c314c908ba028"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6121693fa5ac3673d831b440aea8963e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00288_a6121693fa5ac3673d831b440aea8963e.html#a6121693fa5ac3673d831b440aea8963e">vepsize</a></td></tr>
+<tr class="memdesc:a6121693fa5ac3673d831b440aea8963e"><td class="mdescLeft">&#160;</td><td class="mdescRight">VEP size.  <a href="a00288_a6121693fa5ac3673d831b440aea8963e.html#a6121693fa5ac3673d831b440aea8963e">More...</a><br /></td></tr>
+<tr class="separator:a6121693fa5ac3673d831b440aea8963e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2ddca6dc67944c8119ba78c50d2d8e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00288_aa2ddca6dc67944c8119ba78c50d2d8e9.html#aa2ddca6dc67944c8119ba78c50d2d8e9">mode</a></td></tr>
+<tr class="memdesc:aa2ddca6dc67944c8119ba78c50d2d8e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">VEP mode.  <a href="a00288_aa2ddca6dc67944c8119ba78c50d2d8e9.html#aa2ddca6dc67944c8119ba78c50d2d8e9">More...</a><br /></td></tr>
+<tr class="separator:aa2ddca6dc67944c8119ba78c50d2d8e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad12e2dbbe2219f9739e59c4724d917a6"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00288_ad12e2dbbe2219f9739e59c4724d917a6.html#ad12e2dbbe2219f9739e59c4724d917a6">reserved</a> [255]</td></tr>
+<tr class="memdesc:ad12e2dbbe2219f9739e59c4724d917a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserved data.  <a href="a00288_ad12e2dbbe2219f9739e59c4724d917a6.html#ad12e2dbbe2219f9739e59c4724d917a6">More...</a><br /></td></tr>
+<tr class="separator:ad12e2dbbe2219f9739e59c4724d917a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Header for a VEP file VEP stands for Vitality Executable Program. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00176_source.html#l00023">23</a> of file <a class="el" href="a00176_source.html">vep.h</a>.</p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>libc/vitality/<a class="el" href="a00176_source.html">vep.h</a></li>
+</ul>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

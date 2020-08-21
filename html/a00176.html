@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/vxbfs.h File Reference</title>
+<title>VitalityX: libc/vitality/vep.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -47,23 +47,24 @@ $(function() {
 <a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">vxbfs.h File Reference</div>  </div>
+<div class="title">vep.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00125_source.html">../types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00161_source.html">vfs.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00134_source.html">../types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00122_source.html">../string.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for vxbfs.h:</div>
+Include dependency graph for vep.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00177.png" border="0" usemap="#libc_2vitality_2vxbfs_8h" alt=""/></div>
+<div class="center"><img src="a00177.png" border="0" usemap="#libc_2vitality_2vep_8h" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00178.png" border="0" usemap="#libc_2vitality_2vxbfs_8hdep" alt=""/></div>
+<div class="center"><img src="a00178.png" border="0" usemap="#libc_2vitality_2vep_8hdep" alt=""/></div>
 <!-- MAP 1 -->
 </div>
 </div>
@@ -71,43 +72,50 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00274.html">VXBFSModificationBlock</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a VXBFS Modification Block.  <a href="a00274.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00288.html">vepheader</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header for a VEP file VEP stands for Vitality Executable Program.  <a href="a00288.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00278.html">VXBFSFile</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a VXBFS File.  <a href="a00278.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00282.html">VXBFSheader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a VXBFS Header.  <a href="a00282.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00292.html">vepfile</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard Generated VEP file.  <a href="a00292.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a3ddd78a9670db2318c112735ae4fbbb0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_a3ddd78a9670db2318c112735ae4fbbb0.html#a3ddd78a9670db2318c112735ae4fbbb0">VXBFS_NOMOD</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a3ddd78a9670db2318c112735ae4fbbb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdd5a043633da5f43164b17f4d3637ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_acdd5a043633da5f43164b17f4d3637ac.html#acdd5a043633da5f43164b17f4d3637ac">VXBFS_PROTECTED</a>&#160;&#160;&#160;2</td></tr>
-<tr class="separator:acdd5a043633da5f43164b17f4d3637ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a767d84a330301881537dca098c9be630"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_a767d84a330301881537dca098c9be630.html#a767d84a330301881537dca098c9be630">VXBFS_KERNEL</a>&#160;&#160;&#160;4</td></tr>
-<tr class="separator:a767d84a330301881537dca098c9be630"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07092a70a7d784c7a3c3d605cea807af"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_a07092a70a7d784c7a3c3d605cea807af.html#a07092a70a7d784c7a3c3d605cea807af">VEP_MAKESGDT</a>&#160;&#160;&#160;0b00000001</td></tr>
+<tr class="memdesc:a07092a70a7d784c7a3c3d605cea807af"><td class="mdescLeft">&#160;</td><td class="mdescRight">This VEP will define a GDT.  <a href="a00176_a07092a70a7d784c7a3c3d605cea807af.html#a07092a70a7d784c7a3c3d605cea807af">More...</a><br /></td></tr>
+<tr class="separator:a07092a70a7d784c7a3c3d605cea807af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9167064be23f5789ed435d3a9edbb475"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_a9167064be23f5789ed435d3a9edbb475.html#a9167064be23f5789ed435d3a9edbb475">VEP_MAKESIDT</a>&#160;&#160;&#160;0b00000010</td></tr>
+<tr class="memdesc:a9167064be23f5789ed435d3a9edbb475"><td class="mdescLeft">&#160;</td><td class="mdescRight">This VEP will define an IDT.  <a href="a00176_a9167064be23f5789ed435d3a9edbb475.html#a9167064be23f5789ed435d3a9edbb475">More...</a><br /></td></tr>
+<tr class="separator:a9167064be23f5789ed435d3a9edbb475"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a269ec657dd35349b74056083e6ba09c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_a269ec657dd35349b74056083e6ba09c0.html#a269ec657dd35349b74056083e6ba09c0">VEP_LIBRARYV</a>&#160;&#160;&#160;0b00000100</td></tr>
+<tr class="memdesc:a269ec657dd35349b74056083e6ba09c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">This VEP will be a libraryVEP.  <a href="a00176_a269ec657dd35349b74056083e6ba09c0.html#a269ec657dd35349b74056083e6ba09c0">More...</a><br /></td></tr>
+<tr class="separator:a269ec657dd35349b74056083e6ba09c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a0774a42f7a124b6d3054ccabd4d35463"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00274.html">VXBFSModificationBlock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_a0774a42f7a124b6d3054ccabd4d35463.html#a0774a42f7a124b6d3054ccabd4d35463">vxbfs_modblock_t</a></td></tr>
-<tr class="memdesc:a0774a42f7a124b6d3054ccabd4d35463"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a VXBFS Modification Block.  <a href="a00176_a0774a42f7a124b6d3054ccabd4d35463.html#a0774a42f7a124b6d3054ccabd4d35463">More...</a><br /></td></tr>
-<tr class="separator:a0774a42f7a124b6d3054ccabd4d35463"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb93e2407af0d8fe0f5629ce6456c6f9"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00278.html">VXBFSFile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_abb93e2407af0d8fe0f5629ce6456c6f9.html#abb93e2407af0d8fe0f5629ce6456c6f9">vxbfs_file_t</a></td></tr>
-<tr class="memdesc:abb93e2407af0d8fe0f5629ce6456c6f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a VXBFS File.  <a href="a00176_abb93e2407af0d8fe0f5629ce6456c6f9.html#abb93e2407af0d8fe0f5629ce6456c6f9">More...</a><br /></td></tr>
-<tr class="separator:abb93e2407af0d8fe0f5629ce6456c6f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5678b6d5dd5ed5ca86e5ccd4c30d39d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00282.html">VXBFSheader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_ac5678b6d5dd5ed5ca86e5ccd4c30d39d.html#ac5678b6d5dd5ed5ca86e5ccd4c30d39d">vxbfs_header_t</a></td></tr>
-<tr class="memdesc:ac5678b6d5dd5ed5ca86e5ccd4c30d39d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a VXBFS Header.  <a href="a00176_ac5678b6d5dd5ed5ca86e5ccd4c30d39d.html#ac5678b6d5dd5ed5ca86e5ccd4c30d39d">More...</a><br /></td></tr>
-<tr class="separator:ac5678b6d5dd5ed5ca86e5ccd4c30d39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78392c340e1fe1be344df81d1438b74f"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00288.html">vepheader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_a78392c340e1fe1be344df81d1438b74f.html#a78392c340e1fe1be344df81d1438b74f">vepheader_t</a></td></tr>
+<tr class="memdesc:a78392c340e1fe1be344df81d1438b74f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Header for a VEP file VEP stands for Vitality Executable Program.  <a href="a00176_a78392c340e1fe1be344df81d1438b74f.html#a78392c340e1fe1be344df81d1438b74f">More...</a><br /></td></tr>
+<tr class="separator:a78392c340e1fe1be344df81d1438b74f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af285fc2949acac5b7aa6f065c8811960"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00292.html">vepfile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_af285fc2949acac5b7aa6f065c8811960.html#af285fc2949acac5b7aa6f065c8811960">vepfile_t</a></td></tr>
+<tr class="memdesc:af285fc2949acac5b7aa6f065c8811960"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standard Generated VEP file.  <a href="a00176_af285fc2949acac5b7aa6f065c8811960.html#af285fc2949acac5b7aa6f065c8811960">More...</a><br /></td></tr>
+<tr class="separator:af285fc2949acac5b7aa6f065c8811960"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:ac80d4cf4f9166af730f5c45f70e29799"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_ac80d4cf4f9166af730f5c45f70e29799.html#ac80d4cf4f9166af730f5c45f70e29799">vepmode_t</a> { <a class="el" href="a00176_ac80d4cf4f9166af730f5c45f70e29799.html#ac80d4cf4f9166af730f5c45f70e29799a36b5e4b8fdbc4a6911935abeb24dd639">VEPMODE_MONOLITHIC</a>, 
+<a class="el" href="a00176_ac80d4cf4f9166af730f5c45f70e29799.html#ac80d4cf4f9166af730f5c45f70e29799a0919b077dbb19a95711169fd0c8fec1d">VEPMODE_VLIB</a>, 
+<a class="el" href="a00176_ac80d4cf4f9166af730f5c45f70e29799.html#ac80d4cf4f9166af730f5c45f70e29799aee70b44ff23eae4731e9175695d1b608">VEPMODE_VAM</a>
+ }</td></tr>
+<tr class="separator:ac80d4cf4f9166af730f5c45f70e29799"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a056a7e9a594275f19bd99150a92f266a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00161_aa5445a6474a23ee3e7756d432dfa4ba1.html#aa5445a6474a23ee3e7756d432dfa4ba1">file_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_a056a7e9a594275f19bd99150a92f266a.html#a056a7e9a594275f19bd99150a92f266a">loadfile</a> (<a class="el" href="a00176_abb93e2407af0d8fe0f5629ce6456c6f9.html#abb93e2407af0d8fe0f5629ce6456c6f9">vxbfs_file_t</a> *)</td></tr>
-<tr class="separator:a056a7e9a594275f19bd99150a92f266a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d38ed022dd74a1ef381240419f8fd72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_af6a258d8f3ee5206d682d799316314b1.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_a4d38ed022dd74a1ef381240419f8fd72.html#a4d38ed022dd74a1ef381240419f8fd72">validvxbfs</a> (<a class="el" href="a00176_ac5678b6d5dd5ed5ca86e5ccd4c30d39d.html#ac5678b6d5dd5ed5ca86e5ccd4c30d39d">vxbfs_header_t</a> *)</td></tr>
-<tr class="separator:a4d38ed022dd74a1ef381240419f8fd72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5530515939c1e3332746affa700c759"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_ad5530515939c1e3332746affa700c759.html#ad5530515939c1e3332746affa700c759">loadvep</a> (<a class="el" href="a00176_a78392c340e1fe1be344df81d1438b74f.html#a78392c340e1fe1be344df81d1438b74f">vepheader_t</a> vep, char *data)</td></tr>
+<tr class="memdesc:ad5530515939c1e3332746affa700c759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a VEP with a VEPHeader.  <a href="a00176_ad5530515939c1e3332746affa700c759.html#ad5530515939c1e3332746affa700c759">More...</a><br /></td></tr>
+<tr class="separator:ad5530515939c1e3332746affa700c759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d608b906676086d77937044205aad33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00176_a7d608b906676086d77937044205aad33.html#a7d608b906676086d77937044205aad33">loadvepf</a> (<a class="el" href="a00176_af285fc2949acac5b7aa6f065c8811960.html#af285fc2949acac5b7aa6f065c8811960">vepfile_t</a> vep)</td></tr>
+<tr class="memdesc:a7d608b906676086d77937044205aad33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a VEP with a VEPFile.  <a href="a00176_a7d608b906676086d77937044205aad33.html#a7d608b906676086d77937044205aad33">More...</a><br /></td></tr>
+<tr class="separator:a7d608b906676086d77937044205aad33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

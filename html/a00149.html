@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/tty.c File Reference</title>
+<title>VitalityX: libc/vitality/fs_implementations/fat.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,26 +39,22 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li><li class="navelem"><a class="el" href="dir_2204a4b3d47b62a14a2dc3b122711013.html">fs_implementations</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">tty.c File Reference</div>  </div>
+<div class="title">fat.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00152_source.html">tty.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00125_source.html">../types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00053_source.html">../../drivers/vga.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00068_source.html">../ext/debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00122_source.html">../system.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00152_source.html">fat.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00134_source.html">../../types.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for tty.c:</div>
+Include dependency graph for fat.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00150.png" border="0" usemap="#libc_2vitality_2tty_8c" alt=""/></div>
+<div class="center"><img src="a00150.png" border="0" usemap="#libc_2vitality_2fs__implementations_2fat_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
@@ -66,41 +62,8 @@ Include dependency graph for tty.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5b5bf610a57f3c59b2851fa2652081ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_a5b5bf610a57f3c59b2851fa2652081ec.html#a5b5bf610a57f3c59b2851fa2652081ec">tty_putstring</a> (char *string, int len)</td></tr>
-<tr class="memdesc:a5b5bf610a57f3c59b2851fa2652081ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string in VRAM, Text mode only.  <a href="a00149_a5b5bf610a57f3c59b2851fa2652081ec.html#a5b5bf610a57f3c59b2851fa2652081ec">More...</a><br /></td></tr>
-<tr class="separator:a5b5bf610a57f3c59b2851fa2652081ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d09038c7b6436e60b228f2f3f451f6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_a3d09038c7b6436e60b228f2f3f451f6a.html#a3d09038c7b6436e60b228f2f3f451f6a">disable_cursor</a> ()</td></tr>
-<tr class="separator:a3d09038c7b6436e60b228f2f3f451f6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe197dc4dbfa6036ef04abd2aeeeca2d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_afe197dc4dbfa6036ef04abd2aeeeca2d.html#afe197dc4dbfa6036ef04abd2aeeeca2d">enable_cursor</a> (<a class="el" href="a00125_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> cursor_start, <a class="el" href="a00125_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> cursor_end)</td></tr>
-<tr class="separator:afe197dc4dbfa6036ef04abd2aeeeca2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a492f5021d7340613e732ef37bbaa04e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_a492f5021d7340613e732ef37bbaa04e4.html#a492f5021d7340613e732ef37bbaa04e4">update_cursor</a> (int x, int y)</td></tr>
-<tr class="separator:a492f5021d7340613e732ef37bbaa04e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb9a978008cfa67b0038e85eb56d2d41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_acb9a978008cfa67b0038e85eb56d2d41.html#acb9a978008cfa67b0038e85eb56d2d41">drawchar3</a> (unsigned char c, unsigned char forecolour, unsigned char backcolour, int x, int y)</td></tr>
-<tr class="memdesc:acb9a978008cfa67b0038e85eb56d2d41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draws a character at x and y in Mode 3.  <a href="a00149_acb9a978008cfa67b0038e85eb56d2d41.html#acb9a978008cfa67b0038e85eb56d2d41">More...</a><br /></td></tr>
-<tr class="separator:acb9a978008cfa67b0038e85eb56d2d41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aff4bc17c602603d120756f52e18ebb96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_aff4bc17c602603d120756f52e18ebb96.html#aff4bc17c602603d120756f52e18ebb96">clearscreen</a> ()</td></tr>
-<tr class="memdesc:aff4bc17c602603d120756f52e18ebb96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the console.  <a href="a00149_aff4bc17c602603d120756f52e18ebb96.html#aff4bc17c602603d120756f52e18ebb96">More...</a><br /></td></tr>
-<tr class="separator:aff4bc17c602603d120756f52e18ebb96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05ca3f5e64f38fec173b635ca8465415"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_a05ca3f5e64f38fec173b635ca8465415.html#a05ca3f5e64f38fec173b635ca8465415">tty_vgaputstring</a> (char *string, int len)</td></tr>
-<tr class="memdesc:a05ca3f5e64f38fec173b635ca8465415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string into VRAM, Mode 13 only.  <a href="a00149_a05ca3f5e64f38fec173b635ca8465415.html#a05ca3f5e64f38fec173b635ca8465415">More...</a><br /></td></tr>
-<tr class="separator:a05ca3f5e64f38fec173b635ca8465415"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade960b1320324706aac6c00cc6b1b2fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_ade960b1320324706aac6c00cc6b1b2fe.html#ade960b1320324706aac6c00cc6b1b2fe">tty_pputstring</a> (char *string)</td></tr>
-<tr class="memdesc:ade960b1320324706aac6c00cc6b1b2fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string into VRAM, detects preferred mode.  <a href="a00149_ade960b1320324706aac6c00cc6b1b2fe.html#ade960b1320324706aac6c00cc6b1b2fe">More...</a><br /></td></tr>
-<tr class="separator:ade960b1320324706aac6c00cc6b1b2fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaf93f9e56ddb7b10462070f59e534e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_abaf93f9e56ddb7b10462070f59e534e4.html#abaf93f9e56ddb7b10462070f59e534e4">tty_pputstringl</a> (char *string, int len)</td></tr>
-<tr class="memdesc:abaf93f9e56ddb7b10462070f59e534e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a string into VRAM, detects preferred mode, uses length.  <a href="a00149_abaf93f9e56ddb7b10462070f59e534e4.html#abaf93f9e56ddb7b10462070f59e534e4">More...</a><br /></td></tr>
-<tr class="separator:abaf93f9e56ddb7b10462070f59e534e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ae69604af0f9bd5fca2a016d0aa1ba7e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_ae69604af0f9bd5fca2a016d0aa1ba7e1.html#ae69604af0f9bd5fca2a016d0aa1ba7e1">cursor_x</a> = 0</td></tr>
-<tr class="separator:ae69604af0f9bd5fca2a016d0aa1ba7e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0301c5492919c401c2c1ecf52af709b0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_a0301c5492919c401c2c1ecf52af709b0.html#a0301c5492919c401c2c1ecf52af709b0">cursor_y</a> = 0</td></tr>
-<tr class="separator:a0301c5492919c401c2c1ecf52af709b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abaa0d20f0e52ce0d3a7d706f6ac16266"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_abaa0d20f0e52ce0d3a7d706f6ac16266.html#abaa0d20f0e52ce0d3a7d706f6ac16266">xoff</a> = 0</td></tr>
-<tr class="separator:abaa0d20f0e52ce0d3a7d706f6ac16266"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a7539764d0ae8cd06ce45c62cf92bca"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_a1a7539764d0ae8cd06ce45c62cf92bca.html#a1a7539764d0ae8cd06ce45c62cf92bca">yoff</a> = 0</td></tr>
-<tr class="separator:a1a7539764d0ae8cd06ce45c62cf92bca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac035ecd760d6c41e08695afddb708e53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00276.html">fat_descriptor_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_ac035ecd760d6c41e08695afddb708e53.html#ac035ecd760d6c41e08695afddb708e53">fat_gendescriptor</a> (fat_BS_t *bs)</td></tr>
+<tr class="separator:ac035ecd760d6c41e08695afddb708e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

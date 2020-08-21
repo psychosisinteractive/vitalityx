@@ -1,239 +1,529 @@
-\hypertarget{a00152}{}\section{libc/vitality/tty.h File Reference}
-\label{a00152}\index{libc/vitality/tty.\+h@{libc/vitality/tty.\+h}}
-This graph shows which files directly or indirectly include this file\+:
+\hypertarget{a00152}{}\section{libc/vitality/fs\+\_\+implementations/fat.h File Reference}
+\label{a00152}\index{libc/vitality/fs\+\_\+implementations/fat.\+h@{libc/vitality/fs\+\_\+implementations/fat.\+h}}
+{\ttfamily \#include \char`\"{}../../types.\+h\char`\"{}}\newline
+Include dependency graph for fat.\+h\+:
 % FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{a00264}{fat\+\_\+ext\+B\+S\+\_\+32}
+\item 
+struct \hyperlink{a00268}{fat\+\_\+ext\+B\+S\+\_\+16}
+\item 
+struct \hyperlink{a00272}{fat\+\_\+\+BS}
+\item 
+struct \hyperlink{a00276}{fat\+\_\+descriptor\+\_\+t}
+\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00152_a4f5595e812b05fcd57804005edfa68a2_a4f5595e812b05fcd57804005edfa68a2}{fat\+\_\+\+N\+A\+ME}~\char`\"{}fat\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146}{fat\+\_\+type\+\_\+e} \{ \newline
+\hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146aee78460e52f239902d3655a0ee0cf82a}{F\+A\+T12}, 
+\hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a8b322666f7d5865bebdde4f7d6b99da0}{F\+A\+T16}, 
+\hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146afc5be65062d254a8cb67d80202a9fb8b}{F\+A\+T32}, 
+\hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a10aba3db5a861bed45ce618cc8546f3b}{E\+X\+F\+AT}, 
+\newline
+\hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a59bda9211f2751bb6cd4b737f8e9ed9f}{U\+N\+K\+WN}
+ \}
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00152_a5b5bf610a57f3c59b2851fa2652081ec_a5b5bf610a57f3c59b2851fa2652081ec}{tty\+\_\+putstring} (char $\ast$string, int len)
-\begin{DoxyCompactList}\small\item\em Puts a string in V\+R\+AM, Text mode only. \end{DoxyCompactList}\item 
-void \hyperlink{a00152_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}{tty\+\_\+vgaputstring} (char $\ast$string, int len)
-\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, Mode 13 only. \end{DoxyCompactList}\item 
-void \hyperlink{a00152_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\+\_\+pputstring} (char $\ast$string)
-\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, detects preferred mode. \end{DoxyCompactList}\item 
-void \hyperlink{a00152_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\+\_\+pputstringl} (char $\ast$string, int len)
-\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, detects preferred mode, uses length. \end{DoxyCompactList}\item 
-void \hyperlink{a00152_a6215de17c731a2ff0d61587c39b15375_a6215de17c731a2ff0d61587c39b15375}{drawchar3} (unsigned char c, unsigned char forecolor, unsigned char backcolor, int x, int y)
-\begin{DoxyCompactList}\small\item\em Draws a character at x and y in Mode 3. \end{DoxyCompactList}\item 
-void \hyperlink{a00152_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}{clearscreen} ()
-\begin{DoxyCompactList}\small\item\em Clears the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+struct \hyperlink{a00264}{fat\+\_\+ext\+B\+S\+\_\+32} \hyperlink{a00152_a03b7c410d9cce18b4547ffa23e065e06_a03b7c410d9cce18b4547ffa23e065e06}{\+\_\+\+\_\+attribute\+\_\+\+\_\+} ((packed)) fat\+\_\+ext\+B\+S\+\_\+32\+\_\+t
+\item 
+\hyperlink{a00276}{fat\+\_\+descriptor\+\_\+t} $\ast$ \hyperlink{a00152_ac035ecd760d6c41e08695afddb708e53_ac035ecd760d6c41e08695afddb708e53}{fat\+\_\+gendescriptor} (fat\+\_\+\+B\+S\+\_\+t $\ast$bs)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+typedef \hyperlink{a00152_a9a3a2a951fb76d806466ff79a3f0d426_a9a3a2a951fb76d806466ff79a3f0d426}{\+\_\+\+\_\+attribute\+\_\+\+\_\+}
+\item 
+unsigned int \hyperlink{a00152_a8202591d7b2208a5bb4e8c6848531b00_a8202591d7b2208a5bb4e8c6848531b00}{table\+\_\+size\+\_\+32}
+\item 
+unsigned short \hyperlink{a00152_ae8c15edc2703a5ba547781b864448b0c_ae8c15edc2703a5ba547781b864448b0c}{extended\+\_\+flags}
+\item 
+unsigned short \hyperlink{a00152_ab4a262a3a624c702e31a66fd3602a60d_ab4a262a3a624c702e31a66fd3602a60d}{fat\+\_\+version}
+\item 
+unsigned int \hyperlink{a00152_a33393065e24bc94ce2089fb86245206a_a33393065e24bc94ce2089fb86245206a}{root\+\_\+cluster}
+\item 
+unsigned short \hyperlink{a00152_a5515272b43d122d7239d4996216e9080_a5515272b43d122d7239d4996216e9080}{fat\+\_\+info}
+\item 
+unsigned short \hyperlink{a00152_aa5aeb1cf34efa1857e5384685d938548_aa5aeb1cf34efa1857e5384685d938548}{backup\+\_\+\+B\+S\+\_\+sector}
+\item 
+unsigned char \hyperlink{a00152_a9be1862088e39957378b98c43222fc0d_a9be1862088e39957378b98c43222fc0d}{reserved\+\_\+0} \mbox{[}12\mbox{]}
+\item 
+unsigned char \hyperlink{a00152_ace7cd596c41a03630b828ad71042c645_ace7cd596c41a03630b828ad71042c645}{drive\+\_\+number}
+\item 
+unsigned char \hyperlink{a00152_aed9514b6f698ccf6462bd8b35a6adbad_aed9514b6f698ccf6462bd8b35a6adbad}{reserved\+\_\+1}
+\item 
+unsigned char \hyperlink{a00152_acd0f56b390c96dd1fc27c96d932583cc_acd0f56b390c96dd1fc27c96d932583cc}{boot\+\_\+signature}
+\item 
+unsigned int \hyperlink{a00152_a35fa9e629267c027e1e46e4b354b6764_a35fa9e629267c027e1e46e4b354b6764}{volume\+\_\+id}
+\item 
+unsigned char \hyperlink{a00152_ac1eef402f95fa102ed4c38f0c791c1c1_ac1eef402f95fa102ed4c38f0c791c1c1}{volume\+\_\+label} \mbox{[}11\mbox{]}
+\item 
+unsigned char \hyperlink{a00152_a587b2173d93330812c7d467613e05372_a587b2173d93330812c7d467613e05372}{fat\+\_\+type\+\_\+label} \mbox{[}8\mbox{]}
+\item 
+unsigned char \hyperlink{a00152_ad9190db73466d476ce9c6d7edb2a23d5_ad9190db73466d476ce9c6d7edb2a23d5}{bios\+\_\+drive\+\_\+num}
+\item 
+unsigned char \hyperlink{a00152_affe215a7220b2d52fb9dacf3b35e56dc_affe215a7220b2d52fb9dacf3b35e56dc}{reserved1}
+\item 
+unsigned char \hyperlink{a00152_a9d09d7d5af910f75a499a71fc8db1cb1_a9d09d7d5af910f75a499a71fc8db1cb1}{bootjmp} \mbox{[}3\mbox{]}
+\item 
+unsigned char \hyperlink{a00152_aad08c3f8e8a444d492cc77be16a79d86_aad08c3f8e8a444d492cc77be16a79d86}{oem\+\_\+name} \mbox{[}8\mbox{]}
+\item 
+unsigned short \hyperlink{a00152_a383840c631d2e9d53e46b6bc5d17c3eb_a383840c631d2e9d53e46b6bc5d17c3eb}{bytes\+\_\+per\+\_\+sector}
+\item 
+unsigned char \hyperlink{a00152_a78e26c23d518983e13881d4e0e53356a_a78e26c23d518983e13881d4e0e53356a}{sectors\+\_\+per\+\_\+cluster}
+\item 
+unsigned short \hyperlink{a00152_af819ceb3bec79135b7de34a0b973f085_af819ceb3bec79135b7de34a0b973f085}{reserved\+\_\+sector\+\_\+count}
+\item 
+unsigned char \hyperlink{a00152_afc6604c21ae7038b249589ecd0560622_afc6604c21ae7038b249589ecd0560622}{table\+\_\+count}
+\item 
+unsigned short \hyperlink{a00152_a7d8c3eb5a95ebc9f53ef60d1e802e8a8_a7d8c3eb5a95ebc9f53ef60d1e802e8a8}{root\+\_\+entry\+\_\+count}
+\item 
+unsigned short \hyperlink{a00152_ab6c9ebaa0ea252eb5692e3d7dc426f46_ab6c9ebaa0ea252eb5692e3d7dc426f46}{total\+\_\+sectors\+\_\+16}
+\item 
+unsigned char \hyperlink{a00152_ab90dc4a72adfaa3c57712df0dab86154_ab90dc4a72adfaa3c57712df0dab86154}{media\+\_\+type}
+\item 
+unsigned short \hyperlink{a00152_ade6f19059c505e2818913816bd8392b3_ade6f19059c505e2818913816bd8392b3}{table\+\_\+size\+\_\+16}
+\item 
+unsigned short \hyperlink{a00152_a602ee4dea0c5142e60ebabb37adf3dd9_a602ee4dea0c5142e60ebabb37adf3dd9}{sectors\+\_\+per\+\_\+track}
+\item 
+unsigned short \hyperlink{a00152_a33263a0ce9b20cca4a493c961a5ade52_a33263a0ce9b20cca4a493c961a5ade52}{head\+\_\+side\+\_\+count}
+\item 
+unsigned int \hyperlink{a00152_a0c59c66983eef3ab335aed301b09c3ba_a0c59c66983eef3ab335aed301b09c3ba}{hidden\+\_\+sector\+\_\+count}
+\item 
+unsigned int \hyperlink{a00152_a0eb25939eb0c1c4ff72bfec5677e78c2_a0eb25939eb0c1c4ff72bfec5677e78c2}{total\+\_\+sectors\+\_\+32}
+\item 
+unsigned char \hyperlink{a00152_aac6b462ea9420b07d31ee647d2fb5a21_aac6b462ea9420b07d31ee647d2fb5a21}{extended\+\_\+section} \mbox{[}54\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{a00152_a4f5595e812b05fcd57804005edfa68a2_a4f5595e812b05fcd57804005edfa68a2}\label{a00152_a4f5595e812b05fcd57804005edfa68a2_a4f5595e812b05fcd57804005edfa68a2}} 
+\index{fat.\+h@{fat.\+h}!fat\+\_\+\+N\+A\+ME@{fat\+\_\+\+N\+A\+ME}}
+\index{fat\+\_\+\+N\+A\+ME@{fat\+\_\+\+N\+A\+ME}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{fat\+\_\+\+N\+A\+ME}{fat\_NAME}}
+{\footnotesize\ttfamily \#define fat\+\_\+\+N\+A\+ME~\char`\"{}fat\char`\"{}}
+
+
+
+Definition at line 3 of file fat.\+h.
+
+
+
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146}\label{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146}} 
+\index{fat.\+h@{fat.\+h}!fat\+\_\+type\+\_\+e@{fat\+\_\+type\+\_\+e}}
+\index{fat\+\_\+type\+\_\+e@{fat\+\_\+type\+\_\+e}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{fat\+\_\+type\+\_\+e}{fat\_type\_e}}
+{\footnotesize\ttfamily enum \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146}{fat\+\_\+type\+\_\+e}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+A\+T12@{F\+A\+T12}!fat.\+h@{fat.\+h}}\index{fat.\+h@{fat.\+h}!F\+A\+T12@{F\+A\+T12}}}\mbox{\Hypertarget{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146aee78460e52f239902d3655a0ee0cf82a}\label{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146aee78460e52f239902d3655a0ee0cf82a}} 
+F\+A\+T12&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+A\+T16@{F\+A\+T16}!fat.\+h@{fat.\+h}}\index{fat.\+h@{fat.\+h}!F\+A\+T16@{F\+A\+T16}}}\mbox{\Hypertarget{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a8b322666f7d5865bebdde4f7d6b99da0}\label{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a8b322666f7d5865bebdde4f7d6b99da0}} 
+F\+A\+T16&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{F\+A\+T32@{F\+A\+T32}!fat.\+h@{fat.\+h}}\index{fat.\+h@{fat.\+h}!F\+A\+T32@{F\+A\+T32}}}\mbox{\Hypertarget{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146afc5be65062d254a8cb67d80202a9fb8b}\label{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146afc5be65062d254a8cb67d80202a9fb8b}} 
+F\+A\+T32&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{E\+X\+F\+AT@{E\+X\+F\+AT}!fat.\+h@{fat.\+h}}\index{fat.\+h@{fat.\+h}!E\+X\+F\+AT@{E\+X\+F\+AT}}}\mbox{\Hypertarget{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a10aba3db5a861bed45ce618cc8546f3b}\label{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a10aba3db5a861bed45ce618cc8546f3b}} 
+E\+X\+F\+AT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{U\+N\+K\+WN@{U\+N\+K\+WN}!fat.\+h@{fat.\+h}}\index{fat.\+h@{fat.\+h}!U\+N\+K\+WN@{U\+N\+K\+WN}}}\mbox{\Hypertarget{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a59bda9211f2751bb6cd4b737f8e9ed9f}\label{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a59bda9211f2751bb6cd4b737f8e9ed9f}} 
+U\+N\+K\+WN&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 117 of file fat.\+h.
+
+
+\begin{DoxyCode}
+117              \{
+118     \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146aee78460e52f239902d3655a0ee0cf82a}{FAT12},
+119     \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a8b322666f7d5865bebdde4f7d6b99da0}{FAT16},
+120     \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146afc5be65062d254a8cb67d80202a9fb8b}{FAT32},
+121     \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a10aba3db5a861bed45ce618cc8546f3b}{EXFAT},
+122     \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a59bda9211f2751bb6cd4b737f8e9ed9f}{UNKWN},
+123 \} \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146}{fat\_type\_e};
+\end{DoxyCode}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00152_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}\label{a00152_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}} 
-\index{tty.\+h@{tty.\+h}!clearscreen@{clearscreen}}
-\index{clearscreen@{clearscreen}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{clearscreen()}{clearscreen()}}
-{\footnotesize\ttfamily void clearscreen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00152_a03b7c410d9cce18b4547ffa23e065e06_a03b7c410d9cce18b4547ffa23e065e06}\label{a00152_a03b7c410d9cce18b4547ffa23e065e06_a03b7c410d9cce18b4547ffa23e065e06}} 
+\index{fat.\+h@{fat.\+h}!\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+attribute\+\_\+\+\_\+()}{\_\_attribute\_\_()}}
+{\footnotesize\ttfamily struct \hyperlink{a00264}{fat\+\_\+ext\+B\+S\+\_\+32} \+\_\+\+\_\+attribute\+\_\+\+\_\+ (\begin{DoxyParamCaption}\item[{(packed)}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{a00152_ac035ecd760d6c41e08695afddb708e53_ac035ecd760d6c41e08695afddb708e53}\label{a00152_ac035ecd760d6c41e08695afddb708e53_ac035ecd760d6c41e08695afddb708e53}} 
+\index{fat.\+h@{fat.\+h}!fat\+\_\+gendescriptor@{fat\+\_\+gendescriptor}}
+\index{fat\+\_\+gendescriptor@{fat\+\_\+gendescriptor}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{fat\+\_\+gendescriptor()}{fat\_gendescriptor()}}
+{\footnotesize\ttfamily \hyperlink{a00276}{fat\+\_\+descriptor\+\_\+t}$\ast$ fat\+\_\+gendescriptor (\begin{DoxyParamCaption}\item[{fat\+\_\+\+B\+S\+\_\+t $\ast$}]{bs }\end{DoxyParamCaption})}
 
 
 
-Clears the console. 
-
-
-
-Definition at line 72 of file tty.\+c.
-
-
-\begin{DoxyCode}
-72                    \{
-73     \hyperlink{a00119_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(0xb8000,0,0x1fff);
-74     \hyperlink{a00149_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff} = 0;
-75     \hyperlink{a00149_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff} = 0;
-76     \hyperlink{a00149_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x} = \hyperlink{a00149_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff};
-77     \hyperlink{a00149_a0301c5492919c401c2c1ecf52af709b0_a0301c5492919c401c2c1ecf52af709b0}{cursor\_y} = \hyperlink{a00149_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff};
-78     \hyperlink{a00149_a492f5021d7340613e732ef37bbaa04e4_a492f5021d7340613e732ef37bbaa04e4}{update\_cursor}(\hyperlink{a00149_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x},\hyperlink{a00149_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x});
-79 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00152_a6215de17c731a2ff0d61587c39b15375_a6215de17c731a2ff0d61587c39b15375}\label{a00152_a6215de17c731a2ff0d61587c39b15375_a6215de17c731a2ff0d61587c39b15375}} 
-\index{tty.\+h@{tty.\+h}!drawchar3@{drawchar3}}
-\index{drawchar3@{drawchar3}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{drawchar3()}{drawchar3()}}
-{\footnotesize\ttfamily void drawchar3 (\begin{DoxyParamCaption}\item[{unsigned char}]{c,  }\item[{unsigned char}]{forecolor,  }\item[{unsigned char}]{backcolor,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
-
-
-
-Draws a character at x and y in Mode 3. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em c} & The character \\
-\hline
-{\em forecolor} & The foreground color \\
-\hline
-{\em backcolor} & The backgroud color \\
-\hline
-{\em x} & The x position \\
-\hline
-{\em y} & The y position \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 61 of file tty.\+c.
+Definition at line 4 of file fat.\+c.
 
 
 \begin{DoxyCode}
-62 \{
-63      \hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} attrib = (backcolour << 4) | (forecolour & 0x0F);
-64      \textcolor{keyword}{volatile} \hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} * where;
-65      where = (\textcolor{keyword}{volatile} \hyperlink{a00125_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} *)0xB8000 + (y * 80 + x) ;
-66      *where = c | (attrib << 8);
-67 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00152_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}\label{a00152_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}} 
-\index{tty.\+h@{tty.\+h}!tty\+\_\+pputstring@{tty\+\_\+pputstring}}
-\index{tty\+\_\+pputstring@{tty\+\_\+pputstring}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{tty\+\_\+pputstring()}{tty\_pputstring()}}
-{\footnotesize\ttfamily void tty\+\_\+pputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
-
-
-
-Puts a string into V\+R\+AM, detects preferred mode. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 91 of file tty.\+c.
-
-
-\begin{DoxyCode}
-91                                   \{
-92     \textcolor{keywordflow}{switch} (\hyperlink{a00053_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}{vgamode})
-93     \{
-94     \textcolor{keywordflow}{case} 0x3:
-95         \hyperlink{a00149_a5b5bf610a57f3c59b2851fa2652081ec_a5b5bf610a57f3c59b2851fa2652081ec}{tty\_putstring}(\textcolor{keywordtype}{string},0);
-96         \textcolor{keywordflow}{break};
-97     \textcolor{keywordflow}{case} 0x13:
-98         \hyperlink{a00149_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}{tty\_vgaputstring}(\textcolor{keywordtype}{string},0);
-99         \textcolor{keywordflow}{break};
-100     \textcolor{keywordflow}{default}:
-101         \hyperlink{a00149_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}{tty\_vgaputstring}(\textcolor{keywordtype}{string},0);
-102         \textcolor{keywordflow}{break};
-103     \}
-104 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00152_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}\label{a00152_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}} 
-\index{tty.\+h@{tty.\+h}!tty\+\_\+pputstringl@{tty\+\_\+pputstringl}}
-\index{tty\+\_\+pputstringl@{tty\+\_\+pputstringl}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{tty\+\_\+pputstringl()}{tty\_pputstringl()}}
-{\footnotesize\ttfamily void tty\+\_\+pputstringl (\begin{DoxyParamCaption}\item[{char $\ast$}]{string,  }\item[{int}]{len }\end{DoxyParamCaption})}
-
-
-
-Puts a string into V\+R\+AM, detects preferred mode, uses length. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-{\em len} & The length \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 106 of file tty.\+c.
-
-
-\begin{DoxyCode}
-106                                             \{
-107     \textcolor{keywordflow}{switch} (\hyperlink{a00053_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}{vgamode})
-108     \{
-109     \textcolor{keywordflow}{case} 0x3:
-110         \hyperlink{a00149_a5b5bf610a57f3c59b2851fa2652081ec_a5b5bf610a57f3c59b2851fa2652081ec}{tty\_putstring}(\textcolor{keywordtype}{string},len);
-111         \textcolor{keywordflow}{break};
-112     \textcolor{keywordflow}{case} 0x13:
-113         \hyperlink{a00149_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}{tty\_vgaputstring}(\textcolor{keywordtype}{string},len);
-114         \textcolor{keywordflow}{break};
-115     \textcolor{keywordflow}{default}:
-116         \hyperlink{a00149_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}{tty\_vgaputstring}(\textcolor{keywordtype}{string},len);
-117         \textcolor{keywordflow}{break};
-118     \}
-119 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00152_a5b5bf610a57f3c59b2851fa2652081ec_a5b5bf610a57f3c59b2851fa2652081ec}\label{a00152_a5b5bf610a57f3c59b2851fa2652081ec_a5b5bf610a57f3c59b2851fa2652081ec}} 
-\index{tty.\+h@{tty.\+h}!tty\+\_\+putstring@{tty\+\_\+putstring}}
-\index{tty\+\_\+putstring@{tty\+\_\+putstring}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{tty\+\_\+putstring()}{tty\_putstring()}}
-{\footnotesize\ttfamily void tty\+\_\+putstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string,  }\item[{int}]{len }\end{DoxyParamCaption})}
-
-
-
-Puts a string in V\+R\+AM, Text mode only. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-{\em len} & The length \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 10 of file tty.\+c.
-
-
-\begin{DoxyCode}
-10                                           \{
-11     \textcolor{keywordflow}{if}(len == 0) \{
-12         len = \hyperlink{a00125_a689b119da994dece91d44b5aeac643ed_a689b119da994dece91d44b5aeac643ed}{USHRT\_MAX};
-13     \}
-14     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
-15     \hyperlink{a00149_a3d09038c7b6436e60b228f2f3f451f6a_a3d09038c7b6436e60b228f2f3f451f6a}{disable\_cursor}();
-16     len += 0xb8000;
-17     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'} | !(\textcolor{keywordtype}{string} < (\hyperlink{a00125_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t})len)) \{
-18         \textcolor{keywordflow}{switch}(chara) \{
-19             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)n'}:
-20                 \hyperlink{a00149_a0301c5492919c401c2c1ecf52af709b0_a0301c5492919c401c2c1ecf52af709b0}{cursor\_y}++;
-21                 \hyperlink{a00149_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x} = 0;
-22                 \textcolor{keywordflow}{break};
-23             \textcolor{keywordflow}{default}:
-24                 \hyperlink{a00068_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}{BochsConsolePrintChar}(chara);
-25                 \hyperlink{a00149_acb9a978008cfa67b0038e85eb56d2d41_acb9a978008cfa67b0038e85eb56d2d41}{drawchar3}(chara,0x7,0x0,\hyperlink{a00149_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x},\hyperlink{a00149_a0301c5492919c401c2c1ecf52af709b0_a0301c5492919c401c2c1ecf52af709b0}{cursor\_y});
-26                 \hyperlink{a00149_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x}++;
-27                 \textcolor{keywordflow}{break};
-28         \}
-29         \textcolor{comment}{// get next character}
-30         chara = *\textcolor{keywordtype}{string}++;
+4                                                   \{
+5     \hyperlink{a00276}{fat\_descriptor\_t} \hyperlink{a00188_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor};
+6 
+7     fat\_extBS\_32\_t *fat\_boot\_ext\_32 = \hyperlink{a00134_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+8     fat\_extBS\_16\_t *fat\_boot\_ext\_16 = \hyperlink{a00134_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+9 
+10     descriptor.\hyperlink{a00276_a6ba8fdfcc30f2737d98cf80f744477d4_a6ba8fdfcc30f2737d98cf80f744477d4}{total\_sectors} = (bs->total\_sectors\_16 == 0)? bs->total\_sectors\_32 : bs->
+      total\_sectors\_16;
+11     descriptor.\hyperlink{a00276_a18ddffcaa1d119d72bc828fec257aabf_a18ddffcaa1d119d72bc828fec257aabf}{bs} = &bs;
+12     \textcolor{keywordflow}{if}(descriptor.\hyperlink{a00276_a659431475a2b5d306362e0364e1ecdbf_a659431475a2b5d306362e0364e1ecdbf}{total\_clusters} < 4085) 
+13     \{
+14         fat\_boot\_ext\_16 = (fat\_extBS\_16\_t*)bs->extended\_section;
+15         descriptor.\hyperlink{a00276_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146aee78460e52f239902d3655a0ee0cf82a}{FAT12};
+16     \} 
+17     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(descriptor.\hyperlink{a00276_a659431475a2b5d306362e0364e1ecdbf_a659431475a2b5d306362e0364e1ecdbf}{total\_clusters} < 65525) 
+18     \{
+19         fat\_boot\_ext\_16 = (fat\_extBS\_16\_t*)bs->extended\_section;
+20         descriptor.\hyperlink{a00276_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a8b322666f7d5865bebdde4f7d6b99da0}{FAT16};
+21     \} 
+22     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (descriptor.\hyperlink{a00276_a659431475a2b5d306362e0364e1ecdbf_a659431475a2b5d306362e0364e1ecdbf}{total\_clusters} < 268435445)
+23     \{
+24         fat\_boot\_ext\_32 = (fat\_extBS\_16\_t*)bs->extended\_section;
+25         descriptor.\hyperlink{a00276_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146afc5be65062d254a8cb67d80202a9fb8b}{FAT32};
+26     \}
+27     \textcolor{keywordflow}{else}
+28     \{ 
+29         \textcolor{comment}{// idk}
+30         descriptor.\hyperlink{a00276_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a10aba3db5a861bed45ce618cc8546f3b}{EXFAT};
 31     \}
-32     \hyperlink{a00149_afe197dc4dbfa6036ef04abd2aeeeca2d_afe197dc4dbfa6036ef04abd2aeeeca2d}{enable\_cursor}(0,15);
-33     \hyperlink{a00149_a492f5021d7340613e732ef37bbaa04e4_a492f5021d7340613e732ef37bbaa04e4}{update\_cursor}(\hyperlink{a00149_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x},\hyperlink{a00149_a0301c5492919c401c2c1ecf52af709b0_a0301c5492919c401c2c1ecf52af709b0}{cursor\_y});
+32 
+33     descriptor.\hyperlink{a00276_af99ceda6bbab7839a8045c6c6fd18c42_af99ceda6bbab7839a8045c6c6fd18c42}{fat\_size} = (bs->table\_size\_16 == 0)? fat\_boot\_ext\_32->table\_size\_32 : bs->
+      table\_size\_16;
 34 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00152_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}\label{a00152_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}} 
-\index{tty.\+h@{tty.\+h}!tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}}
-\index{tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{tty\+\_\+vgaputstring()}{tty\_vgaputstring()}}
-{\footnotesize\ttfamily void tty\+\_\+vgaputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{a00152_a9a3a2a951fb76d806466ff79a3f0d426_a9a3a2a951fb76d806466ff79a3f0d426}\label{a00152_a9a3a2a951fb76d806466ff79a3f0d426_a9a3a2a951fb76d806466ff79a3f0d426}} 
+\index{fat.\+h@{fat.\+h}!\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}}
+\index{\+\_\+\+\_\+attribute\+\_\+\+\_\+@{\+\_\+\+\_\+attribute\+\_\+\+\_\+}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+attribute\+\_\+\+\_\+}{\_\_attribute\_\_}}
+{\footnotesize\ttfamily struct \hyperlink{a00272}{fat\+\_\+\+BS} \+\_\+\+\_\+attribute\+\_\+\+\_\+}
+
+\mbox{\Hypertarget{a00152_aa5aeb1cf34efa1857e5384685d938548_aa5aeb1cf34efa1857e5384685d938548}\label{a00152_aa5aeb1cf34efa1857e5384685d938548_aa5aeb1cf34efa1857e5384685d938548}} 
+\index{fat.\+h@{fat.\+h}!backup\+\_\+\+B\+S\+\_\+sector@{backup\+\_\+\+B\+S\+\_\+sector}}
+\index{backup\+\_\+\+B\+S\+\_\+sector@{backup\+\_\+\+B\+S\+\_\+sector}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{backup\+\_\+\+B\+S\+\_\+sector}{backup\_BS\_sector}}
+{\footnotesize\ttfamily unsigned short backup\+\_\+\+B\+S\+\_\+sector}
 
 
 
-Puts a string into V\+R\+AM, Mode 13 only. 
+Definition at line 11 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_ad9190db73466d476ce9c6d7edb2a23d5_ad9190db73466d476ce9c6d7edb2a23d5}\label{a00152_ad9190db73466d476ce9c6d7edb2a23d5_ad9190db73466d476ce9c6d7edb2a23d5}} 
+\index{fat.\+h@{fat.\+h}!bios\+\_\+drive\+\_\+num@{bios\+\_\+drive\+\_\+num}}
+\index{bios\+\_\+drive\+\_\+num@{bios\+\_\+drive\+\_\+num}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{bios\+\_\+drive\+\_\+num}{bios\_drive\_num}}
+{\footnotesize\ttfamily unsigned char bios\+\_\+drive\+\_\+num}
 
 
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-{\em len} & The length \\
-\hline
-\end{DoxyParams}
+
+Definition at line 6 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_acd0f56b390c96dd1fc27c96d932583cc_acd0f56b390c96dd1fc27c96d932583cc}\label{a00152_acd0f56b390c96dd1fc27c96d932583cc_acd0f56b390c96dd1fc27c96d932583cc}} 
+\index{fat.\+h@{fat.\+h}!boot\+\_\+signature@{boot\+\_\+signature}}
+\index{boot\+\_\+signature@{boot\+\_\+signature}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{boot\+\_\+signature}{boot\_signature}}
+{\footnotesize\ttfamily unsigned char boot\+\_\+signature}
 
 
-Definition at line 81 of file tty.\+c.
+
+Definition at line 15 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_a9d09d7d5af910f75a499a71fc8db1cb1_a9d09d7d5af910f75a499a71fc8db1cb1}\label{a00152_a9d09d7d5af910f75a499a71fc8db1cb1_a9d09d7d5af910f75a499a71fc8db1cb1}} 
+\index{fat.\+h@{fat.\+h}!bootjmp@{bootjmp}}
+\index{bootjmp@{bootjmp}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{bootjmp}{bootjmp}}
+{\footnotesize\ttfamily unsigned char bootjmp\mbox{[}3\mbox{]}}
 
 
-\begin{DoxyCode}
-81                                              \{
-82     \hyperlink{a00065_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{keywordtype}{string});
-83     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
-84     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'}) \{
-85         \hyperlink{a00050_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}{drawchar}(chara,\hyperlink{a00149_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff},\hyperlink{a00149_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff}+17,0xf,0x0);
-86         \hyperlink{a00149_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff} += 8;
-87         chara = *\textcolor{keywordtype}{string}++;
-88     \}
-89 \}
-\end{DoxyCode}
+
+Definition at line 5 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_a383840c631d2e9d53e46b6bc5d17c3eb_a383840c631d2e9d53e46b6bc5d17c3eb}\label{a00152_a383840c631d2e9d53e46b6bc5d17c3eb_a383840c631d2e9d53e46b6bc5d17c3eb}} 
+\index{fat.\+h@{fat.\+h}!bytes\+\_\+per\+\_\+sector@{bytes\+\_\+per\+\_\+sector}}
+\index{bytes\+\_\+per\+\_\+sector@{bytes\+\_\+per\+\_\+sector}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{bytes\+\_\+per\+\_\+sector}{bytes\_per\_sector}}
+{\footnotesize\ttfamily unsigned short bytes\+\_\+per\+\_\+sector}
+
+
+
+Definition at line 7 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_ace7cd596c41a03630b828ad71042c645_ace7cd596c41a03630b828ad71042c645}\label{a00152_ace7cd596c41a03630b828ad71042c645_ace7cd596c41a03630b828ad71042c645}} 
+\index{fat.\+h@{fat.\+h}!drive\+\_\+number@{drive\+\_\+number}}
+\index{drive\+\_\+number@{drive\+\_\+number}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{drive\+\_\+number}{drive\_number}}
+{\footnotesize\ttfamily unsigned char drive\+\_\+number}
+
+
+
+Definition at line 13 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_ae8c15edc2703a5ba547781b864448b0c_ae8c15edc2703a5ba547781b864448b0c}\label{a00152_ae8c15edc2703a5ba547781b864448b0c_ae8c15edc2703a5ba547781b864448b0c}} 
+\index{fat.\+h@{fat.\+h}!extended\+\_\+flags@{extended\+\_\+flags}}
+\index{extended\+\_\+flags@{extended\+\_\+flags}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{extended\+\_\+flags}{extended\_flags}}
+{\footnotesize\ttfamily unsigned short extended\+\_\+flags}
+
+
+
+Definition at line 7 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_aac6b462ea9420b07d31ee647d2fb5a21_aac6b462ea9420b07d31ee647d2fb5a21}\label{a00152_aac6b462ea9420b07d31ee647d2fb5a21_aac6b462ea9420b07d31ee647d2fb5a21}} 
+\index{fat.\+h@{fat.\+h}!extended\+\_\+section@{extended\+\_\+section}}
+\index{extended\+\_\+section@{extended\+\_\+section}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{extended\+\_\+section}{extended\_section}}
+{\footnotesize\ttfamily unsigned char extended\+\_\+section\mbox{[}54\mbox{]}}
+
+
+
+Definition at line 21 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_a5515272b43d122d7239d4996216e9080_a5515272b43d122d7239d4996216e9080}\label{a00152_a5515272b43d122d7239d4996216e9080_a5515272b43d122d7239d4996216e9080}} 
+\index{fat.\+h@{fat.\+h}!fat\+\_\+info@{fat\+\_\+info}}
+\index{fat\+\_\+info@{fat\+\_\+info}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{fat\+\_\+info}{fat\_info}}
+{\footnotesize\ttfamily unsigned short fat\+\_\+info}
+
+
+
+Definition at line 10 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_a587b2173d93330812c7d467613e05372_a587b2173d93330812c7d467613e05372}\label{a00152_a587b2173d93330812c7d467613e05372_a587b2173d93330812c7d467613e05372}} 
+\index{fat.\+h@{fat.\+h}!fat\+\_\+type\+\_\+label@{fat\+\_\+type\+\_\+label}}
+\index{fat\+\_\+type\+\_\+label@{fat\+\_\+type\+\_\+label}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{fat\+\_\+type\+\_\+label}{fat\_type\_label}}
+{\footnotesize\ttfamily unsigned char fat\+\_\+type\+\_\+label}
+
+
+
+Definition at line 18 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_ab4a262a3a624c702e31a66fd3602a60d_ab4a262a3a624c702e31a66fd3602a60d}\label{a00152_ab4a262a3a624c702e31a66fd3602a60d_ab4a262a3a624c702e31a66fd3602a60d}} 
+\index{fat.\+h@{fat.\+h}!fat\+\_\+version@{fat\+\_\+version}}
+\index{fat\+\_\+version@{fat\+\_\+version}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{fat\+\_\+version}{fat\_version}}
+{\footnotesize\ttfamily unsigned short fat\+\_\+version}
+
+
+
+Definition at line 8 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_a33263a0ce9b20cca4a493c961a5ade52_a33263a0ce9b20cca4a493c961a5ade52}\label{a00152_a33263a0ce9b20cca4a493c961a5ade52_a33263a0ce9b20cca4a493c961a5ade52}} 
+\index{fat.\+h@{fat.\+h}!head\+\_\+side\+\_\+count@{head\+\_\+side\+\_\+count}}
+\index{head\+\_\+side\+\_\+count@{head\+\_\+side\+\_\+count}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{head\+\_\+side\+\_\+count}{head\_side\_count}}
+{\footnotesize\ttfamily unsigned short head\+\_\+side\+\_\+count}
+
+
+
+Definition at line 16 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_a0c59c66983eef3ab335aed301b09c3ba_a0c59c66983eef3ab335aed301b09c3ba}\label{a00152_a0c59c66983eef3ab335aed301b09c3ba_a0c59c66983eef3ab335aed301b09c3ba}} 
+\index{fat.\+h@{fat.\+h}!hidden\+\_\+sector\+\_\+count@{hidden\+\_\+sector\+\_\+count}}
+\index{hidden\+\_\+sector\+\_\+count@{hidden\+\_\+sector\+\_\+count}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{hidden\+\_\+sector\+\_\+count}{hidden\_sector\_count}}
+{\footnotesize\ttfamily unsigned int hidden\+\_\+sector\+\_\+count}
+
+
+
+Definition at line 17 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_ab90dc4a72adfaa3c57712df0dab86154_ab90dc4a72adfaa3c57712df0dab86154}\label{a00152_ab90dc4a72adfaa3c57712df0dab86154_ab90dc4a72adfaa3c57712df0dab86154}} 
+\index{fat.\+h@{fat.\+h}!media\+\_\+type@{media\+\_\+type}}
+\index{media\+\_\+type@{media\+\_\+type}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{media\+\_\+type}{media\_type}}
+{\footnotesize\ttfamily unsigned char media\+\_\+type}
+
+
+
+Definition at line 13 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_aad08c3f8e8a444d492cc77be16a79d86_aad08c3f8e8a444d492cc77be16a79d86}\label{a00152_aad08c3f8e8a444d492cc77be16a79d86_aad08c3f8e8a444d492cc77be16a79d86}} 
+\index{fat.\+h@{fat.\+h}!oem\+\_\+name@{oem\+\_\+name}}
+\index{oem\+\_\+name@{oem\+\_\+name}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{oem\+\_\+name}{oem\_name}}
+{\footnotesize\ttfamily unsigned char oem\+\_\+name\mbox{[}8\mbox{]}}
+
+
+
+Definition at line 6 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_affe215a7220b2d52fb9dacf3b35e56dc_affe215a7220b2d52fb9dacf3b35e56dc}\label{a00152_affe215a7220b2d52fb9dacf3b35e56dc_affe215a7220b2d52fb9dacf3b35e56dc}} 
+\index{fat.\+h@{fat.\+h}!reserved1@{reserved1}}
+\index{reserved1@{reserved1}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{reserved1}{reserved1}}
+{\footnotesize\ttfamily unsigned char reserved1}
+
+
+
+Definition at line 7 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_a9be1862088e39957378b98c43222fc0d_a9be1862088e39957378b98c43222fc0d}\label{a00152_a9be1862088e39957378b98c43222fc0d_a9be1862088e39957378b98c43222fc0d}} 
+\index{fat.\+h@{fat.\+h}!reserved\+\_\+0@{reserved\+\_\+0}}
+\index{reserved\+\_\+0@{reserved\+\_\+0}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{reserved\+\_\+0}{reserved\_0}}
+{\footnotesize\ttfamily unsigned char reserved\+\_\+0\mbox{[}12\mbox{]}}
+
+
+
+Definition at line 12 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_aed9514b6f698ccf6462bd8b35a6adbad_aed9514b6f698ccf6462bd8b35a6adbad}\label{a00152_aed9514b6f698ccf6462bd8b35a6adbad_aed9514b6f698ccf6462bd8b35a6adbad}} 
+\index{fat.\+h@{fat.\+h}!reserved\+\_\+1@{reserved\+\_\+1}}
+\index{reserved\+\_\+1@{reserved\+\_\+1}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{reserved\+\_\+1}{reserved\_1}}
+{\footnotesize\ttfamily unsigned char reserved\+\_\+1}
+
+
+
+Definition at line 14 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_af819ceb3bec79135b7de34a0b973f085_af819ceb3bec79135b7de34a0b973f085}\label{a00152_af819ceb3bec79135b7de34a0b973f085_af819ceb3bec79135b7de34a0b973f085}} 
+\index{fat.\+h@{fat.\+h}!reserved\+\_\+sector\+\_\+count@{reserved\+\_\+sector\+\_\+count}}
+\index{reserved\+\_\+sector\+\_\+count@{reserved\+\_\+sector\+\_\+count}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{reserved\+\_\+sector\+\_\+count}{reserved\_sector\_count}}
+{\footnotesize\ttfamily unsigned short reserved\+\_\+sector\+\_\+count}
+
+
+
+Definition at line 9 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_a33393065e24bc94ce2089fb86245206a_a33393065e24bc94ce2089fb86245206a}\label{a00152_a33393065e24bc94ce2089fb86245206a_a33393065e24bc94ce2089fb86245206a}} 
+\index{fat.\+h@{fat.\+h}!root\+\_\+cluster@{root\+\_\+cluster}}
+\index{root\+\_\+cluster@{root\+\_\+cluster}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{root\+\_\+cluster}{root\_cluster}}
+{\footnotesize\ttfamily unsigned int root\+\_\+cluster}
+
+
+
+Definition at line 9 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_a7d8c3eb5a95ebc9f53ef60d1e802e8a8_a7d8c3eb5a95ebc9f53ef60d1e802e8a8}\label{a00152_a7d8c3eb5a95ebc9f53ef60d1e802e8a8_a7d8c3eb5a95ebc9f53ef60d1e802e8a8}} 
+\index{fat.\+h@{fat.\+h}!root\+\_\+entry\+\_\+count@{root\+\_\+entry\+\_\+count}}
+\index{root\+\_\+entry\+\_\+count@{root\+\_\+entry\+\_\+count}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{root\+\_\+entry\+\_\+count}{root\_entry\_count}}
+{\footnotesize\ttfamily unsigned short root\+\_\+entry\+\_\+count}
+
+
+
+Definition at line 11 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_a78e26c23d518983e13881d4e0e53356a_a78e26c23d518983e13881d4e0e53356a}\label{a00152_a78e26c23d518983e13881d4e0e53356a_a78e26c23d518983e13881d4e0e53356a}} 
+\index{fat.\+h@{fat.\+h}!sectors\+\_\+per\+\_\+cluster@{sectors\+\_\+per\+\_\+cluster}}
+\index{sectors\+\_\+per\+\_\+cluster@{sectors\+\_\+per\+\_\+cluster}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{sectors\+\_\+per\+\_\+cluster}{sectors\_per\_cluster}}
+{\footnotesize\ttfamily unsigned char sectors\+\_\+per\+\_\+cluster}
+
+
+
+Definition at line 8 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_a602ee4dea0c5142e60ebabb37adf3dd9_a602ee4dea0c5142e60ebabb37adf3dd9}\label{a00152_a602ee4dea0c5142e60ebabb37adf3dd9_a602ee4dea0c5142e60ebabb37adf3dd9}} 
+\index{fat.\+h@{fat.\+h}!sectors\+\_\+per\+\_\+track@{sectors\+\_\+per\+\_\+track}}
+\index{sectors\+\_\+per\+\_\+track@{sectors\+\_\+per\+\_\+track}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{sectors\+\_\+per\+\_\+track}{sectors\_per\_track}}
+{\footnotesize\ttfamily unsigned short sectors\+\_\+per\+\_\+track}
+
+
+
+Definition at line 15 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_afc6604c21ae7038b249589ecd0560622_afc6604c21ae7038b249589ecd0560622}\label{a00152_afc6604c21ae7038b249589ecd0560622_afc6604c21ae7038b249589ecd0560622}} 
+\index{fat.\+h@{fat.\+h}!table\+\_\+count@{table\+\_\+count}}
+\index{table\+\_\+count@{table\+\_\+count}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{table\+\_\+count}{table\_count}}
+{\footnotesize\ttfamily unsigned char table\+\_\+count}
+
+
+
+Definition at line 10 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_ade6f19059c505e2818913816bd8392b3_ade6f19059c505e2818913816bd8392b3}\label{a00152_ade6f19059c505e2818913816bd8392b3_ade6f19059c505e2818913816bd8392b3}} 
+\index{fat.\+h@{fat.\+h}!table\+\_\+size\+\_\+16@{table\+\_\+size\+\_\+16}}
+\index{table\+\_\+size\+\_\+16@{table\+\_\+size\+\_\+16}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{table\+\_\+size\+\_\+16}{table\_size\_16}}
+{\footnotesize\ttfamily unsigned short table\+\_\+size\+\_\+16}
+
+
+
+Definition at line 14 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_a8202591d7b2208a5bb4e8c6848531b00_a8202591d7b2208a5bb4e8c6848531b00}\label{a00152_a8202591d7b2208a5bb4e8c6848531b00_a8202591d7b2208a5bb4e8c6848531b00}} 
+\index{fat.\+h@{fat.\+h}!table\+\_\+size\+\_\+32@{table\+\_\+size\+\_\+32}}
+\index{table\+\_\+size\+\_\+32@{table\+\_\+size\+\_\+32}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{table\+\_\+size\+\_\+32}{table\_size\_32}}
+{\footnotesize\ttfamily unsigned int table\+\_\+size\+\_\+32}
+
+
+
+Definition at line 6 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_ab6c9ebaa0ea252eb5692e3d7dc426f46_ab6c9ebaa0ea252eb5692e3d7dc426f46}\label{a00152_ab6c9ebaa0ea252eb5692e3d7dc426f46_ab6c9ebaa0ea252eb5692e3d7dc426f46}} 
+\index{fat.\+h@{fat.\+h}!total\+\_\+sectors\+\_\+16@{total\+\_\+sectors\+\_\+16}}
+\index{total\+\_\+sectors\+\_\+16@{total\+\_\+sectors\+\_\+16}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{total\+\_\+sectors\+\_\+16}{total\_sectors\_16}}
+{\footnotesize\ttfamily unsigned short total\+\_\+sectors\+\_\+16}
+
+
+
+Definition at line 12 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_a0eb25939eb0c1c4ff72bfec5677e78c2_a0eb25939eb0c1c4ff72bfec5677e78c2}\label{a00152_a0eb25939eb0c1c4ff72bfec5677e78c2_a0eb25939eb0c1c4ff72bfec5677e78c2}} 
+\index{fat.\+h@{fat.\+h}!total\+\_\+sectors\+\_\+32@{total\+\_\+sectors\+\_\+32}}
+\index{total\+\_\+sectors\+\_\+32@{total\+\_\+sectors\+\_\+32}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{total\+\_\+sectors\+\_\+32}{total\_sectors\_32}}
+{\footnotesize\ttfamily unsigned int total\+\_\+sectors\+\_\+32}
+
+
+
+Definition at line 18 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_a35fa9e629267c027e1e46e4b354b6764_a35fa9e629267c027e1e46e4b354b6764}\label{a00152_a35fa9e629267c027e1e46e4b354b6764_a35fa9e629267c027e1e46e4b354b6764}} 
+\index{fat.\+h@{fat.\+h}!volume\+\_\+id@{volume\+\_\+id}}
+\index{volume\+\_\+id@{volume\+\_\+id}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{volume\+\_\+id}{volume\_id}}
+{\footnotesize\ttfamily unsigned int volume\+\_\+id}
+
+
+
+Definition at line 16 of file fat.\+h.
+
+\mbox{\Hypertarget{a00152_ac1eef402f95fa102ed4c38f0c791c1c1_ac1eef402f95fa102ed4c38f0c791c1c1}\label{a00152_ac1eef402f95fa102ed4c38f0c791c1c1_ac1eef402f95fa102ed4c38f0c791c1c1}} 
+\index{fat.\+h@{fat.\+h}!volume\+\_\+label@{volume\+\_\+label}}
+\index{volume\+\_\+label@{volume\+\_\+label}!fat.\+h@{fat.\+h}}
+\subsubsection{\texorpdfstring{volume\+\_\+label}{volume\_label}}
+{\footnotesize\ttfamily unsigned char volume\+\_\+label}
+
+
+
+Definition at line 17 of file fat.\+h.
+

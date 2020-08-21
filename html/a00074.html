@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/ext/kheap.h File Reference</title>
+<title>VitalityX: libc/ext/debug.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,44 +44,39 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">kheap.h File Reference</div>  </div>
+<div class="title">debug.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00125_source.html">../types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00158_source.html">../vitality/inline.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for kheap.h:</div>
+Include dependency graph for debug.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00075.png" border="0" usemap="#libc_2ext_2kheap_8h" alt=""/></div>
+<div class="center"><img src="a00075.png" border="0" usemap="#libc_2ext_2debug_8h" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00076.png" border="0" usemap="#libc_2ext_2kheap_8hdep" alt=""/></div>
+<div class="center"><img src="a00076.png" border="0" usemap="#libc_2ext_2debug_8hdep" alt=""/></div>
 <!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00074_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:aa2123d399356fa4ded8a39fdc167f31a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074_aa2123d399356fa4ded8a39fdc167f31a.html#aa2123d399356fa4ded8a39fdc167f31a">BochsConsolePrintChar</a>(c)&#160;&#160;&#160;<a class="el" href="a00158_aa37f5841c54156a4b14fc0d6f626b44f.html#aa37f5841c54156a4b14fc0d6f626b44f">outb</a>(0xe9, c)</td></tr>
+<tr class="memdesc:aa2123d399356fa4ded8a39fdc167f31a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs a character to the Bochs console.  <a href="a00074_aa2123d399356fa4ded8a39fdc167f31a.html#aa2123d399356fa4ded8a39fdc167f31a">More...</a><br /></td></tr>
+<tr class="separator:aa2123d399356fa4ded8a39fdc167f31a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a8b976e8a7e805ef85fcfa68b9b9bbd63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074_a8b976e8a7e805ef85fcfa68b9b9bbd63.html#a8b976e8a7e805ef85fcfa68b9b9bbd63">kmalloc_int</a> (<a class="el" href="a00125_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> sz, int align, <a class="el" href="a00125_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> *phys)</td></tr>
-<tr class="memdesc:a8b976e8a7e805ef85fcfa68b9b9bbd63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a chunk of memory, sz in size.  <a href="a00074_a8b976e8a7e805ef85fcfa68b9b9bbd63.html#a8b976e8a7e805ef85fcfa68b9b9bbd63">More...</a><br /></td></tr>
-<tr class="separator:a8b976e8a7e805ef85fcfa68b9b9bbd63"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f7fc26d2604f7bd8bd6d4fac5c98f16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074_a2f7fc26d2604f7bd8bd6d4fac5c98f16.html#a2f7fc26d2604f7bd8bd6d4fac5c98f16">kmalloc_a</a> (<a class="el" href="a00125_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> sz)</td></tr>
-<tr class="memdesc:a2f7fc26d2604f7bd8bd6d4fac5c98f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a chunk of memory, sz in size.  <a href="a00074_a2f7fc26d2604f7bd8bd6d4fac5c98f16.html#a2f7fc26d2604f7bd8bd6d4fac5c98f16">More...</a><br /></td></tr>
-<tr class="separator:a2f7fc26d2604f7bd8bd6d4fac5c98f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac688411503d5934c65d6c5c1ef204d81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074_ac688411503d5934c65d6c5c1ef204d81.html#ac688411503d5934c65d6c5c1ef204d81">kmalloc_p</a> (<a class="el" href="a00125_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> sz, <a class="el" href="a00125_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> *phys)</td></tr>
-<tr class="memdesc:ac688411503d5934c65d6c5c1ef204d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a chunk of memory, sz in size.  <a href="a00074_ac688411503d5934c65d6c5c1ef204d81.html#ac688411503d5934c65d6c5c1ef204d81">More...</a><br /></td></tr>
-<tr class="separator:ac688411503d5934c65d6c5c1ef204d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4fd209369f6c18acead48b80e7f09c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074_ab4fd209369f6c18acead48b80e7f09c7.html#ab4fd209369f6c18acead48b80e7f09c7">kmalloc_ap</a> (<a class="el" href="a00125_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> sz, <a class="el" href="a00125_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> *phys)</td></tr>
-<tr class="memdesc:ab4fd209369f6c18acead48b80e7f09c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a chunk of memory, sz in size.  <a href="a00074_ab4fd209369f6c18acead48b80e7f09c7.html#ab4fd209369f6c18acead48b80e7f09c7">More...</a><br /></td></tr>
-<tr class="separator:ab4fd209369f6c18acead48b80e7f09c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57133c6165a95f09de1806a08042e5e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074_a57133c6165a95f09de1806a08042e5e0.html#a57133c6165a95f09de1806a08042e5e0">kmalloc</a> (<a class="el" href="a00125_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> sz)</td></tr>
-<tr class="memdesc:a57133c6165a95f09de1806a08042e5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">General allocation function.  <a href="a00074_a57133c6165a95f09de1806a08042e5e0.html#a57133c6165a95f09de1806a08042e5e0">More...</a><br /></td></tr>
-<tr class="separator:a57133c6165a95f09de1806a08042e5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19e1f554d03c977f8b947f21489daa41"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00074_a19e1f554d03c977f8b947f21489daa41.html#a19e1f554d03c977f8b947f21489daa41">BochsConsolePrintString</a> (char *string)</td></tr>
+<tr class="memdesc:a19e1f554d03c977f8b947f21489daa41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Outputs a string to the Bochs console.  <a href="a00074_a19e1f554d03c977f8b947f21489daa41.html#a19e1f554d03c977f8b947f21489daa41">More...</a><br /></td></tr>
+<tr class="separator:a19e1f554d03c977f8b947f21489daa41"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

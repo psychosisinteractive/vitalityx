@@ -1,60 +1,64 @@
-\hypertarget{a00173}{}\section{libc/vitality/vxbfs.c File Reference}
-\label{a00173}\index{libc/vitality/vxbfs.\+c@{libc/vitality/vxbfs.\+c}}
-{\ttfamily \#include \char`\"{}vxbfs.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}vfs.\+h\char`\"{}}\newline
-Include dependency graph for vxbfs.\+c\+:
+\hypertarget{a00173}{}\section{libc/vitality/vep.c File Reference}
+\label{a00173}\index{libc/vitality/vep.\+c@{libc/vitality/vep.\+c}}
+{\ttfamily \#include \char`\"{}vep.\+h\char`\"{}}\newline
+Include dependency graph for vep.\+c\+:
 % FIG 0
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00161_aa5445a6474a23ee3e7756d432dfa4ba1_aa5445a6474a23ee3e7756d432dfa4ba1}{file\+\_\+t} \hyperlink{a00173_afa5caeb58da2ae814ac3adbb167a77fe_afa5caeb58da2ae814ac3adbb167a77fe}{loadfile} (\hyperlink{a00176_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}{vxbfs\+\_\+file\+\_\+t} $\ast$\hyperlink{a00254}{file})
-\item 
-\hyperlink{a00125_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00173_a078a66e7d52fd4a6df768277b605199c_a078a66e7d52fd4a6df768277b605199c}{validvxbfs} (\hyperlink{a00176_ac5678b6d5dd5ed5ca86e5ccd4c30d39d_ac5678b6d5dd5ed5ca86e5ccd4c30d39d}{vxbfs\+\_\+header\+\_\+t} $\ast$header)
-\end{DoxyCompactItemize}
+int \hyperlink{a00173_ad5530515939c1e3332746affa700c759_ad5530515939c1e3332746affa700c759}{loadvep} (\hyperlink{a00176_a78392c340e1fe1be344df81d1438b74f_a78392c340e1fe1be344df81d1438b74f}{vepheader\+\_\+t} vep, char $\ast$data)
+\begin{DoxyCompactList}\small\item\em Loads a V\+EP with a V\+E\+P\+Header. \end{DoxyCompactList}\item 
+int \hyperlink{a00173_a7d608b906676086d77937044205aad33_a7d608b906676086d77937044205aad33}{loadvepf} (\hyperlink{a00176_af285fc2949acac5b7aa6f065c8811960_af285fc2949acac5b7aa6f065c8811960}{vepfile\+\_\+t} vep)
+\begin{DoxyCompactList}\small\item\em Loads a V\+EP with a V\+E\+P\+File. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00173_afa5caeb58da2ae814ac3adbb167a77fe_afa5caeb58da2ae814ac3adbb167a77fe}\label{a00173_afa5caeb58da2ae814ac3adbb167a77fe_afa5caeb58da2ae814ac3adbb167a77fe}} 
-\index{vxbfs.\+c@{vxbfs.\+c}!loadfile@{loadfile}}
-\index{loadfile@{loadfile}!vxbfs.\+c@{vxbfs.\+c}}
-\subsubsection{\texorpdfstring{loadfile()}{loadfile()}}
-{\footnotesize\ttfamily \hyperlink{a00161_aa5445a6474a23ee3e7756d432dfa4ba1_aa5445a6474a23ee3e7756d432dfa4ba1}{file\+\_\+t} loadfile (\begin{DoxyParamCaption}\item[{\hyperlink{a00176_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}{vxbfs\+\_\+file\+\_\+t} $\ast$}]{file }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00173_ad5530515939c1e3332746affa700c759_ad5530515939c1e3332746affa700c759}\label{a00173_ad5530515939c1e3332746affa700c759_ad5530515939c1e3332746affa700c759}} 
+\index{vep.\+c@{vep.\+c}!loadvep@{loadvep}}
+\index{loadvep@{loadvep}!vep.\+c@{vep.\+c}}
+\subsubsection{\texorpdfstring{loadvep()}{loadvep()}}
+{\footnotesize\ttfamily int loadvep (\begin{DoxyParamCaption}\item[{\hyperlink{a00176_a78392c340e1fe1be344df81d1438b74f_a78392c340e1fe1be344df81d1438b74f}{vepheader\+\_\+t}}]{vep,  }\item[{char $\ast$}]{data }\end{DoxyParamCaption})}
 
 
 
-Definition at line 4 of file vxbfs.\+c.
+Loads a V\+EP with a V\+E\+P\+Header. 
+
+
+
+Definition at line 3 of file vep.\+c.
 
 
 \begin{DoxyCode}
-5 \{
-6     \hyperlink{a00254}{file\_t} vfile;
-7     vfile.\hyperlink{a00254_a93164d6663f12c00df3d65b7b0990cc2_a93164d6663f12c00df3d65b7b0990cc2}{name} = file->\hyperlink{a00278_a07ecc9bacdc2943442f26f62f6749055_a07ecc9bacdc2943442f26f62f6749055}{name};
-8     \textcolor{keywordflow}{if}(file->\hyperlink{a00278_adb380ce440ec23ef6c9c06d871be3c0d_adb380ce440ec23ef6c9c06d871be3c0d}{md}) \{
-9         vfile.\hyperlink{a00254_a9c9154337f0c0aa90f11e5c60e93efdd_a9c9154337f0c0aa90f11e5c60e93efdd}{data} = file+\textcolor{keyword}{sizeof}(\hyperlink{a00176_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}{vxbfs\_file\_t});
-10     \} \textcolor{keywordflow}{else} \{
-11         vfile.\hyperlink{a00254_a9c9154337f0c0aa90f11e5c60e93efdd_a9c9154337f0c0aa90f11e5c60e93efdd}{data} = file->\hyperlink{a00278_ac0784f3fae88428f37dfb64fd79c0004_ac0784f3fae88428f37dfb64fd79c0004}{modblock}->\hyperlink{a00274_a327348a3ea3a02cfde4cdb1ccdcf2073_a327348a3ea3a02cfde4cdb1ccdcf2073}{data};
+3                                           \{
+4     \textcolor{keywordflow}{if}(vep.\hyperlink{a00288_a06d6ef138b4f63ef72ad6aadda58ab47_a06d6ef138b4f63ef72ad6aadda58ab47}{signature} != \textcolor{stringliteral}{"VP"}) \{
+5         \textcolor{keywordflow}{return} 1;
+6     \}
+7     \textcolor{keywordtype}{int} size = vep.\hyperlink{a00288_a6121693fa5ac3673d831b440aea8963e_a6121693fa5ac3673d831b440aea8963e}{vepsize};
+8     \textcolor{keywordtype}{char}* ptr = (\textcolor{keywordtype}{char}*)(vep.\hyperlink{a00288_aa81b6806dd33022ce60c314c908ba028_aa81b6806dd33022ce60c314c908ba028}{origin});
+9     \textcolor{keywordflow}{while}(size != 0) \{
+10         *ptr++ = *data++;
+11         size--;
 12     \}
-13     \textcolor{keywordflow}{return} vfile;
+13     \textcolor{keywordflow}{return} 0;
 14 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00173_a078a66e7d52fd4a6df768277b605199c_a078a66e7d52fd4a6df768277b605199c}\label{a00173_a078a66e7d52fd4a6df768277b605199c_a078a66e7d52fd4a6df768277b605199c}} 
-\index{vxbfs.\+c@{vxbfs.\+c}!validvxbfs@{validvxbfs}}
-\index{validvxbfs@{validvxbfs}!vxbfs.\+c@{vxbfs.\+c}}
-\subsubsection{\texorpdfstring{validvxbfs()}{validvxbfs()}}
-{\footnotesize\ttfamily \hyperlink{a00125_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} validvxbfs (\begin{DoxyParamCaption}\item[{\hyperlink{a00176_ac5678b6d5dd5ed5ca86e5ccd4c30d39d_ac5678b6d5dd5ed5ca86e5ccd4c30d39d}{vxbfs\+\_\+header\+\_\+t} $\ast$}]{header }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00173_a7d608b906676086d77937044205aad33_a7d608b906676086d77937044205aad33}\label{a00173_a7d608b906676086d77937044205aad33_a7d608b906676086d77937044205aad33}} 
+\index{vep.\+c@{vep.\+c}!loadvepf@{loadvepf}}
+\index{loadvepf@{loadvepf}!vep.\+c@{vep.\+c}}
+\subsubsection{\texorpdfstring{loadvepf()}{loadvepf()}}
+{\footnotesize\ttfamily int loadvepf (\begin{DoxyParamCaption}\item[{\hyperlink{a00176_af285fc2949acac5b7aa6f065c8811960_af285fc2949acac5b7aa6f065c8811960}{vepfile\+\_\+t}}]{vep }\end{DoxyParamCaption})}
 
 
 
-Definition at line 16 of file vxbfs.\+c.
+Loads a V\+EP with a V\+E\+P\+File. 
+
+
+
+Definition at line 16 of file vep.\+c.
 
 
 \begin{DoxyCode}
-16                                         \{
-17     \textcolor{keywordtype}{bool} valid = \textcolor{keyword}{false};
-18     \textcolor{keywordflow}{if}(header->\hyperlink{a00282_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[0] == \textcolor{charliteral}{'V'} && header->\hyperlink{a00282_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[1] == \textcolor{charliteral}{'X'} && header->
-      \hyperlink{a00282_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[2] == \textcolor{charliteral}{'F'} && header->\hyperlink{a00282_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[3] == \textcolor{charliteral}{'S'}) \{
-19         valid = \textcolor{keyword}{true};
-20     \}
-21     \textcolor{keywordflow}{return} valid;
-22 \}
+16                             \{
+17     \textcolor{keywordflow}{return} \hyperlink{a00173_ad5530515939c1e3332746affa700c759_ad5530515939c1e3332746affa700c759}{loadvep}(vep.\hyperlink{a00292_a0fa3b39f1e4974d4ed258db1d4b22402_a0fa3b39f1e4974d4ed258db1d4b22402}{vepheader},(\textcolor{keywordtype}{char}*)vep.\hyperlink{a00292_a6a40903035403710bf43295c34e883e7_a6a40903035403710bf43295c34e883e7}{vepdata});
+18 \}
 \end{DoxyCode}

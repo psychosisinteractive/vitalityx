@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/ext/task.h File Reference</title>
+<title>VitalityX: libc/ext/kheap.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,67 +44,44 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">task.h File Reference</div>  </div>
+<div class="title">kheap.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00125_source.html">../types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00134_source.html">../types.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for task.h:</div>
+Include dependency graph for kheap.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00081.png" border="0" usemap="#libc_2ext_2task_8h" alt=""/></div>
+<div class="center"><img src="a00081.png" border="0" usemap="#libc_2ext_2kheap_8h" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00082.png" border="0" usemap="#libc_2ext_2task_8hdep" alt=""/></div>
+<div class="center"><img src="a00082.png" border="0" usemap="#libc_2ext_2kheap_8hdep" alt=""/></div>
 <!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00080_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00198.html">Task</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a9bb9271145daa0a0efa965cb405fe706"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_a9bb9271145daa0a0efa965cb405fe706.html#a9bb9271145daa0a0efa965cb405fe706">TASK_CONSOLE</a>&#160;&#160;&#160;16</td></tr>
-<tr class="separator:a9bb9271145daa0a0efa965cb405fe706"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74e226c76efbb6f22c9578b06dfb1bc5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_a74e226c76efbb6f22c9578b06dfb1bc5.html#a74e226c76efbb6f22c9578b06dfb1bc5">TASK_SKIP</a>&#160;&#160;&#160;8</td></tr>
-<tr class="separator:a74e226c76efbb6f22c9578b06dfb1bc5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a08b194bba7eb50323bcf424f07be67c8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_a08b194bba7eb50323bcf424f07be67c8.html#a08b194bba7eb50323bcf424f07be67c8">TASK_KILLED</a>&#160;&#160;&#160;4</td></tr>
-<tr class="separator:a08b194bba7eb50323bcf424f07be67c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4a5cf4cf0c94e422fdede942ba9bafb2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_a4a5cf4cf0c94e422fdede942ba9bafb2.html#a4a5cf4cf0c94e422fdede942ba9bafb2">TASK_PROTECTED</a>&#160;&#160;&#160;2</td></tr>
-<tr class="separator:a4a5cf4cf0c94e422fdede942ba9bafb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99096319a92bcf092a1a00a701afbfd8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_a99096319a92bcf092a1a00a701afbfd8.html#a99096319a92bcf092a1a00a701afbfd8">TASK_KERNEL</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a99096319a92bcf092a1a00a701afbfd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:a7a90fbdcc84682f027affec67944111b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00198.html">Task</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_a7a90fbdcc84682f027affec67944111b.html#a7a90fbdcc84682f027affec67944111b">Task</a></td></tr>
-<tr class="separator:a7a90fbdcc84682f027affec67944111b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aea945e91746a54801f4763ad264746b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_aea945e91746a54801f4763ad264746b9.html#aea945e91746a54801f4763ad264746b9">initTasking</a> ()</td></tr>
-<tr class="separator:aea945e91746a54801f4763ad264746b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af637b03730942de5689ae8603a127151"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_af637b03730942de5689ae8603a127151.html#af637b03730942de5689ae8603a127151">createTask</a> (<a class="el" href="a00198.html">Task</a> *, void(*)(), <a class="el" href="a00125_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>, <a class="el" href="a00125_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> *, char [16], <a class="el" href="a00125_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>)</td></tr>
-<tr class="separator:af637b03730942de5689ae8603a127151"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a077ea59d35297d9fb3fa4675beefbd79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_a077ea59d35297d9fb3fa4675beefbd79.html#a077ea59d35297d9fb3fa4675beefbd79">addTask</a> (<a class="el" href="a00198.html">Task</a> *)</td></tr>
-<tr class="separator:a077ea59d35297d9fb3fa4675beefbd79"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58c8b2ad0ea491a6642e5e1cbd358c89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_a58c8b2ad0ea491a6642e5e1cbd358c89.html#a58c8b2ad0ea491a6642e5e1cbd358c89">yield</a> ()</td></tr>
-<tr class="separator:a58c8b2ad0ea491a6642e5e1cbd358c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5913e9b2190b2b4118ee020721a320e2"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="a00198.html">Task</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_a5913e9b2190b2b4118ee020721a320e2.html#a5913e9b2190b2b4118ee020721a320e2">getctask</a> ()</td></tr>
-<tr class="separator:a5913e9b2190b2b4118ee020721a320e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2425ca34147fccde2d1503332d21c5bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_a2425ca34147fccde2d1503332d21c5bd.html#a2425ca34147fccde2d1503332d21c5bd">switchTask</a> (<a class="el" href="a00234.html">Registers</a> *, <a class="el" href="a00234.html">Registers</a> *)</td></tr>
-<tr class="separator:a2425ca34147fccde2d1503332d21c5bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b976e8a7e805ef85fcfa68b9b9bbd63"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_a8b976e8a7e805ef85fcfa68b9b9bbd63.html#a8b976e8a7e805ef85fcfa68b9b9bbd63">kmalloc_int</a> (<a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> sz, int align, <a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> *phys)</td></tr>
+<tr class="memdesc:a8b976e8a7e805ef85fcfa68b9b9bbd63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a chunk of memory, sz in size.  <a href="a00080_a8b976e8a7e805ef85fcfa68b9b9bbd63.html#a8b976e8a7e805ef85fcfa68b9b9bbd63">More...</a><br /></td></tr>
+<tr class="separator:a8b976e8a7e805ef85fcfa68b9b9bbd63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f7fc26d2604f7bd8bd6d4fac5c98f16"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_a2f7fc26d2604f7bd8bd6d4fac5c98f16.html#a2f7fc26d2604f7bd8bd6d4fac5c98f16">kmalloc_a</a> (<a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> sz)</td></tr>
+<tr class="memdesc:a2f7fc26d2604f7bd8bd6d4fac5c98f16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a chunk of memory, sz in size.  <a href="a00080_a2f7fc26d2604f7bd8bd6d4fac5c98f16.html#a2f7fc26d2604f7bd8bd6d4fac5c98f16">More...</a><br /></td></tr>
+<tr class="separator:a2f7fc26d2604f7bd8bd6d4fac5c98f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac688411503d5934c65d6c5c1ef204d81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_ac688411503d5934c65d6c5c1ef204d81.html#ac688411503d5934c65d6c5c1ef204d81">kmalloc_p</a> (<a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> sz, <a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> *phys)</td></tr>
+<tr class="memdesc:ac688411503d5934c65d6c5c1ef204d81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a chunk of memory, sz in size.  <a href="a00080_ac688411503d5934c65d6c5c1ef204d81.html#ac688411503d5934c65d6c5c1ef204d81">More...</a><br /></td></tr>
+<tr class="separator:ac688411503d5934c65d6c5c1ef204d81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4fd209369f6c18acead48b80e7f09c7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_ab4fd209369f6c18acead48b80e7f09c7.html#ab4fd209369f6c18acead48b80e7f09c7">kmalloc_ap</a> (<a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> sz, <a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> *phys)</td></tr>
+<tr class="memdesc:ab4fd209369f6c18acead48b80e7f09c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allocate a chunk of memory, sz in size.  <a href="a00080_ab4fd209369f6c18acead48b80e7f09c7.html#ab4fd209369f6c18acead48b80e7f09c7">More...</a><br /></td></tr>
+<tr class="separator:ab4fd209369f6c18acead48b80e7f09c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57133c6165a95f09de1806a08042e5e0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00080_a57133c6165a95f09de1806a08042e5e0.html#a57133c6165a95f09de1806a08042e5e0">kmalloc</a> (<a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> sz)</td></tr>
+<tr class="memdesc:a57133c6165a95f09de1806a08042e5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">General allocation function.  <a href="a00080_a57133c6165a95f09de1806a08042e5e0.html#a57133c6165a95f09de1806a08042e5e0">More...</a><br /></td></tr>
+<tr class="separator:a57133c6165a95f09de1806a08042e5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

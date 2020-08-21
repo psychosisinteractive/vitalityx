@@ -1,0 +1,9 @@
+digraph "libc/vitality/fs_implementations" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_23423b050fd890776a6e094b978d172e {
+    graph [ bgcolor="#ddddee", pencolor="black", label="vitality" fontname="Helvetica", fontsize="10", URL="dir_23423b050fd890776a6e094b978d172e.html"]
+  dir_2204a4b3d47b62a14a2dc3b122711013 [shape=box, label="fs_implementations", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_2204a4b3d47b62a14a2dc3b122711013.html"];
+  }
+}

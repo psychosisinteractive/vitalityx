@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/virtual8086.h File Reference</title>
+<title>VitalityX: libc/vitality/mem.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,28 +44,51 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">virtual8086.h File Reference</div>  </div>
+<div class="title">mem.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00125_source.html">../types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00134_source.html">../types.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for virtual8086.h:</div>
+Include dependency graph for mem.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00165.png" border="0" usemap="#libc_2vitality_2virtual8086_8h" alt=""/></div>
+<div class="center"><img src="a00165.png" border="0" usemap="#libc_2vitality_2mem_8h" alt=""/></div>
 <!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00166.png" border="0" usemap="#libc_2vitality_2mem_8hdep" alt=""/></div>
+<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00164_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00280.html">header_t</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9c262613816b82529fff89eda722abaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00164_a9c262613816b82529fff89eda722abaf.html#a9c262613816b82529fff89eda722abaf">enter_v86</a> (<a class="el" href="a00125_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> ss, <a class="el" href="a00125_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> esp, <a class="el" href="a00125_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> cs, <a class="el" href="a00125_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> eip)</td></tr>
-<tr class="memdesc:a9c262613816b82529fff89eda722abaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enters Virtual 8086 mode.  <a href="a00164_a9c262613816b82529fff89eda722abaf.html#a9c262613816b82529fff89eda722abaf">More...</a><br /></td></tr>
-<tr class="separator:a9c262613816b82529fff89eda722abaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a215959ee72d7cd0bf4728b9e96e79b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00164_a2a215959ee72d7cd0bf4728b9e96e79b.html#a2a215959ee72d7cd0bf4728b9e96e79b">detect_v86</a> ()</td></tr>
-<tr class="separator:a2a215959ee72d7cd0bf4728b9e96e79b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ef64f08269a275815bb42bb97e0b562"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00164_a3ef64f08269a275815bb42bb97e0b562.html#a3ef64f08269a275815bb42bb97e0b562">gbrk</a> ()</td></tr>
+<tr class="separator:a3ef64f08269a275815bb42bb97e0b562"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebb0480990fb66ce618d040a195143c9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00164_aebb0480990fb66ce618d040a195143c9.html#aebb0480990fb66ce618d040a195143c9">brk</a> (<a class="el" href="a00134_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a>)</td></tr>
+<tr class="separator:aebb0480990fb66ce618d040a195143c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeaae2bbcf837d3f98d17a9618076097"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00164_abeaae2bbcf837d3f98d17a9618076097.html#abeaae2bbcf837d3f98d17a9618076097">sbrk</a> (<a class="el" href="a00134_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a>)</td></tr>
+<tr class="separator:abeaae2bbcf837d3f98d17a9618076097"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afaecf44e3ed4b4332644d98fe0955793"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00280.html">header_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00164_afaecf44e3ed4b4332644d98fe0955793.html#afaecf44e3ed4b4332644d98fe0955793">get_free_block</a> (<a class="el" href="a00134_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a>)</td></tr>
+<tr class="separator:afaecf44e3ed4b4332644d98fe0955793"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1c8580582aae58105f16108d4ec89e9a"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00164_a1c8580582aae58105f16108d4ec89e9a.html#a1c8580582aae58105f16108d4ec89e9a">malloc</a> (<a class="el" href="a00134_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a>)</td></tr>
+<tr class="separator:a1c8580582aae58105f16108d4ec89e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af07d89f5ceaea0c7c8252cc41fd75f37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00164_af07d89f5ceaea0c7c8252cc41fd75f37.html#af07d89f5ceaea0c7c8252cc41fd75f37">free</a> (void *)</td></tr>
+<tr class="separator:af07d89f5ceaea0c7c8252cc41fd75f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77e880b1033d5a912be4333fc5d31eef"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00164_a77e880b1033d5a912be4333fc5d31eef.html#a77e880b1033d5a912be4333fc5d31eef">calloc</a> (<a class="el" href="a00134_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a>, <a class="el" href="a00134_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a>)</td></tr>
+<tr class="separator:a77e880b1033d5a912be4333fc5d31eef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa148085b6fa9594b4c35e100d94a183"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00164_afa148085b6fa9594b4c35e100d94a183.html#afa148085b6fa9594b4c35e100d94a183">realloc</a> (void *, <a class="el" href="a00134_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a>)</td></tr>
+<tr class="separator:afa148085b6fa9594b4c35e100d94a183"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

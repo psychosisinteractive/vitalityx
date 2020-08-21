@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/string.c File Reference</title>
+<title>VitalityX: libc/page.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,30 +44,73 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">string.c File Reference</div>  </div>
+<div class="title">page.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00116_source.html">string.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00125_source.html">types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00074_source.html">ext/debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00080_source.html">ext/kheap.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00116_source.html">page.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00134_source.html">types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00122_source.html">string.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for string.c:</div>
+Include dependency graph for page.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00114.png" border="0" usemap="#libc_2string_8c" alt=""/></div>
+<div class="center"><img src="a00114.png" border="0" usemap="#libc_2page_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
 <p><a href="a00113_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a94f8d624e19f4f1ecc503e2f82071c9e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_a94f8d624e19f4f1ecc503e2f82071c9e.html#a94f8d624e19f4f1ecc503e2f82071c9e">INDEX_FROM_BIT</a>(a)&#160;&#160;&#160;(a/(8*4))</td></tr>
+<tr class="separator:a94f8d624e19f4f1ecc503e2f82071c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d53b10c4e0cac33faba5168b41d0daa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_a9d53b10c4e0cac33faba5168b41d0daa.html#a9d53b10c4e0cac33faba5168b41d0daa">OFFSET_FROM_BIT</a>(a)&#160;&#160;&#160;(a%(8*4))</td></tr>
+<tr class="separator:a9d53b10c4e0cac33faba5168b41d0daa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a008e171a518fe0e0352f31b245e03875"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00125_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_a008e171a518fe0e0352f31b245e03875.html#a008e171a518fe0e0352f31b245e03875">strlen</a> (const char *str)</td></tr>
-<tr class="separator:a008e171a518fe0e0352f31b245e03875"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8a9a8836962d890b4939c112fd29190"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_aa8a9a8836962d890b4939c112fd29190.html#aa8a9a8836962d890b4939c112fd29190">reverse</a> (char s[])</td></tr>
-<tr class="separator:aa8a9a8836962d890b4939c112fd29190"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af749add1ff19b6ff96a62f35ebb49b7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_af749add1ff19b6ff96a62f35ebb49b7e.html#af749add1ff19b6ff96a62f35ebb49b7e">itoa</a> (int n, char s[])</td></tr>
-<tr class="separator:af749add1ff19b6ff96a62f35ebb49b7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a332df9447ad2bb202a036225a81fa749"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_a332df9447ad2bb202a036225a81fa749.html#a332df9447ad2bb202a036225a81fa749">set_frame</a> (<a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> frame_addr)</td></tr>
+<tr class="separator:a332df9447ad2bb202a036225a81fa749"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4bfe71e798c0e565587ed4c007e9e454"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_a4bfe71e798c0e565587ed4c007e9e454.html#a4bfe71e798c0e565587ed4c007e9e454">clear_frame</a> (<a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> frame_addr)</td></tr>
+<tr class="separator:a4bfe71e798c0e565587ed4c007e9e454"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b764779c4819ab69a7781fffa5ffc68"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_a3b764779c4819ab69a7781fffa5ffc68.html#a3b764779c4819ab69a7781fffa5ffc68">test_frame</a> (<a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> frame_addr)</td></tr>
+<tr class="separator:a3b764779c4819ab69a7781fffa5ffc68"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c186a88fa227f4f5a5bfb0791958c47"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_a3c186a88fa227f4f5a5bfb0791958c47.html#a3c186a88fa227f4f5a5bfb0791958c47">first_frame</a> ()</td></tr>
+<tr class="separator:a3c186a88fa227f4f5a5bfb0791958c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a397c4898938528b31b726193ad3542"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_a3a397c4898938528b31b726193ad3542.html#a3a397c4898938528b31b726193ad3542">alloc_frame</a> (<a class="el" href="a00116_a76113662e059e0926a92c5b15c098f4a.html#a76113662e059e0926a92c5b15c098f4a">page_t</a> *<a class="el" href="a00236.html">page</a>, int is_kernel, int is_writeable)</td></tr>
+<tr class="separator:a3a397c4898938528b31b726193ad3542"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b8ed22ee60c3275eb0a80135d540799"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_a5b8ed22ee60c3275eb0a80135d540799.html#a5b8ed22ee60c3275eb0a80135d540799">free_frame</a> (<a class="el" href="a00116_a76113662e059e0926a92c5b15c098f4a.html#a76113662e059e0926a92c5b15c098f4a">page_t</a> *<a class="el" href="a00236.html">page</a>)</td></tr>
+<tr class="separator:a5b8ed22ee60c3275eb0a80135d540799"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad05c453b13c69ecf5c7963798704cc18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_ad05c453b13c69ecf5c7963798704cc18.html#ad05c453b13c69ecf5c7963798704cc18">initialise_paging</a> ()</td></tr>
+<tr class="memdesc:ad05c453b13c69ecf5c7963798704cc18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets up the environment, page directories etc and enables paging.  <a href="a00113_ad05c453b13c69ecf5c7963798704cc18.html#ad05c453b13c69ecf5c7963798704cc18">More...</a><br /></td></tr>
+<tr class="separator:ad05c453b13c69ecf5c7963798704cc18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f2bd6a5d2bbda0dee6b65c511a9cb98"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_a6f2bd6a5d2bbda0dee6b65c511a9cb98.html#a6f2bd6a5d2bbda0dee6b65c511a9cb98">switch_page_directory</a> (<a class="el" href="a00116_aa6e79064ffe1eb8c43be4dc1be3f64a1.html#aa6e79064ffe1eb8c43be4dc1be3f64a1">page_directory_t</a> *dir)</td></tr>
+<tr class="memdesc:a6f2bd6a5d2bbda0dee6b65c511a9cb98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Causes the specified page directory to be loaded into the CR3 register.  <a href="a00113_a6f2bd6a5d2bbda0dee6b65c511a9cb98.html#a6f2bd6a5d2bbda0dee6b65c511a9cb98">More...</a><br /></td></tr>
+<tr class="separator:a6f2bd6a5d2bbda0dee6b65c511a9cb98"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab80db06fa94f1003fd5a5ec106bc9f6e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00116_a76113662e059e0926a92c5b15c098f4a.html#a76113662e059e0926a92c5b15c098f4a">page_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_ab80db06fa94f1003fd5a5ec106bc9f6e.html#ab80db06fa94f1003fd5a5ec106bc9f6e">get_page</a> (<a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> address, int make, <a class="el" href="a00116_aa6e79064ffe1eb8c43be4dc1be3f64a1.html#aa6e79064ffe1eb8c43be4dc1be3f64a1">page_directory_t</a> *dir)</td></tr>
+<tr class="memdesc:ab80db06fa94f1003fd5a5ec106bc9f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves a pointer to the page required.  <a href="a00113_ab80db06fa94f1003fd5a5ec106bc9f6e.html#ab80db06fa94f1003fd5a5ec106bc9f6e">More...</a><br /></td></tr>
+<tr class="separator:ab80db06fa94f1003fd5a5ec106bc9f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6293af8e675059a566216be86660854b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_a6293af8e675059a566216be86660854b.html#a6293af8e675059a566216be86660854b">page_fault</a> (<a class="el" href="a00134_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
+<tr class="memdesc:a6293af8e675059a566216be86660854b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler for page faults.  <a href="a00113_a6293af8e675059a566216be86660854b.html#a6293af8e675059a566216be86660854b">More...</a><br /></td></tr>
+<tr class="separator:a6293af8e675059a566216be86660854b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a76492529572a1a20a06076ac40d66b29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_a76492529572a1a20a06076ac40d66b29.html#a76492529572a1a20a06076ac40d66b29">frames</a></td></tr>
+<tr class="separator:a76492529572a1a20a06076ac40d66b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf36580d5618820f15388083c9313e60"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_abf36580d5618820f15388083c9313e60.html#abf36580d5618820f15388083c9313e60">nframes</a></td></tr>
+<tr class="separator:abf36580d5618820f15388083c9313e60"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada87161706c337a35f601e680b647a81"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00116_aa6e79064ffe1eb8c43be4dc1be3f64a1.html#aa6e79064ffe1eb8c43be4dc1be3f64a1">page_directory_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_ada87161706c337a35f601e680b647a81.html#ada87161706c337a35f601e680b647a81">kernel_directory</a></td></tr>
+<tr class="separator:ada87161706c337a35f601e680b647a81"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69cc0aac8cd0b433e9ffa124ad11da56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00116_aa6e79064ffe1eb8c43be4dc1be3f64a1.html#aa6e79064ffe1eb8c43be4dc1be3f64a1">page_directory_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_a69cc0aac8cd0b433e9ffa124ad11da56.html#a69cc0aac8cd0b433e9ffa124ad11da56">current_directory</a></td></tr>
+<tr class="separator:a69cc0aac8cd0b433e9ffa124ad11da56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9df9c77e08423957a655e27605284987"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a7ae3a26c17ddfe117c6291739780801d.html#a7ae3a26c17ddfe117c6291739780801d">u32int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00113_a9df9c77e08423957a655e27605284987.html#a9df9c77e08423957a655e27605284987">placement_address</a></td></tr>
+<tr class="separator:a9df9c77e08423957a655e27605284987"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

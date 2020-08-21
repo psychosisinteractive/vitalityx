@@ -84,25 +84,25 @@ $(function() {
         <tr>
           <td class="memname">void lba_2_chs </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="a00125_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="a00134_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td>
           <td class="paramname"><em>lba</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="a00134_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *&#160;</td>
           <td class="paramname"><em>cyl</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="a00134_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *&#160;</td>
           <td class="paramname"><em>head</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="a00125_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="a00134_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> *&#160;</td>
           <td class="paramname"><em>sector</em>&#160;</td>
         </tr>
         <tr>
@@ -114,7 +114,8 @@ $(function() {
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="a00026_source.html#l00005">5</a> of file <a class="el" href="a00026_source.html">fdrive.c</a>.</p>
-<div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    *cyl    = lba / (2 * <a class="code" href="a00029_a04d40064bde801f12fb73134cf328150.html#a04d40064bde801f12fb73134cf328150">FLOPPY_144_SECTORS_PER_TRACK</a>);</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    *head   = ((lba % (2 * <a class="code" href="a00029_a04d40064bde801f12fb73134cf328150.html#a04d40064bde801f12fb73134cf328150">FLOPPY_144_SECTORS_PER_TRACK</a>)) / <a class="code" href="a00029_a04d40064bde801f12fb73134cf328150.html#a04d40064bde801f12fb73134cf328150">FLOPPY_144_SECTORS_PER_TRACK</a>);</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    *sector = ((lba % (2 * <a class="code" href="a00029_a04d40064bde801f12fb73134cf328150.html#a04d40064bde801f12fb73134cf328150">FLOPPY_144_SECTORS_PER_TRACK</a>)) % <a class="code" href="a00029_a04d40064bde801f12fb73134cf328150.html#a04d40064bde801f12fb73134cf328150">FLOPPY_144_SECTORS_PER_TRACK</a> + 1);</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div><div class="ttc" id="a00029_a04d40064bde801f12fb73134cf328150_html_a04d40064bde801f12fb73134cf328150"><div class="ttname"><a href="a00029_a04d40064bde801f12fb73134cf328150.html#a04d40064bde801f12fb73134cf328150">FLOPPY_144_SECTORS_PER_TRACK</a></div><div class="ttdeci">#define FLOPPY_144_SECTORS_PER_TRACK</div><div class="ttdef"><b>Definition:</b> <a href="a00029_source.html#l00005">fdrive.h:5</a></div></div>
+<div class="fragment"><div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;{</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    *cyl    = lba / (2 * <a class="code" href="a00029_a04d40064bde801f12fb73134cf328150.html#a04d40064bde801f12fb73134cf328150">FLOPPY_144_SECTORS_PER_TRACK</a>);</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    *<a class="code" href="a00161_ac630e1c7e5feeaaf43837648134a0c6d.html#ac630e1c7e5feeaaf43837648134a0c6d">head</a>   = ((lba % (2 * <a class="code" href="a00029_a04d40064bde801f12fb73134cf328150.html#a04d40064bde801f12fb73134cf328150">FLOPPY_144_SECTORS_PER_TRACK</a>)) / <a class="code" href="a00029_a04d40064bde801f12fb73134cf328150.html#a04d40064bde801f12fb73134cf328150">FLOPPY_144_SECTORS_PER_TRACK</a>);</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;    *sector = ((lba % (2 * <a class="code" href="a00029_a04d40064bde801f12fb73134cf328150.html#a04d40064bde801f12fb73134cf328150">FLOPPY_144_SECTORS_PER_TRACK</a>)) % <a class="code" href="a00029_a04d40064bde801f12fb73134cf328150.html#a04d40064bde801f12fb73134cf328150">FLOPPY_144_SECTORS_PER_TRACK</a> + 1);</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;}</div><div class="ttc" id="a00029_a04d40064bde801f12fb73134cf328150_html_a04d40064bde801f12fb73134cf328150"><div class="ttname"><a href="a00029_a04d40064bde801f12fb73134cf328150.html#a04d40064bde801f12fb73134cf328150">FLOPPY_144_SECTORS_PER_TRACK</a></div><div class="ttdeci">#define FLOPPY_144_SECTORS_PER_TRACK</div><div class="ttdef"><b>Definition:</b> <a href="a00029_source.html#l00005">fdrive.h:5</a></div></div>
+<div class="ttc" id="a00161_ac630e1c7e5feeaaf43837648134a0c6d_html_ac630e1c7e5feeaaf43837648134a0c6d"><div class="ttname"><a href="a00161_ac630e1c7e5feeaaf43837648134a0c6d.html#ac630e1c7e5feeaaf43837648134a0c6d">head</a></div><div class="ttdeci">header_t * head</div><div class="ttdef"><b>Definition:</b> <a href="a00161_source.html#l00008">mem.c:8</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>

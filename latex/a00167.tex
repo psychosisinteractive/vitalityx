@@ -1,81 +1,422 @@
-\hypertarget{a00167}{}\section{libc/vitality/vlib.c File Reference}
-\label{a00167}\index{libc/vitality/vlib.\+c@{libc/vitality/vlib.\+c}}
-{\ttfamily \#include \char`\"{}vlib.\+h\char`\"{}}\newline
+\hypertarget{a00167}{}\section{libc/vitality/tty.c File Reference}
+\label{a00167}\index{libc/vitality/tty.\+c@{libc/vitality/tty.\+c}}
+{\ttfamily \#include \char`\"{}tty.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../isr.\+h\char`\"{}}\newline
-Include dependency graph for vlib.\+c\+:
+{\ttfamily \#include \char`\"{}../../drivers/vga.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../ext/debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../system.\+h\char`\"{}}\newline
+Include dependency graph for tty.\+c\+:
 % FIG 0
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00167_aee69008de31826f28854c29a54cb315e_aee69008de31826f28854c29a54cb315e}{loadvlib} (\hyperlink{a00170_a2d9000b4fbb25c5ed2950a2d8f4921d5_a2d9000b4fbb25c5ed2950a2d8f4921d5}{vlibdesriptor\+\_\+t} $\ast$d)
+void \hyperlink{a00167_a5b5bf610a57f3c59b2851fa2652081ec_a5b5bf610a57f3c59b2851fa2652081ec}{tty\+\_\+putstring} (char $\ast$string, int len)
+\begin{DoxyCompactList}\small\item\em Puts a string in V\+R\+AM, Text mode only. \end{DoxyCompactList}\item 
+void \hyperlink{a00167_a3d09038c7b6436e60b228f2f3f451f6a_a3d09038c7b6436e60b228f2f3f451f6a}{disable\+\_\+cursor} ()
+\begin{DoxyCompactList}\small\item\em Disables the console mode cursor. \end{DoxyCompactList}\item 
+void \hyperlink{a00167_afe197dc4dbfa6036ef04abd2aeeeca2d_afe197dc4dbfa6036ef04abd2aeeeca2d}{enable\+\_\+cursor} (\hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} cursor\+\_\+start, \hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} cursor\+\_\+end)
+\begin{DoxyCompactList}\small\item\em Enables the console mode cursor. \end{DoxyCompactList}\item 
+void \hyperlink{a00167_a492f5021d7340613e732ef37bbaa04e4_a492f5021d7340613e732ef37bbaa04e4}{update\+\_\+cursor} (int x, int y)
+\begin{DoxyCompactList}\small\item\em Updates the cursor position. \end{DoxyCompactList}\item 
+void \hyperlink{a00167_acb9a978008cfa67b0038e85eb56d2d41_acb9a978008cfa67b0038e85eb56d2d41}{drawchar3} (unsigned char c, unsigned char forecolour, unsigned char backcolour, int x, int y)
+\begin{DoxyCompactList}\small\item\em Draws a character at x and y in Mode 3. \end{DoxyCompactList}\item 
+void \hyperlink{a00167_aaf55ee008e2e63ca97eacae371646db7_aaf55ee008e2e63ca97eacae371646db7}{set\+\_\+ttyvgamode} (short mode)
+\begin{DoxyCompactList}\small\item\em Sets the V\+GA T\+TY mode. \end{DoxyCompactList}\item 
+void \hyperlink{a00167_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}{clearscreen} ()
+\begin{DoxyCompactList}\small\item\em Clears the console. \end{DoxyCompactList}\item 
+void \hyperlink{a00167_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}{tty\+\_\+vgaputstring} (char $\ast$string, int len)
+\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, Mode 13 only. \end{DoxyCompactList}\item 
+void \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\+\_\+pputstring} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, detects preferred mode. \end{DoxyCompactList}\item 
+void \hyperlink{a00167_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\+\_\+pputstringl} (char $\ast$string, int len)
+\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, detects preferred mode, uses length. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00170_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\+\_\+entry\+\_\+t} $\ast$ \hyperlink{a00167_aeeb1b55b301de7b4c7aa360c387c3ef9_aeeb1b55b301de7b4c7aa360c387c3ef9}{getvlibentry} (int id)
+\hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\+\_\+x} = 0
 \item 
-void \hyperlink{a00167_a268c6e227f2761807244c0695d78d01c_a268c6e227f2761807244c0695d78d01c}{runvlib} (\hyperlink{a00104_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t} regs)
+\hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00167_a0301c5492919c401c2c1ecf52af709b0_a0301c5492919c401c2c1ecf52af709b0}{cursor\+\_\+y} = 0
+\item 
+\hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00167_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff} = 0
+\item 
+\hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00167_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff} = 0
+\item 
+\hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00167_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}{vgamode} = 0x3
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00167_aeeb1b55b301de7b4c7aa360c387c3ef9_aeeb1b55b301de7b4c7aa360c387c3ef9}\label{a00167_aeeb1b55b301de7b4c7aa360c387c3ef9_aeeb1b55b301de7b4c7aa360c387c3ef9}} 
-\index{vlib.\+c@{vlib.\+c}!getvlibentry@{getvlibentry}}
-\index{getvlibentry@{getvlibentry}!vlib.\+c@{vlib.\+c}}
-\subsubsection{\texorpdfstring{getvlibentry()}{getvlibentry()}}
-{\footnotesize\ttfamily \hyperlink{a00170_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\+\_\+entry\+\_\+t}$\ast$ getvlibentry (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00167_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}\label{a00167_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}} 
+\index{tty.\+c@{tty.\+c}!clearscreen@{clearscreen}}
+\index{clearscreen@{clearscreen}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{clearscreen()}{clearscreen()}}
+{\footnotesize\ttfamily void clearscreen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 9 of file vlib.\+c.
+Clears the console. 
+
+
+
+Definition at line 77 of file tty.\+c.
 
 
 \begin{DoxyCode}
-9                                    \{
-10     \hyperlink{a00125_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} vlib = \hyperlink{a00170_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00270_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
-11     \textcolor{keywordflow}{while}(\textcolor{keywordtype}{id} != 0) \{
-12         vlib += \textcolor{keyword}{sizeof}(\hyperlink{a00170_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\_entry\_t});
+77                    \{
+78     \hyperlink{a00125_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(0xb8000,0,0x1fff);
+79     \hyperlink{a00167_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff} = 0;
+80     \hyperlink{a00167_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff} = 0;
+81     \hyperlink{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x} = \hyperlink{a00167_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff};
+82     \hyperlink{a00167_a0301c5492919c401c2c1ecf52af709b0_a0301c5492919c401c2c1ecf52af709b0}{cursor\_y} = \hyperlink{a00167_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff};
+83     \hyperlink{a00167_a492f5021d7340613e732ef37bbaa04e4_a492f5021d7340613e732ef37bbaa04e4}{update\_cursor}(\hyperlink{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x},\hyperlink{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x});
+84 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00167_a3d09038c7b6436e60b228f2f3f451f6a_a3d09038c7b6436e60b228f2f3f451f6a}\label{a00167_a3d09038c7b6436e60b228f2f3f451f6a_a3d09038c7b6436e60b228f2f3f451f6a}} 
+\index{tty.\+c@{tty.\+c}!disable\+\_\+cursor@{disable\+\_\+cursor}}
+\index{disable\+\_\+cursor@{disable\+\_\+cursor}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{disable\+\_\+cursor()}{disable\_cursor()}}
+{\footnotesize\ttfamily void disable\+\_\+cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Disables the console mode cursor. 
+
+
+
+Definition at line 36 of file tty.\+c.
+
+
+\begin{DoxyCode}
+37 \{
+38     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D4, 0x0A);
+39     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D5, 0x20);
+40 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00167_acb9a978008cfa67b0038e85eb56d2d41_acb9a978008cfa67b0038e85eb56d2d41}\label{a00167_acb9a978008cfa67b0038e85eb56d2d41_acb9a978008cfa67b0038e85eb56d2d41}} 
+\index{tty.\+c@{tty.\+c}!drawchar3@{drawchar3}}
+\index{drawchar3@{drawchar3}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{drawchar3()}{drawchar3()}}
+{\footnotesize\ttfamily void drawchar3 (\begin{DoxyParamCaption}\item[{unsigned char}]{c,  }\item[{unsigned char}]{forecolor,  }\item[{unsigned char}]{backcolor,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Draws a character at x and y in Mode 3. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The character \\
+\hline
+{\em forecolor} & The foreground color \\
+\hline
+{\em backcolor} & The backgroud color \\
+\hline
+{\em x} & The x position \\
+\hline
+{\em y} & The y position \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 61 of file tty.\+c.
+
+
+\begin{DoxyCode}
+62 \{
+63      \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} attrib = (backcolour << 4) | (forecolour & 0x0F);
+64      \textcolor{keyword}{volatile} \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} * where;
+65      where = (\textcolor{keyword}{volatile} \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} *)0xB8000 + (y * 80 + x) ;
+66      *where = c | (attrib << 8);
+67 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00167_afe197dc4dbfa6036ef04abd2aeeeca2d_afe197dc4dbfa6036ef04abd2aeeeca2d}\label{a00167_afe197dc4dbfa6036ef04abd2aeeeca2d_afe197dc4dbfa6036ef04abd2aeeeca2d}} 
+\index{tty.\+c@{tty.\+c}!enable\+\_\+cursor@{enable\+\_\+cursor}}
+\index{enable\+\_\+cursor@{enable\+\_\+cursor}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{enable\+\_\+cursor()}{enable\_cursor()}}
+{\footnotesize\ttfamily void enable\+\_\+cursor (\begin{DoxyParamCaption}\item[{\hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{cursor\+\_\+start,  }\item[{\hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{cursor\+\_\+end }\end{DoxyParamCaption})}
+
+
+
+Enables the console mode cursor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cursor\+\_\+start} & Scanline the cursor starts at. \\
+\hline
+{\em cursor\+\_\+end} & Scanline the cursor ends at. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 42 of file tty.\+c.
+
+
+\begin{DoxyCode}
+43 \{
+44     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D4, 0x0A);
+45     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D5, (\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x3D5) & 0xC0) | cursor\_start);
+46  
+47     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D4, 0x0B);
+48     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D5, (\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x3D5) & 0xE0) | cursor\_end);
+49 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00167_aaf55ee008e2e63ca97eacae371646db7_aaf55ee008e2e63ca97eacae371646db7}\label{a00167_aaf55ee008e2e63ca97eacae371646db7_aaf55ee008e2e63ca97eacae371646db7}} 
+\index{tty.\+c@{tty.\+c}!set\+\_\+ttyvgamode@{set\+\_\+ttyvgamode}}
+\index{set\+\_\+ttyvgamode@{set\+\_\+ttyvgamode}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{set\+\_\+ttyvgamode()}{set\_ttyvgamode()}}
+{\footnotesize\ttfamily void set\+\_\+ttyvgamode (\begin{DoxyParamCaption}\item[{short}]{mode }\end{DoxyParamCaption})}
+
+
+
+Sets the V\+GA T\+TY mode. 
+
+
+
+Definition at line 73 of file tty.\+c.
+
+
+\begin{DoxyCode}
+73                                 \{
+74     \hyperlink{a00167_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}{vgamode} = mode;
+75 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}\label{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}} 
+\index{tty.\+c@{tty.\+c}!tty\+\_\+pputstring@{tty\+\_\+pputstring}}
+\index{tty\+\_\+pputstring@{tty\+\_\+pputstring}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{tty\+\_\+pputstring()}{tty\_pputstring()}}
+{\footnotesize\ttfamily void tty\+\_\+pputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+
+
+
+Puts a string into V\+R\+AM, detects preferred mode. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to put \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 96 of file tty.\+c.
+
+
+\begin{DoxyCode}
+96                                   \{
+97     \textcolor{keywordflow}{switch} (\hyperlink{a00167_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}{vgamode})
+98     \{
+99     \textcolor{keywordflow}{case} 0x3:
+100         \hyperlink{a00167_a5b5bf610a57f3c59b2851fa2652081ec_a5b5bf610a57f3c59b2851fa2652081ec}{tty\_putstring}(\textcolor{keywordtype}{string},0);
+101         \textcolor{keywordflow}{break};
+102     \textcolor{keywordflow}{case} 0x13:
+103         \hyperlink{a00167_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}{tty\_vgaputstring}(\textcolor{keywordtype}{string},0);
+104         \textcolor{keywordflow}{break};
+105     \textcolor{keywordflow}{default}:
+106         \hyperlink{a00167_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}{tty\_vgaputstring}(\textcolor{keywordtype}{string},0);
+107         \textcolor{keywordflow}{break};
+108     \}
+109 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00167_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}\label{a00167_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}} 
+\index{tty.\+c@{tty.\+c}!tty\+\_\+pputstringl@{tty\+\_\+pputstringl}}
+\index{tty\+\_\+pputstringl@{tty\+\_\+pputstringl}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{tty\+\_\+pputstringl()}{tty\_pputstringl()}}
+{\footnotesize\ttfamily void tty\+\_\+pputstringl (\begin{DoxyParamCaption}\item[{char $\ast$}]{string,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+Puts a string into V\+R\+AM, detects preferred mode, uses length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to put \\
+\hline
+{\em len} & The length \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file tty.\+c.
+
+
+\begin{DoxyCode}
+111                                             \{
+112     \textcolor{keywordflow}{switch} (\hyperlink{a00167_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}{vgamode})
+113     \{
+114     \textcolor{keywordflow}{case} 0x3:
+115         \hyperlink{a00167_a5b5bf610a57f3c59b2851fa2652081ec_a5b5bf610a57f3c59b2851fa2652081ec}{tty\_putstring}(\textcolor{keywordtype}{string},len);
+116         \textcolor{keywordflow}{break};
+117     \textcolor{keywordflow}{case} 0x13:
+118         \hyperlink{a00167_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}{tty\_vgaputstring}(\textcolor{keywordtype}{string},len);
+119         \textcolor{keywordflow}{break};
+120     \textcolor{keywordflow}{default}:
+121         \hyperlink{a00167_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}{tty\_vgaputstring}(\textcolor{keywordtype}{string},len);
+122         \textcolor{keywordflow}{break};
+123     \}
+124 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00167_a5b5bf610a57f3c59b2851fa2652081ec_a5b5bf610a57f3c59b2851fa2652081ec}\label{a00167_a5b5bf610a57f3c59b2851fa2652081ec_a5b5bf610a57f3c59b2851fa2652081ec}} 
+\index{tty.\+c@{tty.\+c}!tty\+\_\+putstring@{tty\+\_\+putstring}}
+\index{tty\+\_\+putstring@{tty\+\_\+putstring}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{tty\+\_\+putstring()}{tty\_putstring()}}
+{\footnotesize\ttfamily void tty\+\_\+putstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string,  }\item[{int}]{len }\end{DoxyParamCaption})}
+
+
+
+Puts a string in V\+R\+AM, Text mode only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to put \\
+\hline
+{\em len} & The length \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 10 of file tty.\+c.
+
+
+\begin{DoxyCode}
+10                                           \{
+11     \textcolor{keywordflow}{if}(len == 0) \{
+12         len = \hyperlink{a00134_a689b119da994dece91d44b5aeac643ed_a689b119da994dece91d44b5aeac643ed}{USHRT\_MAX};
 13     \}
-14     \textcolor{keywordflow}{return} (\hyperlink{a00266}{vlib\_entry\_t}*)vlib;
-15 \}
+14     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
+15     \hyperlink{a00167_a3d09038c7b6436e60b228f2f3f451f6a_a3d09038c7b6436e60b228f2f3f451f6a}{disable\_cursor}();
+16     len += 0xb8000;
+17     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'} | !(\textcolor{keywordtype}{string} < (\hyperlink{a00134_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t})len)) \{
+18         \textcolor{keywordflow}{switch}(chara) \{
+19             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)n'}:
+20                 \hyperlink{a00167_a0301c5492919c401c2c1ecf52af709b0_a0301c5492919c401c2c1ecf52af709b0}{cursor\_y}++;
+21                 \hyperlink{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x} = 0;
+22                 \textcolor{keywordflow}{break};
+23             \textcolor{keywordflow}{default}:
+24                 \hyperlink{a00074_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}{BochsConsolePrintChar}(chara);
+25                 \hyperlink{a00167_acb9a978008cfa67b0038e85eb56d2d41_acb9a978008cfa67b0038e85eb56d2d41}{drawchar3}(chara,0x7,0x0,\hyperlink{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x},\hyperlink{a00167_a0301c5492919c401c2c1ecf52af709b0_a0301c5492919c401c2c1ecf52af709b0}{cursor\_y});
+26                 \hyperlink{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x}++;
+27                 \textcolor{keywordflow}{break};
+28         \}
+29         \textcolor{comment}{// get next character}
+30         chara = *\textcolor{keywordtype}{string}++;
+31     \}
+32     \hyperlink{a00167_afe197dc4dbfa6036ef04abd2aeeeca2d_afe197dc4dbfa6036ef04abd2aeeeca2d}{enable\_cursor}(0,15);
+33     \hyperlink{a00167_a492f5021d7340613e732ef37bbaa04e4_a492f5021d7340613e732ef37bbaa04e4}{update\_cursor}(\hyperlink{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x},\hyperlink{a00167_a0301c5492919c401c2c1ecf52af709b0_a0301c5492919c401c2c1ecf52af709b0}{cursor\_y});
+34 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00167_aee69008de31826f28854c29a54cb315e_aee69008de31826f28854c29a54cb315e}\label{a00167_aee69008de31826f28854c29a54cb315e_aee69008de31826f28854c29a54cb315e}} 
-\index{vlib.\+c@{vlib.\+c}!loadvlib@{loadvlib}}
-\index{loadvlib@{loadvlib}!vlib.\+c@{vlib.\+c}}
-\subsubsection{\texorpdfstring{loadvlib()}{loadvlib()}}
-{\footnotesize\ttfamily void loadvlib (\begin{DoxyParamCaption}\item[{\hyperlink{a00170_a2d9000b4fbb25c5ed2950a2d8f4921d5_a2d9000b4fbb25c5ed2950a2d8f4921d5}{vlibdesriptor\+\_\+t} $\ast$}]{d }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00167_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}\label{a00167_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}} 
+\index{tty.\+c@{tty.\+c}!tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}}
+\index{tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{tty\+\_\+vgaputstring()}{tty\_vgaputstring()}}
+{\footnotesize\ttfamily void tty\+\_\+vgaputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string,  }\item[{int}]{len }\end{DoxyParamCaption})}
 
 
 
-Definition at line 5 of file vlib.\+c.
+Puts a string into V\+R\+AM, Mode 13 only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & The string to put \\
+\hline
+{\em len} & The length \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 86 of file tty.\+c.
 
 
 \begin{DoxyCode}
-5                                   \{
-6     \hyperlink{a00170_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor} = d;
-7 \}
+86                                              \{
+87     \hyperlink{a00071_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{keywordtype}{string});
+88     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
+89     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'}) \{
+90         \hyperlink{a00056_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}{drawchar}(chara,\hyperlink{a00167_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff},\hyperlink{a00167_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff}+17,0xf,0x0);
+91         \hyperlink{a00167_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff} += 8;
+92         chara = *\textcolor{keywordtype}{string}++;
+93     \}
+94 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00167_a268c6e227f2761807244c0695d78d01c_a268c6e227f2761807244c0695d78d01c}\label{a00167_a268c6e227f2761807244c0695d78d01c_a268c6e227f2761807244c0695d78d01c}} 
-\index{vlib.\+c@{vlib.\+c}!runvlib@{runvlib}}
-\index{runvlib@{runvlib}!vlib.\+c@{vlib.\+c}}
-\subsubsection{\texorpdfstring{runvlib()}{runvlib()}}
-{\footnotesize\ttfamily void runvlib (\begin{DoxyParamCaption}\item[{\hyperlink{a00104_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t}}]{regs }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00167_a492f5021d7340613e732ef37bbaa04e4_a492f5021d7340613e732ef37bbaa04e4}\label{a00167_a492f5021d7340613e732ef37bbaa04e4_a492f5021d7340613e732ef37bbaa04e4}} 
+\index{tty.\+c@{tty.\+c}!update\+\_\+cursor@{update\+\_\+cursor}}
+\index{update\+\_\+cursor@{update\+\_\+cursor}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{update\+\_\+cursor()}{update\_cursor()}}
+{\footnotesize\ttfamily void update\+\_\+cursor (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
 
 
 
-Definition at line 17 of file vlib.\+c.
+Updates the cursor position. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The X position of the cursor. \\
+\hline
+{\em y} & The Y position of the cursor. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 51 of file tty.\+c.
 
 
 \begin{DoxyCode}
-17                                \{
-18     \hyperlink{a00125_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} vlib = \hyperlink{a00170_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00270_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
-19     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = regs.\hyperlink{a00218_aa8989b2fef42dca1d656f724eb324f51_aa8989b2fef42dca1d656f724eb324f51}{ebx};
-20     \textcolor{keywordflow}{while}(\textcolor{keywordtype}{id} != 0) \{
-21         vlib += \textcolor{keyword}{sizeof}(\hyperlink{a00170_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\_entry\_t});
-22     \}
-23     \hyperlink{a00266}{vlib\_entry\_t}* \hyperlink{a00098_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel} = (\hyperlink{a00266}{vlib\_entry\_t}*)vlib;
-24     \hyperlink{a00125_a7ec4af7c086c1f2c2a0e01fc23203a56_a7ec4af7c086c1f2c2a0e01fc23203a56}{func\_ptr\_args} funcptr = sel->\hyperlink{a00266_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr};
-25     \textcolor{comment}{// we can now run vlib code}
-26     void (*functionptr)(\hyperlink{a00218}{registers\_t} ctaskregs);
-27     functionptr = *sel->\hyperlink{a00266_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr};
-28     functionptr(regs);
-29 \}
+52 \{
+53     \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} pos = y * 80 + x;
+54  
+55     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D4, 0x0F);
+56     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D5, (\hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}) (pos & 0xFF));
+57     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D4, 0x0E);
+58     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D5, (\hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}) ((pos >> 8) & 0xFF));
+59 \}
 \end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}\label{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}} 
+\index{tty.\+c@{tty.\+c}!cursor\+\_\+x@{cursor\+\_\+x}}
+\index{cursor\+\_\+x@{cursor\+\_\+x}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{cursor\+\_\+x}{cursor\_x}}
+{\footnotesize\ttfamily \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} cursor\+\_\+x = 0}
+
+
+
+Definition at line 7 of file tty.\+c.
+
+\mbox{\Hypertarget{a00167_a0301c5492919c401c2c1ecf52af709b0_a0301c5492919c401c2c1ecf52af709b0}\label{a00167_a0301c5492919c401c2c1ecf52af709b0_a0301c5492919c401c2c1ecf52af709b0}} 
+\index{tty.\+c@{tty.\+c}!cursor\+\_\+y@{cursor\+\_\+y}}
+\index{cursor\+\_\+y@{cursor\+\_\+y}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{cursor\+\_\+y}{cursor\_y}}
+{\footnotesize\ttfamily \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} cursor\+\_\+y = 0}
+
+
+
+Definition at line 8 of file tty.\+c.
+
+\mbox{\Hypertarget{a00167_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}\label{a00167_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}} 
+\index{tty.\+c@{tty.\+c}!vgamode@{vgamode}}
+\index{vgamode@{vgamode}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{vgamode}{vgamode}}
+{\footnotesize\ttfamily \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} vgamode = 0x3}
+
+
+
+Definition at line 71 of file tty.\+c.
+
+\mbox{\Hypertarget{a00167_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}\label{a00167_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}} 
+\index{tty.\+c@{tty.\+c}!xoff@{xoff}}
+\index{xoff@{xoff}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{xoff}{xoff}}
+{\footnotesize\ttfamily \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} xoff = 0}
+
+
+
+Definition at line 69 of file tty.\+c.
+
+\mbox{\Hypertarget{a00167_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}\label{a00167_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}} 
+\index{tty.\+c@{tty.\+c}!yoff@{yoff}}
+\index{yoff@{yoff}!tty.\+c@{tty.\+c}}
+\subsubsection{\texorpdfstring{yoff}{yoff}}
+{\footnotesize\ttfamily \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} yoff = 0}
+
+
+
+Definition at line 70 of file tty.\+c.
+

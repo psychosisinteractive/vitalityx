@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/descriptortables.h File Reference</title>
+<title>VitalityX: kernel/kernel.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,37 +39,54 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_dc43877d82dd332f9fb2071fcca799d6.html">kernel</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">descriptortables.h File Reference</div>  </div>
+<div class="title">kernel.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00092_source.html">gdt.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00098_source.html">interrupt.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00170_source.html">../libc/vitality/tty.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00068_source.html">../libc/descriptortables.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00116_source.html">../libc/page.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00074_source.html">../libc/ext/debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00059_source.html">../drivers/vga.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00086_source.html">../libc/ext/task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00164_source.html">../libc/vitality/mem.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00188_source.html">../libc/vitality/vlib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00035_source.html">../drivers/ide.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00146_source.html">../libc/vitality/fs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00194_source.html">../libc/vitality/vxbfs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00179_source.html">../libc/vitality/vfs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00041_source.html">../drivers/keyboard.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00053_source.html">../drivers/serial.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for descriptortables.h:</div>
+Include dependency graph for kernel.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00063.png" border="0" usemap="#libc_2descriptortables_8h" alt=""/></div>
+<div class="center"><img src="a00063.png" border="0" usemap="#kernel_2kernel_8c" alt=""/></div>
 <!-- MAP 0 -->
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00064.png" border="0" usemap="#libc_2descriptortables_8hdep" alt=""/></div>
-<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00062_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4c38e3f3ee100ca4323081bf0970c1ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00062_a4c38e3f3ee100ca4323081bf0970c1ac.html#a4c38e3f3ee100ca4323081bf0970c1ac">dt_install</a> ()</td></tr>
-<tr class="separator:a4c38e3f3ee100ca4323081bf0970c1ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ee3d1f05046b7afc6b4d516bf10667a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00062_a4ee3d1f05046b7afc6b4d516bf10667a.html#a4ee3d1f05046b7afc6b4d516bf10667a">kernel</a> ()</td></tr>
+<tr class="separator:a4ee3d1f05046b7afc6b4d516bf10667a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:af69f4f709fdab28dec6b8fb75fb4d526"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00188_a97c1a7136f2ab06368e93c2d7533d619.html#a97c1a7136f2ab06368e93c2d7533d619">vlib_entry_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00062_af69f4f709fdab28dec6b8fb75fb4d526.html#af69f4f709fdab28dec6b8fb75fb4d526">vlibe</a> [255]</td></tr>
+<tr class="memdesc:af69f4f709fdab28dec6b8fb75fb4d526"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kernels C entry point.  <a href="a00062_af69f4f709fdab28dec6b8fb75fb4d526.html#af69f4f709fdab28dec6b8fb75fb4d526">More...</a><br /></td></tr>
+<tr class="separator:af69f4f709fdab28dec6b8fb75fb4d526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2125beec541d04796805161dbec05fcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00188_a2d9000b4fbb25c5ed2950a2d8f4921d5.html#a2d9000b4fbb25c5ed2950a2d8f4921d5">vlibdesriptor_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00062_a2125beec541d04796805161dbec05fcf.html#a2125beec541d04796805161dbec05fcf">vlibd</a></td></tr>
+<tr class="separator:a2125beec541d04796805161dbec05fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af37cb131d8a2101addfbf5fb2d8a53b4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00062_af37cb131d8a2101addfbf5fb2d8a53b4.html#af37cb131d8a2101addfbf5fb2d8a53b4">primarydrive</a></td></tr>
+<tr class="separator:af37cb131d8a2101addfbf5fb2d8a53b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->
