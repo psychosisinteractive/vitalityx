@@ -1,86 +1,248 @@
-\hypertarget{a00089}{}\section{libc/g++/cpp\+\_\+classdef.cpp File Reference}
-\label{a00089}\index{libc/g++/cpp\+\_\+classdef.\+cpp@{libc/g++/cpp\+\_\+classdef.\+cpp}}
-{\ttfamily \#include \char`\"{}../vitality/tty.\+h\char`\"{}}\newline
+\hypertarget{a00089}{}\section{libc/ext/task.c File Reference}
+\label{a00089}\index{libc/ext/task.\+c@{libc/ext/task.\+c}}
+{\ttfamily \#include \char`\"{}task.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}cpp\+\_\+classdef.\+h\char`\"{}}\newline
-Include dependency graph for cpp\+\_\+classdef.\+cpp\+:
+{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../page.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../vitality/tty.\+h\char`\"{}}\newline
+Include dependency graph for task.\+c\+:
 % FIG 0
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{a00089_abbdfa8f54b7fc7761d12ecc473f87bc4_abbdfa8f54b7fc7761d12ecc473f87bc4}{C\+PP}
-\begin{DoxyCompactList}\small\item\em This flag means the source file is being compiled under C++ mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00089_a6be7d9ce80c86f5178635fa86c2dd5e7_a6be7d9ce80c86f5178635fa86c2dd5e7}{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual} ()
-\begin{DoxyCompactList}\small\item\em C++ Pure Virtual Function, called when a virtual function is required Y\+ET there is nothing to handle its call. \end{DoxyCompactList}\item 
-char $\ast$ \hyperlink{a00089_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}{c\+\_\+stc} (const char string\mbox{[}$\,$\mbox{]})
-\begin{DoxyCompactList}\small\item\em Converts a const char array into a char$\ast$. \end{DoxyCompactList}\end{DoxyCompactItemize}
-
-
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{a00089_abbdfa8f54b7fc7761d12ecc473f87bc4_abbdfa8f54b7fc7761d12ecc473f87bc4}\label{a00089_abbdfa8f54b7fc7761d12ecc473f87bc4_abbdfa8f54b7fc7761d12ecc473f87bc4}} 
-\index{cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}!C\+PP@{C\+PP}}
-\index{C\+PP@{C\+PP}!cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}}
-\subsubsection{\texorpdfstring{C\+PP}{CPP}}
-{\footnotesize\ttfamily \#define C\+PP}
-
-
-
-This flag means the source file is being compiled under C++ mode. 
-
-
-
-Definition at line 4 of file cpp\+\_\+classdef.\+cpp.
-
+static void \hyperlink{a00089_a4337f8ca98d2a8f8e09bf6e26b4e8bb0_a4337f8ca98d2a8f8e09bf6e26b4e8bb0}{other\+Main} ()
+\item 
+void \hyperlink{a00089_aea945e91746a54801f4763ad264746b9_aea945e91746a54801f4763ad264746b9}{init\+Tasking} ()
+\item 
+void \hyperlink{a00089_a2814ff5e4f081736448dc705b05edcd1_a2814ff5e4f081736448dc705b05edcd1}{add\+Task} (\hyperlink{a00222}{Task} $\ast$task)
+\item 
+void \hyperlink{a00089_a184d15e6ea70aab5a40ce6c585291c7d_a184d15e6ea70aab5a40ce6c585291c7d}{create\+Task} (\hyperlink{a00222}{Task} $\ast$task, void($\ast$main)(), \hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00110_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags}, \hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$pagedir, char name\mbox{[}16\mbox{]}, \hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} tflags)
+\item 
+void \hyperlink{a00089_a9c11e5814e2ab9479f6fc65704007764_a9c11e5814e2ab9479f6fc65704007764}{swapscreen} (char $\ast$newconsole\mbox{[}$\,$\mbox{]})
+\item 
+void \hyperlink{a00089_a58c8b2ad0ea491a6642e5e1cbd358c89_a58c8b2ad0ea491a6642e5e1cbd358c89}{yield} ()
+\item 
+struct \hyperlink{a00222}{Task} $\ast$ \hyperlink{a00089_a5913e9b2190b2b4118ee020721a320e2_a5913e9b2190b2b4118ee020721a320e2}{getctask} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{a00222}{Task} $\ast$ \hyperlink{a00089_a2c195d425b4a6791b3a89f7b219f93d9_a2c195d425b4a6791b3a89f7b219f93d9}{running\+Task}
+\item 
+static \hyperlink{a00222}{Task} \hyperlink{a00089_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{main\+Task}
+\item 
+static \hyperlink{a00222}{Task} \hyperlink{a00089_ab0e87ab98b8b029839a398838d16e1f0_ab0e87ab98b8b029839a398838d16e1f0}{other\+Task}
+\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00089_a6be7d9ce80c86f5178635fa86c2dd5e7_a6be7d9ce80c86f5178635fa86c2dd5e7}\label{a00089_a6be7d9ce80c86f5178635fa86c2dd5e7_a6be7d9ce80c86f5178635fa86c2dd5e7}} 
-\index{cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}!\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual@{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual}}
-\index{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual@{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual}!cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}}
-\subsubsection{\texorpdfstring{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual()}{\_\_cxa\_pure\_virtual()}}
-{\footnotesize\ttfamily void \+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00089_a2814ff5e4f081736448dc705b05edcd1_a2814ff5e4f081736448dc705b05edcd1}\label{a00089_a2814ff5e4f081736448dc705b05edcd1_a2814ff5e4f081736448dc705b05edcd1}} 
+\index{task.\+c@{task.\+c}!add\+Task@{add\+Task}}
+\index{add\+Task@{add\+Task}!task.\+c@{task.\+c}}
+\subsubsection{\texorpdfstring{add\+Task()}{addTask()}}
+{\footnotesize\ttfamily void add\+Task (\begin{DoxyParamCaption}\item[{\hyperlink{a00222}{Task} $\ast$}]{task }\end{DoxyParamCaption})}
 
 
 
-C++ Pure Virtual Function, called when a virtual function is required Y\+ET there is nothing to handle its call. 
-
-
-
-Definition at line 13 of file cpp\+\_\+classdef.\+cpp.
+Definition at line 33 of file task.\+c.
 
 
 \begin{DoxyCode}
-14 \{
-15     \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\hyperlink{a00089_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}{c\_stc}(\textcolor{stringliteral}{"[KERNEL ERROR]\_\_cxa\_pure\_virtual called, No class spec,
-       halting"}));
-16     
-17 \}
+33                          \{
+34     \hyperlink{a00222}{Task} *nT = \hyperlink{a00089_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.\hyperlink{a00222_a8b6b50960a19f7bae344ef0cc8ec4e7d_a8b6b50960a19f7bae344ef0cc8ec4e7d}{next};
+35     \hyperlink{a00222}{Task} *oT = 0;
+36     \textcolor{keywordflow}{while}(nT != 0) \{
+37         oT = nT;
+38         nT = nT->\hyperlink{a00222_a8b6b50960a19f7bae344ef0cc8ec4e7d_a8b6b50960a19f7bae344ef0cc8ec4e7d}{next};
+39     \}
+40     oT->\hyperlink{a00222_a8b6b50960a19f7bae344ef0cc8ec4e7d_a8b6b50960a19f7bae344ef0cc8ec4e7d}{next} = task;
+41 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00089_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}\label{a00089_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}} 
-\index{cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}!c\+\_\+stc@{c\+\_\+stc}}
-\index{c\+\_\+stc@{c\+\_\+stc}!cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}}
-\subsubsection{\texorpdfstring{c\+\_\+stc()}{c\_stc()}}
-{\footnotesize\ttfamily char$\ast$ c\+\_\+stc (\begin{DoxyParamCaption}\item[{const char}]{string\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00089_a184d15e6ea70aab5a40ce6c585291c7d_a184d15e6ea70aab5a40ce6c585291c7d}\label{a00089_a184d15e6ea70aab5a40ce6c585291c7d_a184d15e6ea70aab5a40ce6c585291c7d}} 
+\index{task.\+c@{task.\+c}!create\+Task@{create\+Task}}
+\index{create\+Task@{create\+Task}!task.\+c@{task.\+c}}
+\subsubsection{\texorpdfstring{create\+Task()}{createTask()}}
+{\footnotesize\ttfamily void create\+Task (\begin{DoxyParamCaption}\item[{\hyperlink{a00222}{Task} $\ast$}]{task,  }\item[{void($\ast$)()}]{main,  }\item[{\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{flags,  }\item[{\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$}]{pagedir,  }\item[{char}]{name\mbox{[}16\mbox{]},  }\item[{\hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{tflags }\end{DoxyParamCaption})}
 
 
 
-Converts a const char array into a char$\ast$. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The array \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 23 of file cpp\+\_\+classdef.\+cpp.
+Definition at line 43 of file task.\+c.
 
 
 \begin{DoxyCode}
-23                                  \{
-24     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)&\textcolor{keywordtype}{string}[0];
-25 \}
+43                                                                                                            
+         \{
+44     task->\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00254_aafc7189a84cb0f6ed3d37ee82bec09bc_aafc7189a84cb0f6ed3d37ee82bec09bc}{eax} = 0;
+45     task->\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00254_a3aa9baab41ed6c513cbecb126dc90373_a3aa9baab41ed6c513cbecb126dc90373}{ebx} = 0;
+46     task->\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00254_a9a7eb0450238154baa25c72993a0e5e0_a9a7eb0450238154baa25c72993a0e5e0}{ecx} = 0;
+47     task->\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00254_a0f90c64246d3bbb917cfe527bf8c34c4_a0f90c64246d3bbb917cfe527bf8c34c4}{edx} = 0;
+48     task->\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00254_a8f9b382cca633127cb869add3aed7a41_a8f9b382cca633127cb869add3aed7a41}{esi} = 0;
+49     task->\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00254_ae94bf35e0b978f6cca838ec6011a1e48_ae94bf35e0b978f6cca838ec6011a1e48}{edi} = 0;
+50     task->\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00254_a5216970c0d34ab4b53881f583839c8f9_a5216970c0d34ab4b53881f583839c8f9}{eflags} = \hyperlink{a00110_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags};
+51     task->\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00254_ad5110c091e713dabd23f23a62d026c07_ad5110c091e713dabd23f23a62d026c07}{eip} = (\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t}) main;
+52     task->\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00254_ab818d6f237e6d73d321339e6fcd66abf_ab818d6f237e6d73d321339e6fcd66abf}{cr3} = (\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t}) pagedir;
+53     task->\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00254_aca352215ac1e37f833da4f6289392261_aca352215ac1e37f833da4f6289392261}{esp} = \hyperlink{a00089_a2c195d425b4a6791b3a89f7b219f93d9_a2c195d425b4a6791b3a89f7b219f93d9}{runningTask}->\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00254_aca352215ac1e37f833da4f6289392261_aca352215ac1e37f833da4f6289392261}{esp}; \textcolor{comment}{// Not implemented here}
+54     task->\hyperlink{a00222_a8b6b50960a19f7bae344ef0cc8ec4e7d_a8b6b50960a19f7bae344ef0cc8ec4e7d}{next} = 0;
+55     task->\hyperlink{a00222_a9cf84d1792cda878178fd3691e472b97_a9cf84d1792cda878178fd3691e472b97}{name} = name;
+56     task->\hyperlink{a00222_a9f83f1da7a5a83aa9a5e4849b66db8c5_a9f83f1da7a5a83aa9a5e4849b66db8c5}{flags} = tflags;
+57     task->\hyperlink{a00222_a781458d363296d44737fa13757fd6672_a781458d363296d44737fa13757fd6672}{instantiated} = \textcolor{keyword}{true};
+58     \textcolor{comment}{// set space for console}
+59     \hyperlink{a00131_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(task->\hyperlink{a00222_a3076ad648de3a9c9c6c35bcd6a52ce4c_a3076ad648de3a9c9c6c35bcd6a52ce4c}{console},0,2000);
+60     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"New task "});
+61     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(name);
+62     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+63 \}
 \end{DoxyCode}
+\mbox{\Hypertarget{a00089_a5913e9b2190b2b4118ee020721a320e2_a5913e9b2190b2b4118ee020721a320e2}\label{a00089_a5913e9b2190b2b4118ee020721a320e2_a5913e9b2190b2b4118ee020721a320e2}} 
+\index{task.\+c@{task.\+c}!getctask@{getctask}}
+\index{getctask@{getctask}!task.\+c@{task.\+c}}
+\subsubsection{\texorpdfstring{getctask()}{getctask()}}
+{\footnotesize\ttfamily struct \hyperlink{a00222}{Task}$\ast$ getctask (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 95 of file task.\+c.
+
+
+\begin{DoxyCode}
+95                         \{
+96     \textcolor{keywordflow}{return} \hyperlink{a00089_a2c195d425b4a6791b3a89f7b219f93d9_a2c195d425b4a6791b3a89f7b219f93d9}{runningTask};
+97 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00089_aea945e91746a54801f4763ad264746b9_aea945e91746a54801f4763ad264746b9}\label{a00089_aea945e91746a54801f4763ad264746b9_aea945e91746a54801f4763ad264746b9}} 
+\index{task.\+c@{task.\+c}!init\+Tasking@{init\+Tasking}}
+\index{init\+Tasking@{init\+Tasking}!task.\+c@{task.\+c}}
+\subsubsection{\texorpdfstring{init\+Tasking()}{initTasking()}}
+{\footnotesize\ttfamily void init\+Tasking (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file task.\+c.
+
+
+\begin{DoxyCode}
+18                    \{
+19     \textcolor{comment}{// Get EFLAGS and CR3}
+20     \textcolor{keyword}{asm} \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"movl %%cr3, %%eax; movl %%eax, %0;"}:\textcolor{stringliteral}{"=m"}(\hyperlink{a00089_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.
+      \hyperlink{a00254_ab818d6f237e6d73d321339e6fcd66abf_ab818d6f237e6d73d321339e6fcd66abf}{cr3})::\textcolor{stringliteral}{"%eax"});
+21     \textcolor{keyword}{asm} \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"pushfl; movl (%%esp), %%eax; movl %%eax, %0; popfl;"}:\textcolor{stringliteral}{"=m"}(
+      \hyperlink{a00089_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00254_a5216970c0d34ab4b53881f583839c8f9_a5216970c0d34ab4b53881f583839c8f9}{eflags})::\textcolor{stringliteral}{"%eax"});
+22  
+23     \hyperlink{a00089_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.\hyperlink{a00222_a9f83f1da7a5a83aa9a5e4849b66db8c5_a9f83f1da7a5a83aa9a5e4849b66db8c5}{flags} = \hyperlink{a00092_a99096319a92bcf092a1a00a701afbfd8_a99096319a92bcf092a1a00a701afbfd8}{TASK\_KERNEL} | \hyperlink{a00092_a4a5cf4cf0c94e422fdede942ba9bafb2_a4a5cf4cf0c94e422fdede942ba9bafb2}{TASK\_PROTECTED};
+24     \hyperlink{a00089_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.\hyperlink{a00222_a9cf84d1792cda878178fd3691e472b97_a9cf84d1792cda878178fd3691e472b97}{name} = \textcolor{stringliteral}{"vitality-system"};
+25     \hyperlink{a00089_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.\hyperlink{a00222_a781458d363296d44737fa13757fd6672_a781458d363296d44737fa13757fd6672}{instantiated} = \textcolor{keyword}{true};
+26     \hyperlink{a00089_a184d15e6ea70aab5a40ce6c585291c7d_a184d15e6ea70aab5a40ce6c585291c7d}{createTask}(&\hyperlink{a00089_ab0e87ab98b8b029839a398838d16e1f0_ab0e87ab98b8b029839a398838d16e1f0}{otherTask}, \hyperlink{a00089_a4337f8ca98d2a8f8e09bf6e26b4e8bb0_a4337f8ca98d2a8f8e09bf6e26b4e8bb0}{otherMain}, \hyperlink{a00089_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.
+      \hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00254_a5216970c0d34ab4b53881f583839c8f9_a5216970c0d34ab4b53881f583839c8f9}{eflags}, (\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t}*)\hyperlink{a00089_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00254_ab818d6f237e6d73d321339e6fcd66abf_ab818d6f237e6d73d321339e6fcd66abf}{cr3}, \textcolor{stringliteral}{"kernel-dispatch"},
+      \hyperlink{a00092_a99096319a92bcf092a1a00a701afbfd8_a99096319a92bcf092a1a00a701afbfd8}{TASK\_KERNEL} | \hyperlink{a00092_a4a5cf4cf0c94e422fdede942ba9bafb2_a4a5cf4cf0c94e422fdede942ba9bafb2}{TASK\_PROTECTED} | \hyperlink{a00092_a9bb9271145daa0a0efa965cb405fe706_a9bb9271145daa0a0efa965cb405fe706}{TASK\_CONSOLE});
+27     \hyperlink{a00089_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask}.\hyperlink{a00222_a8b6b50960a19f7bae344ef0cc8ec4e7d_a8b6b50960a19f7bae344ef0cc8ec4e7d}{next} = &\hyperlink{a00089_ab0e87ab98b8b029839a398838d16e1f0_ab0e87ab98b8b029839a398838d16e1f0}{otherTask};
+28     \hyperlink{a00089_ab0e87ab98b8b029839a398838d16e1f0_ab0e87ab98b8b029839a398838d16e1f0}{otherTask}.\hyperlink{a00222_a8b6b50960a19f7bae344ef0cc8ec4e7d_a8b6b50960a19f7bae344ef0cc8ec4e7d}{next} = &\hyperlink{a00089_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask};
+29  
+30     \hyperlink{a00089_a2c195d425b4a6791b3a89f7b219f93d9_a2c195d425b4a6791b3a89f7b219f93d9}{runningTask} = &\hyperlink{a00089_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}{mainTask};
+31 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00089_a4337f8ca98d2a8f8e09bf6e26b4e8bb0_a4337f8ca98d2a8f8e09bf6e26b4e8bb0}\label{a00089_a4337f8ca98d2a8f8e09bf6e26b4e8bb0_a4337f8ca98d2a8f8e09bf6e26b4e8bb0}} 
+\index{task.\+c@{task.\+c}!other\+Main@{other\+Main}}
+\index{other\+Main@{other\+Main}!task.\+c@{task.\+c}}
+\subsubsection{\texorpdfstring{other\+Main()}{otherMain()}}
+{\footnotesize\ttfamily static void other\+Main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 12 of file task.\+c.
+
+
+\begin{DoxyCode}
+12                         \{
+13     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Kernel dispatch\(\backslash\)n"});
+14     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Waiting for something to happen...\(\backslash\)n"});
+15     \hyperlink{a00089_a58c8b2ad0ea491a6642e5e1cbd358c89_a58c8b2ad0ea491a6642e5e1cbd358c89}{yield}();
+16 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00089_a9c11e5814e2ab9479f6fc65704007764_a9c11e5814e2ab9479f6fc65704007764}\label{a00089_a9c11e5814e2ab9479f6fc65704007764_a9c11e5814e2ab9479f6fc65704007764}} 
+\index{task.\+c@{task.\+c}!swapscreen@{swapscreen}}
+\index{swapscreen@{swapscreen}!task.\+c@{task.\+c}}
+\subsubsection{\texorpdfstring{swapscreen()}{swapscreen()}}
+{\footnotesize\ttfamily void swapscreen (\begin{DoxyParamCaption}\item[{char $\ast$}]{newconsole\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 65 of file task.\+c.
+
+
+\begin{DoxyCode}
+65                                     \{
+66     \hyperlink{a00222}{Task}* ctask = \hyperlink{a00089_a5913e9b2190b2b4118ee020721a320e2_a5913e9b2190b2b4118ee020721a320e2}{getctask}();
+67     \hyperlink{a00131_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(&ctask->\hyperlink{a00222_a3076ad648de3a9c9c6c35bcd6a52ce4c_a3076ad648de3a9c9c6c35bcd6a52ce4c}{console},0xb8000,2000);
+68     \hyperlink{a00131_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(0xb8000,newconsole,2000);
+69 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00089_a58c8b2ad0ea491a6642e5e1cbd358c89_a58c8b2ad0ea491a6642e5e1cbd358c89}\label{a00089_a58c8b2ad0ea491a6642e5e1cbd358c89_a58c8b2ad0ea491a6642e5e1cbd358c89}} 
+\index{task.\+c@{task.\+c}!yield@{yield}}
+\index{yield@{yield}!task.\+c@{task.\+c}}
+\subsubsection{\texorpdfstring{yield()}{yield()}}
+{\footnotesize\ttfamily void yield (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 71 of file task.\+c.
+
+
+\begin{DoxyCode}
+71              \{
+72     \hyperlink{a00222}{Task} *last = \hyperlink{a00089_a2c195d425b4a6791b3a89f7b219f93d9_a2c195d425b4a6791b3a89f7b219f93d9}{runningTask};
+73     \hyperlink{a00222}{Task} *nextTask = \hyperlink{a00089_a2c195d425b4a6791b3a89f7b219f93d9_a2c195d425b4a6791b3a89f7b219f93d9}{runningTask}->\hyperlink{a00222_a8b6b50960a19f7bae344ef0cc8ec4e7d_a8b6b50960a19f7bae344ef0cc8ec4e7d}{next};
+74     \textcolor{keywordflow}{if}(nextTask->\hyperlink{a00222_a781458d363296d44737fa13757fd6672_a781458d363296d44737fa13757fd6672}{instantiated}) \{
+75         \hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} ntS = nextTask->\hyperlink{a00222_a9f83f1da7a5a83aa9a5e4849b66db8c5_a9f83f1da7a5a83aa9a5e4849b66db8c5}{flags};
+76         \textcolor{keywordflow}{while}(ntS & \hyperlink{a00092_a74e226c76efbb6f22c9578b06dfb1bc5_a74e226c76efbb6f22c9578b06dfb1bc5}{TASK\_SKIP} | ntS & \hyperlink{a00092_a08b194bba7eb50323bcf424f07be67c8_a08b194bba7eb50323bcf424f07be67c8}{TASK\_KILLED}) \{
+77             nextTask = nextTask->\hyperlink{a00222_a8b6b50960a19f7bae344ef0cc8ec4e7d_a8b6b50960a19f7bae344ef0cc8ec4e7d}{next};
+78             \hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} ntS = nextTask->\hyperlink{a00222_a9f83f1da7a5a83aa9a5e4849b66db8c5_a9f83f1da7a5a83aa9a5e4849b66db8c5}{flags};
+79         \}
+80         \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Swapping to "});
+81         \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(nextTask->\hyperlink{a00222_a9cf84d1792cda878178fd3691e472b97_a9cf84d1792cda878178fd3691e472b97}{name});
+82         \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+83         \textcolor{keywordflow}{if}(nextTask->\hyperlink{a00222_a9f83f1da7a5a83aa9a5e4849b66db8c5_a9f83f1da7a5a83aa9a5e4849b66db8c5}{flags} & \hyperlink{a00092_a9bb9271145daa0a0efa965cb405fe706_a9bb9271145daa0a0efa965cb405fe706}{TASK\_CONSOLE}) \{
+84             \hyperlink{a00077_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"Swapping consoles\(\backslash\)n"});
+85             \hyperlink{a00089_a9c11e5814e2ab9479f6fc65704007764_a9c11e5814e2ab9479f6fc65704007764}{swapscreen}(&nextTask->\hyperlink{a00222_a3076ad648de3a9c9c6c35bcd6a52ce4c_a3076ad648de3a9c9c6c35bcd6a52ce4c}{console});
+86         \}
+87         \hyperlink{a00164_a3f7e7be8f62f43b2b62df54cac1590be_a3f7e7be8f62f43b2b62df54cac1590be}{bochs\_bkpt}();
+88         \hyperlink{a00092_a2425ca34147fccde2d1503332d21c5bd_a2425ca34147fccde2d1503332d21c5bd}{switchTask}(&last->\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}, &nextTask->\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs});
+89         void (*prog) ();
+90         prog = nextTask->\hyperlink{a00222_a136b243ee52ff89e9ba97f4e4dba19bb_a136b243ee52ff89e9ba97f4e4dba19bb}{regs}.\hyperlink{a00254_ad5110c091e713dabd23f23a62d026c07_ad5110c091e713dabd23f23a62d026c07}{eip};
+91         prog();
+92     \}
+93 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{a00089_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}\label{a00089_a228ac88416ebaa8713846e3e5e3e9b6d_a228ac88416ebaa8713846e3e5e3e9b6d}} 
+\index{task.\+c@{task.\+c}!main\+Task@{main\+Task}}
+\index{main\+Task@{main\+Task}!task.\+c@{task.\+c}}
+\subsubsection{\texorpdfstring{main\+Task}{mainTask}}
+{\footnotesize\ttfamily \hyperlink{a00222}{Task} main\+Task\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 9 of file task.\+c.
+
+\mbox{\Hypertarget{a00089_ab0e87ab98b8b029839a398838d16e1f0_ab0e87ab98b8b029839a398838d16e1f0}\label{a00089_ab0e87ab98b8b029839a398838d16e1f0_ab0e87ab98b8b029839a398838d16e1f0}} 
+\index{task.\+c@{task.\+c}!other\+Task@{other\+Task}}
+\index{other\+Task@{other\+Task}!task.\+c@{task.\+c}}
+\subsubsection{\texorpdfstring{other\+Task}{otherTask}}
+{\footnotesize\ttfamily \hyperlink{a00222}{Task} other\+Task\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 10 of file task.\+c.
+
+\mbox{\Hypertarget{a00089_a2c195d425b4a6791b3a89f7b219f93d9_a2c195d425b4a6791b3a89f7b219f93d9}\label{a00089_a2c195d425b4a6791b3a89f7b219f93d9_a2c195d425b4a6791b3a89f7b219f93d9}} 
+\index{task.\+c@{task.\+c}!running\+Task@{running\+Task}}
+\index{running\+Task@{running\+Task}!task.\+c@{task.\+c}}
+\subsubsection{\texorpdfstring{running\+Task}{runningTask}}
+{\footnotesize\ttfamily \hyperlink{a00222}{Task}$\ast$ running\+Task\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 8 of file task.\+c.
+

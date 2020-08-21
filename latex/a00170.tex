@@ -1,354 +1,245 @@
-\hypertarget{a00170}{}\section{libc/vitality/tty.h File Reference}
-\label{a00170}\index{libc/vitality/tty.\+h@{libc/vitality/tty.\+h}}
+\hypertarget{a00170}{}\section{libc/vitality/mem.h File Reference}
+\label{a00170}\index{libc/vitality/mem.\+h@{libc/vitality/mem.\+h}}
 {\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
-Include dependency graph for tty.\+h\+:
+Include dependency graph for mem.\+h\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
 % FIG 1
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+union \hyperlink{a00286}{header\+\_\+t}
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00170_a5b5bf610a57f3c59b2851fa2652081ec_a5b5bf610a57f3c59b2851fa2652081ec}{tty\+\_\+putstring} (char $\ast$string, int len)
-\begin{DoxyCompactList}\small\item\em Puts a string in V\+R\+AM, Text mode only. \end{DoxyCompactList}\item 
-void \hyperlink{a00170_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}{tty\+\_\+vgaputstring} (char $\ast$string, int len)
-\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, Mode 13 only. \end{DoxyCompactList}\item 
-void \hyperlink{a00170_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\+\_\+pputstring} (char $\ast$string)
-\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, detects preferred mode. \end{DoxyCompactList}\item 
-void \hyperlink{a00170_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\+\_\+pputstringl} (char $\ast$string, int len)
-\begin{DoxyCompactList}\small\item\em Puts a string into V\+R\+AM, detects preferred mode, uses length. \end{DoxyCompactList}\item 
-void \hyperlink{a00170_a6215de17c731a2ff0d61587c39b15375_a6215de17c731a2ff0d61587c39b15375}{drawchar3} (unsigned char c, unsigned char forecolor, unsigned char backcolor, int x, int y)
-\begin{DoxyCompactList}\small\item\em Draws a character at x and y in Mode 3. \end{DoxyCompactList}\item 
-void \hyperlink{a00170_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}{clearscreen} ()
-\begin{DoxyCompactList}\small\item\em Clears the console. \end{DoxyCompactList}\item 
-void \hyperlink{a00170_aaf55ee008e2e63ca97eacae371646db7_aaf55ee008e2e63ca97eacae371646db7}{set\+\_\+ttyvgamode} (short mode)
-\begin{DoxyCompactList}\small\item\em Sets the V\+GA T\+TY mode. \end{DoxyCompactList}\item 
-void \hyperlink{a00170_a3d09038c7b6436e60b228f2f3f451f6a_a3d09038c7b6436e60b228f2f3f451f6a}{disable\+\_\+cursor} ()
-\begin{DoxyCompactList}\small\item\em Disables the console mode cursor. \end{DoxyCompactList}\item 
-void \hyperlink{a00170_afe197dc4dbfa6036ef04abd2aeeeca2d_afe197dc4dbfa6036ef04abd2aeeeca2d}{enable\+\_\+cursor} (\hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} cursor\+\_\+start, \hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} cursor\+\_\+end)
-\begin{DoxyCompactList}\small\item\em Enables the console mode cursor. \end{DoxyCompactList}\item 
-void \hyperlink{a00170_a492f5021d7340613e732ef37bbaa04e4_a492f5021d7340613e732ef37bbaa04e4}{update\+\_\+cursor} (int x, int y)
-\begin{DoxyCompactList}\small\item\em Updates the cursor position. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00170_a3ef64f08269a275815bb42bb97e0b562_a3ef64f08269a275815bb42bb97e0b562}{gbrk} ()
+\item 
+void \hyperlink{a00170_aebb0480990fb66ce618d040a195143c9_aebb0480990fb66ce618d040a195143c9}{brk} (\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t})
+\item 
+void $\ast$ \hyperlink{a00170_abeaae2bbcf837d3f98d17a9618076097_abeaae2bbcf837d3f98d17a9618076097}{sbrk} (\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t})
+\item 
+\hyperlink{a00286}{header\+\_\+t} $\ast$ \hyperlink{a00170_afaecf44e3ed4b4332644d98fe0955793_afaecf44e3ed4b4332644d98fe0955793}{get\+\_\+free\+\_\+block} (\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t})
+\item 
+void $\ast$ \hyperlink{a00170_a1c8580582aae58105f16108d4ec89e9a_a1c8580582aae58105f16108d4ec89e9a}{malloc} (\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t})
+\item 
+void \hyperlink{a00170_af07d89f5ceaea0c7c8252cc41fd75f37_af07d89f5ceaea0c7c8252cc41fd75f37}{free} (void $\ast$)
+\item 
+void $\ast$ \hyperlink{a00170_a77e880b1033d5a912be4333fc5d31eef_a77e880b1033d5a912be4333fc5d31eef}{calloc} (\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}, \hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t})
+\item 
+void $\ast$ \hyperlink{a00170_afa148085b6fa9594b4c35e100d94a183_afa148085b6fa9594b4c35e100d94a183}{realloc} (void $\ast$, \hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t})
+\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00170_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}\label{a00170_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}} 
-\index{tty.\+h@{tty.\+h}!clearscreen@{clearscreen}}
-\index{clearscreen@{clearscreen}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{clearscreen()}{clearscreen()}}
-{\footnotesize\ttfamily void clearscreen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00170_aebb0480990fb66ce618d040a195143c9_aebb0480990fb66ce618d040a195143c9}\label{a00170_aebb0480990fb66ce618d040a195143c9_aebb0480990fb66ce618d040a195143c9}} 
+\index{mem.\+h@{mem.\+h}!brk@{brk}}
+\index{brk@{brk}!mem.\+h@{mem.\+h}}
+\subsubsection{\texorpdfstring{brk()}{brk()}}
+{\footnotesize\ttfamily void brk (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{ }\end{DoxyParamCaption})}
 
 
 
-Clears the console. 
-
-
-
-Definition at line 77 of file tty.\+c.
+Definition at line 17 of file mem.\+c.
 
 
 \begin{DoxyCode}
-77                    \{
-78     \hyperlink{a00125_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(0xb8000,0,0x1fff);
-79     \hyperlink{a00167_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff} = 0;
-80     \hyperlink{a00167_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff} = 0;
-81     \hyperlink{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x} = \hyperlink{a00167_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff};
-82     \hyperlink{a00167_a0301c5492919c401c2c1ecf52af709b0_a0301c5492919c401c2c1ecf52af709b0}{cursor\_y} = \hyperlink{a00167_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff};
-83     \hyperlink{a00167_a492f5021d7340613e732ef37bbaa04e4_a492f5021d7340613e732ef37bbaa04e4}{update\_cursor}(\hyperlink{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x},\hyperlink{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x});
-84 \}
+17                       \{
+18     \hyperlink{a00167_a33fb44061f3432e7d04085bcef339974_a33fb44061f3432e7d04085bcef339974}{brkval} = (\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})size;
+19 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00170_a3d09038c7b6436e60b228f2f3f451f6a_a3d09038c7b6436e60b228f2f3f451f6a}\label{a00170_a3d09038c7b6436e60b228f2f3f451f6a_a3d09038c7b6436e60b228f2f3f451f6a}} 
-\index{tty.\+h@{tty.\+h}!disable\+\_\+cursor@{disable\+\_\+cursor}}
-\index{disable\+\_\+cursor@{disable\+\_\+cursor}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{disable\+\_\+cursor()}{disable\_cursor()}}
-{\footnotesize\ttfamily void disable\+\_\+cursor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00170_a77e880b1033d5a912be4333fc5d31eef_a77e880b1033d5a912be4333fc5d31eef}\label{a00170_a77e880b1033d5a912be4333fc5d31eef_a77e880b1033d5a912be4333fc5d31eef}} 
+\index{mem.\+h@{mem.\+h}!calloc@{calloc}}
+\index{calloc@{calloc}!mem.\+h@{mem.\+h}}
+\subsubsection{\texorpdfstring{calloc()}{calloc()}}
+{\footnotesize\ttfamily void$\ast$ calloc (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{,  }\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{ }\end{DoxyParamCaption})}
 
 
 
-Disables the console mode cursor. 
-
-
-
-Definition at line 36 of file tty.\+c.
+Definition at line 98 of file mem.\+c.
 
 
 \begin{DoxyCode}
-37 \{
-38     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D4, 0x0A);
-39     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D5, 0x20);
-40 \}
+99 \{
+100     \textcolor{keywordtype}{size\_t} size;
+101     \textcolor{keywordtype}{void} *block;
+102     \textcolor{keywordflow}{if} (!num || !nsize)
+103         \textcolor{keywordflow}{return} \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+104     size = num * nsize;
+105     \textcolor{comment}{/* check mul overflow */}
+106     \textcolor{keywordflow}{if} (nsize != size / num)
+107         \textcolor{keywordflow}{return} \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+108     block = \hyperlink{a00167_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}{malloc}(size);
+109     \textcolor{keywordflow}{if} (!block)
+110         \textcolor{keywordflow}{return} \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+111     \hyperlink{a00131_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(block, 0, size);
+112     \textcolor{keywordflow}{return} block;
+113 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00170_a6215de17c731a2ff0d61587c39b15375_a6215de17c731a2ff0d61587c39b15375}\label{a00170_a6215de17c731a2ff0d61587c39b15375_a6215de17c731a2ff0d61587c39b15375}} 
-\index{tty.\+h@{tty.\+h}!drawchar3@{drawchar3}}
-\index{drawchar3@{drawchar3}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{drawchar3()}{drawchar3()}}
-{\footnotesize\ttfamily void drawchar3 (\begin{DoxyParamCaption}\item[{unsigned char}]{c,  }\item[{unsigned char}]{forecolor,  }\item[{unsigned char}]{backcolor,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00170_af07d89f5ceaea0c7c8252cc41fd75f37_af07d89f5ceaea0c7c8252cc41fd75f37}\label{a00170_af07d89f5ceaea0c7c8252cc41fd75f37_af07d89f5ceaea0c7c8252cc41fd75f37}} 
+\index{mem.\+h@{mem.\+h}!free@{free}}
+\index{free@{free}!mem.\+h@{mem.\+h}}
+\subsubsection{\texorpdfstring{free()}{free()}}
+{\footnotesize\ttfamily void free (\begin{DoxyParamCaption}\item[{void $\ast$}]{ }\end{DoxyParamCaption})}
 
 
 
-Draws a character at x and y in Mode 3. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em c} & The character \\
-\hline
-{\em forecolor} & The foreground color \\
-\hline
-{\em backcolor} & The backgroud color \\
-\hline
-{\em x} & The x position \\
-\hline
-{\em y} & The y position \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 61 of file tty.\+c.
+Definition at line 68 of file mem.\+c.
 
 
 \begin{DoxyCode}
-62 \{
-63      \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} attrib = (backcolour << 4) | (forecolour & 0x0F);
-64      \textcolor{keyword}{volatile} \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} * where;
-65      where = (\textcolor{keyword}{volatile} \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} *)0xB8000 + (y * 80 + x) ;
-66      *where = c | (attrib << 8);
-67 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00170_afe197dc4dbfa6036ef04abd2aeeeca2d_afe197dc4dbfa6036ef04abd2aeeeca2d}\label{a00170_afe197dc4dbfa6036ef04abd2aeeeca2d_afe197dc4dbfa6036ef04abd2aeeeca2d}} 
-\index{tty.\+h@{tty.\+h}!enable\+\_\+cursor@{enable\+\_\+cursor}}
-\index{enable\+\_\+cursor@{enable\+\_\+cursor}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{enable\+\_\+cursor()}{enable\_cursor()}}
-{\footnotesize\ttfamily void enable\+\_\+cursor (\begin{DoxyParamCaption}\item[{\hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{cursor\+\_\+start,  }\item[{\hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{cursor\+\_\+end }\end{DoxyParamCaption})}
-
-
-
-Enables the console mode cursor. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em cursor\+\_\+start} & Scanline the cursor starts at. \\
-\hline
-{\em cursor\+\_\+end} & Scanline the cursor ends at. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 42 of file tty.\+c.
-
-
-\begin{DoxyCode}
-43 \{
-44     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D4, 0x0A);
-45     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D5, (\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x3D5) & 0xC0) | cursor\_start);
-46  
-47     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D4, 0x0B);
-48     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D5, (\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x3D5) & 0xE0) | cursor\_end);
-49 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00170_aaf55ee008e2e63ca97eacae371646db7_aaf55ee008e2e63ca97eacae371646db7}\label{a00170_aaf55ee008e2e63ca97eacae371646db7_aaf55ee008e2e63ca97eacae371646db7}} 
-\index{tty.\+h@{tty.\+h}!set\+\_\+ttyvgamode@{set\+\_\+ttyvgamode}}
-\index{set\+\_\+ttyvgamode@{set\+\_\+ttyvgamode}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{set\+\_\+ttyvgamode()}{set\_ttyvgamode()}}
-{\footnotesize\ttfamily void set\+\_\+ttyvgamode (\begin{DoxyParamCaption}\item[{short}]{mode }\end{DoxyParamCaption})}
-
-
-
-Sets the V\+GA T\+TY mode. 
-
-
-
-Definition at line 73 of file tty.\+c.
-
-
-\begin{DoxyCode}
-73                                 \{
-74     \hyperlink{a00167_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}{vgamode} = mode;
-75 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00170_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}\label{a00170_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}} 
-\index{tty.\+h@{tty.\+h}!tty\+\_\+pputstring@{tty\+\_\+pputstring}}
-\index{tty\+\_\+pputstring@{tty\+\_\+pputstring}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{tty\+\_\+pputstring()}{tty\_pputstring()}}
-{\footnotesize\ttfamily void tty\+\_\+pputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
-
-
-
-Puts a string into V\+R\+AM, detects preferred mode. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 96 of file tty.\+c.
-
-
-\begin{DoxyCode}
-96                                   \{
-97     \textcolor{keywordflow}{switch} (\hyperlink{a00167_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}{vgamode})
-98     \{
-99     \textcolor{keywordflow}{case} 0x3:
-100         \hyperlink{a00167_a5b5bf610a57f3c59b2851fa2652081ec_a5b5bf610a57f3c59b2851fa2652081ec}{tty\_putstring}(\textcolor{keywordtype}{string},0);
-101         \textcolor{keywordflow}{break};
-102     \textcolor{keywordflow}{case} 0x13:
-103         \hyperlink{a00167_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}{tty\_vgaputstring}(\textcolor{keywordtype}{string},0);
-104         \textcolor{keywordflow}{break};
-105     \textcolor{keywordflow}{default}:
-106         \hyperlink{a00167_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}{tty\_vgaputstring}(\textcolor{keywordtype}{string},0);
-107         \textcolor{keywordflow}{break};
-108     \}
-109 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00170_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}\label{a00170_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}} 
-\index{tty.\+h@{tty.\+h}!tty\+\_\+pputstringl@{tty\+\_\+pputstringl}}
-\index{tty\+\_\+pputstringl@{tty\+\_\+pputstringl}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{tty\+\_\+pputstringl()}{tty\_pputstringl()}}
-{\footnotesize\ttfamily void tty\+\_\+pputstringl (\begin{DoxyParamCaption}\item[{char $\ast$}]{string,  }\item[{int}]{len }\end{DoxyParamCaption})}
-
-
-
-Puts a string into V\+R\+AM, detects preferred mode, uses length. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-{\em len} & The length \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 111 of file tty.\+c.
-
-
-\begin{DoxyCode}
-111                                             \{
-112     \textcolor{keywordflow}{switch} (\hyperlink{a00167_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}{vgamode})
-113     \{
-114     \textcolor{keywordflow}{case} 0x3:
-115         \hyperlink{a00167_a5b5bf610a57f3c59b2851fa2652081ec_a5b5bf610a57f3c59b2851fa2652081ec}{tty\_putstring}(\textcolor{keywordtype}{string},len);
-116         \textcolor{keywordflow}{break};
-117     \textcolor{keywordflow}{case} 0x13:
-118         \hyperlink{a00167_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}{tty\_vgaputstring}(\textcolor{keywordtype}{string},len);
-119         \textcolor{keywordflow}{break};
-120     \textcolor{keywordflow}{default}:
-121         \hyperlink{a00167_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}{tty\_vgaputstring}(\textcolor{keywordtype}{string},len);
-122         \textcolor{keywordflow}{break};
-123     \}
-124 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00170_a5b5bf610a57f3c59b2851fa2652081ec_a5b5bf610a57f3c59b2851fa2652081ec}\label{a00170_a5b5bf610a57f3c59b2851fa2652081ec_a5b5bf610a57f3c59b2851fa2652081ec}} 
-\index{tty.\+h@{tty.\+h}!tty\+\_\+putstring@{tty\+\_\+putstring}}
-\index{tty\+\_\+putstring@{tty\+\_\+putstring}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{tty\+\_\+putstring()}{tty\_putstring()}}
-{\footnotesize\ttfamily void tty\+\_\+putstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string,  }\item[{int}]{len }\end{DoxyParamCaption})}
-
-
-
-Puts a string in V\+R\+AM, Text mode only. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-{\em len} & The length \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 10 of file tty.\+c.
-
-
-\begin{DoxyCode}
-10                                           \{
-11     \textcolor{keywordflow}{if}(len == 0) \{
-12         len = \hyperlink{a00134_a689b119da994dece91d44b5aeac643ed_a689b119da994dece91d44b5aeac643ed}{USHRT\_MAX};
-13     \}
-14     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
-15     \hyperlink{a00167_a3d09038c7b6436e60b228f2f3f451f6a_a3d09038c7b6436e60b228f2f3f451f6a}{disable\_cursor}();
-16     len += 0xb8000;
-17     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'} | !(\textcolor{keywordtype}{string} < (\hyperlink{a00134_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t})len)) \{
-18         \textcolor{keywordflow}{switch}(chara) \{
-19             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)n'}:
-20                 \hyperlink{a00167_a0301c5492919c401c2c1ecf52af709b0_a0301c5492919c401c2c1ecf52af709b0}{cursor\_y}++;
-21                 \hyperlink{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x} = 0;
-22                 \textcolor{keywordflow}{break};
-23             \textcolor{keywordflow}{default}:
-24                 \hyperlink{a00074_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}{BochsConsolePrintChar}(chara);
-25                 \hyperlink{a00167_acb9a978008cfa67b0038e85eb56d2d41_acb9a978008cfa67b0038e85eb56d2d41}{drawchar3}(chara,0x7,0x0,\hyperlink{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x},\hyperlink{a00167_a0301c5492919c401c2c1ecf52af709b0_a0301c5492919c401c2c1ecf52af709b0}{cursor\_y});
-26                 \hyperlink{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x}++;
-27                 \textcolor{keywordflow}{break};
-28         \}
-29         \textcolor{comment}{// get next character}
-30         chara = *\textcolor{keywordtype}{string}++;
-31     \}
-32     \hyperlink{a00167_afe197dc4dbfa6036ef04abd2aeeeca2d_afe197dc4dbfa6036ef04abd2aeeeca2d}{enable\_cursor}(0,15);
-33     \hyperlink{a00167_a492f5021d7340613e732ef37bbaa04e4_a492f5021d7340613e732ef37bbaa04e4}{update\_cursor}(\hyperlink{a00167_ae69604af0f9bd5fca2a016d0aa1ba7e1_ae69604af0f9bd5fca2a016d0aa1ba7e1}{cursor\_x},\hyperlink{a00167_a0301c5492919c401c2c1ecf52af709b0_a0301c5492919c401c2c1ecf52af709b0}{cursor\_y});
-34 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00170_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}\label{a00170_a05ca3f5e64f38fec173b635ca8465415_a05ca3f5e64f38fec173b635ca8465415}} 
-\index{tty.\+h@{tty.\+h}!tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}}
-\index{tty\+\_\+vgaputstring@{tty\+\_\+vgaputstring}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{tty\+\_\+vgaputstring()}{tty\_vgaputstring()}}
-{\footnotesize\ttfamily void tty\+\_\+vgaputstring (\begin{DoxyParamCaption}\item[{char $\ast$}]{string,  }\item[{int}]{len }\end{DoxyParamCaption})}
-
-
-
-Puts a string into V\+R\+AM, Mode 13 only. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em string} & The string to put \\
-\hline
-{\em len} & The length \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 86 of file tty.\+c.
-
-
-\begin{DoxyCode}
-86                                              \{
-87     \hyperlink{a00071_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{keywordtype}{string});
-88     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
-89     \textcolor{keywordflow}{while}(chara != \textcolor{stringliteral}{'\(\backslash\)x0'}) \{
-90         \hyperlink{a00056_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}{drawchar}(chara,\hyperlink{a00167_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff},\hyperlink{a00167_a1a7539764d0ae8cd06ce45c62cf92bca_a1a7539764d0ae8cd06ce45c62cf92bca}{yoff}+17,0xf,0x0);
-91         \hyperlink{a00167_abaa0d20f0e52ce0d3a7d706f6ac16266_abaa0d20f0e52ce0d3a7d706f6ac16266}{xoff} += 8;
-92         chara = *\textcolor{keywordtype}{string}++;
-93     \}
+68                        \{
+69     \hyperlink{a00286}{header\_t} *header, *tmp;
+70     \textcolor{keywordtype}{void} *programbreak;
+71 
+72     \textcolor{keywordflow}{if} (!block)
+73         \textcolor{keywordflow}{return};
+74 
+75     header = (\hyperlink{a00286}{header\_t}*)block - 1;
+76     programbreak = \hyperlink{a00167_a37ef7dd1bd3f62750baf3ea3d4ec7bf6_a37ef7dd1bd3f62750baf3ea3d4ec7bf6}{sbrk}(0);
+77     \textcolor{keywordflow}{if}((\textcolor{keywordtype}{char}*)block+header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size}==programbreak) \{
+78         \textcolor{keywordflow}{if}(\hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head}==\hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail}) \{
+79             \hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head} = \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail} = \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+80         \} \textcolor{keywordflow}{else} \{
+81             tmp = \hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head};
+82             \textcolor{keywordflow}{while}(tmp) \{
+83                 \textcolor{keywordflow}{if}(tmp->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail}) \{
+84                     tmp->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+85                     \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail} = tmp;
+86                 \}
+87                 tmp = tmp->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next};
+88             \}
+89         \}
+90         \hyperlink{a00167_a37ef7dd1bd3f62750baf3ea3d4ec7bf6_a37ef7dd1bd3f62750baf3ea3d4ec7bf6}{sbrk}(0-\textcolor{keyword}{sizeof}(\hyperlink{a00286}{header\_t})-header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size});
+91         \textcolor{keywordflow}{return};
+92     \}
+93     header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} = 1;
 94 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00170_a492f5021d7340613e732ef37bbaa04e4_a492f5021d7340613e732ef37bbaa04e4}\label{a00170_a492f5021d7340613e732ef37bbaa04e4_a492f5021d7340613e732ef37bbaa04e4}} 
-\index{tty.\+h@{tty.\+h}!update\+\_\+cursor@{update\+\_\+cursor}}
-\index{update\+\_\+cursor@{update\+\_\+cursor}!tty.\+h@{tty.\+h}}
-\subsubsection{\texorpdfstring{update\+\_\+cursor()}{update\_cursor()}}
-{\footnotesize\ttfamily void update\+\_\+cursor (\begin{DoxyParamCaption}\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00170_a3ef64f08269a275815bb42bb97e0b562_a3ef64f08269a275815bb42bb97e0b562}\label{a00170_a3ef64f08269a275815bb42bb97e0b562_a3ef64f08269a275815bb42bb97e0b562}} 
+\index{mem.\+h@{mem.\+h}!gbrk@{gbrk}}
+\index{gbrk@{gbrk}!mem.\+h@{mem.\+h}}
+\subsubsection{\texorpdfstring{gbrk()}{gbrk()}}
+{\footnotesize\ttfamily \hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} gbrk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Updates the cursor position. 
-
-
-\begin{DoxyParams}{Parameters}
-{\em x} & The X position of the cursor. \\
-\hline
-{\em y} & The Y position of the cursor. \\
-\hline
-\end{DoxyParams}
-
-
-Definition at line 51 of file tty.\+c.
+Definition at line 13 of file mem.\+c.
 
 
 \begin{DoxyCode}
-52 \{
-53     \hyperlink{a00134_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} pos = y * 80 + x;
-54  
-55     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D4, 0x0F);
-56     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D5, (\hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}) (pos & 0xFF));
-57     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D4, 0x0E);
-58     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x3D5, (\hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t}) ((pos >> 8) & 0xFF));
-59 \}
+13                 \{
+14     \textcolor{keywordflow}{return} \hyperlink{a00167_a33fb44061f3432e7d04085bcef339974_a33fb44061f3432e7d04085bcef339974}{brkval};
+15 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00170_afaecf44e3ed4b4332644d98fe0955793_afaecf44e3ed4b4332644d98fe0955793}\label{a00170_afaecf44e3ed4b4332644d98fe0955793_afaecf44e3ed4b4332644d98fe0955793}} 
+\index{mem.\+h@{mem.\+h}!get\+\_\+free\+\_\+block@{get\+\_\+free\+\_\+block}}
+\index{get\+\_\+free\+\_\+block@{get\+\_\+free\+\_\+block}!mem.\+h@{mem.\+h}}
+\subsubsection{\texorpdfstring{get\+\_\+free\+\_\+block()}{get\_free\_block()}}
+{\footnotesize\ttfamily \hyperlink{a00286}{header\+\_\+t}$\ast$ get\+\_\+free\+\_\+block (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file mem.\+c.
+
+
+\begin{DoxyCode}
+30 \{
+31     \hyperlink{a00286}{header\_t} *curr = \hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head};
+32     \textcolor{keywordflow}{while}(curr) \{
+33         \textcolor{keywordflow}{if} (curr->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} && curr->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size} >= size)
+34             \textcolor{keywordflow}{return} curr;
+35         curr = curr->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next};
+36     \}
+37     \textcolor{keywordflow}{return} \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+38 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00170_a1c8580582aae58105f16108d4ec89e9a_a1c8580582aae58105f16108d4ec89e9a}\label{a00170_a1c8580582aae58105f16108d4ec89e9a_a1c8580582aae58105f16108d4ec89e9a}} 
+\index{mem.\+h@{mem.\+h}!malloc@{malloc}}
+\index{malloc@{malloc}!mem.\+h@{mem.\+h}}
+\subsubsection{\texorpdfstring{malloc()}{malloc()}}
+{\footnotesize\ttfamily void$\ast$ malloc (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 40 of file mem.\+c.
+
+
+\begin{DoxyCode}
+40                           \{
+41     \textcolor{keywordtype}{size\_t} total\_size;
+42     \textcolor{keywordtype}{void} *block;
+43     \hyperlink{a00286}{header\_t} *header;
+44     \textcolor{keywordflow}{if}(!size)
+45         \textcolor{keywordflow}{return} \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+46     header = \hyperlink{a00167_af6982edbc1f3bd90948598df448fbe5e_af6982edbc1f3bd90948598df448fbe5e}{get\_free\_block}(size);
+47     \textcolor{keywordflow}{if}(header) \{
+48         header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} = 0;
+49         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{void}*)(header + 1);
+50     \}
+51     total\_size = \textcolor{keyword}{sizeof}(\hyperlink{a00286}{header\_t}) + size;
+52     block = \hyperlink{a00167_a37ef7dd1bd3f62750baf3ea3d4ec7bf6_a37ef7dd1bd3f62750baf3ea3d4ec7bf6}{sbrk}(total\_size);
+53     \textcolor{keywordflow}{if}(block == (\textcolor{keywordtype}{void}*)-1) \{
+54         \textcolor{keywordflow}{return} \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+55     \}
+56     header = block;
+57     header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size} = size;
+58     header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} = 0;
+59     header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+60     \textcolor{keywordflow}{if}(!\hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head})
+61         \hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head} = header;
+62     \textcolor{keywordflow}{if}(\hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail})
+63         \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail}->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = header;
+64     \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail} = header;
+65     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{void}*)(header+1);
+66 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00170_afa148085b6fa9594b4c35e100d94a183_afa148085b6fa9594b4c35e100d94a183}\label{a00170_afa148085b6fa9594b4c35e100d94a183_afa148085b6fa9594b4c35e100d94a183}} 
+\index{mem.\+h@{mem.\+h}!realloc@{realloc}}
+\index{realloc@{realloc}!mem.\+h@{mem.\+h}}
+\subsubsection{\texorpdfstring{realloc()}{realloc()}}
+{\footnotesize\ttfamily void$\ast$ realloc (\begin{DoxyParamCaption}\item[{void $\ast$}]{,  }\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 115 of file mem.\+c.
+
+
+\begin{DoxyCode}
+116 \{
+117     \hyperlink{a00286}{header\_t} *header;
+118     \textcolor{keywordtype}{void} *ret;
+119     \textcolor{keywordflow}{if} (!block || !size)
+120         \textcolor{keywordflow}{return} \hyperlink{a00167_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}{malloc}(size);
+121     header = (\hyperlink{a00286}{header\_t}*)block - 1;
+122     \textcolor{keywordflow}{if} (header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size} >= size)
+123         \textcolor{keywordflow}{return} block;
+124     ret = \hyperlink{a00167_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}{malloc}(size);
+125     \textcolor{keywordflow}{if} (ret) \{
+126         
+127         \hyperlink{a00131_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(ret, block, header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size});
+128         \hyperlink{a00167_abbcfa46e4bdcb73aecd859a389031a02_abbcfa46e4bdcb73aecd859a389031a02}{free}(block);
+129     \}
+130     \textcolor{keywordflow}{return} ret;
+131 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00170_abeaae2bbcf837d3f98d17a9618076097_abeaae2bbcf837d3f98d17a9618076097}\label{a00170_abeaae2bbcf837d3f98d17a9618076097_abeaae2bbcf837d3f98d17a9618076097}} 
+\index{mem.\+h@{mem.\+h}!sbrk@{sbrk}}
+\index{sbrk@{sbrk}!mem.\+h@{mem.\+h}}
+\subsubsection{\texorpdfstring{sbrk()}{sbrk()}}
+{\footnotesize\ttfamily void$\ast$ sbrk (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 21 of file mem.\+c.
+
+
+\begin{DoxyCode}
+21                         \{
+22     \hyperlink{a00140_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\_t} inc = (\hyperlink{a00140_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\_t})size;
+23     \hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t} oldbrk = \hyperlink{a00167_a33fb44061f3432e7d04085bcef339974_a33fb44061f3432e7d04085bcef339974}{brkval};
+24     oldbrk + inc;
+25     \hyperlink{a00167_a46e79822750a4396759664ee0012b283_a46e79822750a4396759664ee0012b283}{brk}(oldbrk);
+26     \textcolor{keywordflow}{return} \hyperlink{a00167_a33fb44061f3432e7d04085bcef339974_a33fb44061f3432e7d04085bcef339974}{brkval};
+27 \}
 \end{DoxyCode}

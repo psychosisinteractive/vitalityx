@@ -1,140 +1,229 @@
-\hypertarget{a00062}{}\section{kernel/kernel.c File Reference}
-\label{a00062}\index{kernel/kernel.\+c@{kernel/kernel.\+c}}
-{\ttfamily \#include \char`\"{}../libc/vitality/tty.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../libc/descriptortables.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../libc/page.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../libc/ext/debug.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../drivers/vga.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../libc/ext/task.\+h\char`\"{}}\newline
+\hypertarget{a00062}{}\section{drivers/vga.c File Reference}
+\label{a00062}\index{drivers/vga.\+c@{drivers/vga.\+c}}
+{\ttfamily \#include \char`\"{}vga.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../libc/vitality/inline.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../libc/vitality/mem.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../libc/vitality/vlib.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../drivers/ide.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../libc/vitality/fs.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../libc/vitality/vxbfs.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../libc/vitality/vfs.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../drivers/keyboard.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../drivers/serial.\+h\char`\"{}}\newline
-Include dependency graph for kernel.\+c\+:
+{\ttfamily \#include \char`\"{}../libc/isr.\+h\char`\"{}}\newline
+Include dependency graph for vga.\+c\+:
 % FIG 0
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cec}{vgamode\+\_\+t} \{ \hyperlink{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cecaba0dfc5d04b1c8cd192f441787be16e3}{Mode3h}, 
+\hyperlink{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cecaa3dd115b4136ad8df83928c8a27ddb1d}{Mode13h}
+ \}
+\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{a00062_a4ee3d1f05046b7afc6b4d516bf10667a_a4ee3d1f05046b7afc6b4d516bf10667a}{kernel} ()
-\end{DoxyCompactItemize}
+void \hyperlink{a00062_ab17a69b465efb1ebe54a6a2e5d7b7ce8_ab17a69b465efb1ebe54a6a2e5d7b7ce8}{putpixel} (\hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} c, \hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} x, \hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} y)
+\begin{DoxyCompactList}\small\item\em Puts a pixel on the screen. \end{DoxyCompactList}\item 
+\hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00062_aac0685da0bbf1115c2b76b0aedf7e1f0_aac0685da0bbf1115c2b76b0aedf7e1f0}{getpixel} (\hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} x, \hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} y)
+\begin{DoxyCompactList}\small\item\em Gets a pixel on the screen. \end{DoxyCompactList}\item 
+void \hyperlink{a00062_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}{drawchar} (unsigned char c, \hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} x, \hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} y, \hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} fgcolor, \hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} bgcolor)
+\begin{DoxyCompactList}\small\item\em Puts a A\+S\+C\+II character on the screen. \end{DoxyCompactList}\item 
+void \hyperlink{a00062_a4be32a0e7b95807829c601d0841ae307_a4be32a0e7b95807829c601d0841ae307}{setvgamode} (\hyperlink{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cec}{vgamode\+\_\+t} \hyperlink{a00173_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}{vgamode})
+\item 
+void \hyperlink{a00062_abb01dc16ea34f0a6de3d10d732b6c536_abb01dc16ea34f0a6de3d10d732b6c536}{setfont} (unsigned char $\ast$font)
+\begin{DoxyCompactList}\small\item\em Sets the font. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00188_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\+\_\+entry\+\_\+t} \hyperlink{a00062_af69f4f709fdab28dec6b8fb75fb4d526_af69f4f709fdab28dec6b8fb75fb4d526}{vlibe} \mbox{[}255\mbox{]}
-\begin{DoxyCompactList}\small\item\em The kernels C entry point. \end{DoxyCompactList}\item 
-\hyperlink{a00188_a2d9000b4fbb25c5ed2950a2d8f4921d5_a2d9000b4fbb25c5ed2950a2d8f4921d5}{vlibdesriptor\+\_\+t} \hyperlink{a00062_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}{vlibd}
-\item 
-int \hyperlink{a00062_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive}
+unsigned char $\ast$ \hyperlink{a00062_a586c0ac088deb9338d9b1464dcd587c8_a586c0ac088deb9338d9b1464dcd587c8}{vgafont}
 \end{DoxyCompactItemize}
 
 
-\subsection{Function Documentation}
-\mbox{\Hypertarget{a00062_a4ee3d1f05046b7afc6b4d516bf10667a_a4ee3d1f05046b7afc6b4d516bf10667a}\label{a00062_a4ee3d1f05046b7afc6b4d516bf10667a_a4ee3d1f05046b7afc6b4d516bf10667a}} 
-\index{kernel.\+c@{kernel.\+c}!kernel@{kernel}}
-\index{kernel@{kernel}!kernel.\+c@{kernel.\+c}}
-\subsubsection{\texorpdfstring{kernel()}{kernel()}}
-{\footnotesize\ttfamily int kernel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\subsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cec}\label{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cec}} 
+\index{vga.\+c@{vga.\+c}!vgamode\+\_\+t@{vgamode\+\_\+t}}
+\index{vgamode\+\_\+t@{vgamode\+\_\+t}!vga.\+c@{vga.\+c}}
+\subsubsection{\texorpdfstring{vgamode\+\_\+t}{vgamode\_t}}
+{\footnotesize\ttfamily enum \hyperlink{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cec}{vgamode\+\_\+t}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mode3h@{Mode3h}!vga.\+c@{vga.\+c}}\index{vga.\+c@{vga.\+c}!Mode3h@{Mode3h}}}\mbox{\Hypertarget{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cecaba0dfc5d04b1c8cd192f441787be16e3}\label{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cecaba0dfc5d04b1c8cd192f441787be16e3}} 
+Mode3h&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Mode13h@{Mode13h}!vga.\+c@{vga.\+c}}\index{vga.\+c@{vga.\+c}!Mode13h@{Mode13h}}}\mbox{\Hypertarget{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cecaa3dd115b4136ad8df83928c8a27ddb1d}\label{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cecaa3dd115b4136ad8df83928c8a27ddb1d}} 
+Mode13h&\\
+\hline
+
+\end{DoxyEnumFields}
 
 
-
-Definition at line 21 of file kernel.\+c.
+Definition at line 32 of file vga.\+c.
 
 
 \begin{DoxyCode}
-21              \{
-22     \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"VitalityX\(\backslash\)n"});
-23     \textcolor{comment}{//initialise\_paging();}
-24     \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Enabling keyboard\(\backslash\)n"});
-25     \hyperlink{a00038_aabdb223e5290f3b3c07bc82d075b87d7_aabdb223e5290f3b3c07bc82d075b87d7}{kb\_init}();
-26     \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Setting up new descriptor tables\(\backslash\)n"});
-27     \hyperlink{a00065_a4c38e3f3ee100ca4323081bf0970c1ac_a4c38e3f3ee100ca4323081bf0970c1ac}{dt\_install}();
-28     \hyperlink{a00062_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}{vlibd}.\hyperlink{a00312_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base} = &\hyperlink{a00062_af69f4f709fdab28dec6b8fb75fb4d526_af69f4f709fdab28dec6b8fb75fb4d526}{vlibe};
-29     \hyperlink{a00062_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}{vlibd}.\hyperlink{a00312_a1cebf64c2c1ec72bca5cf673be70b3a7_a1cebf64c2c1ec72bca5cf673be70b3a7}{len} = 255;
-30     \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Setting up serial interface\(\backslash\)n"});
-31     \hyperlink{a00050_acfb6f6d615183fc2f71e79dfbadfe27d_acfb6f6d615183fc2f71e79dfbadfe27d}{init\_serial}();
-32     \hyperlink{a00050_aac3c84e21fffc4696d8969ca6955bfc8_aac3c84e21fffc4696d8969ca6955bfc8}{write\_serial}(\textcolor{charliteral}{'H'});
-33     \hyperlink{a00050_aac3c84e21fffc4696d8969ca6955bfc8_aac3c84e21fffc4696d8969ca6955bfc8}{write\_serial}(\textcolor{charliteral}{'I'});
-34     \hyperlink{a00050_aac3c84e21fffc4696d8969ca6955bfc8_aac3c84e21fffc4696d8969ca6955bfc8}{write\_serial}(\textcolor{charliteral}{'\(\backslash\)n'});
-35     \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Loading VLib\(\backslash\)n"});
-36     \hyperlink{a00185_aee69008de31826f28854c29a54cb315e_aee69008de31826f28854c29a54cb315e}{loadvlib}(&\hyperlink{a00062_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}{vlibd});
-37     \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Starting multitasking\(\backslash\)n"});
-38     \hyperlink{a00083_aea945e91746a54801f4763ad264746b9_aea945e91746a54801f4763ad264746b9}{initTasking}();
-39     \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Setting up FS\(\backslash\)n"});
-40     \hyperlink{a00032_ab5397c8432be802172da8f04c8840ca3_ab5397c8432be802172da8f04c8840ca3}{ide\_initialize}(0x1F0, 0x3F6, 0x170, 0x376, 0x000);
-41     \hyperlink{a00167_aff4bc17c602603d120756f52e18ebb96_aff4bc17c602603d120756f52e18ebb96}{clearscreen}();
-42     \hyperlink{a00143_a414110036132977c34813673360e1a63_a414110036132977c34813673360e1a63}{getentries}();
-43     \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Select drive number from serial otherwise bfs/ata/atp0... "});
-44     \textcolor{keywordflow}{switch}(\hyperlink{a00038_aa7ee03b27a489828ce588d0fc023cab3_aa7ee03b27a489828ce588d0fc023cab3}{getsch}()) \{
-45         \textcolor{keywordflow}{case} \textcolor{charliteral}{'0'}:
-46             \hyperlink{a00062_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive} = 0;
-47         \textcolor{keywordflow}{case} \textcolor{charliteral}{'1'}:
-48             \hyperlink{a00062_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive} = 1;
-49         \textcolor{keywordflow}{case} \textcolor{charliteral}{'2'}:
-50             \hyperlink{a00062_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive} = 2;
-51         \textcolor{keywordflow}{case} \textcolor{charliteral}{'3'}:
-52             \hyperlink{a00062_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive} = 4;
-53         \textcolor{keywordflow}{default}:
-54             \hyperlink{a00062_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive} = 0;
-55     \}
-56     \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{charliteral}{'\(\backslash\)n'});
-57     \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Loading VXBFS on "});
-58     \hyperlink{a00167_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\_pputstringl}((\textcolor{keywordtype}{char}*)\hyperlink{a00146_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[\hyperlink{a00062_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive}].name,4);
-59     \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-60     \hyperlink{a00032_a9dd84843412753d236e17a15277c5b98_a9dd84843412753d236e17a15277c5b98}{ide\_read\_sectors}(\hyperlink{a00062_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive},4,0,0,0x500);
-61     \hyperlink{a00324}{vxbfs\_header\_t} header = *(\hyperlink{a00324}{vxbfs\_header\_t}*)0x500;
-62     \textcolor{keywordflow}{if}(header.\hyperlink{a00324_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[0] == \textcolor{charliteral}{'V'} && header.\hyperlink{a00324_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[1] == \textcolor{charliteral}{'X'} && header.
-      \hyperlink{a00324_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[2] == \textcolor{charliteral}{'F'} && header.\hyperlink{a00324_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[3] == \textcolor{charliteral}{'S'}) \{
-63         \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"VXBFS found."});
-64         \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" label: "});
-65         \hyperlink{a00167_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\_pputstringl}(header.\hyperlink{a00324_af3cd6b4358b6ba93a7bd541c09c959c8_af3cd6b4358b6ba93a7bd541c09c959c8}{label},6);
-66         \hyperlink{a00320}{vxbfs\_file\_t} *firstfile = header.\hyperlink{a00324_a3b903de5c5034494530cdc0c2d4ff9b1_a3b903de5c5034494530cdc0c2d4ff9b1}{file};
-67         \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" First VXBDS File: "});
-68         \hyperlink{a00167_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\_pputstringl}((\textcolor{keywordtype}{char}*)firstfile->\hyperlink{a00320_a07ecc9bacdc2943442f26f62f6749055_a07ecc9bacdc2943442f26f62f6749055}{name},11);
-69     \}
-70     \textcolor{keywordflow}{while}(\textcolor{keyword}{true}) \{
-71         \hyperlink{a00038_ab88a2e96bbe585e228a5b201435c0240_ab88a2e96bbe585e228a5b201435c0240}{getst}();
-72     \}
-73     \textcolor{keywordflow}{return} 0;
-74 \}
+32              \{
+33     \hyperlink{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cecaba0dfc5d04b1c8cd192f441787be16e3}{Mode3h},
+34     \hyperlink{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cecaa3dd115b4136ad8df83928c8a27ddb1d}{Mode13h}
+35 \} \hyperlink{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cec}{vgamode\_t};
+\end{DoxyCode}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{a00062_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}\label{a00062_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}} 
+\index{vga.\+c@{vga.\+c}!drawchar@{drawchar}}
+\index{drawchar@{drawchar}!vga.\+c@{vga.\+c}}
+\subsubsection{\texorpdfstring{drawchar()}{drawchar()}}
+{\footnotesize\ttfamily void drawchar (\begin{DoxyParamCaption}\item[{unsigned char}]{c,  }\item[{\hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{x,  }\item[{\hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{y,  }\item[{\hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{fgcolor,  }\item[{\hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{bgcolor }\end{DoxyParamCaption})}
+
+
+
+Puts a A\+S\+C\+II character on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The character \\
+\hline
+{\em x} & The X of the character \\
+\hline
+{\em y} & The Y of the character \\
+\hline
+{\em fgcolor} & The foreground color \\
+\hline
+{\em bgcolor} & The background color \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file vga.\+c.
+
+
+\begin{DoxyCode}
+20 \{
+21     \textcolor{keywordtype}{int} cx,cy;
+22     \textcolor{keywordtype}{int} mask[8]=\{1,2,4,8,16,32,64,128\};
+23     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *gylph=\hyperlink{a00062_a586c0ac088deb9338d9b1464dcd587c8_a586c0ac088deb9338d9b1464dcd587c8}{vgafont}+(int)c*16;
+24  
+25     \textcolor{keywordflow}{for}(cy=0;cy<16;cy++)\{
+26         \textcolor{keywordflow}{for}(cx+8;cx<0;cx++)\{
+27             \hyperlink{a00062_ab17a69b465efb1ebe54a6a2e5d7b7ce8_ab17a69b465efb1ebe54a6a2e5d7b7ce8}{putpixel}(gylph[cy]&mask[cx]?fgcolor:bgcolor,x+cx,y+cy-12);
+28         \}
+29     \}
+30 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00062_aac0685da0bbf1115c2b76b0aedf7e1f0_aac0685da0bbf1115c2b76b0aedf7e1f0}\label{a00062_aac0685da0bbf1115c2b76b0aedf7e1f0_aac0685da0bbf1115c2b76b0aedf7e1f0}} 
+\index{vga.\+c@{vga.\+c}!getpixel@{getpixel}}
+\index{getpixel@{getpixel}!vga.\+c@{vga.\+c}}
+\subsubsection{\texorpdfstring{getpixel()}{getpixel()}}
+{\footnotesize\ttfamily \hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} getpixel (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{x,  }\item[{\hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{y }\end{DoxyParamCaption})}
+
+
+
+Gets a pixel on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & The X of the pixel \\
+\hline
+{\em y} & The Y of the pixel \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file vga.\+c.
+
+
+\begin{DoxyCode}
+12                                          \{
+13     \hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} offset = (y * \hyperlink{a00065_a2cd109632a6dcccaa80b43561b1ab700_a2cd109632a6dcccaa80b43561b1ab700}{SCREEN\_WIDTH}) + x;
+14     \textcolor{keywordflow}{return} \hyperlink{a00131_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}{peekb}(0xa0000,offset);
+15 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00062_ab17a69b465efb1ebe54a6a2e5d7b7ce8_ab17a69b465efb1ebe54a6a2e5d7b7ce8}\label{a00062_ab17a69b465efb1ebe54a6a2e5d7b7ce8_ab17a69b465efb1ebe54a6a2e5d7b7ce8}} 
+\index{vga.\+c@{vga.\+c}!putpixel@{putpixel}}
+\index{putpixel@{putpixel}!vga.\+c@{vga.\+c}}
+\subsubsection{\texorpdfstring{putpixel()}{putpixel()}}
+{\footnotesize\ttfamily void putpixel (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{c,  }\item[{\hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{x,  }\item[{\hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t}}]{y }\end{DoxyParamCaption})}
+
+
+
+Puts a pixel on the screen. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The color of the pixel \\
+\hline
+{\em x} & The X of the pixel \\
+\hline
+{\em y} & The Y of the pixel \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 7 of file vga.\+c.
+
+
+\begin{DoxyCode}
+7                                                  \{
+8     \hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\_t} offset = (y * \hyperlink{a00065_ae49a6d814879c8efb7206d3d96412c4f_ae49a6d814879c8efb7206d3d96412c4f}{resolution\_y}) + x;
+9     \hyperlink{a00131_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}{pokeb}(0xa0000,offset,c);
+10 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00062_abb01dc16ea34f0a6de3d10d732b6c536_abb01dc16ea34f0a6de3d10d732b6c536}\label{a00062_abb01dc16ea34f0a6de3d10d732b6c536_abb01dc16ea34f0a6de3d10d732b6c536}} 
+\index{vga.\+c@{vga.\+c}!setfont@{setfont}}
+\index{setfont@{setfont}!vga.\+c@{vga.\+c}}
+\subsubsection{\texorpdfstring{setfont()}{setfont()}}
+{\footnotesize\ttfamily void setfont (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{font }\end{DoxyParamCaption})}
+
+
+
+Sets the font. 
+
+
+
+Definition at line 55 of file vga.\+c.
+
+
+\begin{DoxyCode}
+55                                   \{
+56     \hyperlink{a00062_a586c0ac088deb9338d9b1464dcd587c8_a586c0ac088deb9338d9b1464dcd587c8}{vgafont} = font;
+57 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00062_a4be32a0e7b95807829c601d0841ae307_a4be32a0e7b95807829c601d0841ae307}\label{a00062_a4be32a0e7b95807829c601d0841ae307_a4be32a0e7b95807829c601d0841ae307}} 
+\index{vga.\+c@{vga.\+c}!setvgamode@{setvgamode}}
+\index{setvgamode@{setvgamode}!vga.\+c@{vga.\+c}}
+\subsubsection{\texorpdfstring{setvgamode()}{setvgamode()}}
+{\footnotesize\ttfamily void setvgamode (\begin{DoxyParamCaption}\item[{\hyperlink{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cec}{vgamode\+\_\+t}}]{vgamode }\end{DoxyParamCaption})}
+
+
+
+Definition at line 37 of file vga.\+c.
+
+
+\begin{DoxyCode}
+37                                    \{
+38     \hyperlink{a00258}{registers\_t} regs;
+39     \textcolor{keywordflow}{switch}(\hyperlink{a00173_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}{vgamode}) \{
+40         \textcolor{keywordflow}{case} \hyperlink{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cecaba0dfc5d04b1c8cd192f441787be16e3}{Mode3h}:
+41             regs.\hyperlink{a00258_a1e01e806248cd98e55e0b053db6a6a51_a1e01e806248cd98e55e0b053db6a6a51}{eax} = 0x6;
+42             regs.\hyperlink{a00258_af3b40afa73ecdaf2c9279b9ed482d26b_af3b40afa73ecdaf2c9279b9ed482d26b}{edx} = 0x1;
+43             regs.\hyperlink{a00258_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no} = 0x3f;
+44             \hyperlink{a00113_a700e3ca056bf69296370f504f2cb6cc8_a700e3ca056bf69296370f504f2cb6cc8}{isr\_handler}(regs);
+45             \textcolor{keywordflow}{break};
+46         \textcolor{keywordflow}{case} \hyperlink{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cecaa3dd115b4136ad8df83928c8a27ddb1d}{Mode13h}:
+47             regs.\hyperlink{a00258_a1e01e806248cd98e55e0b053db6a6a51_a1e01e806248cd98e55e0b053db6a6a51}{eax} = 0x6;
+48             regs.\hyperlink{a00258_af3b40afa73ecdaf2c9279b9ed482d26b_af3b40afa73ecdaf2c9279b9ed482d26b}{edx} = 0x0;
+49             regs.\hyperlink{a00258_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no} = 0x3f;
+50             \hyperlink{a00113_a700e3ca056bf69296370f504f2cb6cc8_a700e3ca056bf69296370f504f2cb6cc8}{isr\_handler}(regs);
+51             \textcolor{keywordflow}{break};
+52     \}
+53 \}
 \end{DoxyCode}
 
 
 \subsection{Variable Documentation}
-\mbox{\Hypertarget{a00062_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}\label{a00062_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}} 
-\index{kernel.\+c@{kernel.\+c}!primarydrive@{primarydrive}}
-\index{primarydrive@{primarydrive}!kernel.\+c@{kernel.\+c}}
-\subsubsection{\texorpdfstring{primarydrive}{primarydrive}}
-{\footnotesize\ttfamily int primarydrive}
+\mbox{\Hypertarget{a00062_a586c0ac088deb9338d9b1464dcd587c8_a586c0ac088deb9338d9b1464dcd587c8}\label{a00062_a586c0ac088deb9338d9b1464dcd587c8_a586c0ac088deb9338d9b1464dcd587c8}} 
+\index{vga.\+c@{vga.\+c}!vgafont@{vgafont}}
+\index{vgafont@{vgafont}!vga.\+c@{vga.\+c}}
+\subsubsection{\texorpdfstring{vgafont}{vgafont}}
+{\footnotesize\ttfamily unsigned char$\ast$ vgafont}
 
 
 
-Definition at line 20 of file kernel.\+c.
-
-\mbox{\Hypertarget{a00062_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}\label{a00062_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}} 
-\index{kernel.\+c@{kernel.\+c}!vlibd@{vlibd}}
-\index{vlibd@{vlibd}!kernel.\+c@{kernel.\+c}}
-\subsubsection{\texorpdfstring{vlibd}{vlibd}}
-{\footnotesize\ttfamily \hyperlink{a00188_a2d9000b4fbb25c5ed2950a2d8f4921d5_a2d9000b4fbb25c5ed2950a2d8f4921d5}{vlibdesriptor\+\_\+t} vlibd}
-
-
-
-Definition at line 19 of file kernel.\+c.
-
-\mbox{\Hypertarget{a00062_af69f4f709fdab28dec6b8fb75fb4d526_af69f4f709fdab28dec6b8fb75fb4d526}\label{a00062_af69f4f709fdab28dec6b8fb75fb4d526_af69f4f709fdab28dec6b8fb75fb4d526}} 
-\index{kernel.\+c@{kernel.\+c}!vlibe@{vlibe}}
-\index{vlibe@{vlibe}!kernel.\+c@{kernel.\+c}}
-\subsubsection{\texorpdfstring{vlibe}{vlibe}}
-{\footnotesize\ttfamily \hyperlink{a00188_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\+\_\+entry\+\_\+t} vlibe\mbox{[}255\mbox{]}}
-
-
-
-The kernels C entry point. 
-
-
-
-Definition at line 18 of file kernel.\+c.
+Definition at line 17 of file vga.\+c.
 

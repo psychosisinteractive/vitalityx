@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/isr.c File Reference</title>
+<title>VitalityX: libc/interrupt.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,24 +46,17 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">isr.c File Reference</div>  </div>
+<div class="title">interrupt.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00110_source.html">isr.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00128_source.html">system.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00074_source.html">ext/debug.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00041_source.html">../drivers/keyboard.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00047_source.html">../drivers/pic.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00086_source.html">ext/task.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00170_source.html">vitality/tty.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00122_source.html">string.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00188_source.html">vitality/vlib.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00116_source.html">page.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00035_source.html">../drivers/ide.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00110_source.html">interrupt.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00080_source.html">ext/debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00053_source.html">../drivers/pic.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00134_source.html">system.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for isr.c:</div>
+Include dependency graph for interrupt.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00108.png" border="0" usemap="#libc_2isr_8c" alt=""/></div>
+<div class="center"><img src="a00108.png" border="0" usemap="#libc_2interrupt_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
@@ -71,20 +64,10 @@ Include dependency graph for isr.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a4b4233daef6e041e7278cae2b21b5ed4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a4b4233daef6e041e7278cae2b21b5ed4.html#a4b4233daef6e041e7278cae2b21b5ed4">sdump</a> (<a class="el" href="a00134_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
-<tr class="memdesc:a4b4233daef6e041e7278cae2b21b5ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dump interrupt registers.  <a href="a00107_a4b4233daef6e041e7278cae2b21b5ed4.html#a4b4233daef6e041e7278cae2b21b5ed4">More...</a><br /></td></tr>
-<tr class="separator:a4b4233daef6e041e7278cae2b21b5ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4af3b3eec03921259f5db474506c0c8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a4af3b3eec03921259f5db474506c0c8d.html#a4af3b3eec03921259f5db474506c0c8d">eoi</a> ()</td></tr>
-<tr class="separator:a4af3b3eec03921259f5db474506c0c8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a700e3ca056bf69296370f504f2cb6cc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a700e3ca056bf69296370f504f2cb6cc8.html#a700e3ca056bf69296370f504f2cb6cc8">isr_handler</a> (<a class="el" href="a00134_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
-<tr class="memdesc:a700e3ca056bf69296370f504f2cb6cc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">ISR handler.  <a href="a00107_a700e3ca056bf69296370f504f2cb6cc8.html#a700e3ca056bf69296370f504f2cb6cc8">More...</a><br /></td></tr>
-<tr class="separator:a700e3ca056bf69296370f504f2cb6cc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeeac7331d1a449871656eeb6ac73fd25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_aeeac7331d1a449871656eeb6ac73fd25.html#aeeac7331d1a449871656eeb6ac73fd25">sv13h</a> ()</td></tr>
-<tr class="separator:aeeac7331d1a449871656eeb6ac73fd25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad118f86f4af40a3b4b94bc7c4977e762"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_ad118f86f4af40a3b4b94bc7c4977e762.html#ad118f86f4af40a3b4b94bc7c4977e762">sv3h</a> ()</td></tr>
-<tr class="separator:ad118f86f4af40a3b4b94bc7c4977e762"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abd1fa375737cd5ecd84c082738e3b195"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_abd1fa375737cd5ecd84c082738e3b195.html#abd1fa375737cd5ecd84c082738e3b195">sysisr_handler</a> (<a class="el" href="a00134_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
-<tr class="separator:abd1fa375737cd5ecd84c082738e3b195"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35fe413107af682030ab7a4b6dff19b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a35fe413107af682030ab7a4b6dff19b8.html#a35fe413107af682030ab7a4b6dff19b8">init_idt</a> ()</td></tr>
+<tr class="separator:a35fe413107af682030ab7a4b6dff19b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a498f153edfbc59b873e0ae610c3b0335"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00107_a498f153edfbc59b873e0ae610c3b0335.html#a498f153edfbc59b873e0ae610c3b0335">idt_set_gate</a> (<a class="el" href="a00140_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> num, <a class="el" href="a00140_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> <a class="el" href="a00110_a0523cedff47e2441fc198b7770ec5d3f.html#a0523cedff47e2441fc198b7770ec5d3f">base</a>, <a class="el" href="a00140_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> <a class="el" href="a00110_af0b0a7e10694e3b600c7561311cc8271.html#af0b0a7e10694e3b600c7561311cc8271">sel</a>, <a class="el" href="a00140_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> <a class="el" href="a00110_aa2585d779da0ab21273a8d92de9a0ebe.html#aa2585d779da0ab21273a8d92de9a0ebe">flags</a>)</td></tr>
+<tr class="separator:a498f153edfbc59b873e0ae610c3b0335"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

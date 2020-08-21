@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/fs_implementations/fat.c File Reference</title>
+<title>VitalityX: libc/vitality/fs.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,22 +39,28 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li><li class="navelem"><a class="el" href="dir_2204a4b3d47b62a14a2dc3b122711013.html">fs_implementations</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">fat.c File Reference</div>  </div>
+<div class="title">fs.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00152_source.html">fat.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00134_source.html">../../types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00152_source.html">fs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00035_source.html">../../drivers/ide.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00134_source.html">../system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00176_source.html">tty.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00128_source.html">../string.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00200_source.html">vxbfs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00161_source.html">fs_implementations/impl.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for fat.c:</div>
+Include dependency graph for fs.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00150.png" border="0" usemap="#libc_2vitality_2fs__implementations_2fat_8c" alt=""/></div>
+<div class="center"><img src="a00150.png" border="0" usemap="#libc_2vitality_2fs_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
@@ -62,8 +68,15 @@ Include dependency graph for fat.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac035ecd760d6c41e08695afddb708e53"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00276.html">fat_descriptor_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_ac035ecd760d6c41e08695afddb708e53.html#ac035ecd760d6c41e08695afddb708e53">fat_gendescriptor</a> (fat_BS_t *bs)</td></tr>
-<tr class="separator:ac035ecd760d6c41e08695afddb708e53"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a414110036132977c34813673360e1a63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_a414110036132977c34813673360e1a63.html#a414110036132977c34813673360e1a63">getentries</a> ()</td></tr>
+<tr class="separator:a414110036132977c34813673360e1a63"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fb32d07d3bd05144a196c94fc59c0d1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_a3fb32d07d3bd05144a196c94fc59c0d1.html#a3fb32d07d3bd05144a196c94fc59c0d1">getentry</a> (int id)</td></tr>
+<tr class="separator:a3fb32d07d3bd05144a196c94fc59c0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a36265ac74fd925405e1179e799961f1e"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00149_a36265ac74fd925405e1179e799961f1e.html#a36265ac74fd925405e1179e799961f1e">nullfs</a> = &quot;null&quot;</td></tr>
+<tr class="separator:a36265ac74fd925405e1179e799961f1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

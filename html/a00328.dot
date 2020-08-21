@@ -1,0 +1,12 @@
+digraph "VXBFSheader"
+{
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="VXBFSheader",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" file" ,fontname="Helvetica"];
+  Node2 [label="VXBFSFile",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00326.html",tooltip="This is a VXBFS File. "];
+  Node2 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" nextfile" ,fontname="Helvetica"];
+  Node3 -> Node2 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" modblock" ,fontname="Helvetica"];
+  Node3 [label="VXBFSModificationBlock",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00322.html",tooltip="This is a VXBFS Modification Block. "];
+  Node3 -> Node3 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" nextmodblock" ,fontname="Helvetica"];
+}

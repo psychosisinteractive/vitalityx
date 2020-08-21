@@ -1,108 +1,155 @@
-\hypertarget{a00200}{}\section{bios32\+\_\+sdh Struct Reference}
-\label{a00200}\index{bios32\+\_\+sdh@{bios32\+\_\+sdh}}
-
-
-{\ttfamily \#include $<$bios32.\+h$>$}
-
-\subsection*{Data Fields}
+\hypertarget{a00200}{}\section{libc/vitality/vxbfs.h File Reference}
+\label{a00200}\index{libc/vitality/vxbfs.\+h@{libc/vitality/vxbfs.\+h}}
+{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vfs.\+h\char`\"{}}\newline
+Include dependency graph for vxbfs.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\subsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00134_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00200_a5d56b651b0453b6078d0efd500369fe0_a5d56b651b0453b6078d0efd500369fe0}{signature}
-\begin{DoxyCompactList}\small\item\em B\+I\+O\+S32 Signature. \end{DoxyCompactList}\item 
-\hyperlink{a00134_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00200_a272aef3404a9fed4fdc687c358fc8aaa_a272aef3404a9fed4fdc687c358fc8aaa}{ciep}
-\begin{DoxyCompactList}\small\item\em B\+I\+O\+S32 Calling Interface Entry Point. \end{DoxyCompactList}\item 
-\hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00200_ac087e76f32980fb89fa7fc24c90d437a_ac087e76f32980fb89fa7fc24c90d437a}{revision}
-\begin{DoxyCompactList}\small\item\em B\+I\+O\+S32 Revision, at the time of writing it is 0x0. \end{DoxyCompactList}\item 
-\hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00200_a497d3011e156bd35d72a095979ab10d3_a497d3011e156bd35d72a095979ab10d3}{length}
+struct \hyperlink{a00322}{V\+X\+B\+F\+S\+Modification\+Block}
+\begin{DoxyCompactList}\small\item\em This is a V\+X\+B\+FS Modification Block. \end{DoxyCompactList}\item 
+struct \hyperlink{a00326}{V\+X\+B\+F\+S\+File}
+\begin{DoxyCompactList}\small\item\em This is a V\+X\+B\+FS File. \end{DoxyCompactList}\item 
+struct \hyperlink{a00330}{V\+X\+B\+F\+Sheader}
+\begin{DoxyCompactList}\small\item\em This is a V\+X\+B\+FS Header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00200_a23eed1a2d5ba3ccc68885bdb6d66e71d_a23eed1a2d5ba3ccc68885bdb6d66e71d}{checksum}
+\#define \hyperlink{a00200_a3ddd78a9670db2318c112735ae4fbbb0_a3ddd78a9670db2318c112735ae4fbbb0}{V\+X\+B\+F\+S\+\_\+\+N\+O\+M\+OD}~1
 \item 
-char \hyperlink{a00200_a3501a69ec8c5be53283aa5459a4541a5_a3501a69ec8c5be53283aa5459a4541a5}{reserved} \mbox{[}5\mbox{]}
+\#define \hyperlink{a00200_acdd5a043633da5f43164b17f4d3637ac_acdd5a043633da5f43164b17f4d3637ac}{V\+X\+B\+F\+S\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED}~2
+\item 
+\#define \hyperlink{a00200_a767d84a330301881537dca098c9be630_a767d84a330301881537dca098c9be630}{V\+X\+B\+F\+S\+\_\+\+K\+E\+R\+N\+EL}~4
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \hyperlink{a00322}{V\+X\+B\+F\+S\+Modification\+Block} \hyperlink{a00200_a0774a42f7a124b6d3054ccabd4d35463_a0774a42f7a124b6d3054ccabd4d35463}{vxbfs\+\_\+modblock\+\_\+t}
+\begin{DoxyCompactList}\small\item\em This is a V\+X\+B\+FS Modification Block. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{a00326}{V\+X\+B\+F\+S\+File} \hyperlink{a00200_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}{vxbfs\+\_\+file\+\_\+t}
+\begin{DoxyCompactList}\small\item\em This is a V\+X\+B\+FS File. \end{DoxyCompactList}\item 
+typedef struct \hyperlink{a00330}{V\+X\+B\+F\+Sheader} \hyperlink{a00200_ac5678b6d5dd5ed5ca86e5ccd4c30d39d_ac5678b6d5dd5ed5ca86e5ccd4c30d39d}{vxbfs\+\_\+header\+\_\+t}
+\begin{DoxyCompactList}\small\item\em This is a V\+X\+B\+FS Header. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00185_aa5445a6474a23ee3e7756d432dfa4ba1_aa5445a6474a23ee3e7756d432dfa4ba1}{file\+\_\+t} \hyperlink{a00200_a056a7e9a594275f19bd99150a92f266a_a056a7e9a594275f19bd99150a92f266a}{loadfile} (\hyperlink{a00200_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}{vxbfs\+\_\+file\+\_\+t} $\ast$)
+\item 
+\hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00200_a4d38ed022dd74a1ef381240419f8fd72_a4d38ed022dd74a1ef381240419f8fd72}{validvxbfs} (\hyperlink{a00200_ac5678b6d5dd5ed5ca86e5ccd4c30d39d_ac5678b6d5dd5ed5ca86e5ccd4c30d39d}{vxbfs\+\_\+header\+\_\+t} $\ast$)
 \end{DoxyCompactItemize}
 
 
-\subsection{Detailed Description}
-
-
-Definition at line 7 of file bios32.\+h.
-
-
-
-\subsection{Field Documentation}
-\mbox{\Hypertarget{a00200_a23eed1a2d5ba3ccc68885bdb6d66e71d_a23eed1a2d5ba3ccc68885bdb6d66e71d}\label{a00200_a23eed1a2d5ba3ccc68885bdb6d66e71d_a23eed1a2d5ba3ccc68885bdb6d66e71d}} 
-\index{bios32\+\_\+sdh@{bios32\+\_\+sdh}!checksum@{checksum}}
-\index{checksum@{checksum}!bios32\+\_\+sdh@{bios32\+\_\+sdh}}
-\subsubsection{\texorpdfstring{checksum}{checksum}}
-{\footnotesize\ttfamily \hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} bios32\+\_\+sdh\+::checksum}
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{a00200_a767d84a330301881537dca098c9be630_a767d84a330301881537dca098c9be630}\label{a00200_a767d84a330301881537dca098c9be630_a767d84a330301881537dca098c9be630}} 
+\index{vxbfs.\+h@{vxbfs.\+h}!V\+X\+B\+F\+S\+\_\+\+K\+E\+R\+N\+EL@{V\+X\+B\+F\+S\+\_\+\+K\+E\+R\+N\+EL}}
+\index{V\+X\+B\+F\+S\+\_\+\+K\+E\+R\+N\+EL@{V\+X\+B\+F\+S\+\_\+\+K\+E\+R\+N\+EL}!vxbfs.\+h@{vxbfs.\+h}}
+\subsubsection{\texorpdfstring{V\+X\+B\+F\+S\+\_\+\+K\+E\+R\+N\+EL}{VXBFS\_KERNEL}}
+{\footnotesize\ttfamily \#define V\+X\+B\+F\+S\+\_\+\+K\+E\+R\+N\+EL~4}
 
 
 
-Definition at line 22 of file bios32.\+h.
+Definition at line 9 of file vxbfs.\+h.
 
-\mbox{\Hypertarget{a00200_a272aef3404a9fed4fdc687c358fc8aaa_a272aef3404a9fed4fdc687c358fc8aaa}\label{a00200_a272aef3404a9fed4fdc687c358fc8aaa_a272aef3404a9fed4fdc687c358fc8aaa}} 
-\index{bios32\+\_\+sdh@{bios32\+\_\+sdh}!ciep@{ciep}}
-\index{ciep@{ciep}!bios32\+\_\+sdh@{bios32\+\_\+sdh}}
-\subsubsection{\texorpdfstring{ciep}{ciep}}
-{\footnotesize\ttfamily \hyperlink{a00134_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} bios32\+\_\+sdh\+::ciep}
-
-
-
-B\+I\+O\+S32 Calling Interface Entry Point. 
+\mbox{\Hypertarget{a00200_a3ddd78a9670db2318c112735ae4fbbb0_a3ddd78a9670db2318c112735ae4fbbb0}\label{a00200_a3ddd78a9670db2318c112735ae4fbbb0_a3ddd78a9670db2318c112735ae4fbbb0}} 
+\index{vxbfs.\+h@{vxbfs.\+h}!V\+X\+B\+F\+S\+\_\+\+N\+O\+M\+OD@{V\+X\+B\+F\+S\+\_\+\+N\+O\+M\+OD}}
+\index{V\+X\+B\+F\+S\+\_\+\+N\+O\+M\+OD@{V\+X\+B\+F\+S\+\_\+\+N\+O\+M\+OD}!vxbfs.\+h@{vxbfs.\+h}}
+\subsubsection{\texorpdfstring{V\+X\+B\+F\+S\+\_\+\+N\+O\+M\+OD}{VXBFS\_NOMOD}}
+{\footnotesize\ttfamily \#define V\+X\+B\+F\+S\+\_\+\+N\+O\+M\+OD~1}
 
 
 
-Definition at line 16 of file bios32.\+h.
+Definition at line 7 of file vxbfs.\+h.
 
-\mbox{\Hypertarget{a00200_a497d3011e156bd35d72a095979ab10d3_a497d3011e156bd35d72a095979ab10d3}\label{a00200_a497d3011e156bd35d72a095979ab10d3_a497d3011e156bd35d72a095979ab10d3}} 
-\index{bios32\+\_\+sdh@{bios32\+\_\+sdh}!length@{length}}
-\index{length@{length}!bios32\+\_\+sdh@{bios32\+\_\+sdh}}
-\subsubsection{\texorpdfstring{length}{length}}
-{\footnotesize\ttfamily \hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} bios32\+\_\+sdh\+::length}
-
-
-
-Definition at line 21 of file bios32.\+h.
-
-\mbox{\Hypertarget{a00200_a3501a69ec8c5be53283aa5459a4541a5_a3501a69ec8c5be53283aa5459a4541a5}\label{a00200_a3501a69ec8c5be53283aa5459a4541a5_a3501a69ec8c5be53283aa5459a4541a5}} 
-\index{bios32\+\_\+sdh@{bios32\+\_\+sdh}!reserved@{reserved}}
-\index{reserved@{reserved}!bios32\+\_\+sdh@{bios32\+\_\+sdh}}
-\subsubsection{\texorpdfstring{reserved}{reserved}}
-{\footnotesize\ttfamily char bios32\+\_\+sdh\+::reserved\mbox{[}5\mbox{]}}
+\mbox{\Hypertarget{a00200_acdd5a043633da5f43164b17f4d3637ac_acdd5a043633da5f43164b17f4d3637ac}\label{a00200_acdd5a043633da5f43164b17f4d3637ac_acdd5a043633da5f43164b17f4d3637ac}} 
+\index{vxbfs.\+h@{vxbfs.\+h}!V\+X\+B\+F\+S\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED@{V\+X\+B\+F\+S\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED}}
+\index{V\+X\+B\+F\+S\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED@{V\+X\+B\+F\+S\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED}!vxbfs.\+h@{vxbfs.\+h}}
+\subsubsection{\texorpdfstring{V\+X\+B\+F\+S\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED}{VXBFS\_PROTECTED}}
+{\footnotesize\ttfamily \#define V\+X\+B\+F\+S\+\_\+\+P\+R\+O\+T\+E\+C\+T\+ED~2}
 
 
 
-Definition at line 23 of file bios32.\+h.
-
-\mbox{\Hypertarget{a00200_ac087e76f32980fb89fa7fc24c90d437a_ac087e76f32980fb89fa7fc24c90d437a}\label{a00200_ac087e76f32980fb89fa7fc24c90d437a_ac087e76f32980fb89fa7fc24c90d437a}} 
-\index{bios32\+\_\+sdh@{bios32\+\_\+sdh}!revision@{revision}}
-\index{revision@{revision}!bios32\+\_\+sdh@{bios32\+\_\+sdh}}
-\subsubsection{\texorpdfstring{revision}{revision}}
-{\footnotesize\ttfamily \hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} bios32\+\_\+sdh\+::revision}
+Definition at line 8 of file vxbfs.\+h.
 
 
 
-B\+I\+O\+S32 Revision, at the time of writing it is 0x0. 
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{a00200_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}\label{a00200_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}} 
+\index{vxbfs.\+h@{vxbfs.\+h}!vxbfs\+\_\+file\+\_\+t@{vxbfs\+\_\+file\+\_\+t}}
+\index{vxbfs\+\_\+file\+\_\+t@{vxbfs\+\_\+file\+\_\+t}!vxbfs.\+h@{vxbfs.\+h}}
+\subsubsection{\texorpdfstring{vxbfs\+\_\+file\+\_\+t}{vxbfs\_file\_t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00326}{V\+X\+B\+F\+S\+File}  \hyperlink{a00200_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}{vxbfs\+\_\+file\+\_\+t}}
 
 
 
-Definition at line 20 of file bios32.\+h.
+This is a V\+X\+B\+FS File. 
 
-\mbox{\Hypertarget{a00200_a5d56b651b0453b6078d0efd500369fe0_a5d56b651b0453b6078d0efd500369fe0}\label{a00200_a5d56b651b0453b6078d0efd500369fe0_a5d56b651b0453b6078d0efd500369fe0}} 
-\index{bios32\+\_\+sdh@{bios32\+\_\+sdh}!signature@{signature}}
-\index{signature@{signature}!bios32\+\_\+sdh@{bios32\+\_\+sdh}}
-\subsubsection{\texorpdfstring{signature}{signature}}
-{\footnotesize\ttfamily \hyperlink{a00134_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} bios32\+\_\+sdh\+::signature}
-
-
-
-B\+I\+O\+S32 Signature. 
+It stores the 11 character name, a G\+U\+ID, an ext, flags, next modblock, nextfile and a md boolean. The G\+U\+ID is a unique identifier so multiple V\+X\+B\+FS files can share the same name. The ext is the V\+X\+B\+FS File type. The md means \char`\"{}\+More Data\char`\"{}, this signifies that there should be a search for more data after this. The flags are data which is for the OS. \mbox{\Hypertarget{a00200_ac5678b6d5dd5ed5ca86e5ccd4c30d39d_ac5678b6d5dd5ed5ca86e5ccd4c30d39d}\label{a00200_ac5678b6d5dd5ed5ca86e5ccd4c30d39d_ac5678b6d5dd5ed5ca86e5ccd4c30d39d}} 
+\index{vxbfs.\+h@{vxbfs.\+h}!vxbfs\+\_\+header\+\_\+t@{vxbfs\+\_\+header\+\_\+t}}
+\index{vxbfs\+\_\+header\+\_\+t@{vxbfs\+\_\+header\+\_\+t}!vxbfs.\+h@{vxbfs.\+h}}
+\subsubsection{\texorpdfstring{vxbfs\+\_\+header\+\_\+t}{vxbfs\_header\_t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00330}{V\+X\+B\+F\+Sheader}  \hyperlink{a00200_ac5678b6d5dd5ed5ca86e5ccd4c30d39d_ac5678b6d5dd5ed5ca86e5ccd4c30d39d}{vxbfs\+\_\+header\+\_\+t}}
 
 
 
-Definition at line 12 of file bios32.\+h.
+This is a V\+X\+B\+FS Header. 
+
+It stores bootcode, a label and a signature. The Signature must be \textquotesingle{}V\textquotesingle{} \textquotesingle{}X\textquotesingle{} \textquotesingle{}F\textquotesingle{} \textquotesingle{}S\textquotesingle{} in order to signal a existing data partiton. \mbox{\Hypertarget{a00200_a0774a42f7a124b6d3054ccabd4d35463_a0774a42f7a124b6d3054ccabd4d35463}\label{a00200_a0774a42f7a124b6d3054ccabd4d35463_a0774a42f7a124b6d3054ccabd4d35463}} 
+\index{vxbfs.\+h@{vxbfs.\+h}!vxbfs\+\_\+modblock\+\_\+t@{vxbfs\+\_\+modblock\+\_\+t}}
+\index{vxbfs\+\_\+modblock\+\_\+t@{vxbfs\+\_\+modblock\+\_\+t}!vxbfs.\+h@{vxbfs.\+h}}
+\subsubsection{\texorpdfstring{vxbfs\+\_\+modblock\+\_\+t}{vxbfs\_modblock\_t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00322}{V\+X\+B\+F\+S\+Modification\+Block}  \hyperlink{a00200_a0774a42f7a124b6d3054ccabd4d35463_a0774a42f7a124b6d3054ccabd4d35463}{vxbfs\+\_\+modblock\+\_\+t}}
 
 
 
-The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
-\item 
-drivers/\hyperlink{a00023}{bios32.\+h}\end{DoxyCompactItemize}
+This is a V\+X\+B\+FS Modification Block. 
+
+It stores 507 bytes of data (in order to fit in 1 sector), an ignore boolean and a nextmodblock address. 
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{a00200_a056a7e9a594275f19bd99150a92f266a_a056a7e9a594275f19bd99150a92f266a}\label{a00200_a056a7e9a594275f19bd99150a92f266a_a056a7e9a594275f19bd99150a92f266a}} 
+\index{vxbfs.\+h@{vxbfs.\+h}!loadfile@{loadfile}}
+\index{loadfile@{loadfile}!vxbfs.\+h@{vxbfs.\+h}}
+\subsubsection{\texorpdfstring{loadfile()}{loadfile()}}
+{\footnotesize\ttfamily \hyperlink{a00185_aa5445a6474a23ee3e7756d432dfa4ba1_aa5445a6474a23ee3e7756d432dfa4ba1}{file\+\_\+t} loadfile (\begin{DoxyParamCaption}\item[{\hyperlink{a00200_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}{vxbfs\+\_\+file\+\_\+t} $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 4 of file vxbfs.\+c.
+
+
+\begin{DoxyCode}
+5 \{
+6     \hyperlink{a00302}{file\_t} vfile;
+7     vfile.\hyperlink{a00302_a93164d6663f12c00df3d65b7b0990cc2_a93164d6663f12c00df3d65b7b0990cc2}{name} = \hyperlink{a00302}{file}->\hyperlink{a00302_a93164d6663f12c00df3d65b7b0990cc2_a93164d6663f12c00df3d65b7b0990cc2}{name};
+8     \textcolor{keywordflow}{if}(\hyperlink{a00302}{file}->md) \{
+9         vfile.\hyperlink{a00302_a9c9154337f0c0aa90f11e5c60e93efdd_a9c9154337f0c0aa90f11e5c60e93efdd}{data} = \hyperlink{a00302}{file}+\textcolor{keyword}{sizeof}(\hyperlink{a00200_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}{vxbfs\_file\_t});
+10     \} \textcolor{keywordflow}{else} \{
+11         vfile.\hyperlink{a00302_a9c9154337f0c0aa90f11e5c60e93efdd_a9c9154337f0c0aa90f11e5c60e93efdd}{data} = \hyperlink{a00302}{file}->modblock->\hyperlink{a00302_a9c9154337f0c0aa90f11e5c60e93efdd_a9c9154337f0c0aa90f11e5c60e93efdd}{data};
+12     \}
+13     \textcolor{keywordflow}{return} vfile;
+14 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00200_a4d38ed022dd74a1ef381240419f8fd72_a4d38ed022dd74a1ef381240419f8fd72}\label{a00200_a4d38ed022dd74a1ef381240419f8fd72_a4d38ed022dd74a1ef381240419f8fd72}} 
+\index{vxbfs.\+h@{vxbfs.\+h}!validvxbfs@{validvxbfs}}
+\index{validvxbfs@{validvxbfs}!vxbfs.\+h@{vxbfs.\+h}}
+\subsubsection{\texorpdfstring{validvxbfs()}{validvxbfs()}}
+{\footnotesize\ttfamily \hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} validvxbfs (\begin{DoxyParamCaption}\item[{\hyperlink{a00200_ac5678b6d5dd5ed5ca86e5ccd4c30d39d_ac5678b6d5dd5ed5ca86e5ccd4c30d39d}{vxbfs\+\_\+header\+\_\+t} $\ast$}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 16 of file vxbfs.\+c.
+
+
+\begin{DoxyCode}
+16                                         \{
+17     \textcolor{keywordtype}{bool} valid = \textcolor{keyword}{false};
+18     \textcolor{keywordflow}{if}(header->signature[0] == \textcolor{charliteral}{'V'} && header->signature[1] == \textcolor{charliteral}{'X'} && header->signature[2] == \textcolor{charliteral}{'F'} && header
+      ->signature[3] == \textcolor{charliteral}{'S'}) \{
+19         valid = \textcolor{keyword}{true};
+20     \}
+21     \textcolor{keywordflow}{return} valid;
+22 \}
+\end{DoxyCode}

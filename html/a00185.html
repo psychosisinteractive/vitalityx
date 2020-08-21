@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/vlib.c File Reference</title>
+<title>VitalityX: libc/vitality/vfs.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,31 +44,42 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a>  </div>
   <div class="headertitle">
-<div class="title">vlib.c File Reference</div>  </div>
+<div class="title">vfs.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00188_source.html">vlib.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00134_source.html">../types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00110_source.html">../isr.h</a>&quot;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for vlib.c:</div>
+<div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00186.png" border="0" usemap="#libc_2vitality_2vlib_8c" alt=""/></div>
+<div class="center"><img src="a00187.png" border="0" usemap="#libc_2vitality_2vfs_8hdep" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
 <p><a href="a00185_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:aee69008de31826f28854c29a54cb315e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00185_aee69008de31826f28854c29a54cb315e.html#aee69008de31826f28854c29a54cb315e">loadvlib</a> (<a class="el" href="a00188_a2d9000b4fbb25c5ed2950a2d8f4921d5.html#a2d9000b4fbb25c5ed2950a2d8f4921d5">vlibdesriptor_t</a> *d)</td></tr>
-<tr class="separator:aee69008de31826f28854c29a54cb315e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeeb1b55b301de7b4c7aa360c387c3ef9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00188_a97c1a7136f2ab06368e93c2d7533d619.html#a97c1a7136f2ab06368e93c2d7533d619">vlib_entry_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00185_aeeb1b55b301de7b4c7aa360c387c3ef9.html#aeeb1b55b301de7b4c7aa360c387c3ef9">getvlibentry</a> (int id)</td></tr>
-<tr class="separator:aeeb1b55b301de7b4c7aa360c387c3ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a268c6e227f2761807244c0695d78d01c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00185_a268c6e227f2761807244c0695d78d01c.html#a268c6e227f2761807244c0695d78d01c">runvlib</a> (<a class="el" href="a00134_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
-<tr class="separator:a268c6e227f2761807244c0695d78d01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00302.html">file</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00306.html">pte</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Partition Table Entry.  <a href="a00306.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00310.html">mbr</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master Boot Record.  <a href="a00310.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:aa5445a6474a23ee3e7756d432dfa4ba1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00302.html">file</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00185_aa5445a6474a23ee3e7756d432dfa4ba1.html#aa5445a6474a23ee3e7756d432dfa4ba1">file_t</a></td></tr>
+<tr class="separator:aa5445a6474a23ee3e7756d432dfa4ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeef6bb6b6bbfd4d912338e1e5c6938a5"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00306.html">pte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00185_aeef6bb6b6bbfd4d912338e1e5c6938a5.html#aeef6bb6b6bbfd4d912338e1e5c6938a5">pte_t</a></td></tr>
+<tr class="memdesc:aeef6bb6b6bbfd4d912338e1e5c6938a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Partition Table Entry.  <a href="a00185_aeef6bb6b6bbfd4d912338e1e5c6938a5.html#aeef6bb6b6bbfd4d912338e1e5c6938a5">More...</a><br /></td></tr>
+<tr class="separator:aeef6bb6b6bbfd4d912338e1e5c6938a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb8ab3f846ea25ce3271bfabb17fc767"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00310.html">mbr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00185_adb8ab3f846ea25ce3271bfabb17fc767.html#adb8ab3f846ea25ce3271bfabb17fc767">mbr_t</a></td></tr>
+<tr class="memdesc:adb8ab3f846ea25ce3271bfabb17fc767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master Boot Record.  <a href="a00185_adb8ab3f846ea25ce3271bfabb17fc767.html#adb8ab3f846ea25ce3271bfabb17fc767">More...</a><br /></td></tr>
+<tr class="separator:adb8ab3f846ea25ce3271bfabb17fc767"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

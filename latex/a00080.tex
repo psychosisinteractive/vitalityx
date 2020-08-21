@@ -1,141 +1,61 @@
-\hypertarget{a00080}{}\section{libc/ext/kheap.h File Reference}
-\label{a00080}\index{libc/ext/kheap.\+h@{libc/ext/kheap.\+h}}
-{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
-Include dependency graph for kheap.\+h\+:
+\hypertarget{a00080}{}\section{libc/ext/debug.h File Reference}
+\label{a00080}\index{libc/ext/debug.\+h@{libc/ext/debug.\+h}}
+{\ttfamily \#include \char`\"{}../vitality/inline.\+h\char`\"{}}\newline
+Include dependency graph for debug.\+h\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
 % FIG 1
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00080_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}{Bochs\+Console\+Print\+Char}(c)~\hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0xe9, c)
+\begin{DoxyCompactList}\small\item\em Outputs a character to the Bochs console. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00080_a8b976e8a7e805ef85fcfa68b9b9bbd63_a8b976e8a7e805ef85fcfa68b9b9bbd63}{kmalloc\+\_\+int} (\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} sz, int align, \hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} $\ast$phys)
-\begin{DoxyCompactList}\small\item\em Allocate a chunk of memory, sz in size. \end{DoxyCompactList}\item 
-\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00080_a2f7fc26d2604f7bd8bd6d4fac5c98f16_a2f7fc26d2604f7bd8bd6d4fac5c98f16}{kmalloc\+\_\+a} (\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} sz)
-\begin{DoxyCompactList}\small\item\em Allocate a chunk of memory, sz in size. \end{DoxyCompactList}\item 
-\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00080_ac688411503d5934c65d6c5c1ef204d81_ac688411503d5934c65d6c5c1ef204d81}{kmalloc\+\_\+p} (\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} sz, \hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} $\ast$phys)
-\begin{DoxyCompactList}\small\item\em Allocate a chunk of memory, sz in size. \end{DoxyCompactList}\item 
-\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00080_ab4fd209369f6c18acead48b80e7f09c7_ab4fd209369f6c18acead48b80e7f09c7}{kmalloc\+\_\+ap} (\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} sz, \hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} $\ast$phys)
-\begin{DoxyCompactList}\small\item\em Allocate a chunk of memory, sz in size. \end{DoxyCompactList}\item 
-\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00080_a57133c6165a95f09de1806a08042e5e0_a57133c6165a95f09de1806a08042e5e0}{kmalloc} (\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} sz)
-\begin{DoxyCompactList}\small\item\em General allocation function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{a00080_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{Bochs\+Console\+Print\+String} (char $\ast$string)
+\begin{DoxyCompactList}\small\item\em Outputs a string to the Bochs console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{a00080_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}\label{a00080_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}} 
+\index{debug.\+h@{debug.\+h}!Bochs\+Console\+Print\+Char@{Bochs\+Console\+Print\+Char}}
+\index{Bochs\+Console\+Print\+Char@{Bochs\+Console\+Print\+Char}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{Bochs\+Console\+Print\+Char}{BochsConsolePrintChar}}
+{\footnotesize\ttfamily \#define Bochs\+Console\+Print\+Char(\begin{DoxyParamCaption}\item[{}]{c }\end{DoxyParamCaption})~\hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0xe9, c)}
+
+
+
+Outputs a character to the Bochs console. 
+
+
+
+Definition at line 8 of file debug.\+h.
+
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00080_a57133c6165a95f09de1806a08042e5e0_a57133c6165a95f09de1806a08042e5e0}\label{a00080_a57133c6165a95f09de1806a08042e5e0_a57133c6165a95f09de1806a08042e5e0}} 
-\index{kheap.\+h@{kheap.\+h}!kmalloc@{kmalloc}}
-\index{kmalloc@{kmalloc}!kheap.\+h@{kheap.\+h}}
-\subsubsection{\texorpdfstring{kmalloc()}{kmalloc()}}
-{\footnotesize\ttfamily \hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} kmalloc (\begin{DoxyParamCaption}\item[{\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int}}]{sz }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00080_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}\label{a00080_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}} 
+\index{debug.\+h@{debug.\+h}!Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}}
+\index{Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}!debug.\+h@{debug.\+h}}
+\subsubsection{\texorpdfstring{Bochs\+Console\+Print\+String()}{BochsConsolePrintString()}}
+{\footnotesize\ttfamily void Bochs\+Console\+Print\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
 
 
 
-General allocation function. 
+Outputs a string to the Bochs console. 
 
 
 
-Definition at line 44 of file kheap.\+c.
-
-
-\begin{DoxyCode}
-45 \{
-46     \textcolor{keywordflow}{return} \hyperlink{a00077_a8b976e8a7e805ef85fcfa68b9b9bbd63_a8b976e8a7e805ef85fcfa68b9b9bbd63}{kmalloc\_int}(sz, 0, 0);
-47 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00080_a2f7fc26d2604f7bd8bd6d4fac5c98f16_a2f7fc26d2604f7bd8bd6d4fac5c98f16}\label{a00080_a2f7fc26d2604f7bd8bd6d4fac5c98f16_a2f7fc26d2604f7bd8bd6d4fac5c98f16}} 
-\index{kheap.\+h@{kheap.\+h}!kmalloc\+\_\+a@{kmalloc\+\_\+a}}
-\index{kmalloc\+\_\+a@{kmalloc\+\_\+a}!kheap.\+h@{kheap.\+h}}
-\subsubsection{\texorpdfstring{kmalloc\+\_\+a()}{kmalloc\_a()}}
-{\footnotesize\ttfamily \hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} kmalloc\+\_\+a (\begin{DoxyParamCaption}\item[{\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int}}]{sz }\end{DoxyParamCaption})}
-
-
-
-Allocate a chunk of memory, sz in size. 
-
-The chunk must be page aligned. 
-
-Definition at line 29 of file kheap.\+c.
+Definition at line 3 of file debug.\+c.
 
 
 \begin{DoxyCode}
-30 \{
-31     \textcolor{keywordflow}{return} \hyperlink{a00077_a8b976e8a7e805ef85fcfa68b9b9bbd63_a8b976e8a7e805ef85fcfa68b9b9bbd63}{kmalloc\_int}(sz, 1, 0);
-32 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00080_ab4fd209369f6c18acead48b80e7f09c7_ab4fd209369f6c18acead48b80e7f09c7}\label{a00080_ab4fd209369f6c18acead48b80e7f09c7_ab4fd209369f6c18acead48b80e7f09c7}} 
-\index{kheap.\+h@{kheap.\+h}!kmalloc\+\_\+ap@{kmalloc\+\_\+ap}}
-\index{kmalloc\+\_\+ap@{kmalloc\+\_\+ap}!kheap.\+h@{kheap.\+h}}
-\subsubsection{\texorpdfstring{kmalloc\+\_\+ap()}{kmalloc\_ap()}}
-{\footnotesize\ttfamily \hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} kmalloc\+\_\+ap (\begin{DoxyParamCaption}\item[{\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int}}]{sz,  }\item[{\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} $\ast$}]{phys }\end{DoxyParamCaption})}
-
-
-
-Allocate a chunk of memory, sz in size. 
-
-The physical address is returned in phys. It must be page-\/aligned. 
-
-Definition at line 39 of file kheap.\+c.
-
-
-\begin{DoxyCode}
-40 \{
-41     \textcolor{keywordflow}{return} \hyperlink{a00077_a8b976e8a7e805ef85fcfa68b9b9bbd63_a8b976e8a7e805ef85fcfa68b9b9bbd63}{kmalloc\_int}(sz, 1, phys);
-42 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00080_a8b976e8a7e805ef85fcfa68b9b9bbd63_a8b976e8a7e805ef85fcfa68b9b9bbd63}\label{a00080_a8b976e8a7e805ef85fcfa68b9b9bbd63_a8b976e8a7e805ef85fcfa68b9b9bbd63}} 
-\index{kheap.\+h@{kheap.\+h}!kmalloc\+\_\+int@{kmalloc\+\_\+int}}
-\index{kmalloc\+\_\+int@{kmalloc\+\_\+int}!kheap.\+h@{kheap.\+h}}
-\subsubsection{\texorpdfstring{kmalloc\+\_\+int()}{kmalloc\_int()}}
-{\footnotesize\ttfamily \hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} kmalloc\+\_\+int (\begin{DoxyParamCaption}\item[{\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int}}]{sz,  }\item[{int}]{align,  }\item[{\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} $\ast$}]{phys }\end{DoxyParamCaption})}
-
-
-
-Allocate a chunk of memory, sz in size. 
-
-If align == 1, the chunk must be page-\/aligned. If phys != 0, the physical location of the allocated chunk will be stored into phys.
-
-This is the internal version of kmalloc. More user-\/friendly parameter representations are available in kmalloc, kmalloc\+\_\+a, kmalloc\+\_\+ap, kmalloc\+\_\+p. 
-
-Definition at line 8 of file kheap.\+c.
-
-
-\begin{DoxyCode}
-9 \{
-10     \textcolor{comment}{// This will eventually call malloc() on the kernel heap.}
-11     \textcolor{comment}{// For now, though, we just assign memory at placement\_address}
-12     \textcolor{comment}{// and increment it by sz. Even when we've coded our kernel}
-13     \textcolor{comment}{// heap, this will be useful for use before the heap is initialised.}
-14     \textcolor{keywordflow}{if} (align == 1 && (\hyperlink{a00077_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}{placement\_address} & 0xFFFFF000) )
-15     \{
-16         \textcolor{comment}{// Align the placement address;}
-17         \hyperlink{a00077_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}{placement\_address} &= 0xFFFFF000;
-18         \hyperlink{a00077_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}{placement\_address} += 0x1000;
-19     \}
-20     \textcolor{keywordflow}{if} (phys)
-21     \{
-22         *phys = \hyperlink{a00077_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}{placement\_address};
-23     \}
-24     \hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} tmp = \hyperlink{a00077_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}{placement\_address};
-25     \hyperlink{a00077_a9df9c77e08423957a655e27605284987_a9df9c77e08423957a655e27605284987}{placement\_address} += sz;
-26     \textcolor{keywordflow}{return} tmp;
-27 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00080_ac688411503d5934c65d6c5c1ef204d81_ac688411503d5934c65d6c5c1ef204d81}\label{a00080_ac688411503d5934c65d6c5c1ef204d81_ac688411503d5934c65d6c5c1ef204d81}} 
-\index{kheap.\+h@{kheap.\+h}!kmalloc\+\_\+p@{kmalloc\+\_\+p}}
-\index{kmalloc\+\_\+p@{kmalloc\+\_\+p}!kheap.\+h@{kheap.\+h}}
-\subsubsection{\texorpdfstring{kmalloc\+\_\+p()}{kmalloc\_p()}}
-{\footnotesize\ttfamily \hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} kmalloc\+\_\+p (\begin{DoxyParamCaption}\item[{\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int}}]{sz,  }\item[{\hyperlink{a00134_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} $\ast$}]{phys }\end{DoxyParamCaption})}
-
-
-
-Allocate a chunk of memory, sz in size. 
-
-The physical address is returned in phys. Phys M\+U\+ST be a valid pointer to u32int! 
-
-Definition at line 34 of file kheap.\+c.
-
-
-\begin{DoxyCode}
-35 \{
-36     \textcolor{keywordflow}{return} \hyperlink{a00077_a8b976e8a7e805ef85fcfa68b9b9bbd63_a8b976e8a7e805ef85fcfa68b9b9bbd63}{kmalloc\_int}(sz, 0, phys);
-37 \}
+4 \{
+5     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
+6     \textcolor{keywordflow}{while}(chara != 0x0) \{
+7         \hyperlink{a00080_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}{BochsConsolePrintChar}(chara);
+8         chara = *\textcolor{keywordtype}{string}++;
+9     \}
+10 \}
 \end{DoxyCode}

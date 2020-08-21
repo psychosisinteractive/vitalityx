@@ -1,37 +1,36 @@
-\hypertarget{a00071}{}\section{libc/ext/debug.c File Reference}
-\label{a00071}\index{libc/ext/debug.\+c@{libc/ext/debug.\+c}}
-{\ttfamily \#include \char`\"{}debug.\+h\char`\"{}}\newline
-Include dependency graph for debug.\+c\+:
+\hypertarget{a00071}{}\section{libc/descriptortables.c File Reference}
+\label{a00071}\index{libc/descriptortables.\+c@{libc/descriptortables.\+c}}
+{\ttfamily \#include \char`\"{}descriptortables.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}gdt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}interrupt.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vitality/tty.\+h\char`\"{}}\newline
+Include dependency graph for descriptortables.\+c\+:
 % FIG 0
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00071_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{Bochs\+Console\+Print\+String} (char $\ast$string)
-\begin{DoxyCompactList}\small\item\em Outputs a string to the Bochs console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{a00071_a4c38e3f3ee100ca4323081bf0970c1ac_a4c38e3f3ee100ca4323081bf0970c1ac}{dt\+\_\+install} ()
+\end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00071_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}\label{a00071_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}} 
-\index{debug.\+c@{debug.\+c}!Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}}
-\index{Bochs\+Console\+Print\+String@{Bochs\+Console\+Print\+String}!debug.\+c@{debug.\+c}}
-\subsubsection{\texorpdfstring{Bochs\+Console\+Print\+String()}{BochsConsolePrintString()}}
-{\footnotesize\ttfamily void Bochs\+Console\+Print\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{string }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00071_a4c38e3f3ee100ca4323081bf0970c1ac_a4c38e3f3ee100ca4323081bf0970c1ac}\label{a00071_a4c38e3f3ee100ca4323081bf0970c1ac_a4c38e3f3ee100ca4323081bf0970c1ac}} 
+\index{descriptortables.\+c@{descriptortables.\+c}!dt\+\_\+install@{dt\+\_\+install}}
+\index{dt\+\_\+install@{dt\+\_\+install}!descriptortables.\+c@{descriptortables.\+c}}
+\subsubsection{\texorpdfstring{dt\+\_\+install()}{dt\_install()}}
+{\footnotesize\ttfamily void dt\+\_\+install (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Outputs a string to the Bochs console. 
-
-
-
-Definition at line 3 of file debug.\+c.
+Definition at line 6 of file descriptortables.\+c.
 
 
 \begin{DoxyCode}
-4 \{
-5     \textcolor{keywordtype}{char} chara = *\textcolor{keywordtype}{string}++;
-6     \textcolor{keywordflow}{while}(chara != 0x0) \{
-7         \hyperlink{a00074_aa2123d399356fa4ded8a39fdc167f31a_aa2123d399356fa4ded8a39fdc167f31a}{BochsConsolePrintChar}(chara);
-8         chara = *\textcolor{keywordtype}{string}++;
-9     \}
-10 \}
+6                   \{
+7     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Setting up IDT\(\backslash\)n"});
+8     \hyperlink{a00107_a35fe413107af682030ab7a4b6dff19b8_a35fe413107af682030ab7a4b6dff19b8}{init\_idt}();
+9     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Done, setting up GDT\(\backslash\)n"});
+10     \hyperlink{a00101_a86bb50044169930202cc403376ef40c3_a86bb50044169930202cc403376ef40c3}{init\_gdt}();
+11     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Done\(\backslash\)n"});
+12 \}
 \end{DoxyCode}

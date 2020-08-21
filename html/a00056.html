@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: drivers/vga.c File Reference</title>
+<title>VitalityX: drivers/serial.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,55 +44,42 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">vga.c File Reference</div>  </div>
+<div class="title">serial.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00059_source.html">vga.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00128_source.html">../libc/system.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00158_source.html">../libc/vitality/inline.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00164_source.html">../libc/vitality/mem.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00110_source.html">../libc/isr.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00059_source.html">serial.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00164_source.html">../libc/vitality/inline.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for vga.c:</div>
+Include dependency graph for serial.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00057.png" border="0" usemap="#drivers_2vga_8c" alt=""/></div>
+<div class="center"><img src="a00057.png" border="0" usemap="#drivers_2serial_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
 <p><a href="a00056_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a6c24a97d8805ea5216f34aa30ae27cec"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056_a6c24a97d8805ea5216f34aa30ae27cec.html#a6c24a97d8805ea5216f34aa30ae27cec">vgamode_t</a> { <a class="el" href="a00056_a6c24a97d8805ea5216f34aa30ae27cec.html#a6c24a97d8805ea5216f34aa30ae27cecaba0dfc5d04b1c8cd192f441787be16e3">Mode3h</a>, 
-<a class="el" href="a00056_a6c24a97d8805ea5216f34aa30ae27cec.html#a6c24a97d8805ea5216f34aa30ae27cecaa3dd115b4136ad8df83928c8a27ddb1d">Mode13h</a>
- }</td></tr>
-<tr class="separator:a6c24a97d8805ea5216f34aa30ae27cec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a614217d263be1fb1a5f76e2ff7be19a2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056_a614217d263be1fb1a5f76e2ff7be19a2.html#a614217d263be1fb1a5f76e2ff7be19a2">PORT</a>&#160;&#160;&#160;0x3f8   /* COM1 */</td></tr>
+<tr class="separator:a614217d263be1fb1a5f76e2ff7be19a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab17a69b465efb1ebe54a6a2e5d7b7ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056_ab17a69b465efb1ebe54a6a2e5d7b7ce8.html#ab17a69b465efb1ebe54a6a2e5d7b7ce8">putpixel</a> (<a class="el" href="a00134_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> c, <a class="el" href="a00134_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> x, <a class="el" href="a00134_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> y)</td></tr>
-<tr class="memdesc:ab17a69b465efb1ebe54a6a2e5d7b7ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a pixel on the screen.  <a href="a00056_ab17a69b465efb1ebe54a6a2e5d7b7ce8.html#ab17a69b465efb1ebe54a6a2e5d7b7ce8">More...</a><br /></td></tr>
-<tr class="separator:ab17a69b465efb1ebe54a6a2e5d7b7ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac0685da0bbf1115c2b76b0aedf7e1f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056_aac0685da0bbf1115c2b76b0aedf7e1f0.html#aac0685da0bbf1115c2b76b0aedf7e1f0">getpixel</a> (<a class="el" href="a00134_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> x, <a class="el" href="a00134_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> y)</td></tr>
-<tr class="memdesc:aac0685da0bbf1115c2b76b0aedf7e1f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a pixel on the screen.  <a href="a00056_aac0685da0bbf1115c2b76b0aedf7e1f0.html#aac0685da0bbf1115c2b76b0aedf7e1f0">More...</a><br /></td></tr>
-<tr class="separator:aac0685da0bbf1115c2b76b0aedf7e1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2c8df7a20b47341b70d97a7ff21d86ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056_a2c8df7a20b47341b70d97a7ff21d86ea.html#a2c8df7a20b47341b70d97a7ff21d86ea">drawchar</a> (unsigned char c, <a class="el" href="a00134_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> x, <a class="el" href="a00134_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a> y, <a class="el" href="a00134_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> fgcolor, <a class="el" href="a00134_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> bgcolor)</td></tr>
-<tr class="memdesc:a2c8df7a20b47341b70d97a7ff21d86ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Puts a ASCII character on the screen.  <a href="a00056_a2c8df7a20b47341b70d97a7ff21d86ea.html#a2c8df7a20b47341b70d97a7ff21d86ea">More...</a><br /></td></tr>
-<tr class="separator:a2c8df7a20b47341b70d97a7ff21d86ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4be32a0e7b95807829c601d0841ae307"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056_a4be32a0e7b95807829c601d0841ae307.html#a4be32a0e7b95807829c601d0841ae307">setvgamode</a> (<a class="el" href="a00056_a6c24a97d8805ea5216f34aa30ae27cec.html#a6c24a97d8805ea5216f34aa30ae27cec">vgamode_t</a> <a class="el" href="a00167_af93b0649fdd1bea5b6d29ed37205aa2c.html#af93b0649fdd1bea5b6d29ed37205aa2c">vgamode</a>)</td></tr>
-<tr class="separator:a4be32a0e7b95807829c601d0841ae307"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb01dc16ea34f0a6de3d10d732b6c536"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056_abb01dc16ea34f0a6de3d10d732b6c536.html#abb01dc16ea34f0a6de3d10d732b6c536">setfont</a> (unsigned char *font)</td></tr>
-<tr class="memdesc:abb01dc16ea34f0a6de3d10d732b6c536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the font.  <a href="a00056_abb01dc16ea34f0a6de3d10d732b6c536.html#abb01dc16ea34f0a6de3d10d732b6c536">More...</a><br /></td></tr>
-<tr class="separator:abb01dc16ea34f0a6de3d10d732b6c536"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:a586c0ac088deb9338d9b1464dcd587c8"><td class="memItemLeft" align="right" valign="top">unsigned char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056_a586c0ac088deb9338d9b1464dcd587c8.html#a586c0ac088deb9338d9b1464dcd587c8">vgafont</a></td></tr>
-<tr class="separator:a586c0ac088deb9338d9b1464dcd587c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfb6f6d615183fc2f71e79dfbadfe27d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056_acfb6f6d615183fc2f71e79dfbadfe27d.html#acfb6f6d615183fc2f71e79dfbadfe27d">init_serial</a> ()</td></tr>
+<tr class="separator:acfb6f6d615183fc2f71e79dfbadfe27d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af10f0e64ba89e8635aa7245ca08297c5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056_af10f0e64ba89e8635aa7245ca08297c5.html#af10f0e64ba89e8635aa7245ca08297c5">serial_received</a> ()</td></tr>
+<tr class="separator:af10f0e64ba89e8635aa7245ca08297c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad343a7018f74662f794968dfa0523841"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056_ad343a7018f74662f794968dfa0523841.html#ad343a7018f74662f794968dfa0523841">read_serial</a> ()</td></tr>
+<tr class="separator:ad343a7018f74662f794968dfa0523841"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01fe5504f7b8f4eee1545737495bae76"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056_a01fe5504f7b8f4eee1545737495bae76.html#a01fe5504f7b8f4eee1545737495bae76">is_transmit_empty</a> ()</td></tr>
+<tr class="separator:a01fe5504f7b8f4eee1545737495bae76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aac3c84e21fffc4696d8969ca6955bfc8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056_aac3c84e21fffc4696d8969ca6955bfc8.html#aac3c84e21fffc4696d8969ca6955bfc8">write_serial</a> (char a)</td></tr>
+<tr class="separator:aac3c84e21fffc4696d8969ca6955bfc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabbe45d6670f606c53ba38a5fb14b650"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00056_aabbe45d6670f606c53ba38a5fb14b650.html#aabbe45d6670f606c53ba38a5fb14b650">write_serial_string</a> (char *a)</td></tr>
+<tr class="separator:aabbe45d6670f606c53ba38a5fb14b650"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

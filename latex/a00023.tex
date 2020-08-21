@@ -8,7 +8,7 @@ This graph shows which files directly or indirectly include this file\+:
 \subsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{a00200}{bios32\+\_\+sdh}
+struct \hyperlink{a00206}{bios32\+\_\+sdh}
 \end{DoxyCompactItemize}
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
@@ -20,7 +20,7 @@ struct \hyperlink{a00200}{bios32\+\_\+sdh}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \hyperlink{a00200}{bios32\+\_\+sdh} \hyperlink{a00023_a0b697968013559ff92bb6b61bf2ffab9_a0b697968013559ff92bb6b61bf2ffab9}{bios32\+\_\+sdh\+\_\+t}
+typedef struct \hyperlink{a00206}{bios32\+\_\+sdh} \hyperlink{a00023_a0b697968013559ff92bb6b61bf2ffab9_a0b697968013559ff92bb6b61bf2ffab9}{bios32\+\_\+sdh\+\_\+t}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -30,7 +30,7 @@ typedef struct \hyperlink{a00200}{bios32\+\_\+sdh} \hyperlink{a00023_a0b69796801
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-volatile \hyperlink{a00134_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00023_a3bf8c7fb9844d36624b622e275c175ed_a3bf8c7fb9844d36624b622e275c175ed}{bios32\+\_\+state}
+volatile \hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00023_a3bf8c7fb9844d36624b622e275c175ed_a3bf8c7fb9844d36624b622e275c175ed}{bios32\+\_\+state}
 \end{DoxyCompactItemize}
 
 
@@ -62,7 +62,7 @@ Definition at line 4 of file bios32.\+h.
 \index{bios32.\+h@{bios32.\+h}!bios32\+\_\+sdh\+\_\+t@{bios32\+\_\+sdh\+\_\+t}}
 \index{bios32\+\_\+sdh\+\_\+t@{bios32\+\_\+sdh\+\_\+t}!bios32.\+h@{bios32.\+h}}
 \subsubsection{\texorpdfstring{bios32\+\_\+sdh\+\_\+t}{bios32\_sdh\_t}}
-{\footnotesize\ttfamily typedef struct \hyperlink{a00200}{bios32\+\_\+sdh}  \hyperlink{a00023_a0b697968013559ff92bb6b61bf2ffab9_a0b697968013559ff92bb6b61bf2ffab9}{bios32\+\_\+sdh\+\_\+t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00206}{bios32\+\_\+sdh}  \hyperlink{a00023_a0b697968013559ff92bb6b61bf2ffab9_a0b697968013559ff92bb6b61bf2ffab9}{bios32\+\_\+sdh\+\_\+t}}
 
 
 
@@ -80,8 +80,8 @@ Definition at line 4 of file bios32.\+c.
 
 \begin{DoxyCode}
 4                            \{
-5     \hyperlink{a00200}{bios32\_sdh\_t}* sdh = (\hyperlink{a00200}{bios32\_sdh\_t}*)0xe000;
-6     \textcolor{keywordflow}{if}(sdh->\hyperlink{a00200_a5d56b651b0453b6078d0efd500369fe0_a5d56b651b0453b6078d0efd500369fe0}{signature} != \hyperlink{a00023_ab76c5cf329d92fbb28daf7b57ea1744d_ab76c5cf329d92fbb28daf7b57ea1744d}{BIOS32\_SIGNATURE}) \{
+5     \hyperlink{a00206}{bios32\_sdh\_t}* sdh = (\hyperlink{a00206}{bios32\_sdh\_t}*)0xe000;
+6     \textcolor{keywordflow}{if}(sdh->\hyperlink{a00206_a5d56b651b0453b6078d0efd500369fe0_a5d56b651b0453b6078d0efd500369fe0}{signature} != \hyperlink{a00023_ab76c5cf329d92fbb28daf7b57ea1744d_ab76c5cf329d92fbb28daf7b57ea1744d}{BIOS32\_SIGNATURE}) \{
 7         \hyperlink{a00023_a3bf8c7fb9844d36624b622e275c175ed_a3bf8c7fb9844d36624b622e275c175ed}{bios32\_state} = \textcolor{keyword}{false};
 8         \textcolor{keywordflow}{return} sdh;
 9     \} \textcolor{keywordflow}{else} \{
@@ -97,7 +97,7 @@ Definition at line 4 of file bios32.\+c.
 \index{bios32.\+h@{bios32.\+h}!bios32\+\_\+state@{bios32\+\_\+state}}
 \index{bios32\+\_\+state@{bios32\+\_\+state}!bios32.\+h@{bios32.\+h}}
 \subsubsection{\texorpdfstring{bios32\+\_\+state}{bios32\_state}}
-{\footnotesize\ttfamily volatile \hyperlink{a00134_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} bios32\+\_\+state}
+{\footnotesize\ttfamily volatile \hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} bios32\+\_\+state}
 
 
 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/vxbfs.c File Reference</title>
+<title>VitalityX: libc/vitality/vlib.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -46,15 +46,16 @@ $(function() {
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">vxbfs.c File Reference</div>  </div>
+<div class="title">vlib.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00194_source.html">vxbfs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00179_source.html">vfs.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00194_source.html">vlib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00140_source.html">../types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00116_source.html">../isr.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for vxbfs.c:</div>
+Include dependency graph for vlib.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00192.png" border="0" usemap="#libc_2vitality_2vxbfs_8c" alt=""/></div>
+<div class="center"><img src="a00192.png" border="0" usemap="#libc_2vitality_2vlib_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
@@ -62,10 +63,12 @@ Include dependency graph for vxbfs.c:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:afa5caeb58da2ae814ac3adbb167a77fe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00179_aa5445a6474a23ee3e7756d432dfa4ba1.html#aa5445a6474a23ee3e7756d432dfa4ba1">file_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00191_afa5caeb58da2ae814ac3adbb167a77fe.html#afa5caeb58da2ae814ac3adbb167a77fe">loadfile</a> (<a class="el" href="a00194_abb93e2407af0d8fe0f5629ce6456c6f9.html#abb93e2407af0d8fe0f5629ce6456c6f9">vxbfs_file_t</a> *<a class="el" href="a00296.html">file</a>)</td></tr>
-<tr class="separator:afa5caeb58da2ae814ac3adbb167a77fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a078a66e7d52fd4a6df768277b605199c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_af6a258d8f3ee5206d682d799316314b1.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00191_a078a66e7d52fd4a6df768277b605199c.html#a078a66e7d52fd4a6df768277b605199c">validvxbfs</a> (<a class="el" href="a00194_ac5678b6d5dd5ed5ca86e5ccd4c30d39d.html#ac5678b6d5dd5ed5ca86e5ccd4c30d39d">vxbfs_header_t</a> *header)</td></tr>
-<tr class="separator:a078a66e7d52fd4a6df768277b605199c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee69008de31826f28854c29a54cb315e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00191_aee69008de31826f28854c29a54cb315e.html#aee69008de31826f28854c29a54cb315e">loadvlib</a> (<a class="el" href="a00194_a2d9000b4fbb25c5ed2950a2d8f4921d5.html#a2d9000b4fbb25c5ed2950a2d8f4921d5">vlibdesriptor_t</a> *d)</td></tr>
+<tr class="separator:aee69008de31826f28854c29a54cb315e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeb1b55b301de7b4c7aa360c387c3ef9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00194_a97c1a7136f2ab06368e93c2d7533d619.html#a97c1a7136f2ab06368e93c2d7533d619">vlib_entry_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00191_aeeb1b55b301de7b4c7aa360c387c3ef9.html#aeeb1b55b301de7b4c7aa360c387c3ef9">getvlibentry</a> (int id)</td></tr>
+<tr class="separator:aeeb1b55b301de7b4c7aa360c387c3ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268c6e227f2761807244c0695d78d01c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00191_a268c6e227f2761807244c0695d78d01c.html#a268c6e227f2761807244c0695d78d01c">runvlib</a> (<a class="el" href="a00140_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
+<tr class="separator:a268c6e227f2761807244c0695d78d01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

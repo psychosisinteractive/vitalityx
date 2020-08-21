@@ -33,7 +33,7 @@ void \hyperlink{a00038_a1db933be72a0547c4070ba55e6697ba2_a1db933be72a0547c4070ba
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00134_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00038_a6ddd5223379778858edc46ffbec19775_a6ddd5223379778858edc46ffbec19775}{wfk} = \hyperlink{a00134_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}{false}
+\hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00038_a6ddd5223379778858edc46ffbec19775_a6ddd5223379778858edc46ffbec19775}{wfk} = \hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}{false}
 \item 
 char \hyperlink{a00038_ade374650022cb30c4f5591a8dafad685_ade374650022cb30c4f5591a8dafad685}{lkey} = 0
 \item 
@@ -89,11 +89,11 @@ Definition at line 129 of file keyboard.\+c.
 \begin{DoxyCode}
 129              \{
 130     \hyperlink{a00038_a6ddd5223379778858edc46ffbec19775_a6ddd5223379778858edc46ffbec19775}{wfk} = \textcolor{keyword}{true};
-131     \hyperlink{a00167_afe197dc4dbfa6036ef04abd2aeeeca2d_afe197dc4dbfa6036ef04abd2aeeeca2d}{enable\_cursor}(0,15);
+131     \hyperlink{a00173_afe197dc4dbfa6036ef04abd2aeeeca2d_afe197dc4dbfa6036ef04abd2aeeeca2d}{enable\_cursor}(0,15);
 132     \textcolor{keywordflow}{while}(\hyperlink{a00038_a6ddd5223379778858edc46ffbec19775_a6ddd5223379778858edc46ffbec19775}{wfk})
 133         ;
-134     \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\hyperlink{a00038_ade374650022cb30c4f5591a8dafad685_ade374650022cb30c4f5591a8dafad685}{lkey});
-135     \hyperlink{a00167_a3d09038c7b6436e60b228f2f3f451f6a_a3d09038c7b6436e60b228f2f3f451f6a}{disable\_cursor}();
+134     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\hyperlink{a00038_ade374650022cb30c4f5591a8dafad685_ade374650022cb30c4f5591a8dafad685}{lkey});
+135     \hyperlink{a00173_a3d09038c7b6436e60b228f2f3f451f6a_a3d09038c7b6436e60b228f2f3f451f6a}{disable\_cursor}();
 136     \textcolor{keywordflow}{return} \hyperlink{a00038_ade374650022cb30c4f5591a8dafad685_ade374650022cb30c4f5591a8dafad685}{lkey};
 137 \}
 \end{DoxyCode}
@@ -110,7 +110,7 @@ Definition at line 125 of file keyboard.\+c.
 
 \begin{DoxyCode}
 125               \{
-126     \textcolor{keywordflow}{return} \hyperlink{a00050_ad343a7018f74662f794968dfa0523841_ad343a7018f74662f794968dfa0523841}{read\_serial}();
+126     \textcolor{keywordflow}{return} \hyperlink{a00056_ad343a7018f74662f794968dfa0523841_ad343a7018f74662f794968dfa0523841}{read\_serial}();
 127 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00038_ab88a2e96bbe585e228a5b201435c0240_ab88a2e96bbe585e228a5b201435c0240}\label{a00038_ab88a2e96bbe585e228a5b201435c0240_ab88a2e96bbe585e228a5b201435c0240}} 
@@ -151,71 +151,71 @@ Definition at line 55 of file keyboard.\+c.
 \begin{DoxyCode}
 56 \{
 57     \textcolor{comment}{// disable devices}
-58     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xad);
-59     \textcolor{keywordflow}{while}(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & \hyperlink{a00038_a8aa66e8bc828742fb4819d7cd2df598d_a8aa66e8bc828742fb4819d7cd2df598d}{SR\_CLEAR})
+58     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xad);
+59     \textcolor{keywordflow}{while}(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & \hyperlink{a00038_a8aa66e8bc828742fb4819d7cd2df598d_a8aa66e8bc828742fb4819d7cd2df598d}{SR\_CLEAR})
 60         ;
-61     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xa7);
-62     \textcolor{keywordflow}{while}(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
+61     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xa7);
+62     \textcolor{keywordflow}{while}(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
 63         ;
 64     \textcolor{comment}{// flush output}
-65     \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
+65     \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
 66     \textcolor{comment}{// set config}
-67     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0x20);
-68     \textcolor{keywordflow}{while}(!(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & \hyperlink{a00038_ac9efa716f8185bae296975136b510c30_ac9efa716f8185bae296975136b510c30}{SR\_RESPONSE}))
+67     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0x20);
+68     \textcolor{keywordflow}{while}(!(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & \hyperlink{a00038_ac9efa716f8185bae296975136b510c30_ac9efa716f8185bae296975136b510c30}{SR\_RESPONSE}))
 69         ;
-70     \hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} config = \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
+70     \hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} config = \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
 71     \textcolor{keywordtype}{bool} dualchannel = \textcolor{keyword}{false};
 72     \textcolor{keywordflow}{if}(config & \hyperlink{a00038_addafe32b109f94a57ae4bf1a1dca05e0_addafe32b109f94a57ae4bf1a1dca05e0}{SR\_DUALCHANNEL})
 73         dualchannel = \textcolor{keyword}{true};
 74     config &= ~(1 << 0);
 75     config &= ~(1 << 1);
 76     config &= ~(1 << 6);
-77     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0x60);
-78     \textcolor{keywordflow}{while}(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
+77     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0x60);
+78     \textcolor{keywordflow}{while}(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
 79         ;
-80     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x60, config);
+80     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x60, config);
 81 
 82     \textcolor{comment}{// do self test}
-83     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xaa);
-84     \textcolor{keywordflow}{while}(!(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_RESPONSE))
+83     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xaa);
+84     \textcolor{keywordflow}{while}(!(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_RESPONSE))
 85         ;
-86     \hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} response = \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
+86     \hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} response = \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
 87     \textcolor{keywordflow}{if}(response == 0x55) \{
-88         \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"PS/2 OK.\(\backslash\)n"});
+88         \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"PS/2 OK.\(\backslash\)n"});
 89     \} \textcolor{keywordflow}{else} \{
-90         \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"PS/2 responded with 0xFC!!! The keyboard will not work.\(\backslash\)n"});
+90         \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"PS/2 responded with 0xFC!!! The keyboard will not work.\(\backslash\)n"});
 91     \}
-92     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xab);
-93     \textcolor{keywordflow}{while}(!(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_RESPONSE))
+92     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xab);
+93     \textcolor{keywordflow}{while}(!(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_RESPONSE))
 94         ;
-95     response = \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
+95     response = \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
 96     \textcolor{keywordflow}{switch}(response) \{
 97         \textcolor{keywordflow}{case} 0x00:
-98             \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard test passed!\(\backslash\)n"});
+98             \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard test passed!\(\backslash\)n"});
 99             \textcolor{keywordflow}{break};
 100         \textcolor{keywordflow}{case} 0x01:
-101             \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard clock line struck low!\(\backslash\)n"});;
+101             \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard clock line struck low!\(\backslash\)n"});;
 102             \textcolor{keywordflow}{break};
 103         \textcolor{keywordflow}{case} 0x02:
-104             \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard clock line struck high!\(\backslash\)n"});
+104             \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard clock line struck high!\(\backslash\)n"});
 105             \textcolor{keywordflow}{break};
 106         \textcolor{keywordflow}{case} 0x03:
-107             \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard data line struck low!\(\backslash\)n"});
+107             \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard data line struck low!\(\backslash\)n"});
 108             \textcolor{keywordflow}{break};
 109         \textcolor{keywordflow}{case} 0x04:
-110             \hyperlink{a00167_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard data line struck high!\(\backslash\)n"});
+110             \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard data line struck high!\(\backslash\)n"});
 111             \textcolor{keywordflow}{break};
 112     \}
-113     \textcolor{keywordflow}{while}(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
+113     \textcolor{keywordflow}{while}(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
 114         ;
-115     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xae);
-116     \textcolor{keywordflow}{while}(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
+115     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xae);
+116     \textcolor{keywordflow}{while}(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
 117         ;
-118     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0x60);
-119     \textcolor{keywordflow}{while}(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
+118     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0x60);
+119     \textcolor{keywordflow}{while}(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
 120         ;
 121     config |= 1 << 0;
-122     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x60, config);
+122     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x60, config);
 123 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00038_a1db933be72a0547c4070ba55e6697ba2_a1db933be72a0547c4070ba55e6697ba2}\label{a00038_a1db933be72a0547c4070ba55e6697ba2_a1db933be72a0547c4070ba55e6697ba2}} 
@@ -233,10 +233,10 @@ Definition at line 151 of file keyboard.\+c.
 151                                  \{
 152     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} status;
 153     \textcolor{keywordtype}{char} keycode;
-154     status = \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00041_ab79ca089665bc7f5cc151883d1bc69ed_ab79ca089665bc7f5cc151883d1bc69ed}{KEYBOARD\_STATUS\_PORT});
+154     status = \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00041_ab79ca089665bc7f5cc151883d1bc69ed_ab79ca089665bc7f5cc151883d1bc69ed}{KEYBOARD\_STATUS\_PORT});
 155     \textcolor{comment}{/* Lowest bit of status will be set if buffer is not empty */}
 156     \textcolor{keywordflow}{if} (status & 0x01) \{
-157         keycode = \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00041_a49e0a04e81098085d2948c1e9f8c99cb_a49e0a04e81098085d2948c1e9f8c99cb}{KEYBOARD\_DATA\_PORT});
+157         keycode = \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00041_a49e0a04e81098085d2948c1e9f8c99cb_a49e0a04e81098085d2948c1e9f8c99cb}{KEYBOARD\_DATA\_PORT});
 158         \textcolor{keywordflow}{if}(keycode < 0)
 159             \textcolor{keywordflow}{return};
 160         \hyperlink{a00038_ade374650022cb30c4f5591a8dafad685_ade374650022cb30c4f5591a8dafad685}{lkey} = keycode;
@@ -271,7 +271,7 @@ Definition at line 9 of file keyboard.\+c.
 \index{keyboard.\+c@{keyboard.\+c}!wfk@{wfk}}
 \index{wfk@{wfk}!keyboard.\+c@{keyboard.\+c}}
 \subsubsection{\texorpdfstring{wfk}{wfk}}
-{\footnotesize\ttfamily \hyperlink{a00134_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} wfk = \hyperlink{a00134_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}{false}}
+{\footnotesize\ttfamily \hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} wfk = \hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1ae9de385ef6fe9bf3360d1038396b884c}{false}}
 
 
 

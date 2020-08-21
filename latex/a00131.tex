@@ -1,5 +1,167 @@
-\hypertarget{a00131}{}\section{libc/types.c File Reference}
-\label{a00131}\index{libc/types.\+c@{libc/types.\+c}}
+\hypertarget{a00131}{}\section{libc/system.c File Reference}
+\label{a00131}\index{libc/system.\+c@{libc/system.\+c}}
+{\ttfamily \#include \char`\"{}vitality/tty.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}system.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
-Include dependency graph for types.\+c\+:
+{\ttfamily \#include \char`\"{}isr.\+h\char`\"{}}\newline
+Include dependency graph for system.\+c\+:
 % FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{a00131_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}{pokeb} (\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$addr, \hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} offset, \hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} val)
+\begin{DoxyCompactList}\small\item\em Poke Byte. \end{DoxyCompactList}\item 
+\hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00131_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}{peekb} (\hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} $\ast$addr, \hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} offset)
+\begin{DoxyCompactList}\small\item\em Peek Byte. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{a00131_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset} (void $\ast$dest, int val, \hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} len)
+\begin{DoxyCompactList}\small\item\em Memset. \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{a00131_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy} (void $\ast$dstptr, const void $\ast$srcptr, \hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} size)
+\begin{DoxyCompactList}\small\item\em Memcpy. \end{DoxyCompactList}\item 
+void \hyperlink{a00131_afcc76b3d055f3137e37a9c1ce82d0b95_afcc76b3d055f3137e37a9c1ce82d0b95}{sleep} (int duration)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{a00131_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}\label{a00131_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}} 
+\index{system.\+c@{system.\+c}!memcpy@{memcpy}}
+\index{memcpy@{memcpy}!system.\+c@{system.\+c}}
+\subsubsection{\texorpdfstring{memcpy()}{memcpy()}}
+{\footnotesize\ttfamily void$\ast$ memcpy (\begin{DoxyParamCaption}\item[{void $\ast$}]{dstptr,  }\item[{const void $\ast$}]{srcptr,  }\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{size }\end{DoxyParamCaption})}
+
+
+
+Memcpy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dstptr} & Destination pointer \\
+\hline
+{\em srcptr} & Source pointer \\
+\hline
+{\em size} & Size \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 21 of file system.\+c.
+
+
+\begin{DoxyCode}
+21                                                             \{
+22     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* dst = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*) dstptr;
+23     \textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}* src = (\textcolor{keyword}{const} \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}*) srcptr;
+24     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{size\_t} i = 0; i < size; i++)
+25         dst[i] = src[i];
+26     \textcolor{keywordflow}{return} dstptr;
+27 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00131_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}\label{a00131_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}} 
+\index{system.\+c@{system.\+c}!memset@{memset}}
+\index{memset@{memset}!system.\+c@{system.\+c}}
+\subsubsection{\texorpdfstring{memset()}{memset()}}
+{\footnotesize\ttfamily void$\ast$ memset (\begin{DoxyParamCaption}\item[{void $\ast$}]{dest,  }\item[{int}]{val,  }\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{len }\end{DoxyParamCaption})}
+
+
+
+Memset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em dest} & The destination \\
+\hline
+{\em val} & The value to set \\
+\hline
+{\em len} & The length of bytes to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 14 of file system.\+c.
+
+
+\begin{DoxyCode}
+15 \{
+16   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *ptr = dest;
+17   \textcolor{keywordflow}{while} (len-- > 0)
+18     *ptr++ = val;
+19   \textcolor{keywordflow}{return} dest;
+20 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00131_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}\label{a00131_a353956c1fd65c7ed787836534fc9354e_a353956c1fd65c7ed787836534fc9354e}} 
+\index{system.\+c@{system.\+c}!peekb@{peekb}}
+\index{peekb@{peekb}!system.\+c@{system.\+c}}
+\subsubsection{\texorpdfstring{peekb()}{peekb()}}
+{\footnotesize\ttfamily \hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} peekb (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} $\ast$}]{addr,  }\item[{\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{offset }\end{DoxyParamCaption})}
+
+
+
+Peek Byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The address of the byte \\
+\hline
+{\em offset} & The offset from the address \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 10 of file system.\+c.
+
+
+\begin{DoxyCode}
+10                                               \{
+11     addr+=offset;
+12     \textcolor{keywordflow}{return} *addr;
+13 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00131_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}\label{a00131_aa291c9926b84df379482632e80ec7c47_aa291c9926b84df379482632e80ec7c47}} 
+\index{system.\+c@{system.\+c}!pokeb@{pokeb}}
+\index{pokeb@{pokeb}!system.\+c@{system.\+c}}
+\subsubsection{\texorpdfstring{pokeb()}{pokeb()}}
+{\footnotesize\ttfamily void pokeb (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} $\ast$}]{addr,  }\item[{\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{offset,  }\item[{\hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{val }\end{DoxyParamCaption})}
+
+
+
+Poke Byte. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em addr} & The address of the byte \\
+\hline
+{\em offset} & The offset from the address \\
+\hline
+{\em val} & The value \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 6 of file system.\+c.
+
+
+\begin{DoxyCode}
+6                                                          \{
+7     addr+=offset;
+8     *addr=val;
+9 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00131_afcc76b3d055f3137e37a9c1ce82d0b95_afcc76b3d055f3137e37a9c1ce82d0b95}\label{a00131_afcc76b3d055f3137e37a9c1ce82d0b95_afcc76b3d055f3137e37a9c1ce82d0b95}} 
+\index{system.\+c@{system.\+c}!sleep@{sleep}}
+\index{sleep@{sleep}!system.\+c@{system.\+c}}
+\subsubsection{\texorpdfstring{sleep()}{sleep()}}
+{\footnotesize\ttfamily void sleep (\begin{DoxyParamCaption}\item[{int}]{duration }\end{DoxyParamCaption})}
+
+
+
+Definition at line 29 of file system.\+c.
+
+
+\begin{DoxyCode}
+29                          \{
+30     \textcolor{keywordtype}{int} time = duration;
+31     \textcolor{keywordflow}{do} \{
+32       time--;
+33       \_\_asm\_\_(\textcolor{stringliteral}{"nop"});
+34     \}\textcolor{keywordflow}{while}(time = 0);
+35 \}
+\end{DoxyCode}

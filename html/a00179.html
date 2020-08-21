@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/vfs.h File Reference</title>
+<title>VitalityX: libc/vitality/vep.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,42 +44,29 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a> &#124;
-<a href="#typedef-members">Typedefs</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">vfs.h File Reference</div>  </div>
+<div class="title">vep.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
+<div class="textblock"><code>#include &quot;<a class="el" href="a00182_source.html">vep.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for vep.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00181.png" border="0" usemap="#libc_2vitality_2vfs_8hdep" alt=""/></div>
+<div class="center"><img src="a00180.png" border="0" usemap="#libc_2vitality_2vep_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
 <p><a href="a00179_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00296.html">file</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00300.html">pte</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Partition Table Entry.  <a href="a00300.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00304.html">mbr</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master Boot Record.  <a href="a00304.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:aa5445a6474a23ee3e7756d432dfa4ba1"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00296.html">file</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00179_aa5445a6474a23ee3e7756d432dfa4ba1.html#aa5445a6474a23ee3e7756d432dfa4ba1">file_t</a></td></tr>
-<tr class="separator:aa5445a6474a23ee3e7756d432dfa4ba1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeef6bb6b6bbfd4d912338e1e5c6938a5"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00300.html">pte</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00179_aeef6bb6b6bbfd4d912338e1e5c6938a5.html#aeef6bb6b6bbfd4d912338e1e5c6938a5">pte_t</a></td></tr>
-<tr class="memdesc:aeef6bb6b6bbfd4d912338e1e5c6938a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Partition Table Entry.  <a href="a00179_aeef6bb6b6bbfd4d912338e1e5c6938a5.html#aeef6bb6b6bbfd4d912338e1e5c6938a5">More...</a><br /></td></tr>
-<tr class="separator:aeef6bb6b6bbfd4d912338e1e5c6938a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb8ab3f846ea25ce3271bfabb17fc767"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00304.html">mbr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00179_adb8ab3f846ea25ce3271bfabb17fc767.html#adb8ab3f846ea25ce3271bfabb17fc767">mbr_t</a></td></tr>
-<tr class="memdesc:adb8ab3f846ea25ce3271bfabb17fc767"><td class="mdescLeft">&#160;</td><td class="mdescRight">Master Boot Record.  <a href="a00179_adb8ab3f846ea25ce3271bfabb17fc767.html#adb8ab3f846ea25ce3271bfabb17fc767">More...</a><br /></td></tr>
-<tr class="separator:adb8ab3f846ea25ce3271bfabb17fc767"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ad5530515939c1e3332746affa700c759"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00179_ad5530515939c1e3332746affa700c759.html#ad5530515939c1e3332746affa700c759">loadvep</a> (<a class="el" href="a00182_a78392c340e1fe1be344df81d1438b74f.html#a78392c340e1fe1be344df81d1438b74f">vepheader_t</a> vep, char *data)</td></tr>
+<tr class="memdesc:ad5530515939c1e3332746affa700c759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a VEP with a VEPHeader.  <a href="a00179_ad5530515939c1e3332746affa700c759.html#ad5530515939c1e3332746affa700c759">More...</a><br /></td></tr>
+<tr class="separator:ad5530515939c1e3332746affa700c759"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d608b906676086d77937044205aad33"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00179_a7d608b906676086d77937044205aad33.html#a7d608b906676086d77937044205aad33">loadvepf</a> (<a class="el" href="a00182_af285fc2949acac5b7aa6f065c8811960.html#af285fc2949acac5b7aa6f065c8811960">vepfile_t</a> vep)</td></tr>
+<tr class="memdesc:a7d608b906676086d77937044205aad33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a VEP with a VEPFile.  <a href="a00179_a7d608b906676086d77937044205aad33.html#a7d608b906676086d77937044205aad33">More...</a><br /></td></tr>
+<tr class="separator:a7d608b906676086d77937044205aad33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

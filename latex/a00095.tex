@@ -1,86 +1,86 @@
-\hypertarget{a00095}{}\section{libc/gdt.c File Reference}
-\label{a00095}\index{libc/gdt.\+c@{libc/gdt.\+c}}
-{\ttfamily \#include \char`\"{}gdt.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}vitality/inline.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}page.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}ext/debug.\+h\char`\"{}}\newline
-Include dependency graph for gdt.\+c\+:
+\hypertarget{a00095}{}\section{libc/g++/cpp\+\_\+classdef.cpp File Reference}
+\label{a00095}\index{libc/g++/cpp\+\_\+classdef.\+cpp@{libc/g++/cpp\+\_\+classdef.\+cpp}}
+{\ttfamily \#include \char`\"{}../vitality/tty.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}cpp\+\_\+classdef.\+h\char`\"{}}\newline
+Include dependency graph for cpp\+\_\+classdef.\+cpp\+:
 % FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{a00095_abbdfa8f54b7fc7761d12ecc473f87bc4_abbdfa8f54b7fc7761d12ecc473f87bc4}{C\+PP}
+\begin{DoxyCompactList}\small\item\em This flag means the source file is being compiled under C++ mode. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00095_a86bb50044169930202cc403376ef40c3_a86bb50044169930202cc403376ef40c3}{init\+\_\+gdt} ()
-\begin{DoxyCompactList}\small\item\em Loads the G\+DT (Global Descriptor Table) \end{DoxyCompactList}\item 
-void \hyperlink{a00095_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\+\_\+set\+\_\+gate} (\hyperlink{a00134_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\+\_\+t} num, \hyperlink{a00134_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base}, \hyperlink{a00134_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00104_ab28e82ae69032cb4ad3ec3a0be3d7129_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit}, \hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} \hyperlink{a00098_a8b0d6200bc639dd37ff68847a0adde5f_a8b0d6200bc639dd37ff68847a0adde5f}{access}, \hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} gran)
-\begin{DoxyCompactList}\small\item\em Set the value of one G\+DT entry. \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \hyperlink{a00095_a6be7d9ce80c86f5178635fa86c2dd5e7_a6be7d9ce80c86f5178635fa86c2dd5e7}{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual} ()
+\begin{DoxyCompactList}\small\item\em C++ Pure Virtual Function, called when a virtual function is required Y\+ET there is nothing to handle its call. \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{a00095_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}{c\+\_\+stc} (const char string\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Converts a const char array into a char$\ast$. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{a00095_abbdfa8f54b7fc7761d12ecc473f87bc4_abbdfa8f54b7fc7761d12ecc473f87bc4}\label{a00095_abbdfa8f54b7fc7761d12ecc473f87bc4_abbdfa8f54b7fc7761d12ecc473f87bc4}} 
+\index{cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}!C\+PP@{C\+PP}}
+\index{C\+PP@{C\+PP}!cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}}
+\subsubsection{\texorpdfstring{C\+PP}{CPP}}
+{\footnotesize\ttfamily \#define C\+PP}
+
+
+
+This flag means the source file is being compiled under C++ mode. 
+
+
+
+Definition at line 4 of file cpp\+\_\+classdef.\+cpp.
+
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00095_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}\label{a00095_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}} 
-\index{gdt.\+c@{gdt.\+c}!gdt\+\_\+set\+\_\+gate@{gdt\+\_\+set\+\_\+gate}}
-\index{gdt\+\_\+set\+\_\+gate@{gdt\+\_\+set\+\_\+gate}!gdt.\+c@{gdt.\+c}}
-\subsubsection{\texorpdfstring{gdt\+\_\+set\+\_\+gate()}{gdt\_set\_gate()}}
-{\footnotesize\ttfamily void gdt\+\_\+set\+\_\+gate (\begin{DoxyParamCaption}\item[{\hyperlink{a00134_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\+\_\+t}}]{num,  }\item[{\hyperlink{a00134_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{base,  }\item[{\hyperlink{a00134_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t}}]{limit,  }\item[{\hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{access,  }\item[{\hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t}}]{gran }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00095_a6be7d9ce80c86f5178635fa86c2dd5e7_a6be7d9ce80c86f5178635fa86c2dd5e7}\label{a00095_a6be7d9ce80c86f5178635fa86c2dd5e7_a6be7d9ce80c86f5178635fa86c2dd5e7}} 
+\index{cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}!\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual@{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual}}
+\index{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual@{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual}!cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}}
+\subsubsection{\texorpdfstring{\+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual()}{\_\_cxa\_pure\_virtual()}}
+{\footnotesize\ttfamily void \+\_\+\+\_\+cxa\+\_\+pure\+\_\+virtual (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Set the value of one G\+DT entry. 
+C++ Pure Virtual Function, called when a virtual function is required Y\+ET there is nothing to handle its call. 
 
 
 
-Definition at line 38 of file gdt.\+c.
+Definition at line 13 of file cpp\+\_\+classdef.\+cpp.
 
 
 \begin{DoxyCode}
-39 \{
-40    \hyperlink{a00098_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00224_adba88eafea5f07167d181e4090cbcf49_adba88eafea5f07167d181e4090cbcf49}{base\_low}    = (\hyperlink{a00098_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} & 0xFFFF);
-41    \hyperlink{a00098_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00224_a986d46963d3ccdbec85b3749c1e09abf_a986d46963d3ccdbec85b3749c1e09abf}{base\_middle} = (\hyperlink{a00098_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} >> 16) & 0xFF;
-42    \hyperlink{a00098_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00224_aa08eedea9c0f707b9fa052b7567879c7_aa08eedea9c0f707b9fa052b7567879c7}{base\_high}   = (\hyperlink{a00098_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} >> 24) & 0xFF;
-43 
-44    \hyperlink{a00098_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00224_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2_a6bbf5ad7af7b8e8e7f7c26ec74d8c1b2}{limit\_low}   = (\hyperlink{a00098_ab28e82ae69032cb4ad3ec3a0be3d7129_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit} & 0xFFFF);
-45    \hyperlink{a00098_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00224_a7fb7b3704e10434dbe64564416cf1a25_a7fb7b3704e10434dbe64564416cf1a25}{granularity} = (\hyperlink{a00098_ab28e82ae69032cb4ad3ec3a0be3d7129_ab28e82ae69032cb4ad3ec3a0be3d7129}{limit} >> 16) & 0x0F;
-46 
-47    \hyperlink{a00098_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00224_a7fb7b3704e10434dbe64564416cf1a25_a7fb7b3704e10434dbe64564416cf1a25}{granularity} |= gran & 0xF0;
-48    \hyperlink{a00098_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries}[num].\hyperlink{a00224_ac07173385496c5b952e58ddc20f1cc99_ac07173385496c5b952e58ddc20f1cc99}{access}      = \hyperlink{a00098_a8b0d6200bc639dd37ff68847a0adde5f_a8b0d6200bc639dd37ff68847a0adde5f}{access};
-49 \}
+14 \{
+15     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\hyperlink{a00095_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}{c\_stc}(\textcolor{stringliteral}{"[KERNEL ERROR]\_\_cxa\_pure\_virtual called, No class spec,
+       halting"}));
+16     
+17 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00095_a86bb50044169930202cc403376ef40c3_a86bb50044169930202cc403376ef40c3}\label{a00095_a86bb50044169930202cc403376ef40c3_a86bb50044169930202cc403376ef40c3}} 
-\index{gdt.\+c@{gdt.\+c}!init\+\_\+gdt@{init\+\_\+gdt}}
-\index{init\+\_\+gdt@{init\+\_\+gdt}!gdt.\+c@{gdt.\+c}}
-\subsubsection{\texorpdfstring{init\+\_\+gdt()}{init\_gdt()}}
-{\footnotesize\ttfamily void init\+\_\+gdt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00095_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}\label{a00095_a88ab127aec9ce8ef76f95c9dc7edfe9a_a88ab127aec9ce8ef76f95c9dc7edfe9a}} 
+\index{cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}!c\+\_\+stc@{c\+\_\+stc}}
+\index{c\+\_\+stc@{c\+\_\+stc}!cpp\+\_\+classdef.\+cpp@{cpp\+\_\+classdef.\+cpp}}
+\subsubsection{\texorpdfstring{c\+\_\+stc()}{c\_stc()}}
+{\footnotesize\ttfamily char$\ast$ c\+\_\+stc (\begin{DoxyParamCaption}\item[{const char}]{string\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
 
 
 
-Loads the G\+DT (Global Descriptor Table) 
+Converts a const char array into a char$\ast$. 
 
 
+\begin{DoxyParams}{Parameters}
+{\em string} & The array \\
+\hline
+\end{DoxyParams}
 
-Definition at line 11 of file gdt.\+c.
+
+Definition at line 23 of file cpp\+\_\+classdef.\+cpp.
 
 
 \begin{DoxyCode}
-12 \{
-13     \hyperlink{a00071_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nSetting up GDT\(\backslash\)n"});
-14     \hyperlink{a00098_ab0888c07dfb9352ef76d05e63464cf0b_ab0888c07dfb9352ef76d05e63464cf0b}{gdt\_ptr}.\hyperlink{a00220_abf557ff0ca1cf3e130e8ab0086ab4ce6_abf557ff0ca1cf3e130e8ab0086ab4ce6}{limit} = (\textcolor{keyword}{sizeof}(\hyperlink{a00098_ab0b5c60e06a63669c783705278ff641e_ab0b5c60e06a63669c783705278ff641e}{gdt\_entry\_t}) * \hyperlink{a00098_abe29d44fbb5292a15af80cbb8e8a3a7d_abe29d44fbb5292a15af80cbb8e8a3a7d}{ENTRY\_NUM}) - 1;
-15     \hyperlink{a00098_ab0888c07dfb9352ef76d05e63464cf0b_ab0888c07dfb9352ef76d05e63464cf0b}{gdt\_ptr}.\hyperlink{a00220_a9b351f31bc261f3c2c3a87252350fb9c_a9b351f31bc261f3c2c3a87252350fb9c}{base}  = (\hyperlink{a00134_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00098_a29ae43d712f89a273f1e9e461b690218_a29ae43d712f89a273f1e9e461b690218}{gdt\_entries};
-16 
-17     \hyperlink{a00095_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(0, 0, 0, 0, 0);                \textcolor{comment}{// Null segment}
-18     \textcolor{comment}{// kernel}
-19     \hyperlink{a00071_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nSetting up Kernel gates\(\backslash\)n"});
-20     \hyperlink{a00095_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(1, 0, 0xFFFFFFFF, 0x9A, 0xCF); \textcolor{comment}{// Code segment}
-21     \hyperlink{a00095_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(2, 0, 0xFFFFFFFF, 0x92, 0xCF); \textcolor{comment}{// Data segment}
-22     \hyperlink{a00071_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nDone\(\backslash\)n"});
-23     \textcolor{comment}{// user mode}
-24     \hyperlink{a00071_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nSetting up User gates\(\backslash\)n"});
-25     \hyperlink{a00095_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(3, 0x00500000, 0x009FFFFF/4096, 0xFA, 0xCF); \textcolor{comment}{// User mode code segment}
-26     \hyperlink{a00095_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(4, 0x00100000, 0x00F00000/4096, 0xF2, 0xCF); \textcolor{comment}{// User mode data segment}
-27     \hyperlink{a00071_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nDone, flushing\(\backslash\)n"});
-28     \hyperlink{a00071_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nSetting up Misc gates\(\backslash\)n"});
-29     \hyperlink{a00095_abcf0775ea602ace125ae809475b6d8bf_abcf0775ea602ace125ae809475b6d8bf}{gdt\_set\_gate}(5, 0x000A0000, 0x1FFFF/4096, 0xF2, 0xCF); \textcolor{comment}{// User mode data segment}
-30 
-31 
-32     \hyperlink{a00098_a62397fecbde23244b570ae632fe926fa_a62397fecbde23244b570ae632fe926fa}{gdt\_flush}((\hyperlink{a00134_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00098_ab0888c07dfb9352ef76d05e63464cf0b_ab0888c07dfb9352ef76d05e63464cf0b}{gdt\_ptr});
-33 \}
+23                                  \{
+24     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{char}*)&\textcolor{keywordtype}{string}[0];
+25 \}
 \end{DoxyCode}

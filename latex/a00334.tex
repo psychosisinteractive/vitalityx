@@ -1,24 +1,52 @@
-The libc folder contains generic C++ libraries available for the user or the kernel. These libraries are licensed under the licensing agreement below U\+N\+L\+E\+SS specified in the respective source file.
+V\+EP (Vitality Executable Program) is the standard executable format for VitalityX. It has a lightweight header and the V\+EP is semi-\/allowed to choose where it loads within memory.
+
+The struct for defining a V\+EP header is as follows\+:
 
 
 \begin{DoxyCode}
-Modified MIT License
-
-Copyright (c) 2020-2021, Psychosis Interactive All rights reserved.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
-       associated documentation files (the "Software"), to deal in the Software without restriction, including without
-       limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
-       Software, and to permit persons to whom the Software is furnished to do so, subject to the following
-       conditions:
-
-The above copyright notice and this permission notice must be included in all copies or substantial
-       portions of the Software unless if said Software is closed source.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-       LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
-       SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-       ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-       OTHER DEALINGS IN THE SOFTWARE.
+typedef struct vepheader \{
+    ///
+    /// VEP signature, should be 'VP'
+    ///
+    char signature[2];
+    ///
+    /// VEP flags
+    /// 
+    char flags;
+    ///
+    /// Where the VEP should be loaded
+    ///
+    uint32\_t origin;
+    ///
+    /// VEP size
+    ///
+    uint32\_t vepsize;
+    ///
+    /// VEP mode
+    /// 
+    uint32\_t mode;
+    ///
+    /// Reserved data
+    /// 
+    char reserved[255];
+\} vepheader\_t;
 \end{DoxyCode}
- 
+
+
+After the vepheader is the raw binary which will be loaded in. Example\+:
+
+
+\begin{DoxyCode}
++---------------------------------------------+--------------------+
+|VEPHEADER                                    |PROGRAM DATA        |
+|signature flags origin vepsize mode reserved |                    |
++---------------------------------------------+--------------------+
+\end{DoxyCode}
+
+
+The current V\+EP modes are\+:
+\begin{DoxyEnumerate}
+\item V\+E\+P\+M\+O\+D\+E\+\_\+\+M\+O\+N\+O\+L\+I\+T\+H\+IC, interrupts to system are allowed, no V\+EP or V\+AM access
+\item V\+E\+P\+M\+O\+D\+E\+\_\+\+V\+L\+IB, interrupts to system are allowed, V\+EP access is allowed except V\+AM, shows a consent dialog
+\item V\+E\+P\+M\+O\+D\+E\+\_\+\+V\+AM, interrupts to system are allowed, V\+EP access and V\+AM access is allowed, requires permissions 
+\end{DoxyEnumerate}
