@@ -29,6 +29,7 @@ int kernel() {
     vlibd.len = 255;
     tty_pputstring("Setting up serial interface\n");
     init_serial();
+    set_serialmode(true);
     write_serial('H');
     write_serial('I');
     write_serial('\n');

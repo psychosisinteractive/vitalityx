@@ -57,5 +57,10 @@ void enable_cursor(uint8_t cursor_start, uint8_t cursor_end);
 ///@param y The Y position of the cursor.
 ///
 void update_cursor(int x, int y);
+///
+/// Sets the Serial Mode.
+///@param newmode The mode.
+///
+void set_serialmode(bool newmode);
 
 #endif

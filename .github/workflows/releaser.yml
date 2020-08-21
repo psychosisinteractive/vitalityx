@@ -31,6 +31,7 @@ jobs:
         make CFLAGS=-w PP=barebones-toolchain/cross/i686/bin/i686-elf-g++ CC=barebones-toolchain/cross/i686/bin/i686-elf-gcc LD=barebones-toolchain/cross/i686/bin/i686-elf-ld AS=barebones-toolchain/cross/i686/bin/i686-elf-as WSL=  operating.bin
         make CFLAGS=-w PP=barebones-toolchain/cross/i686/bin/i686-elf-g++ CC=barebones-toolchain/cross/i686/bin/i686-elf-gcc LD=barebones-toolchain/cross/i686/bin/i686-elf-ld AS=barebones-toolchain/cross/i686/bin/i686-elf-as WSL=  kernel.bin
         make CFLAGS=-w PP=barebones-toolchain/cross/i686/bin/i686-elf-g++ CC=barebones-toolchain/cross/i686/bin/i686-elf-gcc LD=barebones-toolchain/cross/i686/bin/i686-elf-ld AS=barebones-toolchain/cross/i686/bin/i686-elf-as WSL=  kernel.elf
+        make CFLAGS=-w PP=barebones-toolchain/cross/i686/bin/i686-elf-g++ CC=barebones-toolchain/cross/i686/bin/i686-elf-gcc LD=barebones-toolchain/cross/i686/bin/i686-elf-ld AS=barebones-toolchain/cross/i686/bin/i686-elf-as WSL=  bootloader/boot.bin
     - name: Prepare Release
       run: |
         mkdir vx-release
@@ -45,6 +46,6 @@ jobs:
         # secrets.GITHUB_TOKEN, or a token with read/write access to the repo
         github-token: ${{ secrets.GITHUB_TOKEN }}
         # Version to create
-        version: ${{ env.GITHUB_RUN_ID }}
+        version: 
         # json string array of assets paths to upload to the release. E.G. '[ "win-x64.zip", "linux-x24.zip" ]'
-        assets: '[ "vx-release/operating.bin", "vx-release/kernel.bin", "vx-release/kernel.elf" ]'
+        assets: '[ "vx-release/operating.bin", "vx-release/kernel.bin", "vx-release/kernel.elf" "vx-release/boot.bin" ]'

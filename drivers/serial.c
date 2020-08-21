@@ -29,3 +29,10 @@ void write_serial(char a) {
  
    outb(PORT,a);
 }
+
+void write_serial_string(char *a) {
+   while(*a!=0) {
+      write_serial(*a);
+      *a++;
+   }
+}

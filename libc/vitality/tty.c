@@ -3,9 +3,11 @@
 #include "../../drivers/vga.h"
 #include "../ext/debug.h"
 #include "../system.h"
+#include "../../drivers/serial.h"
 
 uint16_t cursor_x = 0;
 uint16_t cursor_y = 0;
+bool smode;
 
 void tty_putstring(char* string, int len) {
     if(len == 0) {
@@ -26,11 +28,18 @@ void tty_putstring(char* string, int len) {
                 cursor_x++;
                 break;
         }
+        if(smode) {
+            write_serial(chara);
+        }
         // get next character
         chara = *string++;
     }
     enable_cursor(0,15);
     update_cursor(cursor_x,cursor_y);
+}
+
+void set_serialmode(bool newmode) {
+    smode = newmode;
 }
 
 void disable_cursor()
