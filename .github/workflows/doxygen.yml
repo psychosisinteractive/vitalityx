@@ -25,6 +25,11 @@ jobs:
 
     - name: Prepare Docs
       run: doxygen
+    
+    - name: Zip latex information
+      run: |
+        cd docs
+        zip -r latex.zip latex
 
     - name: Deploy Documentation
       uses: peaceiris/actions-gh-pages@v3
