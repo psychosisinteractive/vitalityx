@@ -5,10 +5,6 @@ Here you can find methods for the C part of VitalityX, the Kernel and Libc.
 
 This software has licenses for its respective portions, but the general license is the Modified MIT License unless specified in their parts of code.
 
-![Vitality Release Service](https://github.com/psychosisinteractive/vitalityx/workflows/Vitality%20Release%20Service/badge.svg?event=push)
-![Vitality Compile Service](https://github.com/psychosisinteractive/vitalityx/workflows/Vitality%20Compile%20Service/badge.svg)
-![Vitality Doxygen Service](https://github.com/psychosisinteractive/vitalityx/workflows/Vitality%20Doxygen%20Service/badge.svg)
-
 ```
 Modified MIT License
 
