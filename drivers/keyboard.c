@@ -118,8 +118,10 @@ void kb_init(void)
     outb(0x64, 0x60);
     while(inb(0x64) & SR_CLEAR)
         ;
-    config |= 1 << 0;
+    config |= 1;
 	outb(0x60, config);
+    while(inb(0x64) & SR_CLEAR)
+        ;
 }
 
 char getsch() {
@@ -138,10 +140,10 @@ char getch() {
 
 char *getst() {
     char* inch;
-    char inchara = getch();
+    char inchara = getsch();
     while(inchara != '\n') {
         *inch++ = inchara;
-        inchara = getch();
+        inchara = getsch();
     }
     inch++;
     *inch = 0x0;

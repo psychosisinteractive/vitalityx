@@ -12,6 +12,7 @@
 #include "../libc/vitality/vfs.h"
 #include "../drivers/keyboard.h"
 #include "../drivers/serial.h"
+#include "../libc/vitality/mon.h"
 ///
 /// The kernels C entry point
 ///
@@ -38,10 +39,10 @@ int kernel() {
     tty_pputstring("Starting multitasking\n");
     initTasking();
     tty_pputstring("Setting up FS\n");
-    ide_initialize(0x1F0, 0x3F6, 0x170, 0x376, 0x000);
     clearscreen();
+    ide_initialize(0x1F0, 0x3F6, 0x170, 0x376, 0x000);
     getentries();
-    tty_pputstring("Select drive number from serial otherwise bfs/ata/atp0... ");
+    /*tty_pputstring("Select drive number from serial otherwise bfs/ata/atp0... ");
     switch(getsch()) {
         case '0':
             primarydrive = 0;
@@ -54,22 +55,25 @@ int kernel() {
         default:
             primarydrive = 0;
     }
-    tty_pputstring('\n');
+    tty_pputstring('\n');*/
     tty_pputstring("Loading VXBFS on ");
-    tty_pputstringl((char*)fsentries[primarydrive].name,4);
+    tty_pputstringl((char*)(&fsentries[primarydrive].name),4);
     tty_pputstring("\n");
-    ide_read_sectors(primarydrive,4,0,0,0x500);
+    ide_read_sectors(primarydrive,10,0,0,0x500);
     vxbfs_header_t header = *(vxbfs_header_t*)0x500;
-    if(header.signature[0] == 'V' && header.signature[1] == 'X' && header.signature[2] == 'F' && header.signature[3] == 'S') {
-        tty_pputstring("VXBFS found.");
-        tty_pputstring(" label: ");
+    if(validvxbfs(&header)) {
+        tty_pputstring("VXBFS found. label: ");
         tty_pputstringl(header.label,6);
-        vxbfs_file_t *firstfile = header.file;
-        tty_pputstring(" First VXBDS File: ");
-        tty_pputstringl((char*)firstfile->name,11);
+        tty_pputstring("\n");
+        vxbfs_file_t *firstfile = header.file + 0x500;
+        tty_pputstring("First VXBFS File: ");
+        char *fname = &firstfile->name;
+        tty_pputstringl(fname,11);
+        tty_pputstring(".");
+        char *fext = &firstfile->name;
+        tty_pputstringl(fext,3);
     }
-    while(true) {
-        getst();
-    }
+    // we can now enter the monitor
+    enter_monitor();
     return 0;
 }

@@ -1,5 +1,6 @@
 #ifndef MODEM_H
 #define MODEM_H
+#include "../libc/types.h"
 
 bool acknowledge();
 void alternate_mode();

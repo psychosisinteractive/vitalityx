@@ -15,8 +15,8 @@ void tty_putstring(char* string, int len) {
     }
     char chara = *string++;
     disable_cursor();
-    len += 0xb8000;
-    while(chara != '\x0' | !(string < (addr_t)len)) {
+    int left = len;
+    while(chara != '\x0' ^ left <= 0) {
         switch(chara) {
             case '\n':
                 cursor_y++;
@@ -33,6 +33,7 @@ void tty_putstring(char* string, int len) {
         }
         // get next character
         chara = *string++;
+        left--;
     }
     enable_cursor(0,15);
     update_cursor(cursor_x,cursor_y);

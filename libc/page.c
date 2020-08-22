@@ -192,9 +192,9 @@ void page_fault(registers_t regs)
     if (rw) {BochsConsolePrintString("read-only ");}
     if (us) {BochsConsolePrintString("user-mode ");}
     if (reserved) {BochsConsolePrintString("reserved ");}
-    BochsConsolePrintString(") at 0d");
+    BochsConsolePrintString(") at 0x");
     char* addr;
-    itoa(faulting_address,addr);
+    itoa(faulting_address,addr,16);
     BochsConsolePrintString(addr);
     BochsConsolePrintString("\n");
 }

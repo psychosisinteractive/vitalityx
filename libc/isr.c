@@ -10,8 +10,11 @@
 #include "page.h"
 #include "../drivers/ide.h"
 
+#define REMAPPED_MASTER(x) x+0x20
+#define REMAPPED_SLAVE(x) x+0x27
+
 void sdump(registers_t regs) {
-    tty_pputstring("\n");
+    /*tty_pputstring("\n");
     tty_pputstring("EAX: ");
     char reg[128];
     itoa(regs.eax,reg);
@@ -60,7 +63,7 @@ void sdump(registers_t regs) {
     tty_pputstring("\n");
     tty_pputstring("EFLAGS: ");
     memset(&reg,0,128);
-    itoa(regs.eflags,reg);
+    itoa(regs.eflags,reg);*/
 }
 
 void eoi() {
@@ -77,17 +80,12 @@ void isr_handler(registers_t regs)
             PIC_sendEOI(regs.int_no);
             eoi();
             break;
-        case 1:
-            PIC_sendEOI(regs.int_no);
-            keyboard_handler_main();
-            eoi();
-            break;
         case 13:
             BochsConsolePrintString("\n\nGENERAL PROTECTION FAULT!!!\n\n");
             clearscreen();
             tty_pputstring("GENERAL PROTECTION FAULT!!!\n\n");
             char* errcode = "  ";
-            itoa(regs.err_code,errcode);
+            itoa(regs.err_code,errcode,10);
             BochsConsolePrintString("Errorcode: ");
             BochsConsolePrintString(errcode);
             tty_pputstring("Error Code:");
@@ -122,12 +120,18 @@ void isr_handler(registers_t regs)
             BochsConsolePrintString("\n\nVitalityX SysISR Hit\n\n");
             sysisr_handler(regs);
             break;
+        case REMAPPED_MASTER(1):
+            BochsConsolePrintString("k");
+            keyboard_handler_main();
+            PIC_sendEOI(regs.int_no);
+            eoi();
+            break;
         default:
             tty_pputstring("UNKNOWN SYSTEM INTERRUPT!!!\n\n");
             BochsConsolePrintString("\n\nVitalityXInterrupt\n\n");
             char* inttype = "  ";
             tty_pputstring("No. ");
-            itoa(regs.int_no,inttype);
+            itoa(regs.int_no,inttype,10);
             BochsConsolePrintString("Interrupt: ");
             BochsConsolePrintString(inttype);
             tty_pputstring(inttype);

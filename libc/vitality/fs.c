@@ -24,7 +24,7 @@ int getentry(int id) {
         entry->dev = &ide_devices[id];
         
         char* num = "x";
-        itoa(id,num);
+        itoa(id,num,10);
         switch(ide_devices[id].Type) {
             case 0: // ata
                 cnam = "ataX";
@@ -72,7 +72,7 @@ int getentry(int id) {
         memcpy(cnam+3,num,1);
         memcpy(entry->name,&cnam,4);
         tty_pputstring("Registered ");
-        tty_pputstringl(cnam,3);
+        tty_pputstringl(cnam,4);
         tty_pputstring(" Model ");
         tty_pputstringl(&ide_devices[id].Model,11);
         tty_pputstring("\n");
