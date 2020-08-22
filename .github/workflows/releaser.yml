@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: Vitality Release Service
+name: Vitality Tagging Service
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -32,20 +32,8 @@ jobs:
         make CFLAGS=-w PP=barebones-toolchain/cross/i686/bin/i686-elf-g++ CC=barebones-toolchain/cross/i686/bin/i686-elf-gcc LD=barebones-toolchain/cross/i686/bin/i686-elf-ld AS=barebones-toolchain/cross/i686/bin/i686-elf-as WSL=  kernel.bin
         make CFLAGS=-w PP=barebones-toolchain/cross/i686/bin/i686-elf-g++ CC=barebones-toolchain/cross/i686/bin/i686-elf-gcc LD=barebones-toolchain/cross/i686/bin/i686-elf-ld AS=barebones-toolchain/cross/i686/bin/i686-elf-as WSL=  kernel.elf
         make CFLAGS=-w PP=barebones-toolchain/cross/i686/bin/i686-elf-g++ CC=barebones-toolchain/cross/i686/bin/i686-elf-gcc LD=barebones-toolchain/cross/i686/bin/i686-elf-ld AS=barebones-toolchain/cross/i686/bin/i686-elf-as WSL=  bootloader/boot.bin
-    - name: Prepare Release
-      run: |
-        mkdir vx-release
-        mv operating.bin vx-release
-        mv kernel.bin vx-release
-        mv kernel.elf vx-release
-    - name: Tag and Release and Upload
-      # You may pin to the exact commit or the version.
-      # uses: jasondavis303/tag-and-release-and-upload@b1910f9c470483b899ae6fcc7d987b6fe707132b
-      uses: jasondavis303/tag-and-release-and-upload@v1.2.0
-      with:
-        # secrets.GITHUB_TOKEN, or a token with read/write access to the repo
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        # Version to create
-        version: env.GITHUB_RUN_ID
-        # json string array of assets paths to upload to the release. E.G. '[ "win-x64.zip", "linux-x24.zip" ]'
-        assets: '[ "vx-release/operating.bin", "vx-release/kernel.bin", "vx-release/kernel.elf" "vx-release/boot.bin" ]'
+    - name: Bump version and push tag
+      uses: anothrNick/github-tag-action@1.17.2
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        WITH_V: true
