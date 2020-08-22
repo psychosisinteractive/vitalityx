@@ -1,6 +1,6 @@
 # VitalityX
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fryelow90210%2FVitalityX.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fryelow90210%2FVitalityX?ref=badge_shield)
-![Vitality Compile Service](https://github.com/psychosisinteractive/vitalityx/workflows/Vitality%20Compile%20Service/badge.svg) ![Vitality Doxygen Service](https://github.com/psychosisinteractive/vitalityx/workflows/Vitality%20Doxygen%20Service/badge.svg) ![Vitality Release Service](https://github.com/psychosisinteractive/vitalityx/workflows/Vitality%20Release%20Service/badge.svg?event=push)
+![Vitality Compile Service](https://github.com/psychosisinteractive/vitalityx/workflows/Vitality%20Compile%20Service/badge.svg) ![Vitality Doxygen Service](https://github.com/psychosisinteractive/vitalityx/workflows/Vitality%20Doxygen%20Service/badge.svg)
 
 [Documentation]("https://psychosisinteractive.github.io/vitalityx/html")
 
