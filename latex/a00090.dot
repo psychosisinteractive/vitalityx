@@ -23,6 +23,6 @@ digraph "libc/ext/task.c"
   Node7 [label="../system.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00134.html"];
   Node7 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
   Node0 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
-  Node8 [label="../vitality/tty.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00176.html"];
+  Node8 [label="../vitality/tty.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00182.html"];
   Node8 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
 }

@@ -7,7 +7,7 @@ Include dependency graph for fat.\+c\+:
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00282}{fat\+\_\+descriptor\+\_\+t} $\ast$ \hyperlink{a00155_ac035ecd760d6c41e08695afddb708e53_ac035ecd760d6c41e08695afddb708e53}{fat\+\_\+gendescriptor} (fat\+\_\+\+B\+S\+\_\+t $\ast$bs)
+\hyperlink{a00288}{fat\+\_\+descriptor\+\_\+t} $\ast$ \hyperlink{a00155_ac035ecd760d6c41e08695afddb708e53_ac035ecd760d6c41e08695afddb708e53}{fat\+\_\+gendescriptor} (fat\+\_\+\+B\+S\+\_\+t $\ast$bs)
 \end{DoxyCompactItemize}
 
 
@@ -16,7 +16,7 @@ Include dependency graph for fat.\+c\+:
 \index{fat.\+c@{fat.\+c}!fat\+\_\+gendescriptor@{fat\+\_\+gendescriptor}}
 \index{fat\+\_\+gendescriptor@{fat\+\_\+gendescriptor}!fat.\+c@{fat.\+c}}
 \subsubsection{\texorpdfstring{fat\+\_\+gendescriptor()}{fat\_gendescriptor()}}
-{\footnotesize\ttfamily \hyperlink{a00282}{fat\+\_\+descriptor\+\_\+t}$\ast$ fat\+\_\+gendescriptor (\begin{DoxyParamCaption}\item[{fat\+\_\+\+B\+S\+\_\+t $\ast$}]{bs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{a00288}{fat\+\_\+descriptor\+\_\+t}$\ast$ fat\+\_\+gendescriptor (\begin{DoxyParamCaption}\item[{fat\+\_\+\+B\+S\+\_\+t $\ast$}]{bs }\end{DoxyParamCaption})}
 
 
 
@@ -25,36 +25,36 @@ Definition at line 4 of file fat.\+c.
 
 \begin{DoxyCode}
 4                                                   \{
-5     \hyperlink{a00282}{fat\_descriptor\_t} \hyperlink{a00194_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor};
+5     \hyperlink{a00288}{fat\_descriptor\_t} \hyperlink{a00200_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor};
 6 
 7     fat\_extBS\_32\_t *fat\_boot\_ext\_32 = \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
 8     fat\_extBS\_16\_t *fat\_boot\_ext\_16 = \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
 9 
-10     descriptor.\hyperlink{a00282_a6ba8fdfcc30f2737d98cf80f744477d4_a6ba8fdfcc30f2737d98cf80f744477d4}{total\_sectors} = (bs->total\_sectors\_16 == 0)? bs->total\_sectors\_32 : bs->
+10     descriptor.\hyperlink{a00288_a6ba8fdfcc30f2737d98cf80f744477d4_a6ba8fdfcc30f2737d98cf80f744477d4}{total\_sectors} = (bs->total\_sectors\_16 == 0)? bs->total\_sectors\_32 : bs->
       total\_sectors\_16;
-11     descriptor.\hyperlink{a00282_a18ddffcaa1d119d72bc828fec257aabf_a18ddffcaa1d119d72bc828fec257aabf}{bs} = &bs;
-12     \textcolor{keywordflow}{if}(descriptor.\hyperlink{a00282_a659431475a2b5d306362e0364e1ecdbf_a659431475a2b5d306362e0364e1ecdbf}{total\_clusters} < 4085) 
+11     descriptor.\hyperlink{a00288_a18ddffcaa1d119d72bc828fec257aabf_a18ddffcaa1d119d72bc828fec257aabf}{bs} = &bs;
+12     \textcolor{keywordflow}{if}(descriptor.\hyperlink{a00288_a659431475a2b5d306362e0364e1ecdbf_a659431475a2b5d306362e0364e1ecdbf}{total\_clusters} < 4085) 
 13     \{
 14         fat\_boot\_ext\_16 = (fat\_extBS\_16\_t*)bs->extended\_section;
-15         descriptor.\hyperlink{a00282_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00158_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146aee78460e52f239902d3655a0ee0cf82a}{FAT12};
+15         descriptor.\hyperlink{a00288_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00158_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146aee78460e52f239902d3655a0ee0cf82a}{FAT12};
 16     \} 
-17     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(descriptor.\hyperlink{a00282_a659431475a2b5d306362e0364e1ecdbf_a659431475a2b5d306362e0364e1ecdbf}{total\_clusters} < 65525) 
+17     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(descriptor.\hyperlink{a00288_a659431475a2b5d306362e0364e1ecdbf_a659431475a2b5d306362e0364e1ecdbf}{total\_clusters} < 65525) 
 18     \{
 19         fat\_boot\_ext\_16 = (fat\_extBS\_16\_t*)bs->extended\_section;
-20         descriptor.\hyperlink{a00282_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00158_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a8b322666f7d5865bebdde4f7d6b99da0}{FAT16};
+20         descriptor.\hyperlink{a00288_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00158_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a8b322666f7d5865bebdde4f7d6b99da0}{FAT16};
 21     \} 
-22     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (descriptor.\hyperlink{a00282_a659431475a2b5d306362e0364e1ecdbf_a659431475a2b5d306362e0364e1ecdbf}{total\_clusters} < 268435445)
+22     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (descriptor.\hyperlink{a00288_a659431475a2b5d306362e0364e1ecdbf_a659431475a2b5d306362e0364e1ecdbf}{total\_clusters} < 268435445)
 23     \{
 24         fat\_boot\_ext\_32 = (fat\_extBS\_16\_t*)bs->extended\_section;
-25         descriptor.\hyperlink{a00282_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00158_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146afc5be65062d254a8cb67d80202a9fb8b}{FAT32};
+25         descriptor.\hyperlink{a00288_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00158_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146afc5be65062d254a8cb67d80202a9fb8b}{FAT32};
 26     \}
 27     \textcolor{keywordflow}{else}
 28     \{ 
 29         \textcolor{comment}{// idk}
-30         descriptor.\hyperlink{a00282_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00158_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a10aba3db5a861bed45ce618cc8546f3b}{EXFAT};
+30         descriptor.\hyperlink{a00288_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00158_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a10aba3db5a861bed45ce618cc8546f3b}{EXFAT};
 31     \}
 32 
-33     descriptor.\hyperlink{a00282_af99ceda6bbab7839a8045c6c6fd18c42_af99ceda6bbab7839a8045c6c6fd18c42}{fat\_size} = (bs->table\_size\_16 == 0)? fat\_boot\_ext\_32->table\_size\_32 : bs->
+33     descriptor.\hyperlink{a00288_af99ceda6bbab7839a8045c6c6fd18c42_af99ceda6bbab7839a8045c6c6fd18c42}{fat\_size} = (bs->table\_size\_16 == 0)? fat\_boot\_ext\_32->table\_size\_32 : bs->
       table\_size\_16;
 34 \}
 \end{DoxyCode}

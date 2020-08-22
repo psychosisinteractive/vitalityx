@@ -22,7 +22,9 @@ typedef char $\ast$ \hyperlink{a00128_ab0dcbec9b4b3c60b939b1095f93cb1b9_ab0dcbec
 \item 
 void \hyperlink{a00128_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}{reverse} (char s\mbox{[}$\,$\mbox{]})
 \item 
-void \hyperlink{a00128_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa} (int n, char s\mbox{[}$\,$\mbox{]})
+char $\ast$ \hyperlink{a00128_ab42640268f26e065efd044cfe80591bd_ab42640268f26e065efd044cfe80591bd}{itoa} (int value, char $\ast$str, int \hyperlink{a00110_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base})
+\item 
+int \hyperlink{a00128_a8456d79947fb428e0927d19e7a1e9423_a8456d79947fb428e0927d19e7a1e9423}{atoi} (char $\ast$str)
 \end{DoxyCompactItemize}
 
 
@@ -57,11 +59,38 @@ Definition at line 8 of file string.\+h.
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00128_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}\label{a00128_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}} 
+\mbox{\Hypertarget{a00128_a8456d79947fb428e0927d19e7a1e9423_a8456d79947fb428e0927d19e7a1e9423}\label{a00128_a8456d79947fb428e0927d19e7a1e9423_a8456d79947fb428e0927d19e7a1e9423}} 
+\index{string.\+h@{string.\+h}!atoi@{atoi}}
+\index{atoi@{atoi}!string.\+h@{string.\+h}}
+\subsubsection{\texorpdfstring{atoi()}{atoi()}}
+{\footnotesize\ttfamily int atoi (\begin{DoxyParamCaption}\item[{char $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Definition at line 61 of file string.\+c.
+
+
+\begin{DoxyCode}
+62 \{ 
+63     \textcolor{comment}{// Initialize result }
+64     \textcolor{keywordtype}{int} res = 0; 
+65   
+66     \textcolor{comment}{// Iterate through all characters }
+67     \textcolor{comment}{// of input string and update result }
+68     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; str[i] 
+69                     != \textcolor{charliteral}{'\(\backslash\)0'}; 
+70          ++i) 
+71         res = res * 10 + str[i] - \textcolor{charliteral}{'0'}; 
+72   
+73     \textcolor{comment}{// return result. }
+74     \textcolor{keywordflow}{return} res; 
+75 \} 
+\end{DoxyCode}
+\mbox{\Hypertarget{a00128_ab42640268f26e065efd044cfe80591bd_ab42640268f26e065efd044cfe80591bd}\label{a00128_ab42640268f26e065efd044cfe80591bd_ab42640268f26e065efd044cfe80591bd}} 
 \index{string.\+h@{string.\+h}!itoa@{itoa}}
 \index{itoa@{itoa}!string.\+h@{string.\+h}}
 \subsubsection{\texorpdfstring{itoa()}{itoa()}}
-{\footnotesize\ttfamily void itoa (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{char}]{s\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char$\ast$ itoa (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{char $\ast$}]{str,  }\item[{int}]{base }\end{DoxyParamCaption})}
 
 
 
@@ -70,19 +99,42 @@ Definition at line 23 of file string.\+c.
 
 \begin{DoxyCode}
 24 \{
-25     \textcolor{keywordtype}{int} i, sign;
-26 
-27     \textcolor{keywordflow}{if} ((sign = n) < 0)  \textcolor{comment}{/* record sign */}
-28         n = -n;          \textcolor{comment}{/* make n positive */}
-29     i = 0;
-30     \textcolor{keywordflow}{do} \{       \textcolor{comment}{/* generate digits in reverse order */}
-31         s[i++] = n % 10 + \textcolor{charliteral}{'0'};   \textcolor{comment}{/* get next digit */}
-32     \} \textcolor{keywordflow}{while} ((n /= 10) > 0);     \textcolor{comment}{/* delete it */}
-33     \textcolor{keywordflow}{if} (sign < 0)
-34         s[i++] = \textcolor{charliteral}{'-'};
-35     s[i] = \textcolor{charliteral}{'\(\backslash\)0'};
-36     \hyperlink{a00125_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}{reverse}(s);
-37 \}
+25     \textcolor{keywordtype}{char} * rc;
+26     \textcolor{keywordtype}{char} * ptr;
+27     \textcolor{keywordtype}{char} * low;
+28     \textcolor{comment}{// Check for supported base.}
+29     \textcolor{keywordflow}{if} ( base < 2 || base > 36 )
+30     \{
+31         *str = \textcolor{charliteral}{'\(\backslash\)0'};
+32         \textcolor{keywordflow}{return} str;
+33     \}
+34     rc = ptr = str;
+35     \textcolor{comment}{// Set '-' for negative decimals.}
+36     \textcolor{keywordflow}{if} ( value < 0 && \hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} == 10 )
+37     \{
+38         *ptr++ = \textcolor{charliteral}{'-'};
+39     \}
+40     \textcolor{comment}{// Remember where the numbers start.}
+41     low = ptr;
+42     \textcolor{comment}{// The actual conversion.}
+43     \textcolor{keywordflow}{do}
+44     \{
+45         \textcolor{comment}{// Modulo is negative for negative value. This trick makes abs() unnecessary.}
+46         *ptr++ = \textcolor{stringliteral}{"zyxwvutsrqponmlkjihgfedcba9876543210123456789abcdefghijklmnopqrstuvwxyz"}[35 + value % 
+      \hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base}];
+47         value /= \hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base};
+48     \} \textcolor{keywordflow}{while} ( value );
+49     \textcolor{comment}{// Terminating the string.}
+50     *ptr-- = \textcolor{charliteral}{'\(\backslash\)0'};
+51     \textcolor{comment}{// Invert the numbers.}
+52     \textcolor{keywordflow}{while} ( low < ptr )
+53     \{
+54         \textcolor{keywordtype}{char} tmp = *low;
+55         *low++ = *ptr;
+56         *ptr-- = tmp;
+57     \}
+58     \textcolor{keywordflow}{return} rc;
+59 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00128_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}\label{a00128_aa8a9a8836962d890b4939c112fd29190_aa8a9a8836962d890b4939c112fd29190}} 
 \index{string.\+h@{string.\+h}!reverse@{reverse}}

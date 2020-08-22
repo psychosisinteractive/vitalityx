@@ -24,20 +24,20 @@ void \hyperlink{a00107_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae
 
 
 
-Definition at line 87 of file interrupt.\+c.
+Definition at line 83 of file interrupt.\+c.
 
 
 \begin{DoxyCode}
-88 \{
-89     \hyperlink{a00110_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00234_a4b5fce0881deb4959d33da77d1ed0202_a4b5fce0881deb4959d33da77d1ed0202}{base\_lo} = \hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} & 0xFFFF;
-90     \hyperlink{a00110_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00234_af46adb2603d1d8b4a3bedf7f1c6daed4_af46adb2603d1d8b4a3bedf7f1c6daed4}{base\_hi} = (\hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} >> 16) & 0xFFFF;
-91 
-92     \hyperlink{a00110_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00234_a3c9321c263139e56901a05efee220047_a3c9321c263139e56901a05efee220047}{sel}     = \hyperlink{a00110_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel};
-93     \hyperlink{a00110_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00234_adc747b3ff87142c71b7b8c51e03c067c_adc747b3ff87142c71b7b8c51e03c067c}{always0} = 0;
-94     \textcolor{comment}{// We must uncomment the OR below when we get to using user-mode.}
-95     \textcolor{comment}{// It sets the interrupt gate's privilege level to 3.}
-96     \hyperlink{a00110_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00234_a02277c77564820972ae5df0a37c80be0_a02277c77564820972ae5df0a37c80be0}{flags}   = \hyperlink{a00110_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags} \textcolor{comment}{/* | 0x60 */};
-97 \}
+84 \{
+85     \hyperlink{a00110_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00240_a4b5fce0881deb4959d33da77d1ed0202_a4b5fce0881deb4959d33da77d1ed0202}{base\_lo} = \hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} & 0xFFFF;
+86     \hyperlink{a00110_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00240_af46adb2603d1d8b4a3bedf7f1c6daed4_af46adb2603d1d8b4a3bedf7f1c6daed4}{base\_hi} = (\hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} >> 16) & 0xFFFF;
+87 
+88     \hyperlink{a00110_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00240_a3c9321c263139e56901a05efee220047_a3c9321c263139e56901a05efee220047}{sel}     = \hyperlink{a00110_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel};
+89     \hyperlink{a00110_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00240_adc747b3ff87142c71b7b8c51e03c067c_adc747b3ff87142c71b7b8c51e03c067c}{always0} = 0;
+90     \textcolor{comment}{// We must uncomment the OR below when we get to using user-mode.}
+91     \textcolor{comment}{// It sets the interrupt gate's privilege level to 3.}
+92     \hyperlink{a00110_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}[num].\hyperlink{a00240_a02277c77564820972ae5df0a37c80be0_a02277c77564820972ae5df0a37c80be0}{flags}   = \hyperlink{a00110_aa2585d779da0ab21273a8d92de9a0ebe_aa2585d779da0ab21273a8d92de9a0ebe}{flags} \textcolor{comment}{/* | 0x60 */};
+93 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00107_a35fe413107af682030ab7a4b6dff19b8_a35fe413107af682030ab7a4b6dff19b8}\label{a00107_a35fe413107af682030ab7a4b6dff19b8_a35fe413107af682030ab7a4b6dff19b8}} 
 \index{interrupt.\+c@{interrupt.\+c}!init\+\_\+idt@{init\+\_\+idt}}
@@ -53,10 +53,10 @@ Definition at line 6 of file interrupt.\+c.
 \begin{DoxyCode}
 7 \{
 8     \hyperlink{a00077_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)nSetting up IDT\(\backslash\)n"});
-9     \hyperlink{a00110_a3f2660783240a0a506d85e3750dff814_a3f2660783240a0a506d85e3750dff814}{idt\_ptr}.\hyperlink{a00238_a0401a63eb17ed7519442b1e828510acc_a0401a63eb17ed7519442b1e828510acc}{limit} = \textcolor{keyword}{sizeof}(\hyperlink{a00110_a1ad45e5b006481ff3604f7b54bd26e13_a1ad45e5b006481ff3604f7b54bd26e13}{idt\_entry\_t}) * 256 -1;
-10     \hyperlink{a00110_a3f2660783240a0a506d85e3750dff814_a3f2660783240a0a506d85e3750dff814}{idt\_ptr}.\hyperlink{a00238_a1d3ba4d284df0cea7c7b2d1a22a7d9fb_a1d3ba4d284df0cea7c7b2d1a22a7d9fb}{base}  = (\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00110_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries};
+9     \hyperlink{a00110_a3f2660783240a0a506d85e3750dff814_a3f2660783240a0a506d85e3750dff814}{idt\_ptr}.\hyperlink{a00244_a0401a63eb17ed7519442b1e828510acc_a0401a63eb17ed7519442b1e828510acc}{limit} = \textcolor{keyword}{sizeof}(\hyperlink{a00110_a1ad45e5b006481ff3604f7b54bd26e13_a1ad45e5b006481ff3604f7b54bd26e13}{idt\_entry\_t}) * 256 -1;
+10     \hyperlink{a00110_a3f2660783240a0a506d85e3750dff814_a3f2660783240a0a506d85e3750dff814}{idt\_ptr}.\hyperlink{a00244_a1d3ba4d284df0cea7c7b2d1a22a7d9fb_a1d3ba4d284df0cea7c7b2d1a22a7d9fb}{base}  = (\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00110_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries};
 11 
-12     \hyperlink{a00131_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&\hyperlink{a00110_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}, 0, \textcolor{keyword}{sizeof}(\hyperlink{a00234}{idt\_entry\_t})*256);
+12     \hyperlink{a00131_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&\hyperlink{a00110_a02c62ffc54da283f5faaa40b125d2dce_a02c62ffc54da283f5faaa40b125d2dce}{idt\_entries}, 0, \textcolor{keyword}{sizeof}(\hyperlink{a00240}{idt\_entry\_t})*256);
 13 
 14     \hyperlink{a00107_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}( 0, (\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00110_af88eb8e98d943aa0461c01de3cb53493_af88eb8e98d943aa0461c01de3cb53493}{isr0} , 0x08, 0x8E);
 15     \hyperlink{a00107_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}( 1, (\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00110_aeab0ed9ae661801c25f7dc9089c19f72_aeab0ed9ae661801c25f7dc9089c19f72}{isr1} , 0x08, 0x8E);
@@ -123,11 +123,7 @@ Definition at line 6 of file interrupt.\+c.
 76     \hyperlink{a00107_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(62, (\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00110_ac4bc2b72e89677bfb068d53efa637933_ac4bc2b72e89677bfb068d53efa637933}{isr62}, 0x08, 0x8E);
 77     \hyperlink{a00107_a498f153edfbc59b873e0ae610c3b0335_a498f153edfbc59b873e0ae610c3b0335}{idt\_set\_gate}(63, (\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})\hyperlink{a00110_adc5cdf67dec64ed778df8091afeac450_adc5cdf67dec64ed778df8091afeac450}{isr63}, 0x08, 0x8E);
 78     \textcolor{comment}{// just remap the pic for gods sake}
-79     \textcolor{comment}{// PIC\_remap(0x20,0x28);}
-80     \textcolor{comment}{// enable our keyboard interrupt}
-81     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x21,0xfd);
-82     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0xa1,0xff);
-83 
-84     \hyperlink{a00110_a7f063f0c0d27643faa13723e8086b808_a7f063f0c0d27643faa13723e8086b808}{idt\_flush}((\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00110_a3f2660783240a0a506d85e3750dff814_a3f2660783240a0a506d85e3750dff814}{idt\_ptr});
-85 \}
+79     \hyperlink{a00050_ab5ed5530bfeaffadd8cd88c06d797f31_ab5ed5530bfeaffadd8cd88c06d797f31}{PIC\_remap}(0x20,0x28);
+80     \hyperlink{a00110_a7f063f0c0d27643faa13723e8086b808_a7f063f0c0d27643faa13723e8086b808}{idt\_flush}((\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})&\hyperlink{a00110_a3f2660783240a0a506d85e3750dff814_a3f2660783240a0a506d85e3750dff814}{idt\_ptr});
+81 \}
 \end{DoxyCode}

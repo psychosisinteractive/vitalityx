@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/vxbfs.h File Reference</title>
+<title>VitalityX: libc/vitality/vlib.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,25 +45,26 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
-<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">vxbfs.h File Reference</div>  </div>
+<div class="title">vlib.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="a00140_source.html">../types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00185_source.html">vfs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00092_source.html">../ext/task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00116_source.html">../isr.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for vxbfs.h:</div>
+Include dependency graph for vlib.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00201.png" border="0" usemap="#libc_2vitality_2vxbfs_8h" alt=""/></div>
+<div class="center"><img src="a00201.png" border="0" usemap="#libc_2vitality_2vlib_8h" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00202.png" border="0" usemap="#libc_2vitality_2vxbfs_8hdep" alt=""/></div>
+<div class="center"><img src="a00202.png" border="0" usemap="#libc_2vitality_2vlib_8hdep" alt=""/></div>
 <!-- MAP 1 -->
 </div>
 </div>
@@ -71,43 +72,33 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00322.html">VXBFSModificationBlock</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a VXBFS Modification Block.  <a href="a00322.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00320.html">vlib_entry</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00326.html">VXBFSFile</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a VXBFS File.  <a href="a00326.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00324.html">vlibdescriptor</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00330.html">VXBFSheader</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a VXBFS Header.  <a href="a00330.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a3ddd78a9670db2318c112735ae4fbbb0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00200_a3ddd78a9670db2318c112735ae4fbbb0.html#a3ddd78a9670db2318c112735ae4fbbb0">VXBFS_NOMOD</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a3ddd78a9670db2318c112735ae4fbbb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdd5a043633da5f43164b17f4d3637ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00200_acdd5a043633da5f43164b17f4d3637ac.html#acdd5a043633da5f43164b17f4d3637ac">VXBFS_PROTECTED</a>&#160;&#160;&#160;2</td></tr>
-<tr class="separator:acdd5a043633da5f43164b17f4d3637ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a767d84a330301881537dca098c9be630"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00200_a767d84a330301881537dca098c9be630.html#a767d84a330301881537dca098c9be630">VXBFS_KERNEL</a>&#160;&#160;&#160;4</td></tr>
-<tr class="separator:a767d84a330301881537dca098c9be630"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:a0774a42f7a124b6d3054ccabd4d35463"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00322.html">VXBFSModificationBlock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00200_a0774a42f7a124b6d3054ccabd4d35463.html#a0774a42f7a124b6d3054ccabd4d35463">vxbfs_modblock_t</a></td></tr>
-<tr class="memdesc:a0774a42f7a124b6d3054ccabd4d35463"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a VXBFS Modification Block.  <a href="a00200_a0774a42f7a124b6d3054ccabd4d35463.html#a0774a42f7a124b6d3054ccabd4d35463">More...</a><br /></td></tr>
-<tr class="separator:a0774a42f7a124b6d3054ccabd4d35463"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb93e2407af0d8fe0f5629ce6456c6f9"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00326.html">VXBFSFile</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00200_abb93e2407af0d8fe0f5629ce6456c6f9.html#abb93e2407af0d8fe0f5629ce6456c6f9">vxbfs_file_t</a></td></tr>
-<tr class="memdesc:abb93e2407af0d8fe0f5629ce6456c6f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a VXBFS File.  <a href="a00200_abb93e2407af0d8fe0f5629ce6456c6f9.html#abb93e2407af0d8fe0f5629ce6456c6f9">More...</a><br /></td></tr>
-<tr class="separator:abb93e2407af0d8fe0f5629ce6456c6f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5678b6d5dd5ed5ca86e5ccd4c30d39d"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00330.html">VXBFSheader</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00200_ac5678b6d5dd5ed5ca86e5ccd4c30d39d.html#ac5678b6d5dd5ed5ca86e5ccd4c30d39d">vxbfs_header_t</a></td></tr>
-<tr class="memdesc:ac5678b6d5dd5ed5ca86e5ccd4c30d39d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is a VXBFS Header.  <a href="a00200_ac5678b6d5dd5ed5ca86e5ccd4c30d39d.html#ac5678b6d5dd5ed5ca86e5ccd4c30d39d">More...</a><br /></td></tr>
-<tr class="separator:ac5678b6d5dd5ed5ca86e5ccd4c30d39d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97c1a7136f2ab06368e93c2d7533d619"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00320.html">vlib_entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00200_a97c1a7136f2ab06368e93c2d7533d619.html#a97c1a7136f2ab06368e93c2d7533d619">vlib_entry_t</a></td></tr>
+<tr class="separator:a97c1a7136f2ab06368e93c2d7533d619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d9000b4fbb25c5ed2950a2d8f4921d5"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00324.html">vlibdescriptor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00200_a2d9000b4fbb25c5ed2950a2d8f4921d5.html#a2d9000b4fbb25c5ed2950a2d8f4921d5">vlibdesriptor_t</a></td></tr>
+<tr class="separator:a2d9000b4fbb25c5ed2950a2d8f4921d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a056a7e9a594275f19bd99150a92f266a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00185_aa5445a6474a23ee3e7756d432dfa4ba1.html#aa5445a6474a23ee3e7756d432dfa4ba1">file_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00200_a056a7e9a594275f19bd99150a92f266a.html#a056a7e9a594275f19bd99150a92f266a">loadfile</a> (<a class="el" href="a00200_abb93e2407af0d8fe0f5629ce6456c6f9.html#abb93e2407af0d8fe0f5629ce6456c6f9">vxbfs_file_t</a> *)</td></tr>
-<tr class="separator:a056a7e9a594275f19bd99150a92f266a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d38ed022dd74a1ef381240419f8fd72"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00140_af6a258d8f3ee5206d682d799316314b1.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00200_a4d38ed022dd74a1ef381240419f8fd72.html#a4d38ed022dd74a1ef381240419f8fd72">validvxbfs</a> (<a class="el" href="a00200_ac5678b6d5dd5ed5ca86e5ccd4c30d39d.html#ac5678b6d5dd5ed5ca86e5ccd4c30d39d">vxbfs_header_t</a> *)</td></tr>
-<tr class="separator:a4d38ed022dd74a1ef381240419f8fd72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee69008de31826f28854c29a54cb315e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00200_aee69008de31826f28854c29a54cb315e.html#aee69008de31826f28854c29a54cb315e">loadvlib</a> (<a class="el" href="a00200_a2d9000b4fbb25c5ed2950a2d8f4921d5.html#a2d9000b4fbb25c5ed2950a2d8f4921d5">vlibdesriptor_t</a> *d)</td></tr>
+<tr class="separator:aee69008de31826f28854c29a54cb315e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeb1b55b301de7b4c7aa360c387c3ef9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00200_a97c1a7136f2ab06368e93c2d7533d619.html#a97c1a7136f2ab06368e93c2d7533d619">vlib_entry_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00200_aeeb1b55b301de7b4c7aa360c387c3ef9.html#aeeb1b55b301de7b4c7aa360c387c3ef9">getvlibentry</a> (int id)</td></tr>
+<tr class="separator:aeeb1b55b301de7b4c7aa360c387c3ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268c6e227f2761807244c0695d78d01c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00200_a268c6e227f2761807244c0695d78d01c.html#a268c6e227f2761807244c0695d78d01c">runvlib</a> (<a class="el" href="a00140_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
+<tr class="separator:a268c6e227f2761807244c0695d78d01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:abe9fbaaf473cf2fa8d2a0ef1786fabd2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00200_a2d9000b4fbb25c5ed2950a2d8f4921d5.html#a2d9000b4fbb25c5ed2950a2d8f4921d5">vlibdesriptor_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00200_abe9fbaaf473cf2fa8d2a0ef1786fabd2.html#abe9fbaaf473cf2fa8d2a0ef1786fabd2">descriptor</a></td></tr>
+<tr class="separator:abe9fbaaf473cf2fa8d2a0ef1786fabd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae94a2076c3fb43c35d18daf9cf664e23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00260.html">Registers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00200_ae94a2076c3fb43c35d18daf9cf664e23.html#ae94a2076c3fb43c35d18daf9cf664e23">vlib_registers</a></td></tr>
+<tr class="separator:ae94a2076c3fb43c35d18daf9cf664e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -8,7 +8,7 @@ This graph shows which files directly or indirectly include this file\+:
 \subsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
-union \hyperlink{a00286}{header\+\_\+t}
+union \hyperlink{a00292}{header\+\_\+t}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -19,7 +19,7 @@ void \hyperlink{a00170_aebb0480990fb66ce618d040a195143c9_aebb0480990fb66ce618d04
 \item 
 void $\ast$ \hyperlink{a00170_abeaae2bbcf837d3f98d17a9618076097_abeaae2bbcf837d3f98d17a9618076097}{sbrk} (\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t})
 \item 
-\hyperlink{a00286}{header\+\_\+t} $\ast$ \hyperlink{a00170_afaecf44e3ed4b4332644d98fe0955793_afaecf44e3ed4b4332644d98fe0955793}{get\+\_\+free\+\_\+block} (\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t})
+\hyperlink{a00292}{header\+\_\+t} $\ast$ \hyperlink{a00170_afaecf44e3ed4b4332644d98fe0955793_afaecf44e3ed4b4332644d98fe0955793}{get\+\_\+free\+\_\+block} (\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t})
 \item 
 void $\ast$ \hyperlink{a00170_a1c8580582aae58105f16108d4ec89e9a_a1c8580582aae58105f16108d4ec89e9a}{malloc} (\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t})
 \item 
@@ -89,31 +89,31 @@ Definition at line 68 of file mem.\+c.
 
 \begin{DoxyCode}
 68                        \{
-69     \hyperlink{a00286}{header\_t} *header, *tmp;
+69     \hyperlink{a00292}{header\_t} *header, *tmp;
 70     \textcolor{keywordtype}{void} *programbreak;
 71 
 72     \textcolor{keywordflow}{if} (!block)
 73         \textcolor{keywordflow}{return};
 74 
-75     header = (\hyperlink{a00286}{header\_t}*)block - 1;
+75     header = (\hyperlink{a00292}{header\_t}*)block - 1;
 76     programbreak = \hyperlink{a00167_a37ef7dd1bd3f62750baf3ea3d4ec7bf6_a37ef7dd1bd3f62750baf3ea3d4ec7bf6}{sbrk}(0);
-77     \textcolor{keywordflow}{if}((\textcolor{keywordtype}{char}*)block+header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size}==programbreak) \{
+77     \textcolor{keywordflow}{if}((\textcolor{keywordtype}{char}*)block+header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size}==programbreak) \{
 78         \textcolor{keywordflow}{if}(\hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head}==\hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail}) \{
 79             \hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head} = \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail} = \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
 80         \} \textcolor{keywordflow}{else} \{
 81             tmp = \hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head};
 82             \textcolor{keywordflow}{while}(tmp) \{
-83                 \textcolor{keywordflow}{if}(tmp->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail}) \{
-84                     tmp->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+83                 \textcolor{keywordflow}{if}(tmp->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail}) \{
+84                     tmp->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
 85                     \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail} = tmp;
 86                 \}
-87                 tmp = tmp->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next};
+87                 tmp = tmp->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next};
 88             \}
 89         \}
-90         \hyperlink{a00167_a37ef7dd1bd3f62750baf3ea3d4ec7bf6_a37ef7dd1bd3f62750baf3ea3d4ec7bf6}{sbrk}(0-\textcolor{keyword}{sizeof}(\hyperlink{a00286}{header\_t})-header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size});
+90         \hyperlink{a00167_a37ef7dd1bd3f62750baf3ea3d4ec7bf6_a37ef7dd1bd3f62750baf3ea3d4ec7bf6}{sbrk}(0-\textcolor{keyword}{sizeof}(\hyperlink{a00292}{header\_t})-header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size});
 91         \textcolor{keywordflow}{return};
 92     \}
-93     header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} = 1;
+93     header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} = 1;
 94 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00170_a3ef64f08269a275815bb42bb97e0b562_a3ef64f08269a275815bb42bb97e0b562}\label{a00170_a3ef64f08269a275815bb42bb97e0b562_a3ef64f08269a275815bb42bb97e0b562}} 
@@ -136,7 +136,7 @@ Definition at line 13 of file mem.\+c.
 \index{mem.\+h@{mem.\+h}!get\+\_\+free\+\_\+block@{get\+\_\+free\+\_\+block}}
 \index{get\+\_\+free\+\_\+block@{get\+\_\+free\+\_\+block}!mem.\+h@{mem.\+h}}
 \subsubsection{\texorpdfstring{get\+\_\+free\+\_\+block()}{get\_free\_block()}}
-{\footnotesize\ttfamily \hyperlink{a00286}{header\+\_\+t}$\ast$ get\+\_\+free\+\_\+block (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{a00292}{header\+\_\+t}$\ast$ get\+\_\+free\+\_\+block (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -145,11 +145,11 @@ Definition at line 29 of file mem.\+c.
 
 \begin{DoxyCode}
 30 \{
-31     \hyperlink{a00286}{header\_t} *curr = \hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head};
+31     \hyperlink{a00292}{header\_t} *curr = \hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head};
 32     \textcolor{keywordflow}{while}(curr) \{
-33         \textcolor{keywordflow}{if} (curr->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} && curr->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size} >= size)
+33         \textcolor{keywordflow}{if} (curr->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} && curr->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size} >= size)
 34             \textcolor{keywordflow}{return} curr;
-35         curr = curr->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next};
+35         curr = curr->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next};
 36     \}
 37     \textcolor{keywordflow}{return} \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
 38 \}
@@ -169,27 +169,27 @@ Definition at line 40 of file mem.\+c.
 40                           \{
 41     \textcolor{keywordtype}{size\_t} total\_size;
 42     \textcolor{keywordtype}{void} *block;
-43     \hyperlink{a00286}{header\_t} *header;
+43     \hyperlink{a00292}{header\_t} *header;
 44     \textcolor{keywordflow}{if}(!size)
 45         \textcolor{keywordflow}{return} \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
 46     header = \hyperlink{a00167_af6982edbc1f3bd90948598df448fbe5e_af6982edbc1f3bd90948598df448fbe5e}{get\_free\_block}(size);
 47     \textcolor{keywordflow}{if}(header) \{
-48         header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} = 0;
+48         header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} = 0;
 49         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{void}*)(header + 1);
 50     \}
-51     total\_size = \textcolor{keyword}{sizeof}(\hyperlink{a00286}{header\_t}) + size;
+51     total\_size = \textcolor{keyword}{sizeof}(\hyperlink{a00292}{header\_t}) + size;
 52     block = \hyperlink{a00167_a37ef7dd1bd3f62750baf3ea3d4ec7bf6_a37ef7dd1bd3f62750baf3ea3d4ec7bf6}{sbrk}(total\_size);
 53     \textcolor{keywordflow}{if}(block == (\textcolor{keywordtype}{void}*)-1) \{
 54         \textcolor{keywordflow}{return} \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
 55     \}
 56     header = block;
-57     header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size} = size;
-58     header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} = 0;
-59     header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+57     header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size} = size;
+58     header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} = 0;
+59     header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
 60     \textcolor{keywordflow}{if}(!\hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head})
 61         \hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head} = header;
 62     \textcolor{keywordflow}{if}(\hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail})
-63         \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail}->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = header;
+63         \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail}->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = header;
 64     \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail} = header;
 65     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{void}*)(header+1);
 66 \}
@@ -207,17 +207,17 @@ Definition at line 115 of file mem.\+c.
 
 \begin{DoxyCode}
 116 \{
-117     \hyperlink{a00286}{header\_t} *header;
+117     \hyperlink{a00292}{header\_t} *header;
 118     \textcolor{keywordtype}{void} *ret;
 119     \textcolor{keywordflow}{if} (!block || !size)
 120         \textcolor{keywordflow}{return} \hyperlink{a00167_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}{malloc}(size);
-121     header = (\hyperlink{a00286}{header\_t}*)block - 1;
-122     \textcolor{keywordflow}{if} (header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size} >= size)
+121     header = (\hyperlink{a00292}{header\_t}*)block - 1;
+122     \textcolor{keywordflow}{if} (header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size} >= size)
 123         \textcolor{keywordflow}{return} block;
 124     ret = \hyperlink{a00167_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}{malloc}(size);
 125     \textcolor{keywordflow}{if} (ret) \{
 126         
-127         \hyperlink{a00131_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(ret, block, header->\hyperlink{a00286_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00286_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size});
+127         \hyperlink{a00131_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(ret, block, header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size});
 128         \hyperlink{a00167_abbcfa46e4bdcb73aecd859a389031a02_abbcfa46e4bdcb73aecd859a389031a02}{free}(block);
 129     \}
 130     \textcolor{keywordflow}{return} ret;

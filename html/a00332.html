@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: VitalityX Interrupt 3Fh (63)</title>
+<title>VitalityX: VXBFSFile Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -39,13 +39,50 @@ $(function() {
 <div id="main-nav"></div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">VitalityX Interrupt 3Fh (63) </div>  </div>
+<div class="title">VXBFSFile Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Interrupt 3Fh is the standard VitalityX software interrupt. You interrupt 3Fh to run VitalityX functions while in usermode.</p>
-<p>For example, to write to Bochs (emulation software) output (in Intel syntax): </p><div class="fragment"><div class="line">        mov eax,0x01 ; Set mode to Bochs Output</div><div class="line">        mov ebx,string ; Set ebx to string pointer</div><div class="line">        int 3fh ; Interrupt VitalityX</div><div class="line">string: db &#39;Hello VitalityX!&#39;,0</div></div><!-- fragment --><p>Here is the current list of supported interrupts:</p>
-<div class="fragment"><div class="line">eax 0x01:</div><div class="line"></div><div class="line">gets:</div><div class="line">ebx {string}</div><div class="line">sets:</div><div class="line">none</div><div class="line"></div><div class="line">This will write {string} terminated with 0x0 to the Bochs output.</div><div class="line"></div><div class="line">eax 0x02:</div><div class="line"></div><div class="line">gets:</div><div class="line">ebx {string}</div><div class="line">sets:</div><div class="line">none</div><div class="line"></div><div class="line">This will write {string} terminated with 0x0 to the graphical output.</div><div class="line"></div><div class="line">eax 0x03:</div><div class="line"></div><div class="line">gets:</div><div class="line">edi {code pointer}</div><div class="line">edx {mode}</div><div class="line">sets:</div><div class="line">ebx {entry id}</div><div class="line"></div><div class="line">This will add a VLib entry and give you the VLib entry ID.</div><div class="line"></div><div class="line">eax 0x04:</div><div class="line"></div><div class="line">gets:</div><div class="line">none</div><div class="line">sets:</div><div class="line">none</div><div class="line"></div><div class="line">This yields the current task.</div><div class="line"></div><div class="line">Int 3fh:eax=5h was moved to Int3eh, instead of changing the value of eax you just interrupt 3eH</div></div><!-- fragment --> </div></div><!-- contents -->
+
+<p>This is a VXBFS File.  
+ <a href="a00332.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="a00206_source.html">vxbfs.h</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for VXBFSFile:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00330.png" border="0" usemap="#VXBFSFile_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a07ecc9bacdc2943442f26f62f6749055"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332_a07ecc9bacdc2943442f26f62f6749055.html#a07ecc9bacdc2943442f26f62f6749055">name</a> [11]</td></tr>
+<tr class="separator:a07ecc9bacdc2943442f26f62f6749055"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03b954de114d8e01bb783ddef964e8ca"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332_a03b954de114d8e01bb783ddef964e8ca.html#a03b954de114d8e01bb783ddef964e8ca">guid</a> [8]</td></tr>
+<tr class="separator:a03b954de114d8e01bb783ddef964e8ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad030f5719e51b0b41b7cb6047f4110b2"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332_ad030f5719e51b0b41b7cb6047f4110b2.html#ad030f5719e51b0b41b7cb6047f4110b2">ext</a> [3]</td></tr>
+<tr class="separator:ad030f5719e51b0b41b7cb6047f4110b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fc3bc64d7f2330f923507d2430bdde4"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332_a8fc3bc64d7f2330f923507d2430bdde4.html#a8fc3bc64d7f2330f923507d2430bdde4">flags</a></td></tr>
+<tr class="separator:a8fc3bc64d7f2330f923507d2430bdde4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0784f3fae88428f37dfb64fd79c0004"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00206_a0774a42f7a124b6d3054ccabd4d35463.html#a0774a42f7a124b6d3054ccabd4d35463">vxbfs_modblock_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332_ac0784f3fae88428f37dfb64fd79c0004.html#ac0784f3fae88428f37dfb64fd79c0004">modblock</a></td></tr>
+<tr class="separator:ac0784f3fae88428f37dfb64fd79c0004"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2c7e2e1b3827ce9fbaa045b89202784"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="a00332.html">VXBFSFile</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332_aa2c7e2e1b3827ce9fbaa045b89202784.html#aa2c7e2e1b3827ce9fbaa045b89202784">nextfile</a></td></tr>
+<tr class="separator:aa2c7e2e1b3827ce9fbaa045b89202784"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb380ce440ec23ef6c9c06d871be3c0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00140_af6a258d8f3ee5206d682d799316314b1.html#af6a258d8f3ee5206d682d799316314b1">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00332_adb380ce440ec23ef6c9c06d871be3c0d.html#adb380ce440ec23ef6c9c06d871be3c0d">md</a></td></tr>
+<tr class="separator:adb380ce440ec23ef6c9c06d871be3c0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This is a VXBFS File. </p>
+<p>It stores the 11 character name, a GUID, an ext, flags, next modblock, nextfile and a md boolean. The GUID is a unique identifier so multiple VXBFS files can share the same name. The ext is the VXBFS File type. The md means "More Data", this signifies that there should be a search for more data after this. The flags are data which is for the OS. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00206_source.html#l00029">29</a> of file <a class="el" href="a00206_source.html">vxbfs.h</a>.</p>
+</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<li>libc/vitality/<a class="el" href="a00206_source.html">vxbfs.h</a></li>
+</ul>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -50,20 +50,21 @@ $(function() {
 <div class="title">kernel.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00176_source.html">../libc/vitality/tty.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00182_source.html">../libc/vitality/tty.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="a00074_source.html">../libc/descriptortables.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="a00122_source.html">../libc/page.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="a00080_source.html">../libc/ext/debug.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="a00065_source.html">../drivers/vga.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="a00092_source.html">../libc/ext/task.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="a00170_source.html">../libc/vitality/mem.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00194_source.html">../libc/vitality/vlib.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00200_source.html">../libc/vitality/vlib.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="a00035_source.html">../drivers/ide.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="a00152_source.html">../libc/vitality/fs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00200_source.html">../libc/vitality/vxbfs.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00185_source.html">../libc/vitality/vfs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00206_source.html">../libc/vitality/vxbfs.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00191_source.html">../libc/vitality/vfs.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="a00041_source.html">../drivers/keyboard.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="a00059_source.html">../drivers/serial.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00176_source.html">../libc/vitality/mon.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for kernel.c:</div>
 <div class="dyncontent">
@@ -80,10 +81,10 @@ Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:af69f4f709fdab28dec6b8fb75fb4d526"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00194_a97c1a7136f2ab06368e93c2d7533d619.html#a97c1a7136f2ab06368e93c2d7533d619">vlib_entry_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00068_af69f4f709fdab28dec6b8fb75fb4d526.html#af69f4f709fdab28dec6b8fb75fb4d526">vlibe</a> [255]</td></tr>
+<tr class="memitem:af69f4f709fdab28dec6b8fb75fb4d526"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00200_a97c1a7136f2ab06368e93c2d7533d619.html#a97c1a7136f2ab06368e93c2d7533d619">vlib_entry_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00068_af69f4f709fdab28dec6b8fb75fb4d526.html#af69f4f709fdab28dec6b8fb75fb4d526">vlibe</a> [255]</td></tr>
 <tr class="memdesc:af69f4f709fdab28dec6b8fb75fb4d526"><td class="mdescLeft">&#160;</td><td class="mdescRight">The kernels C entry point.  <a href="a00068_af69f4f709fdab28dec6b8fb75fb4d526.html#af69f4f709fdab28dec6b8fb75fb4d526">More...</a><br /></td></tr>
 <tr class="separator:af69f4f709fdab28dec6b8fb75fb4d526"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2125beec541d04796805161dbec05fcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00194_a2d9000b4fbb25c5ed2950a2d8f4921d5.html#a2d9000b4fbb25c5ed2950a2d8f4921d5">vlibdesriptor_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00068_a2125beec541d04796805161dbec05fcf.html#a2125beec541d04796805161dbec05fcf">vlibd</a></td></tr>
+<tr class="memitem:a2125beec541d04796805161dbec05fcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00200_a2d9000b4fbb25c5ed2950a2d8f4921d5.html#a2d9000b4fbb25c5ed2950a2d8f4921d5">vlibdesriptor_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00068_a2125beec541d04796805161dbec05fcf.html#a2125beec541d04796805161dbec05fcf">vlibd</a></td></tr>
 <tr class="separator:a2125beec541d04796805161dbec05fcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af37cb131d8a2101addfbf5fb2d8a53b4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00068_af37cb131d8a2101addfbf5fb2d8a53b4.html#af37cb131d8a2101addfbf5fb2d8a53b4">primarydrive</a></td></tr>
 <tr class="separator:af37cb131d8a2101addfbf5fb2d8a53b4"><td class="memSeparator" colspan="2">&#160;</td></tr>

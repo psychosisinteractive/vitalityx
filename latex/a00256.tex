@@ -1,0 +1,76 @@
+\hypertarget{a00256}{}\section{page\+\_\+directory Struct Reference}
+\label{a00256}\index{page\+\_\+directory@{page\+\_\+directory}}
+
+
+{\ttfamily \#include $<$page.\+h$>$}
+
+
+
+Collaboration diagram for page\+\_\+directory\+:
+% FIG 0
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{a00122_a052d6ef76d4f16828bb0f478b24b6b55_a052d6ef76d4f16828bb0f478b24b6b55}{page\+\_\+table\+\_\+t} $\ast$ \hyperlink{a00256_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables} \mbox{[}1024\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of pointers to pagetables. \end{DoxyCompactList}\item 
+\hyperlink{a00140_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00256_a99a9e823491d762288ceb3faf2b1088b_a99a9e823491d762288ceb3faf2b1088b}{tables\+Physical} \mbox{[}1024\mbox{]}
+\begin{DoxyCompactList}\small\item\em Array of pointers to the pagetables above, but gives their {\itshape physical} location, for loading into the C\+R3 register. \end{DoxyCompactList}\item 
+\hyperlink{a00140_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} \hyperlink{a00256_a69f56a12e20a59682292842323aabefb_a69f56a12e20a59682292842323aabefb}{physical\+Addr}
+\begin{DoxyCompactList}\small\item\em The physical address of tables\+Physical. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 22 of file page.\+h.
+
+
+
+\subsection{Field Documentation}
+\mbox{\Hypertarget{a00256_a69f56a12e20a59682292842323aabefb_a69f56a12e20a59682292842323aabefb}\label{a00256_a69f56a12e20a59682292842323aabefb_a69f56a12e20a59682292842323aabefb}} 
+\index{page\+\_\+directory@{page\+\_\+directory}!physical\+Addr@{physical\+Addr}}
+\index{physical\+Addr@{physical\+Addr}!page\+\_\+directory@{page\+\_\+directory}}
+\subsubsection{\texorpdfstring{physical\+Addr}{physicalAddr}}
+{\footnotesize\ttfamily \hyperlink{a00140_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+\_\+directory\+::physical\+Addr}
+
+
+
+The physical address of tables\+Physical. 
+
+This comes into play when we get our kernel heap allocated and the directory may be in a different location in virtual memory. 
+
+Definition at line 38 of file page.\+h.
+
+\mbox{\Hypertarget{a00256_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}\label{a00256_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}} 
+\index{page\+\_\+directory@{page\+\_\+directory}!tables@{tables}}
+\index{tables@{tables}!page\+\_\+directory@{page\+\_\+directory}}
+\subsubsection{\texorpdfstring{tables}{tables}}
+{\footnotesize\ttfamily \hyperlink{a00122_a052d6ef76d4f16828bb0f478b24b6b55_a052d6ef76d4f16828bb0f478b24b6b55}{page\+\_\+table\+\_\+t}$\ast$ page\+\_\+directory\+::tables\mbox{[}1024\mbox{]}}
+
+
+
+Array of pointers to pagetables. 
+
+
+
+Definition at line 27 of file page.\+h.
+
+\mbox{\Hypertarget{a00256_a99a9e823491d762288ceb3faf2b1088b_a99a9e823491d762288ceb3faf2b1088b}\label{a00256_a99a9e823491d762288ceb3faf2b1088b_a99a9e823491d762288ceb3faf2b1088b}} 
+\index{page\+\_\+directory@{page\+\_\+directory}!tables\+Physical@{tables\+Physical}}
+\index{tables\+Physical@{tables\+Physical}!page\+\_\+directory@{page\+\_\+directory}}
+\subsubsection{\texorpdfstring{tables\+Physical}{tablesPhysical}}
+{\footnotesize\ttfamily \hyperlink{a00140_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} page\+\_\+directory\+::tables\+Physical\mbox{[}1024\mbox{]}}
+
+
+
+Array of pointers to the pagetables above, but gives their {\itshape physical} location, for loading into the C\+R3 register. 
+
+
+
+Definition at line 32 of file page.\+h.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+libc/\hyperlink{a00122}{page.\+h}\end{DoxyCompactItemize}

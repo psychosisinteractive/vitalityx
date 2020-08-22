@@ -8,9 +8,9 @@ This graph shows which files directly or indirectly include this file\+:
 \subsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{a00214}{I\+D\+E\+Channel\+Registers}
+struct \hyperlink{a00220}{I\+D\+E\+Channel\+Registers}
 \item 
-struct \hyperlink{a00218}{ide\+\_\+device}
+struct \hyperlink{a00224}{ide\+\_\+device}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -42,11 +42,11 @@ void \hyperlink{a00035_a31655fcec0cc8f9f8792b98cd4441fdf_a31655fcec0cc8f9f8792b9
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{a00214}{I\+D\+E\+Channel\+Registers} \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels} \mbox{[}2\mbox{]}
+struct \hyperlink{a00220}{I\+D\+E\+Channel\+Registers} \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels} \mbox{[}2\mbox{]}
 \item 
 \hyperlink{a00140_ab8ef12fab634c171394422d0ee8baf94_ab8ef12fab634c171394422d0ee8baf94}{byte} \hyperlink{a00035_a820b2230ab700e13350794494bd4a60f_a820b2230ab700e13350794494bd4a60f}{package} \mbox{[}1\mbox{]}
 \item 
-struct \hyperlink{a00218}{ide\+\_\+device} \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\+\_\+devices} \mbox{[}4\mbox{]}
+struct \hyperlink{a00224}{ide\+\_\+device} \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\+\_\+devices} \mbox{[}4\mbox{]}
 \end{DoxyCompactItemize}
 
 
@@ -66,10 +66,10 @@ Definition at line 294 of file ide.\+c.
 295                                                                                                 \{
 296     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} lba\_mode \textcolor{comment}{/* 0: CHS, 1:LBA28, 2: LBA48 */}, dma \textcolor{comment}{/* 0: No DMA, 1: DMA */}, cmd;
 297     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} lba\_io[6];
-298     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  channel      = \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].\hyperlink{a00218_aea5a88e5bb25bdf109e66a51cba51699_aea5a88e5bb25bdf109e66a51cba51699}{Channel}; \textcolor{comment}{// Read the Channel.}
-299     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  slavebit      = \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].\hyperlink{a00218_a8b7ef57ccb98cb9511bd285f1bf057f5_a8b7ef57ccb98cb9511bd285f1bf057f5}{Drive}; \textcolor{comment}{// Read the Drive
+298     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  channel      = \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].\hyperlink{a00224_aea5a88e5bb25bdf109e66a51cba51699_aea5a88e5bb25bdf109e66a51cba51699}{Channel}; \textcolor{comment}{// Read the Channel.}
+299     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  slavebit      = \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].\hyperlink{a00224_a8b7ef57ccb98cb9511bd285f1bf057f5_a8b7ef57ccb98cb9511bd285f1bf057f5}{Drive}; \textcolor{comment}{// Read the Drive
        [Master/Slave]}
-300     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  bus = \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].\hyperlink{a00214_a39be732a5e3e643508fc5bc3e0bfb4e8_a39be732a5e3e643508fc5bc3e0bfb4e8}{base}; \textcolor{comment}{// Bus Base, like 0x1F0 which is also data
+300     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  bus = \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].\hyperlink{a00220_a39be732a5e3e643508fc5bc3e0bfb4e8_a39be732a5e3e643508fc5bc3e0bfb4e8}{base}; \textcolor{comment}{// Bus Base, like 0x1F0 which is also data
        port.}
 301     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  words      = 256; \textcolor{comment}{// Almost every ATA drive has a sector-size of 512-byte.}
 302     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} cyl, i;
@@ -195,9 +195,9 @@ Definition at line 530 of file ide.\+c.
 
 \begin{DoxyCode}
 530                                           \{
-531    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}   channel      = \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].\hyperlink{a00218_aea5a88e5bb25bdf109e66a51cba51699_aea5a88e5bb25bdf109e66a51cba51699}{Channel};
-532    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}   slavebit      = \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].\hyperlink{a00218_a8b7ef57ccb98cb9511bd285f1bf057f5_a8b7ef57ccb98cb9511bd285f1bf057f5}{Drive};
-533    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}   bus      = \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].\hyperlink{a00214_a39be732a5e3e643508fc5bc3e0bfb4e8_a39be732a5e3e643508fc5bc3e0bfb4e8}{base};
+531    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}   channel      = \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].\hyperlink{a00224_aea5a88e5bb25bdf109e66a51cba51699_aea5a88e5bb25bdf109e66a51cba51699}{Channel};
+532    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}   slavebit      = \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].\hyperlink{a00224_a8b7ef57ccb98cb9511bd285f1bf057f5_a8b7ef57ccb98cb9511bd285f1bf057f5}{Drive};
+533    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}   bus      = \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].\hyperlink{a00220_a39be732a5e3e643508fc5bc3e0bfb4e8_a39be732a5e3e643508fc5bc3e0bfb4e8}{base};
 534    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}   words      = 2048 / 2;               \textcolor{comment}{// Sector Size in Words.}
 535    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}  err = 0;
 536    \hyperlink{a00032_a12985ec2f925d0cdbd7d24728b9849f9_a12985ec2f925d0cdbd7d24728b9849f9}{ide\_irq\_invoked} = 0;
@@ -278,12 +278,12 @@ Definition at line 199 of file ide.\+c.
 202     \textcolor{keywordtype}{int} j, k, count = 0;
 203     
 204     \textcolor{comment}{// 1- Detect I/O Ports which interface IDE Controller:}
-205     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_aa18f254fa4afcfdb5fcf897eeaf38564_aa18f254fa4afcfdb5fcf897eeaf38564}{ATA\_PRIMARY}  ].\hyperlink{a00214_a39be732a5e3e643508fc5bc3e0bfb4e8_a39be732a5e3e643508fc5bc3e0bfb4e8}{base}  = (BAR0 & 0xFFFFFFFC) + 0x1F0 * (!BAR0);
-206     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_aa18f254fa4afcfdb5fcf897eeaf38564_aa18f254fa4afcfdb5fcf897eeaf38564}{ATA\_PRIMARY}  ].\hyperlink{a00214_aff63cdf64356750ad0c564fc7d6cd7b9_aff63cdf64356750ad0c564fc7d6cd7b9}{ctrl}  = (BAR1 & 0xFFFFFFFC) + 0x3F6 * (!BAR1);
-207     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_ad514d776b09e8b873aa7087ef0091fe6_ad514d776b09e8b873aa7087ef0091fe6}{ATA\_SECONDARY}].\hyperlink{a00214_a39be732a5e3e643508fc5bc3e0bfb4e8_a39be732a5e3e643508fc5bc3e0bfb4e8}{base}  = (BAR2 & 0xFFFFFFFC) + 0x170 * (!BAR2);
-208     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_ad514d776b09e8b873aa7087ef0091fe6_ad514d776b09e8b873aa7087ef0091fe6}{ATA\_SECONDARY}].\hyperlink{a00214_aff63cdf64356750ad0c564fc7d6cd7b9_aff63cdf64356750ad0c564fc7d6cd7b9}{ctrl}  = (BAR3 & 0xFFFFFFFC) + 0x376 * (!BAR3);
-209     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_aa18f254fa4afcfdb5fcf897eeaf38564_aa18f254fa4afcfdb5fcf897eeaf38564}{ATA\_PRIMARY}  ].\hyperlink{a00214_a037009656fd72b00bdd5aacd92a22f18_a037009656fd72b00bdd5aacd92a22f18}{bmide} = (BAR4 & 0xFFFFFFFC) + 0; \textcolor{comment}{// Bus Master IDE}
-210     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_ad514d776b09e8b873aa7087ef0091fe6_ad514d776b09e8b873aa7087ef0091fe6}{ATA\_SECONDARY}].\hyperlink{a00214_a037009656fd72b00bdd5aacd92a22f18_a037009656fd72b00bdd5aacd92a22f18}{bmide} = (BAR4 & 0xFFFFFFFC) + 8; \textcolor{comment}{// Bus Master IDE}
+205     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_aa18f254fa4afcfdb5fcf897eeaf38564_aa18f254fa4afcfdb5fcf897eeaf38564}{ATA\_PRIMARY}  ].\hyperlink{a00220_a39be732a5e3e643508fc5bc3e0bfb4e8_a39be732a5e3e643508fc5bc3e0bfb4e8}{base}  = (BAR0 & 0xFFFFFFFC) + 0x1F0 * (!BAR0);
+206     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_aa18f254fa4afcfdb5fcf897eeaf38564_aa18f254fa4afcfdb5fcf897eeaf38564}{ATA\_PRIMARY}  ].\hyperlink{a00220_aff63cdf64356750ad0c564fc7d6cd7b9_aff63cdf64356750ad0c564fc7d6cd7b9}{ctrl}  = (BAR1 & 0xFFFFFFFC) + 0x3F6 * (!BAR1);
+207     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_ad514d776b09e8b873aa7087ef0091fe6_ad514d776b09e8b873aa7087ef0091fe6}{ATA\_SECONDARY}].\hyperlink{a00220_a39be732a5e3e643508fc5bc3e0bfb4e8_a39be732a5e3e643508fc5bc3e0bfb4e8}{base}  = (BAR2 & 0xFFFFFFFC) + 0x170 * (!BAR2);
+208     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_ad514d776b09e8b873aa7087ef0091fe6_ad514d776b09e8b873aa7087ef0091fe6}{ATA\_SECONDARY}].\hyperlink{a00220_aff63cdf64356750ad0c564fc7d6cd7b9_aff63cdf64356750ad0c564fc7d6cd7b9}{ctrl}  = (BAR3 & 0xFFFFFFFC) + 0x376 * (!BAR3);
+209     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_aa18f254fa4afcfdb5fcf897eeaf38564_aa18f254fa4afcfdb5fcf897eeaf38564}{ATA\_PRIMARY}  ].\hyperlink{a00220_a037009656fd72b00bdd5aacd92a22f18_a037009656fd72b00bdd5aacd92a22f18}{bmide} = (BAR4 & 0xFFFFFFFC) + 0; \textcolor{comment}{// Bus Master IDE}
+210     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_ad514d776b09e8b873aa7087ef0091fe6_ad514d776b09e8b873aa7087ef0091fe6}{ATA\_SECONDARY}].\hyperlink{a00220_a037009656fd72b00bdd5aacd92a22f18_a037009656fd72b00bdd5aacd92a22f18}{bmide} = (BAR4 & 0xFFFFFFFC) + 8; \textcolor{comment}{// Bus Master IDE}
 211     \textcolor{comment}{// 2- Disable IRQs:}
 212     \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(\hyperlink{a00032_aa18f254fa4afcfdb5fcf897eeaf38564_aa18f254fa4afcfdb5fcf897eeaf38564}{ATA\_PRIMARY}  , \hyperlink{a00032_acd25672516342decdb4acb14b13dfa03_acd25672516342decdb4acb14b13dfa03}{ATA\_REG\_CONTROL}, 2);
 213     \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(\hyperlink{a00032_ad514d776b09e8b873aa7087ef0091fe6_ad514d776b09e8b873aa7087ef0091fe6}{ATA\_SECONDARY}, \hyperlink{a00032_acd25672516342decdb4acb14b13dfa03_acd25672516342decdb4acb14b13dfa03}{ATA\_REG\_CONTROL}, 2);
@@ -293,7 +293,7 @@ Definition at line 199 of file ide.\+c.
 217         \textcolor{keywordflow}{for} (j = 0; j < 2; j++) \{
 218     
 219             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} err = 0, type = \hyperlink{a00032_a3046279f2a25227c121b69f4cf855bf8_a3046279f2a25227c121b69f4cf855bf8}{IDE\_ATA}, status;
-220             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00218_a293fdfa780f639d9eb98fcf664699b08_a293fdfa780f639d9eb98fcf664699b08}{Reserved} = 0; \textcolor{comment}{// Assuming that no drive here.}
+220             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a293fdfa780f639d9eb98fcf664699b08_a293fdfa780f639d9eb98fcf664699b08}{Reserved} = 0; \textcolor{comment}{// Assuming that no drive here.}
 221     
 222             \textcolor{comment}{// (I) Select Drive:}
 223             \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(i, \hyperlink{a00032_af80b9f0d852148eda227b433f72ca8bb_af80b9f0d852148eda227b433f72ca8bb}{ATA\_REG\_HDDEVSEL}, 0xA0 | (j << 4)); \textcolor{comment}{// Select Drive.}
@@ -339,15 +339,15 @@ Definition at line 199 of file ide.\+c.
       \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf}, 128);
 259     
 260             \textcolor{comment}{// (VI) Read Device Parameters:}
-261             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00218_a293fdfa780f639d9eb98fcf664699b08_a293fdfa780f639d9eb98fcf664699b08}{Reserved}     = 1;
-262             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00218_a3a1fc6eda2f5cafc41f8626c67ec9631_a3a1fc6eda2f5cafc41f8626c67ec9631}{Type}         = type;
-263             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00218_aea5a88e5bb25bdf109e66a51cba51699_aea5a88e5bb25bdf109e66a51cba51699}{Channel}      = i;
-264             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00218_a8b7ef57ccb98cb9511bd285f1bf057f5_a8b7ef57ccb98cb9511bd285f1bf057f5}{Drive}        = j;
-265             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00218_ad31d088a8fd56a5760a2bcff6891f21d_ad31d088a8fd56a5760a2bcff6891f21d}{Signature}    = *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} *)(
+261             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a293fdfa780f639d9eb98fcf664699b08_a293fdfa780f639d9eb98fcf664699b08}{Reserved}     = 1;
+262             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a3a1fc6eda2f5cafc41f8626c67ec9631_a3a1fc6eda2f5cafc41f8626c67ec9631}{Type}         = type;
+263             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_aea5a88e5bb25bdf109e66a51cba51699_aea5a88e5bb25bdf109e66a51cba51699}{Channel}      = i;
+264             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a8b7ef57ccb98cb9511bd285f1bf057f5_a8b7ef57ccb98cb9511bd285f1bf057f5}{Drive}        = j;
+265             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_ad31d088a8fd56a5760a2bcff6891f21d_ad31d088a8fd56a5760a2bcff6891f21d}{Signature}    = *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} *)(
       \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf} + \hyperlink{a00032_a4224d2160f2f2718d8a67a09bfb8f4a5_a4224d2160f2f2718d8a67a09bfb8f4a5}{ATA\_IDENT\_DEVICETYPE}));
-266             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00218_af318d471b2f7093cd2ba95e9711b617c_af318d471b2f7093cd2ba95e9711b617c}{Capabilities} = *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} *)(
+266             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_af318d471b2f7093cd2ba95e9711b617c_af318d471b2f7093cd2ba95e9711b617c}{Capabilities} = *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} *)(
       \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf} + \hyperlink{a00032_a4efaa1ae14eb268a085d1824eb2a1f08_a4efaa1ae14eb268a085d1824eb2a1f08}{ATA\_IDENT\_CAPABILITIES}));
-267             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00218_ad090e2f34b0618e837e048593f480683_ad090e2f34b0618e837e048593f480683}{CommandSets}  = *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *)(
+267             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_ad090e2f34b0618e837e048593f480683_ad090e2f34b0618e837e048593f480683}{CommandSets}  = *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *)(
       \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf} + \hyperlink{a00032_a8536e132f24aa36e826f753b6061e8ea_a8536e132f24aa36e826f753b6061e8ea}{ATA\_IDENT\_COMMANDSETS}));
 268     
 269             \textcolor{comment}{// (VII) Get Size:}
@@ -357,16 +357,16 @@ Definition at line 199 of file ide.\+c.
       \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf} + \hyperlink{a00032_aa1926c13a31f512c9ec07ed3bdba8893_aa1926c13a31f512c9ec07ed3bdba8893}{ATA\_IDENT\_MAX\_LBA\_EXT}));
 273             \textcolor{keywordflow}{else}
 274                 \textcolor{comment}{// Device uses CHS or 28-bit Addressing:}
-275                 \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00218_a37f4be958e0c710ab62e2536497f392d_a37f4be958e0c710ab62e2536497f392d}{Size}   = *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *)(
+275                 \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a37f4be958e0c710ab62e2536497f392d_a37f4be958e0c710ab62e2536497f392d}{Size}   = *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *)(
       \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf} + \hyperlink{a00032_ae0d046a29ce70e07d868961cf17b54c7_ae0d046a29ce70e07d868961cf17b54c7}{ATA\_IDENT\_MAX\_LBA}));
 276     
 277             \textcolor{comment}{// (VIII) String indicates model of device (like Western Digital HDD and SONY DVD-RW...):}
 278             \textcolor{keywordflow}{for}(k = 0; k < 40; k += 2) \{
-279                 \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00218_a8528ca17136240ce55c9441d68711e78_a8528ca17136240ce55c9441d68711e78}{Model}[k] = \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf}[
+279                 \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a8528ca17136240ce55c9441d68711e78_a8528ca17136240ce55c9441d68711e78}{Model}[k] = \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf}[
       \hyperlink{a00032_a9fd52e892928c016a4a66f59a46241e4_a9fd52e892928c016a4a66f59a46241e4}{ATA\_IDENT\_MODEL} + k + 1];
-280                 \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00218_a8528ca17136240ce55c9441d68711e78_a8528ca17136240ce55c9441d68711e78}{Model}[k + 1] = \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf}[
+280                 \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a8528ca17136240ce55c9441d68711e78_a8528ca17136240ce55c9441d68711e78}{Model}[k + 1] = \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf}[
       \hyperlink{a00032_a9fd52e892928c016a4a66f59a46241e4_a9fd52e892928c016a4a66f59a46241e4}{ATA\_IDENT\_MODEL} + k];\}
-281             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00218_a8528ca17136240ce55c9441d68711e78_a8528ca17136240ce55c9441d68711e78}{Model}[40] = 0; \textcolor{comment}{// Terminate String.}
+281             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a8528ca17136240ce55c9441d68711e78_a8528ca17136240ce55c9441d68711e78}{Model}[40] = 0; \textcolor{comment}{// Terminate String.}
 282     
 283             count++;
 284         \}
@@ -374,7 +374,7 @@ Definition at line 199 of file ide.\+c.
 286     \textcolor{comment}{// 4- Print Summary:}
 287     \textcolor{keywordflow}{for} (i = 0; i < 4; i++)
 288         \textcolor{keywordflow}{if} (\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[i].Reserved == 1) \{
-289             \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Found Drive\(\backslash\)n"});
+289             \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Found Drive\(\backslash\)n"});
 290 
 291         \}
 292 \}
@@ -462,29 +462,29 @@ Definition at line 177 of file ide.\+c.
 178     \textcolor{keywordflow}{if} (err == 0)
 179         \textcolor{keywordflow}{return} err;
 180     
-181     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"IDE:"});
-182     \textcolor{keywordflow}{if} (err == 1) \{\hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Device Fault\(\backslash\)n     "}); err = 19;\}
+181     \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"IDE:"});
+182     \textcolor{keywordflow}{if} (err == 1) \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Device Fault\(\backslash\)n     "}); err = 19;\}
 183     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (err == 2) \{
 184         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} st = \hyperlink{a00032_aef734da4bdc0c1d014528fd2f66e0686_aef734da4bdc0c1d014528fd2f66e0686}{ide\_read}(\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].Channel, 
       \hyperlink{a00032_ad2f2744a08145beb17b7ed6ca0465d85_ad2f2744a08145beb17b7ed6ca0465d85}{ATA\_REG\_ERROR});
-185         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_ac4f0c06f285d99068cbad7b6d4641d1f_ac4f0c06f285d99068cbad7b6d4641d1f}{ATA\_ER\_AMNF})   \{\hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- No Address Mark Found\(\backslash\)n     "});
+185         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_ac4f0c06f285d99068cbad7b6d4641d1f_ac4f0c06f285d99068cbad7b6d4641d1f}{ATA\_ER\_AMNF})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- No Address Mark Found\(\backslash\)n     "});
          err = 7;\}
-186         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_aaffca74832da09d4cf0ea68624546c91_aaffca74832da09d4cf0ea68624546c91}{ATA\_ER\_TK0NF})   \{\hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- No Media or Media Error\(\backslash\)n    
+186         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_aaffca74832da09d4cf0ea68624546c91_aaffca74832da09d4cf0ea68624546c91}{ATA\_ER\_TK0NF})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- No Media or Media Error\(\backslash\)n    
        "});   err = 3;\}
-187         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_a415987608bff240636a785bb48970e94_a415987608bff240636a785bb48970e94}{ATA\_ER\_ABRT})   \{\hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Command Aborted\(\backslash\)n     "});      
+187         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_a415987608bff240636a785bb48970e94_a415987608bff240636a785bb48970e94}{ATA\_ER\_ABRT})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Command Aborted\(\backslash\)n     "});      
       err = 20;\}
-188         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_af5f476aa2920211197aa8ff81f0dfdbd_af5f476aa2920211197aa8ff81f0dfdbd}{ATA\_ER\_MCR})   \{\hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- No Media or Media Error\(\backslash\)n     "});
+188         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_af5f476aa2920211197aa8ff81f0dfdbd_af5f476aa2920211197aa8ff81f0dfdbd}{ATA\_ER\_MCR})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- No Media or Media Error\(\backslash\)n     "});
          err = 3;\}
-189         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_a6bed47f17f64ab98da1dd946ca123198_a6bed47f17f64ab98da1dd946ca123198}{ATA\_ER\_IDNF})   \{\hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- ID mark not Found\(\backslash\)n     "});    
+189         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_a6bed47f17f64ab98da1dd946ca123198_a6bed47f17f64ab98da1dd946ca123198}{ATA\_ER\_IDNF})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- ID mark not Found\(\backslash\)n     "});    
         err = 21;\}
-190         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_aaed40c458ad34dae2d82381e71e372ac_aaed40c458ad34dae2d82381e71e372ac}{ATA\_ER\_MC})   \{\hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- No Media or Media Error\(\backslash\)n     "});  
+190         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_aaed40c458ad34dae2d82381e71e372ac_aaed40c458ad34dae2d82381e71e372ac}{ATA\_ER\_MC})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- No Media or Media Error\(\backslash\)n     "});  
        err = 3;\}
-191         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_ab1e1938e0fc8f511102b778956aa3bd4_ab1e1938e0fc8f511102b778956aa3bd4}{ATA\_ER\_UNC})   \{\hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Uncorrectable Data Error\(\backslash\)n     "})
+191         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_ab1e1938e0fc8f511102b778956aa3bd4_ab1e1938e0fc8f511102b778956aa3bd4}{ATA\_ER\_UNC})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Uncorrectable Data Error\(\backslash\)n     "})
       ;   err = 22;\}
-192         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_a97e6940186e5f1cfe5c501e56312de45_a97e6940186e5f1cfe5c501e56312de45}{ATA\_ER\_BBK})   \{\hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Bad Sectors\(\backslash\)n     "});       err =
+192         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_a97e6940186e5f1cfe5c501e56312de45_a97e6940186e5f1cfe5c501e56312de45}{ATA\_ER\_BBK})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Bad Sectors\(\backslash\)n     "});       err =
        13;\}
-193     \} \textcolor{keywordflow}{else}  \textcolor{keywordflow}{if} (err == 3)           \{\hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Reads Nothing\(\backslash\)n     "}); err = 23;\}
-194         \textcolor{keywordflow}{else}  \textcolor{keywordflow}{if} (err == 4)  \{\hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Write Protected\(\backslash\)n     "}); err = 8;\}
+193     \} \textcolor{keywordflow}{else}  \textcolor{keywordflow}{if} (err == 3)           \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Reads Nothing\(\backslash\)n     "}); err = 23;\}
+194         \textcolor{keywordflow}{else}  \textcolor{keywordflow}{if} (err == 4)  \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Write Protected\(\backslash\)n     "}); err = 8;\}
 195     
 196     \textcolor{keywordflow}{return} err;
 197 \}
@@ -677,13 +677,13 @@ Definition at line 507 of file ide.\+c.
 \index{ide.\+h@{ide.\+h}!channels@{channels}}
 \index{channels@{channels}!ide.\+h@{ide.\+h}}
 \subsubsection{\texorpdfstring{channels}{channels}}
-{\footnotesize\ttfamily struct \hyperlink{a00214}{I\+D\+E\+Channel\+Registers}  channels\mbox{[}2\mbox{]}}
+{\footnotesize\ttfamily struct \hyperlink{a00220}{I\+D\+E\+Channel\+Registers}  channels\mbox{[}2\mbox{]}}
 
 \mbox{\Hypertarget{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}\label{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}} 
 \index{ide.\+h@{ide.\+h}!ide\+\_\+devices@{ide\+\_\+devices}}
 \index{ide\+\_\+devices@{ide\+\_\+devices}!ide.\+h@{ide.\+h}}
 \subsubsection{\texorpdfstring{ide\+\_\+devices}{ide\_devices}}
-{\footnotesize\ttfamily struct \hyperlink{a00218}{ide\+\_\+device} ide\+\_\+devices\mbox{[}4\mbox{]}}
+{\footnotesize\ttfamily struct \hyperlink{a00224}{ide\+\_\+device} ide\+\_\+devices\mbox{[}4\mbox{]}}
 
 
 

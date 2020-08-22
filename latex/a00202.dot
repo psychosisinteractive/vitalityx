@@ -1,16 +1,12 @@
-digraph "libc/vitality/vxbfs.h"
+digraph "libc/vitality/vlib.h"
 {
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node3 [label="libc/vitality/vxbfs.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node3 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node4 [label="libc/vitality/fs.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00152.html"];
+  Node4 [label="libc/vitality/vlib.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node4 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
   Node5 [label="kernel/kernel.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00068.html"];
   Node4 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node6 [label="libc/vitality/fs.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00149.html"];
-  Node3 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node3 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node3 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node7 [label="libc/vitality/vxbfs.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00197.html"];
+  Node6 [label="libc/isr.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00113.html"];
+  Node4 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node7 [label="libc/vitality/vlib.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00197.html"];
 }

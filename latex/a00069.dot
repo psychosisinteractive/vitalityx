@@ -4,7 +4,7 @@ digraph "kernel/kernel.c"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node0 [label="kernel/kernel.c",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node0 -> Node1 [color="midnightblue",fontsize="10",style="solid"];
-  Node1 [label="../libc/vitality/tty.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00176.html"];
+  Node1 [label="../libc/vitality/tty.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00182.html"];
   Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
   Node2 [label="../types.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00140.html"];
   Node0 -> Node3 [color="midnightblue",fontsize="10",style="solid"];
@@ -39,7 +39,7 @@ digraph "kernel/kernel.c"
   Node13 [label="../libc/vitality/mem.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00170.html"];
   Node13 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
   Node0 -> Node14 [color="midnightblue",fontsize="10",style="solid"];
-  Node14 [label="../libc/vitality/vlib.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00194.html"];
+  Node14 [label="../libc/vitality/vlib.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00200.html"];
   Node14 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
   Node14 -> Node12 [color="midnightblue",fontsize="10",style="solid"];
   Node14 -> Node8 [color="midnightblue",fontsize="10",style="solid"];
@@ -55,10 +55,10 @@ digraph "kernel/kernel.c"
   Node17 [label="../string.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00128.html"];
   Node17 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
   Node16 -> Node18 [color="midnightblue",fontsize="10",style="solid"];
-  Node18 [label="vxbfs.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00200.html"];
+  Node18 [label="vxbfs.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00206.html"];
   Node18 -> Node2 [color="midnightblue",fontsize="10",style="solid"];
   Node18 -> Node19 [color="midnightblue",fontsize="10",style="solid"];
-  Node19 [label="vfs.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00185.html"];
+  Node19 [label="vfs.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00191.html"];
   Node0 -> Node18 [color="midnightblue",fontsize="10",style="solid"];
   Node0 -> Node19 [color="midnightblue",fontsize="10",style="solid"];
   Node0 -> Node20 [color="midnightblue",fontsize="10",style="solid"];
@@ -66,4 +66,6 @@ digraph "kernel/kernel.c"
   Node20 -> Node10 [color="midnightblue",fontsize="10",style="solid"];
   Node0 -> Node21 [color="midnightblue",fontsize="10",style="solid"];
   Node21 [label="../drivers/serial.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00059.html"];
+  Node0 -> Node22 [color="midnightblue",fontsize="10",style="solid"];
+  Node22 [label="../libc/vitality/mon.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00176.html"];
 }

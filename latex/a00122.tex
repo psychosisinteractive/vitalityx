@@ -9,20 +9,20 @@ This graph shows which files directly or indirectly include this file\+:
 \subsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{a00242}{page}
+struct \hyperlink{a00248}{page}
 \item 
-struct \hyperlink{a00246}{page\+\_\+table}
+struct \hyperlink{a00252}{page\+\_\+table}
 \item 
-struct \hyperlink{a00250}{page\+\_\+directory}
+struct \hyperlink{a00256}{page\+\_\+directory}
 \end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \hyperlink{a00242}{page} \hyperlink{a00122_a76113662e059e0926a92c5b15c098f4a_a76113662e059e0926a92c5b15c098f4a}{page\+\_\+t}
+typedef struct \hyperlink{a00248}{page} \hyperlink{a00122_a76113662e059e0926a92c5b15c098f4a_a76113662e059e0926a92c5b15c098f4a}{page\+\_\+t}
 \item 
-typedef struct \hyperlink{a00246}{page\+\_\+table} \hyperlink{a00122_a052d6ef76d4f16828bb0f478b24b6b55_a052d6ef76d4f16828bb0f478b24b6b55}{page\+\_\+table\+\_\+t}
+typedef struct \hyperlink{a00252}{page\+\_\+table} \hyperlink{a00122_a052d6ef76d4f16828bb0f478b24b6b55_a052d6ef76d4f16828bb0f478b24b6b55}{page\+\_\+table\+\_\+t}
 \item 
-typedef struct \hyperlink{a00250}{page\+\_\+directory} \hyperlink{a00122_aa6e79064ffe1eb8c43be4dc1be3f64a1_aa6e79064ffe1eb8c43be4dc1be3f64a1}{page\+\_\+directory\+\_\+t}
+typedef struct \hyperlink{a00256}{page\+\_\+directory} \hyperlink{a00122_aa6e79064ffe1eb8c43be4dc1be3f64a1_aa6e79064ffe1eb8c43be4dc1be3f64a1}{page\+\_\+directory\+\_\+t}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -42,19 +42,19 @@ void \hyperlink{a00122_a6293af8e675059a566216be86660854b_a6293af8e675059a566216b
 \index{page.\+h@{page.\+h}!page\+\_\+directory\+\_\+t@{page\+\_\+directory\+\_\+t}}
 \index{page\+\_\+directory\+\_\+t@{page\+\_\+directory\+\_\+t}!page.\+h@{page.\+h}}
 \subsubsection{\texorpdfstring{page\+\_\+directory\+\_\+t}{page\_directory\_t}}
-{\footnotesize\ttfamily typedef struct \hyperlink{a00250}{page\+\_\+directory}  \hyperlink{a00122_aa6e79064ffe1eb8c43be4dc1be3f64a1_aa6e79064ffe1eb8c43be4dc1be3f64a1}{page\+\_\+directory\+\_\+t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00256}{page\+\_\+directory}  \hyperlink{a00122_aa6e79064ffe1eb8c43be4dc1be3f64a1_aa6e79064ffe1eb8c43be4dc1be3f64a1}{page\+\_\+directory\+\_\+t}}
 
 \mbox{\Hypertarget{a00122_a76113662e059e0926a92c5b15c098f4a_a76113662e059e0926a92c5b15c098f4a}\label{a00122_a76113662e059e0926a92c5b15c098f4a_a76113662e059e0926a92c5b15c098f4a}} 
 \index{page.\+h@{page.\+h}!page\+\_\+t@{page\+\_\+t}}
 \index{page\+\_\+t@{page\+\_\+t}!page.\+h@{page.\+h}}
 \subsubsection{\texorpdfstring{page\+\_\+t}{page\_t}}
-{\footnotesize\ttfamily typedef struct \hyperlink{a00242}{page}  \hyperlink{a00122_a76113662e059e0926a92c5b15c098f4a_a76113662e059e0926a92c5b15c098f4a}{page\+\_\+t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00248}{page}  \hyperlink{a00122_a76113662e059e0926a92c5b15c098f4a_a76113662e059e0926a92c5b15c098f4a}{page\+\_\+t}}
 
 \mbox{\Hypertarget{a00122_a052d6ef76d4f16828bb0f478b24b6b55_a052d6ef76d4f16828bb0f478b24b6b55}\label{a00122_a052d6ef76d4f16828bb0f478b24b6b55_a052d6ef76d4f16828bb0f478b24b6b55}} 
 \index{page.\+h@{page.\+h}!page\+\_\+table\+\_\+t@{page\+\_\+table\+\_\+t}}
 \index{page\+\_\+table\+\_\+t@{page\+\_\+table\+\_\+t}!page.\+h@{page.\+h}}
 \subsubsection{\texorpdfstring{page\+\_\+table\+\_\+t}{page\_table\_t}}
-{\footnotesize\ttfamily typedef struct \hyperlink{a00246}{page\+\_\+table}  \hyperlink{a00122_a052d6ef76d4f16828bb0f478b24b6b55_a052d6ef76d4f16828bb0f478b24b6b55}{page\+\_\+table\+\_\+t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00252}{page\+\_\+table}  \hyperlink{a00122_a052d6ef76d4f16828bb0f478b24b6b55_a052d6ef76d4f16828bb0f478b24b6b55}{page\+\_\+table\+\_\+t}}
 
 
 
@@ -80,18 +80,18 @@ Definition at line 151 of file page.\+c.
 154     address /= 0x1000;
 155     \textcolor{comment}{// Find the page table containing this address.}
 156     \hyperlink{a00140_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} table\_idx = address / 1024;
-157     \textcolor{keywordflow}{if} (dir->\hyperlink{a00250_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables}[table\_idx]) \textcolor{comment}{// If this table is already assigned}
+157     \textcolor{keywordflow}{if} (dir->\hyperlink{a00256_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables}[table\_idx]) \textcolor{comment}{// If this table is already assigned}
 158     \{
-159         \textcolor{keywordflow}{return} &dir->\hyperlink{a00250_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables}[table\_idx]->\hyperlink{a00246_a48867fe3c6d8599eff21b790260d55b4_a48867fe3c6d8599eff21b790260d55b4}{pages}[address%1024];
+159         \textcolor{keywordflow}{return} &dir->\hyperlink{a00256_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables}[table\_idx]->\hyperlink{a00252_a48867fe3c6d8599eff21b790260d55b4_a48867fe3c6d8599eff21b790260d55b4}{pages}[address%1024];
 160     \}
 161     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(make)
 162     \{
 163         \hyperlink{a00140_a7ae3a26c17ddfe117c6291739780801d_a7ae3a26c17ddfe117c6291739780801d}{u32int} tmp;
-164         dir->\hyperlink{a00250_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables}[table\_idx] = (\hyperlink{a00246}{page\_table\_t}*)\hyperlink{a00083_ab4fd209369f6c18acead48b80e7f09c7_ab4fd209369f6c18acead48b80e7f09c7}{kmalloc\_ap}(\textcolor{keyword}{sizeof}(
-      \hyperlink{a00246}{page\_table\_t}), &tmp);
-165         \hyperlink{a00131_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(dir->\hyperlink{a00250_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables}[table\_idx], 0, 0x1000);
-166         dir->\hyperlink{a00250_a99a9e823491d762288ceb3faf2b1088b_a99a9e823491d762288ceb3faf2b1088b}{tablesPhysical}[table\_idx] = tmp | 0x7; \textcolor{comment}{// PRESENT, RW, US.}
-167         \textcolor{keywordflow}{return} &dir->\hyperlink{a00250_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables}[table\_idx]->\hyperlink{a00246_a48867fe3c6d8599eff21b790260d55b4_a48867fe3c6d8599eff21b790260d55b4}{pages}[address%1024];
+164         dir->\hyperlink{a00256_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables}[table\_idx] = (\hyperlink{a00252}{page\_table\_t}*)\hyperlink{a00083_ab4fd209369f6c18acead48b80e7f09c7_ab4fd209369f6c18acead48b80e7f09c7}{kmalloc\_ap}(\textcolor{keyword}{sizeof}(
+      \hyperlink{a00252}{page\_table\_t}), &tmp);
+165         \hyperlink{a00131_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(dir->\hyperlink{a00256_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables}[table\_idx], 0, 0x1000);
+166         dir->\hyperlink{a00256_a99a9e823491d762288ceb3faf2b1088b_a99a9e823491d762288ceb3faf2b1088b}{tablesPhysical}[table\_idx] = tmp | 0x7; \textcolor{comment}{// PRESENT, RW, US.}
+167         \textcolor{keywordflow}{return} &dir->\hyperlink{a00256_a84d1c51d205ba38ef8356fda66065877_a84d1c51d205ba38ef8356fda66065877}{tables}[table\_idx]->\hyperlink{a00252_a48867fe3c6d8599eff21b790260d55b4_a48867fe3c6d8599eff21b790260d55b4}{pages}[address%1024];
 168     \}
 169     \textcolor{keywordflow}{else}
 170     \{
@@ -126,9 +126,9 @@ Definition at line 107 of file page.\+c.
 115     \hyperlink{a00131_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(\hyperlink{a00119_a76492529572a1a20a06076ac40d66b29_a76492529572a1a20a06076ac40d66b29}{frames}, 0, \hyperlink{a00119_a94f8d624e19f4f1ecc503e2f82071c9e_a94f8d624e19f4f1ecc503e2f82071c9e}{INDEX\_FROM\_BIT}(\hyperlink{a00119_abf36580d5618820f15388083c9313e60_abf36580d5618820f15388083c9313e60}{nframes}));
 116 
 117     \textcolor{comment}{// Let's make a page directory.}
-118     \hyperlink{a00119_ada87161706c337a35f601e680b647a81_ada87161706c337a35f601e680b647a81}{kernel\_directory} = (\hyperlink{a00250}{page\_directory\_t}*)
-      \hyperlink{a00083_a2f7fc26d2604f7bd8bd6d4fac5c98f16_a2f7fc26d2604f7bd8bd6d4fac5c98f16}{kmalloc\_a}(\textcolor{keyword}{sizeof}(\hyperlink{a00250}{page\_directory\_t}));
-119     \hyperlink{a00131_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(\hyperlink{a00119_ada87161706c337a35f601e680b647a81_ada87161706c337a35f601e680b647a81}{kernel\_directory}, 0, \textcolor{keyword}{sizeof}(\hyperlink{a00250}{page\_directory\_t}));
+118     \hyperlink{a00119_ada87161706c337a35f601e680b647a81_ada87161706c337a35f601e680b647a81}{kernel\_directory} = (\hyperlink{a00256}{page\_directory\_t}*)
+      \hyperlink{a00083_a2f7fc26d2604f7bd8bd6d4fac5c98f16_a2f7fc26d2604f7bd8bd6d4fac5c98f16}{kmalloc\_a}(\textcolor{keyword}{sizeof}(\hyperlink{a00256}{page\_directory\_t}));
+119     \hyperlink{a00131_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(\hyperlink{a00119_ada87161706c337a35f601e680b647a81_ada87161706c337a35f601e680b647a81}{kernel\_directory}, 0, \textcolor{keyword}{sizeof}(\hyperlink{a00256}{page\_directory\_t}));
 120     \hyperlink{a00119_a69cc0aac8cd0b433e9ffa124ad11da56_a69cc0aac8cd0b433e9ffa124ad11da56}{current\_directory} = \hyperlink{a00119_ada87161706c337a35f601e680b647a81_ada87161706c337a35f601e680b647a81}{kernel\_directory};
 121 
 122     \textcolor{comment}{// We need to identity map (phys addr = virt addr) from}
@@ -173,11 +173,11 @@ Definition at line 175 of file page.\+c.
 180     \textcolor{keyword}{asm} \textcolor{keyword}{volatile}(\textcolor{stringliteral}{"mov %%cr2, %0"} : \textcolor{stringliteral}{"=r"} (faulting\_address));
 181 
 182     \textcolor{comment}{// The error code gives us details of what happened.}
-183     \textcolor{keywordtype}{int} present   = !(regs.\hyperlink{a00258_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code} & 0x1); \textcolor{comment}{// Page not present}
-184     \textcolor{keywordtype}{int} rw = regs.\hyperlink{a00258_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code} & 0x2;           \textcolor{comment}{// Write operation?}
-185     \textcolor{keywordtype}{int} us = regs.\hyperlink{a00258_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code} & 0x4;           \textcolor{comment}{// Processor was in user-mode?}
-186     \textcolor{keywordtype}{int} reserved = regs.\hyperlink{a00258_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code} & 0x8;     \textcolor{comment}{// Overwritten CPU-reserved bits of page entry?}
-187     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = regs.\hyperlink{a00258_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code} & 0x10;          \textcolor{comment}{// Caused by an instruction fetch?}
+183     \textcolor{keywordtype}{int} present   = !(regs.\hyperlink{a00264_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code} & 0x1); \textcolor{comment}{// Page not present}
+184     \textcolor{keywordtype}{int} rw = regs.\hyperlink{a00264_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code} & 0x2;           \textcolor{comment}{// Write operation?}
+185     \textcolor{keywordtype}{int} us = regs.\hyperlink{a00264_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code} & 0x4;           \textcolor{comment}{// Processor was in user-mode?}
+186     \textcolor{keywordtype}{int} reserved = regs.\hyperlink{a00264_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code} & 0x8;     \textcolor{comment}{// Overwritten CPU-reserved bits of page entry?}
+187     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = regs.\hyperlink{a00264_a1f90b3d484c66002c9ffcd0e54e97c2c_a1f90b3d484c66002c9ffcd0e54e97c2c}{err\_code} & 0x10;          \textcolor{comment}{// Caused by an instruction fetch?}
 188 
 189     \textcolor{comment}{// Output an error message.}
 190     \hyperlink{a00077_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"Page fault! ( "});
@@ -185,9 +185,9 @@ Definition at line 175 of file page.\+c.
 192     \textcolor{keywordflow}{if} (rw) \{\hyperlink{a00077_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"read-only "});\}
 193     \textcolor{keywordflow}{if} (us) \{\hyperlink{a00077_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"user-mode "});\}
 194     \textcolor{keywordflow}{if} (reserved) \{\hyperlink{a00077_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"reserved "});\}
-195     \hyperlink{a00077_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{") at 0d"});
+195     \hyperlink{a00077_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{") at 0x"});
 196     \textcolor{keywordtype}{char}* addr;
-197     \hyperlink{a00125_af749add1ff19b6ff96a62f35ebb49b7e_af749add1ff19b6ff96a62f35ebb49b7e}{itoa}(faulting\_address,addr);
+197     \hyperlink{a00125_ab42640268f26e065efd044cfe80591bd_ab42640268f26e065efd044cfe80591bd}{itoa}(faulting\_address,addr,16);
 198     \hyperlink{a00077_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(addr);
 199     \hyperlink{a00077_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)n"});
 200 \}

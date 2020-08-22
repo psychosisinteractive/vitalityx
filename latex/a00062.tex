@@ -23,7 +23,7 @@ void \hyperlink{a00062_ab17a69b465efb1ebe54a6a2e5d7b7ce8_ab17a69b465efb1ebe54a6a
 \begin{DoxyCompactList}\small\item\em Gets a pixel on the screen. \end{DoxyCompactList}\item 
 void \hyperlink{a00062_a2c8df7a20b47341b70d97a7ff21d86ea_a2c8df7a20b47341b70d97a7ff21d86ea}{drawchar} (unsigned char c, \hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} x, \hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} y, \hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} fgcolor, \hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\+\_\+t} bgcolor)
 \begin{DoxyCompactList}\small\item\em Puts a A\+S\+C\+II character on the screen. \end{DoxyCompactList}\item 
-void \hyperlink{a00062_a4be32a0e7b95807829c601d0841ae307_a4be32a0e7b95807829c601d0841ae307}{setvgamode} (\hyperlink{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cec}{vgamode\+\_\+t} \hyperlink{a00173_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}{vgamode})
+void \hyperlink{a00062_a4be32a0e7b95807829c601d0841ae307_a4be32a0e7b95807829c601d0841ae307}{setvgamode} (\hyperlink{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cec}{vgamode\+\_\+t} \hyperlink{a00179_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}{vgamode})
 \item 
 void \hyperlink{a00062_abb01dc16ea34f0a6de3d10d732b6c536_abb01dc16ea34f0a6de3d10d732b6c536}{setfont} (unsigned char $\ast$font)
 \begin{DoxyCompactList}\small\item\em Sets the font. \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -197,18 +197,18 @@ Definition at line 37 of file vga.\+c.
 
 \begin{DoxyCode}
 37                                    \{
-38     \hyperlink{a00258}{registers\_t} regs;
-39     \textcolor{keywordflow}{switch}(\hyperlink{a00173_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}{vgamode}) \{
+38     \hyperlink{a00264}{registers\_t} regs;
+39     \textcolor{keywordflow}{switch}(\hyperlink{a00179_af93b0649fdd1bea5b6d29ed37205aa2c_af93b0649fdd1bea5b6d29ed37205aa2c}{vgamode}) \{
 40         \textcolor{keywordflow}{case} \hyperlink{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cecaba0dfc5d04b1c8cd192f441787be16e3}{Mode3h}:
-41             regs.\hyperlink{a00258_a1e01e806248cd98e55e0b053db6a6a51_a1e01e806248cd98e55e0b053db6a6a51}{eax} = 0x6;
-42             regs.\hyperlink{a00258_af3b40afa73ecdaf2c9279b9ed482d26b_af3b40afa73ecdaf2c9279b9ed482d26b}{edx} = 0x1;
-43             regs.\hyperlink{a00258_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no} = 0x3f;
+41             regs.\hyperlink{a00264_a1e01e806248cd98e55e0b053db6a6a51_a1e01e806248cd98e55e0b053db6a6a51}{eax} = 0x6;
+42             regs.\hyperlink{a00264_af3b40afa73ecdaf2c9279b9ed482d26b_af3b40afa73ecdaf2c9279b9ed482d26b}{edx} = 0x1;
+43             regs.\hyperlink{a00264_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no} = 0x3f;
 44             \hyperlink{a00113_a700e3ca056bf69296370f504f2cb6cc8_a700e3ca056bf69296370f504f2cb6cc8}{isr\_handler}(regs);
 45             \textcolor{keywordflow}{break};
 46         \textcolor{keywordflow}{case} \hyperlink{a00062_a6c24a97d8805ea5216f34aa30ae27cec_a6c24a97d8805ea5216f34aa30ae27cecaa3dd115b4136ad8df83928c8a27ddb1d}{Mode13h}:
-47             regs.\hyperlink{a00258_a1e01e806248cd98e55e0b053db6a6a51_a1e01e806248cd98e55e0b053db6a6a51}{eax} = 0x6;
-48             regs.\hyperlink{a00258_af3b40afa73ecdaf2c9279b9ed482d26b_af3b40afa73ecdaf2c9279b9ed482d26b}{edx} = 0x0;
-49             regs.\hyperlink{a00258_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no} = 0x3f;
+47             regs.\hyperlink{a00264_a1e01e806248cd98e55e0b053db6a6a51_a1e01e806248cd98e55e0b053db6a6a51}{eax} = 0x6;
+48             regs.\hyperlink{a00264_af3b40afa73ecdaf2c9279b9ed482d26b_af3b40afa73ecdaf2c9279b9ed482d26b}{edx} = 0x0;
+49             regs.\hyperlink{a00264_af311750a9b18afb3b1ed2d144fbe1cb0_af311750a9b18afb3b1ed2d144fbe1cb0}{int\_no} = 0x3f;
 50             \hyperlink{a00113_a700e3ca056bf69296370f504f2cb6cc8_a700e3ca056bf69296370f504f2cb6cc8}{isr\_handler}(regs);
 51             \textcolor{keywordflow}{break};
 52     \}
