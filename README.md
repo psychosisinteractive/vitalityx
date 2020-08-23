@@ -2,7 +2,7 @@
 [![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fryelow90210%2FVitalityX.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fryelow90210%2FVitalityX?ref=badge_shield)
 ![Vitality Compile Service](https://github.com/psychosisinteractive/vitalityx/workflows/Vitality%20Compile%20Service/badge.svg) ![Vitality Doxygen Service](https://github.com/psychosisinteractive/vitalityx/workflows/Vitality%20Doxygen%20Service/badge.svg)
 
-Documentation available [here]("https://psychosisinteractive.github.io/vitalityx/html")
+Documentation available [here](https://psychosisinteractive.github.io/vitalityx/html)
 
 Protected Mode 32-Bit Operating System/Kernel/Bootloader.
 
