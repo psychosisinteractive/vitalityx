@@ -1,71 +1,48 @@
-\hypertarget{a00328}{}\section{V\+X\+B\+F\+S\+Modification\+Block Struct Reference}
-\label{a00328}\index{V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}}
+\hypertarget{a00328}{}\section{vlibdescriptor Struct Reference}
+\label{a00328}\index{vlibdescriptor@{vlibdescriptor}}
 
 
-This is a V\+X\+B\+FS Modification Block.  
-
-
-
-
-{\ttfamily \#include $<$vxbfs.\+h$>$}
+{\ttfamily \#include $<$vlib.\+h$>$}
 
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-char \hyperlink{a00328_a327348a3ea3a02cfde4cdb1ccdcf2073_a327348a3ea3a02cfde4cdb1ccdcf2073}{data} \mbox{[}507\mbox{]}
+\hyperlink{a00140_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\+\_\+t} \hyperlink{a00328_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base}
 \item 
-\hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00328_a0f4e6adc96a9bee9135ce10b344679fb_a0f4e6adc96a9bee9135ce10b344679fb}{ignore}
-\item 
-struct \hyperlink{a00328}{V\+X\+B\+F\+S\+Modification\+Block} $\ast$ \hyperlink{a00328_afbf261c73a36b4d33e8a8b5179d4385b_afbf261c73a36b4d33e8a8b5179d4385b}{nextmodblock}
+\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00328_a1cebf64c2c1ec72bca5cf673be70b3a7_a1cebf64c2c1ec72bca5cf673be70b3a7}{len}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-This is a V\+X\+B\+FS Modification Block. 
-
-It stores 507 bytes of data (in order to fit in 1 sector), an ignore boolean and a nextmodblock address. 
-
-Definition at line 15 of file vxbfs.\+h.
 
 
+Definition at line 13 of file vlib.\+h.
 
-Collaboration diagram for V\+X\+B\+F\+S\+Modification\+Block\+:
-% FIG 0
 
 
 \subsection{Field Documentation}
-\mbox{\Hypertarget{a00328_a327348a3ea3a02cfde4cdb1ccdcf2073_a327348a3ea3a02cfde4cdb1ccdcf2073}\label{a00328_a327348a3ea3a02cfde4cdb1ccdcf2073_a327348a3ea3a02cfde4cdb1ccdcf2073}} 
-\index{V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}!data@{data}}
-\index{data@{data}!V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}}
-\subsubsection{\texorpdfstring{data}{data}}
-{\footnotesize\ttfamily char V\+X\+B\+F\+S\+Modification\+Block\+::data\mbox{[}507\mbox{]}}
+\mbox{\Hypertarget{a00328_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}\label{a00328_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}} 
+\index{vlibdescriptor@{vlibdescriptor}!base@{base}}
+\index{base@{base}!vlibdescriptor@{vlibdescriptor}}
+\subsubsection{\texorpdfstring{base}{base}}
+{\footnotesize\ttfamily \hyperlink{a00140_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\+\_\+t} vlibdescriptor\+::base}
 
 
 
-Definition at line 16 of file vxbfs.\+h.
+Definition at line 14 of file vlib.\+h.
 
-\mbox{\Hypertarget{a00328_a0f4e6adc96a9bee9135ce10b344679fb_a0f4e6adc96a9bee9135ce10b344679fb}\label{a00328_a0f4e6adc96a9bee9135ce10b344679fb_a0f4e6adc96a9bee9135ce10b344679fb}} 
-\index{V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}!ignore@{ignore}}
-\index{ignore@{ignore}!V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}}
-\subsubsection{\texorpdfstring{ignore}{ignore}}
-{\footnotesize\ttfamily \hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} V\+X\+B\+F\+S\+Modification\+Block\+::ignore}
-
-
-
-Definition at line 17 of file vxbfs.\+h.
-
-\mbox{\Hypertarget{a00328_afbf261c73a36b4d33e8a8b5179d4385b_afbf261c73a36b4d33e8a8b5179d4385b}\label{a00328_afbf261c73a36b4d33e8a8b5179d4385b_afbf261c73a36b4d33e8a8b5179d4385b}} 
-\index{V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}!nextmodblock@{nextmodblock}}
-\index{nextmodblock@{nextmodblock}!V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}}
-\subsubsection{\texorpdfstring{nextmodblock}{nextmodblock}}
-{\footnotesize\ttfamily struct \hyperlink{a00328}{V\+X\+B\+F\+S\+Modification\+Block}$\ast$ V\+X\+B\+F\+S\+Modification\+Block\+::nextmodblock}
+\mbox{\Hypertarget{a00328_a1cebf64c2c1ec72bca5cf673be70b3a7_a1cebf64c2c1ec72bca5cf673be70b3a7}\label{a00328_a1cebf64c2c1ec72bca5cf673be70b3a7_a1cebf64c2c1ec72bca5cf673be70b3a7}} 
+\index{vlibdescriptor@{vlibdescriptor}!len@{len}}
+\index{len@{len}!vlibdescriptor@{vlibdescriptor}}
+\subsubsection{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily \hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} vlibdescriptor\+::len}
 
 
 
-Definition at line 18 of file vxbfs.\+h.
+Definition at line 15 of file vlib.\+h.
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-libc/vitality/\hyperlink{a00206}{vxbfs.\+h}\end{DoxyCompactItemize}
+libc/vitality/\hyperlink{a00200}{vlib.\+h}\end{DoxyCompactItemize}

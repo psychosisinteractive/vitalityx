@@ -282,16 +282,16 @@ Definition at line 150 of file isr.\+c.
 164             \hyperlink{a00077_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{"\(\backslash\)r\(\backslash\)nTask "});
 165             \hyperlink{a00077_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(ctask->\hyperlink{a00228_a9cf84d1792cda878178fd3691e472b97_a9cf84d1792cda878178fd3691e472b97}{name});
 166             \hyperlink{a00077_a19e1f554d03c977f8b947f21489daa41_a19e1f554d03c977f8b947f21489daa41}{BochsConsolePrintString}(\textcolor{stringliteral}{" is adding itself to Vlib.\(\backslash\)r\(\backslash\)n"});
-167             \hyperlink{a00140_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} \hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} = \hyperlink{a00200_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00324_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
+167             \hyperlink{a00140_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} \hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} = \hyperlink{a00200_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00328_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
 168             \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = 0;
-169             \textcolor{keywordflow}{while}(((\hyperlink{a00320}{vlib\_entry\_t}*)base)->instantiated) \{
+169             \textcolor{keywordflow}{while}(((\hyperlink{a00324}{vlib\_entry\_t}*)base)->instantiated) \{
 170                 \textcolor{keywordtype}{id}++;
 171                 base += \textcolor{keyword}{sizeof}(\hyperlink{a00200_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\_entry\_t});
 172             \}
-173             \hyperlink{a00320}{vlib\_entry\_t} entry = *(\hyperlink{a00320}{vlib\_entry\_t}*)base;
-174             entry.\hyperlink{a00320_ab67e2f60e6622a2d0b7c8a3ac6fd7c71_ab67e2f60e6622a2d0b7c8a3ac6fd7c71}{instantiated} = \textcolor{keyword}{true};
-175             entry.\hyperlink{a00320_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr} = regs.\hyperlink{a00264_aeedcb447fe6640d43d09c27b7cb8db3b_aeedcb447fe6640d43d09c27b7cb8db3b}{edi};
-176             entry.\hyperlink{a00320_a46df5a47ac05a46ce871e5132153949c_a46df5a47ac05a46ce871e5132153949c}{mode} = regs.\hyperlink{a00264_af3b40afa73ecdaf2c9279b9ed482d26b_af3b40afa73ecdaf2c9279b9ed482d26b}{edx};
+173             \hyperlink{a00324}{vlib\_entry\_t} entry = *(\hyperlink{a00324}{vlib\_entry\_t}*)base;
+174             entry.\hyperlink{a00324_ab67e2f60e6622a2d0b7c8a3ac6fd7c71_ab67e2f60e6622a2d0b7c8a3ac6fd7c71}{instantiated} = \textcolor{keyword}{true};
+175             entry.\hyperlink{a00324_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr} = regs.\hyperlink{a00264_aeedcb447fe6640d43d09c27b7cb8db3b_aeedcb447fe6640d43d09c27b7cb8db3b}{edi};
+176             entry.\hyperlink{a00324_a46df5a47ac05a46ce871e5132153949c_a46df5a47ac05a46ce871e5132153949c}{mode} = regs.\hyperlink{a00264_af3b40afa73ecdaf2c9279b9ed482d26b_af3b40afa73ecdaf2c9279b9ed482d26b}{edx};
 177             regs.\hyperlink{a00264_aa8989b2fef42dca1d656f724eb324f51_aa8989b2fef42dca1d656f724eb324f51}{ebx} = id;
 178             \textcolor{keywordflow}{break};
 179         \textcolor{keywordflow}{case} 0x04:

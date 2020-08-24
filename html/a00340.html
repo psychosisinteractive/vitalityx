@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: Information on the VEP Format</title>
+<title>VitalityX: VXBFSheader Struct Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -40,19 +40,48 @@ $(function() {
 <div id="main-nav"></div>
 </div><!-- top -->
 <div class="header">
+  <div class="summary">
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">Information on the VEP Format </div>  </div>
+<div class="title">VXBFSheader Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>VEP (Vitality Executable Program) is the standard executable format for VitalityX. It has a lightweight header and the VEP is semi-allowed to choose where it loads within memory.</p>
-<p>The struct for defining a VEP header is as follows:</p>
-<div class="fragment"><div class="line">typedef struct vepheader {</div><div class="line">    ///</div><div class="line">    /// VEP signature, should be &#39;VP&#39;</div><div class="line">    ///</div><div class="line">    char signature[2];</div><div class="line">    ///</div><div class="line">    /// VEP flags</div><div class="line">    /// </div><div class="line">    char flags;</div><div class="line">    ///</div><div class="line">    /// Where the VEP should be loaded</div><div class="line">    ///</div><div class="line">    uint32_t origin;</div><div class="line">    ///</div><div class="line">    /// VEP size</div><div class="line">    ///</div><div class="line">    uint32_t vepsize;</div><div class="line">    ///</div><div class="line">    /// VEP mode</div><div class="line">    /// </div><div class="line">    uint32_t mode;</div><div class="line">    ///</div><div class="line">    /// Reserved data</div><div class="line">    /// </div><div class="line">    char reserved[255];</div><div class="line">} vepheader_t;</div></div><!-- fragment --><p>After the vepheader is the raw binary which will be loaded in. Example:</p>
-<div class="fragment"><div class="line">+---------------------------------------------+--------------------+</div><div class="line">|VEPHEADER                                    |PROGRAM DATA        |</div><div class="line">|signature flags origin vepsize mode reserved |                    |</div><div class="line">+---------------------------------------------+--------------------+</div></div><!-- fragment --><p>The current VEP modes are:</p><ol type="1">
-<li>VEPMODE_MONOLITHIC, interrupts to system are allowed, no VEP or VAM access</li>
-<li>VEPMODE_VLIB, interrupts to system are allowed, VEP access is allowed except VAM, shows a consent dialog</li>
-<li>VEPMODE_VAM, interrupts to system are allowed, VEP access and VAM access is allowed, requires permissions </li>
-</ol>
-</div></div><!-- contents -->
+
+<p>This is a VXBFS Header.  
+ <a href="a00340.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="a00206_source.html">vxbfs.h</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:aad660a962d04482ff03bce38000c1a37"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340_aad660a962d04482ff03bce38000c1a37.html#aad660a962d04482ff03bce38000c1a37">rvsp</a> [4]</td></tr>
+<tr class="separator:aad660a962d04482ff03bce38000c1a37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3cd6b4358b6ba93a7bd541c09c959c8"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340_af3cd6b4358b6ba93a7bd541c09c959c8.html#af3cd6b4358b6ba93a7bd541c09c959c8">label</a> [6]</td></tr>
+<tr class="separator:af3cd6b4358b6ba93a7bd541c09c959c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0310ee852d6ec20fe68052fff0d1378"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340_af0310ee852d6ec20fe68052fff0d1378.html#af0310ee852d6ec20fe68052fff0d1378">uniquename</a> [3]</td></tr>
+<tr class="separator:af0310ee852d6ec20fe68052fff0d1378"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c82fb69a08f04d22d832e030cc71577"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340_a4c82fb69a08f04d22d832e030cc71577.html#a4c82fb69a08f04d22d832e030cc71577">signature</a> [4]</td></tr>
+<tr class="separator:a4c82fb69a08f04d22d832e030cc71577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b903de5c5034494530cdc0c2d4ff9b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00206_abb93e2407af0d8fe0f5629ce6456c6f9.html#abb93e2407af0d8fe0f5629ce6456c6f9">vxbfs_file_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340_a3b903de5c5034494530cdc0c2d4ff9b1.html#a3b903de5c5034494530cdc0c2d4ff9b1">file</a></td></tr>
+<tr class="separator:a3b903de5c5034494530cdc0c2d4ff9b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac10458b5241cce411ef4dd4fff029d0e"><td class="memItemLeft" align="right" valign="top">char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00340_ac10458b5241cce411ef4dd4fff029d0e.html#ac10458b5241cce411ef4dd4fff029d0e">bootsect</a> [494]</td></tr>
+<tr class="separator:ac10458b5241cce411ef4dd4fff029d0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This is a VXBFS Header. </p>
+<p>It stores bootcode, a label and a signature. The Signature must be 'V' 'X' 'F' 'S' in order to signal a existing data partiton. </p>
+
+<p class="definition">Definition at line <a class="el" href="a00206_source.html#l00044">44</a> of file <a class="el" href="a00206_source.html">vxbfs.h</a>.</p>
+</div><div class="dynheader">
+Collaboration diagram for VXBFSheader:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00338.png" border="0" usemap="#VXBFSheader_coll__map" alt="Collaboration graph"/></div>
+<!-- MAP 0 -->
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li>libc/vitality/<a class="el" href="a00206_source.html">vxbfs.h</a></li>
+</ul>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

@@ -59,13 +59,18 @@ digraph "kernel/kernel.c"
   Node18 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node18 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node19 [label="vfs.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00191.html"];
+  Node16 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node20 [label="fs_implementations\l/impl.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00161.html"];
+  Node20 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node21 [label="fat.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00158.html"];
+  Node21 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node0 -> Node18 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
   Node0 -> Node19 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node0 -> Node20 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node20 [label="../drivers/keyboard.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00041.html"];
-  Node20 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node0 -> Node21 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node21 [label="../drivers/serial.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00059.html"];
   Node0 -> Node22 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
-  Node22 [label="../libc/vitality/mon.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00176.html"];
+  Node22 [label="../drivers/keyboard.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00041.html"];
+  Node22 -> Node10 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node0 -> Node23 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node23 [label="../drivers/serial.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00059.html"];
+  Node0 -> Node24 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node24 [label="../libc/vitality/mon.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00176.html"];
 }

@@ -1,64 +1,53 @@
-\hypertarget{a00320}{}\section{vlib\+\_\+entry Struct Reference}
-\label{a00320}\index{vlib\+\_\+entry@{vlib\+\_\+entry}}
+\hypertarget{a00320}{}\section{pmfl Struct Reference}
+\label{a00320}\index{pmfl@{pmfl}}
 
 
-{\ttfamily \#include $<$vlib.\+h$>$}
+Post Mortem File Load.  
+
+
+
+
+{\ttfamily \#include $<$vfs.\+h$>$}
 
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00320_a46df5a47ac05a46ce871e5132153949c_a46df5a47ac05a46ce871e5132153949c}{mode}
+\hyperlink{a00140_ab8ef12fab634c171394422d0ee8baf94_ab8ef12fab634c171394422d0ee8baf94}{byte} $\ast$ \hyperlink{a00320_a150c011a31f99dbd408f8650f3fa1089_a150c011a31f99dbd408f8650f3fa1089}{ptr}
 \item 
-\hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00320_ab67e2f60e6622a2d0b7c8a3ac6fd7c71_ab67e2f60e6622a2d0b7c8a3ac6fd7c71}{instantiated}
-\item 
-\hyperlink{a00140_ab22fa604a9d0187c6a648586ee77944f_ab22fa604a9d0187c6a648586ee77944f}{func\+\_\+ptr\+\_\+args} \hyperlink{a00320_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr}
+int \hyperlink{a00320_ae4da44b065ddc955692df6fddd24a9c4_ae4da44b065ddc955692df6fddd24a9c4}{len}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
+Post Mortem File Load. 
 
+Definition at line 37 of file vfs.\+h.
 
-Definition at line 7 of file vlib.\+h.
-
-
-
-Collaboration diagram for vlib\+\_\+entry\+:
-% FIG 0
 
 
 \subsection{Field Documentation}
-\mbox{\Hypertarget{a00320_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}\label{a00320_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}} 
-\index{vlib\+\_\+entry@{vlib\+\_\+entry}!functionptr@{functionptr}}
-\index{functionptr@{functionptr}!vlib\+\_\+entry@{vlib\+\_\+entry}}
-\subsubsection{\texorpdfstring{functionptr}{functionptr}}
-{\footnotesize\ttfamily \hyperlink{a00140_ab22fa604a9d0187c6a648586ee77944f_ab22fa604a9d0187c6a648586ee77944f}{func\+\_\+ptr\+\_\+args} vlib\+\_\+entry\+::functionptr}
+\mbox{\Hypertarget{a00320_ae4da44b065ddc955692df6fddd24a9c4_ae4da44b065ddc955692df6fddd24a9c4}\label{a00320_ae4da44b065ddc955692df6fddd24a9c4_ae4da44b065ddc955692df6fddd24a9c4}} 
+\index{pmfl@{pmfl}!len@{len}}
+\index{len@{len}!pmfl@{pmfl}}
+\subsubsection{\texorpdfstring{len}{len}}
+{\footnotesize\ttfamily int pmfl\+::len}
 
 
 
-Definition at line 10 of file vlib.\+h.
+Definition at line 39 of file vfs.\+h.
 
-\mbox{\Hypertarget{a00320_ab67e2f60e6622a2d0b7c8a3ac6fd7c71_ab67e2f60e6622a2d0b7c8a3ac6fd7c71}\label{a00320_ab67e2f60e6622a2d0b7c8a3ac6fd7c71_ab67e2f60e6622a2d0b7c8a3ac6fd7c71}} 
-\index{vlib\+\_\+entry@{vlib\+\_\+entry}!instantiated@{instantiated}}
-\index{instantiated@{instantiated}!vlib\+\_\+entry@{vlib\+\_\+entry}}
-\subsubsection{\texorpdfstring{instantiated}{instantiated}}
-{\footnotesize\ttfamily \hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} vlib\+\_\+entry\+::instantiated}
-
-
-
-Definition at line 9 of file vlib.\+h.
-
-\mbox{\Hypertarget{a00320_a46df5a47ac05a46ce871e5132153949c_a46df5a47ac05a46ce871e5132153949c}\label{a00320_a46df5a47ac05a46ce871e5132153949c_a46df5a47ac05a46ce871e5132153949c}} 
-\index{vlib\+\_\+entry@{vlib\+\_\+entry}!mode@{mode}}
-\index{mode@{mode}!vlib\+\_\+entry@{vlib\+\_\+entry}}
-\subsubsection{\texorpdfstring{mode}{mode}}
-{\footnotesize\ttfamily \hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} vlib\+\_\+entry\+::mode}
+\mbox{\Hypertarget{a00320_a150c011a31f99dbd408f8650f3fa1089_a150c011a31f99dbd408f8650f3fa1089}\label{a00320_a150c011a31f99dbd408f8650f3fa1089_a150c011a31f99dbd408f8650f3fa1089}} 
+\index{pmfl@{pmfl}!ptr@{ptr}}
+\index{ptr@{ptr}!pmfl@{pmfl}}
+\subsubsection{\texorpdfstring{ptr}{ptr}}
+{\footnotesize\ttfamily \hyperlink{a00140_ab8ef12fab634c171394422d0ee8baf94_ab8ef12fab634c171394422d0ee8baf94}{byte}$\ast$ pmfl\+::ptr}
 
 
 
-Definition at line 8 of file vlib.\+h.
+Definition at line 38 of file vfs.\+h.
 
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-libc/vitality/\hyperlink{a00200}{vlib.\+h}\end{DoxyCompactItemize}
+libc/vitality/\hyperlink{a00191}{vfs.\+h}\end{DoxyCompactItemize}

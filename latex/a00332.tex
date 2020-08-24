@@ -1,8 +1,8 @@
-\hypertarget{a00332}{}\section{V\+X\+B\+F\+S\+File Struct Reference}
-\label{a00332}\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
+\hypertarget{a00332}{}\section{V\+X\+B\+F\+S\+Modification\+Block Struct Reference}
+\label{a00332}\index{V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}}
 
 
-This is a V\+X\+B\+FS File.  
+This is a V\+X\+B\+FS Modification Block.  
 
 
 
@@ -12,105 +12,57 @@ This is a V\+X\+B\+FS File.
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-char \hyperlink{a00332_a07ecc9bacdc2943442f26f62f6749055_a07ecc9bacdc2943442f26f62f6749055}{name} \mbox{[}11\mbox{]}
+char \hyperlink{a00332_a327348a3ea3a02cfde4cdb1ccdcf2073_a327348a3ea3a02cfde4cdb1ccdcf2073}{data} \mbox{[}507\mbox{]}
 \item 
-char \hyperlink{a00332_a03b954de114d8e01bb783ddef964e8ca_a03b954de114d8e01bb783ddef964e8ca}{guid} \mbox{[}8\mbox{]}
+\hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00332_a0f4e6adc96a9bee9135ce10b344679fb_a0f4e6adc96a9bee9135ce10b344679fb}{ignore}
 \item 
-char \hyperlink{a00332_ad030f5719e51b0b41b7cb6047f4110b2_ad030f5719e51b0b41b7cb6047f4110b2}{ext} \mbox{[}3\mbox{]}
-\item 
-char \hyperlink{a00332_a8fc3bc64d7f2330f923507d2430bdde4_a8fc3bc64d7f2330f923507d2430bdde4}{flags}
-\item 
-\hyperlink{a00206_a0774a42f7a124b6d3054ccabd4d35463_a0774a42f7a124b6d3054ccabd4d35463}{vxbfs\+\_\+modblock\+\_\+t} $\ast$ \hyperlink{a00332_ac0784f3fae88428f37dfb64fd79c0004_ac0784f3fae88428f37dfb64fd79c0004}{modblock}
-\item 
-struct \hyperlink{a00332}{V\+X\+B\+F\+S\+File} $\ast$ \hyperlink{a00332_aa2c7e2e1b3827ce9fbaa045b89202784_aa2c7e2e1b3827ce9fbaa045b89202784}{nextfile}
-\item 
-\hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00332_adb380ce440ec23ef6c9c06d871be3c0d_adb380ce440ec23ef6c9c06d871be3c0d}{md}
+struct \hyperlink{a00332}{V\+X\+B\+F\+S\+Modification\+Block} $\ast$ \hyperlink{a00332_afbf261c73a36b4d33e8a8b5179d4385b_afbf261c73a36b4d33e8a8b5179d4385b}{nextmodblock}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-This is a V\+X\+B\+FS File. 
+This is a V\+X\+B\+FS Modification Block. 
 
-It stores the 11 character name, a G\+U\+ID, an ext, flags, next modblock, nextfile and a md boolean. The G\+U\+ID is a unique identifier so multiple V\+X\+B\+FS files can share the same name. The ext is the V\+X\+B\+FS File type. The md means \char`\"{}\+More Data\char`\"{}, this signifies that there should be a search for more data after this. The flags are data which is for the OS. 
+It stores 507 bytes of data (in order to fit in 1 sector), an ignore boolean and a nextmodblock address. 
 
-Definition at line 29 of file vxbfs.\+h.
+Definition at line 15 of file vxbfs.\+h.
 
 
 
-Collaboration diagram for V\+X\+B\+F\+S\+File\+:
+Collaboration diagram for V\+X\+B\+F\+S\+Modification\+Block\+:
 % FIG 0
 
 
 \subsection{Field Documentation}
-\mbox{\Hypertarget{a00332_ad030f5719e51b0b41b7cb6047f4110b2_ad030f5719e51b0b41b7cb6047f4110b2}\label{a00332_ad030f5719e51b0b41b7cb6047f4110b2_ad030f5719e51b0b41b7cb6047f4110b2}} 
-\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!ext@{ext}}
-\index{ext@{ext}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
-\subsubsection{\texorpdfstring{ext}{ext}}
-{\footnotesize\ttfamily char V\+X\+B\+F\+S\+File\+::ext\mbox{[}3\mbox{]}}
+\mbox{\Hypertarget{a00332_a327348a3ea3a02cfde4cdb1ccdcf2073_a327348a3ea3a02cfde4cdb1ccdcf2073}\label{a00332_a327348a3ea3a02cfde4cdb1ccdcf2073_a327348a3ea3a02cfde4cdb1ccdcf2073}} 
+\index{V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}!data@{data}}
+\index{data@{data}!V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}}
+\subsubsection{\texorpdfstring{data}{data}}
+{\footnotesize\ttfamily char V\+X\+B\+F\+S\+Modification\+Block\+::data\mbox{[}507\mbox{]}}
 
 
 
-Definition at line 32 of file vxbfs.\+h.
+Definition at line 16 of file vxbfs.\+h.
 
-\mbox{\Hypertarget{a00332_a8fc3bc64d7f2330f923507d2430bdde4_a8fc3bc64d7f2330f923507d2430bdde4}\label{a00332_a8fc3bc64d7f2330f923507d2430bdde4_a8fc3bc64d7f2330f923507d2430bdde4}} 
-\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!flags@{flags}}
-\index{flags@{flags}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
-\subsubsection{\texorpdfstring{flags}{flags}}
-{\footnotesize\ttfamily char V\+X\+B\+F\+S\+File\+::flags}
-
-
-
-Definition at line 33 of file vxbfs.\+h.
-
-\mbox{\Hypertarget{a00332_a03b954de114d8e01bb783ddef964e8ca_a03b954de114d8e01bb783ddef964e8ca}\label{a00332_a03b954de114d8e01bb783ddef964e8ca_a03b954de114d8e01bb783ddef964e8ca}} 
-\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!guid@{guid}}
-\index{guid@{guid}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
-\subsubsection{\texorpdfstring{guid}{guid}}
-{\footnotesize\ttfamily char V\+X\+B\+F\+S\+File\+::guid\mbox{[}8\mbox{]}}
+\mbox{\Hypertarget{a00332_a0f4e6adc96a9bee9135ce10b344679fb_a0f4e6adc96a9bee9135ce10b344679fb}\label{a00332_a0f4e6adc96a9bee9135ce10b344679fb_a0f4e6adc96a9bee9135ce10b344679fb}} 
+\index{V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}!ignore@{ignore}}
+\index{ignore@{ignore}!V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}}
+\subsubsection{\texorpdfstring{ignore}{ignore}}
+{\footnotesize\ttfamily \hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} V\+X\+B\+F\+S\+Modification\+Block\+::ignore}
 
 
 
-Definition at line 31 of file vxbfs.\+h.
+Definition at line 17 of file vxbfs.\+h.
 
-\mbox{\Hypertarget{a00332_adb380ce440ec23ef6c9c06d871be3c0d_adb380ce440ec23ef6c9c06d871be3c0d}\label{a00332_adb380ce440ec23ef6c9c06d871be3c0d_adb380ce440ec23ef6c9c06d871be3c0d}} 
-\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!md@{md}}
-\index{md@{md}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
-\subsubsection{\texorpdfstring{md}{md}}
-{\footnotesize\ttfamily \hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} V\+X\+B\+F\+S\+File\+::md}
-
-
-
-Definition at line 36 of file vxbfs.\+h.
-
-\mbox{\Hypertarget{a00332_ac0784f3fae88428f37dfb64fd79c0004_ac0784f3fae88428f37dfb64fd79c0004}\label{a00332_ac0784f3fae88428f37dfb64fd79c0004_ac0784f3fae88428f37dfb64fd79c0004}} 
-\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!modblock@{modblock}}
-\index{modblock@{modblock}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
-\subsubsection{\texorpdfstring{modblock}{modblock}}
-{\footnotesize\ttfamily \hyperlink{a00206_a0774a42f7a124b6d3054ccabd4d35463_a0774a42f7a124b6d3054ccabd4d35463}{vxbfs\+\_\+modblock\+\_\+t}$\ast$ V\+X\+B\+F\+S\+File\+::modblock}
+\mbox{\Hypertarget{a00332_afbf261c73a36b4d33e8a8b5179d4385b_afbf261c73a36b4d33e8a8b5179d4385b}\label{a00332_afbf261c73a36b4d33e8a8b5179d4385b_afbf261c73a36b4d33e8a8b5179d4385b}} 
+\index{V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}!nextmodblock@{nextmodblock}}
+\index{nextmodblock@{nextmodblock}!V\+X\+B\+F\+S\+Modification\+Block@{V\+X\+B\+F\+S\+Modification\+Block}}
+\subsubsection{\texorpdfstring{nextmodblock}{nextmodblock}}
+{\footnotesize\ttfamily struct \hyperlink{a00332}{V\+X\+B\+F\+S\+Modification\+Block}$\ast$ V\+X\+B\+F\+S\+Modification\+Block\+::nextmodblock}
 
 
 
-Definition at line 34 of file vxbfs.\+h.
-
-\mbox{\Hypertarget{a00332_a07ecc9bacdc2943442f26f62f6749055_a07ecc9bacdc2943442f26f62f6749055}\label{a00332_a07ecc9bacdc2943442f26f62f6749055_a07ecc9bacdc2943442f26f62f6749055}} 
-\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!name@{name}}
-\index{name@{name}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
-\subsubsection{\texorpdfstring{name}{name}}
-{\footnotesize\ttfamily char V\+X\+B\+F\+S\+File\+::name\mbox{[}11\mbox{]}}
-
-
-
-Definition at line 30 of file vxbfs.\+h.
-
-\mbox{\Hypertarget{a00332_aa2c7e2e1b3827ce9fbaa045b89202784_aa2c7e2e1b3827ce9fbaa045b89202784}\label{a00332_aa2c7e2e1b3827ce9fbaa045b89202784_aa2c7e2e1b3827ce9fbaa045b89202784}} 
-\index{V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}!nextfile@{nextfile}}
-\index{nextfile@{nextfile}!V\+X\+B\+F\+S\+File@{V\+X\+B\+F\+S\+File}}
-\subsubsection{\texorpdfstring{nextfile}{nextfile}}
-{\footnotesize\ttfamily struct \hyperlink{a00332}{V\+X\+B\+F\+S\+File}$\ast$ V\+X\+B\+F\+S\+File\+::nextfile}
-
-
-
-Definition at line 35 of file vxbfs.\+h.
+Definition at line 18 of file vxbfs.\+h.
 
 
 

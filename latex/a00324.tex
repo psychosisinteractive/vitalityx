@@ -1,5 +1,5 @@
-\hypertarget{a00324}{}\section{vlibdescriptor Struct Reference}
-\label{a00324}\index{vlibdescriptor@{vlibdescriptor}}
+\hypertarget{a00324}{}\section{vlib\+\_\+entry Struct Reference}
+\label{a00324}\index{vlib\+\_\+entry@{vlib\+\_\+entry}}
 
 
 {\ttfamily \#include $<$vlib.\+h$>$}
@@ -7,39 +7,55 @@
 \subsection*{Data Fields}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00140_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\+\_\+t} \hyperlink{a00324_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base}
+\hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} \hyperlink{a00324_a46df5a47ac05a46ce871e5132153949c_a46df5a47ac05a46ce871e5132153949c}{mode}
 \item 
-\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00324_a1cebf64c2c1ec72bca5cf673be70b3a7_a1cebf64c2c1ec72bca5cf673be70b3a7}{len}
+\hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00324_ab67e2f60e6622a2d0b7c8a3ac6fd7c71_ab67e2f60e6622a2d0b7c8a3ac6fd7c71}{instantiated}
+\item 
+\hyperlink{a00140_ab22fa604a9d0187c6a648586ee77944f_ab22fa604a9d0187c6a648586ee77944f}{func\+\_\+ptr\+\_\+args} \hyperlink{a00324_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 13 of file vlib.\+h.
+Definition at line 7 of file vlib.\+h.
 
+
+
+Collaboration diagram for vlib\+\_\+entry\+:
+% FIG 0
 
 
 \subsection{Field Documentation}
-\mbox{\Hypertarget{a00324_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}\label{a00324_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}} 
-\index{vlibdescriptor@{vlibdescriptor}!base@{base}}
-\index{base@{base}!vlibdescriptor@{vlibdescriptor}}
-\subsubsection{\texorpdfstring{base}{base}}
-{\footnotesize\ttfamily \hyperlink{a00140_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\+\_\+t} vlibdescriptor\+::base}
+\mbox{\Hypertarget{a00324_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}\label{a00324_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}} 
+\index{vlib\+\_\+entry@{vlib\+\_\+entry}!functionptr@{functionptr}}
+\index{functionptr@{functionptr}!vlib\+\_\+entry@{vlib\+\_\+entry}}
+\subsubsection{\texorpdfstring{functionptr}{functionptr}}
+{\footnotesize\ttfamily \hyperlink{a00140_ab22fa604a9d0187c6a648586ee77944f_ab22fa604a9d0187c6a648586ee77944f}{func\+\_\+ptr\+\_\+args} vlib\+\_\+entry\+::functionptr}
 
 
 
-Definition at line 14 of file vlib.\+h.
+Definition at line 10 of file vlib.\+h.
 
-\mbox{\Hypertarget{a00324_a1cebf64c2c1ec72bca5cf673be70b3a7_a1cebf64c2c1ec72bca5cf673be70b3a7}\label{a00324_a1cebf64c2c1ec72bca5cf673be70b3a7_a1cebf64c2c1ec72bca5cf673be70b3a7}} 
-\index{vlibdescriptor@{vlibdescriptor}!len@{len}}
-\index{len@{len}!vlibdescriptor@{vlibdescriptor}}
-\subsubsection{\texorpdfstring{len}{len}}
-{\footnotesize\ttfamily \hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} vlibdescriptor\+::len}
+\mbox{\Hypertarget{a00324_ab67e2f60e6622a2d0b7c8a3ac6fd7c71_ab67e2f60e6622a2d0b7c8a3ac6fd7c71}\label{a00324_ab67e2f60e6622a2d0b7c8a3ac6fd7c71_ab67e2f60e6622a2d0b7c8a3ac6fd7c71}} 
+\index{vlib\+\_\+entry@{vlib\+\_\+entry}!instantiated@{instantiated}}
+\index{instantiated@{instantiated}!vlib\+\_\+entry@{vlib\+\_\+entry}}
+\subsubsection{\texorpdfstring{instantiated}{instantiated}}
+{\footnotesize\ttfamily \hyperlink{a00140_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} vlib\+\_\+entry\+::instantiated}
 
 
 
-Definition at line 15 of file vlib.\+h.
+Definition at line 9 of file vlib.\+h.
+
+\mbox{\Hypertarget{a00324_a46df5a47ac05a46ce871e5132153949c_a46df5a47ac05a46ce871e5132153949c}\label{a00324_a46df5a47ac05a46ce871e5132153949c_a46df5a47ac05a46ce871e5132153949c}} 
+\index{vlib\+\_\+entry@{vlib\+\_\+entry}!mode@{mode}}
+\index{mode@{mode}!vlib\+\_\+entry@{vlib\+\_\+entry}}
+\subsubsection{\texorpdfstring{mode}{mode}}
+{\footnotesize\ttfamily \hyperlink{a00140_a273cf69d639a59973b6019625df33e30_a273cf69d639a59973b6019625df33e30}{uint16\+\_\+t} vlib\+\_\+entry\+::mode}
+
+
+
+Definition at line 8 of file vlib.\+h.
 
 
 

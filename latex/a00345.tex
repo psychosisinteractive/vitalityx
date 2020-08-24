@@ -1,1 +1,76 @@
-The ext folder contains generic external libraries available for the user or the kernel. Each file will designate its own license. 
+V\+Lib is the current Vitality driver system. You manipulate it using Interrupt 3\+Fh (refer to VitalityX Interrupt 3\+Fh (63), or \hyperlink{a00008}{S\+O\+F\+T\+I\+N\+T.\+md})
+
+VitalityX takes care of initalizing your V\+Lib entry for you via Int 3fh\+:Eax=03h, which requires the following\+:
+
+
+\begin{DoxyItemize}
+\item E\+DI -\/ Pointer to the Function
+\item E\+DX -\/ Mode
+\end{DoxyItemize}
+
+and it will set
+
+
+\begin{DoxyItemize}
+\item E\+BX -\/ Entry ID
+\end{DoxyItemize}
+
+Entry ID\textquotesingle{}s are how you call the driver functions. In order to call a function you must use Int 3fh\+:Eax=05h, which requires the following\+:
+
+
+\begin{DoxyItemize}
+\item E\+BX -\/ Entry ID
+\end{DoxyItemize}
+
+You\textquotesingle{}d notice that Int 3fh\+:Eax=03h outputs to E\+BX, and 3eh takes in E\+BX and that is intentional. If you want to test your V\+Lib before running it then it would be as simple as 
+\begin{DoxyCode}
+; create vlib here
+mov eax,03h
+int 3fh ; moves the entry id to ebx
+int 3eh ; calls the entry id, which should already have been set by the previous int 3fh
+\end{DoxyCode}
+
+
+In order to implement a V\+Lib function, a struct is passed defining the registers where the V\+Lib started. The struct is as defined below\+:
+
+
+\begin{DoxyCode}
+typedef struct registers
+\{
+   uint32\_t ds;                  // Data segment selector
+   uint32\_t edi, esi, ebp, esp, ebx, edx, ecx, eax; // Pushed by pusha.
+   uint32\_t int\_no, err\_code;    // Interrupt number and error code (if applicable)
+   uint32\_t eip, cs, eflags, useresp, ss; // Pushed by the processor automatically.
+\} registers\_t;
+\end{DoxyCode}
+
+
+Thus, youd define a V\+Lib function in C as follows\+: 
+\begin{DoxyCode}
+void vlib\_function(registers\_t regs);
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+             +----------------------------------------------v
+     +---------+                                         +-----------------+
+     |  Kernel +-----------------+                       |Hardware         |
+     +----^--^-+             +---v--+                    |                 |
+  Int 3fh |  |               | VLib | +----------------->+-----------------+
++------+  |  |               +------+
+|VLib  |--+  |
+|Creator     |
+|      +     |
+|      |     |
++------+     |
+             |
++-----+      |
+|Soft |      |
+|ware |      |
+|with +------+
+|VLIB |  Int 3eh
+|perm |
++-----+
+\end{DoxyCode}
+ 
