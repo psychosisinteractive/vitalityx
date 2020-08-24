@@ -1,6 +1,7 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 #include "types.h"
+#define FS_LOAD_POINT 0x500
 
 #ifndef setBit
 #define setBit(word, mask) word |= mask

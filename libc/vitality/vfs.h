@@ -31,4 +31,12 @@ typedef struct mbr {
     char bssignature[2];
 } mbr_t;
 
+///
+/// Post Mortem File Load
+///
+typedef struct pmfl {
+    byte* ptr;
+    int len;
+} pmfl_t;
+
 #endif

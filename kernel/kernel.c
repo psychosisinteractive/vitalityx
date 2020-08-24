@@ -57,21 +57,33 @@ int kernel() {
     }
     tty_pputstring('\n');*/
     tty_pputstring("Loading VXBFS on ");
-    tty_pputstringl((char*)(&fsentries[primarydrive].name),4);
+    tty_pputstringl((char*)(fsentries[primarydrive].name),4);
     tty_pputstring("\n");
     ide_read_sectors(primarydrive,10,0,0,0x500);
-    vxbfs_header_t header = *(vxbfs_header_t*)0x500;
-    if(validvxbfs(&header)) {
+    vxbfs_header_t* header = (vxbfs_header_t*)0x500;
+    if(validvxbfs(header)) {
         tty_pputstring("VXBFS found. label: ");
-        tty_pputstringl(header.label,6);
+        tty_pputstringl(header->label,6);
         tty_pputstring("\n");
-        vxbfs_file_t *firstfile = header.file + 0x500;
+        int addr = 0x500 + (int)header->file;
+        vxbfs_file_t *firstfile = (vxbfs_file_t*)addr;
         tty_pputstring("First VXBFS File: ");
         char *fname = &firstfile->name;
         tty_pputstringl(fname,11);
         tty_pputstring(".");
         char *fext = &firstfile->name;
         tty_pputstringl(fext,3);
+        tty_pputstring("\n:x ");
+        char *fptrs = "        ";
+        itoa(addr,fptrs,16);
+        tty_pputstring(fptrs);
+        tty_pputstring("\n");
+    }
+    void* fp = findfile(primarydrive,"SHELL      ");
+    if(!fp) {
+        tty_pputstring("Warning: No SHELL file\n");
+    } else {
+        pmfl_t* f = readfile((vxbfs_file_t*)fp);
     }
     // we can now enter the monitor
     enter_monitor();

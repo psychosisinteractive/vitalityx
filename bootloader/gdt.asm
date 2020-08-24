@@ -35,7 +35,7 @@ DATA_SEG equ gdt_data - gdt_start
 [bits 16]
 switch_to_pm:
     cli 
-    lgdt [gdt_descriptor]  ; THIS is where the general protection fault occours 
+    lgdt [gdt_descriptor]  
     mov eax,0xff
     mov [0xa006],eax
     mov eax, cr0

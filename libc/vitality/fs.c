@@ -16,6 +16,28 @@ void getentries() {
     getentry(3);
 }
 
+void* findfile(int id, char* name) {
+    switch(fsentries[id].type) {
+        Unknown:
+            break;
+        VXBFS:
+            ide_read_sectors(id,16,0,0,0x500);
+            vxbfs_header_t* header = (vxbfs_header_t*)0x500;
+            vxbfs_file_t* file = header->file + 0x500;
+            // TODO: HOLY SHIT
+            while((file->name[0] != *name++ && file->name[1] != *name++ && file->name[2] != *name++ && file->name[3] != *name++ && file->name[4] != *name++ && file->name[5] != *name++ && file->name[6] != *name++ && file->name[7] != *name++ && file->name[8] != *name++ && file->name[9] != *name++ && file->name[10] != *name++) || (file->nextfile = 0x0)) {
+                if(file->nextfile != 0x0) {
+                    file = file->nextfile + 0x500;
+                } else {
+                    file = 0;
+                    break;
+                }
+            }
+            break;
+        // add your file finding algorithim here
+    }
+}
+
 int getentry(int id) {
     char* cnam;
     if(ide_devices[id].Reserved) {
@@ -39,6 +61,7 @@ int getentry(int id) {
             if(validvxbfs((vxbfs_header_t*)0x500)) {
                 vxbfs_header_t* header = (vxbfs_header_t*)0x500;
                 memcpy(cnam,header->uniquename,3);
+                entry->type = VXBFS;
             }
             // define this if you want no custom filesystems and just use VXBFS
             #ifndef NOCFS

@@ -31,7 +31,7 @@ typedef struct VXBFSFile {
     char guid[8];
     char ext[3];
     char flags;
-    vxbfs_modblock_t *modblock;
+    uint32_t modblock;
     struct VXBFSFile *nextfile;
     bool md;
 } vxbfs_file_t;
@@ -54,5 +54,6 @@ typedef struct VXBFSheader {
 
 file_t loadfile(vxbfs_file_t *);
 bool validvxbfs(vxbfs_header_t *);
+pmfl_t* readfile(vxbfs_file_t *file);
 
 #endif

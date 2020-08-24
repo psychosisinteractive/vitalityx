@@ -6,11 +6,6 @@
 [BITS 16]
 
 start:
-    ; setup video mode
-    mov ah,00h
-    mov al,13h
-    int 10h
-    mov dx,0
     call print_dbg_x
     ; LOAD the system
     mov ah,02h
@@ -20,7 +15,8 @@ start:
     mov dh,0
     mov bx, PROGRAM
     int 13h
-    call print_dbg_x
+    
+    ;call print_dbg_x
     jc load_kern_err
     ; next setup the gdt
     call print_dbg_x
@@ -29,25 +25,17 @@ start:
     cli
     mov ax, 0x2401
     int 0x15 ; enable A20 bit
-    mov ah,00h
-    mov al,3h
-    int 10h
+
     call switch_to_pm
 
 load_kern_err:
-    mov ah,0Ch
-    mov al,0xC
-    xor bh,bh
-    inc cx
-    int 10h
+    ;impl later
     hlt
 print_dbg_x:
-    mov ah,0Ch
-    mov al,0xF
-    xor bh,bh
-    inc cx
-    int 10h
+    ;impl later
     ret
+ns:
+    hlt
 
 [BITS 32]
 ready:

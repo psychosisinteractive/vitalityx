@@ -30,6 +30,7 @@ jobs:
       run: |
         cd docs
         zip -r latex.zip latex
+        cd ..
 
     - name: Deploy Documentation
       uses: peaceiris/actions-gh-pages@v3
