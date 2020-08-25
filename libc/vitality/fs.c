@@ -16,18 +16,22 @@ void getentries() {
     getentry(3);
 }
 
-void* findfile(int id, char* name) {
+frconf_t* findfile(int id, char* name) {
+    frconf_t* conf;
     switch(fsentries[id].type) {
         Unknown:
             break;
         VXBFS:
             ide_read_sectors(id,16,0,0,0x500);
             vxbfs_header_t* header = (vxbfs_header_t*)0x500;
-            vxbfs_file_t* file = header->file + 0x500;
-            // TODO: HOLY SHIT
-            while((file->name[0] != *name++ && file->name[1] != *name++ && file->name[2] != *name++ && file->name[3] != *name++ && file->name[4] != *name++ && file->name[5] != *name++ && file->name[6] != *name++ && file->name[7] != *name++ && file->name[8] != *name++ && file->name[9] != *name++ && file->name[10] != *name++) || (file->nextfile = 0x0)) {
+            vxbfs_file_t* file = (vxbfs_header_t*)((int)header->file + 0x500);
+            char* fname = "           ";
+            memcpy(fname,file->name,12);
+            while((strcmpl(name,fname,12)) || (file->nextfile = 0x0)) {
                 if(file->nextfile != 0x0) {
                     file = file->nextfile + 0x500;
+                    conf->found = true;
+                    conf->ptr = file;
                 } else {
                     file = 0;
                     break;
@@ -36,6 +40,7 @@ void* findfile(int id, char* name) {
             break;
         // add your file finding algorithim here
     }
+    return conf;
 }
 
 int getentry(int id) {

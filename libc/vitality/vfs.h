@@ -36,7 +36,15 @@ typedef struct mbr {
 ///
 typedef struct pmfl {
     byte* ptr;
-    int len;
+    unsigned int len;
 } pmfl_t;
+
+///
+/// File Request CONFirmation
+///
+typedef struct frconf {
+    bool found;
+    void* ptr;
+} frconf_t;
 
 #endif

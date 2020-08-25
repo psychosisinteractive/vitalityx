@@ -79,11 +79,27 @@ int kernel() {
         tty_pputstring(fptrs);
         tty_pputstring("\n");
     }
-    void* fp = findfile(primarydrive,"SHELL      ");
-    if(!fp) {
+    // test
+    frconf_t* fp1 = findfile(primarydrive,"FileTest123");
+    if(!fp1->found) {
+        tty_pputstring("Warning: Error with findfile (Could not find FileTest123)\n");
+    }
+    frconf_t* fp = findfile(primarydrive,"SHELL      ");
+    if(!fp->found) {
         tty_pputstring("Warning: No SHELL file\n");
     } else {
+        tty_pputstring("Loaded SHELL file\n");
         pmfl_t* f = readfile((vxbfs_file_t*)fp);
+        tty_pputstring("Size: ");
+        char* fsize;
+        itoa(f->len,fsize,16);
+        tty_pputstring(fsize);
+        tty_pputstring(" Ptr: ");
+        char* fptr;
+        itoa(f->ptr,fptr,16);
+        tty_pputstring(fptr);
+        tty_pputstring("h\n");
+        // TODO: begin loading shells
     }
     // we can now enter the monitor
     enter_monitor();

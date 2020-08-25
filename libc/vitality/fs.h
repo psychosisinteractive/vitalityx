@@ -5,6 +5,7 @@
 #include "tty.h"
 #include "../string.h"
 #include "vxbfs.h"
+#include "vfs.h"
 #include "fs_implementations/impl.h"
 
 typedef struct fsentry {
@@ -22,6 +23,6 @@ void getentries();
 
 int getentry(int id);
 
-void* findfile(int id, char* name);
+frconf_t* findfile(int id, char* name);
 
 #endif

@@ -73,3 +73,14 @@ int atoi(char* str)
     // return result. 
     return res; 
 } 
+
+int strcmp(const char *s1, const char *s2)
+{
+    while ((*s1 == *s2) && *s1) { ++s1; ++s2; }
+    return ((int) (unsigned char) *s1) - ((int) (unsigned char) *s2);
+}
+
+int strcmpl(const char *s1, const char *s2, int len) {
+    while((*s1 == *s2) && *s1 && len != 0) { ++s1; ++s2; len--; }
+    return ((int) (unsigned char) *s1) - ((int) (unsigned char) *s2);
+}
