@@ -10,16 +10,16 @@ This graph shows which files directly or indirectly include this file\+:
 \subsection*{Data Structures}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{a00324}{vlib\+\_\+entry}
+struct \hyperlink{a00328}{vlib\+\_\+entry}
 \item 
-struct \hyperlink{a00328}{vlibdescriptor}
+struct \hyperlink{a00332}{vlibdescriptor}
 \end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
 \item 
-typedef struct \hyperlink{a00324}{vlib\+\_\+entry} \hyperlink{a00200_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\+\_\+entry\+\_\+t}
+typedef struct \hyperlink{a00328}{vlib\+\_\+entry} \hyperlink{a00200_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\+\_\+entry\+\_\+t}
 \item 
-typedef struct \hyperlink{a00328}{vlibdescriptor} \hyperlink{a00200_a2d9000b4fbb25c5ed2950a2d8f4921d5_a2d9000b4fbb25c5ed2950a2d8f4921d5}{vlibdesriptor\+\_\+t}
+typedef struct \hyperlink{a00332}{vlibdescriptor} \hyperlink{a00200_a2d9000b4fbb25c5ed2950a2d8f4921d5_a2d9000b4fbb25c5ed2950a2d8f4921d5}{vlibdesriptor\+\_\+t}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
@@ -44,13 +44,13 @@ void \hyperlink{a00200_a268c6e227f2761807244c0695d78d01c_a268c6e227f2761807244c0
 \index{vlib.\+h@{vlib.\+h}!vlib\+\_\+entry\+\_\+t@{vlib\+\_\+entry\+\_\+t}}
 \index{vlib\+\_\+entry\+\_\+t@{vlib\+\_\+entry\+\_\+t}!vlib.\+h@{vlib.\+h}}
 \subsubsection{\texorpdfstring{vlib\+\_\+entry\+\_\+t}{vlib\_entry\_t}}
-{\footnotesize\ttfamily typedef struct \hyperlink{a00324}{vlib\+\_\+entry}  \hyperlink{a00200_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\+\_\+entry\+\_\+t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00328}{vlib\+\_\+entry}  \hyperlink{a00200_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\+\_\+entry\+\_\+t}}
 
 \mbox{\Hypertarget{a00200_a2d9000b4fbb25c5ed2950a2d8f4921d5_a2d9000b4fbb25c5ed2950a2d8f4921d5}\label{a00200_a2d9000b4fbb25c5ed2950a2d8f4921d5_a2d9000b4fbb25c5ed2950a2d8f4921d5}} 
 \index{vlib.\+h@{vlib.\+h}!vlibdesriptor\+\_\+t@{vlibdesriptor\+\_\+t}}
 \index{vlibdesriptor\+\_\+t@{vlibdesriptor\+\_\+t}!vlib.\+h@{vlib.\+h}}
 \subsubsection{\texorpdfstring{vlibdesriptor\+\_\+t}{vlibdesriptor\_t}}
-{\footnotesize\ttfamily typedef struct \hyperlink{a00328}{vlibdescriptor}  \hyperlink{a00200_a2d9000b4fbb25c5ed2950a2d8f4921d5_a2d9000b4fbb25c5ed2950a2d8f4921d5}{vlibdesriptor\+\_\+t}}
+{\footnotesize\ttfamily typedef struct \hyperlink{a00332}{vlibdescriptor}  \hyperlink{a00200_a2d9000b4fbb25c5ed2950a2d8f4921d5_a2d9000b4fbb25c5ed2950a2d8f4921d5}{vlibdesriptor\+\_\+t}}
 
 
 
@@ -68,11 +68,11 @@ Definition at line 9 of file vlib.\+c.
 
 \begin{DoxyCode}
 9                                    \{
-10     \hyperlink{a00140_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} vlib = \hyperlink{a00200_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00328_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
+10     \hyperlink{a00140_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} vlib = \hyperlink{a00200_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00332_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
 11     \textcolor{keywordflow}{while}(\textcolor{keywordtype}{id} != 0) \{
 12         vlib += \textcolor{keyword}{sizeof}(\hyperlink{a00200_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\_entry\_t});
 13     \}
-14     \textcolor{keywordflow}{return} (\hyperlink{a00324}{vlib\_entry\_t}*)vlib;
+14     \textcolor{keywordflow}{return} (\hyperlink{a00328}{vlib\_entry\_t}*)vlib;
 15 \}
 \end{DoxyCode}
 \mbox{\Hypertarget{a00200_aee69008de31826f28854c29a54cb315e_aee69008de31826f28854c29a54cb315e}\label{a00200_aee69008de31826f28854c29a54cb315e_aee69008de31826f28854c29a54cb315e}} 
@@ -104,16 +104,16 @@ Definition at line 17 of file vlib.\+c.
 
 \begin{DoxyCode}
 17                                \{
-18     \hyperlink{a00140_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} vlib = \hyperlink{a00200_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00328_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
+18     \hyperlink{a00140_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} vlib = \hyperlink{a00200_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00332_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
 19     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = regs.\hyperlink{a00264_aa8989b2fef42dca1d656f724eb324f51_aa8989b2fef42dca1d656f724eb324f51}{ebx};
 20     \textcolor{keywordflow}{while}(\textcolor{keywordtype}{id} != 0) \{
 21         vlib += \textcolor{keyword}{sizeof}(\hyperlink{a00200_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\_entry\_t});
 22     \}
-23     \hyperlink{a00324}{vlib\_entry\_t}* \hyperlink{a00110_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel} = (\hyperlink{a00324}{vlib\_entry\_t}*)vlib;
-24     \hyperlink{a00140_ab22fa604a9d0187c6a648586ee77944f_ab22fa604a9d0187c6a648586ee77944f}{func\_ptr\_args} funcptr = sel->\hyperlink{a00324_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr};
+23     \hyperlink{a00328}{vlib\_entry\_t}* \hyperlink{a00110_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel} = (\hyperlink{a00328}{vlib\_entry\_t}*)vlib;
+24     \hyperlink{a00140_ab22fa604a9d0187c6a648586ee77944f_ab22fa604a9d0187c6a648586ee77944f}{func\_ptr\_args} funcptr = sel->\hyperlink{a00328_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr};
 25     \textcolor{comment}{// we can now run vlib code}
 26     void (*functionptr)(\hyperlink{a00264}{registers\_t} ctaskregs);
-27     functionptr = *sel->\hyperlink{a00324_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr};
+27     functionptr = *sel->\hyperlink{a00328_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr};
 28     functionptr(regs);
 29 \}
 \end{DoxyCode}

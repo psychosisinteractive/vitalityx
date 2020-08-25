@@ -53,8 +53,8 @@ Definition at line 22 of file kernel.\+c.
 26     \hyperlink{a00038_aabdb223e5290f3b3c07bc82d075b87d7_aabdb223e5290f3b3c07bc82d075b87d7}{kb\_init}();
 27     \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Setting up new descriptor tables\(\backslash\)n"});
 28     \hyperlink{a00071_a4c38e3f3ee100ca4323081bf0970c1ac_a4c38e3f3ee100ca4323081bf0970c1ac}{dt\_install}();
-29     \hyperlink{a00068_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}{vlibd}.\hyperlink{a00328_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base} = &\hyperlink{a00068_af69f4f709fdab28dec6b8fb75fb4d526_af69f4f709fdab28dec6b8fb75fb4d526}{vlibe};
-30     \hyperlink{a00068_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}{vlibd}.\hyperlink{a00328_a1cebf64c2c1ec72bca5cf673be70b3a7_a1cebf64c2c1ec72bca5cf673be70b3a7}{len} = 255;
+29     \hyperlink{a00068_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}{vlibd}.\hyperlink{a00332_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base} = &\hyperlink{a00068_af69f4f709fdab28dec6b8fb75fb4d526_af69f4f709fdab28dec6b8fb75fb4d526}{vlibe};
+30     \hyperlink{a00068_a2125beec541d04796805161dbec05fcf_a2125beec541d04796805161dbec05fcf}{vlibd}.\hyperlink{a00332_a1cebf64c2c1ec72bca5cf673be70b3a7_a1cebf64c2c1ec72bca5cf673be70b3a7}{len} = 255;
 31     \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Setting up serial interface\(\backslash\)n"});
 32     \hyperlink{a00056_acfb6f6d615183fc2f71e79dfbadfe27d_acfb6f6d615183fc2f71e79dfbadfe27d}{init\_serial}();
 33     \hyperlink{a00179_ab1cdfeb7dac30904e66f81ab673ed8ca_ab1cdfeb7dac30904e66f81ab673ed8ca}{set\_serialmode}(\textcolor{keyword}{true});
@@ -87,13 +87,13 @@ Definition at line 22 of file kernel.\+c.
 60     \hyperlink{a00179_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\_pputstringl}((\textcolor{keywordtype}{char}*)(\hyperlink{a00152_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[\hyperlink{a00068_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive}].name),4);
 61     \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
 62     \hyperlink{a00032_a9dd84843412753d236e17a15277c5b98_a9dd84843412753d236e17a15277c5b98}{ide\_read\_sectors}(\hyperlink{a00068_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive},10,0,0,0x500);
-63     \hyperlink{a00340}{vxbfs\_header\_t}* header = (\hyperlink{a00340}{vxbfs\_header\_t}*)0x500;
+63     \hyperlink{a00344}{vxbfs\_header\_t}* header = (\hyperlink{a00344}{vxbfs\_header\_t}*)0x500;
 64     \textcolor{keywordflow}{if}(\hyperlink{a00203_a078a66e7d52fd4a6df768277b605199c_a078a66e7d52fd4a6df768277b605199c}{validvxbfs}(header)) \{
 65         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"VXBFS found. label: "});
-66         \hyperlink{a00179_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\_pputstringl}(header->\hyperlink{a00340_af3cd6b4358b6ba93a7bd541c09c959c8_af3cd6b4358b6ba93a7bd541c09c959c8}{label},6);
+66         \hyperlink{a00179_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\_pputstringl}(header->\hyperlink{a00344_af3cd6b4358b6ba93a7bd541c09c959c8_af3cd6b4358b6ba93a7bd541c09c959c8}{label},6);
 67         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-68         \textcolor{keywordtype}{int} addr = 0x500 + (int)header->\hyperlink{a00340_a3b903de5c5034494530cdc0c2d4ff9b1_a3b903de5c5034494530cdc0c2d4ff9b1}{file};
-69         \hyperlink{a00336}{vxbfs\_file\_t} *firstfile = (\hyperlink{a00336}{vxbfs\_file\_t}*)addr;
+68         \textcolor{keywordtype}{int} addr = 0x500 + (int)header->\hyperlink{a00344_a3b903de5c5034494530cdc0c2d4ff9b1_a3b903de5c5034494530cdc0c2d4ff9b1}{file};
+69         \hyperlink{a00340}{vxbfs\_file\_t} *firstfile = (\hyperlink{a00340}{vxbfs\_file\_t}*)addr;
 70         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"First VXBFS File: "});
 71         \textcolor{keywordtype}{char} *fname = &firstfile->name;
 72         \hyperlink{a00179_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\_pputstringl}(fname,11);
@@ -106,16 +106,32 @@ Definition at line 22 of file kernel.\+c.
 79         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(fptrs);
 80         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
 81     \}
-82     \textcolor{keywordtype}{void}* fp = \hyperlink{a00149_a89d79ab10f0c468a6c0d8403ddf50092_a89d79ab10f0c468a6c0d8403ddf50092}{findfile}(\hyperlink{a00068_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive},\textcolor{stringliteral}{"SHELL      "});
-83     \textcolor{keywordflow}{if}(!fp) \{
-84         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Warning: No SHELL file\(\backslash\)n"});
-85     \} \textcolor{keywordflow}{else} \{
-86         \hyperlink{a00320}{pmfl\_t}* f = \hyperlink{a00203_a092e5bdd19e8369aa33901fffeb1f025_a092e5bdd19e8369aa33901fffeb1f025}{readfile}((\hyperlink{a00336}{vxbfs\_file\_t}*)fp);
-87     \}
-88     \textcolor{comment}{// we can now enter the monitor}
-89     \hyperlink{a00173_a33b77c779213ba5f7a0381c995a06f62_a33b77c779213ba5f7a0381c995a06f62}{enter\_monitor}();
-90     \textcolor{keywordflow}{return} 0;
-91 \}
+82     \textcolor{comment}{// test}
+83     \hyperlink{a00324}{frconf\_t}* fp1 = \hyperlink{a00149_a5c15724e6f3ef2c0df67ccedfc8639eb_a5c15724e6f3ef2c0df67ccedfc8639eb}{findfile}(\hyperlink{a00068_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive},\textcolor{stringliteral}{"FileTest123"});
+84     \textcolor{keywordflow}{if}(!fp1->\hyperlink{a00324_aadd5ca2c6b0ddfb40e058f420907fd7d_aadd5ca2c6b0ddfb40e058f420907fd7d}{found}) \{
+85         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Warning: Error with findfile (Could not find FileTest123)\(\backslash\)n"});
+86     \}
+87     \hyperlink{a00324}{frconf\_t}* fp = \hyperlink{a00149_a5c15724e6f3ef2c0df67ccedfc8639eb_a5c15724e6f3ef2c0df67ccedfc8639eb}{findfile}(\hyperlink{a00068_af37cb131d8a2101addfbf5fb2d8a53b4_af37cb131d8a2101addfbf5fb2d8a53b4}{primarydrive},\textcolor{stringliteral}{"SHELL      "});
+88     \textcolor{keywordflow}{if}(!fp->\hyperlink{a00324_aadd5ca2c6b0ddfb40e058f420907fd7d_aadd5ca2c6b0ddfb40e058f420907fd7d}{found}) \{
+89         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Warning: No SHELL file\(\backslash\)n"});
+90     \} \textcolor{keywordflow}{else} \{
+91         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Loaded SHELL file\(\backslash\)n"});
+92         \hyperlink{a00320}{pmfl\_t}* f = \hyperlink{a00203_a092e5bdd19e8369aa33901fffeb1f025_a092e5bdd19e8369aa33901fffeb1f025}{readfile}((\hyperlink{a00340}{vxbfs\_file\_t}*)fp);
+93         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Size: "});
+94         \textcolor{keywordtype}{char}* fsize;
+95         \hyperlink{a00125_ab42640268f26e065efd044cfe80591bd_ab42640268f26e065efd044cfe80591bd}{itoa}(f->\hyperlink{a00320_a151dcc6387f9c9186b4b84526c3a89ff_a151dcc6387f9c9186b4b84526c3a89ff}{len},fsize,16);
+96         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(fsize);
+97         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" Ptr: "});
+98         \textcolor{keywordtype}{char}* fptr;
+99         \hyperlink{a00125_ab42640268f26e065efd044cfe80591bd_ab42640268f26e065efd044cfe80591bd}{itoa}(f->\hyperlink{a00320_a150c011a31f99dbd408f8650f3fa1089_a150c011a31f99dbd408f8650f3fa1089}{ptr},fptr,16);
+100         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(fptr);
+101         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"h\(\backslash\)n"});
+102         \textcolor{comment}{// TODO: begin loading shells}
+103     \}
+104     \textcolor{comment}{// we can now enter the monitor}
+105     \hyperlink{a00173_a33b77c779213ba5f7a0381c995a06f62_a33b77c779213ba5f7a0381c995a06f62}{enter\_monitor}();
+106     \textcolor{keywordflow}{return} 0;
+107 \}
 \end{DoxyCode}
 
 

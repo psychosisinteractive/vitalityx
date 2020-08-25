@@ -53,20 +53,20 @@ Definition at line 25 of file vxbfs.\+c.
 
 \begin{DoxyCode}
 25                                      \{
-26     \hyperlink{a00332}{vxbfs\_modblock\_t}* mb = (\hyperlink{a00332}{vxbfs\_modblock\_t}*)((\textcolor{keywordtype}{int})file->
-      \hyperlink{a00336_a56503c715b4121591ca7367c9cbd7093_a56503c715b4121591ca7367c9cbd7093}{modblock} + \hyperlink{a00134_ade5f4f9306a7cacc0cb2a518bd97e237_ade5f4f9306a7cacc0cb2a518bd97e237}{FS\_LOAD\_POINT});
+26     \hyperlink{a00336}{vxbfs\_modblock\_t}* mb = (\hyperlink{a00336}{vxbfs\_modblock\_t}*)((\textcolor{keywordtype}{int})file->
+      \hyperlink{a00340_a56503c715b4121591ca7367c9cbd7093_a56503c715b4121591ca7367c9cbd7093}{modblock} + \hyperlink{a00134_ade5f4f9306a7cacc0cb2a518bd97e237_ade5f4f9306a7cacc0cb2a518bd97e237}{FS\_LOAD\_POINT});
 27     \hyperlink{a00140_ab8ef12fab634c171394422d0ee8baf94_ab8ef12fab634c171394422d0ee8baf94}{byte}* fptr = 0x01000000;
 28     \textcolor{keywordtype}{int} len = 0;
 29     \hyperlink{a00320}{pmfl\_t} \hyperlink{a00320}{pmfl};
-30     \textcolor{keywordflow}{while}(mb->\hyperlink{a00332_afbf261c73a36b4d33e8a8b5179d4385b_afbf261c73a36b4d33e8a8b5179d4385b}{nextmodblock} != 0x00) \{
-31         \hyperlink{a00140_ab8ef12fab634c171394422d0ee8baf94_ab8ef12fab634c171394422d0ee8baf94}{byte}* dp = (\hyperlink{a00140_ab8ef12fab634c171394422d0ee8baf94_ab8ef12fab634c171394422d0ee8baf94}{byte}*)&mb->\hyperlink{a00332_a327348a3ea3a02cfde4cdb1ccdcf2073_a327348a3ea3a02cfde4cdb1ccdcf2073}{data};
+30     \textcolor{keywordflow}{while}(mb->\hyperlink{a00336_afbf261c73a36b4d33e8a8b5179d4385b_afbf261c73a36b4d33e8a8b5179d4385b}{nextmodblock} != 0x00) \{
+31         \hyperlink{a00140_ab8ef12fab634c171394422d0ee8baf94_ab8ef12fab634c171394422d0ee8baf94}{byte}* dp = (\hyperlink{a00140_ab8ef12fab634c171394422d0ee8baf94_ab8ef12fab634c171394422d0ee8baf94}{byte}*)&mb->\hyperlink{a00336_a327348a3ea3a02cfde4cdb1ccdcf2073_a327348a3ea3a02cfde4cdb1ccdcf2073}{data};
 32         \textcolor{keywordtype}{int} i = 0;
 33         \textcolor{keywordflow}{for}(i = 0; i++; i < 501) \{
 34             *fptr++ = *dp++;
 35             len++;
 36         \}
 37     \}
-38     pmfl.\hyperlink{a00320_ae4da44b065ddc955692df6fddd24a9c4_ae4da44b065ddc955692df6fddd24a9c4}{len} = len;
+38     pmfl.\hyperlink{a00320_a151dcc6387f9c9186b4b84526c3a89ff_a151dcc6387f9c9186b4b84526c3a89ff}{len} = len;
 39     pmfl.\hyperlink{a00320_a150c011a31f99dbd408f8650f3fa1089_a150c011a31f99dbd408f8650f3fa1089}{ptr} = 0x01000000;
 40     \textcolor{keywordflow}{return} &pmfl;
 41 \}
@@ -85,8 +85,8 @@ Definition at line 17 of file vxbfs.\+c.
 \begin{DoxyCode}
 17                                         \{
 18     \textcolor{keywordtype}{bool} valid = \textcolor{keyword}{false};
-19     \textcolor{keywordflow}{if}(header->\hyperlink{a00340_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[0] == \textcolor{charliteral}{'V'} && header->\hyperlink{a00340_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[1] == \textcolor{charliteral}{'X'} && header->
-      \hyperlink{a00340_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[2] == \textcolor{charliteral}{'F'} && header->\hyperlink{a00340_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[3] == \textcolor{charliteral}{'S'}) \{
+19     \textcolor{keywordflow}{if}(header->\hyperlink{a00344_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[0] == \textcolor{charliteral}{'V'} && header->\hyperlink{a00344_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[1] == \textcolor{charliteral}{'X'} && header->
+      \hyperlink{a00344_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[2] == \textcolor{charliteral}{'F'} && header->\hyperlink{a00344_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[3] == \textcolor{charliteral}{'S'}) \{
 20         valid = \textcolor{keyword}{true};
 21     \}
 22     \textcolor{keywordflow}{return} valid;

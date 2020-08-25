@@ -1,24 +1,55 @@
-The drivers folder contains generic system drivers available for the kernel. These libraries are licensed under the licensing agreement below U\+N\+L\+E\+SS specified in the respective source file.
+Interrupt 3\+Fh is the standard VitalityX software interrupt. You interrupt 3\+Fh to run VitalityX functions while in usermode.
+
+For example, to write to Bochs (emulation software) output (in Intel syntax)\+: 
+\begin{DoxyCode}
+        mov eax,0x01 ; Set mode to Bochs Output
+        mov ebx,string ; Set ebx to string pointer
+        int 3fh ; Interrupt VitalityX
+string: db 'Hello VitalityX!',0
+\end{DoxyCode}
+
+
+Here is the current list of supported interrupts\+:
 
 
 \begin{DoxyCode}
-Modified MIT License
+eax 0x01:
 
-Copyright (c) 2020-2021, Psychosis Interactive All rights reserved.
+gets:
+ebx \{string\}
+sets:
+none
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and
-       associated documentation files (the "Software"), to deal in the Software without restriction, including without
-       limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the
-       Software, and to permit persons to whom the Software is furnished to do so, subject to the following
-       conditions:
+This will write \{string\} terminated with 0x0 to the Bochs output.
 
-The above copyright notice and this permission notice must be included in all copies or substantial
-       portions of the Software unless if said Software is closed source.
+eax 0x02:
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT
-       LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT
-       SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN
-       ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-       OTHER DEALINGS IN THE SOFTWARE.
+gets:
+ebx \{string\}
+sets:
+none
+
+This will write \{string\} terminated with 0x0 to the graphical output.
+
+eax 0x03:
+
+gets:
+edi \{code pointer\}
+edx \{mode\}
+sets:
+ebx \{entry id\}
+
+This will add a VLib entry and give you the VLib entry ID.
+
+eax 0x04:
+
+gets:
+none
+sets:
+none
+
+This yields the current task.
+
+Int 3fh:eax=5h was moved to Int3eh, instead of changing the value of eax you just interrupt 3eH
 \end{DoxyCode}
  
