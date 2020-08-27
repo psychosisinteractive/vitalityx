@@ -83,13 +83,20 @@ int kernel() {
     frconf_t* fp1 = findfile(primarydrive,"FileTest123");
     if(!fp1->found) {
         tty_pputstring("Warning: Error with findfile (Could not find FileTest123)\n");
+    } else {
+        tty_pputstring("Testing read");
+        pmfl_t* f = readfile((vxbfs_file_t*)fp1->ptr);
+        bochs_bkpt();
+        // clear it
+        memset(f->ptr,0,f->len);
     }
     frconf_t* fp = findfile(primarydrive,"SHELL      ");
     if(!fp->found) {
         tty_pputstring("Warning: No SHELL file\n");
     } else {
-        tty_pputstring("Loaded SHELL file\n");
-        pmfl_t* f = readfile((vxbfs_file_t*)fp);
+        tty_pputstring("Loading SHELL file\n");
+        pmfl_t* f = readfile((vxbfs_file_t*)fp->ptr);
+        tty_pputstring("Done\n");
         tty_pputstring("Size: ");
         char* fsize;
         itoa(f->len,fsize,16);

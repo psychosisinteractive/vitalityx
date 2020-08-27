@@ -90,7 +90,11 @@ int getentry(int id) {
                         break;
                     }
                     // its either exfat or just nothing
+                    entry->mode = UNKWN;
                     break;
+            }
+            if(entry->mode != UNKWN) {
+                cnam = "fatX";
             }
             #endif
 
@@ -101,8 +105,8 @@ int getentry(int id) {
         memcpy(entry->name,&cnam,4);
         tty_pputstring("Registered ");
         tty_pputstringl(cnam,4);
-        tty_pputstring(" Model ");
-        tty_pputstringl(&ide_devices[id].Model,11);
+        tty_pputstring("Model ");
+        tty_pputstringl(&ide_devices[id].Model,41);
         tty_pputstring("\n");
         return 1;
     } else {

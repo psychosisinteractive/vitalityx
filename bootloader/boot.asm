@@ -9,7 +9,7 @@ start:
     call print_dbg_x
     ; LOAD the system
     mov ah,02h
-    mov al,PROGRAM_SIZE/512
+    mov al, PROGRAM_SIZE / 512
     mov ch,0
     mov cl,02h
     mov dh,0
@@ -58,6 +58,6 @@ ready:
 
 PROGRAM equ 0x7e00
 PROGRAM_SIZE equ 32768  ; in bytes
-
+                 
 times 510 - ($ - $$) db 0
 dw 0AA55h

@@ -55,6 +55,7 @@ idt_flush:
 %macro ISR_NOERRCODE 1  ; define a macro, taking one parameter
 global isr%1        ; %1 accesses the first parameter.
 isr%1:
+    xchg bx, bx
     cli
     push byte 0
     push byte %1
@@ -64,6 +65,7 @@ isr%1:
 %macro ISR_ERRCODE 1
 global isr%1
 isr%1:
+    xchg bx, bx
     cli
     push byte %1
     jmp isr_common_stub

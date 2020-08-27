@@ -35,7 +35,7 @@ typedef struct mbr {
 /// Post Mortem File Load
 ///
 typedef struct pmfl {
-    byte* ptr;
+    addr_t ptr;
     unsigned int len;
 } pmfl_t;
 
@@ -44,7 +44,7 @@ typedef struct pmfl {
 ///
 typedef struct frconf {
     bool found;
-    void* ptr;
+    addr_t ptr;
 } frconf_t;
 
 #endif
