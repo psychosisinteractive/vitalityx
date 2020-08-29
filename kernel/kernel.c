@@ -13,6 +13,8 @@
 #include "../drivers/keyboard.h"
 #include "../drivers/serial.h"
 #include "../libc/vitality/mon.h"
+#include "../libc/system.h"
+#include "../libc/string.h"
 ///
 /// The kernels C entry point
 ///
@@ -28,6 +30,8 @@ int kernel() {
     dt_install();
     vlibd.base = &vlibe;
     vlibd.len = 255;
+    // clear the entries
+    memset(&vlibe,0,sizeof(vlib_entry_t)*255);
     tty_pputstring("Setting up serial interface\n");
     init_serial();
     set_serialmode(true);
@@ -39,7 +43,7 @@ int kernel() {
     tty_pputstring("Starting multitasking\n");
     initTasking();
     tty_pputstring("Setting up FS\n");
-    clearscreen();
+    //clearscreen();
     ide_initialize(0x1F0, 0x3F6, 0x170, 0x376, 0x000);
     getentries();
     /*tty_pputstring("Select drive number from serial otherwise bfs/ata/atp0... ");
