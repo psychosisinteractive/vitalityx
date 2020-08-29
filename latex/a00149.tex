@@ -1,183 +1,60 @@
-\hypertarget{a00149}{}\section{libc/vitality/fs.c File Reference}
-\label{a00149}\index{libc/vitality/fs.\+c@{libc/vitality/fs.\+c}}
-{\ttfamily \#include \char`\"{}fs.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../../drivers/ide.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../system.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}tty.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../string.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}vxbfs.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}fs\+\_\+implementations/impl.\+h\char`\"{}}\newline
-Include dependency graph for fs.\+c\+:
+\hypertarget{a00149}{}\section{libc/vitality/fs\+\_\+implementations/fat.c File Reference}
+\label{a00149}\index{libc/vitality/fs\+\_\+implementations/fat.\+c@{libc/vitality/fs\+\_\+implementations/fat.\+c}}
+{\ttfamily \#include \char`\"{}fat.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../types.\+h\char`\"{}}\newline
+Include dependency graph for fat.\+c\+:
 % FIG 0
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00149_a414110036132977c34813673360e1a63_a414110036132977c34813673360e1a63}{getentries} ()
-\item 
-\hyperlink{a00191_a752f1bef3c13b98d682fddc44a9e47c8_a752f1bef3c13b98d682fddc44a9e47c8}{frconf\+\_\+t} $\ast$ \hyperlink{a00149_a5c15724e6f3ef2c0df67ccedfc8639eb_a5c15724e6f3ef2c0df67ccedfc8639eb}{findfile} (int id, char $\ast$name)
-\item 
-int \hyperlink{a00149_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry} (int id)
-\end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-const char $\ast$ \hyperlink{a00149_a36265ac74fd925405e1179e799961f1e_a36265ac74fd925405e1179e799961f1e}{nullfs} = \char`\"{}null\char`\"{}
+\hyperlink{a00278}{fat\+\_\+descriptor\+\_\+t} $\ast$ \hyperlink{a00149_ac035ecd760d6c41e08695afddb708e53_ac035ecd760d6c41e08695afddb708e53}{fat\+\_\+gendescriptor} (fat\+\_\+\+B\+S\+\_\+t $\ast$bs)
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00149_a5c15724e6f3ef2c0df67ccedfc8639eb_a5c15724e6f3ef2c0df67ccedfc8639eb}\label{a00149_a5c15724e6f3ef2c0df67ccedfc8639eb_a5c15724e6f3ef2c0df67ccedfc8639eb}} 
-\index{fs.\+c@{fs.\+c}!findfile@{findfile}}
-\index{findfile@{findfile}!fs.\+c@{fs.\+c}}
-\subsubsection{\texorpdfstring{findfile()}{findfile()}}
-{\footnotesize\ttfamily \hyperlink{a00191_a752f1bef3c13b98d682fddc44a9e47c8_a752f1bef3c13b98d682fddc44a9e47c8}{frconf\+\_\+t}$\ast$ findfile (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{char $\ast$}]{name }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00149_ac035ecd760d6c41e08695afddb708e53_ac035ecd760d6c41e08695afddb708e53}\label{a00149_ac035ecd760d6c41e08695afddb708e53_ac035ecd760d6c41e08695afddb708e53}} 
+\index{fat.\+c@{fat.\+c}!fat\+\_\+gendescriptor@{fat\+\_\+gendescriptor}}
+\index{fat\+\_\+gendescriptor@{fat\+\_\+gendescriptor}!fat.\+c@{fat.\+c}}
+\subsubsection{\texorpdfstring{fat\+\_\+gendescriptor()}{fat\_gendescriptor()}}
+{\footnotesize\ttfamily \hyperlink{a00278}{fat\+\_\+descriptor\+\_\+t}$\ast$ fat\+\_\+gendescriptor (\begin{DoxyParamCaption}\item[{fat\+\_\+\+B\+S\+\_\+t $\ast$}]{bs }\end{DoxyParamCaption})}
 
 
 
-Definition at line 19 of file fs.\+c.
-
-
-\begin{DoxyCode}
-19                                        \{
-20     \hyperlink{a00324}{frconf\_t}* conf;
-21     \textcolor{keywordflow}{switch}(\hyperlink{a00152_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[\textcolor{keywordtype}{id}].type) \{
-22         \hyperlink{a00161_a2e9d0c3765a28910638672bfc746181b_a2e9d0c3765a28910638672bfc746181ba4e81c184ac3ad48a389cd4454c4a05bb}{Unknown}:
-23             \textcolor{keywordflow}{break};
-24         \hyperlink{a00161_a2e9d0c3765a28910638672bfc746181b_a2e9d0c3765a28910638672bfc746181bac740d3121d634c0d77f5602b1fdab236}{VXBFS}:
-25             \hyperlink{a00032_a9dd84843412753d236e17a15277c5b98_a9dd84843412753d236e17a15277c5b98}{ide\_read\_sectors}(\textcolor{keywordtype}{id},16,0,0,0x500);
-26             \hyperlink{a00344}{vxbfs\_header\_t}* header = (\hyperlink{a00344}{vxbfs\_header\_t}*)0x500;
-27             \hyperlink{a00340}{vxbfs\_file\_t}* \hyperlink{a00308}{file} = (\hyperlink{a00344}{vxbfs\_header\_t}*)((\textcolor{keywordtype}{int})header->
-      \hyperlink{a00344_a3b903de5c5034494530cdc0c2d4ff9b1_a3b903de5c5034494530cdc0c2d4ff9b1}{file} + 0x500);
-28             \textcolor{keywordtype}{char}* fname = \textcolor{stringliteral}{"           "};
-29             \hyperlink{a00131_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(fname,file->\hyperlink{a00340_a07ecc9bacdc2943442f26f62f6749055_a07ecc9bacdc2943442f26f62f6749055}{name},12);
-30             \textcolor{keywordflow}{while}((\hyperlink{a00125_a3c8c44ba2ae232bc5ae8449de1448164_a3c8c44ba2ae232bc5ae8449de1448164}{strcmpl}(name,fname,12)) || (file->\hyperlink{a00340_aa2c7e2e1b3827ce9fbaa045b89202784_aa2c7e2e1b3827ce9fbaa045b89202784}{nextfile} = 0x0)) \{
-31                 \textcolor{keywordflow}{if}(file->\hyperlink{a00340_aa2c7e2e1b3827ce9fbaa045b89202784_aa2c7e2e1b3827ce9fbaa045b89202784}{nextfile} != 0x0) \{
-32                     file = file->\hyperlink{a00340_aa2c7e2e1b3827ce9fbaa045b89202784_aa2c7e2e1b3827ce9fbaa045b89202784}{nextfile} + 0x500;
-33                     conf->\hyperlink{a00324_aadd5ca2c6b0ddfb40e058f420907fd7d_aadd5ca2c6b0ddfb40e058f420907fd7d}{found} = \textcolor{keyword}{true};
-34                     conf->\hyperlink{a00324_ad00ee8a5532f1cb73a4cc2faa80afac8_ad00ee8a5532f1cb73a4cc2faa80afac8}{ptr} = file;
-35                 \} \textcolor{keywordflow}{else} \{
-36                     file = 0;
-37                     \textcolor{keywordflow}{break};
-38                 \}
-39             \}
-40             \textcolor{keywordflow}{break};
-41         \textcolor{comment}{// add your file finding algorithim here}
-42     \}
-43     \textcolor{keywordflow}{return} conf;
-44 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00149_a414110036132977c34813673360e1a63_a414110036132977c34813673360e1a63}\label{a00149_a414110036132977c34813673360e1a63_a414110036132977c34813673360e1a63}} 
-\index{fs.\+c@{fs.\+c}!getentries@{getentries}}
-\index{getentries@{getentries}!fs.\+c@{fs.\+c}}
-\subsubsection{\texorpdfstring{getentries()}{getentries()}}
-{\footnotesize\ttfamily void getentries (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 12 of file fs.\+c.
+Definition at line 4 of file fat.\+c.
 
 
 \begin{DoxyCode}
-12                   \{
-13     \hyperlink{a00149_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(0);
-14     \hyperlink{a00149_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(1);
-15     \hyperlink{a00149_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(2);
-16     \hyperlink{a00149_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}{getentry}(3);
-17 \}
+4                                                   \{
+5     \hyperlink{a00278}{fat\_descriptor\_t} \hyperlink{a00194_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor};
+6 
+7     fat\_extBS\_32\_t *fat\_boot\_ext\_32 = \hyperlink{a00134_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+8     fat\_extBS\_16\_t *fat\_boot\_ext\_16 = \hyperlink{a00134_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
+9 
+10     descriptor.\hyperlink{a00278_a6ba8fdfcc30f2737d98cf80f744477d4_a6ba8fdfcc30f2737d98cf80f744477d4}{total\_sectors} = (bs->total\_sectors\_16 == 0)? bs->total\_sectors\_32 : bs->
+      total\_sectors\_16;
+11     descriptor.\hyperlink{a00278_a18ddffcaa1d119d72bc828fec257aabf_a18ddffcaa1d119d72bc828fec257aabf}{bs} = &bs;
+12     \textcolor{keywordflow}{if}(descriptor.\hyperlink{a00278_a659431475a2b5d306362e0364e1ecdbf_a659431475a2b5d306362e0364e1ecdbf}{total\_clusters} < 4085) 
+13     \{
+14         fat\_boot\_ext\_16 = (fat\_extBS\_16\_t*)bs->extended\_section;
+15         descriptor.\hyperlink{a00278_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146aee78460e52f239902d3655a0ee0cf82a}{FAT12};
+16     \} 
+17     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if}(descriptor.\hyperlink{a00278_a659431475a2b5d306362e0364e1ecdbf_a659431475a2b5d306362e0364e1ecdbf}{total\_clusters} < 65525) 
+18     \{
+19         fat\_boot\_ext\_16 = (fat\_extBS\_16\_t*)bs->extended\_section;
+20         descriptor.\hyperlink{a00278_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a8b322666f7d5865bebdde4f7d6b99da0}{FAT16};
+21     \} 
+22     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (descriptor.\hyperlink{a00278_a659431475a2b5d306362e0364e1ecdbf_a659431475a2b5d306362e0364e1ecdbf}{total\_clusters} < 268435445)
+23     \{
+24         fat\_boot\_ext\_32 = (fat\_extBS\_16\_t*)bs->extended\_section;
+25         descriptor.\hyperlink{a00278_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146afc5be65062d254a8cb67d80202a9fb8b}{FAT32};
+26     \}
+27     \textcolor{keywordflow}{else}
+28     \{ 
+29         \textcolor{comment}{// idk}
+30         descriptor.\hyperlink{a00278_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type} = \hyperlink{a00152_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a10aba3db5a861bed45ce618cc8546f3b}{EXFAT};
+31     \}
+32 
+33     descriptor.\hyperlink{a00278_af99ceda6bbab7839a8045c6c6fd18c42_af99ceda6bbab7839a8045c6c6fd18c42}{fat\_size} = (bs->table\_size\_16 == 0)? fat\_boot\_ext\_32->table\_size\_32 : bs->
+      table\_size\_16;
+34 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00149_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}\label{a00149_a3fb32d07d3bd05144a196c94fc59c0d1_a3fb32d07d3bd05144a196c94fc59c0d1}} 
-\index{fs.\+c@{fs.\+c}!getentry@{getentry}}
-\index{getentry@{getentry}!fs.\+c@{fs.\+c}}
-\subsubsection{\texorpdfstring{getentry()}{getentry()}}
-{\footnotesize\ttfamily int getentry (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
-
-
-
-Definition at line 46 of file fs.\+c.
-
-
-\begin{DoxyCode}
-46                      \{
-47     \textcolor{keywordtype}{char}* cnam;
-48     \textcolor{keywordflow}{if}(\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Reserved) \{
-49         \hyperlink{a00272}{fsentry\_t} *entry = &\hyperlink{a00152_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[id];
-50         entry->\hyperlink{a00272_a284522ed97fe1eeebd0fcc039b2ea00a_a284522ed97fe1eeebd0fcc039b2ea00a}{ready} = \textcolor{keyword}{true};
-51         entry->\hyperlink{a00272_aaea66ea744fa50f1c54666033884d8d2_aaea66ea744fa50f1c54666033884d8d2}{dev} = &\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[id];
-52         
-53         \textcolor{keywordtype}{char}* num = \textcolor{stringliteral}{"x"};
-54         \hyperlink{a00125_ab42640268f26e065efd044cfe80591bd_ab42640268f26e065efd044cfe80591bd}{itoa}(\textcolor{keywordtype}{id},num,10);
-55         \textcolor{keywordflow}{switch}(\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Type) \{
-56             \textcolor{keywordflow}{case} 0: \textcolor{comment}{// ata}
-57                 cnam = \textcolor{stringliteral}{"ataX"};
-58                 \textcolor{keywordflow}{break};
-59             \textcolor{keywordflow}{case} 1: \textcolor{comment}{// atapi}
-60                 cnam = \textcolor{stringliteral}{"atpX"};
-61                 \textcolor{keywordflow}{break};
-62         \}
-63         \textcolor{comment}{// Put all your FS detectors below}
-64         \textcolor{keywordflow}{if}(\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Type == 0) \{
-65             \hyperlink{a00032_a9dd84843412753d236e17a15277c5b98_a9dd84843412753d236e17a15277c5b98}{ide\_read\_sectors}(\textcolor{keywordtype}{id},4,0,0,0x500);
-66             \textcolor{keywordflow}{if}(\hyperlink{a00203_a078a66e7d52fd4a6df768277b605199c_a078a66e7d52fd4a6df768277b605199c}{validvxbfs}((\hyperlink{a00344}{vxbfs\_header\_t}*)0x500)) \{
-67                 \hyperlink{a00344}{vxbfs\_header\_t}* header = (\hyperlink{a00344}{vxbfs\_header\_t}*)0x500;
-68                 \hyperlink{a00131_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(cnam,header->\hyperlink{a00344_af0310ee852d6ec20fe68052fff0d1378_af0310ee852d6ec20fe68052fff0d1378}{uniquename},3);
-69                 entry->\hyperlink{a00272_acbab3dd44174c8f74e1d9305a13c7dbb_acbab3dd44174c8f74e1d9305a13c7dbb}{type} = \hyperlink{a00161_a2e9d0c3765a28910638672bfc746181b_a2e9d0c3765a28910638672bfc746181bac740d3121d634c0d77f5602b1fdab236}{VXBFS};
-70             \}
-71             \textcolor{comment}{// define this if you want no custom filesystems and just use VXBFS}
-72 \textcolor{preprocessor}{            #ifndef NOCFS}
-73 \textcolor{preprocessor}{            #pragma region Non VXBFS Detectors}
-74 
-75             \textcolor{comment}{// ADD ANY FILESYSTEM DETECTORS IN THIS REGION}
-76 
-77 \textcolor{preprocessor}{            #ifndef NOFAT}
-78             \textcolor{comment}{// FAT detector -- nougatchi}
-79             fat\_BS\_t* fbs = (fat\_BS\_t*)0x500;
-80             \hyperlink{a00288}{fat\_descriptor\_t} *desc = \hyperlink{a00155_ac035ecd760d6c41e08695afddb708e53_ac035ecd760d6c41e08695afddb708e53}{fat\_gendescriptor}(fbs);
-81             \textcolor{keywordflow}{switch}(desc->\hyperlink{a00288_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type}) \{
-82                 \textcolor{keywordflow}{case} \hyperlink{a00158_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146aee78460e52f239902d3655a0ee0cf82a}{FAT12}:
-83                 \textcolor{keywordflow}{case} \hyperlink{a00158_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146a8b322666f7d5865bebdde4f7d6b99da0}{FAT16}:
-84                 \textcolor{keywordflow}{case} \hyperlink{a00158_a1d614cff279bd01b56283ae2e9bad146_a1d614cff279bd01b56283ae2e9bad146afc5be65062d254a8cb67d80202a9fb8b}{FAT32}:
-85                     entry->\hyperlink{a00272_a6e71712bc3c51c21dc3362334937e4d7_a6e71712bc3c51c21dc3362334937e4d7}{mode} = desc->\hyperlink{a00288_af0128226729d42a4c91aaa0983c41b4e_af0128226729d42a4c91aaa0983c41b4e}{fat\_type};
-86                     entry->\hyperlink{a00272_ae1d22893563b8753e29fef01f0782ba5_ae1d22893563b8753e29fef01f0782ba5}{dp}   = (\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t}*)desc;
-87                     \textcolor{keywordflow}{break};
-88                 \textcolor{keywordflow}{default}:
-89                     \textcolor{keywordflow}{if}(desc->\hyperlink{a00288_a6ba8fdfcc30f2737d98cf80f744477d4_a6ba8fdfcc30f2737d98cf80f744477d4}{total\_sectors} == 0) \{
-90                         \textcolor{keywordflow}{break};
-91                     \}
-92                     \textcolor{comment}{// its either exfat or just nothing}
-93                     \textcolor{keywordflow}{break};
-94             \}
-95 \textcolor{preprocessor}{            #endif}
-96 
-97 \textcolor{preprocessor}{            #pragma endregion}
-98 \textcolor{preprocessor}{            #endif}
-99         \}
-100         \hyperlink{a00131_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(cnam+3,num,1);
-101         \hyperlink{a00131_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(entry->\hyperlink{a00272_a9c5a4f5b02eb2c9e9e797f79dc99028a_a9c5a4f5b02eb2c9e9e797f79dc99028a}{name},&cnam,4);
-102         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Registered "});
-103         \hyperlink{a00179_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\_pputstringl}(cnam,4);
-104         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" Model "});
-105         \hyperlink{a00179_abaf93f9e56ddb7b10462070f59e534e4_abaf93f9e56ddb7b10462070f59e534e4}{tty\_pputstringl}(&\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[\textcolor{keywordtype}{id}].Model,11);
-106         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
-107         \textcolor{keywordflow}{return} 1;
-108     \} \textcolor{keywordflow}{else} \{
-109         \hyperlink{a00152_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[id].\hyperlink{a00272_a284522ed97fe1eeebd0fcc039b2ea00a_a284522ed97fe1eeebd0fcc039b2ea00a}{ready} = \textcolor{keyword}{false};
-110         \hyperlink{a00152_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[id].\hyperlink{a00272_aaea66ea744fa50f1c54666033884d8d2_aaea66ea744fa50f1c54666033884d8d2}{dev} = 0;
-111 
-112         \hyperlink{a00131_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(&\hyperlink{a00152_a6b46131164b26e476762930c9aae4319_a6b46131164b26e476762930c9aae4319}{fsentries}[\textcolor{keywordtype}{id}].name,&\hyperlink{a00149_a36265ac74fd925405e1179e799961f1e_a36265ac74fd925405e1179e799961f1e}{nullfs},4);
-113         \textcolor{keywordflow}{return} 0;
-114     \} 
-115 \}
-\end{DoxyCode}
-
-
-\subsection{Variable Documentation}
-\mbox{\Hypertarget{a00149_a36265ac74fd925405e1179e799961f1e_a36265ac74fd925405e1179e799961f1e}\label{a00149_a36265ac74fd925405e1179e799961f1e_a36265ac74fd925405e1179e799961f1e}} 
-\index{fs.\+c@{fs.\+c}!nullfs@{nullfs}}
-\index{nullfs@{nullfs}!fs.\+c@{fs.\+c}}
-\subsubsection{\texorpdfstring{nullfs}{nullfs}}
-{\footnotesize\ttfamily const char$\ast$ nullfs = \char`\"{}null\char`\"{}}
-
-
-
-Definition at line 10 of file fs.\+c.
-

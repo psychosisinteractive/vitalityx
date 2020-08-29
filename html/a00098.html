@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/g++/cpp_classdef.h File Reference</title>
+<title>VitalityX: libc/gdt.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -40,33 +40,90 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_740231a46c27238b7c2b9234f80cf181.html">g++</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#define-members">Macros</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">cpp_classdef.h File Reference</div>  </div>
+<div class="title">gdt.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><div class="dynheader">
+<div class="textblock"><code>#include &quot;<a class="el" href="a00134_source.html">types.h</a>&quot;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for gdt.h:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00099.png" border="0" usemap="#libc_2gdt_8h" alt=""/></div>
+<!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
 This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00100.png" border="0" usemap="#libc_2g_09_09_2cpp__classdef_8hdep" alt=""/></div>
-<!-- MAP 0 -->
+<div class="center"><img src="a00100.png" border="0" usemap="#libc_2gdt_8hdep" alt=""/></div>
+<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00098_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00222.html">gdt_ptr_struct</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00226.html">gdt_entry_struct</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:abe29d44fbb5292a15af80cbb8e8a3a7d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_abe29d44fbb5292a15af80cbb8e8a3a7d.html#abe29d44fbb5292a15af80cbb8e8a3a7d">ENTRY_NUM</a>&#160;&#160;&#160;6</td></tr>
+<tr class="separator:abe29d44fbb5292a15af80cbb8e8a3a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a3bf3fa6f397bda8399e1afb6283b66ca"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00222.html">gdt_ptr_struct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a3bf3fa6f397bda8399e1afb6283b66ca.html#a3bf3fa6f397bda8399e1afb6283b66ca">gdt_ptr_t</a></td></tr>
+<tr class="separator:a3bf3fa6f397bda8399e1afb6283b66ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0b5c60e06a63669c783705278ff641e"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00226.html">gdt_entry_struct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ab0b5c60e06a63669c783705278ff641e.html#ab0b5c60e06a63669c783705278ff641e">gdt_entry_t</a></td></tr>
+<tr class="separator:ab0b5c60e06a63669c783705278ff641e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6be7d9ce80c86f5178635fa86c2dd5e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a6be7d9ce80c86f5178635fa86c2dd5e7.html#a6be7d9ce80c86f5178635fa86c2dd5e7">__cxa_pure_virtual</a> ()</td></tr>
-<tr class="memdesc:a6be7d9ce80c86f5178635fa86c2dd5e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++ Pure Virtual Function, called when a virtual function is required YET there is nothing to handle its call.  <a href="a00098_a6be7d9ce80c86f5178635fa86c2dd5e7.html#a6be7d9ce80c86f5178635fa86c2dd5e7">More...</a><br /></td></tr>
-<tr class="separator:a6be7d9ce80c86f5178635fa86c2dd5e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88ab127aec9ce8ef76f95c9dc7edfe9a"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a88ab127aec9ce8ef76f95c9dc7edfe9a.html#a88ab127aec9ce8ef76f95c9dc7edfe9a">c_stc</a> (const char string[])</td></tr>
-<tr class="memdesc:a88ab127aec9ce8ef76f95c9dc7edfe9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a const char array into a char*.  <a href="a00098_a88ab127aec9ce8ef76f95c9dc7edfe9a.html#a88ab127aec9ce8ef76f95c9dc7edfe9a">More...</a><br /></td></tr>
-<tr class="separator:a88ab127aec9ce8ef76f95c9dc7edfe9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e9079c04b56b38b81496b55a836d3e1"><td class="memItemLeft" align="right" valign="top">struct <a class="el" href="a00222.html">gdt_ptr_struct</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a7e9079c04b56b38b81496b55a836d3e1.html#a7e9079c04b56b38b81496b55a836d3e1">__attribute__</a> ((packed))</td></tr>
+<tr class="separator:a7e9079c04b56b38b81496b55a836d3e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62397fecbde23244b570ae632fe926fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a62397fecbde23244b570ae632fe926fa.html#a62397fecbde23244b570ae632fe926fa">gdt_flush</a> (<a class="el" href="a00134_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>)</td></tr>
+<tr class="separator:a62397fecbde23244b570ae632fe926fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86bb50044169930202cc403376ef40c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a86bb50044169930202cc403376ef40c3.html#a86bb50044169930202cc403376ef40c3">init_gdt</a> ()</td></tr>
+<tr class="memdesc:a86bb50044169930202cc403376ef40c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the GDT (Global Descriptor Table)  <a href="a00098_a86bb50044169930202cc403376ef40c3.html#a86bb50044169930202cc403376ef40c3">More...</a><br /></td></tr>
+<tr class="separator:a86bb50044169930202cc403376ef40c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6718a86f3fbcc96b26b09f3742d52a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_af6718a86f3fbcc96b26b09f3742d52a1.html#af6718a86f3fbcc96b26b09f3742d52a1">gdt_set_gate</a> (<a class="el" href="a00134_ad838970452fe561cb8e0550cac5336be.html#ad838970452fe561cb8e0550cac5336be">sint32_t</a>, <a class="el" href="a00134_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>, <a class="el" href="a00134_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>, <a class="el" href="a00134_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>, <a class="el" href="a00134_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>)</td></tr>
+<tr class="memdesc:af6718a86f3fbcc96b26b09f3742d52a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the value of one GDT entry.  <a href="a00098_af6718a86f3fbcc96b26b09f3742d52a1.html#af6718a86f3fbcc96b26b09f3742d52a1">More...</a><br /></td></tr>
+<tr class="separator:af6718a86f3fbcc96b26b09f3742d52a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ab28e82ae69032cb4ad3ec3a0be3d7129"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ab28e82ae69032cb4ad3ec3a0be3d7129.html#ab28e82ae69032cb4ad3ec3a0be3d7129">limit</a></td></tr>
+<tr class="separator:ab28e82ae69032cb4ad3ec3a0be3d7129"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0523cedff47e2441fc198b7770ec5d3f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a0523cedff47e2441fc198b7770ec5d3f.html#a0523cedff47e2441fc198b7770ec5d3f">base</a></td></tr>
+<tr class="separator:a0523cedff47e2441fc198b7770ec5d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7ae5b5a918e00776ff07fb1c58a348d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_aa7ae5b5a918e00776ff07fb1c58a348d.html#aa7ae5b5a918e00776ff07fb1c58a348d">limit_low</a></td></tr>
+<tr class="separator:aa7ae5b5a918e00776ff07fb1c58a348d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71e21ea67de59991e9a27666a1752a8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a273cf69d639a59973b6019625df33e30.html#a273cf69d639a59973b6019625df33e30">uint16_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a71e21ea67de59991e9a27666a1752a8f.html#a71e21ea67de59991e9a27666a1752a8f">base_low</a></td></tr>
+<tr class="separator:a71e21ea67de59991e9a27666a1752a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b67e86f6de9204d76adab79069aec29"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a6b67e86f6de9204d76adab79069aec29.html#a6b67e86f6de9204d76adab79069aec29">base_middle</a></td></tr>
+<tr class="separator:a6b67e86f6de9204d76adab79069aec29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b0d6200bc639dd37ff68847a0adde5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a8b0d6200bc639dd37ff68847a0adde5f.html#a8b0d6200bc639dd37ff68847a0adde5f">access</a></td></tr>
+<tr class="separator:a8b0d6200bc639dd37ff68847a0adde5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acfea365f69e71368a2db03333d4afd6f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_acfea365f69e71368a2db03333d4afd6f.html#acfea365f69e71368a2db03333d4afd6f">granularity</a></td></tr>
+<tr class="separator:acfea365f69e71368a2db03333d4afd6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a173457c7aa39c59c008fcc3332d2b3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a1a173457c7aa39c59c008fcc3332d2b3.html#a1a173457c7aa39c59c008fcc3332d2b3">base_high</a></td></tr>
+<tr class="separator:a1a173457c7aa39c59c008fcc3332d2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29ae43d712f89a273f1e9e461b690218"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00098_ab0b5c60e06a63669c783705278ff641e.html#ab0b5c60e06a63669c783705278ff641e">gdt_entry_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_a29ae43d712f89a273f1e9e461b690218.html#a29ae43d712f89a273f1e9e461b690218">gdt_entries</a> [<a class="el" href="a00098_abe29d44fbb5292a15af80cbb8e8a3a7d.html#abe29d44fbb5292a15af80cbb8e8a3a7d">ENTRY_NUM</a>]</td></tr>
+<tr class="separator:a29ae43d712f89a273f1e9e461b690218"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0888c07dfb9352ef76d05e63464cf0b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00098_a3bf3fa6f397bda8399e1afb6283b66ca.html#a3bf3fa6f397bda8399e1afb6283b66ca">gdt_ptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00098_ab0888c07dfb9352ef76d05e63464cf0b.html#ab0888c07dfb9352ef76d05e63464cf0b">gdt_ptr</a></td></tr>
+<tr class="separator:ab0888c07dfb9352ef76d05e63464cf0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

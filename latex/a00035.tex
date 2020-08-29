@@ -1,701 +1,224 @@
-\hypertarget{a00035}{}\section{drivers/ide.h File Reference}
-\label{a00035}\index{drivers/ide.\+h@{drivers/ide.\+h}}
-{\ttfamily \#include \char`\"{}../libc/types.\+h\char`\"{}}\newline
-Include dependency graph for ide.\+h\+:
+\hypertarget{a00035}{}\section{drivers/keyboard.h File Reference}
+\label{a00035}\index{drivers/keyboard.\+h@{drivers/keyboard.\+h}}
+{\ttfamily \#include \char`\"{}../libc/vitality/inline.\+h\char`\"{}}\newline
+Include dependency graph for keyboard.\+h\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
 % FIG 1
-\subsection*{Data Structures}
+\subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{a00220}{I\+D\+E\+Channel\+Registers}
+\#define \hyperlink{a00035_a49e0a04e81098085d2948c1e9f8c99cb_a49e0a04e81098085d2948c1e9f8c99cb}{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+D\+A\+T\+A\+\_\+\+P\+O\+RT}~0x60
 \item 
-struct \hyperlink{a00224}{ide\+\_\+device}
+\#define \hyperlink{a00035_ab79ca089665bc7f5cc151883d1bc69ed_ab79ca089665bc7f5cc151883d1bc69ed}{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+O\+RT}~0x64
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00035_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\+\_\+write} (unsigned char channel, unsigned char reg, unsigned char data)
+void \hyperlink{a00035_aabdb223e5290f3b3c07bc82d075b87d7_aabdb223e5290f3b3c07bc82d075b87d7}{kb\+\_\+init} (void)
 \item 
-unsigned char \hyperlink{a00035_aef734da4bdc0c1d014528fd2f66e0686_aef734da4bdc0c1d014528fd2f66e0686}{ide\+\_\+read} (unsigned char channel, unsigned char reg)
+char $\ast$ \hyperlink{a00035_ab88a2e96bbe585e228a5b201435c0240_ab88a2e96bbe585e228a5b201435c0240}{getst} ()
 \item 
-void \hyperlink{a00035_ac338a611110448d6bd9b8edc491ed19b_ac338a611110448d6bd9b8edc491ed19b}{ide\+\_\+read\+\_\+buffer} (unsigned char channel, unsigned char reg, unsigned int buffer, unsigned int quads)
+char \hyperlink{a00035_af3facad10e05defa48d45b46eb9ebe7e_af3facad10e05defa48d45b46eb9ebe7e}{getch} ()
 \item 
-unsigned char \hyperlink{a00035_a03e85b94d6fbfb957e1b88c3dd064eca_a03e85b94d6fbfb957e1b88c3dd064eca}{ide\+\_\+polling} (unsigned char channel, unsigned int advanced\+\_\+check)
+char \hyperlink{a00035_aa7ee03b27a489828ce588d0fc023cab3_aa7ee03b27a489828ce588d0fc023cab3}{getsch} ()
 \item 
-unsigned char \hyperlink{a00035_af7757307613c29c9bcbf0f8f5b2feee5_af7757307613c29c9bcbf0f8f5b2feee5}{ide\+\_\+print\+\_\+error} (unsigned int drive, unsigned char err)
-\item 
-void \hyperlink{a00035_ab5397c8432be802172da8f04c8840ca3_ab5397c8432be802172da8f04c8840ca3}{ide\+\_\+initialize} (unsigned int B\+A\+R0, unsigned int B\+A\+R1, unsigned int B\+A\+R2, unsigned int B\+A\+R3, unsigned int B\+A\+R4)
-\item 
-unsigned char \hyperlink{a00035_a4da0883393a98b937fdc3015a0a3f265_a4da0883393a98b937fdc3015a0a3f265}{ide\+\_\+ata\+\_\+access} (unsigned char direction, unsigned char drive, unsigned int lba, unsigned char numsects, unsigned short selector, unsigned int edi)
-\item 
-void \hyperlink{a00035_a9dd84843412753d236e17a15277c5b98_a9dd84843412753d236e17a15277c5b98}{ide\+\_\+read\+\_\+sectors} (unsigned char drive, unsigned char numsects, unsigned int lba, unsigned short es, unsigned int edi)
-\item 
-void \hyperlink{a00035_a8632fb3a8cd41b7d60ee56942afbde03_a8632fb3a8cd41b7d60ee56942afbde03}{ide\+\_\+write\+\_\+sectors} (unsigned char drive, unsigned char numsects, unsigned int lba, unsigned short es, unsigned int edi)
-\item 
-void \hyperlink{a00035_a92d054539c112a72e080e35a3341b0b9_a92d054539c112a72e080e35a3341b0b9}{ide\+\_\+atapi\+\_\+eject} (unsigned char drive)
-\item 
-void \hyperlink{a00035_ad7ea572af581cc0623a2fb74a579ca83_ad7ea572af581cc0623a2fb74a579ca83}{ide\+\_\+irq} ()
-\item 
-void \hyperlink{a00035_a31655fcec0cc8f9f8792b98cd4441fdf_a31655fcec0cc8f9f8792b98cd4441fdf}{ide\+\_\+wait\+\_\+irq} ()
+void \hyperlink{a00035_adffe6abc4a32b3b10985ec9324bce2af_adffe6abc4a32b3b10985ec9324bce2af}{keyboard\+\_\+handler\+\_\+main} ()
 \end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-struct \hyperlink{a00220}{I\+D\+E\+Channel\+Registers} \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels} \mbox{[}2\mbox{]}
-\item 
-\hyperlink{a00140_ab8ef12fab634c171394422d0ee8baf94_ab8ef12fab634c171394422d0ee8baf94}{byte} \hyperlink{a00035_a820b2230ab700e13350794494bd4a60f_a820b2230ab700e13350794494bd4a60f}{package} \mbox{[}1\mbox{]}
-\item 
-struct \hyperlink{a00224}{ide\+\_\+device} \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\+\_\+devices} \mbox{[}4\mbox{]}
-\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{a00035_a49e0a04e81098085d2948c1e9f8c99cb_a49e0a04e81098085d2948c1e9f8c99cb}\label{a00035_a49e0a04e81098085d2948c1e9f8c99cb_a49e0a04e81098085d2948c1e9f8c99cb}} 
+\index{keyboard.\+h@{keyboard.\+h}!K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+D\+A\+T\+A\+\_\+\+P\+O\+RT@{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+D\+A\+T\+A\+\_\+\+P\+O\+RT}}
+\index{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+D\+A\+T\+A\+\_\+\+P\+O\+RT@{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+D\+A\+T\+A\+\_\+\+P\+O\+RT}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+D\+A\+T\+A\+\_\+\+P\+O\+RT}{KEYBOARD\_DATA\_PORT}}
+{\footnotesize\ttfamily \#define K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+D\+A\+T\+A\+\_\+\+P\+O\+RT~0x60}
+
+
+
+Definition at line 3 of file keyboard.\+h.
+
+\mbox{\Hypertarget{a00035_ab79ca089665bc7f5cc151883d1bc69ed_ab79ca089665bc7f5cc151883d1bc69ed}\label{a00035_ab79ca089665bc7f5cc151883d1bc69ed_ab79ca089665bc7f5cc151883d1bc69ed}} 
+\index{keyboard.\+h@{keyboard.\+h}!K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+O\+RT@{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+O\+RT}}
+\index{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+O\+RT@{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+O\+RT}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+O\+RT}{KEYBOARD\_STATUS\_PORT}}
+{\footnotesize\ttfamily \#define K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+O\+RT~0x64}
+
+
+
+Definition at line 4 of file keyboard.\+h.
+
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00035_a4da0883393a98b937fdc3015a0a3f265_a4da0883393a98b937fdc3015a0a3f265}\label{a00035_a4da0883393a98b937fdc3015a0a3f265_a4da0883393a98b937fdc3015a0a3f265}} 
-\index{ide.\+h@{ide.\+h}!ide\+\_\+ata\+\_\+access@{ide\+\_\+ata\+\_\+access}}
-\index{ide\+\_\+ata\+\_\+access@{ide\+\_\+ata\+\_\+access}!ide.\+h@{ide.\+h}}
-\subsubsection{\texorpdfstring{ide\+\_\+ata\+\_\+access()}{ide\_ata\_access()}}
-{\footnotesize\ttfamily unsigned char ide\+\_\+ata\+\_\+access (\begin{DoxyParamCaption}\item[{unsigned char}]{direction,  }\item[{unsigned char}]{drive,  }\item[{unsigned int}]{lba,  }\item[{unsigned char}]{numsects,  }\item[{unsigned short}]{selector,  }\item[{unsigned int}]{edi }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00035_af3facad10e05defa48d45b46eb9ebe7e_af3facad10e05defa48d45b46eb9ebe7e}\label{a00035_af3facad10e05defa48d45b46eb9ebe7e_af3facad10e05defa48d45b46eb9ebe7e}} 
+\index{keyboard.\+h@{keyboard.\+h}!getch@{getch}}
+\index{getch@{getch}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{getch()}{getch()}}
+{\footnotesize\ttfamily char getch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 294 of file ide.\+c.
-
-
-\begin{DoxyCode}
-295                                                                                                 \{
-296     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} lba\_mode \textcolor{comment}{/* 0: CHS, 1:LBA28, 2: LBA48 */}, dma \textcolor{comment}{/* 0: No DMA, 1: DMA */}, cmd;
-297     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} lba\_io[6];
-298     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  channel      = \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].\hyperlink{a00224_aea5a88e5bb25bdf109e66a51cba51699_aea5a88e5bb25bdf109e66a51cba51699}{Channel}; \textcolor{comment}{// Read the Channel.}
-299     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  slavebit      = \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].\hyperlink{a00224_a8b7ef57ccb98cb9511bd285f1bf057f5_a8b7ef57ccb98cb9511bd285f1bf057f5}{Drive}; \textcolor{comment}{// Read the Drive
-       [Master/Slave]}
-300     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  bus = \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].\hyperlink{a00220_a39be732a5e3e643508fc5bc3e0bfb4e8_a39be732a5e3e643508fc5bc3e0bfb4e8}{base}; \textcolor{comment}{// Bus Base, like 0x1F0 which is also data
-       port.}
-301     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}  words      = 256; \textcolor{comment}{// Almost every ATA drive has a sector-size of 512-byte.}
-302     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} cyl, i;
-303     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} \hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head}, sect, err;
-304     \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_acd25672516342decdb4acb14b13dfa03_acd25672516342decdb4acb14b13dfa03}{ATA\_REG\_CONTROL}, \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].nIEN = (
-      \hyperlink{a00032_a12985ec2f925d0cdbd7d24728b9849f9_a12985ec2f925d0cdbd7d24728b9849f9}{ide\_irq\_invoked} = 0x0) + 0x02);
-305         \textcolor{comment}{// (I) Select one from LBA28, LBA48 or CHS;}
-306     \textcolor{keywordflow}{if} (lba >= 0x10000000) \{ \textcolor{comment}{// Sure Drive should support LBA in this case, or you are}
-307                                 \textcolor{comment}{// giving a wrong LBA.}
-308         \textcolor{comment}{// LBA48:}
-309         lba\_mode  = 2;
-310         lba\_io[0] = (lba & 0x000000FF) >> 0;
-311         lba\_io[1] = (lba & 0x0000FF00) >> 8;
-312         lba\_io[2] = (lba & 0x00FF0000) >> 16;
-313         lba\_io[3] = (lba & 0xFF000000) >> 24;
-314         lba\_io[4] = 0; \textcolor{comment}{// LBA28 is integer, so 32-bits are enough to access 2TB.}
-315         lba\_io[5] = 0; \textcolor{comment}{// LBA28 is integer, so 32-bits are enough to access 2TB.}
-316         head      = 0; \textcolor{comment}{// Lower 4-bits of HDDEVSEL are not used here.}
-317     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].Capabilities & 0x200)  \{ \textcolor{comment}{// Drive supports LBA?}
-318         \textcolor{comment}{// LBA28:}
-319         lba\_mode  = 1;
-320         lba\_io[0] = (lba & 0x00000FF) >> 0;
-321         lba\_io[1] = (lba & 0x000FF00) >> 8;
-322         lba\_io[2] = (lba & 0x0FF0000) >> 16;
-323         lba\_io[3] = 0; \textcolor{comment}{// These Registers are not used here.}
-324         lba\_io[4] = 0; \textcolor{comment}{// These Registers are not used here.}
-325         lba\_io[5] = 0; \textcolor{comment}{// These Registers are not used here.}
-326         head      = (lba & 0xF000000) >> 24;
-327     \} \textcolor{keywordflow}{else} \{
-328         \textcolor{comment}{// CHS:}
-329         lba\_mode  = 0;
-330         sect      = (lba % 63) + 1;
-331         cyl       = (lba + 1  - sect) / (16 * 63);
-332         lba\_io[0] = sect;
-333         lba\_io[1] = (cyl >> 0) & 0xFF;
-334         lba\_io[2] = (cyl >> 8) & 0xFF;
-335         lba\_io[3] = 0;
-336         lba\_io[4] = 0;
-337         lba\_io[5] = 0;
-338         head      = (lba + 1  - sect) % (16 * 63) / (63); \textcolor{comment}{// Head number is written to HDDEVSEL lower
-       4-bits.}
-339     \}
-340     \textcolor{comment}{// (II) See if drive supports DMA or not;}
-341     dma = 0; \textcolor{comment}{// We don't support DMA}
-342     \textcolor{comment}{// (III) Wait if the drive is busy;}
-343     \textcolor{keywordflow}{while} (\hyperlink{a00032_aef734da4bdc0c1d014528fd2f66e0686_aef734da4bdc0c1d014528fd2f66e0686}{ide\_read}(channel, \hyperlink{a00032_a3b532ef33b38be16a240f8f2e21bc5db_a3b532ef33b38be16a240f8f2e21bc5db}{ATA\_REG\_STATUS}) & \hyperlink{a00032_aed1929007f388cab23229c908be5bbaf_aed1929007f388cab23229c908be5bbaf}{ATA\_SR\_BSY})
-344         ; \textcolor{comment}{// Wait if busy.}
-345     \textcolor{comment}{// (IV) Select Drive from the controller;}
-346     \textcolor{keywordflow}{if} (lba\_mode == 0)
-347         \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_af80b9f0d852148eda227b433f72ca8bb_af80b9f0d852148eda227b433f72ca8bb}{ATA\_REG\_HDDEVSEL}, 0xA0 | (slavebit << 4) | head); \textcolor{comment}{//
-       Drive & CHS.}
-348     \textcolor{keywordflow}{else}
-349         \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_af80b9f0d852148eda227b433f72ca8bb_af80b9f0d852148eda227b433f72ca8bb}{ATA\_REG\_HDDEVSEL}, 0xE0 | (slavebit << 4) | head); \textcolor{comment}{//
-       Drive & LBA}
-350     \textcolor{comment}{// (V) Write Parameters;}
-351     \textcolor{keywordflow}{if} (lba\_mode == 2) \{
-352         \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_a8a9a19e403cdc08cdb52ac4a77d44b1d_a8a9a19e403cdc08cdb52ac4a77d44b1d}{ATA\_REG\_SECCOUNT1},   0);
-353         \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_af95cf3177ed01e63c3e2783f71e3bfb8_af95cf3177ed01e63c3e2783f71e3bfb8}{ATA\_REG\_LBA3},   lba\_io[3]);
-354         \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_a39c9e21fd98a8933142af12c472ffb80_a39c9e21fd98a8933142af12c472ffb80}{ATA\_REG\_LBA4},   lba\_io[4]);
-355         \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_a24546e89863608bb2850a6ab39a24693_a24546e89863608bb2850a6ab39a24693}{ATA\_REG\_LBA5},   lba\_io[5]);
-356     \}
-357     \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_ad995693d31857a8e514b5f96c5fc4cdb_ad995693d31857a8e514b5f96c5fc4cdb}{ATA\_REG\_SECCOUNT0},   numsects);
-358     \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_a9818e533e211e2ddadf650dab77f55fd_a9818e533e211e2ddadf650dab77f55fd}{ATA\_REG\_LBA0},   lba\_io[0]);
-359     \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_a4ca55ad2c56ea915f9dcde1aba57433d_a4ca55ad2c56ea915f9dcde1aba57433d}{ATA\_REG\_LBA1},   lba\_io[1]);
-360     \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_afaf134917cbfc81c86b4e1d67930757a_afaf134917cbfc81c86b4e1d67930757a}{ATA\_REG\_LBA2},   lba\_io[2]);
-361     \textcolor{keywordflow}{if} (lba\_mode == 0 && dma == 0 && direction == 0) cmd = \hyperlink{a00032_a91a96db8427a8caa254a218f05dcb3f4_a91a96db8427a8caa254a218f05dcb3f4}{ATA\_CMD\_READ\_PIO};
-362     \textcolor{keywordflow}{if} (lba\_mode == 1 && dma == 0 && direction == 0) cmd = \hyperlink{a00032_a91a96db8427a8caa254a218f05dcb3f4_a91a96db8427a8caa254a218f05dcb3f4}{ATA\_CMD\_READ\_PIO};   
-363     \textcolor{keywordflow}{if} (lba\_mode == 2 && dma == 0 && direction == 0) cmd = \hyperlink{a00032_a3165497b4d8eb30297a4d62e39846b01_a3165497b4d8eb30297a4d62e39846b01}{ATA\_CMD\_READ\_PIO\_EXT};   
-364     \textcolor{keywordflow}{if} (lba\_mode == 0 && dma == 1 && direction == 0) cmd = \hyperlink{a00032_aefab351e75e10b6dbfa0b7828031cda4_aefab351e75e10b6dbfa0b7828031cda4}{ATA\_CMD\_READ\_DMA};
-365     \textcolor{keywordflow}{if} (lba\_mode == 1 && dma == 1 && direction == 0) cmd = \hyperlink{a00032_aefab351e75e10b6dbfa0b7828031cda4_aefab351e75e10b6dbfa0b7828031cda4}{ATA\_CMD\_READ\_DMA};
-366     \textcolor{keywordflow}{if} (lba\_mode == 2 && dma == 1 && direction == 0) cmd = \hyperlink{a00032_a42247550c708b2b7852927180c7dde78_a42247550c708b2b7852927180c7dde78}{ATA\_CMD\_READ\_DMA\_EXT};
-367     \textcolor{keywordflow}{if} (lba\_mode == 0 && dma == 0 && direction == 1) cmd = \hyperlink{a00032_a64f2c50b916f1f67018c36f75f811cc7_a64f2c50b916f1f67018c36f75f811cc7}{ATA\_CMD\_WRITE\_PIO};
-368     \textcolor{keywordflow}{if} (lba\_mode == 1 && dma == 0 && direction == 1) cmd = \hyperlink{a00032_a64f2c50b916f1f67018c36f75f811cc7_a64f2c50b916f1f67018c36f75f811cc7}{ATA\_CMD\_WRITE\_PIO};
-369     \textcolor{keywordflow}{if} (lba\_mode == 2 && dma == 0 && direction == 1) cmd = \hyperlink{a00032_ac8e433782c7125e6929673907eca6f17_ac8e433782c7125e6929673907eca6f17}{ATA\_CMD\_WRITE\_PIO\_EXT};
-370     \textcolor{keywordflow}{if} (lba\_mode == 0 && dma == 1 && direction == 1) cmd = \hyperlink{a00032_a41dc931ac3c2c6733a2a67d03eaf1674_a41dc931ac3c2c6733a2a67d03eaf1674}{ATA\_CMD\_WRITE\_DMA};
-371     \textcolor{keywordflow}{if} (lba\_mode == 1 && dma == 1 && direction == 1) cmd = \hyperlink{a00032_a41dc931ac3c2c6733a2a67d03eaf1674_a41dc931ac3c2c6733a2a67d03eaf1674}{ATA\_CMD\_WRITE\_DMA};
-372     \textcolor{keywordflow}{if} (lba\_mode == 2 && dma == 1 && direction == 1) cmd = \hyperlink{a00032_a3a75d9e39518e704f3a4b39e6a3d998c_a3a75d9e39518e704f3a4b39e6a3d998c}{ATA\_CMD\_WRITE\_DMA\_EXT};
-373     \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_a1a54069e05845badff84e1490ca4681e_a1a54069e05845badff84e1490ca4681e}{ATA\_REG\_COMMAND}, cmd);               \textcolor{comment}{// Send the Command.}
-374     \textcolor{keywordflow}{if} (dma)
-375         \textcolor{keywordflow}{if} (direction == 0);
-376             \textcolor{comment}{// DMA Read.}
-377         \textcolor{keywordflow}{else};
-378             \textcolor{comment}{// DMA Write.}
-379     \textcolor{keywordflow}{else}
-380         \textcolor{keywordflow}{if} (direction == 0)
-381             \textcolor{comment}{// PIO Read.}
-382         \textcolor{keywordflow}{for} (i = 0; i < numsects; i++) \{
-383             \textcolor{keywordflow}{if} (err = \hyperlink{a00032_a03e85b94d6fbfb957e1b88c3dd064eca_a03e85b94d6fbfb957e1b88c3dd064eca}{ide\_polling}(channel, 1))
-384                 \textcolor{keywordflow}{return} err; \textcolor{comment}{// Polling, set error and exit if there is.}
-385             \textcolor{keyword}{asm}(\textcolor{stringliteral}{"pushw %es"});
-386             \textcolor{keyword}{asm}(\textcolor{stringliteral}{"rep insw"} : : \textcolor{stringliteral}{"c"}(words), \textcolor{stringliteral}{"d"}(bus), \textcolor{stringliteral}{"D"}(edi)); \textcolor{comment}{// Receive Data.}
-387             \textcolor{keyword}{asm}(\textcolor{stringliteral}{"popw %es"});
-388             edi += (words*2);
-389         \} \textcolor{keywordflow}{else} \{
-390         \textcolor{comment}{// PIO Write.}
-391             \textcolor{keywordflow}{for} (i = 0; i < numsects; i++) \{
-392                 \hyperlink{a00032_a03e85b94d6fbfb957e1b88c3dd064eca_a03e85b94d6fbfb957e1b88c3dd064eca}{ide\_polling}(channel, 0); \textcolor{comment}{// Polling.}
-393                 \textcolor{keyword}{asm}(\textcolor{stringliteral}{"pushw %ds"});
-394                 \textcolor{keyword}{asm}(\textcolor{stringliteral}{"rep outsw"}::\textcolor{stringliteral}{"c"}(words), \textcolor{stringliteral}{"d"}(bus), \textcolor{stringliteral}{"S"}(edi)); \textcolor{comment}{// Send Data}
-395                 \textcolor{keyword}{asm}(\textcolor{stringliteral}{"popw %ds"});
-396                 edi += (words*2);
-397             \}
-398             \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_a1a54069e05845badff84e1490ca4681e_a1a54069e05845badff84e1490ca4681e}{ATA\_REG\_COMMAND}, (\textcolor{keywordtype}{char} []) \{   
-      \hyperlink{a00032_a23e8deb17b95336898b52cc76d5206af_a23e8deb17b95336898b52cc76d5206af}{ATA\_CMD\_CACHE\_FLUSH},
-399                             \hyperlink{a00032_a23e8deb17b95336898b52cc76d5206af_a23e8deb17b95336898b52cc76d5206af}{ATA\_CMD\_CACHE\_FLUSH},
-400                             \hyperlink{a00032_a3c624c2041a51a473bd6e77b7753d475_a3c624c2041a51a473bd6e77b7753d475}{ATA\_CMD\_CACHE\_FLUSH\_EXT}\}[lba\_mode]);
-401             \hyperlink{a00032_a03e85b94d6fbfb957e1b88c3dd064eca_a03e85b94d6fbfb957e1b88c3dd064eca}{ide\_polling}(channel, 0); \textcolor{comment}{// Polling.}
-402         \}
-403 
-404     \textcolor{keywordflow}{return} 0; \textcolor{comment}{// Easy, isn't it?}
-405 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00035_a92d054539c112a72e080e35a3341b0b9_a92d054539c112a72e080e35a3341b0b9}\label{a00035_a92d054539c112a72e080e35a3341b0b9_a92d054539c112a72e080e35a3341b0b9}} 
-\index{ide.\+h@{ide.\+h}!ide\+\_\+atapi\+\_\+eject@{ide\+\_\+atapi\+\_\+eject}}
-\index{ide\+\_\+atapi\+\_\+eject@{ide\+\_\+atapi\+\_\+eject}!ide.\+h@{ide.\+h}}
-\subsubsection{\texorpdfstring{ide\+\_\+atapi\+\_\+eject()}{ide\_atapi\_eject()}}
-{\footnotesize\ttfamily void ide\+\_\+atapi\+\_\+eject (\begin{DoxyParamCaption}\item[{unsigned char}]{drive }\end{DoxyParamCaption})}
-
-
-
-Definition at line 530 of file ide.\+c.
+Definition at line 131 of file keyboard.\+c.
 
 
 \begin{DoxyCode}
-530                                           \{
-531    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}   channel      = \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].\hyperlink{a00224_aea5a88e5bb25bdf109e66a51cba51699_aea5a88e5bb25bdf109e66a51cba51699}{Channel};
-532    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}   slavebit      = \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].\hyperlink{a00224_a8b7ef57ccb98cb9511bd285f1bf057f5_a8b7ef57ccb98cb9511bd285f1bf057f5}{Drive};
-533    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}   bus      = \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].\hyperlink{a00220_a39be732a5e3e643508fc5bc3e0bfb4e8_a39be732a5e3e643508fc5bc3e0bfb4e8}{base};
-534    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}   words      = 2048 / 2;               \textcolor{comment}{// Sector Size in Words.}
-535    \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}  err = 0;
-536    \hyperlink{a00032_a12985ec2f925d0cdbd7d24728b9849f9_a12985ec2f925d0cdbd7d24728b9849f9}{ide\_irq\_invoked} = 0;
-537  
-538    \textcolor{comment}{// 1: Check if the drive presents:}
-539    \textcolor{comment}{// ==================================}
-540    \textcolor{keywordflow}{if} (drive > 3 || \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].Reserved == 0)
-541       \hyperlink{a00035_a820b2230ab700e13350794494bd4a60f_a820b2230ab700e13350794494bd4a60f}{package}[0] = 0x1;      \textcolor{comment}{// Drive Not Found!}
-542    \textcolor{comment}{// 2: Check if drive isn't ATAPI:}
-543    \textcolor{comment}{// ==================================}
-544    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].Type == \hyperlink{a00032_a3046279f2a25227c121b69f4cf855bf8_a3046279f2a25227c121b69f4cf855bf8}{IDE\_ATA})
-545       \hyperlink{a00035_a820b2230ab700e13350794494bd4a60f_a820b2230ab700e13350794494bd4a60f}{package}[0] = 20;         \textcolor{comment}{// Command Aborted.}
-546    \textcolor{comment}{// 3: Eject ATAPI Driver:}
-547    \textcolor{comment}{// ============================================}
-548    \textcolor{keywordflow}{else} \{
-549       \textcolor{comment}{// Enable IRQs:}
-550       \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_acd25672516342decdb4acb14b13dfa03_acd25672516342decdb4acb14b13dfa03}{ATA\_REG\_CONTROL}, \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].nIEN = 
-      \hyperlink{a00032_a12985ec2f925d0cdbd7d24728b9849f9_a12985ec2f925d0cdbd7d24728b9849f9}{ide\_irq\_invoked} = 0x0);
-551  
-552       \textcolor{comment}{// (I): Setup SCSI Packet:}
-553       \textcolor{comment}{// ------------------------------------------------------------------}
-554       \hyperlink{a00032_a02351861ecf3191d5dbbcc1910b7c109_a02351861ecf3191d5dbbcc1910b7c109}{atapi\_packet}[ 0] = \hyperlink{a00032_a94bf36a7e0a52f4dd421eca62e80631e_a94bf36a7e0a52f4dd421eca62e80631e}{ATAPI\_CMD\_EJECT};
-555       \hyperlink{a00032_a02351861ecf3191d5dbbcc1910b7c109_a02351861ecf3191d5dbbcc1910b7c109}{atapi\_packet}[ 1] = 0x00;
-556       \hyperlink{a00032_a02351861ecf3191d5dbbcc1910b7c109_a02351861ecf3191d5dbbcc1910b7c109}{atapi\_packet}[ 2] = 0x00;
-557       \hyperlink{a00032_a02351861ecf3191d5dbbcc1910b7c109_a02351861ecf3191d5dbbcc1910b7c109}{atapi\_packet}[ 3] = 0x00;
-558       \hyperlink{a00032_a02351861ecf3191d5dbbcc1910b7c109_a02351861ecf3191d5dbbcc1910b7c109}{atapi\_packet}[ 4] = 0x02;
-559       \hyperlink{a00032_a02351861ecf3191d5dbbcc1910b7c109_a02351861ecf3191d5dbbcc1910b7c109}{atapi\_packet}[ 5] = 0x00;
-560       \hyperlink{a00032_a02351861ecf3191d5dbbcc1910b7c109_a02351861ecf3191d5dbbcc1910b7c109}{atapi\_packet}[ 6] = 0x00;
-561       \hyperlink{a00032_a02351861ecf3191d5dbbcc1910b7c109_a02351861ecf3191d5dbbcc1910b7c109}{atapi\_packet}[ 7] = 0x00;
-562       \hyperlink{a00032_a02351861ecf3191d5dbbcc1910b7c109_a02351861ecf3191d5dbbcc1910b7c109}{atapi\_packet}[ 8] = 0x00;
-563       \hyperlink{a00032_a02351861ecf3191d5dbbcc1910b7c109_a02351861ecf3191d5dbbcc1910b7c109}{atapi\_packet}[ 9] = 0x00;
-564       \hyperlink{a00032_a02351861ecf3191d5dbbcc1910b7c109_a02351861ecf3191d5dbbcc1910b7c109}{atapi\_packet}[10] = 0x00;
-565       \hyperlink{a00032_a02351861ecf3191d5dbbcc1910b7c109_a02351861ecf3191d5dbbcc1910b7c109}{atapi\_packet}[11] = 0x00;
-566  
-567       \textcolor{comment}{// (II): Select the Drive:}
-568       \textcolor{comment}{// ------------------------------------------------------------------}
-569       \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_af80b9f0d852148eda227b433f72ca8bb_af80b9f0d852148eda227b433f72ca8bb}{ATA\_REG\_HDDEVSEL}, slavebit << 4);
-570  
-571       \textcolor{comment}{// (III): Delay 400 nanosecond for select to complete:}
-572       \textcolor{comment}{// ------------------------------------------------------------------}
-573       \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 4; i++)
-574          \hyperlink{a00032_aef734da4bdc0c1d014528fd2f66e0686_aef734da4bdc0c1d014528fd2f66e0686}{ide\_read}(channel, \hyperlink{a00032_a051769d4520d201d24bbb06758a5c1de_a051769d4520d201d24bbb06758a5c1de}{ATA\_REG\_ALTSTATUS}); \textcolor{comment}{// Reading Alternate Status Port
-       wastes 100ns.}
-575  
-576       \textcolor{comment}{// (IV): Send the Packet Command:}
-577       \textcolor{comment}{// ------------------------------------------------------------------}
-578       \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_a1a54069e05845badff84e1490ca4681e_a1a54069e05845badff84e1490ca4681e}{ATA\_REG\_COMMAND}, \hyperlink{a00032_afaaead63f9b69425b9f6514b03f0bbb2_afaaead63f9b69425b9f6514b03f0bbb2}{ATA\_CMD\_PACKET});      \textcolor{comment}{//
-       Send the Command.}
-579  
-580       \textcolor{comment}{// (V): Waiting for the driver to finish or invoke an error:}
-581       \textcolor{comment}{// ------------------------------------------------------------------}
-582       err = \hyperlink{a00032_a03e85b94d6fbfb957e1b88c3dd064eca_a03e85b94d6fbfb957e1b88c3dd064eca}{ide\_polling}(channel, 1);            \textcolor{comment}{// Polling and stop if error.}
-583  
-584       \textcolor{comment}{// (VI): Sending the packet data:}
-585       \textcolor{comment}{// ------------------------------------------------------------------}
-586         \textcolor{keyword}{asm}(\textcolor{stringliteral}{"rep   outsw"}::\textcolor{stringliteral}{"c"}(6), \textcolor{stringliteral}{"d"}(bus), \textcolor{stringliteral}{"S"}(\hyperlink{a00032_a02351861ecf3191d5dbbcc1910b7c109_a02351861ecf3191d5dbbcc1910b7c109}{atapi\_packet}));\textcolor{comment}{// Send Packet Data}
-587         \hyperlink{a00032_a31655fcec0cc8f9f8792b98cd4441fdf_a31655fcec0cc8f9f8792b98cd4441fdf}{ide\_wait\_irq}();                  \textcolor{comment}{// Wait for an IRQ.}
-588         err = \hyperlink{a00032_a03e85b94d6fbfb957e1b88c3dd064eca_a03e85b94d6fbfb957e1b88c3dd064eca}{ide\_polling}(channel, 1);            \textcolor{comment}{// Polling and get error code.}
-589         \textcolor{keywordflow}{if} (err == 3) err = 0; \textcolor{comment}{// DRQ is not needed here.}
-590       \hyperlink{a00035_a820b2230ab700e13350794494bd4a60f_a820b2230ab700e13350794494bd4a60f}{package}[0] = \hyperlink{a00032_af7757307613c29c9bcbf0f8f5b2feee5_af7757307613c29c9bcbf0f8f5b2feee5}{ide\_print\_error}(drive, err); \textcolor{comment}{// Return;}
-591    \}
-592 \}
+131              \{
+132     \hyperlink{a00032_a6ddd5223379778858edc46ffbec19775_a6ddd5223379778858edc46ffbec19775}{wfk} = \textcolor{keyword}{true};
+133     \hyperlink{a00173_afe197dc4dbfa6036ef04abd2aeeeca2d_afe197dc4dbfa6036ef04abd2aeeeca2d}{enable\_cursor}(0,15);
+134     \textcolor{keywordflow}{while}(\hyperlink{a00032_a6ddd5223379778858edc46ffbec19775_a6ddd5223379778858edc46ffbec19775}{wfk})
+135         ;
+136     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\hyperlink{a00032_ade374650022cb30c4f5591a8dafad685_ade374650022cb30c4f5591a8dafad685}{lkey});
+137     \hyperlink{a00173_a3d09038c7b6436e60b228f2f3f451f6a_a3d09038c7b6436e60b228f2f3f451f6a}{disable\_cursor}();
+138     \textcolor{keywordflow}{return} \hyperlink{a00032_ade374650022cb30c4f5591a8dafad685_ade374650022cb30c4f5591a8dafad685}{lkey};
+139 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00035_ab5397c8432be802172da8f04c8840ca3_ab5397c8432be802172da8f04c8840ca3}\label{a00035_ab5397c8432be802172da8f04c8840ca3_ab5397c8432be802172da8f04c8840ca3}} 
-\index{ide.\+h@{ide.\+h}!ide\+\_\+initialize@{ide\+\_\+initialize}}
-\index{ide\+\_\+initialize@{ide\+\_\+initialize}!ide.\+h@{ide.\+h}}
-\subsubsection{\texorpdfstring{ide\+\_\+initialize()}{ide\_initialize()}}
-{\footnotesize\ttfamily void ide\+\_\+initialize (\begin{DoxyParamCaption}\item[{unsigned int}]{B\+A\+R0,  }\item[{unsigned int}]{B\+A\+R1,  }\item[{unsigned int}]{B\+A\+R2,  }\item[{unsigned int}]{B\+A\+R3,  }\item[{unsigned int}]{B\+A\+R4 }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00035_aa7ee03b27a489828ce588d0fc023cab3_aa7ee03b27a489828ce588d0fc023cab3}\label{a00035_aa7ee03b27a489828ce588d0fc023cab3_aa7ee03b27a489828ce588d0fc023cab3}} 
+\index{keyboard.\+h@{keyboard.\+h}!getsch@{getsch}}
+\index{getsch@{getsch}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{getsch()}{getsch()}}
+{\footnotesize\ttfamily char getsch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 199 of file ide.\+c.
+Definition at line 127 of file keyboard.\+c.
 
 
 \begin{DoxyCode}
-200                    \{
-201     
-202     \textcolor{keywordtype}{int} j, k, count = 0;
-203     
-204     \textcolor{comment}{// 1- Detect I/O Ports which interface IDE Controller:}
-205     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_aa18f254fa4afcfdb5fcf897eeaf38564_aa18f254fa4afcfdb5fcf897eeaf38564}{ATA\_PRIMARY}  ].\hyperlink{a00220_a39be732a5e3e643508fc5bc3e0bfb4e8_a39be732a5e3e643508fc5bc3e0bfb4e8}{base}  = (BAR0 & 0xFFFFFFFC) + 0x1F0 * (!BAR0);
-206     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_aa18f254fa4afcfdb5fcf897eeaf38564_aa18f254fa4afcfdb5fcf897eeaf38564}{ATA\_PRIMARY}  ].\hyperlink{a00220_aff63cdf64356750ad0c564fc7d6cd7b9_aff63cdf64356750ad0c564fc7d6cd7b9}{ctrl}  = (BAR1 & 0xFFFFFFFC) + 0x3F6 * (!BAR1);
-207     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_ad514d776b09e8b873aa7087ef0091fe6_ad514d776b09e8b873aa7087ef0091fe6}{ATA\_SECONDARY}].\hyperlink{a00220_a39be732a5e3e643508fc5bc3e0bfb4e8_a39be732a5e3e643508fc5bc3e0bfb4e8}{base}  = (BAR2 & 0xFFFFFFFC) + 0x170 * (!BAR2);
-208     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_ad514d776b09e8b873aa7087ef0091fe6_ad514d776b09e8b873aa7087ef0091fe6}{ATA\_SECONDARY}].\hyperlink{a00220_aff63cdf64356750ad0c564fc7d6cd7b9_aff63cdf64356750ad0c564fc7d6cd7b9}{ctrl}  = (BAR3 & 0xFFFFFFFC) + 0x376 * (!BAR3);
-209     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_aa18f254fa4afcfdb5fcf897eeaf38564_aa18f254fa4afcfdb5fcf897eeaf38564}{ATA\_PRIMARY}  ].\hyperlink{a00220_a037009656fd72b00bdd5aacd92a22f18_a037009656fd72b00bdd5aacd92a22f18}{bmide} = (BAR4 & 0xFFFFFFFC) + 0; \textcolor{comment}{// Bus Master IDE}
-210     \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[\hyperlink{a00032_ad514d776b09e8b873aa7087ef0091fe6_ad514d776b09e8b873aa7087ef0091fe6}{ATA\_SECONDARY}].\hyperlink{a00220_a037009656fd72b00bdd5aacd92a22f18_a037009656fd72b00bdd5aacd92a22f18}{bmide} = (BAR4 & 0xFFFFFFFC) + 8; \textcolor{comment}{// Bus Master IDE}
-211     \textcolor{comment}{// 2- Disable IRQs:}
-212     \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(\hyperlink{a00032_aa18f254fa4afcfdb5fcf897eeaf38564_aa18f254fa4afcfdb5fcf897eeaf38564}{ATA\_PRIMARY}  , \hyperlink{a00032_acd25672516342decdb4acb14b13dfa03_acd25672516342decdb4acb14b13dfa03}{ATA\_REG\_CONTROL}, 2);
-213     \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(\hyperlink{a00032_ad514d776b09e8b873aa7087ef0091fe6_ad514d776b09e8b873aa7087ef0091fe6}{ATA\_SECONDARY}, \hyperlink{a00032_acd25672516342decdb4acb14b13dfa03_acd25672516342decdb4acb14b13dfa03}{ATA\_REG\_CONTROL}, 2);
-214        \textcolor{comment}{// 3- Detect ATA-ATAPI Devices:}
-215     \textcolor{keywordtype}{int} i = 0;
-216     \textcolor{keywordflow}{for} (i = 0; i < 2; i++)
-217         \textcolor{keywordflow}{for} (j = 0; j < 2; j++) \{
-218     
-219             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} err = 0, type = \hyperlink{a00032_a3046279f2a25227c121b69f4cf855bf8_a3046279f2a25227c121b69f4cf855bf8}{IDE\_ATA}, status;
-220             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a293fdfa780f639d9eb98fcf664699b08_a293fdfa780f639d9eb98fcf664699b08}{Reserved} = 0; \textcolor{comment}{// Assuming that no drive here.}
-221     
-222             \textcolor{comment}{// (I) Select Drive:}
-223             \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(i, \hyperlink{a00032_af80b9f0d852148eda227b433f72ca8bb_af80b9f0d852148eda227b433f72ca8bb}{ATA\_REG\_HDDEVSEL}, 0xA0 | (j << 4)); \textcolor{comment}{// Select Drive.}
-224             \hyperlink{a00131_afcc76b3d055f3137e37a9c1ce82d0b95_afcc76b3d055f3137e37a9c1ce82d0b95}{sleep}(1); \textcolor{comment}{// Wait 1ms for drive select to work.}
-225     
-226             \textcolor{comment}{// (II) Send ATA Identify Command:}
-227             \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(i, \hyperlink{a00032_a1a54069e05845badff84e1490ca4681e_a1a54069e05845badff84e1490ca4681e}{ATA\_REG\_COMMAND}, 
-      \hyperlink{a00032_a572958103bba5d355c7fe135ae7526bd_a572958103bba5d355c7fe135ae7526bd}{ATA\_CMD\_IDENTIFY});
-228             \hyperlink{a00131_afcc76b3d055f3137e37a9c1ce82d0b95_afcc76b3d055f3137e37a9c1ce82d0b95}{sleep}(1); \textcolor{comment}{// This function should be implemented in your OS. which waits for 1 ms.}
-229                     \textcolor{comment}{// it is based on System Timer Device Driver.}
-230     
-231             \textcolor{comment}{// (III) Polling:}
-232             \textcolor{keywordflow}{if} (\hyperlink{a00032_aef734da4bdc0c1d014528fd2f66e0686_aef734da4bdc0c1d014528fd2f66e0686}{ide\_read}(i, \hyperlink{a00032_a3b532ef33b38be16a240f8f2e21bc5db_a3b532ef33b38be16a240f8f2e21bc5db}{ATA\_REG\_STATUS}) == 0) \textcolor{keywordflow}{continue}; \textcolor{comment}{// If Status = 0, No
-       Device.}
-233     
-234             \textcolor{keywordflow}{while}(1) \{
-235                 status = \hyperlink{a00032_aef734da4bdc0c1d014528fd2f66e0686_aef734da4bdc0c1d014528fd2f66e0686}{ide\_read}(i, \hyperlink{a00032_a3b532ef33b38be16a240f8f2e21bc5db_a3b532ef33b38be16a240f8f2e21bc5db}{ATA\_REG\_STATUS});
-236                 \textcolor{keywordflow}{if} ((status & \hyperlink{a00032_a8a2cf843df1ae63d4d16748dfe72a592_a8a2cf843df1ae63d4d16748dfe72a592}{ATA\_SR\_ERR})) \{err = 1; \textcolor{keywordflow}{break};\} \textcolor{comment}{// If Err, Device is not ATA.}
-237                 \textcolor{keywordflow}{if} (!(status & \hyperlink{a00032_aed1929007f388cab23229c908be5bbaf_aed1929007f388cab23229c908be5bbaf}{ATA\_SR\_BSY}) && (status & \hyperlink{a00032_a27e6aaa78aaaa205a7dadf56b48d0bf6_a27e6aaa78aaaa205a7dadf56b48d0bf6}{ATA\_SR\_DRQ})) \textcolor{keywordflow}{break}; \textcolor{comment}{//
-       Everything is right.}
-238             \}
-239     
-240             \textcolor{comment}{// (IV) Probe for ATAPI Devices:}
-241     
-242             \textcolor{keywordflow}{if} (err != 0) \{
-243                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} cl = \hyperlink{a00032_aef734da4bdc0c1d014528fd2f66e0686_aef734da4bdc0c1d014528fd2f66e0686}{ide\_read}(i, \hyperlink{a00032_a4ca55ad2c56ea915f9dcde1aba57433d_a4ca55ad2c56ea915f9dcde1aba57433d}{ATA\_REG\_LBA1});
-244                 \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} ch = \hyperlink{a00032_aef734da4bdc0c1d014528fd2f66e0686_aef734da4bdc0c1d014528fd2f66e0686}{ide\_read}(i, \hyperlink{a00032_afaf134917cbfc81c86b4e1d67930757a_afaf134917cbfc81c86b4e1d67930757a}{ATA\_REG\_LBA2});
-245     
-246                 \textcolor{keywordflow}{if} (cl == 0x14 && ch ==0xEB)
-247                 type = \hyperlink{a00032_a6513ee2a4da2c6aaa691b9d4c639a53e_a6513ee2a4da2c6aaa691b9d4c639a53e}{IDE\_ATAPI};
-248                 \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (cl == 0x69 && ch == 0x96)
-249                 type = \hyperlink{a00032_a6513ee2a4da2c6aaa691b9d4c639a53e_a6513ee2a4da2c6aaa691b9d4c639a53e}{IDE\_ATAPI};
-250                 \textcolor{keywordflow}{else}
-251                 \textcolor{keywordflow}{continue}; \textcolor{comment}{// Unknown Type (may not be a device).}
-252     
-253                 \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(i, \hyperlink{a00032_a1a54069e05845badff84e1490ca4681e_a1a54069e05845badff84e1490ca4681e}{ATA\_REG\_COMMAND}, 
-      \hyperlink{a00032_acba68da9027d95b9bae53901a8ea009b_acba68da9027d95b9bae53901a8ea009b}{ATA\_CMD\_IDENTIFY\_PACKET});
-254                 \hyperlink{a00131_afcc76b3d055f3137e37a9c1ce82d0b95_afcc76b3d055f3137e37a9c1ce82d0b95}{sleep}(1);
-255             \}
-256     
-257             \textcolor{comment}{// (V) Read Identification Space of the Device:}
-258             \hyperlink{a00032_ac338a611110448d6bd9b8edc491ed19b_ac338a611110448d6bd9b8edc491ed19b}{ide\_read\_buffer}(i, \hyperlink{a00032_a359c566cefff5e671eb3bae72e0d0948_a359c566cefff5e671eb3bae72e0d0948}{ATA\_REG\_DATA}, (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int}) 
-      \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf}, 128);
-259     
-260             \textcolor{comment}{// (VI) Read Device Parameters:}
-261             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a293fdfa780f639d9eb98fcf664699b08_a293fdfa780f639d9eb98fcf664699b08}{Reserved}     = 1;
-262             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a3a1fc6eda2f5cafc41f8626c67ec9631_a3a1fc6eda2f5cafc41f8626c67ec9631}{Type}         = type;
-263             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_aea5a88e5bb25bdf109e66a51cba51699_aea5a88e5bb25bdf109e66a51cba51699}{Channel}      = i;
-264             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a8b7ef57ccb98cb9511bd285f1bf057f5_a8b7ef57ccb98cb9511bd285f1bf057f5}{Drive}        = j;
-265             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_ad31d088a8fd56a5760a2bcff6891f21d_ad31d088a8fd56a5760a2bcff6891f21d}{Signature}    = *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} *)(
-      \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf} + \hyperlink{a00032_a4224d2160f2f2718d8a67a09bfb8f4a5_a4224d2160f2f2718d8a67a09bfb8f4a5}{ATA\_IDENT\_DEVICETYPE}));
-266             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_af318d471b2f7093cd2ba95e9711b617c_af318d471b2f7093cd2ba95e9711b617c}{Capabilities} = *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{short} *)(
-      \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf} + \hyperlink{a00032_a4efaa1ae14eb268a085d1824eb2a1f08_a4efaa1ae14eb268a085d1824eb2a1f08}{ATA\_IDENT\_CAPABILITIES}));
-267             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_ad090e2f34b0618e837e048593f480683_ad090e2f34b0618e837e048593f480683}{CommandSets}  = *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *)(
-      \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf} + \hyperlink{a00032_a8536e132f24aa36e826f753b6061e8ea_a8536e132f24aa36e826f753b6061e8ea}{ATA\_IDENT\_COMMANDSETS}));
-268     
-269             \textcolor{comment}{// (VII) Get Size:}
-270             \textcolor{keywordflow}{if} (\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].CommandSets & (1 << 26))
-271                 \textcolor{comment}{// Device uses 48-Bit Addressing:}
-272                 \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].Size   = *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *)(
-      \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf} + \hyperlink{a00032_aa1926c13a31f512c9ec07ed3bdba8893_aa1926c13a31f512c9ec07ed3bdba8893}{ATA\_IDENT\_MAX\_LBA\_EXT}));
-273             \textcolor{keywordflow}{else}
-274                 \textcolor{comment}{// Device uses CHS or 28-bit Addressing:}
-275                 \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a37f4be958e0c710ab62e2536497f392d_a37f4be958e0c710ab62e2536497f392d}{Size}   = *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} *)(
-      \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf} + \hyperlink{a00032_ae0d046a29ce70e07d868961cf17b54c7_ae0d046a29ce70e07d868961cf17b54c7}{ATA\_IDENT\_MAX\_LBA}));
-276     
-277             \textcolor{comment}{// (VIII) String indicates model of device (like Western Digital HDD and SONY DVD-RW...):}
-278             \textcolor{keywordflow}{for}(k = 0; k < 40; k += 2) \{
-279                 \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a8528ca17136240ce55c9441d68711e78_a8528ca17136240ce55c9441d68711e78}{Model}[k] = \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf}[
-      \hyperlink{a00032_a9fd52e892928c016a4a66f59a46241e4_a9fd52e892928c016a4a66f59a46241e4}{ATA\_IDENT\_MODEL} + k + 1];
-280                 \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a8528ca17136240ce55c9441d68711e78_a8528ca17136240ce55c9441d68711e78}{Model}[k + 1] = \hyperlink{a00032_a94f78e77f368421e4fe8faea979d523f_a94f78e77f368421e4fe8faea979d523f}{ide\_buf}[
-      \hyperlink{a00032_a9fd52e892928c016a4a66f59a46241e4_a9fd52e892928c016a4a66f59a46241e4}{ATA\_IDENT\_MODEL} + k];\}
-281             \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[count].\hyperlink{a00224_a8528ca17136240ce55c9441d68711e78_a8528ca17136240ce55c9441d68711e78}{Model}[40] = 0; \textcolor{comment}{// Terminate String.}
-282     
-283             count++;
-284         \}
-285     
-286     \textcolor{comment}{// 4- Print Summary:}
-287     \textcolor{keywordflow}{for} (i = 0; i < 4; i++)
-288         \textcolor{keywordflow}{if} (\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[i].Reserved == 1) \{
-289             \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Found Drive\(\backslash\)n"});
-290 
-291         \}
-292 \}
+127               \{
+128     \textcolor{keywordflow}{return} \hyperlink{a00050_ad343a7018f74662f794968dfa0523841_ad343a7018f74662f794968dfa0523841}{read\_serial}();
+129 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00035_ad7ea572af581cc0623a2fb74a579ca83_ad7ea572af581cc0623a2fb74a579ca83}\label{a00035_ad7ea572af581cc0623a2fb74a579ca83_ad7ea572af581cc0623a2fb74a579ca83}} 
-\index{ide.\+h@{ide.\+h}!ide\+\_\+irq@{ide\+\_\+irq}}
-\index{ide\+\_\+irq@{ide\+\_\+irq}!ide.\+h@{ide.\+h}}
-\subsubsection{\texorpdfstring{ide\+\_\+irq()}{ide\_irq()}}
-{\footnotesize\ttfamily void ide\+\_\+irq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00035_ab88a2e96bbe585e228a5b201435c0240_ab88a2e96bbe585e228a5b201435c0240}\label{a00035_ab88a2e96bbe585e228a5b201435c0240_ab88a2e96bbe585e228a5b201435c0240}} 
+\index{keyboard.\+h@{keyboard.\+h}!getst@{getst}}
+\index{getst@{getst}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{getst()}{getst()}}
+{\footnotesize\ttfamily char$\ast$ getst (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 80 of file ide.\+c.
+Definition at line 141 of file keyboard.\+c.
 
 
 \begin{DoxyCode}
-80                \{
-81    \hyperlink{a00032_a12985ec2f925d0cdbd7d24728b9849f9_a12985ec2f925d0cdbd7d24728b9849f9}{ide\_irq\_invoked} = \textcolor{keyword}{true};
-82 \}
+141               \{
+142     \textcolor{keywordtype}{char}* inch;
+143     \textcolor{keywordtype}{char} inchara = \hyperlink{a00032_aa7ee03b27a489828ce588d0fc023cab3_aa7ee03b27a489828ce588d0fc023cab3}{getsch}();
+144     \textcolor{keywordflow}{while}(inchara != \textcolor{charliteral}{'\(\backslash\)n'}) \{
+145         *inch++ = inchara;
+146         inchara = \hyperlink{a00032_aa7ee03b27a489828ce588d0fc023cab3_aa7ee03b27a489828ce588d0fc023cab3}{getsch}();
+147     \}
+148     inch++;
+149     *inch = 0x0;
+150     \textcolor{keywordflow}{return} inch;
+151 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00035_a03e85b94d6fbfb957e1b88c3dd064eca_a03e85b94d6fbfb957e1b88c3dd064eca}\label{a00035_a03e85b94d6fbfb957e1b88c3dd064eca_a03e85b94d6fbfb957e1b88c3dd064eca}} 
-\index{ide.\+h@{ide.\+h}!ide\+\_\+polling@{ide\+\_\+polling}}
-\index{ide\+\_\+polling@{ide\+\_\+polling}!ide.\+h@{ide.\+h}}
-\subsubsection{\texorpdfstring{ide\+\_\+polling()}{ide\_polling()}}
-{\footnotesize\ttfamily unsigned char ide\+\_\+polling (\begin{DoxyParamCaption}\item[{unsigned char}]{channel,  }\item[{unsigned int}]{advanced\+\_\+check }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00035_aabdb223e5290f3b3c07bc82d075b87d7_aabdb223e5290f3b3c07bc82d075b87d7}\label{a00035_aabdb223e5290f3b3c07bc82d075b87d7_aabdb223e5290f3b3c07bc82d075b87d7}} 
+\index{keyboard.\+h@{keyboard.\+h}!kb\+\_\+init@{kb\+\_\+init}}
+\index{kb\+\_\+init@{kb\+\_\+init}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{kb\+\_\+init()}{kb\_init()}}
+{\footnotesize\ttfamily void kb\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 140 of file ide.\+c.
+Definition at line 55 of file keyboard.\+c.
 
 
 \begin{DoxyCode}
-140                                                                               \{
-141     
-142     \textcolor{comment}{// (I) Delay 400 nanosecond for BSY to be set:}
-143     \textcolor{comment}{// -------------------------------------------------}
-144     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < 4; i++)
-145         \hyperlink{a00032_aef734da4bdc0c1d014528fd2f66e0686_aef734da4bdc0c1d014528fd2f66e0686}{ide\_read}(channel, \hyperlink{a00032_a051769d4520d201d24bbb06758a5c1de_a051769d4520d201d24bbb06758a5c1de}{ATA\_REG\_ALTSTATUS}); \textcolor{comment}{// Reading the Alternate Status port
-       wastes 100ns; loop four times.}
-146     
-147     \textcolor{comment}{// (II) Wait for BSY to be cleared:}
-148     \textcolor{comment}{// -------------------------------------------------}
-149     \textcolor{keywordflow}{while} (\hyperlink{a00032_aef734da4bdc0c1d014528fd2f66e0686_aef734da4bdc0c1d014528fd2f66e0686}{ide\_read}(channel, \hyperlink{a00032_a3b532ef33b38be16a240f8f2e21bc5db_a3b532ef33b38be16a240f8f2e21bc5db}{ATA\_REG\_STATUS}) & \hyperlink{a00032_aed1929007f388cab23229c908be5bbaf_aed1929007f388cab23229c908be5bbaf}{ATA\_SR\_BSY})
-150         ; \textcolor{comment}{// Wait for BSY to be zero.}
-151     
-152     \textcolor{keywordflow}{if} (advanced\_check) \{
-153         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} state = \hyperlink{a00032_aef734da4bdc0c1d014528fd2f66e0686_aef734da4bdc0c1d014528fd2f66e0686}{ide\_read}(channel, \hyperlink{a00032_a3b532ef33b38be16a240f8f2e21bc5db_a3b532ef33b38be16a240f8f2e21bc5db}{ATA\_REG\_STATUS}); \textcolor{comment}{// Read Status
-       Register.}
-154     
-155         \textcolor{comment}{// (III) Check For Errors:}
-156         \textcolor{comment}{// -------------------------------------------------}
-157         \textcolor{keywordflow}{if} (state & \hyperlink{a00032_a8a2cf843df1ae63d4d16748dfe72a592_a8a2cf843df1ae63d4d16748dfe72a592}{ATA\_SR\_ERR})
-158             \textcolor{keywordflow}{return} 2; \textcolor{comment}{// Error.}
-159     
-160         \textcolor{comment}{// (IV) Check If Device fault:}
-161         \textcolor{comment}{// -------------------------------------------------}
-162         \textcolor{keywordflow}{if} (state & \hyperlink{a00032_aca73201ed93e5c9d9d9fbf51270fde0b_aca73201ed93e5c9d9d9fbf51270fde0b}{ATA\_SR\_DF})
-163             \textcolor{keywordflow}{return} 1; \textcolor{comment}{// Device Fault.}
-164     
-165         \textcolor{comment}{// (V) Check DRQ:}
-166         \textcolor{comment}{// -------------------------------------------------}
-167         \textcolor{comment}{// BSY = 0; DF = 0; ERR = 0 so we should check for DRQ now.}
-168         \textcolor{keywordflow}{if} ((state & \hyperlink{a00032_a27e6aaa78aaaa205a7dadf56b48d0bf6_a27e6aaa78aaaa205a7dadf56b48d0bf6}{ATA\_SR\_DRQ}) == 0)
-169             \textcolor{keywordflow}{return} 3; \textcolor{comment}{// DRQ should be set}
-170     
-171     \}
-172     
-173     \textcolor{keywordflow}{return} 0; \textcolor{comment}{// No Error.}
-174     
-175 \}
+56 \{
+57     \textcolor{comment}{// disable devices}
+58     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xad);
+59     \textcolor{keywordflow}{while}(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & \hyperlink{a00032_a8aa66e8bc828742fb4819d7cd2df598d_a8aa66e8bc828742fb4819d7cd2df598d}{SR\_CLEAR})
+60         ;
+61     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xa7);
+62     \textcolor{keywordflow}{while}(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
+63         ;
+64     \textcolor{comment}{// flush output}
+65     \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
+66     \textcolor{comment}{// set config}
+67     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0x20);
+68     \textcolor{keywordflow}{while}(!(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & \hyperlink{a00032_ac9efa716f8185bae296975136b510c30_ac9efa716f8185bae296975136b510c30}{SR\_RESPONSE}))
+69         ;
+70     \hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} config = \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
+71     \textcolor{keywordtype}{bool} dualchannel = \textcolor{keyword}{false};
+72     \textcolor{keywordflow}{if}(config & \hyperlink{a00032_addafe32b109f94a57ae4bf1a1dca05e0_addafe32b109f94a57ae4bf1a1dca05e0}{SR\_DUALCHANNEL})
+73         dualchannel = \textcolor{keyword}{true};
+74     config &= ~(1 << 0);
+75     config &= ~(1 << 1);
+76     config &= ~(1 << 6);
+77     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0x60);
+78     \textcolor{keywordflow}{while}(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
+79         ;
+80     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x60, config);
+81 
+82     \textcolor{comment}{// do self test}
+83     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xaa);
+84     \textcolor{keywordflow}{while}(!(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_RESPONSE))
+85         ;
+86     \hyperlink{a00134_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} response = \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
+87     \textcolor{keywordflow}{if}(response == 0x55) \{
+88         \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"PS/2 OK.\(\backslash\)n"});
+89     \} \textcolor{keywordflow}{else} \{
+90         \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"PS/2 responded with 0xFC!!! The keyboard will not work.\(\backslash\)n"});
+91     \}
+92     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xab);
+93     \textcolor{keywordflow}{while}(!(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_RESPONSE))
+94         ;
+95     response = \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
+96     \textcolor{keywordflow}{switch}(response) \{
+97         \textcolor{keywordflow}{case} 0x00:
+98             \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard test passed!\(\backslash\)n"});
+99             \textcolor{keywordflow}{break};
+100         \textcolor{keywordflow}{case} 0x01:
+101             \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard clock line struck low!\(\backslash\)n"});;
+102             \textcolor{keywordflow}{break};
+103         \textcolor{keywordflow}{case} 0x02:
+104             \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard clock line struck high!\(\backslash\)n"});
+105             \textcolor{keywordflow}{break};
+106         \textcolor{keywordflow}{case} 0x03:
+107             \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard data line struck low!\(\backslash\)n"});
+108             \textcolor{keywordflow}{break};
+109         \textcolor{keywordflow}{case} 0x04:
+110             \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard data line struck high!\(\backslash\)n"});
+111             \textcolor{keywordflow}{break};
+112     \}
+113     \textcolor{keywordflow}{while}(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
+114         ;
+115     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xae);
+116     \textcolor{keywordflow}{while}(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
+117         ;
+118     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0x60);
+119     \textcolor{keywordflow}{while}(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
+120         ;
+121     config |= 1;
+122     \hyperlink{a00158_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x60, config);
+123     \textcolor{keywordflow}{while}(\hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
+124         ;
+125 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00035_af7757307613c29c9bcbf0f8f5b2feee5_af7757307613c29c9bcbf0f8f5b2feee5}\label{a00035_af7757307613c29c9bcbf0f8f5b2feee5_af7757307613c29c9bcbf0f8f5b2feee5}} 
-\index{ide.\+h@{ide.\+h}!ide\+\_\+print\+\_\+error@{ide\+\_\+print\+\_\+error}}
-\index{ide\+\_\+print\+\_\+error@{ide\+\_\+print\+\_\+error}!ide.\+h@{ide.\+h}}
-\subsubsection{\texorpdfstring{ide\+\_\+print\+\_\+error()}{ide\_print\_error()}}
-{\footnotesize\ttfamily unsigned char ide\+\_\+print\+\_\+error (\begin{DoxyParamCaption}\item[{unsigned int}]{drive,  }\item[{unsigned char}]{err }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00035_adffe6abc4a32b3b10985ec9324bce2af_adffe6abc4a32b3b10985ec9324bce2af}\label{a00035_adffe6abc4a32b3b10985ec9324bce2af_adffe6abc4a32b3b10985ec9324bce2af}} 
+\index{keyboard.\+h@{keyboard.\+h}!keyboard\+\_\+handler\+\_\+main@{keyboard\+\_\+handler\+\_\+main}}
+\index{keyboard\+\_\+handler\+\_\+main@{keyboard\+\_\+handler\+\_\+main}!keyboard.\+h@{keyboard.\+h}}
+\subsubsection{\texorpdfstring{keyboard\+\_\+handler\+\_\+main()}{keyboard\_handler\_main()}}
+{\footnotesize\ttfamily void keyboard\+\_\+handler\+\_\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 177 of file ide.\+c.
+Definition at line 153 of file keyboard.\+c.
 
 
 \begin{DoxyCode}
-177                                                                      \{
-178     \textcolor{keywordflow}{if} (err == 0)
-179         \textcolor{keywordflow}{return} err;
-180     
-181     \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"IDE:"});
-182     \textcolor{keywordflow}{if} (err == 1) \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Device Fault\(\backslash\)n     "}); err = 19;\}
-183     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (err == 2) \{
-184         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} st = \hyperlink{a00032_aef734da4bdc0c1d014528fd2f66e0686_aef734da4bdc0c1d014528fd2f66e0686}{ide\_read}(\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].Channel, 
-      \hyperlink{a00032_ad2f2744a08145beb17b7ed6ca0465d85_ad2f2744a08145beb17b7ed6ca0465d85}{ATA\_REG\_ERROR});
-185         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_ac4f0c06f285d99068cbad7b6d4641d1f_ac4f0c06f285d99068cbad7b6d4641d1f}{ATA\_ER\_AMNF})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- No Address Mark Found\(\backslash\)n     "});
-         err = 7;\}
-186         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_aaffca74832da09d4cf0ea68624546c91_aaffca74832da09d4cf0ea68624546c91}{ATA\_ER\_TK0NF})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- No Media or Media Error\(\backslash\)n    
-       "});   err = 3;\}
-187         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_a415987608bff240636a785bb48970e94_a415987608bff240636a785bb48970e94}{ATA\_ER\_ABRT})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Command Aborted\(\backslash\)n     "});      
-      err = 20;\}
-188         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_af5f476aa2920211197aa8ff81f0dfdbd_af5f476aa2920211197aa8ff81f0dfdbd}{ATA\_ER\_MCR})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- No Media or Media Error\(\backslash\)n     "});
-         err = 3;\}
-189         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_a6bed47f17f64ab98da1dd946ca123198_a6bed47f17f64ab98da1dd946ca123198}{ATA\_ER\_IDNF})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- ID mark not Found\(\backslash\)n     "});    
-        err = 21;\}
-190         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_aaed40c458ad34dae2d82381e71e372ac_aaed40c458ad34dae2d82381e71e372ac}{ATA\_ER\_MC})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- No Media or Media Error\(\backslash\)n     "});  
-       err = 3;\}
-191         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_ab1e1938e0fc8f511102b778956aa3bd4_ab1e1938e0fc8f511102b778956aa3bd4}{ATA\_ER\_UNC})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Uncorrectable Data Error\(\backslash\)n     "})
-      ;   err = 22;\}
-192         \textcolor{keywordflow}{if} (st & \hyperlink{a00032_a97e6940186e5f1cfe5c501e56312de45_a97e6940186e5f1cfe5c501e56312de45}{ATA\_ER\_BBK})   \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Bad Sectors\(\backslash\)n     "});       err =
-       13;\}
-193     \} \textcolor{keywordflow}{else}  \textcolor{keywordflow}{if} (err == 3)           \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Reads Nothing\(\backslash\)n     "}); err = 23;\}
-194         \textcolor{keywordflow}{else}  \textcolor{keywordflow}{if} (err == 4)  \{\hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"- Write Protected\(\backslash\)n     "}); err = 8;\}
-195     
-196     \textcolor{keywordflow}{return} err;
-197 \}
+153                                  \{
+154     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} status;
+155     \textcolor{keywordtype}{char} keycode;
+156     status = \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00035_ab79ca089665bc7f5cc151883d1bc69ed_ab79ca089665bc7f5cc151883d1bc69ed}{KEYBOARD\_STATUS\_PORT});
+157     \textcolor{comment}{/* Lowest bit of status will be set if buffer is not empty */}
+158     \textcolor{keywordflow}{if} (status & 0x01) \{
+159         keycode = \hyperlink{a00158_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00035_a49e0a04e81098085d2948c1e9f8c99cb_a49e0a04e81098085d2948c1e9f8c99cb}{KEYBOARD\_DATA\_PORT});
+160         \textcolor{keywordflow}{if}(keycode < 0)
+161             \textcolor{keywordflow}{return};
+162         \hyperlink{a00032_ade374650022cb30c4f5591a8dafad685_ade374650022cb30c4f5591a8dafad685}{lkey} = keycode;
+163         \hyperlink{a00032_a6ddd5223379778858edc46ffbec19775_a6ddd5223379778858edc46ffbec19775}{wfk} = \textcolor{keyword}{false};
+164     \}
+165 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00035_aef734da4bdc0c1d014528fd2f66e0686_aef734da4bdc0c1d014528fd2f66e0686}\label{a00035_aef734da4bdc0c1d014528fd2f66e0686_aef734da4bdc0c1d014528fd2f66e0686}} 
-\index{ide.\+h@{ide.\+h}!ide\+\_\+read@{ide\+\_\+read}}
-\index{ide\+\_\+read@{ide\+\_\+read}!ide.\+h@{ide.\+h}}
-\subsubsection{\texorpdfstring{ide\+\_\+read()}{ide\_read()}}
-{\footnotesize\ttfamily unsigned char ide\+\_\+read (\begin{DoxyParamCaption}\item[{unsigned char}]{channel,  }\item[{unsigned char}]{reg }\end{DoxyParamCaption})}
-
-
-
-Definition at line 105 of file ide.\+c.
-
-
-\begin{DoxyCode}
-105                                                                  \{
-106     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} result;
-107     \textcolor{keywordflow}{if} (reg > 0x07 && reg < 0x0C)
-108         \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_acd25672516342decdb4acb14b13dfa03_acd25672516342decdb4acb14b13dfa03}{ATA\_REG\_CONTROL}, 0x80 | 
-      \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].nIEN);
-109     \textcolor{keywordflow}{if} (reg < 0x08)
-110         result = \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].\hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base} + reg - 0x00);
-111     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (reg < 0x0C)
-112         result = \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].\hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base}  + reg - 0x06);
-113     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (reg < 0x0E)
-114         result = \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].ctrl  + reg - 0x0A);
-115     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (reg < 0x16)
-116         result = \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].bmide + reg - 0x0E);
-117     \textcolor{keywordflow}{if} (reg > 0x07 && reg < 0x0C)
-118         \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_acd25672516342decdb4acb14b13dfa03_acd25672516342decdb4acb14b13dfa03}{ATA\_REG\_CONTROL}, \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].nIEN);
-119     \textcolor{keywordflow}{return} result;
-120 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00035_ac338a611110448d6bd9b8edc491ed19b_ac338a611110448d6bd9b8edc491ed19b}\label{a00035_ac338a611110448d6bd9b8edc491ed19b_ac338a611110448d6bd9b8edc491ed19b}} 
-\index{ide.\+h@{ide.\+h}!ide\+\_\+read\+\_\+buffer@{ide\+\_\+read\+\_\+buffer}}
-\index{ide\+\_\+read\+\_\+buffer@{ide\+\_\+read\+\_\+buffer}!ide.\+h@{ide.\+h}}
-\subsubsection{\texorpdfstring{ide\+\_\+read\+\_\+buffer()}{ide\_read\_buffer()}}
-{\footnotesize\ttfamily void ide\+\_\+read\+\_\+buffer (\begin{DoxyParamCaption}\item[{unsigned char}]{channel,  }\item[{unsigned char}]{reg,  }\item[{unsigned int}]{buffer,  }\item[{unsigned int}]{quads }\end{DoxyParamCaption})}
-
-
-
-Definition at line 122 of file ide.\+c.
-
-
-\begin{DoxyCode}
-123                                          \{
-124     \textcolor{keywordflow}{if} (reg > 0x07 && reg < 0x0C)
-125         \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_acd25672516342decdb4acb14b13dfa03_acd25672516342decdb4acb14b13dfa03}{ATA\_REG\_CONTROL}, 0x80 | 
-      \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].nIEN);
-126     \textcolor{keyword}{asm}(\textcolor{stringliteral}{"pushw %es; pushw %ax; movw %ds, %ax; movw %ax, %es; popw %ax;"});
-127     \textcolor{keywordflow}{if} (reg < 0x08)
-128         \hyperlink{a00164_ad948084614ff153235daa9f3f596738c_ad948084614ff153235daa9f3f596738c}{insl}(\hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].\hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base}  + reg - 0x00, buffer, quads);
-129     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (reg < 0x0C)
-130         \hyperlink{a00164_ad948084614ff153235daa9f3f596738c_ad948084614ff153235daa9f3f596738c}{insl}(\hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].\hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base}  + reg - 0x06, buffer, quads);
-131     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (reg < 0x0E)
-132         \hyperlink{a00164_ad948084614ff153235daa9f3f596738c_ad948084614ff153235daa9f3f596738c}{insl}(\hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].ctrl  + reg - 0x0A, buffer, quads);
-133     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (reg < 0x16)
-134         \hyperlink{a00164_ad948084614ff153235daa9f3f596738c_ad948084614ff153235daa9f3f596738c}{insl}(\hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].bmide + reg - 0x0E, buffer, quads);
-135     \textcolor{keyword}{asm}(\textcolor{stringliteral}{"popw %es;"});
-136     \textcolor{keywordflow}{if} (reg > 0x07 && reg < 0x0C)
-137         \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_acd25672516342decdb4acb14b13dfa03_acd25672516342decdb4acb14b13dfa03}{ATA\_REG\_CONTROL}, \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].nIEN);
-138 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00035_a9dd84843412753d236e17a15277c5b98_a9dd84843412753d236e17a15277c5b98}\label{a00035_a9dd84843412753d236e17a15277c5b98_a9dd84843412753d236e17a15277c5b98}} 
-\index{ide.\+h@{ide.\+h}!ide\+\_\+read\+\_\+sectors@{ide\+\_\+read\+\_\+sectors}}
-\index{ide\+\_\+read\+\_\+sectors@{ide\+\_\+read\+\_\+sectors}!ide.\+h@{ide.\+h}}
-\subsubsection{\texorpdfstring{ide\+\_\+read\+\_\+sectors()}{ide\_read\_sectors()}}
-{\footnotesize\ttfamily void ide\+\_\+read\+\_\+sectors (\begin{DoxyParamCaption}\item[{unsigned char}]{drive,  }\item[{unsigned char}]{numsects,  }\item[{unsigned int}]{lba,  }\item[{unsigned short}]{es,  }\item[{unsigned int}]{edi }\end{DoxyParamCaption})}
-
-
-
-Definition at line 479 of file ide.\+c.
-
-
-\begin{DoxyCode}
-480                                                            \{
-481  
-482    \textcolor{keywordtype}{int} i = 0;
-483    \textcolor{comment}{// 1: Check if the drive presents:}
-484    \textcolor{comment}{// ==================================}
-485    \textcolor{keywordflow}{if} (drive > 3 || \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].Reserved == 0) \hyperlink{a00035_a820b2230ab700e13350794494bd4a60f_a820b2230ab700e13350794494bd4a60f}{package}[0] = 0x1;      \textcolor{comment}{// Drive Not
-       Found!}
-486  
-487    \textcolor{comment}{// 2: Check if inputs are valid:}
-488    \textcolor{comment}{// ==================================}
-489    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (((lba + numsects) > \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].Size) && (
-      \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].Type == \hyperlink{a00032_a3046279f2a25227c121b69f4cf855bf8_a3046279f2a25227c121b69f4cf855bf8}{IDE\_ATA}))
-490       \hyperlink{a00035_a820b2230ab700e13350794494bd4a60f_a820b2230ab700e13350794494bd4a60f}{package}[0] = 0x2;                     \textcolor{comment}{// Seeking to invalid position.}
-491  
-492    \textcolor{comment}{// 3: Read in PIO Mode through Polling & IRQs:}
-493    \textcolor{comment}{// ============================================}
-494    
-495    \textcolor{keywordflow}{else} \{
-496       \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} err;
-497       \textcolor{keywordflow}{if} (\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].Type == \hyperlink{a00032_a3046279f2a25227c121b69f4cf855bf8_a3046279f2a25227c121b69f4cf855bf8}{IDE\_ATA})
-498          err = \hyperlink{a00032_a4da0883393a98b937fdc3015a0a3f265_a4da0883393a98b937fdc3015a0a3f265}{ide\_ata\_access}(\hyperlink{a00032_a061cf4fd71859d6355aea5be3bae767a_a061cf4fd71859d6355aea5be3bae767a}{ATA\_READ}, drive, lba, numsects, es, edi);
-499       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].Type == \hyperlink{a00032_a6513ee2a4da2c6aaa691b9d4c639a53e_a6513ee2a4da2c6aaa691b9d4c639a53e}{IDE\_ATAPI})
-500          \textcolor{keywordflow}{for} (i = 0; i < numsects; i++)
-501             err = \hyperlink{a00032_a1652da42785708fa6ea21ce4aef8c628_a1652da42785708fa6ea21ce4aef8c628}{ide\_atapi\_read}(drive, lba + i, 1, es, edi + (i*2048));
-502       \hyperlink{a00035_a820b2230ab700e13350794494bd4a60f_a820b2230ab700e13350794494bd4a60f}{package}[0] = \hyperlink{a00032_af7757307613c29c9bcbf0f8f5b2feee5_af7757307613c29c9bcbf0f8f5b2feee5}{ide\_print\_error}(drive, err);
-503    \}
-504 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00035_a31655fcec0cc8f9f8792b98cd4441fdf_a31655fcec0cc8f9f8792b98cd4441fdf}\label{a00035_a31655fcec0cc8f9f8792b98cd4441fdf_a31655fcec0cc8f9f8792b98cd4441fdf}} 
-\index{ide.\+h@{ide.\+h}!ide\+\_\+wait\+\_\+irq@{ide\+\_\+wait\+\_\+irq}}
-\index{ide\+\_\+wait\+\_\+irq@{ide\+\_\+wait\+\_\+irq}!ide.\+h@{ide.\+h}}
-\subsubsection{\texorpdfstring{ide\+\_\+wait\+\_\+irq()}{ide\_wait\_irq()}}
-{\footnotesize\ttfamily void ide\+\_\+wait\+\_\+irq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 84 of file ide.\+c.
-
-
-\begin{DoxyCode}
-84                     \{
-85    \textcolor{keywordflow}{while} (!\hyperlink{a00032_a12985ec2f925d0cdbd7d24728b9849f9_a12985ec2f925d0cdbd7d24728b9849f9}{ide\_irq\_invoked})
-86       ;
-87    \hyperlink{a00032_a12985ec2f925d0cdbd7d24728b9849f9_a12985ec2f925d0cdbd7d24728b9849f9}{ide\_irq\_invoked} = 0;
-88 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00035_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}\label{a00035_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}} 
-\index{ide.\+h@{ide.\+h}!ide\+\_\+write@{ide\+\_\+write}}
-\index{ide\+\_\+write@{ide\+\_\+write}!ide.\+h@{ide.\+h}}
-\subsubsection{\texorpdfstring{ide\+\_\+write()}{ide\_write()}}
-{\footnotesize\ttfamily void ide\+\_\+write (\begin{DoxyParamCaption}\item[{unsigned char}]{channel,  }\item[{unsigned char}]{reg,  }\item[{unsigned char}]{data }\end{DoxyParamCaption})}
-
-
-
-Definition at line 90 of file ide.\+c.
-
-
-\begin{DoxyCode}
-90                                                                              \{
-91     \textcolor{keywordflow}{if} (reg > 0x07 && reg < 0x0C)
-92         \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_acd25672516342decdb4acb14b13dfa03_acd25672516342decdb4acb14b13dfa03}{ATA\_REG\_CONTROL}, 0x80 | 
-      \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].nIEN);
-93     \textcolor{keywordflow}{if} (reg < 0x08)
-94         \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].\hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base}  + reg - 0x00, data);
-95     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (reg < 0x0C)
-96         \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].\hyperlink{a00104_a0523cedff47e2441fc198b7770ec5d3f_a0523cedff47e2441fc198b7770ec5d3f}{base}  + reg - 0x06, data);
-97     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (reg < 0x0E)
-98         \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].ctrl  + reg - 0x0A, data);
-99     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (reg < 0x16)
-100         \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(\hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].bmide + reg - 0x0E, data);
-101     \textcolor{keywordflow}{if} (reg > 0x07 && reg < 0x0C)
-102         \hyperlink{a00032_afdb22c37a32d86fcb64e55b3edab4790_afdb22c37a32d86fcb64e55b3edab4790}{ide\_write}(channel, \hyperlink{a00032_acd25672516342decdb4acb14b13dfa03_acd25672516342decdb4acb14b13dfa03}{ATA\_REG\_CONTROL}, \hyperlink{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}{channels}[channel].nIEN);
-103 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00035_a8632fb3a8cd41b7d60ee56942afbde03_a8632fb3a8cd41b7d60ee56942afbde03}\label{a00035_a8632fb3a8cd41b7d60ee56942afbde03_a8632fb3a8cd41b7d60ee56942afbde03}} 
-\index{ide.\+h@{ide.\+h}!ide\+\_\+write\+\_\+sectors@{ide\+\_\+write\+\_\+sectors}}
-\index{ide\+\_\+write\+\_\+sectors@{ide\+\_\+write\+\_\+sectors}!ide.\+h@{ide.\+h}}
-\subsubsection{\texorpdfstring{ide\+\_\+write\+\_\+sectors()}{ide\_write\_sectors()}}
-{\footnotesize\ttfamily void ide\+\_\+write\+\_\+sectors (\begin{DoxyParamCaption}\item[{unsigned char}]{drive,  }\item[{unsigned char}]{numsects,  }\item[{unsigned int}]{lba,  }\item[{unsigned short}]{es,  }\item[{unsigned int}]{edi }\end{DoxyParamCaption})}
-
-
-
-Definition at line 507 of file ide.\+c.
-
-
-\begin{DoxyCode}
-508                                                             \{
-509  
-510    \textcolor{comment}{// 1: Check if the drive presents:}
-511    \textcolor{comment}{// ==================================}
-512    \textcolor{keywordflow}{if} (drive > 3 || \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].Reserved == 0)
-513       \hyperlink{a00035_a820b2230ab700e13350794494bd4a60f_a820b2230ab700e13350794494bd4a60f}{package}[0] = 0x1;      \textcolor{comment}{// Drive Not Found!}
-514    \textcolor{comment}{// 2: Check if inputs are valid:}
-515    \textcolor{comment}{// ==================================}
-516    \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (((lba + numsects) > \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].Size) && (
-      \hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].Type == \hyperlink{a00032_a3046279f2a25227c121b69f4cf855bf8_a3046279f2a25227c121b69f4cf855bf8}{IDE\_ATA}))
-517       \hyperlink{a00035_a820b2230ab700e13350794494bd4a60f_a820b2230ab700e13350794494bd4a60f}{package}[0] = 0x2;                     \textcolor{comment}{// Seeking to invalid position.}
-518    \textcolor{comment}{// 3: Read in PIO Mode through Polling & IRQs:}
-519    \textcolor{comment}{// ============================================}
-520    \textcolor{keywordflow}{else} \{
-521       \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} err;
-522       \textcolor{keywordflow}{if} (\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].Type == \hyperlink{a00032_a3046279f2a25227c121b69f4cf855bf8_a3046279f2a25227c121b69f4cf855bf8}{IDE\_ATA})
-523          err = \hyperlink{a00032_a4da0883393a98b937fdc3015a0a3f265_a4da0883393a98b937fdc3015a0a3f265}{ide\_ata\_access}(\hyperlink{a00032_a9a19b84aa7a02ac7e07528795816ffb2_a9a19b84aa7a02ac7e07528795816ffb2}{ATA\_WRITE}, drive, lba, numsects, es, edi);
-524       \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}{ide\_devices}[drive].Type == \hyperlink{a00032_a6513ee2a4da2c6aaa691b9d4c639a53e_a6513ee2a4da2c6aaa691b9d4c639a53e}{IDE\_ATAPI})
-525          err = 4; \textcolor{comment}{// Write-Protected.}
-526       \hyperlink{a00035_a820b2230ab700e13350794494bd4a60f_a820b2230ab700e13350794494bd4a60f}{package}[0] = \hyperlink{a00032_af7757307613c29c9bcbf0f8f5b2feee5_af7757307613c29c9bcbf0f8f5b2feee5}{ide\_print\_error}(drive, err);
-527    \}
-528 \}
-\end{DoxyCode}
-
-
-\subsection{Variable Documentation}
-\mbox{\Hypertarget{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}\label{a00035_aecefa15f62cf60846ddb1a56f9153143_aecefa15f62cf60846ddb1a56f9153143}} 
-\index{ide.\+h@{ide.\+h}!channels@{channels}}
-\index{channels@{channels}!ide.\+h@{ide.\+h}}
-\subsubsection{\texorpdfstring{channels}{channels}}
-{\footnotesize\ttfamily struct \hyperlink{a00220}{I\+D\+E\+Channel\+Registers}  channels\mbox{[}2\mbox{]}}
-
-\mbox{\Hypertarget{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}\label{a00035_ab97a828ed4839b575dc382e2bf826e87_ab97a828ed4839b575dc382e2bf826e87}} 
-\index{ide.\+h@{ide.\+h}!ide\+\_\+devices@{ide\+\_\+devices}}
-\index{ide\+\_\+devices@{ide\+\_\+devices}!ide.\+h@{ide.\+h}}
-\subsubsection{\texorpdfstring{ide\+\_\+devices}{ide\_devices}}
-{\footnotesize\ttfamily struct \hyperlink{a00224}{ide\+\_\+device} ide\+\_\+devices\mbox{[}4\mbox{]}}
-
-
-
-Definition at line 26 of file ide.\+h.
-
-\mbox{\Hypertarget{a00035_a820b2230ab700e13350794494bd4a60f_a820b2230ab700e13350794494bd4a60f}\label{a00035_a820b2230ab700e13350794494bd4a60f_a820b2230ab700e13350794494bd4a60f}} 
-\index{ide.\+h@{ide.\+h}!package@{package}}
-\index{package@{package}!ide.\+h@{ide.\+h}}
-\subsubsection{\texorpdfstring{package}{package}}
-{\footnotesize\ttfamily \hyperlink{a00140_ab8ef12fab634c171394422d0ee8baf94_ab8ef12fab634c171394422d0ee8baf94}{byte} package\mbox{[}1\mbox{]}}
-
-
-
-Definition at line 12 of file ide.\+h.
-

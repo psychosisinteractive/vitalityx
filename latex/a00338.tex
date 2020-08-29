@@ -1,0 +1,52 @@
+V\+EP (Vitality Executable Program) is the standard executable format for VitalityX. It has a lightweight header and the V\+EP is semi-\/allowed to choose where it loads within memory.
+
+The struct for defining a V\+EP header is as follows\+:
+
+
+\begin{DoxyCode}
+typedef struct vepheader \{
+    ///
+    /// VEP signature, should be 'VP'
+    ///
+    char signature[2];
+    ///
+    /// VEP flags
+    /// 
+    char flags;
+    ///
+    /// Where the VEP should be loaded
+    ///
+    uint32\_t origin;
+    ///
+    /// VEP size
+    ///
+    uint32\_t vepsize;
+    ///
+    /// VEP mode
+    /// 
+    uint32\_t mode;
+    ///
+    /// Reserved data
+    /// 
+    char reserved[255];
+\} vepheader\_t;
+\end{DoxyCode}
+
+
+After the vepheader is the raw binary which will be loaded in. Example\+:
+
+
+\begin{DoxyCode}
++---------------------------------------------+--------------------+
+|VEPHEADER                                    |PROGRAM DATA        |
+|signature flags origin vepsize mode reserved |                    |
++---------------------------------------------+--------------------+
+\end{DoxyCode}
+
+
+The current V\+EP modes are\+:
+\begin{DoxyEnumerate}
+\item V\+E\+P\+M\+O\+D\+E\+\_\+\+M\+O\+N\+O\+L\+I\+T\+H\+IC, interrupts to system are allowed, no V\+EP or V\+AM access
+\item V\+E\+P\+M\+O\+D\+E\+\_\+\+V\+L\+IB, interrupts to system are allowed, V\+EP access is allowed except V\+AM, shows a consent dialog
+\item V\+E\+P\+M\+O\+D\+E\+\_\+\+V\+AM, interrupts to system are allowed, V\+EP access and V\+AM access is allowed, requires permissions 
+\end{DoxyEnumerate}

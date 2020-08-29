@@ -25,8 +25,8 @@ Definition at line 4 of file bios32.\+c.
 
 \begin{DoxyCode}
 4                            \{
-5     \hyperlink{a00212}{bios32\_sdh\_t}* sdh = (\hyperlink{a00212}{bios32\_sdh\_t}*)0xe000;
-6     \textcolor{keywordflow}{if}(sdh->\hyperlink{a00212_a5d56b651b0453b6078d0efd500369fe0_a5d56b651b0453b6078d0efd500369fe0}{signature} != \hyperlink{a00023_ab76c5cf329d92fbb28daf7b57ea1744d_ab76c5cf329d92fbb28daf7b57ea1744d}{BIOS32\_SIGNATURE}) \{
+5     \hyperlink{a00206}{bios32\_sdh\_t}* sdh = (\hyperlink{a00206}{bios32\_sdh\_t}*)0xe000;
+6     \textcolor{keywordflow}{if}(sdh->\hyperlink{a00206_a5d56b651b0453b6078d0efd500369fe0_a5d56b651b0453b6078d0efd500369fe0}{signature} != \hyperlink{a00023_ab76c5cf329d92fbb28daf7b57ea1744d_ab76c5cf329d92fbb28daf7b57ea1744d}{BIOS32\_SIGNATURE}) \{
 7         \hyperlink{a00023_a3bf8c7fb9844d36624b622e275c175ed_a3bf8c7fb9844d36624b622e275c175ed}{bios32\_state} = \textcolor{keyword}{false};
 8         \textcolor{keywordflow}{return} sdh;
 9     \} \textcolor{keywordflow}{else} \{

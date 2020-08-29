@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/fs_implementations/impl.h File Reference</title>
+<title>VitalityX: libc/vitality/mem.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -40,39 +40,59 @@ $(function() {
 <div id="main-nav"></div>
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li><li class="navelem"><a class="el" href="dir_2204a4b3d47b62a14a2dc3b122711013.html">fs_implementations</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fc1eb218ab426e5adb60367f98438da0.html">libc</a></li><li class="navelem"><a class="el" href="dir_23423b050fd890776a6e094b978d172e.html">vitality</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">impl.h File Reference</div>  </div>
+<div class="title">mem.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00158_source.html">fat.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00164_source.html">mem.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00134_source.html">../types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00128_source.html">../system.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00074_source.html">../ext/debug.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00158_source.html">inline.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00122_source.html">../string.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for impl.h:</div>
+Include dependency graph for mem.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00162.png" border="0" usemap="#libc_2vitality_2fs__implementations_2impl_8h" alt=""/></div>
+<div class="center"><img src="a00162.png" border="0" usemap="#libc_2vitality_2mem_8c" alt=""/></div>
 <!-- MAP 0 -->
-</div>
-</div><div class="textblock"><div class="dynheader">
-This graph shows which files directly or indirectly include this file:</div>
-<div class="dyncontent">
-<div class="center"><img src="a00163.png" border="0" usemap="#libc_2vitality_2fs__implementations_2impl_8hdep" alt=""/></div>
-<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00161_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a2e9d0c3765a28910638672bfc746181b"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_a2e9d0c3765a28910638672bfc746181b.html#a2e9d0c3765a28910638672bfc746181b">FILESYSTEM_TYPES</a> { <a class="el" href="a00161_a2e9d0c3765a28910638672bfc746181b.html#a2e9d0c3765a28910638672bfc746181ba4e81c184ac3ad48a389cd4454c4a05bb">Unknown</a>, 
-<a class="el" href="a00161_a2e9d0c3765a28910638672bfc746181b.html#a2e9d0c3765a28910638672bfc746181bac740d3121d634c0d77f5602b1fdab236">VXBFS</a>, 
-<a class="el" href="a00161_a2e9d0c3765a28910638672bfc746181b.html#a2e9d0c3765a28910638672bfc746181ba5bb1a436c641e5391d9474ed95f4f56a">FAT</a>
- }</td></tr>
-<tr class="separator:a2e9d0c3765a28910638672bfc746181b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a3ef64f08269a275815bb42bb97e0b562"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_a3ef64f08269a275815bb42bb97e0b562.html#a3ef64f08269a275815bb42bb97e0b562">gbrk</a> ()</td></tr>
+<tr class="separator:a3ef64f08269a275815bb42bb97e0b562"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46e79822750a4396759664ee0012b283"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_a46e79822750a4396759664ee0012b283.html#a46e79822750a4396759664ee0012b283">brk</a> (<a class="el" href="a00134_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a> size)</td></tr>
+<tr class="separator:a46e79822750a4396759664ee0012b283"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37ef7dd1bd3f62750baf3ea3d4ec7bf6"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_a37ef7dd1bd3f62750baf3ea3d4ec7bf6.html#a37ef7dd1bd3f62750baf3ea3d4ec7bf6">sbrk</a> (<a class="el" href="a00134_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a> size)</td></tr>
+<tr class="separator:a37ef7dd1bd3f62750baf3ea3d4ec7bf6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6982edbc1f3bd90948598df448fbe5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00282.html">header_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_af6982edbc1f3bd90948598df448fbe5e.html#af6982edbc1f3bd90948598df448fbe5e">get_free_block</a> (<a class="el" href="a00134_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a> size)</td></tr>
+<tr class="separator:af6982edbc1f3bd90948598df448fbe5e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ac38fce3243a7dcf448301ee9ffd392"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_a7ac38fce3243a7dcf448301ee9ffd392.html#a7ac38fce3243a7dcf448301ee9ffd392">malloc</a> (<a class="el" href="a00134_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a> size)</td></tr>
+<tr class="separator:a7ac38fce3243a7dcf448301ee9ffd392"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abbcfa46e4bdcb73aecd859a389031a02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_abbcfa46e4bdcb73aecd859a389031a02.html#abbcfa46e4bdcb73aecd859a389031a02">free</a> (void *block)</td></tr>
+<tr class="separator:abbcfa46e4bdcb73aecd859a389031a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec90723f6d8e163bc8a148d63ad3adb2"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_aec90723f6d8e163bc8a148d63ad3adb2.html#aec90723f6d8e163bc8a148d63ad3adb2">calloc</a> (<a class="el" href="a00134_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a> num, <a class="el" href="a00134_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a> nsize)</td></tr>
+<tr class="separator:aec90723f6d8e163bc8a148d63ad3adb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a250ae994ff20c9a204732d278221511f"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_a250ae994ff20c9a204732d278221511f.html#a250ae994ff20c9a204732d278221511f">realloc</a> (void *block, <a class="el" href="a00134_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a> size)</td></tr>
+<tr class="separator:a250ae994ff20c9a204732d278221511f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ac630e1c7e5feeaaf43837648134a0c6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00282.html">header_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_ac630e1c7e5feeaaf43837648134a0c6d.html#ac630e1c7e5feeaaf43837648134a0c6d">head</a></td></tr>
+<tr class="separator:ac630e1c7e5feeaaf43837648134a0c6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bd314947171880f54b24e604198ad3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00282.html">header_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_a9bd314947171880f54b24e604198ad3b.html#a9bd314947171880f54b24e604198ad3b">tail</a></td></tr>
+<tr class="separator:a9bd314947171880f54b24e604198ad3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33fb44061f3432e7d04085bcef339974"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00134_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00161_a33fb44061f3432e7d04085bcef339974.html#a33fb44061f3432e7d04085bcef339974">brkval</a></td></tr>
+<tr class="separator:a33fb44061f3432e7d04085bcef339974"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

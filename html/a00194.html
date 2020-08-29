@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/vitality/virtual8086.h File Reference</title>
+<title>VitalityX: libc/vitality/vlib.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -45,28 +45,61 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
-<div class="title">virtual8086.h File Reference</div>  </div>
+<div class="title">vlib.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00140_source.html">../types.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00134_source.html">../types.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00086_source.html">../ext/task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00110_source.html">../isr.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for virtual8086.h:</div>
+Include dependency graph for vlib.h:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00195.png" border="0" usemap="#libc_2vitality_2virtual8086_8h" alt=""/></div>
+<div class="center"><img src="a00195.png" border="0" usemap="#libc_2vitality_2vlib_8h" alt=""/></div>
 <!-- MAP 0 -->
+</div>
+</div><div class="textblock"><div class="dynheader">
+This graph shows which files directly or indirectly include this file:</div>
+<div class="dyncontent">
+<div class="center"><img src="a00196.png" border="0" usemap="#libc_2vitality_2vlib_8hdep" alt=""/></div>
+<!-- MAP 1 -->
 </div>
 </div>
 <p><a href="a00194_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00318.html">vlib_entry</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00322.html">vlibdescriptor</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a97c1a7136f2ab06368e93c2d7533d619"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00318.html">vlib_entry</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00194_a97c1a7136f2ab06368e93c2d7533d619.html#a97c1a7136f2ab06368e93c2d7533d619">vlib_entry_t</a></td></tr>
+<tr class="separator:a97c1a7136f2ab06368e93c2d7533d619"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d9000b4fbb25c5ed2950a2d8f4921d5"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="a00322.html">vlibdescriptor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00194_a2d9000b4fbb25c5ed2950a2d8f4921d5.html#a2d9000b4fbb25c5ed2950a2d8f4921d5">vlibdesriptor_t</a></td></tr>
+<tr class="separator:a2d9000b4fbb25c5ed2950a2d8f4921d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a9c262613816b82529fff89eda722abaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00194_a9c262613816b82529fff89eda722abaf.html#a9c262613816b82529fff89eda722abaf">enter_v86</a> (<a class="el" href="a00140_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> ss, <a class="el" href="a00140_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> esp, <a class="el" href="a00140_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> cs, <a class="el" href="a00140_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> eip)</td></tr>
-<tr class="memdesc:a9c262613816b82529fff89eda722abaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enters Virtual 8086 mode.  <a href="a00194_a9c262613816b82529fff89eda722abaf.html#a9c262613816b82529fff89eda722abaf">More...</a><br /></td></tr>
-<tr class="separator:a9c262613816b82529fff89eda722abaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a215959ee72d7cd0bf4728b9e96e79b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00194_a2a215959ee72d7cd0bf4728b9e96e79b.html#a2a215959ee72d7cd0bf4728b9e96e79b">detect_v86</a> ()</td></tr>
-<tr class="separator:a2a215959ee72d7cd0bf4728b9e96e79b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee69008de31826f28854c29a54cb315e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00194_aee69008de31826f28854c29a54cb315e.html#aee69008de31826f28854c29a54cb315e">loadvlib</a> (<a class="el" href="a00194_a2d9000b4fbb25c5ed2950a2d8f4921d5.html#a2d9000b4fbb25c5ed2950a2d8f4921d5">vlibdesriptor_t</a> *d)</td></tr>
+<tr class="separator:aee69008de31826f28854c29a54cb315e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeeb1b55b301de7b4c7aa360c387c3ef9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00194_a97c1a7136f2ab06368e93c2d7533d619.html#a97c1a7136f2ab06368e93c2d7533d619">vlib_entry_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00194_aeeb1b55b301de7b4c7aa360c387c3ef9.html#aeeb1b55b301de7b4c7aa360c387c3ef9">getvlibentry</a> (int id)</td></tr>
+<tr class="separator:aeeb1b55b301de7b4c7aa360c387c3ef9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268c6e227f2761807244c0695d78d01c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00194_a268c6e227f2761807244c0695d78d01c.html#a268c6e227f2761807244c0695d78d01c">runvlib</a> (<a class="el" href="a00134_adf58dbaf6139b4957c348711f2026957.html#adf58dbaf6139b4957c348711f2026957">registers_t</a> regs)</td></tr>
+<tr class="separator:a268c6e227f2761807244c0695d78d01c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:abe9fbaaf473cf2fa8d2a0ef1786fabd2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00194_a2d9000b4fbb25c5ed2950a2d8f4921d5.html#a2d9000b4fbb25c5ed2950a2d8f4921d5">vlibdesriptor_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00194_abe9fbaaf473cf2fa8d2a0ef1786fabd2.html#abe9fbaaf473cf2fa8d2a0ef1786fabd2">descriptor</a></td></tr>
+<tr class="separator:abe9fbaaf473cf2fa8d2a0ef1786fabd2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae94a2076c3fb43c35d18daf9cf664e23"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00250.html">Registers</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00194_ae94a2076c3fb43c35d18daf9cf664e23.html#ae94a2076c3fb43c35d18daf9cf664e23">vlib_registers</a></td></tr>
+<tr class="separator:ae94a2076c3fb43c35d18daf9cf664e23"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
 <!-- start footer part -->

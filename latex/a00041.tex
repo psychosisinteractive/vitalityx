@@ -1,224 +1,137 @@
-\hypertarget{a00041}{}\section{drivers/keyboard.h File Reference}
-\label{a00041}\index{drivers/keyboard.\+h@{drivers/keyboard.\+h}}
-{\ttfamily \#include \char`\"{}../libc/vitality/inline.\+h\char`\"{}}\newline
-Include dependency graph for keyboard.\+h\+:
+\hypertarget{a00041}{}\section{drivers/modem.h File Reference}
+\label{a00041}\index{drivers/modem.\+h@{drivers/modem.\+h}}
+{\ttfamily \#include \char`\"{}../libc/types.\+h\char`\"{}}\newline
+Include dependency graph for modem.\+h\+:
 % FIG 0
 This graph shows which files directly or indirectly include this file\+:
 % FIG 1
-\subsection*{Macros}
-\begin{DoxyCompactItemize}
-\item 
-\#define \hyperlink{a00041_a49e0a04e81098085d2948c1e9f8c99cb_a49e0a04e81098085d2948c1e9f8c99cb}{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+D\+A\+T\+A\+\_\+\+P\+O\+RT}~0x60
-\item 
-\#define \hyperlink{a00041_ab79ca089665bc7f5cc151883d1bc69ed_ab79ca089665bc7f5cc151883d1bc69ed}{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+O\+RT}~0x64
-\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00041_aabdb223e5290f3b3c07bc82d075b87d7_aabdb223e5290f3b3c07bc82d075b87d7}{kb\+\_\+init} (void)
+\hyperlink{a00134_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00041_a8529dba543149138317e327931bf5a5c_a8529dba543149138317e327931bf5a5c}{acknowledge} ()
 \item 
-char $\ast$ \hyperlink{a00041_ab88a2e96bbe585e228a5b201435c0240_ab88a2e96bbe585e228a5b201435c0240}{getst} ()
+void \hyperlink{a00041_ace378eaa88c0b7f0cdafe97d064e36fb_ace378eaa88c0b7f0cdafe97d064e36fb}{alternate\+\_\+mode} ()
 \item 
-char \hyperlink{a00041_af3facad10e05defa48d45b46eb9ebe7e_af3facad10e05defa48d45b46eb9ebe7e}{getch} ()
+void \hyperlink{a00041_adf147e13a3c0b23148f4eb1db184f68d_adf147e13a3c0b23148f4eb1db184f68d}{send\+\_\+modem\+\_\+command} ()
 \item 
-char \hyperlink{a00041_aa7ee03b27a489828ce588d0fc023cab3_aa7ee03b27a489828ce588d0fc023cab3}{getsch} ()
+void \hyperlink{a00041_ab1123a026be8f7d0ece72e2813222da0_ab1123a026be8f7d0ece72e2813222da0}{modem\+\_\+dial} (char $\ast$ph)
 \item 
-void \hyperlink{a00041_adffe6abc4a32b3b10985ec9324bce2af_adffe6abc4a32b3b10985ec9324bce2af}{keyboard\+\_\+handler\+\_\+main} ()
+void \hyperlink{a00041_a283a7e4b715971478687b2d7547780cb_a283a7e4b715971478687b2d7547780cb}{modem\+\_\+connect} ()
+\item 
+void \hyperlink{a00041_a5e56e19ccc8f36690d515dd09948db10_a5e56e19ccc8f36690d515dd09948db10}{getmodem} ()
 \end{DoxyCompactItemize}
 
 
-\subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{a00041_a49e0a04e81098085d2948c1e9f8c99cb_a49e0a04e81098085d2948c1e9f8c99cb}\label{a00041_a49e0a04e81098085d2948c1e9f8c99cb_a49e0a04e81098085d2948c1e9f8c99cb}} 
-\index{keyboard.\+h@{keyboard.\+h}!K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+D\+A\+T\+A\+\_\+\+P\+O\+RT@{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+D\+A\+T\+A\+\_\+\+P\+O\+RT}}
-\index{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+D\+A\+T\+A\+\_\+\+P\+O\+RT@{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+D\+A\+T\+A\+\_\+\+P\+O\+RT}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+D\+A\+T\+A\+\_\+\+P\+O\+RT}{KEYBOARD\_DATA\_PORT}}
-{\footnotesize\ttfamily \#define K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+D\+A\+T\+A\+\_\+\+P\+O\+RT~0x60}
-
-
-
-Definition at line 3 of file keyboard.\+h.
-
-\mbox{\Hypertarget{a00041_ab79ca089665bc7f5cc151883d1bc69ed_ab79ca089665bc7f5cc151883d1bc69ed}\label{a00041_ab79ca089665bc7f5cc151883d1bc69ed_ab79ca089665bc7f5cc151883d1bc69ed}} 
-\index{keyboard.\+h@{keyboard.\+h}!K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+O\+RT@{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+O\+RT}}
-\index{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+O\+RT@{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+O\+RT}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+O\+RT}{KEYBOARD\_STATUS\_PORT}}
-{\footnotesize\ttfamily \#define K\+E\+Y\+B\+O\+A\+R\+D\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+\+P\+O\+RT~0x64}
-
-
-
-Definition at line 4 of file keyboard.\+h.
-
-
-
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00041_af3facad10e05defa48d45b46eb9ebe7e_af3facad10e05defa48d45b46eb9ebe7e}\label{a00041_af3facad10e05defa48d45b46eb9ebe7e_af3facad10e05defa48d45b46eb9ebe7e}} 
-\index{keyboard.\+h@{keyboard.\+h}!getch@{getch}}
-\index{getch@{getch}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{getch()}{getch()}}
-{\footnotesize\ttfamily char getch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00041_a8529dba543149138317e327931bf5a5c_a8529dba543149138317e327931bf5a5c}\label{a00041_a8529dba543149138317e327931bf5a5c_a8529dba543149138317e327931bf5a5c}} 
+\index{modem.\+h@{modem.\+h}!acknowledge@{acknowledge}}
+\index{acknowledge@{acknowledge}!modem.\+h@{modem.\+h}}
+\subsubsection{\texorpdfstring{acknowledge()}{acknowledge()}}
+{\footnotesize\ttfamily \hyperlink{a00134_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} acknowledge (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 131 of file keyboard.\+c.
-
-
-\begin{DoxyCode}
-131              \{
-132     \hyperlink{a00038_a6ddd5223379778858edc46ffbec19775_a6ddd5223379778858edc46ffbec19775}{wfk} = \textcolor{keyword}{true};
-133     \hyperlink{a00179_afe197dc4dbfa6036ef04abd2aeeeca2d_afe197dc4dbfa6036ef04abd2aeeeca2d}{enable\_cursor}(0,15);
-134     \textcolor{keywordflow}{while}(\hyperlink{a00038_a6ddd5223379778858edc46ffbec19775_a6ddd5223379778858edc46ffbec19775}{wfk})
-135         ;
-136     \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\hyperlink{a00038_ade374650022cb30c4f5591a8dafad685_ade374650022cb30c4f5591a8dafad685}{lkey});
-137     \hyperlink{a00179_a3d09038c7b6436e60b228f2f3f451f6a_a3d09038c7b6436e60b228f2f3f451f6a}{disable\_cursor}();
-138     \textcolor{keywordflow}{return} \hyperlink{a00038_ade374650022cb30c4f5591a8dafad685_ade374650022cb30c4f5591a8dafad685}{lkey};
-139 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00041_aa7ee03b27a489828ce588d0fc023cab3_aa7ee03b27a489828ce588d0fc023cab3}\label{a00041_aa7ee03b27a489828ce588d0fc023cab3_aa7ee03b27a489828ce588d0fc023cab3}} 
-\index{keyboard.\+h@{keyboard.\+h}!getsch@{getsch}}
-\index{getsch@{getsch}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{getsch()}{getsch()}}
-{\footnotesize\ttfamily char getsch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 127 of file keyboard.\+c.
+Definition at line 8 of file modem.\+c.
 
 
 \begin{DoxyCode}
-127               \{
-128     \textcolor{keywordflow}{return} \hyperlink{a00056_ad343a7018f74662f794968dfa0523841_ad343a7018f74662f794968dfa0523841}{read\_serial}();
-129 \}
+8                    \{
+9     \textcolor{keywordflow}{if}(\hyperlink{a00050_ad343a7018f74662f794968dfa0523841_ad343a7018f74662f794968dfa0523841}{read\_serial}() == \textcolor{charliteral}{'O'}) \{
+10         \textcolor{keywordflow}{if}(\hyperlink{a00050_ad343a7018f74662f794968dfa0523841_ad343a7018f74662f794968dfa0523841}{read\_serial}() == \textcolor{charliteral}{'K'}) \{
+11             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+12         \}
+13         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+14     \}
+15     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+16 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00041_ab88a2e96bbe585e228a5b201435c0240_ab88a2e96bbe585e228a5b201435c0240}\label{a00041_ab88a2e96bbe585e228a5b201435c0240_ab88a2e96bbe585e228a5b201435c0240}} 
-\index{keyboard.\+h@{keyboard.\+h}!getst@{getst}}
-\index{getst@{getst}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{getst()}{getst()}}
-{\footnotesize\ttfamily char$\ast$ getst (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00041_ace378eaa88c0b7f0cdafe97d064e36fb_ace378eaa88c0b7f0cdafe97d064e36fb}\label{a00041_ace378eaa88c0b7f0cdafe97d064e36fb_ace378eaa88c0b7f0cdafe97d064e36fb}} 
+\index{modem.\+h@{modem.\+h}!alternate\+\_\+mode@{alternate\+\_\+mode}}
+\index{alternate\+\_\+mode@{alternate\+\_\+mode}!modem.\+h@{modem.\+h}}
+\subsubsection{\texorpdfstring{alternate\+\_\+mode()}{alternate\_mode()}}
+{\footnotesize\ttfamily void alternate\+\_\+mode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 141 of file keyboard.\+c.
+Definition at line 18 of file modem.\+c.
 
 
 \begin{DoxyCode}
-141               \{
-142     \textcolor{keywordtype}{char}* inch;
-143     \textcolor{keywordtype}{char} inchara = \hyperlink{a00038_aa7ee03b27a489828ce588d0fc023cab3_aa7ee03b27a489828ce588d0fc023cab3}{getsch}();
-144     \textcolor{keywordflow}{while}(inchara != \textcolor{charliteral}{'\(\backslash\)n'}) \{
-145         *inch++ = inchara;
-146         inchara = \hyperlink{a00038_aa7ee03b27a489828ce588d0fc023cab3_aa7ee03b27a489828ce588d0fc023cab3}{getsch}();
-147     \}
-148     inch++;
-149     *inch = 0x0;
-150     \textcolor{keywordflow}{return} inch;
-151 \}
+18                       \{
+19     \hyperlink{a00050_aabbe45d6670f606c53ba38a5fb14b650_aabbe45d6670f606c53ba38a5fb14b650}{write\_serial\_string}(\textcolor{stringliteral}{"+++"});
+20     \textcolor{keywordflow}{if}(\hyperlink{a00050_af10f0e64ba89e8635aa7245ca08297c5_af10f0e64ba89e8635aa7245ca08297c5}{serial\_received}()) \{
+21         \hyperlink{a00038_aaf612f2f6c2c9931ab63296b3514a037_aaf612f2f6c2c9931ab63296b3514a037}{commandmode} = \hyperlink{a00038_a8529dba543149138317e327931bf5a5c_a8529dba543149138317e327931bf5a5c}{acknowledge}();
+22     \}
+23 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00041_aabdb223e5290f3b3c07bc82d075b87d7_aabdb223e5290f3b3c07bc82d075b87d7}\label{a00041_aabdb223e5290f3b3c07bc82d075b87d7_aabdb223e5290f3b3c07bc82d075b87d7}} 
-\index{keyboard.\+h@{keyboard.\+h}!kb\+\_\+init@{kb\+\_\+init}}
-\index{kb\+\_\+init@{kb\+\_\+init}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{kb\+\_\+init()}{kb\_init()}}
-{\footnotesize\ttfamily void kb\+\_\+init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00041_a5e56e19ccc8f36690d515dd09948db10_a5e56e19ccc8f36690d515dd09948db10}\label{a00041_a5e56e19ccc8f36690d515dd09948db10_a5e56e19ccc8f36690d515dd09948db10}} 
+\index{modem.\+h@{modem.\+h}!getmodem@{getmodem}}
+\index{getmodem@{getmodem}!modem.\+h@{modem.\+h}}
+\subsubsection{\texorpdfstring{getmodem()}{getmodem()}}
+{\footnotesize\ttfamily void getmodem (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 55 of file keyboard.\+c.
+Definition at line 47 of file modem.\+c.
 
 
 \begin{DoxyCode}
-56 \{
-57     \textcolor{comment}{// disable devices}
-58     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xad);
-59     \textcolor{keywordflow}{while}(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & \hyperlink{a00038_a8aa66e8bc828742fb4819d7cd2df598d_a8aa66e8bc828742fb4819d7cd2df598d}{SR\_CLEAR})
-60         ;
-61     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xa7);
-62     \textcolor{keywordflow}{while}(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
-63         ;
-64     \textcolor{comment}{// flush output}
-65     \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
-66     \textcolor{comment}{// set config}
-67     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0x20);
-68     \textcolor{keywordflow}{while}(!(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & \hyperlink{a00038_ac9efa716f8185bae296975136b510c30_ac9efa716f8185bae296975136b510c30}{SR\_RESPONSE}))
-69         ;
-70     \hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} config = \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
-71     \textcolor{keywordtype}{bool} dualchannel = \textcolor{keyword}{false};
-72     \textcolor{keywordflow}{if}(config & \hyperlink{a00038_addafe32b109f94a57ae4bf1a1dca05e0_addafe32b109f94a57ae4bf1a1dca05e0}{SR\_DUALCHANNEL})
-73         dualchannel = \textcolor{keyword}{true};
-74     config &= ~(1 << 0);
-75     config &= ~(1 << 1);
-76     config &= ~(1 << 6);
-77     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0x60);
-78     \textcolor{keywordflow}{while}(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
-79         ;
-80     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x60, config);
-81 
-82     \textcolor{comment}{// do self test}
-83     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xaa);
-84     \textcolor{keywordflow}{while}(!(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_RESPONSE))
-85         ;
-86     \hyperlink{a00140_aba7bc1797add20fe3efdf37ced1182c5_aba7bc1797add20fe3efdf37ced1182c5}{uint8\_t} response = \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
-87     \textcolor{keywordflow}{if}(response == 0x55) \{
-88         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"PS/2 OK.\(\backslash\)n"});
-89     \} \textcolor{keywordflow}{else} \{
-90         \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"PS/2 responded with 0xFC!!! The keyboard will not work.\(\backslash\)n"});
-91     \}
-92     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xab);
-93     \textcolor{keywordflow}{while}(!(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_RESPONSE))
-94         ;
-95     response = \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x60);
-96     \textcolor{keywordflow}{switch}(response) \{
-97         \textcolor{keywordflow}{case} 0x00:
-98             \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard test passed!\(\backslash\)n"});
-99             \textcolor{keywordflow}{break};
-100         \textcolor{keywordflow}{case} 0x01:
-101             \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard clock line struck low!\(\backslash\)n"});;
-102             \textcolor{keywordflow}{break};
-103         \textcolor{keywordflow}{case} 0x02:
-104             \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard clock line struck high!\(\backslash\)n"});
-105             \textcolor{keywordflow}{break};
-106         \textcolor{keywordflow}{case} 0x03:
-107             \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard data line struck low!\(\backslash\)n"});
-108             \textcolor{keywordflow}{break};
-109         \textcolor{keywordflow}{case} 0x04:
-110             \hyperlink{a00179_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Keyboard data line struck high!\(\backslash\)n"});
-111             \textcolor{keywordflow}{break};
-112     \}
-113     \textcolor{keywordflow}{while}(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
-114         ;
-115     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0xae);
-116     \textcolor{keywordflow}{while}(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
-117         ;
-118     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x64, 0x60);
-119     \textcolor{keywordflow}{while}(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
-120         ;
-121     config |= 1;
-122     \hyperlink{a00164_aa37f5841c54156a4b14fc0d6f626b44f_aa37f5841c54156a4b14fc0d6f626b44f}{outb}(0x60, config);
-123     \textcolor{keywordflow}{while}(\hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(0x64) & SR\_CLEAR)
-124         ;
-125 \}
+47                 \{
+48     \hyperlink{a00050_aabbe45d6670f606c53ba38a5fb14b650_aabbe45d6670f606c53ba38a5fb14b650}{write\_serial\_string}(\textcolor{stringliteral}{"AT"});
+49     \textcolor{keywordflow}{if}(\hyperlink{a00050_af10f0e64ba89e8635aa7245ca08297c5_af10f0e64ba89e8635aa7245ca08297c5}{serial\_received}()) \{
+50         \hyperlink{a00038_a0105e5654e7f0fa503f2853c88a2f782_a0105e5654e7f0fa503f2853c88a2f782}{modemstate} = \hyperlink{a00038_a8529dba543149138317e327931bf5a5c_a8529dba543149138317e327931bf5a5c}{acknowledge}();
+51     \}
+52 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00041_adffe6abc4a32b3b10985ec9324bce2af_adffe6abc4a32b3b10985ec9324bce2af}\label{a00041_adffe6abc4a32b3b10985ec9324bce2af_adffe6abc4a32b3b10985ec9324bce2af}} 
-\index{keyboard.\+h@{keyboard.\+h}!keyboard\+\_\+handler\+\_\+main@{keyboard\+\_\+handler\+\_\+main}}
-\index{keyboard\+\_\+handler\+\_\+main@{keyboard\+\_\+handler\+\_\+main}!keyboard.\+h@{keyboard.\+h}}
-\subsubsection{\texorpdfstring{keyboard\+\_\+handler\+\_\+main()}{keyboard\_handler\_main()}}
-{\footnotesize\ttfamily void keyboard\+\_\+handler\+\_\+main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00041_a283a7e4b715971478687b2d7547780cb_a283a7e4b715971478687b2d7547780cb}\label{a00041_a283a7e4b715971478687b2d7547780cb_a283a7e4b715971478687b2d7547780cb}} 
+\index{modem.\+h@{modem.\+h}!modem\+\_\+connect@{modem\+\_\+connect}}
+\index{modem\+\_\+connect@{modem\+\_\+connect}!modem.\+h@{modem.\+h}}
+\subsubsection{\texorpdfstring{modem\+\_\+connect()}{modem\_connect()}}
+{\footnotesize\ttfamily void modem\+\_\+connect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 153 of file keyboard.\+c.
+Definition at line 30 of file modem.\+c.
 
 
 \begin{DoxyCode}
-153                                  \{
-154     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} status;
-155     \textcolor{keywordtype}{char} keycode;
-156     status = \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00041_ab79ca089665bc7f5cc151883d1bc69ed_ab79ca089665bc7f5cc151883d1bc69ed}{KEYBOARD\_STATUS\_PORT});
-157     \textcolor{comment}{/* Lowest bit of status will be set if buffer is not empty */}
-158     \textcolor{keywordflow}{if} (status & 0x01) \{
-159         keycode = \hyperlink{a00164_a0223c8898dfec29069879dc51076e28a_a0223c8898dfec29069879dc51076e28a}{inb}(\hyperlink{a00041_a49e0a04e81098085d2948c1e9f8c99cb_a49e0a04e81098085d2948c1e9f8c99cb}{KEYBOARD\_DATA\_PORT});
-160         \textcolor{keywordflow}{if}(keycode < 0)
-161             \textcolor{keywordflow}{return};
-162         \hyperlink{a00038_ade374650022cb30c4f5591a8dafad685_ade374650022cb30c4f5591a8dafad685}{lkey} = keycode;
-163         \hyperlink{a00038_a6ddd5223379778858edc46ffbec19775_a6ddd5223379778858edc46ffbec19775}{wfk} = \textcolor{keyword}{false};
-164     \}
-165 \}
+30                      \{
+31     \textcolor{keywordflow}{if}(\hyperlink{a00050_af10f0e64ba89e8635aa7245ca08297c5_af10f0e64ba89e8635aa7245ca08297c5}{serial\_received}()) \{
+32         \textcolor{keywordtype}{bool} ds = \textcolor{keyword}{false};
+33         \textcolor{keywordflow}{if}(\hyperlink{a00050_ad343a7018f74662f794968dfa0523841_ad343a7018f74662f794968dfa0523841}{read\_serial}() == \textcolor{charliteral}{'R'}) \{
+34             \textcolor{keywordflow}{if}(\hyperlink{a00050_ad343a7018f74662f794968dfa0523841_ad343a7018f74662f794968dfa0523841}{read\_serial}() == \textcolor{charliteral}{'I'}) \{
+35                 \textcolor{keywordflow}{if}(\hyperlink{a00050_ad343a7018f74662f794968dfa0523841_ad343a7018f74662f794968dfa0523841}{read\_serial}() == \textcolor{charliteral}{'N'}) \{
+36                     \textcolor{keywordflow}{if}(\hyperlink{a00050_ad343a7018f74662f794968dfa0523841_ad343a7018f74662f794968dfa0523841}{read\_serial}() == \textcolor{charliteral}{'G'}) \{
+37                         ds = \textcolor{keyword}{true};
+38                         \hyperlink{a00050_ad343a7018f74662f794968dfa0523841_ad343a7018f74662f794968dfa0523841}{read\_serial}();
+39                     \}
+40                 \}
+41             \}
+42         \}
+43         \hyperlink{a00050_aabbe45d6670f606c53ba38a5fb14b650_aabbe45d6670f606c53ba38a5fb14b650}{write\_serial\_string}(\textcolor{stringliteral}{"ATA"});
+44     \}
+45 \}
 \end{DoxyCode}
+\mbox{\Hypertarget{a00041_ab1123a026be8f7d0ece72e2813222da0_ab1123a026be8f7d0ece72e2813222da0}\label{a00041_ab1123a026be8f7d0ece72e2813222da0_ab1123a026be8f7d0ece72e2813222da0}} 
+\index{modem.\+h@{modem.\+h}!modem\+\_\+dial@{modem\+\_\+dial}}
+\index{modem\+\_\+dial@{modem\+\_\+dial}!modem.\+h@{modem.\+h}}
+\subsubsection{\texorpdfstring{modem\+\_\+dial()}{modem\_dial()}}
+{\footnotesize\ttfamily void modem\+\_\+dial (\begin{DoxyParamCaption}\item[{char $\ast$}]{ph }\end{DoxyParamCaption})}
+
+
+
+Definition at line 25 of file modem.\+c.
+
+
+\begin{DoxyCode}
+25                           \{
+26     \hyperlink{a00050_aabbe45d6670f606c53ba38a5fb14b650_aabbe45d6670f606c53ba38a5fb14b650}{write\_serial\_string}(\textcolor{stringliteral}{"ATDT"});
+27     \hyperlink{a00050_aabbe45d6670f606c53ba38a5fb14b650_aabbe45d6670f606c53ba38a5fb14b650}{write\_serial\_string}(ph);
+28 \}
+\end{DoxyCode}
+\mbox{\Hypertarget{a00041_adf147e13a3c0b23148f4eb1db184f68d_adf147e13a3c0b23148f4eb1db184f68d}\label{a00041_adf147e13a3c0b23148f4eb1db184f68d_adf147e13a3c0b23148f4eb1db184f68d}} 
+\index{modem.\+h@{modem.\+h}!send\+\_\+modem\+\_\+command@{send\+\_\+modem\+\_\+command}}
+\index{send\+\_\+modem\+\_\+command@{send\+\_\+modem\+\_\+command}!modem.\+h@{modem.\+h}}
+\subsubsection{\texorpdfstring{send\+\_\+modem\+\_\+command()}{send\_modem\_command()}}
+{\footnotesize\ttfamily void send\+\_\+modem\+\_\+command (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

@@ -1,285 +1,123 @@
-\hypertarget{a00167}{}\section{libc/vitality/mem.c File Reference}
-\label{a00167}\index{libc/vitality/mem.\+c@{libc/vitality/mem.\+c}}
-{\ttfamily \#include \char`\"{}mem.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
+\hypertarget{a00167}{}\section{libc/vitality/mon.c File Reference}
+\label{a00167}\index{libc/vitality/mon.\+c@{libc/vitality/mon.\+c}}
+{\ttfamily \#include \char`\"{}mon.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../ext/task.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}tty.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../drivers/keyboard.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../system.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../ext/debug.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}inline.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../string.\+h\char`\"{}}\newline
-Include dependency graph for mem.\+c\+:
+{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
+Include dependency graph for mon.\+c\+:
 % FIG 0
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00167_a3ef64f08269a275815bb42bb97e0b562_a3ef64f08269a275815bb42bb97e0b562}{gbrk} ()
+void \hyperlink{a00167_ac4a1734d665cf10e32ddb9ebebfd8169_ac4a1734d665cf10e32ddb9ebebfd8169}{registers\+\_\+dump} (\hyperlink{a00250}{Registers} regs)
 \item 
-void \hyperlink{a00167_a46e79822750a4396759664ee0012b283_a46e79822750a4396759664ee0012b283}{brk} (\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} size)
-\item 
-void $\ast$ \hyperlink{a00167_a37ef7dd1bd3f62750baf3ea3d4ec7bf6_a37ef7dd1bd3f62750baf3ea3d4ec7bf6}{sbrk} (\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} size)
-\item 
-\hyperlink{a00292}{header\+\_\+t} $\ast$ \hyperlink{a00167_af6982edbc1f3bd90948598df448fbe5e_af6982edbc1f3bd90948598df448fbe5e}{get\+\_\+free\+\_\+block} (\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} size)
-\item 
-void $\ast$ \hyperlink{a00167_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}{malloc} (\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} size)
-\item 
-void \hyperlink{a00167_abbcfa46e4bdcb73aecd859a389031a02_abbcfa46e4bdcb73aecd859a389031a02}{free} (void $\ast$block)
-\item 
-void $\ast$ \hyperlink{a00167_aec90723f6d8e163bc8a148d63ad3adb2_aec90723f6d8e163bc8a148d63ad3adb2}{calloc} (\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} num, \hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} nsize)
-\item 
-void $\ast$ \hyperlink{a00167_a250ae994ff20c9a204732d278221511f_a250ae994ff20c9a204732d278221511f}{realloc} (void $\ast$block, \hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t} size)
-\end{DoxyCompactItemize}
-\subsection*{Variables}
-\begin{DoxyCompactItemize}
-\item 
-\hyperlink{a00292}{header\+\_\+t} $\ast$ \hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head}
-\item 
-\hyperlink{a00292}{header\+\_\+t} $\ast$ \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail}
-\item 
-\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} \hyperlink{a00167_a33fb44061f3432e7d04085bcef339974_a33fb44061f3432e7d04085bcef339974}{brkval}
+void \hyperlink{a00167_a33b77c779213ba5f7a0381c995a06f62_a33b77c779213ba5f7a0381c995a06f62}{enter\+\_\+monitor} ()
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00167_a46e79822750a4396759664ee0012b283_a46e79822750a4396759664ee0012b283}\label{a00167_a46e79822750a4396759664ee0012b283_a46e79822750a4396759664ee0012b283}} 
-\index{mem.\+c@{mem.\+c}!brk@{brk}}
-\index{brk@{brk}!mem.\+c@{mem.\+c}}
-\subsubsection{\texorpdfstring{brk()}{brk()}}
-{\footnotesize\ttfamily void brk (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{size }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00167_a33b77c779213ba5f7a0381c995a06f62_a33b77c779213ba5f7a0381c995a06f62}\label{a00167_a33b77c779213ba5f7a0381c995a06f62_a33b77c779213ba5f7a0381c995a06f62}} 
+\index{mon.\+c@{mon.\+c}!enter\+\_\+monitor@{enter\+\_\+monitor}}
+\index{enter\+\_\+monitor@{enter\+\_\+monitor}!mon.\+c@{mon.\+c}}
+\subsubsection{\texorpdfstring{enter\+\_\+monitor()}{enter\_monitor()}}
+{\footnotesize\ttfamily void enter\+\_\+monitor (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Definition at line 17 of file mem.\+c.
-
-
-\begin{DoxyCode}
-17                       \{
-18     \hyperlink{a00167_a33fb44061f3432e7d04085bcef339974_a33fb44061f3432e7d04085bcef339974}{brkval} = (\hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t})size;
-19 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00167_aec90723f6d8e163bc8a148d63ad3adb2_aec90723f6d8e163bc8a148d63ad3adb2}\label{a00167_aec90723f6d8e163bc8a148d63ad3adb2_aec90723f6d8e163bc8a148d63ad3adb2}} 
-\index{mem.\+c@{mem.\+c}!calloc@{calloc}}
-\index{calloc@{calloc}!mem.\+c@{mem.\+c}}
-\subsubsection{\texorpdfstring{calloc()}{calloc()}}
-{\footnotesize\ttfamily void$\ast$ calloc (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{num,  }\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{nsize }\end{DoxyParamCaption})}
-
-
-
-Definition at line 98 of file mem.\+c.
+Definition at line 38 of file mon.\+c.
 
 
 \begin{DoxyCode}
-99 \{
-100     \textcolor{keywordtype}{size\_t} size;
-101     \textcolor{keywordtype}{void} *block;
-102     \textcolor{keywordflow}{if} (!num || !nsize)
-103         \textcolor{keywordflow}{return} \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
-104     size = num * nsize;
-105     \textcolor{comment}{/* check mul overflow */}
-106     \textcolor{keywordflow}{if} (nsize != size / num)
-107         \textcolor{keywordflow}{return} \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
-108     block = \hyperlink{a00167_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}{malloc}(size);
-109     \textcolor{keywordflow}{if} (!block)
-110         \textcolor{keywordflow}{return} \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
-111     \hyperlink{a00131_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(block, 0, size);
-112     \textcolor{keywordflow}{return} block;
-113 \}
+38                      \{
+39     \hyperlink{a00250}{Registers} or;
+40     or.\hyperlink{a00250_aafc7189a84cb0f6ed3d37ee82bec09bc_aafc7189a84cb0f6ed3d37ee82bec09bc}{eax} = 0;
+41     or.\hyperlink{a00250_a1e7101b224fc3550bd4b64bb39d83036_a1e7101b224fc3550bd4b64bb39d83036}{ebp} = 0;
+42     or.\hyperlink{a00250_a3aa9baab41ed6c513cbecb126dc90373_a3aa9baab41ed6c513cbecb126dc90373}{ebx} = 0;
+43     or.\hyperlink{a00250_a9a7eb0450238154baa25c72993a0e5e0_a9a7eb0450238154baa25c72993a0e5e0}{ecx} = 0;
+44     or.\hyperlink{a00250_ae94bf35e0b978f6cca838ec6011a1e48_ae94bf35e0b978f6cca838ec6011a1e48}{edi} = 0;
+45     or.\hyperlink{a00250_a0f90c64246d3bbb917cfe527bf8c34c4_a0f90c64246d3bbb917cfe527bf8c34c4}{edx} = 0;
+46     or.\hyperlink{a00250_ad5110c091e713dabd23f23a62d026c07_ad5110c091e713dabd23f23a62d026c07}{eip} = 0x00100000;
+47     or.\hyperlink{a00250_a8f9b382cca633127cb869add3aed7a41_a8f9b382cca633127cb869add3aed7a41}{esi} = 0;
+48     or.\hyperlink{a00250_aca352215ac1e37f833da4f6289392261_aca352215ac1e37f833da4f6289392261}{esp} = 0;
+49     \textcolor{keywordtype}{bool} operating = \textcolor{keyword}{true};
+50     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)nVitalityX MONITOR\(\backslash\)n"});
+51     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"Monitor: 0x"});
+52     \textcolor{keywordtype}{char}* dbp;
+53     \hyperlink{a00125_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&dbp,0,16);
+54     \hyperlink{a00119_ab42640268f26e065efd044cfe80591bd_ab42640268f26e065efd044cfe80591bd}{itoa}(&\hyperlink{a00167_a33b77c779213ba5f7a0381c995a06f62_a33b77c779213ba5f7a0381c995a06f62}{enter\_monitor},dbp,16);
+55     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(dbp);
+56     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+57     void (*p)();
+58     \hyperlink{a00167_ac4a1734d665cf10e32ddb9ebebfd8169_ac4a1734d665cf10e32ddb9ebebfd8169}{registers\_dump}(or);
+59     \textcolor{keywordflow}{while}(operating) \{
+60         \textcolor{keywordtype}{char}* in = \hyperlink{a00032_ab88a2e96bbe585e228a5b201435c0240_ab88a2e96bbe585e228a5b201435c0240}{getst}();
+61         in++;
+62         \textcolor{keywordflow}{switch}(*in) \{
+63             \textcolor{keywordflow}{case} \textcolor{charliteral}{'d'}:
+64                 \textcolor{comment}{// DUMP current registers}
+65                 \hyperlink{a00167_ac4a1734d665cf10e32ddb9ebebfd8169_ac4a1734d665cf10e32ddb9ebebfd8169}{registers\_dump}(or);
+66                 \textcolor{keywordflow}{break};
+67             \textcolor{keywordflow}{case} \textcolor{charliteral}{'i'}:
+68                 \textcolor{comment}{// set next byte (INSTRUCTION)}
+69                 *((\hyperlink{a00134_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t}*)or.\hyperlink{a00250_ad5110c091e713dabd23f23a62d026c07_ad5110c091e713dabd23f23a62d026c07}{eip}) = or.\hyperlink{a00250_aafc7189a84cb0f6ed3d37ee82bec09bc_aafc7189a84cb0f6ed3d37ee82bec09bc}{eax};
+70                 or.\hyperlink{a00250_ad5110c091e713dabd23f23a62d026c07_ad5110c091e713dabd23f23a62d026c07}{eip}++;
+71                 \textcolor{keywordflow}{break};
+72             \textcolor{keywordflow}{case} \textcolor{charliteral}{'j'}:
+73                 \textcolor{comment}{// jump eip}
+74                 or.\hyperlink{a00250_ad5110c091e713dabd23f23a62d026c07_ad5110c091e713dabd23f23a62d026c07}{eip} = \hyperlink{a00119_a8456d79947fb428e0927d19e7a1e9423_a8456d79947fb428e0927d19e7a1e9423}{atoi}(in);
+75                 \textcolor{keywordflow}{break};
+76             \textcolor{keywordflow}{case} \textcolor{charliteral}{'e'}:
+77                 \textcolor{comment}{// execute}
+78                 p = or.\hyperlink{a00250_ad5110c091e713dabd23f23a62d026c07_ad5110c091e713dabd23f23a62d026c07}{eip};
+79                 p();
+80                 \textcolor{keywordflow}{break};
+81             \textcolor{keywordflow}{default}:
+82                 \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"?\(\backslash\)n"});
+83         \}
+84     \}
+85 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00167_abbcfa46e4bdcb73aecd859a389031a02_abbcfa46e4bdcb73aecd859a389031a02}\label{a00167_abbcfa46e4bdcb73aecd859a389031a02_abbcfa46e4bdcb73aecd859a389031a02}} 
-\index{mem.\+c@{mem.\+c}!free@{free}}
-\index{free@{free}!mem.\+c@{mem.\+c}}
-\subsubsection{\texorpdfstring{free()}{free()}}
-{\footnotesize\ttfamily void free (\begin{DoxyParamCaption}\item[{void $\ast$}]{block }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00167_ac4a1734d665cf10e32ddb9ebebfd8169_ac4a1734d665cf10e32ddb9ebebfd8169}\label{a00167_ac4a1734d665cf10e32ddb9ebebfd8169_ac4a1734d665cf10e32ddb9ebebfd8169}} 
+\index{mon.\+c@{mon.\+c}!registers\+\_\+dump@{registers\+\_\+dump}}
+\index{registers\+\_\+dump@{registers\+\_\+dump}!mon.\+c@{mon.\+c}}
+\subsubsection{\texorpdfstring{registers\+\_\+dump()}{registers\_dump()}}
+{\footnotesize\ttfamily void registers\+\_\+dump (\begin{DoxyParamCaption}\item[{\hyperlink{a00250}{Registers}}]{regs }\end{DoxyParamCaption})}
 
 
 
-Definition at line 68 of file mem.\+c.
+Definition at line 9 of file mon.\+c.
 
 
 \begin{DoxyCode}
-68                        \{
-69     \hyperlink{a00292}{header\_t} *header, *tmp;
-70     \textcolor{keywordtype}{void} *programbreak;
-71 
-72     \textcolor{keywordflow}{if} (!block)
-73         \textcolor{keywordflow}{return};
-74 
-75     header = (\hyperlink{a00292}{header\_t}*)block - 1;
-76     programbreak = \hyperlink{a00167_a37ef7dd1bd3f62750baf3ea3d4ec7bf6_a37ef7dd1bd3f62750baf3ea3d4ec7bf6}{sbrk}(0);
-77     \textcolor{keywordflow}{if}((\textcolor{keywordtype}{char}*)block+header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size}==programbreak) \{
-78         \textcolor{keywordflow}{if}(\hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head}==\hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail}) \{
-79             \hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head} = \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail} = \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
-80         \} \textcolor{keywordflow}{else} \{
-81             tmp = \hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head};
-82             \textcolor{keywordflow}{while}(tmp) \{
-83                 \textcolor{keywordflow}{if}(tmp->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail}) \{
-84                     tmp->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
-85                     \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail} = tmp;
-86                 \}
-87                 tmp = tmp->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next};
-88             \}
-89         \}
-90         \hyperlink{a00167_a37ef7dd1bd3f62750baf3ea3d4ec7bf6_a37ef7dd1bd3f62750baf3ea3d4ec7bf6}{sbrk}(0-\textcolor{keyword}{sizeof}(\hyperlink{a00292}{header\_t})-header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size});
-91         \textcolor{keywordflow}{return};
-92     \}
-93     header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} = 1;
-94 \}
+9                                     \{
+10     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"EAX EBX EDX ECX\(\backslash\)n"});
+11     \textcolor{keywordtype}{char}* dbp;
+12     \hyperlink{a00125_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&dbp,0,16);
+13     \hyperlink{a00119_ab42640268f26e065efd044cfe80591bd_ab42640268f26e065efd044cfe80591bd}{itoa}(regs.\hyperlink{a00250_aafc7189a84cb0f6ed3d37ee82bec09bc_aafc7189a84cb0f6ed3d37ee82bec09bc}{eax},dbp,16);
+14     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(dbp);
+15     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" "});
+16     \hyperlink{a00125_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&dbp,0,16);
+17     \hyperlink{a00119_ab42640268f26e065efd044cfe80591bd_ab42640268f26e065efd044cfe80591bd}{itoa}(regs.\hyperlink{a00250_a3aa9baab41ed6c513cbecb126dc90373_a3aa9baab41ed6c513cbecb126dc90373}{ebx},dbp,16);
+18     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(dbp);
+19     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" "});
+20     \hyperlink{a00125_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&dbp,0,16);
+21     \hyperlink{a00119_ab42640268f26e065efd044cfe80591bd_ab42640268f26e065efd044cfe80591bd}{itoa}(regs.\hyperlink{a00250_a0f90c64246d3bbb917cfe527bf8c34c4_a0f90c64246d3bbb917cfe527bf8c34c4}{edx},dbp,16);
+22     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(dbp);
+23     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{" "});
+24     \hyperlink{a00125_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&dbp,0,16);
+25     \hyperlink{a00119_ab42640268f26e065efd044cfe80591bd_ab42640268f26e065efd044cfe80591bd}{itoa}(regs.\hyperlink{a00250_a9a7eb0450238154baa25c72993a0e5e0_a9a7eb0450238154baa25c72993a0e5e0}{ecx},dbp,16);
+26     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(dbp);
+27     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)nEIP:"});
+28     \hyperlink{a00125_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&dbp,0,16);
+29     \hyperlink{a00119_ab42640268f26e065efd044cfe80591bd_ab42640268f26e065efd044cfe80591bd}{itoa}(regs.\hyperlink{a00250_ad5110c091e713dabd23f23a62d026c07_ad5110c091e713dabd23f23a62d026c07}{eip},dbp,16);
+30     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(dbp);
+31     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)nESP:"});
+32     \hyperlink{a00125_a9e432f267691eceb2e2e0efcc37efbc9_a9e432f267691eceb2e2e0efcc37efbc9}{memset}(&dbp,0,16);
+33     \hyperlink{a00119_ab42640268f26e065efd044cfe80591bd_ab42640268f26e065efd044cfe80591bd}{itoa}(regs.\hyperlink{a00250_aca352215ac1e37f833da4f6289392261_aca352215ac1e37f833da4f6289392261}{esp},dbp,16);
+34     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(dbp);
+35     \hyperlink{a00173_ade960b1320324706aac6c00cc6b1b2fe_ade960b1320324706aac6c00cc6b1b2fe}{tty\_pputstring}(\textcolor{stringliteral}{"\(\backslash\)n"});
+36 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00167_a3ef64f08269a275815bb42bb97e0b562_a3ef64f08269a275815bb42bb97e0b562}\label{a00167_a3ef64f08269a275815bb42bb97e0b562_a3ef64f08269a275815bb42bb97e0b562}} 
-\index{mem.\+c@{mem.\+c}!gbrk@{gbrk}}
-\index{gbrk@{gbrk}!mem.\+c@{mem.\+c}}
-\subsubsection{\texorpdfstring{gbrk()}{gbrk()}}
-{\footnotesize\ttfamily \hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} gbrk (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
-
-
-
-Definition at line 13 of file mem.\+c.
-
-
-\begin{DoxyCode}
-13                 \{
-14     \textcolor{keywordflow}{return} \hyperlink{a00167_a33fb44061f3432e7d04085bcef339974_a33fb44061f3432e7d04085bcef339974}{brkval};
-15 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00167_af6982edbc1f3bd90948598df448fbe5e_af6982edbc1f3bd90948598df448fbe5e}\label{a00167_af6982edbc1f3bd90948598df448fbe5e_af6982edbc1f3bd90948598df448fbe5e}} 
-\index{mem.\+c@{mem.\+c}!get\+\_\+free\+\_\+block@{get\+\_\+free\+\_\+block}}
-\index{get\+\_\+free\+\_\+block@{get\+\_\+free\+\_\+block}!mem.\+c@{mem.\+c}}
-\subsubsection{\texorpdfstring{get\+\_\+free\+\_\+block()}{get\_free\_block()}}
-{\footnotesize\ttfamily \hyperlink{a00292}{header\+\_\+t}$\ast$ get\+\_\+free\+\_\+block (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{size }\end{DoxyParamCaption})}
-
-
-
-Definition at line 29 of file mem.\+c.
-
-
-\begin{DoxyCode}
-30 \{
-31     \hyperlink{a00292}{header\_t} *curr = \hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head};
-32     \textcolor{keywordflow}{while}(curr) \{
-33         \textcolor{keywordflow}{if} (curr->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} && curr->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size} >= size)
-34             \textcolor{keywordflow}{return} curr;
-35         curr = curr->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next};
-36     \}
-37     \textcolor{keywordflow}{return} \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
-38 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00167_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}\label{a00167_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}} 
-\index{mem.\+c@{mem.\+c}!malloc@{malloc}}
-\index{malloc@{malloc}!mem.\+c@{mem.\+c}}
-\subsubsection{\texorpdfstring{malloc()}{malloc()}}
-{\footnotesize\ttfamily void$\ast$ malloc (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{size }\end{DoxyParamCaption})}
-
-
-
-Definition at line 40 of file mem.\+c.
-
-
-\begin{DoxyCode}
-40                           \{
-41     \textcolor{keywordtype}{size\_t} total\_size;
-42     \textcolor{keywordtype}{void} *block;
-43     \hyperlink{a00292}{header\_t} *header;
-44     \textcolor{keywordflow}{if}(!size)
-45         \textcolor{keywordflow}{return} \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
-46     header = \hyperlink{a00167_af6982edbc1f3bd90948598df448fbe5e_af6982edbc1f3bd90948598df448fbe5e}{get\_free\_block}(size);
-47     \textcolor{keywordflow}{if}(header) \{
-48         header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} = 0;
-49         \textcolor{keywordflow}{return} (\textcolor{keywordtype}{void}*)(header + 1);
-50     \}
-51     total\_size = \textcolor{keyword}{sizeof}(\hyperlink{a00292}{header\_t}) + size;
-52     block = \hyperlink{a00167_a37ef7dd1bd3f62750baf3ea3d4ec7bf6_a37ef7dd1bd3f62750baf3ea3d4ec7bf6}{sbrk}(total\_size);
-53     \textcolor{keywordflow}{if}(block == (\textcolor{keywordtype}{void}*)-1) \{
-54         \textcolor{keywordflow}{return} \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
-55     \}
-56     header = block;
-57     header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size} = size;
-58     header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_aeb76294effdb0929bb5ed8b48817d7b3_aeb76294effdb0929bb5ed8b48817d7b3}{is\_free} = 0;
-59     header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = \hyperlink{a00140_a070d2ce7b6bb7e5c05602aa8c308d0c4_a070d2ce7b6bb7e5c05602aa8c308d0c4}{NULL};
-60     \textcolor{keywordflow}{if}(!\hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head})
-61         \hyperlink{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}{head} = header;
-62     \textcolor{keywordflow}{if}(\hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail})
-63         \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail}->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_a51ead727f235e975a12834ed7bc3e175_a51ead727f235e975a12834ed7bc3e175}{next} = header;
-64     \hyperlink{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}{tail} = header;
-65     \textcolor{keywordflow}{return} (\textcolor{keywordtype}{void}*)(header+1);
-66 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00167_a250ae994ff20c9a204732d278221511f_a250ae994ff20c9a204732d278221511f}\label{a00167_a250ae994ff20c9a204732d278221511f_a250ae994ff20c9a204732d278221511f}} 
-\index{mem.\+c@{mem.\+c}!realloc@{realloc}}
-\index{realloc@{realloc}!mem.\+c@{mem.\+c}}
-\subsubsection{\texorpdfstring{realloc()}{realloc()}}
-{\footnotesize\ttfamily void$\ast$ realloc (\begin{DoxyParamCaption}\item[{void $\ast$}]{block,  }\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{size }\end{DoxyParamCaption})}
-
-
-
-Definition at line 115 of file mem.\+c.
-
-
-\begin{DoxyCode}
-116 \{
-117     \hyperlink{a00292}{header\_t} *header;
-118     \textcolor{keywordtype}{void} *ret;
-119     \textcolor{keywordflow}{if} (!block || !size)
-120         \textcolor{keywordflow}{return} \hyperlink{a00167_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}{malloc}(size);
-121     header = (\hyperlink{a00292}{header\_t}*)block - 1;
-122     \textcolor{keywordflow}{if} (header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size} >= size)
-123         \textcolor{keywordflow}{return} block;
-124     ret = \hyperlink{a00167_a7ac38fce3243a7dcf448301ee9ffd392_a7ac38fce3243a7dcf448301ee9ffd392}{malloc}(size);
-125     \textcolor{keywordflow}{if} (ret) \{
-126         
-127         \hyperlink{a00131_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(ret, block, header->\hyperlink{a00292_a68be74b11585224c831a547f5671d42a_a68be74b11585224c831a547f5671d42a}{s}.\hyperlink{a00292_ac17ccf4bef7d6671d7585f5430dfba2d_ac17ccf4bef7d6671d7585f5430dfba2d}{size});
-128         \hyperlink{a00167_abbcfa46e4bdcb73aecd859a389031a02_abbcfa46e4bdcb73aecd859a389031a02}{free}(block);
-129     \}
-130     \textcolor{keywordflow}{return} ret;
-131 \}
-\end{DoxyCode}
-\mbox{\Hypertarget{a00167_a37ef7dd1bd3f62750baf3ea3d4ec7bf6_a37ef7dd1bd3f62750baf3ea3d4ec7bf6}\label{a00167_a37ef7dd1bd3f62750baf3ea3d4ec7bf6_a37ef7dd1bd3f62750baf3ea3d4ec7bf6}} 
-\index{mem.\+c@{mem.\+c}!sbrk@{sbrk}}
-\index{sbrk@{sbrk}!mem.\+c@{mem.\+c}}
-\subsubsection{\texorpdfstring{sbrk()}{sbrk()}}
-{\footnotesize\ttfamily void$\ast$ sbrk (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_a29d85914ddff32967d85ada69854206d_a29d85914ddff32967d85ada69854206d}{size\+\_\+t}}]{size }\end{DoxyParamCaption})}
-
-
-
-Definition at line 21 of file mem.\+c.
-
-
-\begin{DoxyCode}
-21                         \{
-22     \hyperlink{a00140_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\_t} inc = (\hyperlink{a00140_ad838970452fe561cb8e0550cac5336be_ad838970452fe561cb8e0550cac5336be}{sint32\_t})size;
-23     \hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\_t} oldbrk = \hyperlink{a00167_a33fb44061f3432e7d04085bcef339974_a33fb44061f3432e7d04085bcef339974}{brkval};
-24     oldbrk + inc;
-25     \hyperlink{a00167_a46e79822750a4396759664ee0012b283_a46e79822750a4396759664ee0012b283}{brk}(oldbrk);
-26     \textcolor{keywordflow}{return} \hyperlink{a00167_a33fb44061f3432e7d04085bcef339974_a33fb44061f3432e7d04085bcef339974}{brkval};
-27 \}
-\end{DoxyCode}
-
-
-\subsection{Variable Documentation}
-\mbox{\Hypertarget{a00167_a33fb44061f3432e7d04085bcef339974_a33fb44061f3432e7d04085bcef339974}\label{a00167_a33fb44061f3432e7d04085bcef339974_a33fb44061f3432e7d04085bcef339974}} 
-\index{mem.\+c@{mem.\+c}!brkval@{brkval}}
-\index{brkval@{brkval}!mem.\+c@{mem.\+c}}
-\subsubsection{\texorpdfstring{brkval}{brkval}}
-{\footnotesize\ttfamily \hyperlink{a00140_a435d1572bf3f880d55459d9805097f62_a435d1572bf3f880d55459d9805097f62}{uint32\+\_\+t} brkval}
-
-
-
-Definition at line 10 of file mem.\+c.
-
-\mbox{\Hypertarget{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}\label{a00167_ac630e1c7e5feeaaf43837648134a0c6d_ac630e1c7e5feeaaf43837648134a0c6d}} 
-\index{mem.\+c@{mem.\+c}!head@{head}}
-\index{head@{head}!mem.\+c@{mem.\+c}}
-\subsubsection{\texorpdfstring{head}{head}}
-{\footnotesize\ttfamily \hyperlink{a00292}{header\+\_\+t}$\ast$ head}
-
-
-
-Definition at line 8 of file mem.\+c.
-
-\mbox{\Hypertarget{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}\label{a00167_a9bd314947171880f54b24e604198ad3b_a9bd314947171880f54b24e604198ad3b}} 
-\index{mem.\+c@{mem.\+c}!tail@{tail}}
-\index{tail@{tail}!mem.\+c@{mem.\+c}}
-\subsubsection{\texorpdfstring{tail}{tail}}
-{\footnotesize\ttfamily \hyperlink{a00292}{header\+\_\+t}$\ast$ tail}
-
-
-
-Definition at line 9 of file mem.\+c.
-

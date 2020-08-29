@@ -1,53 +1,12 @@
-digraph "libc/vitality/inline.h"
+digraph "libc/vitality/mem.h"
 {
   edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
   node [fontname="Helvetica",fontsize="10",shape=record];
-  Node2 [label="libc/vitality/inline.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
+  Node2 [label="libc/vitality/mem.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node2 -> Node3 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node3 [label="drivers/fdrive.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00026.html"];
+  Node3 [label="drivers/vga.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00056.html"];
   Node2 -> Node4 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node4 [label="drivers/ide.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00032.html"];
+  Node4 [label="kernel/kernel.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00062.html"];
   Node2 -> Node5 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node5 [label="drivers/keyboard.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00041.html"];
-  Node5 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node6 [label="drivers/keyboard.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00038.html"];
-  Node5 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node7 [label="kernel/kernel.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00068.html"];
-  Node5 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node8 [label="libc/isr.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00113.html"];
-  Node5 -> Node9 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node9 [label="libc/vitality/mon.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00173.html"];
-  Node2 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node2 -> Node10 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node10 [label="drivers/pic.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00053.html"];
-  Node10 -> Node6 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node10 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node11 [label="drivers/pic.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00050.html"];
-  Node10 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node12 [label="libc/interrupt.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00107.html"];
-  Node10 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node2 -> Node11 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node2 -> Node13 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node13 [label="drivers/serial.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00056.html"];
-  Node2 -> Node14 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node14 [label="drivers/vga.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00062.html"];
-  Node2 -> Node15 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node15 [label="libc/ext/debug.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00080.html"];
-  Node15 -> Node7 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node15 -> Node16 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node16 [label="libc/ext/debug.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00077.html"];
-  Node15 -> Node17 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node17 [label="libc/ext/task.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00089.html"];
-  Node15 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node18 [label="libc/gdt.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00101.html"];
-  Node15 -> Node12 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node15 -> Node8 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node15 -> Node19 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node19 [label="libc/page.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00119.html"];
-  Node15 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node20 [label="libc/vitality/mem.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00167.html"];
-  Node15 -> Node21 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node21 [label="libc/vitality/tty.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00179.html"];
-  Node2 -> Node18 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node2 -> Node20 [dir="back",color="midnightblue",fontsize="10",style="solid"];
+  Node5 [label="libc/vitality/mem.c",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$a00161.html"];
 }

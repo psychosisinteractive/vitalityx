@@ -1,81 +1,106 @@
-\hypertarget{a00197}{}\section{libc/vitality/vlib.c File Reference}
-\label{a00197}\index{libc/vitality/vlib.\+c@{libc/vitality/vlib.\+c}}
-{\ttfamily \#include \char`\"{}vlib.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../types.\+h\char`\"{}}\newline
-{\ttfamily \#include \char`\"{}../isr.\+h\char`\"{}}\newline
-Include dependency graph for vlib.\+c\+:
+\hypertarget{a00197}{}\section{libc/vitality/vxbfs.c File Reference}
+\label{a00197}\index{libc/vitality/vxbfs.\+c@{libc/vitality/vxbfs.\+c}}
+{\ttfamily \#include \char`\"{}vxbfs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../system.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}vfs.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../../drivers/serial.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../ext/debug.\+h\char`\"{}}\newline
+Include dependency graph for vxbfs.\+c\+:
 % FIG 0
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \hyperlink{a00197_aee69008de31826f28854c29a54cb315e_aee69008de31826f28854c29a54cb315e}{loadvlib} (\hyperlink{a00200_a2d9000b4fbb25c5ed2950a2d8f4921d5_a2d9000b4fbb25c5ed2950a2d8f4921d5}{vlibdesriptor\+\_\+t} $\ast$d)
+\hyperlink{a00185_aa5445a6474a23ee3e7756d432dfa4ba1_aa5445a6474a23ee3e7756d432dfa4ba1}{file\+\_\+t} \hyperlink{a00197_afa5caeb58da2ae814ac3adbb167a77fe_afa5caeb58da2ae814ac3adbb167a77fe}{loadfile} (\hyperlink{a00200_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}{vxbfs\+\_\+file\+\_\+t} $\ast$\hyperlink{a00298}{file})
 \item 
-\hyperlink{a00200_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\+\_\+entry\+\_\+t} $\ast$ \hyperlink{a00197_aeeb1b55b301de7b4c7aa360c387c3ef9_aeeb1b55b301de7b4c7aa360c387c3ef9}{getvlibentry} (int id)
+\hyperlink{a00134_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} \hyperlink{a00197_a078a66e7d52fd4a6df768277b605199c_a078a66e7d52fd4a6df768277b605199c}{validvxbfs} (\hyperlink{a00200_ac5678b6d5dd5ed5ca86e5ccd4c30d39d_ac5678b6d5dd5ed5ca86e5ccd4c30d39d}{vxbfs\+\_\+header\+\_\+t} $\ast$header)
 \item 
-void \hyperlink{a00197_a268c6e227f2761807244c0695d78d01c_a268c6e227f2761807244c0695d78d01c}{runvlib} (\hyperlink{a00140_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t} regs)
+\hyperlink{a00185_a02f7eedc7de6c770b6b29a62905fc61d_a02f7eedc7de6c770b6b29a62905fc61d}{pmfl\+\_\+t} $\ast$ \hyperlink{a00197_a092e5bdd19e8369aa33901fffeb1f025_a092e5bdd19e8369aa33901fffeb1f025}{readfile} (\hyperlink{a00200_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}{vxbfs\+\_\+file\+\_\+t} $\ast$\hyperlink{a00298}{file})
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\Hypertarget{a00197_aeeb1b55b301de7b4c7aa360c387c3ef9_aeeb1b55b301de7b4c7aa360c387c3ef9}\label{a00197_aeeb1b55b301de7b4c7aa360c387c3ef9_aeeb1b55b301de7b4c7aa360c387c3ef9}} 
-\index{vlib.\+c@{vlib.\+c}!getvlibentry@{getvlibentry}}
-\index{getvlibentry@{getvlibentry}!vlib.\+c@{vlib.\+c}}
-\subsubsection{\texorpdfstring{getvlibentry()}{getvlibentry()}}
-{\footnotesize\ttfamily \hyperlink{a00200_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\+\_\+entry\+\_\+t}$\ast$ getvlibentry (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00197_afa5caeb58da2ae814ac3adbb167a77fe_afa5caeb58da2ae814ac3adbb167a77fe}\label{a00197_afa5caeb58da2ae814ac3adbb167a77fe_afa5caeb58da2ae814ac3adbb167a77fe}} 
+\index{vxbfs.\+c@{vxbfs.\+c}!loadfile@{loadfile}}
+\index{loadfile@{loadfile}!vxbfs.\+c@{vxbfs.\+c}}
+\subsubsection{\texorpdfstring{loadfile()}{loadfile()}}
+{\footnotesize\ttfamily \hyperlink{a00185_aa5445a6474a23ee3e7756d432dfa4ba1_aa5445a6474a23ee3e7756d432dfa4ba1}{file\+\_\+t} loadfile (\begin{DoxyParamCaption}\item[{\hyperlink{a00200_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}{vxbfs\+\_\+file\+\_\+t} $\ast$}]{file }\end{DoxyParamCaption})}
 
 
 
-Definition at line 9 of file vlib.\+c.
+Definition at line 7 of file vxbfs.\+c.
 
 
 \begin{DoxyCode}
-9                                    \{
-10     \hyperlink{a00140_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} vlib = \hyperlink{a00200_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00332_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
-11     \textcolor{keywordflow}{while}(\textcolor{keywordtype}{id} != 0) \{
-12         vlib += \textcolor{keyword}{sizeof}(\hyperlink{a00200_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\_entry\_t});
-13     \}
-14     \textcolor{keywordflow}{return} (\hyperlink{a00328}{vlib\_entry\_t}*)vlib;
-15 \}
+8 \{
+9     \textcolor{comment}{/*file\_t vfile;}
+10 \textcolor{comment}{    vfile.name = file->name;}
+11 \textcolor{comment}{    if(file->md) \{}
+12 \textcolor{comment}{        vfile.data = file+sizeof(vxbfs\_file\_t);}
+13 \textcolor{comment}{    \} else \{}
+14 \textcolor{comment}{        vfile.data = file->modblock->data;}
+15 \textcolor{comment}{    \}}
+16 \textcolor{comment}{    return vfile;*/} \textcolor{comment}{// redundant}
+17 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00197_aee69008de31826f28854c29a54cb315e_aee69008de31826f28854c29a54cb315e}\label{a00197_aee69008de31826f28854c29a54cb315e_aee69008de31826f28854c29a54cb315e}} 
-\index{vlib.\+c@{vlib.\+c}!loadvlib@{loadvlib}}
-\index{loadvlib@{loadvlib}!vlib.\+c@{vlib.\+c}}
-\subsubsection{\texorpdfstring{loadvlib()}{loadvlib()}}
-{\footnotesize\ttfamily void loadvlib (\begin{DoxyParamCaption}\item[{\hyperlink{a00200_a2d9000b4fbb25c5ed2950a2d8f4921d5_a2d9000b4fbb25c5ed2950a2d8f4921d5}{vlibdesriptor\+\_\+t} $\ast$}]{d }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00197_a092e5bdd19e8369aa33901fffeb1f025_a092e5bdd19e8369aa33901fffeb1f025}\label{a00197_a092e5bdd19e8369aa33901fffeb1f025_a092e5bdd19e8369aa33901fffeb1f025}} 
+\index{vxbfs.\+c@{vxbfs.\+c}!readfile@{readfile}}
+\index{readfile@{readfile}!vxbfs.\+c@{vxbfs.\+c}}
+\subsubsection{\texorpdfstring{readfile()}{readfile()}}
+{\footnotesize\ttfamily \hyperlink{a00185_a02f7eedc7de6c770b6b29a62905fc61d_a02f7eedc7de6c770b6b29a62905fc61d}{pmfl\+\_\+t}$\ast$ readfile (\begin{DoxyParamCaption}\item[{\hyperlink{a00200_abb93e2407af0d8fe0f5629ce6456c6f9_abb93e2407af0d8fe0f5629ce6456c6f9}{vxbfs\+\_\+file\+\_\+t} $\ast$}]{file }\end{DoxyParamCaption})}
 
 
 
-Definition at line 5 of file vlib.\+c.
+Definition at line 27 of file vxbfs.\+c.
 
 
 \begin{DoxyCode}
-5                                   \{
-6     \hyperlink{a00200_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor} = d;
-7 \}
+27                                      \{
+28     \hyperlink{a00158_a3f7e7be8f62f43b2b62df54cac1590be_a3f7e7be8f62f43b2b62df54cac1590be}{bochs\_bkpt}();
+29     \hyperlink{a00050_aabbe45d6670f606c53ba38a5fb14b650_aabbe45d6670f606c53ba38a5fb14b650}{write\_serial\_string}(\textcolor{stringliteral}{"\(\backslash\)nreading file\(\backslash\)n"});
+30     \hyperlink{a00326}{vxbfs\_modblock\_t}* mb = (\hyperlink{a00326}{vxbfs\_modblock\_t}*)((\textcolor{keywordtype}{int})file->
+      \hyperlink{a00330_a56503c715b4121591ca7367c9cbd7093_a56503c715b4121591ca7367c9cbd7093}{modblock} + \hyperlink{a00128_ade5f4f9306a7cacc0cb2a518bd97e237_ade5f4f9306a7cacc0cb2a518bd97e237}{FS\_LOAD\_POINT});
+31     \hyperlink{a00134_ab8ef12fab634c171394422d0ee8baf94_ab8ef12fab634c171394422d0ee8baf94}{byte}* fptr = 0x01000000;
+32     \textcolor{keywordtype}{int} len = 0;
+33     \hyperlink{a00310}{pmfl\_t}* \hyperlink{a00310}{pmfl};
+34     \hyperlink{a00050_aabbe45d6670f606c53ba38a5fb14b650_aabbe45d6670f606c53ba38a5fb14b650}{write\_serial\_string}(\textcolor{stringliteral}{"starting\(\backslash\)n"});
+35     \textcolor{keywordflow}{while}(mb->\hyperlink{a00326_afbf261c73a36b4d33e8a8b5179d4385b_afbf261c73a36b4d33e8a8b5179d4385b}{nextmodblock} != 0x00) \{
+36         \hyperlink{a00134_ab8ef12fab634c171394422d0ee8baf94_ab8ef12fab634c171394422d0ee8baf94}{byte}* dp = (\hyperlink{a00134_ab8ef12fab634c171394422d0ee8baf94_ab8ef12fab634c171394422d0ee8baf94}{byte}*)&mb->\hyperlink{a00326_a327348a3ea3a02cfde4cdb1ccdcf2073_a327348a3ea3a02cfde4cdb1ccdcf2073}{data};
+37         \textcolor{keywordtype}{int} i = 0;
+38         \hyperlink{a00050_aabbe45d6670f606c53ba38a5fb14b650_aabbe45d6670f606c53ba38a5fb14b650}{write\_serial\_string}(\textcolor{stringliteral}{"reading mb\(\backslash\)n"});
+39         \hyperlink{a00158_a3f7e7be8f62f43b2b62df54cac1590be_a3f7e7be8f62f43b2b62df54cac1590be}{bochs\_bkpt}();
+40         \textcolor{keywordflow}{for}(i = 0; i++; i < 507) \{
+41             \hyperlink{a00050_aac3c84e21fffc4696d8969ca6955bfc8_aac3c84e21fffc4696d8969ca6955bfc8}{write\_serial}(*dp);
+42             \hyperlink{a00125_a370712322c794e949c996946f2283ea8_a370712322c794e949c996946f2283ea8}{memcpy}(fptr,dp,507);
+43             fptr += 507;
+44             len++;
+45         \}
+46         \hyperlink{a00050_aabbe45d6670f606c53ba38a5fb14b650_aabbe45d6670f606c53ba38a5fb14b650}{write\_serial\_string}(\textcolor{stringliteral}{"done\(\backslash\)n"});
+47         mb = mb->\hyperlink{a00326_afbf261c73a36b4d33e8a8b5179d4385b_afbf261c73a36b4d33e8a8b5179d4385b}{nextmodblock};
+48     \}
+49     \hyperlink{a00050_aabbe45d6670f606c53ba38a5fb14b650_aabbe45d6670f606c53ba38a5fb14b650}{write\_serial\_string}(\textcolor{stringliteral}{"finished\(\backslash\)n"});
+50     pmfl->\hyperlink{a00310_a151dcc6387f9c9186b4b84526c3a89ff_a151dcc6387f9c9186b4b84526c3a89ff}{len} = len;
+51     pmfl->\hyperlink{a00310_ac769ba8a7086d818e1137ce59dd21077_ac769ba8a7086d818e1137ce59dd21077}{ptr} = 0x01000000;
+52     \textcolor{keywordflow}{return} pmfl;
+53 \}
 \end{DoxyCode}
-\mbox{\Hypertarget{a00197_a268c6e227f2761807244c0695d78d01c_a268c6e227f2761807244c0695d78d01c}\label{a00197_a268c6e227f2761807244c0695d78d01c_a268c6e227f2761807244c0695d78d01c}} 
-\index{vlib.\+c@{vlib.\+c}!runvlib@{runvlib}}
-\index{runvlib@{runvlib}!vlib.\+c@{vlib.\+c}}
-\subsubsection{\texorpdfstring{runvlib()}{runvlib()}}
-{\footnotesize\ttfamily void runvlib (\begin{DoxyParamCaption}\item[{\hyperlink{a00140_adf58dbaf6139b4957c348711f2026957_adf58dbaf6139b4957c348711f2026957}{registers\+\_\+t}}]{regs }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{a00197_a078a66e7d52fd4a6df768277b605199c_a078a66e7d52fd4a6df768277b605199c}\label{a00197_a078a66e7d52fd4a6df768277b605199c_a078a66e7d52fd4a6df768277b605199c}} 
+\index{vxbfs.\+c@{vxbfs.\+c}!validvxbfs@{validvxbfs}}
+\index{validvxbfs@{validvxbfs}!vxbfs.\+c@{vxbfs.\+c}}
+\subsubsection{\texorpdfstring{validvxbfs()}{validvxbfs()}}
+{\footnotesize\ttfamily \hyperlink{a00134_af6a258d8f3ee5206d682d799316314b1_af6a258d8f3ee5206d682d799316314b1}{bool} validvxbfs (\begin{DoxyParamCaption}\item[{\hyperlink{a00200_ac5678b6d5dd5ed5ca86e5ccd4c30d39d_ac5678b6d5dd5ed5ca86e5ccd4c30d39d}{vxbfs\+\_\+header\+\_\+t} $\ast$}]{header }\end{DoxyParamCaption})}
 
 
 
-Definition at line 17 of file vlib.\+c.
+Definition at line 19 of file vxbfs.\+c.
 
 
 \begin{DoxyCode}
-17                                \{
-18     \hyperlink{a00140_a295f71165288684c38c6bb836fbb3c59_a295f71165288684c38c6bb836fbb3c59}{addr\_t} vlib = \hyperlink{a00200_abe9fbaaf473cf2fa8d2a0ef1786fabd2_abe9fbaaf473cf2fa8d2a0ef1786fabd2}{descriptor}->\hyperlink{a00332_a0a6151ac18d60c648baec065efc9af1a_a0a6151ac18d60c648baec065efc9af1a}{base};
-19     \textcolor{keywordtype}{int} \textcolor{keywordtype}{id} = regs.\hyperlink{a00264_aa8989b2fef42dca1d656f724eb324f51_aa8989b2fef42dca1d656f724eb324f51}{ebx};
-20     \textcolor{keywordflow}{while}(\textcolor{keywordtype}{id} != 0) \{
-21         vlib += \textcolor{keyword}{sizeof}(\hyperlink{a00200_a97c1a7136f2ab06368e93c2d7533d619_a97c1a7136f2ab06368e93c2d7533d619}{vlib\_entry\_t});
-22     \}
-23     \hyperlink{a00328}{vlib\_entry\_t}* \hyperlink{a00110_af0b0a7e10694e3b600c7561311cc8271_af0b0a7e10694e3b600c7561311cc8271}{sel} = (\hyperlink{a00328}{vlib\_entry\_t}*)vlib;
-24     \hyperlink{a00140_ab22fa604a9d0187c6a648586ee77944f_ab22fa604a9d0187c6a648586ee77944f}{func\_ptr\_args} funcptr = sel->\hyperlink{a00328_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr};
-25     \textcolor{comment}{// we can now run vlib code}
-26     void (*functionptr)(\hyperlink{a00264}{registers\_t} ctaskregs);
-27     functionptr = *sel->\hyperlink{a00328_a5d194ce83e680c074ac0a0641af42be6_a5d194ce83e680c074ac0a0641af42be6}{functionptr};
-28     functionptr(regs);
-29 \}
+19                                         \{
+20     \textcolor{keywordtype}{bool} valid = \textcolor{keyword}{false};
+21     \textcolor{keywordflow}{if}(header->\hyperlink{a00334_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[0] == \textcolor{charliteral}{'V'} && header->\hyperlink{a00334_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[1] == \textcolor{charliteral}{'X'} && header->
+      \hyperlink{a00334_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[2] == \textcolor{charliteral}{'F'} && header->\hyperlink{a00334_a4c82fb69a08f04d22d832e030cc71577_a4c82fb69a08f04d22d832e030cc71577}{signature}[3] == \textcolor{charliteral}{'S'}) \{
+22         valid = \textcolor{keyword}{true};
+23     \}
+24     \textcolor{keywordflow}{return} valid;
+25 \}
 \end{DoxyCode}

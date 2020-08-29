@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>VitalityX: libc/system.c File Reference</title>
+<title>VitalityX: libc/types.c File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -44,42 +44,19 @@ $(function() {
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="summary">
-<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
-<div class="title">system.c File Reference</div>  </div>
+<div class="title">types.c File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00182_source.html">vitality/tty.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00134_source.html">system.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00140_source.html">types.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00116_source.html">isr.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00134_source.html">types.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
-Include dependency graph for system.c:</div>
+Include dependency graph for types.c:</div>
 <div class="dyncontent">
-<div class="center"><img src="a00132.png" border="0" usemap="#libc_2system_8c" alt=""/></div>
+<div class="center"><img src="a00132.png" border="0" usemap="#libc_2types_8c" alt=""/></div>
 <!-- MAP 0 -->
 </div>
 </div>
 <p><a href="a00131_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:aa291c9926b84df379482632e80ec7c47"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00131_aa291c9926b84df379482632e80ec7c47.html#aa291c9926b84df379482632e80ec7c47">pokeb</a> (<a class="el" href="a00140_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> *addr, <a class="el" href="a00140_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> offset, <a class="el" href="a00140_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> val)</td></tr>
-<tr class="memdesc:aa291c9926b84df379482632e80ec7c47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Poke Byte.  <a href="a00131_aa291c9926b84df379482632e80ec7c47.html#aa291c9926b84df379482632e80ec7c47">More...</a><br /></td></tr>
-<tr class="separator:aa291c9926b84df379482632e80ec7c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a353956c1fd65c7ed787836534fc9354e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00140_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00131_a353956c1fd65c7ed787836534fc9354e.html#a353956c1fd65c7ed787836534fc9354e">peekb</a> (<a class="el" href="a00140_aba7bc1797add20fe3efdf37ced1182c5.html#aba7bc1797add20fe3efdf37ced1182c5">uint8_t</a> *addr, <a class="el" href="a00140_a435d1572bf3f880d55459d9805097f62.html#a435d1572bf3f880d55459d9805097f62">uint32_t</a> offset)</td></tr>
-<tr class="memdesc:a353956c1fd65c7ed787836534fc9354e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Peek Byte.  <a href="a00131_a353956c1fd65c7ed787836534fc9354e.html#a353956c1fd65c7ed787836534fc9354e">More...</a><br /></td></tr>
-<tr class="separator:a353956c1fd65c7ed787836534fc9354e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9e432f267691eceb2e2e0efcc37efbc9"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00131_a9e432f267691eceb2e2e0efcc37efbc9.html#a9e432f267691eceb2e2e0efcc37efbc9">memset</a> (void *dest, int val, <a class="el" href="a00140_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a> len)</td></tr>
-<tr class="memdesc:a9e432f267691eceb2e2e0efcc37efbc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memset.  <a href="a00131_a9e432f267691eceb2e2e0efcc37efbc9.html#a9e432f267691eceb2e2e0efcc37efbc9">More...</a><br /></td></tr>
-<tr class="separator:a9e432f267691eceb2e2e0efcc37efbc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a370712322c794e949c996946f2283ea8"><td class="memItemLeft" align="right" valign="top">void *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00131_a370712322c794e949c996946f2283ea8.html#a370712322c794e949c996946f2283ea8">memcpy</a> (void *dstptr, const void *srcptr, <a class="el" href="a00140_a29d85914ddff32967d85ada69854206d.html#a29d85914ddff32967d85ada69854206d">size_t</a> size)</td></tr>
-<tr class="memdesc:a370712322c794e949c996946f2283ea8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Memcpy.  <a href="a00131_a370712322c794e949c996946f2283ea8.html#a370712322c794e949c996946f2283ea8">More...</a><br /></td></tr>
-<tr class="separator:a370712322c794e949c996946f2283ea8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afcc76b3d055f3137e37a9c1ce82d0b95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00131_afcc76b3d055f3137e37a9c1ce82d0b95.html#afcc76b3d055f3137e37a9c1ce82d0b95">sleep</a> (int duration)</td></tr>
-<tr class="separator:afcc76b3d055f3137e37a9c1ce82d0b95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
