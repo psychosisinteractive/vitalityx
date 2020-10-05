@@ -10,13 +10,14 @@ POBJ = ${CPP_SOURCES:.cpp=.o}
 AOBJ = ${A_SOURCES:.s=.o}
 A2OBJ = ${A2_SOURCES:.asm=.o}
 
-CC = i686-elf-gcc
-LD = i686-elf-ld
-PP = i686-elf-g++
-WSL = C:\Windows\sysnative\wsl
-AS = i686-elf-as
+CC = i386-elf-gcc
+LD = i386-elf-ld
+PP = i386-elf-g++
+AS = i386-elf-as
 SYS = C:\Windows\sysnative\command
 BOCHS = C:\Program Files\Bochs-2.6.11\bochsdbg
+#set this to cat if you are actually on linux/wsl
+CAT = type
 NASM = nasm
 GDB = i686-elf-GDB
 # flags for the compiler
@@ -27,7 +28,7 @@ CFLAGS = -g
 ORIGIN = 0x7e00
 
 operating.bin: bootloader/boot.bin kernel.bin
-	${WSL} cat $^ > operating.bin
+	${CAT} $^ > operating.bin
 
 kernel.bin: kernel/kentry.o LINKER.ld ${OBJ} ${AOBJ} ${A2OBJ}
 	${LD} -o $@ -Ttext ${ORIGIN} $^ --oformat binary
